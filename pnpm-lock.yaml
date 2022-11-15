@@ -13,13 +13,16 @@ specifiers:
   '@angular/platform-browser-dynamic': ^14.2.0
   '@angular/router': ^14.2.0
   '@types/jasmine': ~4.0.0
+  autoprefixer: ^10.4.13
   jasmine-core: ~4.3.0
   karma: ~6.4.0
   karma-chrome-launcher: ~3.1.0
   karma-coverage: ~2.2.0
   karma-jasmine: ~5.1.0
   karma-jasmine-html-reporter: ~2.0.0
+  postcss: ^8.4.19
   rxjs: ~7.5.0
+  tailwindcss: ^3.2.4
   tslib: ^2.3.0
   typescript: ~4.7.2
   zone.js: ~0.11.4
@@ -38,16 +41,19 @@ dependencies:
   zone.js: registry.npmmirror.com/zone.js/0.11.8
 
 devDependencies:
-  '@angular-devkit/build-angular': registry.npmmirror.com/@angular-devkit/build-angular/14.2.9_amqyqk4fiqybcyomclhoyyc33e
+  '@angular-devkit/build-angular': registry.npmmirror.com/@angular-devkit/build-angular/14.2.9_u2g5gnauf6efufxrjalyxkeyqi
   '@angular/cli': registry.npmmirror.com/@angular/cli/14.2.9
   '@angular/compiler-cli': registry.npmmirror.com/@angular/compiler-cli/14.2.10_ygqozrxnak7sczpcsm66lrd3xu
   '@types/jasmine': registry.npmmirror.com/@types/jasmine/4.0.3
+  autoprefixer: registry.npmmirror.com/autoprefixer/10.4.13_postcss@8.4.19
   jasmine-core: registry.npmmirror.com/jasmine-core/4.3.0
   karma: registry.npmmirror.com/karma/6.4.1
   karma-chrome-launcher: registry.npmmirror.com/karma-chrome-launcher/3.1.1
   karma-coverage: registry.npmmirror.com/karma-coverage/2.2.0
   karma-jasmine: registry.npmmirror.com/karma-jasmine/5.1.0_karma@6.4.1
   karma-jasmine-html-reporter: registry.npmmirror.com/karma-jasmine-html-reporter/2.0.0_hjx32b5amavz4rn7ovmff56zxa
+  postcss: registry.npmmirror.com/postcss/8.4.19
+  tailwindcss: registry.npmmirror.com/tailwindcss/3.2.4_postcss@8.4.19
   typescript: registry.npmmirror.com/typescript/4.7.4
 
 packages:
@@ -80,7 +86,7 @@ packages:
       - chokidar
     dev: true
 
-  registry.npmmirror.com/@angular-devkit/build-angular/14.2.9_amqyqk4fiqybcyomclhoyyc33e:
+  registry.npmmirror.com/@angular-devkit/build-angular/14.2.9_u2g5gnauf6efufxrjalyxkeyqi:
     resolution: {integrity: sha512-/6ul4JLpiKLB4+PJzDF7twgZf28GNHxxJKsheymrxC+ZRMGoMsJCzoU/dmOXE2YY8yGxAFnrTAVIJYomn+QnZQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@angular-devkit/build-angular/-/build-angular-14.2.9.tgz}
     id: registry.npmmirror.com/@angular-devkit/build-angular/14.2.9
     name: '@angular-devkit/build-angular'
@@ -164,6 +170,7 @@ packages:
       source-map-support: registry.npmmirror.com/source-map-support/0.5.21
       stylus: registry.npmmirror.com/stylus/0.59.0
       stylus-loader: registry.npmmirror.com/stylus-loader/7.0.0_rgwcw63jhyplbyg2jpw7ajyoqm
+      tailwindcss: registry.npmmirror.com/tailwindcss/3.2.4_postcss@8.4.19
       terser: registry.npmmirror.com/terser/5.14.2
       text-table: registry.npmmirror.com/text-table/0.2.0
       tree-kill: registry.npmmirror.com/tree-kill/1.2.2
@@ -2760,6 +2767,31 @@ packages:
       acorn: registry.npmmirror.com/acorn/8.8.1
     dev: true
 
+  registry.npmmirror.com/acorn-node/1.8.2:
+    resolution: {integrity: sha512-8mt+fslDufLYntIoPAaIMUe/lrbrehIiwmR3t2k9LljIzoigEPF27eLk2hy8zSGzmR/ogr7zbRKINMo1u0yh5A==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/acorn-node/-/acorn-node-1.8.2.tgz}
+    name: acorn-node
+    version: 1.8.2
+    dependencies:
+      acorn: registry.npmmirror.com/acorn/7.4.1
+      acorn-walk: registry.npmmirror.com/acorn-walk/7.2.0
+      xtend: registry.npmmirror.com/xtend/4.0.2
+    dev: true
+
+  registry.npmmirror.com/acorn-walk/7.2.0:
+    resolution: {integrity: sha512-OPdCF6GsMIP+Az+aWfAAOEt2/+iVDKE7oy6lJ098aoe59oAmK76qV6Gw60SbZ8jHuG2wH058GF4pLFbYamYrVA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/acorn-walk/-/acorn-walk-7.2.0.tgz}
+    name: acorn-walk
+    version: 7.2.0
+    engines: {node: '>=0.4.0'}
+    dev: true
+
+  registry.npmmirror.com/acorn/7.4.1:
+    resolution: {integrity: sha512-nQyp0o1/mNdbTO1PO6kHkwSrmgZ0MT/jCCpNiwbUjGoRN4dlBhqJtoQuCnEOKzgTVwg0ZWiCoQy6SxMebQVh8A==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/acorn/-/acorn-7.4.1.tgz}
+    name: acorn
+    version: 7.4.1
+    engines: {node: '>=0.4.0'}
+    hasBin: true
+    dev: true
+
   registry.npmmirror.com/acorn/8.8.1:
     resolution: {integrity: sha512-7zFpHzhnqYKrkYdUjF1HI1bzd0VygEGX8lFk4k5zVMqHEoES+P+7TKI+EvLO9WVMJ8eekdO0aDEK044xTXwPPA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/acorn/-/acorn-8.8.1.tgz}
     name: acorn
@@ -2954,6 +2986,12 @@ packages:
       readable-stream: registry.npmmirror.com/readable-stream/3.6.0
     dev: true
 
+  registry.npmmirror.com/arg/5.0.2:
+    resolution: {integrity: sha512-PYjyFOLKQ9y57JvQ6QLo8dAgNqswh8M1RMJYdQduT6xbWSgK36P/Z/v+p888pM69jMMfS8Xd8F6I1kQ/I9HUGg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/arg/-/arg-5.0.2.tgz}
+    name: arg
+    version: 5.0.2
+    dev: true
+
   registry.npmmirror.com/argparse/1.0.10:
     resolution: {integrity: sha512-o5Roy6tNG4SL/FOkCAN6RzjiakZS25RLYFrcMttJqbdd8BWrnA+fGz57iN5Pb06pvBGvl5gQ0B48dJlslXvoTg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/argparse/-/argparse-1.0.10.tgz}
     name: argparse
@@ -2990,6 +3028,25 @@ packages:
       normalize-range: registry.npmmirror.com/normalize-range/0.1.2
       picocolors: registry.npmmirror.com/picocolors/1.0.0
       postcss: registry.npmmirror.com/postcss/8.4.16
+      postcss-value-parser: registry.npmmirror.com/postcss-value-parser/4.2.0
+    dev: true
+
+  registry.npmmirror.com/autoprefixer/10.4.13_postcss@8.4.19:
+    resolution: {integrity: sha512-49vKpMqcZYsJjwotvt4+h/BCjJVnhGwcLpDt5xkcaOG3eLrG/HUYLagrihYsQ+qrIBgIzX1Rw7a6L8I/ZA1Atg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/autoprefixer/-/autoprefixer-10.4.13.tgz}
+    id: registry.npmmirror.com/autoprefixer/10.4.13
+    name: autoprefixer
+    version: 10.4.13
+    engines: {node: ^10 || ^12 || >=14}
+    hasBin: true
+    peerDependencies:
+      postcss: ^8.1.0
+    dependencies:
+      browserslist: registry.npmmirror.com/browserslist/4.21.4
+      caniuse-lite: registry.npmmirror.com/caniuse-lite/1.0.30001431
+      fraction.js: registry.npmmirror.com/fraction.js/4.2.0
+      normalize-range: registry.npmmirror.com/normalize-range/0.1.2
+      picocolors: registry.npmmirror.com/picocolors/1.0.0
+      postcss: registry.npmmirror.com/postcss/8.4.19
       postcss-value-parser: registry.npmmirror.com/postcss-value-parser/4.2.0
     dev: true
 
@@ -3304,6 +3361,13 @@ packages:
     name: callsites
     version: 3.1.0
     engines: {node: '>=6'}
+    dev: true
+
+  registry.npmmirror.com/camelcase-css/2.0.1:
+    resolution: {integrity: sha512-QOSvevhslijgYwRx6Rv7zKdMF8lbRmx+uQGx2+vDc+KI/eBnsy9kit5aj23AgGu3pa4t9AgwbnXWqS+iOY+2aA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/camelcase-css/-/camelcase-css-2.0.1.tgz}
+    name: camelcase-css
+    version: 2.0.1
+    engines: {node: '>= 6'}
     dev: true
 
   registry.npmmirror.com/camelcase/5.3.1:
@@ -3673,7 +3737,7 @@ packages:
       css-select: registry.npmmirror.com/css-select/4.3.0
       parse5: registry.npmmirror.com/parse5/6.0.1
       parse5-htmlparser2-tree-adapter: registry.npmmirror.com/parse5-htmlparser2-tree-adapter/6.0.1
-      postcss: registry.npmmirror.com/postcss/8.4.16
+      postcss: registry.npmmirror.com/postcss/8.4.19
       pretty-bytes: registry.npmmirror.com/pretty-bytes/5.6.0
     dev: true
 
@@ -3725,12 +3789,12 @@ packages:
     peerDependencies:
       webpack: ^5.0.0
     dependencies:
-      icss-utils: registry.npmmirror.com/icss-utils/5.1.0_postcss@8.4.16
-      postcss: registry.npmmirror.com/postcss/8.4.16
-      postcss-modules-extract-imports: registry.npmmirror.com/postcss-modules-extract-imports/3.0.0_postcss@8.4.16
-      postcss-modules-local-by-default: registry.npmmirror.com/postcss-modules-local-by-default/4.0.0_postcss@8.4.16
-      postcss-modules-scope: registry.npmmirror.com/postcss-modules-scope/3.0.0_postcss@8.4.16
-      postcss-modules-values: registry.npmmirror.com/postcss-modules-values/4.0.0_postcss@8.4.16
+      icss-utils: registry.npmmirror.com/icss-utils/5.1.0_postcss@8.4.19
+      postcss: registry.npmmirror.com/postcss/8.4.19
+      postcss-modules-extract-imports: registry.npmmirror.com/postcss-modules-extract-imports/3.0.0_postcss@8.4.19
+      postcss-modules-local-by-default: registry.npmmirror.com/postcss-modules-local-by-default/4.0.0_postcss@8.4.19
+      postcss-modules-scope: registry.npmmirror.com/postcss-modules-scope/3.0.0_postcss@8.4.19
+      postcss-modules-values: registry.npmmirror.com/postcss-modules-values/4.0.0_postcss@8.4.19
       postcss-value-parser: registry.npmmirror.com/postcss-value-parser/4.2.0
       semver: registry.npmmirror.com/semver/7.3.7
       webpack: registry.npmmirror.com/webpack/5.74.0_esbuild@0.15.5
@@ -3860,6 +3924,12 @@ packages:
     engines: {node: '>=8'}
     dev: true
 
+  registry.npmmirror.com/defined/1.0.1:
+    resolution: {integrity: sha512-hsBd2qSVCRE+5PmNdHt1uzyrFu5d3RwmFDKzyNZMFq/EwDNJF7Ee5+D5oEKF0hU6LhtoUF1macFvOe4AskQC1Q==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/defined/-/defined-1.0.1.tgz}
+    name: defined
+    version: 1.0.1
+    dev: true
+
   registry.npmmirror.com/delegates/1.0.0:
     resolution: {integrity: sha512-bd2L678uiWATM6m5Z1VzNCErI3jiGzt6HGY8OVICs40JQq/HALfbyNJmp0UDakEY4pMMaN0Ly5om/B1VI/+xfQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/delegates/-/delegates-1.0.0.tgz}
     name: delegates
@@ -3900,10 +3970,28 @@ packages:
     version: 2.1.0
     dev: true
 
+  registry.npmmirror.com/detective/5.2.1:
+    resolution: {integrity: sha512-v9XE1zRnz1wRtgurGu0Bs8uHKFSTdteYZNbIPFVhUZ39L/S79ppMpdmVOZAnoz1jfEFodc48n6MX483Xo3t1yw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/detective/-/detective-5.2.1.tgz}
+    name: detective
+    version: 5.2.1
+    engines: {node: '>=0.8.0'}
+    hasBin: true
+    dependencies:
+      acorn-node: registry.npmmirror.com/acorn-node/1.8.2
+      defined: registry.npmmirror.com/defined/1.0.1
+      minimist: registry.npmmirror.com/minimist/1.2.7
+    dev: true
+
   registry.npmmirror.com/di/0.0.1:
     resolution: {integrity: sha512-uJaamHkagcZtHPqCIHZxnFrXlunQXgBOsZSUOWwFw31QJCAbyTBoHMW75YOTur5ZNx8pIeAKgf6GWIgaqqiLhA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/di/-/di-0.0.1.tgz}
     name: di
     version: 0.0.1
+    dev: true
+
+  registry.npmmirror.com/didyoumean/1.2.2:
+    resolution: {integrity: sha512-gxtyfqMg7GKyhQmb056K7M3xszy/myH8w+B4RT+QXBQsvAOdc3XymqDDPHx1BgPgsdAA5SIifona89YtRATDzw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/didyoumean/-/didyoumean-1.2.2.tgz}
+    name: didyoumean
+    version: 1.2.2
     dev: true
 
   registry.npmmirror.com/dir-glob/3.0.1:
@@ -3913,6 +4001,12 @@ packages:
     engines: {node: '>=8'}
     dependencies:
       path-type: registry.npmmirror.com/path-type/4.0.0
+    dev: true
+
+  registry.npmmirror.com/dlv/1.1.3:
+    resolution: {integrity: sha512-+HlytyjlPKnIG8XuRG8WvmBP8xs8P71y+SKKS6ZXWoEgLuePxtDoUEiH7WkdePWrQ5JBpE6aoVqfZfJUQkjXwA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/dlv/-/dlv-1.1.3.tgz}
+    name: dlv
+    version: 1.1.3
     dev: true
 
   registry.npmmirror.com/dns-equal/1.0.0:
@@ -5092,7 +5186,7 @@ packages:
       safer-buffer: registry.npmmirror.com/safer-buffer/2.1.2
     dev: true
 
-  registry.npmmirror.com/icss-utils/5.1.0_postcss@8.4.16:
+  registry.npmmirror.com/icss-utils/5.1.0_postcss@8.4.19:
     resolution: {integrity: sha512-soFhflCVWLfRNOPU3iv5Z9VUdT44xFRbzjLsEzSr5AQmgqPMTHdU3PMT1Cf1ssx8fLNJDA1juftYl+PUcv3MqA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/icss-utils/-/icss-utils-5.1.0.tgz}
     id: registry.npmmirror.com/icss-utils/5.1.0
     name: icss-utils
@@ -5101,7 +5195,7 @@ packages:
     peerDependencies:
       postcss: ^8.1.0
     dependencies:
-      postcss: registry.npmmirror.com/postcss/8.4.16
+      postcss: registry.npmmirror.com/postcss/8.4.19
     dev: true
 
   registry.npmmirror.com/ieee754/1.2.1:
@@ -5703,6 +5797,13 @@ packages:
     dependencies:
       webpack: registry.npmmirror.com/webpack/5.74.0_esbuild@0.15.5
       webpack-sources: registry.npmmirror.com/webpack-sources/3.2.3
+    dev: true
+
+  registry.npmmirror.com/lilconfig/2.0.6:
+    resolution: {integrity: sha512-9JROoBW7pobfsx+Sq2JsASvCo6Pfo6WWoUW79HuB1BCoBXD4PLWJPqDF6fNj67pqBYTbAHkE57M1kS/+L1neOg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/lilconfig/-/lilconfig-2.0.6.tgz}
+    name: lilconfig
+    version: 2.0.6
+    engines: {node: '>=10'}
     dev: true
 
   registry.npmmirror.com/lines-and-columns/1.2.4:
@@ -6390,6 +6491,13 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: true
 
+  registry.npmmirror.com/object-hash/3.0.0:
+    resolution: {integrity: sha512-RSn9F68PjH9HqtltsSnqYC1XXoWe9Bju5+213R98cNGttag9q9yAOTzdbsqvIa7aNm5WffBZFpWYr2aWrklWAw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/object-hash/-/object-hash-3.0.0.tgz}
+    name: object-hash
+    version: 3.0.0
+    engines: {node: '>= 6'}
+    dev: true
+
   registry.npmmirror.com/object-inspect/1.12.2:
     resolution: {integrity: sha512-z+cPxW0QGUp0mcqcsgQyLVRDoXFQbXOwBaqyF7VIgI4TWNQsDHrBpUQslRmIfAoYWdYzs6UlKJtB2XJpTaNSpQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/object-inspect/-/object-inspect-1.12.2.tgz}
     name: object-inspect
@@ -6923,6 +7031,21 @@ packages:
       postcss-value-parser: registry.npmmirror.com/postcss-value-parser/4.2.0
     dev: true
 
+  registry.npmmirror.com/postcss-import/14.1.0_postcss@8.4.19:
+    resolution: {integrity: sha512-flwI+Vgm4SElObFVPpTIT7SU7R3qk2L7PyduMcokiaVKuWv9d/U+Gm/QAd8NDLuykTWTkcrjOeD2Pp1rMeBTGw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/postcss-import/-/postcss-import-14.1.0.tgz}
+    id: registry.npmmirror.com/postcss-import/14.1.0
+    name: postcss-import
+    version: 14.1.0
+    engines: {node: '>=10.0.0'}
+    peerDependencies:
+      postcss: ^8.0.0
+    dependencies:
+      postcss: registry.npmmirror.com/postcss/8.4.19
+      postcss-value-parser: registry.npmmirror.com/postcss-value-parser/4.2.0
+      read-cache: registry.npmmirror.com/read-cache/1.0.0
+      resolve: registry.npmmirror.com/resolve/1.22.1
+    dev: true
+
   registry.npmmirror.com/postcss-import/15.0.0_postcss@8.4.16:
     resolution: {integrity: sha512-Y20shPQ07RitgBGv2zvkEAu9bqvrD77C9axhj/aA1BQj4czape2MdClCExvB27EwYEJdGgKZBpKanb0t1rK2Kg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/postcss-import/-/postcss-import-15.0.0.tgz}
     id: registry.npmmirror.com/postcss-import/15.0.0
@@ -6949,6 +7072,19 @@ packages:
       postcss: registry.npmmirror.com/postcss/8.4.16
     dev: true
 
+  registry.npmmirror.com/postcss-js/4.0.0_postcss@8.4.19:
+    resolution: {integrity: sha512-77QESFBwgX4irogGVPgQ5s07vLvFqWr228qZY+w6lW599cRlK/HmnlivnnVUxkjHnCu4J16PDMHcH+e+2HbvTQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/postcss-js/-/postcss-js-4.0.0.tgz}
+    id: registry.npmmirror.com/postcss-js/4.0.0
+    name: postcss-js
+    version: 4.0.0
+    engines: {node: ^12 || ^14 || >= 16}
+    peerDependencies:
+      postcss: ^8.3.3
+    dependencies:
+      camelcase-css: registry.npmmirror.com/camelcase-css/2.0.1
+      postcss: registry.npmmirror.com/postcss/8.4.19
+    dev: true
+
   registry.npmmirror.com/postcss-lab-function/4.2.1_postcss@8.4.16:
     resolution: {integrity: sha512-xuXll4isR03CrQsmxyz92LJB2xX9n+pZJ5jE9JgcnmsCammLyKdlzrBin+25dy6wIjfhJpKBAN80gsTlCgRk2w==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/postcss-lab-function/-/postcss-lab-function-4.2.1.tgz}
     id: registry.npmmirror.com/postcss-lab-function/4.2.1
@@ -6961,6 +7097,26 @@ packages:
       '@csstools/postcss-progressive-custom-properties': registry.npmmirror.com/@csstools/postcss-progressive-custom-properties/1.3.0_postcss@8.4.16
       postcss: registry.npmmirror.com/postcss/8.4.16
       postcss-value-parser: registry.npmmirror.com/postcss-value-parser/4.2.0
+    dev: true
+
+  registry.npmmirror.com/postcss-load-config/3.1.4_postcss@8.4.19:
+    resolution: {integrity: sha512-6DiM4E7v4coTE4uzA8U//WhtPwyhiim3eyjEMFCnUpzbrkK9wJHgKDT2mR+HbtSrd/NubVaYTOpSpjUl8NQeRg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/postcss-load-config/-/postcss-load-config-3.1.4.tgz}
+    id: registry.npmmirror.com/postcss-load-config/3.1.4
+    name: postcss-load-config
+    version: 3.1.4
+    engines: {node: '>= 10'}
+    peerDependencies:
+      postcss: '>=8.0.9'
+      ts-node: '>=9.0.0'
+    peerDependenciesMeta:
+      postcss:
+        optional: true
+      ts-node:
+        optional: true
+    dependencies:
+      lilconfig: registry.npmmirror.com/lilconfig/2.0.6
+      postcss: registry.npmmirror.com/postcss/8.4.19
+      yaml: registry.npmmirror.com/yaml/1.10.2
     dev: true
 
   registry.npmmirror.com/postcss-loader/7.0.1_qjv4cptcpse3y5hrjkrbb7drda:
@@ -7004,7 +7160,7 @@ packages:
       postcss: registry.npmmirror.com/postcss/8.4.16
     dev: true
 
-  registry.npmmirror.com/postcss-modules-extract-imports/3.0.0_postcss@8.4.16:
+  registry.npmmirror.com/postcss-modules-extract-imports/3.0.0_postcss@8.4.19:
     resolution: {integrity: sha512-bdHleFnP3kZ4NYDhuGlVK+CMrQ/pqUm8bx/oGL93K6gVwiclvX5x0n76fYMKuIGKzlABOy13zsvqjb0f92TEXw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/postcss-modules-extract-imports/-/postcss-modules-extract-imports-3.0.0.tgz}
     id: registry.npmmirror.com/postcss-modules-extract-imports/3.0.0
     name: postcss-modules-extract-imports
@@ -7013,10 +7169,10 @@ packages:
     peerDependencies:
       postcss: ^8.1.0
     dependencies:
-      postcss: registry.npmmirror.com/postcss/8.4.16
+      postcss: registry.npmmirror.com/postcss/8.4.19
     dev: true
 
-  registry.npmmirror.com/postcss-modules-local-by-default/4.0.0_postcss@8.4.16:
+  registry.npmmirror.com/postcss-modules-local-by-default/4.0.0_postcss@8.4.19:
     resolution: {integrity: sha512-sT7ihtmGSF9yhm6ggikHdV0hlziDTX7oFoXtuVWeDd3hHObNkcHRo9V3yg7vCAY7cONyxJC/XXCmmiHHcvX7bQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/postcss-modules-local-by-default/-/postcss-modules-local-by-default-4.0.0.tgz}
     id: registry.npmmirror.com/postcss-modules-local-by-default/4.0.0
     name: postcss-modules-local-by-default
@@ -7025,13 +7181,13 @@ packages:
     peerDependencies:
       postcss: ^8.1.0
     dependencies:
-      icss-utils: registry.npmmirror.com/icss-utils/5.1.0_postcss@8.4.16
-      postcss: registry.npmmirror.com/postcss/8.4.16
+      icss-utils: registry.npmmirror.com/icss-utils/5.1.0_postcss@8.4.19
+      postcss: registry.npmmirror.com/postcss/8.4.19
       postcss-selector-parser: registry.npmmirror.com/postcss-selector-parser/6.0.10
       postcss-value-parser: registry.npmmirror.com/postcss-value-parser/4.2.0
     dev: true
 
-  registry.npmmirror.com/postcss-modules-scope/3.0.0_postcss@8.4.16:
+  registry.npmmirror.com/postcss-modules-scope/3.0.0_postcss@8.4.19:
     resolution: {integrity: sha512-hncihwFA2yPath8oZ15PZqvWGkWf+XUfQgUGamS4LqoP1anQLOsOJw0vr7J7IwLpoY9fatA2qiGUGmuZL0Iqlg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/postcss-modules-scope/-/postcss-modules-scope-3.0.0.tgz}
     id: registry.npmmirror.com/postcss-modules-scope/3.0.0
     name: postcss-modules-scope
@@ -7040,11 +7196,11 @@ packages:
     peerDependencies:
       postcss: ^8.1.0
     dependencies:
-      postcss: registry.npmmirror.com/postcss/8.4.16
+      postcss: registry.npmmirror.com/postcss/8.4.19
       postcss-selector-parser: registry.npmmirror.com/postcss-selector-parser/6.0.10
     dev: true
 
-  registry.npmmirror.com/postcss-modules-values/4.0.0_postcss@8.4.16:
+  registry.npmmirror.com/postcss-modules-values/4.0.0_postcss@8.4.19:
     resolution: {integrity: sha512-RDxHkAiEGI78gS2ofyvCsu7iycRv7oqw5xMWn9iMoR0N/7mf9D50ecQqUo5BZ9Zh2vH4bCUR/ktCqbB9m8vJjQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/postcss-modules-values/-/postcss-modules-values-4.0.0.tgz}
     id: registry.npmmirror.com/postcss-modules-values/4.0.0
     name: postcss-modules-values
@@ -7053,8 +7209,21 @@ packages:
     peerDependencies:
       postcss: ^8.1.0
     dependencies:
-      icss-utils: registry.npmmirror.com/icss-utils/5.1.0_postcss@8.4.16
-      postcss: registry.npmmirror.com/postcss/8.4.16
+      icss-utils: registry.npmmirror.com/icss-utils/5.1.0_postcss@8.4.19
+      postcss: registry.npmmirror.com/postcss/8.4.19
+    dev: true
+
+  registry.npmmirror.com/postcss-nested/6.0.0_postcss@8.4.19:
+    resolution: {integrity: sha512-0DkamqrPcmkBDsLn+vQDIrtkSbNkv5AD/M322ySo9kqFkCIYklym2xEmWkwo+Y3/qZo34tzEPNUw4y7yMCdv5w==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/postcss-nested/-/postcss-nested-6.0.0.tgz}
+    id: registry.npmmirror.com/postcss-nested/6.0.0
+    name: postcss-nested
+    version: 6.0.0
+    engines: {node: '>=12.0'}
+    peerDependencies:
+      postcss: ^8.2.14
+    dependencies:
+      postcss: registry.npmmirror.com/postcss/8.4.19
+      postcss-selector-parser: registry.npmmirror.com/postcss-selector-parser/6.0.10
     dev: true
 
   registry.npmmirror.com/postcss-nesting/10.2.0_postcss@8.4.16:
@@ -7240,6 +7409,17 @@ packages:
       source-map-js: registry.npmmirror.com/source-map-js/1.0.2
     dev: true
 
+  registry.npmmirror.com/postcss/8.4.19:
+    resolution: {integrity: sha512-h+pbPsyhlYj6N2ozBmHhHrs9DzGmbaarbLvWipMRO7RLS+v4onj26MPFXA5OBYFxyqYhUJK456SwDcY9H2/zsA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/postcss/-/postcss-8.4.19.tgz}
+    name: postcss
+    version: 8.4.19
+    engines: {node: ^10 || ^12 || >=14}
+    dependencies:
+      nanoid: registry.npmmirror.com/nanoid/3.3.4
+      picocolors: registry.npmmirror.com/picocolors/1.0.0
+      source-map-js: registry.npmmirror.com/source-map-js/1.0.2
+    dev: true
+
   registry.npmmirror.com/pretty-bytes/5.6.0:
     resolution: {integrity: sha512-FFw039TmrBqFK8ma/7OL3sDz/VytdtJr044/QUJtH0wK9lb9jLq9tJyIxUwtQJHwar2BqtiA4iCWSwo9JLkzFg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/pretty-bytes/-/pretty-bytes-5.6.0.tgz}
     name: pretty-bytes
@@ -7325,6 +7505,13 @@ packages:
     resolution: {integrity: sha512-NuaNSa6flKT5JaSYQzJok04JzTL1CA6aGhv5rfLW3PgqA+M2ChpZQnAC8h8i4ZFkBS8X5RqkDBHA7r4hej3K9A==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/queue-microtask/-/queue-microtask-1.2.3.tgz}
     name: queue-microtask
     version: 1.2.3
+    dev: true
+
+  registry.npmmirror.com/quick-lru/5.1.1:
+    resolution: {integrity: sha512-WuyALRjWPDGtt/wzJiadO5AXY+8hZ80hVpe6MyivgraREW751X3SbhRvG3eLKOYN+8VEvqLcf3wdnt44Z4S4SA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/quick-lru/-/quick-lru-5.1.1.tgz}
+    name: quick-lru
+    version: 5.1.1
+    engines: {node: '>=10'}
     dev: true
 
   registry.npmmirror.com/randombytes/2.1.0:
@@ -7531,7 +7718,7 @@ packages:
       adjust-sourcemap-loader: registry.npmmirror.com/adjust-sourcemap-loader/4.0.0
       convert-source-map: registry.npmmirror.com/convert-source-map/1.9.0
       loader-utils: registry.npmmirror.com/loader-utils/2.0.4
-      postcss: registry.npmmirror.com/postcss/8.4.16
+      postcss: registry.npmmirror.com/postcss/8.4.19
       source-map: registry.npmmirror.com/source-map/0.6.1
     dev: true
 
@@ -8244,6 +8431,43 @@ packages:
     engines: {node: '>=0.10'}
     dev: true
 
+  registry.npmmirror.com/tailwindcss/3.2.4_postcss@8.4.19:
+    resolution: {integrity: sha512-AhwtHCKMtR71JgeYDaswmZXhPcW9iuI9Sp2LvZPo9upDZ7231ZJ7eA9RaURbhpXGVlrjX4cFNlB4ieTetEb7hQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/tailwindcss/-/tailwindcss-3.2.4.tgz}
+    id: registry.npmmirror.com/tailwindcss/3.2.4
+    name: tailwindcss
+    version: 3.2.4
+    engines: {node: '>=12.13.0'}
+    hasBin: true
+    peerDependencies:
+      postcss: ^8.0.9
+    dependencies:
+      arg: registry.npmmirror.com/arg/5.0.2
+      chokidar: registry.npmmirror.com/chokidar/3.5.3
+      color-name: registry.npmmirror.com/color-name/1.1.4
+      detective: registry.npmmirror.com/detective/5.2.1
+      didyoumean: registry.npmmirror.com/didyoumean/1.2.2
+      dlv: registry.npmmirror.com/dlv/1.1.3
+      fast-glob: registry.npmmirror.com/fast-glob/3.2.12
+      glob-parent: registry.npmmirror.com/glob-parent/6.0.2
+      is-glob: registry.npmmirror.com/is-glob/4.0.3
+      lilconfig: registry.npmmirror.com/lilconfig/2.0.6
+      micromatch: registry.npmmirror.com/micromatch/4.0.5
+      normalize-path: registry.npmmirror.com/normalize-path/3.0.0
+      object-hash: registry.npmmirror.com/object-hash/3.0.0
+      picocolors: registry.npmmirror.com/picocolors/1.0.0
+      postcss: registry.npmmirror.com/postcss/8.4.19
+      postcss-import: registry.npmmirror.com/postcss-import/14.1.0_postcss@8.4.19
+      postcss-js: registry.npmmirror.com/postcss-js/4.0.0_postcss@8.4.19
+      postcss-load-config: registry.npmmirror.com/postcss-load-config/3.1.4_postcss@8.4.19
+      postcss-nested: registry.npmmirror.com/postcss-nested/6.0.0_postcss@8.4.19
+      postcss-selector-parser: registry.npmmirror.com/postcss-selector-parser/6.0.10
+      postcss-value-parser: registry.npmmirror.com/postcss-value-parser/4.2.0
+      quick-lru: registry.npmmirror.com/quick-lru/5.1.1
+      resolve: registry.npmmirror.com/resolve/1.22.1
+    transitivePeerDependencies:
+      - ts-node
+    dev: true
+
   registry.npmmirror.com/tapable/2.2.1:
     resolution: {integrity: sha512-GNzQvQTOIP6RyTfE2Qxb8ZVlNmw0n88vp1szwWRimP02mnTsx3Wtn5qRdqY9w2XduFNUgvOwhNnQsjwCp+kqaQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/tapable/-/tapable-2.2.1.tgz}
     name: tapable
@@ -8857,6 +9081,13 @@ packages:
         optional: true
       utf-8-validate:
         optional: true
+    dev: true
+
+  registry.npmmirror.com/xtend/4.0.2:
+    resolution: {integrity: sha512-LKYU1iAXJXUgAXn9URjiu+MWhyUXHsvfp7mcuYm9dSUKK0/CjtrUwFAxD82/mCWbtLsGjFIad0wIsod4zrTAEQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/xtend/-/xtend-4.0.2.tgz}
+    name: xtend
+    version: 4.0.2
+    engines: {node: '>=0.4'}
     dev: true
 
   registry.npmmirror.com/y18n/5.0.8:
