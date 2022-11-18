@@ -13,6 +13,7 @@ specifiers:
   '@angular/platform-browser-dynamic': ^14.2.0
   '@angular/router': ^14.2.0
   '@types/jasmine': ~4.0.0
+  angular-svg-icon: ^14.0.0
   autoprefixer: ^10.4.13
   jasmine-core: ~4.3.0
   karma: ~6.4.0
@@ -36,6 +37,7 @@ dependencies:
   '@angular/platform-browser': registry.npmmirror.com/@angular/platform-browser/14.2.10_2cx72nz3jmtgwwodpmk7x4j5na
   '@angular/platform-browser-dynamic': registry.npmmirror.com/@angular/platform-browser-dynamic/14.2.10_6pwxszwfx7t6eu7geozn33s7pu
   '@angular/router': registry.npmmirror.com/@angular/router/14.2.10_ytyipurqyq25c66wnn5yzzxlwa
+  angular-svg-icon: registry.npmmirror.com/angular-svg-icon/14.0.0_i62cmb4am5tktzd4q24jy34kva
   rxjs: registry.npmmirror.com/rxjs/7.5.7
   tslib: registry.npmmirror.com/tslib/2.4.1
   zone.js: registry.npmmirror.com/zone.js/0.11.8
@@ -2910,6 +2912,22 @@ packages:
       require-from-string: registry.npmmirror.com/require-from-string/2.0.2
       uri-js: registry.npmmirror.com/uri-js/4.4.1
     dev: true
+
+  registry.npmmirror.com/angular-svg-icon/14.0.0_i62cmb4am5tktzd4q24jy34kva:
+    resolution: {integrity: sha512-WIEl7vp2wtacRauf/Rmfcyy5PTg5P4FHhdmm6oy3hWOY9aK/QEqEW5zzLKDXsh1djRlChLWnnC3ptaPC0wyHDw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/angular-svg-icon/-/angular-svg-icon-14.0.0.tgz}
+    id: registry.npmmirror.com/angular-svg-icon/14.0.0
+    name: angular-svg-icon
+    version: 14.0.0
+    peerDependencies:
+      '@angular/common': '>=14.0.0'
+      '@angular/core': '>=14.0.0'
+      rxjs: '>=6.6.3'
+    dependencies:
+      '@angular/common': registry.npmmirror.com/@angular/common/14.2.10_fyli66qyvqiwbjy3d5zeqqz3au
+      '@angular/core': registry.npmmirror.com/@angular/core/14.2.10_rxjs@7.5.7+zone.js@0.11.8
+      rxjs: registry.npmmirror.com/rxjs/7.5.7
+      tslib: registry.npmmirror.com/tslib/2.4.1
+    dev: false
 
   registry.npmmirror.com/ansi-colors/4.1.3:
     resolution: {integrity: sha512-/6w/C21Pm1A7aZitlI5Ni/2J6FFQN8i1Cvz3kHABAAbw93v/NlvKdVOqz7CCWz/3iv/JplRSEEZ83XION15ovw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/ansi-colors/-/ansi-colors-4.1.3.tgz}
