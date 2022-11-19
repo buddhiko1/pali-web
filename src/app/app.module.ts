@@ -14,11 +14,11 @@ import { NavbarModule } from './navbar/navbar.module';
   declarations: [AppComponent],
   imports: [
     BrowserModule,
-    HttpClientModule,
     AppRoutingModule,
+    HttpClientModule,
+    AngularSvgIconModule.forRoot(),
     CommonModule,
     SharedModule,
-    AngularSvgIconModule.forRoot(),
     NavbarModule,
   ],
 

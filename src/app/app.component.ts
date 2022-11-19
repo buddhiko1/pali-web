@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NavbarService } from './navbar/navbar.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'pali-web';
+
+  constructor(private navbarService: NavbarService) { }
+
+  get isDark(): Boolean {
+    return this.navbarService.isDark;
+  }
 }

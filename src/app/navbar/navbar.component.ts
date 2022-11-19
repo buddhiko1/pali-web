@@ -1,17 +1,27 @@
 import { Component, OnInit } from '@angular/core';
+import { NavbarService } from './navbar.service';
 
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css'],
 })
-export class NavbarComponent implements OnInit {
+export class NavbarComponent {
   isOpen: Boolean;
 
-  constructor() {
+  constructor(private navbarService: NavbarService) {
     this.isOpen = false;
   }
 
-  ngOnInit(): void {
+  toggleOpen(): void {
+    this.isOpen = !this.isOpen;
+  }
+
+  get isDark(): Boolean {
+    return this.navbarService.isDark;
+  }
+
+  toggleDark(): void {
+    this.navbarService.toggleDark();
   }
 }

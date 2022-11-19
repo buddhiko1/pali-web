@@ -4,12 +4,12 @@
       <div class="flex items-center justify-between">
         <div>
           <a class="text-2xl font-bold text-gray-800 transition-colors duration-300 transform dark:text-white lg:text-3xl hover:text-gray-700 dark:hover:text-gray-300"
-            href="#">Brand</a>
+            href="#">Pali</a>
         </div>
 
         <!-- Mobile menu button -->
         <div class="flex lg:hidden">
-          <button (click)="isOpen = !isOpen" type="button"
+          <button (click)="toggleOpen()" type="button"
             class="text-gray-500 dark:text-gray-200 hover:text-gray-600 dark:hover:text-gray-400 focus:outline-none focus:text-gray-600 dark:focus:text-gray-400"
             aria-label="toggle menu">
             <svg *ngIf="!isOpen" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24"
@@ -32,21 +32,27 @@
         <div
           class="flex flex-col text-gray-600 capitalize dark:text-gray-300 lg:flex lg:px-16 lg:-mx-4 lg:flex-row lg:items-center">
           <a href="#"
-            class="mt-2 transition-colors duration-300 transform lg:mt-0 lg:mx-4 hover:text-gray-900 dark:hover:text-gray-200">features</a>
+            class="mt-2 transition-colors duration-300 transform lg:mt-0 lg:mx-4 hover:text-gray-900 dark:hover:text-gray-200">reading</a>
           <a href="#"
-            class="mt-2 transition-colors duration-300 transform lg:mt-0 lg:mx-4 hover:text-gray-900 dark:hover:text-gray-200">downloads</a>
+            class="mt-2 transition-colors duration-300 transform lg:mt-0 lg:mx-4 hover:text-gray-900 dark:hover:text-gray-200">dictionary</a>
           <a href="#"
-            class="mt-2 transition-colors duration-300 transform lg:mt-0 lg:mx-4 hover:text-gray-900 dark:hover:text-gray-200">docs</a>
+            class="mt-2 transition-colors duration-300 transform lg:mt-0 lg:mx-4 hover:text-gray-900 dark:hover:text-gray-200">grammar</a>
           <a href="#"
-            class="mt-2 transition-colors duration-300 transform lg:mt-0 lg:mx-4 hover:text-gray-900 dark:hover:text-gray-200">support</a>
+            class="mt-2 transition-colors duration-300 transform lg:mt-0 lg:mx-4 hover:text-gray-900 dark:hover:text-gray-200">tipitaka</a>
           <a href="#"
-            class="mt-2 transition-colors duration-300 transform lg:mt-0 lg:mx-4 hover:text-gray-900 dark:hover:text-gray-200">bloog</a>
+            class="mt-2 transition-colors duration-300 transform lg:mt-0 lg:mx-4 hover:text-gray-900 dark:hover:text-gray-200">blog</a>
         </div>
-        <div class="flex justify-center mt-6 lg:flex lg:mt-0 lg:-mx-2">
+        <div class="flex justify-items-start mt-6 lg:flex lg:mt-0 lg:-mx-2">
+          <button (click)="toggleDark()" type="button"
+            class="text-gray-500 dark:text-gray-200 hover:text-gray-600 dark:hover:text-gray-400 focus:outline-none focus:text-gray-600 dark:focus:text-gray-400"
+            aria-label="theme">
+            <svg-icon *ngIf="isDark" src="assets/icons/moon.svg" [svgClass]="['w-6', 'h-6', 'fill-current']"></svg-icon>
+            <svg-icon *ngIf="!isDark" src="assets/icons/sun.svg" [svgClass]="['w-6', 'h-6', 'fill-current']"></svg-icon>
+          </button>
           <a href="#"
-            class="mx-2 text-gray-600 transition-colors duration-300 transform dark:text-gray-300 hover:text-gray-500 dark:hover:text-gray-300"
-            aria-label="reddit">
-            <svg-icon src="assets/icons/heart_fill.svg" [svgClass]="['w-5', 'h-5', 'fill-pink-500']"></svg-icon>
+            class="mx-2 ml-7 text-gray-600 transition-colors duration-300 transform dark:text-gray-300 hover:text-gray-500 dark:hover:text-gray-300"
+            aria-label="support">
+            <svg-icon src="assets/icons/heart.svg" [svgClass]="['w-6', 'h-6', 'fill-current']"></svg-icon>
           </a>
         </div>
       </div>
