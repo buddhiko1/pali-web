@@ -7,8 +7,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { AngularSvgIconModule } from 'angular-svg-icon';
 
 import { AppComponent } from './app.component';
-import { SharedModule } from './shared/shared.module';
 import { NavbarModule } from './navbar/navbar.module';
+import { HomeModule } from './home/home.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -18,11 +18,11 @@ import { NavbarModule } from './navbar/navbar.module';
     HttpClientModule,
     AngularSvgIconModule.forRoot(),
     CommonModule,
-    SharedModule,
     NavbarModule,
+    HomeModule
   ],
 
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
