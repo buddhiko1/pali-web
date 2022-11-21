@@ -7,7 +7,7 @@ import { NavbarService } from './navbar.service';
   styleUrls: ['./navbar.component.css'],
 })
 export class NavbarComponent {
-  isOpen: Boolean;
+  isOpen: boolean;
 
   constructor(private navbarService: NavbarService) {
     this.isOpen = false;
@@ -17,7 +17,7 @@ export class NavbarComponent {
     this.isOpen = !this.isOpen;
   }
 
-  get isDark(): Boolean {
+  get isDark(): boolean {
     return this.navbarService.isDark;
   }
 

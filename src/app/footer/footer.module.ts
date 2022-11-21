@@ -1,12 +1,12 @@
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { NavbarComponent } from './navbar.component';
 import { AngularSvgIconModule } from 'angular-svg-icon';
+import { FooterComponent } from './footer.component';
 
 @NgModule({
-  declarations: [NavbarComponent],
-  exports: [NavbarComponent],
+  declarations: [FooterComponent],
+  exports: [FooterComponent],
   imports: [CommonModule, AngularSvgIconModule],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
-export class NavbarModule { }
+export class FooterModule { }

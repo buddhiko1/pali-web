@@ -11,7 +11,7 @@ export class AppComponent {
 
   constructor(private navbarService: NavbarService) { }
 
-  get isDark(): Boolean {
+  get isDark(): boolean {
     return this.navbarService.isDark;
   }
 }

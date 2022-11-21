@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class NavbarService {
-  isDark: Boolean;
+  isDark: boolean;
 
   constructor() {
     this.isDark = false;

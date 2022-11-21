@@ -1,4 +1,4 @@
-<nav class="bg-white shadow dark:bg-gray-800">
+<nav class="shadow dark:bg-gray-800">
   <div class="container px-6 lg:px-60 py-4 mx-auto">
     <div class="lg:flex lg:items-center">
       <div class="flex items-center justify-between">
@@ -30,30 +30,30 @@
         "
         class="absolute inset-x-0 z-20 flex-1 w-full px-6 py-4 transition-all duration-300 ease-in-out bg-white dark:bg-gray-800 lg:mt-0 lg:p-0 lg:top-0 lg:relative lg:bg-transparent lg:w-auto lg:opacity-100 lg:translate-x-0 lg:flex lg:items-center lg:justify-between">
         <div
-          class="flex flex-col text-gray-600 capitalize dark:text-gray-300 lg:flex lg:px-16 lg:-mx-4 lg:flex-row lg:items-center">
+          class="flex flex-col lg:flex lg:px-16 lg:-mx-4 lg:flex-row lg:items-center capitalize text-gray-600 dark:text-gray-300">
           <a href="#"
-            class="mt-2 transition-colors duration-300 transform lg:mt-0 lg:mx-4 hover:text-gray-900 dark:hover:text-gray-200">reading</a>
+            class="mt-2 transition-colors duration-300 transform lg:mt-0 lg:mx-4 hover:text-blue-400 dark:hover:text-blue-400">reading</a>
           <a href="#"
-            class="mt-2 transition-colors duration-300 transform lg:mt-0 lg:mx-4 hover:text-gray-900 dark:hover:text-gray-200">dictionary</a>
+            class="mt-2 transition-colors duration-300 transform lg:mt-0 lg:mx-4 hover:text-blue-400 dark:hover:text-blue-400">dictionary</a>
           <a href="#"
-            class="mt-2 transition-colors duration-300 transform lg:mt-0 lg:mx-4 hover:text-gray-900 dark:hover:text-gray-200">grammar</a>
+            class="mt-2 transition-colors duration-300 transform lg:mt-0 lg:mx-4 hover:text-blue-400 dark:hover:text-blue-400">grammar</a>
           <a href="#"
-            class="mt-2 transition-colors duration-300 transform lg:mt-0 lg:mx-4 hover:text-gray-900 dark:hover:text-gray-200">tipitaka</a>
+            class="mt-2 transition-colors duration-300 transform lg:mt-0 lg:mx-4 hover:text-blue-400 dark:hover:text-blue-400">tipitaka</a>
           <a href="#"
-            class="mt-2 transition-colors duration-300 transform lg:mt-0 lg:mx-4 hover:text-gray-900 dark:hover:text-gray-200">blog</a>
+            class="mt-2 transition-colors duration-300 transform lg:mt-0 lg:mx-4 hover:text-blue-400 dark:hover:text-blue-400 focus:text-blue-400 dark:focus:text-blue-400">blog</a>
         </div>
 
         <div class="flex h-6 border-b lg:hidden  dark:border-gray-700"></div>
 
         <div class="flex justify-items-start mt-6 lg:flex lg:mt-0 lg:-mx-2">
           <button (click)="toggleDark()" type="button"
-            class="text-gray-500 dark:text-gray-200 hover:text-gray-600 dark:hover:text-gray-400 focus:outline-none focus:text-gray-600 dark:focus:text-gray-400"
+            class="focus: outline-none transition-all duration-300 text-gray-600 hover:text-blue-400 dark:text-gray-200 dark:hover:text-blue-400"
             aria-label="theme">
             <svg-icon *ngIf="isDark" src="assets/icons/moon.svg" [svgClass]="['w-6', 'h-6', 'fill-current']"></svg-icon>
             <svg-icon *ngIf="!isDark" src="assets/icons/sun.svg" [svgClass]="['w-6', 'h-6', 'fill-current']"></svg-icon>
           </button>
           <a href="#"
-            class="mx-2 ml-7 text-gray-600 transition-colors duration-300 transform dark:text-gray-300 hover:text-gray-500 dark:hover:text-gray-300"
+            class="mx-2 ml-7 focus: outline-none transition-all duration-300 text-gray-600 hover:text-blue-400 dark:text-gray-200 dark:hover:text-blue-400"
             aria-label="support">
             <svg-icon src="assets/icons/heart.svg" [svgClass]="['w-6', 'h-6', 'fill-current']"></svg-icon>
           </a>

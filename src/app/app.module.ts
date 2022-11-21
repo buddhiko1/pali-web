@@ -9,6 +9,7 @@ import { AngularSvgIconModule } from 'angular-svg-icon';
 import { AppComponent } from './app.component';
 import { NavbarModule } from './navbar/navbar.module';
 import { HomeModule } from './home/home.module';
+import { FooterModule } from './footer/footer.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -19,10 +20,11 @@ import { HomeModule } from './home/home.module';
     AngularSvgIconModule.forRoot(),
     CommonModule,
     NavbarModule,
-    HomeModule
+    HomeModule,
+    FooterModule
   ],
 
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }
