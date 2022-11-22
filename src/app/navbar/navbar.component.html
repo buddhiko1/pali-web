@@ -16,8 +16,7 @@
             (click)="toggleOpen()"
             type="button"
             class="text-gray-500 dark:text-gray-200 hover:text-gray-600 dark:hover:text-gray-400 focus:outline-none focus:text-gray-600 dark:focus:text-gray-400"
-            aria-label="toggle menu"
-          >
+            aria-label="toggle menu">
             <svg
               *ngIf="!isOpen"
               xmlns="http://www.w3.org/2000/svg"
@@ -25,13 +24,11 @@
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
-              stroke-width="2"
-            >
+              stroke-width="2">
               <path
                 stroke-linecap="round"
                 stroke-linejoin="round"
-                d="M4 8h16M4 16h16"
-              />
+                d="M4 8h16M4 16h16" />
             </svg>
 
             <svg
@@ -41,13 +38,11 @@
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
-              stroke-width="2"
-            >
+              stroke-width="2">
               <path
                 stroke-linecap="round"
                 stroke-linejoin="round"
-                d="M6 18L18 6M6 6l12 12"
-              />
+                d="M6 18L18 6M6 6l12 12" />
             </svg>
           </button>
         </div>
@@ -57,11 +52,9 @@
         [class]="
           isOpen ? 'translate-x-0 opacity-100' : 'opacity-0 -translate-x-full'
         "
-        class="absolute inset-x-0 z-20 flex-1 w-full px-6 py-4 transition-all duration-300 ease-in-out bg-white dark:bg-gray-800 lg:mt-0 lg:p-0 lg:top-0 lg:relative lg:bg-transparent lg:w-auto lg:opacity-100 lg:translate-x-0 lg:flex lg:items-center lg:justify-between"
-      >
+        class="absolute inset-x-0 z-20 flex-1 w-full px-6 py-4 transition-all duration-300 ease-in-out bg-white dark:bg-gray-800 lg:mt-0 lg:p-0 lg:top-0 lg:relative lg:bg-transparent lg:w-auto lg:opacity-100 lg:translate-x-0 lg:flex lg:items-center lg:justify-between">
         <div
-          class="flex flex-col lg:flex lg:px-16 lg:-mx-4 lg:flex-row lg:items-center capitalize text-gray-600 dark:text-gray-300"
-        >
+          class="flex flex-col lg:flex lg:px-16 lg:-mx-4 lg:flex-row lg:items-center capitalize text-gray-600 dark:text-gray-300">
           <a
             href="#"
             class="mt-2 transition-colors duration-300 transform lg:mt-0 lg:mx-4 hover:text-blue-400 dark:hover:text-blue-400"
@@ -96,28 +89,23 @@
             (click)="toggleDark()"
             type="button"
             class="focus: outline-none transition-all duration-300 text-gray-600 hover:text-blue-400 dark:text-gray-200 dark:hover:text-blue-400"
-            aria-label="theme"
-          >
+            aria-label="theme">
             <svg-icon
               *ngIf="isDark"
               src="assets/icons/moon.svg"
-              [svgClass]="['w-6', 'h-6', 'fill-current']"
-            ></svg-icon>
+              [svgClass]="['w-6', 'h-6', 'fill-current']"></svg-icon>
             <svg-icon
               *ngIf="!isDark"
               src="assets/icons/sun.svg"
-              [svgClass]="['w-6', 'h-6', 'fill-current']"
-            ></svg-icon>
+              [svgClass]="['w-6', 'h-6', 'fill-current']"></svg-icon>
           </button>
           <a
             href="#"
             class="mx-2 ml-7 focus: outline-none transition-all duration-300 text-gray-600 hover:text-blue-400 dark:text-gray-200 dark:hover:text-blue-400"
-            aria-label="support"
-          >
+            aria-label="support">
             <svg-icon
               src="assets/icons/heart.svg"
-              [svgClass]="['w-6', 'h-6', 'fill-current']"
-            ></svg-icon>
+              [svgClass]="['w-6', 'h-6', 'fill-current']"></svg-icon>
           </a>
         </div>
       </div>
