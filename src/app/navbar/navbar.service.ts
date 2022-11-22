@@ -11,7 +11,7 @@ export class NavbarService {
   }
 
   toggleDark(): void {
-    console.log("toggle dark")
+    console.log('toggle dark');
     this.isDark = !this.isDark;
   }
 }

@@ -9,7 +9,7 @@ import { NavbarService } from './navbar/navbar.service';
 export class AppComponent {
   title = 'pali-web';
 
-  constructor(private navbarService: NavbarService) { }
+  constructor(private navbarService: NavbarService) {}
 
   get isDark(): boolean {
     return this.navbarService.isDark;

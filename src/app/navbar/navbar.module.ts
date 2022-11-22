@@ -9,4 +9,4 @@ import { AngularSvgIconModule } from 'angular-svg-icon';
   imports: [CommonModule, AngularSvgIconModule],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
-export class NavbarModule { }
+export class NavbarModule {}

@@ -9,4 +9,4 @@ import { FooterComponent } from './footer.component';
   imports: [CommonModule, AngularSvgIconModule],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
-export class FooterModule { }
+export class FooterModule {}

@@ -9,4 +9,4 @@ import { HomeComponent } from './home.component';
   imports: [CommonModule, AngularSvgIconModule],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
-export class HomeModule { }
+export class HomeModule {}

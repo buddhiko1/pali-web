@@ -21,10 +21,10 @@ import { FooterModule } from './footer/footer.module';
     CommonModule,
     NavbarModule,
     HomeModule,
-    FooterModule
+    FooterModule,
   ],
 
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
