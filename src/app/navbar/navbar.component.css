@@ -1,0 +1,96 @@
+.nav {
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: theme("spacing.smPadding") 1fr theme(
+      "spacing.smPadding"
+    );
+  grid-template-areas: "left-area nav-container right-area";
+}
+@media screen(lg) {
+  .nav {
+    grid-template-columns: theme("spacing.lgPadding") 1fr theme(
+        "spacing.lgPadding"
+      );
+  }
+}
+
+.nav-container {
+  grid-area: nav-container;
+  display: grid;
+  grid-template-rows: auto auto auto auto;
+  grid-template-columns: auto 1fr;
+  grid-template-areas:
+    "logo menu"
+    "index index"
+    "divider divider"
+    "theme donation";
+  place-content: center;
+  align-items: baseline;
+}
+@media screen(lg) {
+  .nav-container {
+    grid-template-rows: auto;
+    grid-template-columns: auto 1fr auto auto;
+    grid-template-areas: "logo index theme donation";
+  }
+}
+
+.logo {
+  grid-area: logo;
+  justify-self: start;
+}
+
+.menu-button {
+  grid-area: menu;
+  justify-self: end;
+}
+
+.sm-menu {
+  display: contents;
+}
+
+.sm-menu-hidden {
+  display: none;
+}
+@media screen(lg) {
+  .sm-menu-hidden {
+    display: contents;
+  }
+}
+
+.index {
+  padding-top: theme("spacing.2");
+  grid-area: index;
+}
+.index-item {
+  display: block;
+}
+@media screen(lg) {
+  .index {
+    padding-top: theme("spacing.0");
+    padding-left: theme("spacing.16");
+  }
+  .index-item {
+    display: inline;
+  }
+}
+
+.divider {
+  grid-area: divider;
+}
+
+.theme {
+  grid-area: theme;
+  justify-self: end;
+}
+
+.donation {
+  grid-area: donation;
+  justify-self: start;
+  align-self: center;
+}
+@media screen(lg) {
+  .donation {
+    justify-self: end;
+  }
+}
