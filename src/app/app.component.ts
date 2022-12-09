@@ -14,4 +14,7 @@ export class AppComponent {
   get isDark(): boolean {
     return this.navbarService.isDark;
   }
+  get openMenu(): boolean {
+    return this.navbarService.openMenu;
+  }
 }

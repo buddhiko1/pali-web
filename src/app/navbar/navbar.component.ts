@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { NavbarService } from './navbar.service';
+import { OverlayService } from '../overlay/overlay.service';
+import { PublicService } from '../core/public.service';
 
 @Component({
   selector: 'app-navbar',
@@ -7,21 +9,29 @@ import { NavbarService } from './navbar.service';
   styleUrls: ['./navbar.component.css'],
 })
 export class NavbarComponent {
-  isOpen: boolean;
-
-  constructor(private navbarService: NavbarService) {
-    this.isOpen = false;
-  }
-
-  toggleOpen(): void {
-    this.isOpen = !this.isOpen;
-  }
+  constructor(
+    private navbarService: NavbarService,
+    private overlayService: OverlayService,
+    private publicService: PublicService
+  ) {}
 
   get isDark(): boolean {
     return this.navbarService.isDark;
   }
 
   toggleDark(): void {
-    this.navbarService.toggleDark();
+    this.navbarService.isDark = !this.navbarService.isDark;
+  }
+
+  get openMenu(): boolean {
+    return this.navbarService.openMenu;
+  }
+
+  toggleMenu(): void {
+    if (!this.publicService.isLgDevice) {
+      // active overlay when open menu
+      this.navbarService.openMenu = !this.navbarService.openMenu;
+      this.overlayService.isActive = this.navbarService.openMenu ? true : false;
+    }
   }
 }

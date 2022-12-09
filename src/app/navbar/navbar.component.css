@@ -1,38 +1,22 @@
 .nav {
   display: grid;
-  grid-template-rows: auto;
-  grid-template-columns: theme("spacing.smPadding") 1fr theme(
+  grid-template-rows: auto auto;
+  grid-template-columns: theme("spacing.smPadding") auto auto theme(
       "spacing.smPadding"
     );
-  grid-template-areas: "left-area nav-container right-area";
-}
-@media screen(lg) {
-  .nav {
-    grid-template-columns: theme("spacing.lgPadding") 1fr theme(
-        "spacing.lgPadding"
-      );
-  }
+  grid-template-areas:
+    "left-area logo toggle right-area"
+    "menu menu menu menu";
 }
 
-.nav-container {
-  grid-area: nav-container;
-  display: grid;
-  grid-template-rows: auto auto auto auto;
-  grid-template-columns: auto 1fr;
-  grid-template-areas:
-    "logo menu"
-    "index index"
-    "divider divider"
-    "theme donation";
-  place-content: center;
-  align-items: baseline;
+.left-area {
+  grid-area: left-area;
+  justify-self: stretch;
 }
-@media screen(lg) {
-  .nav-container {
-    grid-template-rows: auto;
-    grid-template-columns: auto 1fr auto auto;
-    grid-template-areas: "logo index theme donation";
-  }
+
+.right-area {
+  grid-area: right-area;
+  justify-self: stretch;
 }
 
 .logo {
@@ -40,39 +24,33 @@
   justify-self: start;
 }
 
-.menu-button {
-  grid-area: menu;
+.toggle {
+  grid-area: toggle;
   justify-self: end;
 }
 
-.sm-menu {
-  display: contents;
+.menu {
+  grid-area: menu;
+  position: absolute;
+  display: grid;
+  grid-template-rows: auto auto auto;
+  grid-template-columns: theme("spacing.smPadding") auto auto theme(
+      "spacing.smPadding"
+    );
+  grid-template-areas:
+    "left-area index index right-area"
+    "left-area divider divider right-area"
+    "left-area theme donation right-area";
 }
 
-.sm-menu-hidden {
-  display: none;
-}
-@media screen(lg) {
-  .sm-menu-hidden {
-    display: contents;
-  }
+.menu-close {
+  opacity: 0;
+  transform: translateX(-100%);
 }
 
 .index {
   padding-top: theme("spacing.2");
   grid-area: index;
-}
-.index-item {
-  display: block;
-}
-@media screen(lg) {
-  .index {
-    padding-top: theme("spacing.0");
-    padding-left: theme("spacing.16");
-  }
-  .index-item {
-    display: inline;
-  }
 }
 
 .divider {
@@ -87,10 +65,37 @@
 .donation {
   grid-area: donation;
   justify-self: start;
-  align-self: center;
 }
+
 @media screen(lg) {
+  .nav {
+    grid-template-rows: auto;
+    grid-template-columns: theme("spacing.lgPadding") auto 1fr auto auto theme(
+        "spacing.lgPadding"
+      );
+    grid-template-areas: "left-area logo index theme donation right-area";
+    place-content: center;
+    align-items: baseline;
+  }
+
+  .menu {
+    display: contents;
+  }
+
+  .index {
+    padding-top: theme("spacing.0");
+    padding-left: theme("spacing.16");
+  }
+  .index-item {
+    display: inline;
+  }
+
+  .theme {
+    justify-self: start;
+  }
+
   .donation {
     justify-self: end;
+    align-self: center;
   }
 }

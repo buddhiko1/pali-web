@@ -4,14 +4,27 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class NavbarService {
-  isDark: boolean;
+  private _isDark: boolean;
+  private _openMenu: boolean;
 
   constructor() {
-    this.isDark = false;
+    this._isDark = false;
+    this._openMenu = false;
   }
 
-  toggleDark(): void {
-    console.log('toggle dark');
-    this.isDark = !this.isDark;
+  get isDark(): boolean {
+    return this._isDark;
+  }
+
+  set isDark(value: boolean) {
+    this._isDark = value;
+  }
+
+  get openMenu(): boolean {
+    return this._openMenu;
+  }
+
+  set openMenu(value: boolean) {
+    this._openMenu = value;
   }
 }

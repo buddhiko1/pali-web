@@ -1,82 +1,81 @@
 <nav
-  class="nav sticky top-0 bg-bc dark:bg-gray-800 backdrop-blur-sm text shadow dark:shadow-none"
+  class="nav sticky z-20 top-0 bg-bc dark:bg-gray-800 backdrop-blur-sm text shadow dark:shadow-none"
 >
-  <div class="nav-container py-3">
-    <a
-      href="#"
-      class="logo text-2xl lg:text-3xl font-bold text-gray-800 dark:text-white hover"
-      >Pali</a
-    >
+  <a
+    href="#"
+    class="logo py-3 text-2xl lg:text-3xl font-bold text-gray-800 dark:text-white hover"
+    >Pali</a
+  >
 
-    <div [class]="isOpen ? '' : 'sm-menu-hidden'" class="sm-menu">
-      <div (click)="toggleOpen()" class="index">
-        <a href="#" class="index-item mt-2 lg:mt-0 lg:mx-4 hover focus"
-          >Reading</a
-        >
-        <a href="#" class="index-item mt-2 lg:mt-0 lg:mx-4 hover focus"
-          >Dictionary</a
-        >
-        <a href="#" class="index-item mt-2 lg:mt-0 lg:mx-4 hover focus"
-          >Grammar</a
-        >
-        <a href="#" class="index-item mt-2 lg:mt-0 lg:mx-4 hover focus"
-          >Tipitaka</a
-        >
-        <a href="#" class="index-item mt-2 lg:mt-0 lg:mx-4 hover focus">Blog</a>
-      </div>
+  <button
+    (click)="toggleMenu()"
+    type="button"
+    aria-label="toggle menu"
+    class="toggle lg:hidden py-3 hover focus:outline-none"
+  >
+    <svg-icon
+      *ngIf="!openMenu"
+      src="assets/icons/menu.svg"
+      class="open-icon"
+      [svgClass]="['svg']"
+    ></svg-icon>
 
-      <!-- Mobile divider -->
-      <div
-        class="divider lg:hidden mb-5 h-6 border-b dark:border-gray-700"
-      ></div>
+    <svg-icon
+      *ngIf="openMenu"
+      src="assets/icons/close.svg"
+      class="close-icon"
+      [svgClass]="['svg']"
+    ></svg-icon>
+  </button>
 
-      <button
-        (click)="toggleDark()"
-        type="button"
-        aria-label="theme"
-        class="theme focus:outline-none hover"
-      >
-        <svg-icon
-          *ngIf="isDark"
-          src="assets/icons/moon.svg"
-          [svgClass]="['svg']"
-        ></svg-icon>
-        <svg-icon
-          *ngIf="!isDark"
-          src="assets/icons/sun.svg"
-          [svgClass]="['svg']"
-        ></svg-icon>
-      </button>
+  <section
+    [class]="openMenu ? '' : 'menu-close'"
+    class="menu w-full pb-3 bg-bc dark:bg-gray-800 transition-all duration-500 ease-in-out"
+  >
+    <ul (click)="toggleMenu()" class="index">
+      <li class="index-item mt-2 lg:mt-0 lg:mx-4 hover focus">
+        <a href="#">Reading</a>
+      </li>
+      <li class="index-item mt-2 lg:mt-0 lg:mx-4 hover focus">
+        <a href="#">Dictionary</a>
+      </li>
+      <li class="index-item mt-2 lg:mt-0 lg:mx-4 hover focus">
+        <a href="#">Grammar</a>
+      </li>
+      <li class="index-item mt-2 lg:mt-0 lg:mx-4 hover focus">
+        <a href="#">Tipitaka</a>
+      </li>
+      <li class="index-item mt-2 lg:mt-0 lg:mx-4 hover focus">
+        <a href="#">Blog</a>
+      </li>
+    </ul>
 
-      <a
-        href="#"
-        aria-label="donation"
-        class="donation ml-9 focus:outline-none hover"
-      >
-        <svg-icon src="assets/icons/heart.svg" [svgClass]="['svg']"></svg-icon>
-      </a>
-    </div>
+    <div class="divider lg:hidden mb-5 h-6 border-b dark:border-gray-700"></div>
 
-    <!-- Mobile menu -->
     <button
-      (click)="toggleOpen()"
+      (click)="toggleDark()"
       type="button"
-      aria-label="toggle menu"
-      class="menu-button lg:hidden hover focus:outline-none"
+      aria-label="theme"
+      class="theme focus:outline-none hover"
     >
       <svg-icon
-        *ngIf="!isOpen"
-        src="assets/icons/menu.svg"
-        class="menu"
+        *ngIf="isDark"
+        src="assets/icons/moon.svg"
         [svgClass]="['svg']"
       ></svg-icon>
-
       <svg-icon
-        *ngIf="isOpen"
-        src="assets/icons/close.svg"
-        class="close"
+        *ngIf="!isDark"
+        src="assets/icons/sun.svg"
         [svgClass]="['svg']"
       ></svg-icon>
     </button>
-  </div>
+
+    <a
+      href="#"
+      aria-label="donation"
+      class="donation ml-9 focus:outline-none hover"
+    >
+      <svg-icon src="assets/icons/heart.svg" [svgClass]="['svg']"></svg-icon>
+    </a>
+  </section>
 </nav>
