@@ -9,16 +9,6 @@
     "menu menu menu menu";
 }
 
-.left-area {
-  grid-area: left-area;
-  justify-self: stretch;
-}
-
-.right-area {
-  grid-area: right-area;
-  justify-self: stretch;
-}
-
 .logo {
   grid-area: logo;
   justify-self: start;
@@ -67,7 +57,7 @@
   justify-self: start;
 }
 
-@media screen(lg) {
+@media screen and (min-width: theme("screens.lg")) {
   .nav {
     grid-template-rows: auto;
     grid-template-columns: theme("spacing.lgPadding") auto 1fr auto auto theme(
