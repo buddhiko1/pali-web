@@ -26,7 +26,6 @@ import { OverlayComponent } from './overlay/overlay.component';
     HomeModule,
     FooterModule,
   ],
-
   providers: [],
   bootstrap: [AppComponent],
 })

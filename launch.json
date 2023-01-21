@@ -1,0 +1,16 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Attach Angular",
+      "type": "typescript",
+      "request": "attach",
+      "program": "${file}",
+      "cwd": "${workspaceFolder}",
+      "sourceMaps": true,
+      "protocol": "inspector",
+      "port": 9222,
+      "webRoot": "${workspaceFolder}"
+    }
+  ]
+}
