@@ -1,0 +1,50 @@
+footer {
+  display: grid;
+  grid-template-rows: auto auto auto;
+  grid-template-columns: theme("spacing.smPadding") 1fr theme(
+      "spacing.smPadding"
+    );
+  grid-template-areas:
+    "left-area logo right-area"
+    "left-area copyright right-area"
+    "left-area links right-area";
+}
+
+.logo {
+  grid-area: logo;
+  justify-self: center;
+}
+
+.copyright {
+  grid-area: copyright;
+  justify-self: center;
+}
+
+.links {
+  grid-area: links;
+  justify-self: center;
+}
+
+@media screen and (min-width: theme("screens.lg")) {
+  footer {
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: theme("spacing.lgPadding") auto 1fr auto theme(
+        "spacing.lgPadding"
+      );
+    grid-template-areas: "left-area logo copyright links right-area";
+  }
+
+  .logo {
+    justify-self: start;
+  }
+
+  .copyright {
+    justify-self: start;
+    align-self: center;
+  }
+
+  .links {
+    justify-self: end;
+  }
+}

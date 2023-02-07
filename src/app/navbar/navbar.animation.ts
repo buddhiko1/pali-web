@@ -1,12 +1,4 @@
-import {
-  animation,
-  trigger,
-  transition,
-  query,
-  style,
-  stagger,
-  animate,
-} from '@angular/animations';
+import { trigger, transition, style, animate } from '@angular/animations';
 
 export const MenuAnimation = trigger('openMenu', [
   transition(':enter', [

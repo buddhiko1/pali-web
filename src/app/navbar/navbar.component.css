@@ -39,8 +39,8 @@
 }
 
 .index {
-  padding-top: theme("spacing.2");
   grid-area: index;
+  padding-top: theme("spacing.2");
 }
 
 .divider {
@@ -82,6 +82,7 @@
 
   .theme {
     justify-self: start;
+    align-self: center;
   }
 
   .donation {
