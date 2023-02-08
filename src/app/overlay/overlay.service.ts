@@ -16,5 +16,12 @@ export class OverlayService {
 
   set isActive(value: boolean) {
     this._isActive = value;
+    if (value) {
+      // disable body scroll
+      document.body.style.overflow = 'hidden';
+    } else {
+      // enable body scroll
+      document.body.style.removeProperty('overflow');
+    }
   }
 }

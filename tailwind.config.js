@@ -11,10 +11,12 @@ module.exports = {
         lgPadding: "26rem",
       },
       colors: {
+        // backgrund color
         bgc: {
           DEFAULT: colors.white,
           dark: colors.gray["800"],
         },
+        // border color
         bdc: {
           DEFAULT: colors.gray["300"],
           dark: colors.gray["700"],

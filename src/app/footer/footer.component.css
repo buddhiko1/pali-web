@@ -28,6 +28,7 @@ footer {
 @media screen and (min-width: theme("screens.lg")) {
   footer {
     display: grid;
+    justify-content: space-between;
     grid-template-rows: auto;
     grid-template-columns: theme("spacing.lgPadding") auto 1fr auto theme(
         "spacing.lgPadding"
