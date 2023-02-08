@@ -12,17 +12,17 @@ footer {
 
 .logo {
   grid-area: logo;
-  justify-self: center;
+  place-self: center;
 }
 
 .copyright {
   grid-area: copyright;
-  justify-self: center;
+  place-self: center;
 }
 
 .links {
   grid-area: links;
-  justify-self: center;
+  place-self: center;
 }
 
 @media screen and (min-width: theme("screens.lg")) {
@@ -42,7 +42,6 @@ footer {
 
   .copyright {
     justify-self: start;
-    align-self: center;
   }
 
   .links {
