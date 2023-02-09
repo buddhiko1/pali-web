@@ -10,7 +10,7 @@ import { OverlayService } from './overlay/overlay.service';
 export class AppComponent {
   title = 'pali-web';
   lastScroll = 0;
-  scrollSpan = 20;
+  scrollSpan = 10;
   showMenuBtn = false;
   menuBtnTimoutId = 0;
 
@@ -72,13 +72,10 @@ export class AppComponent {
     // toggle navbar
     if (currentScroll > this.lastScroll && this.navbarService.show) {
       this.navbarService.show = false;
-    } /* else if (
-      currentScroll < this.lastScroll - this.scrollSpan &&
-      !this.navbarService.show
-    ) {
-      this.navbarService.show = true;
+    } else if (currentScroll < this.lastScroll && this.navbarService.show) {
+      this.navbarService.show = false;
       // this.showMenuBtn = false;
-    } */
+    }
     this.lastScroll = currentScroll;
 
     // show menu button if necessary
