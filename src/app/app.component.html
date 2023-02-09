@@ -1,7 +1,22 @@
-<div [class.dark]="isDark" class="app">
+<div [class]="['app', isDark ? 'bg-dark' : 'bg']">
   <app-overlay></app-overlay>
   <app-navbar></app-navbar>
   <app-home></app-home>
   <app-footer></app-footer>
   <router-outlet></router-outlet>
+  <button
+    (click)="displayMenu()"
+    [class.scale-0]="!showMenuBtn"
+    class="menu-btn lg:hidden fixed p-1 bottom-10 right-smPadding z-20 rounded-full border border-bdc dark:border-bdc-dark transform"
+  >
+    <svg-icon
+      src="assets/icons/plus.svg"
+      [svgClass]="[
+        'svg',
+        'opacity-25',
+        'transform',
+        isMenuShow ? 'rotate-45' : ''
+      ]"
+    ></svg-icon>
+  </button>
 </div>

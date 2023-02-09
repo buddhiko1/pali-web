@@ -1,5 +1,6 @@
 <nav
-  class="nav sticky z-20 top-0 bg-bgc dark:bg-bgc-dark backdrop-blur-sm text shadow dark:shadow-none"
+  [class]="show ? '' : 'nav-hidden'"
+  class="nav sticky z-20 top-0 bg-bgc dark:bg-bgc-dark backdrop-blur-sm text shadow dark:shadow-none transform"
 >
   <a
     href="#"
@@ -11,20 +12,12 @@
     (click)="toggleMenu()"
     type="button"
     aria-label="toggle menu"
-    class="toggle lg:hidden py-3 hover focus:outline-none"
+    class="toggle lg:hidden py-3 focus:outline-none"
   >
     <svg-icon
-      *ngIf="!openMenu"
-      src="assets/icons/menu.svg"
+      src="assets/icons/plus.svg"
       class="open-icon"
-      [svgClass]="['svg']"
-    ></svg-icon>
-
-    <svg-icon
-      *ngIf="openMenu"
-      src="assets/icons/close.svg"
-      class="close-icon"
-      [svgClass]="['svg']"
+      [svgClass]="['svg', 'transform', openMenu ? 'rotate-45' : '']"
     ></svg-icon>
   </button>
 

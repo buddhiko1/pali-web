@@ -21,6 +21,10 @@ export class NavbarComponent {
 
   toggleDark(): void {
     this.navbarService.isDark = !this.navbarService.isDark;
+    if (!this.publicService.isLgDevice) {
+      // close men after toggle theme
+      this.toggleMenu();
+    }
   }
 
   get openMenu(): boolean {
@@ -33,5 +37,9 @@ export class NavbarComponent {
       this.navbarService.openMenu = !this.navbarService.openMenu;
       this.overlayService.isActive = this.navbarService.openMenu ? true : false;
     }
+  }
+
+  get show(): boolean {
+    return this.navbarService.show;
   }
 }

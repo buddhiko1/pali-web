@@ -18,4 +18,12 @@
   .svg {
     @apply w-6 h-6 fill-current;
   }
+
+  .transform {
+    @apply transition-transform duration-[400ms] ease-in-out;
+  }
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
 }
