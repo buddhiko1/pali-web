@@ -1,4 +1,4 @@
-<div [class]="['app', isDark ? 'bg-dark' : 'bg']">
+<div [class]="['app', isDark ? 'bg-dark' : 'bg']" (click)="toggleMenuBtn()">
   <app-overlay></app-overlay>
   <app-navbar></app-navbar>
   <app-home></app-home>

@@ -19,11 +19,13 @@ export class NavbarService {
   }
 
   set isDark(value: boolean) {
+    // bug fix of tailwindcss background color
     if (value) {
       document.documentElement.classList.add('dark');
     } else {
       document.documentElement.classList.remove('dark');
     }
+    //
     this._isDark = value;
   }
 

@@ -37,12 +37,29 @@ export class AppComponent {
     this.navbarService.openMenu = true;
   }
 
-  @HostListener('window:scroll')
-  onScroll(): void {
-    //
+  toggleMenuBtn(): void {
     if (this.menuBtnTimoutId) {
       window.clearTimeout(this.menuBtnTimoutId);
     }
+    if (!this.showMenuBtn) {
+      if (!this.navbarService.show) {
+        this.showMenuBtn = true;
+        // hide menu button after 3s
+        this.menuBtnTimoutId = window.setTimeout(() => {
+          this.showMenuBtn = false;
+        }, 3000);
+      }
+    } else {
+      this.showMenuBtn = false;
+    }
+  }
+
+  @HostListener('window:scroll')
+  onScroll(): void {
+    //
+    // if (this.menuBtnTimoutId) {
+    //   window.clearTimeout(this.menuBtnTimoutId);
+    // }
 
     // reach the top
     const currentScroll = window.scrollY;
@@ -55,22 +72,22 @@ export class AppComponent {
     // toggle navbar
     if (currentScroll > this.lastScroll && this.navbarService.show) {
       this.navbarService.show = false;
-    } else if (
+    } /* else if (
       currentScroll < this.lastScroll - this.scrollSpan &&
       !this.navbarService.show
     ) {
       this.navbarService.show = true;
-      this.showMenuBtn = false;
-    }
+      // this.showMenuBtn = false;
+    } */
     this.lastScroll = currentScroll;
 
     // show menu button if necessary
-    if (!this.navbarService.show) {
-      this.showMenuBtn = true;
-      // hide menu button after 2s
-      this.menuBtnTimoutId = window.setTimeout(() => {
-        this.showMenuBtn = false;
-      }, 2000);
-    }
+    // if (!this.navbarService.show) {
+    //   this.showMenuBtn = true;
+    //   // hide menu button after 2s
+    //   this.menuBtnTimoutId = window.setTimeout(() => {
+    //     this.showMenuBtn = false;
+    //   }, 2000);
+    // }
   }
 }
