@@ -24,9 +24,6 @@ export class NavbarComponent {
     if (!this.publicService.isLgDevice) {
       // close men after toggle theme
       this.toggleMenu();
-      if (!this.publicService.atPageTop) {
-        this.navbarService.show = false;
-      }
     }
   }
 
