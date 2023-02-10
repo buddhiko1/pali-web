@@ -10,7 +10,7 @@ import { OverlayService } from './overlay/overlay.service';
 export class AppComponent {
   title = 'pali-web';
   lastScroll = 0;
-  scrollSpan = 10;
+  scrollSpan = 25;
   showMenuBtn = false;
   menuBtnTimoutId = 0;
 
