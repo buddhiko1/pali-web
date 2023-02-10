@@ -7,14 +7,14 @@
   <button
     (click)="displayMenu()"
     [class.scale-0]="!showMenuBtn"
-    class="menu-btn lg:hidden fixed p-1 bottom-10 right-smPadding z-20 rounded-full border border-bdc dark:border-bdc-dark transform"
+    class="menu-btn lg:hidden fixed p-1 bottom-10 right-smPadding z-20 rounded-full border border-bdc dark:border-bdc-dark c-transition-transform"
   >
     <svg-icon
       src="assets/icons/plus.svg"
       [svgClass]="[
-        'svg',
+        'c-svg',
         'opacity-25',
-        'transform',
+        'c-transition-transform',
         isMenuShow ? 'rotate-45' : ''
       ]"
     ></svg-icon>
