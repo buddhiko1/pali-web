@@ -1,8 +1,10 @@
 export interface Config {
   width: string;
   height: string;
-  image?: string;
   color?: string;
+  header?: string;
+  footer?: string;
   spine?: string;
+  image?: string;
   direction?: string;
 }

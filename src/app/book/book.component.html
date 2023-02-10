@@ -1,64 +1,14 @@
-<div
-  gdAreas="content"
-  gdRows="400px"
-  gdAlignRows="center center"
-  class="container"
->
-  <div gdArea="content" class="main">
-    <div class="bk-book" [class]="transformClass">
-      <div class="bk-front">
-        <div class="bk-cover-back"></div>
-        <!-- dynamic set background image: https://www.iditect.com/how-to/52382051.html -->
-        <div
-          [style.backgroundImage]="'url(' + config.image + ')'"
-          class="bk-cover"
-        >
-          <!-- <p class="pl-5 pt-5 text-xl text-white"> -->
-          <!--     BOOK TITLE -->
-          <!-- </p> -->
-        </div>
+<div class="container">
+  <div class="book" [class]="transformClass">
+    <div class="front">
+      <div [style.backgroundImage]="'url(' + config.image + ')'" class="cover">
+        <p class="header">{{ config.header }}</p>
       </div>
-      <div class="bk-page">
-        <div class="bk-content bk-content-current">
-          <p>
-            Red snapper Kafue pike fangtooth humums slipmouth, salmon
-            cutlassfish; swallower European perch mola mola sunfish, threadfin
-          </p>
-        </div>
-        <div class="bk-content">
-          <p>
-            Whale catfish leatherjacket deep sea anglerfish grenadier sawfish
-            pompano dolphinfish carp large-eye bream, squeaker amago.
-          </p>
-        </div>
-        <div class="bk-content">
-          <p>
-            Trahira giant wels cutlassfish snapper koi blackchin mummichog
-            mustard eel rock bass whiff murray cod. Bigmouth buffalo ling cod
-          </p>
-        </div>
-      </div>
-      <div class="bk-back">
-        <p>
-          In this nightmare vision of cats in revolt, fifteen-year-old Alex and
-          his friends set out on a diabolical orgy of robbery, rape, torture and
-        </p>
-      </div>
-      <div class="bk-right"></div>
-      <div class="bk-left">
-        <h2>
-          <span>{{ config.spine }}</span>
-        </h2>
-      </div>
-      <div class="bk-top"></div>
+    </div>
+    <div class="back"></div>
+    <div class="right"></div>
+    <div class="left">
+      <p class="spine">{{ config.spine }}</p>
     </div>
   </div>
-  <!-- <div gdArea="action"> -->
-  <!-- <button mat-raised-button color="primary" (click)="viewBack()">
-      back
-    </button>
-    <button mat-raised-button color="primary" (click)="viewInside()">
-      inside
-    </button> -->
-  <!-- </div> -->
 </div>

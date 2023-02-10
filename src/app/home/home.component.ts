@@ -7,16 +7,23 @@ import { Config as BookConfig } from '../book/book.model';
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
-  bookConfig: BookConfig;
+  bookConfigLeft: BookConfig;
+  bookConfigRight: BookConfig;
 
   constructor() {
-    this.bookConfig = {
-      height: '250px',
-      width: '200px',
-      // color: 'gray',
+    this.bookConfigRight = {
+      height: '18rem',
+      width: '13.5rem',
       image: 'assets/images/cover.jpeg',
       spine: 'happy new day',
       direction: 'right-view',
+    };
+    this.bookConfigLeft = {
+      height: '16rem',
+      width: '12rem',
+      header: 'buddha tipitaka',
+      spine: 'happy new day',
+      direction: 'left-view',
     };
   }
 

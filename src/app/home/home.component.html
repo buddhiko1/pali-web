@@ -21,7 +21,7 @@
       class="flex items-center mx-auto border-b pb-10 lg:pb-5 mb-10 border-gray-200 dark:border-gray-700 sm:flex-row flex-col"
     >
       <div class="hidden lg:flex lg:w-1/2 lg:justify-center">
-        <app-book [config]="bookConfig"></app-book>
+        <app-book [config]="bookConfigRight"></app-book>
       </div>
       <div class="flex-grow sm:text-left text-center mt-6 sm:mt-0">
         <h2
@@ -78,11 +78,7 @@
         </a>
       </div>
       <div class="hidden lg:flex lg:w-1/2 lg:justify-center">
-        <svg-icon
-          src="assets/icons/manu.svg"
-          [svgClass]="['w-80', 'h-80', 'fill-current']"
-        >
-        </svg-icon>
+        <app-book [config]="bookConfigLeft"></app-book>
       </div>
     </div>
     <div

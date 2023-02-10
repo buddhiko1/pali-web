@@ -1,6 +1,4 @@
 .nav {
-  transition: transform 0.4s;
-
   display: grid;
   grid-template-rows: auto auto;
   grid-template-columns: theme("spacing.smPadding") auto auto theme(

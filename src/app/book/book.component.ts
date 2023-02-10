@@ -20,14 +20,13 @@ export class BookComponent {
 
   @HostBinding('style.--color') get color() {
     return this.config.color ?? '#F33139';
-    // return this.config.color;
   }
 
   get transformClass() {
     return this.config.direction ?? 'right-view';
   }
 
-  // set transformClass(value: string) {
-  //   this.transformClass = value; // 'inside-view' 'back-view' 'right-view' 'left-view'
-  // }
+  set transformClass(value: string) {
+    this.transformClass = value; // 'right-view' 'left-view'
+  }
 }
