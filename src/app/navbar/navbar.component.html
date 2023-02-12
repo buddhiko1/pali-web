@@ -4,7 +4,7 @@
 >
   <a
     routerLink="home"
-    class="logo py-3 text-2xl lg:text-3xl font-bold c-text-primary c-hover"
+    class="logo py-3 text-2xl lg:text-3xl font-bold c-text-primary focus:text-blue-500 c-hover"
     >Pali</a
   >
 
@@ -30,30 +30,28 @@
     class="menu w-full pb-3 bg-bgc dark:bg-bgc-dark transition-all duration-500 ease-in-out"
   >
     <ul (click)="toggleMenu()" class="index">
-      <li
-        class="index-item mt-2 lg:mt-0 lg:mx-4 c-text-secondary c-hover c-focus"
-      >
-        <a routerLink="/reading">Reading</a>
+      <li class="index-item mt-2 lg:mt-0 lg:mx-4">
+        <a routerLink="/reading" class="c-text-secondary c-hover c-focus"
+          >Reading</a
+        >
       </li>
-      <li
-        class="index-item mt-2 lg:mt-0 lg:mx-4 c-text-secondary c-hover c-focus"
-      >
-        <a routerLink="/dictionary">Dictionary</a>
+      <li class="index-item mt-2 lg:mt-0 lg:mx-4">
+        <a routerLink="/dictionary" class="c-text-secondary c-hover c-focus"
+          >Dictionary</a
+        >
       </li>
-      <li
-        class="index-item mt-2 lg:mt-0 lg:mx-4 c-text-secondary c-hover c-focus"
-      >
-        <a routerLink="grammar">Grammar</a>
+      <li class="index-item mt-2 lg:mt-0 lg:mx-4">
+        <a routerLink="grammar" class="c-text-secondary c-hover c-focus"
+          >Grammar</a
+        >
       </li>
-      <li
-        class="index-item mt-2 lg:mt-0 lg:mx-4 c-text-secondary c-hover c-focus"
-      >
-        <a routerLink="tipitaka">Tipitaka</a>
+      <li class="index-item mt-2 lg:mt-0 lg:mx-4">
+        <a routerLink="tipitaka" class="c-text-secondary c-hover c-focus"
+          >Tipitaka</a
+        >
       </li>
-      <li
-        class="index-item mt-2 lg:mt-0 lg:mx-4 c-text-secondary c-hover c-focus"
-      >
-        <a routerLink="blog">Blog</a>
+      <li class="index-item mt-2 lg:mt-0 lg:mx-4">
+        <a routerLink="blog" class="c-text-secondary c-hover c-focus">Blog</a>
       </li>
     </ul>
 
@@ -79,10 +77,10 @@
       ></svg-icon>
     </button>
 
-    <a href="#" aria-label="donation" class="donation ml-9">
+    <a routerLink="/dictionary" aria-label="donation" class="donation ml-9">
       <svg-icon
         src="assets/icons/heart.svg"
-        [svgClass]="['c-svg', 'c-hover', 'c-transition-transform']"
+        [svgClass]="['c-svg', 'c-hover']"
       ></svg-icon>
     </a>
   </section>
