@@ -1,7 +1,7 @@
 .container {
   width: var(--width);
   height: var(--height);
-  margin: 1rem;
+  margin: 0rem;
   perspective: 112rem;
 }
 .book {

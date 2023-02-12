@@ -1,10 +1,10 @@
-<section class="nav bg-bgc dark:bg-bgc-dark">
-  <div class="introduction px-6 lg:px-60 pt-10">
-    <p class="title">
-      <span class="c-text-primary mr-2">study</span
-      ><span class="text-blue-500">pali language</span>
-    </p>
-    <p class="pt-2 leading-relaxed c-text-secondary">
+<section class="c-container bg-bgc dark:bg-bgc-dark">
+  <div class="c-introduction pt-10 lg:pt-24">
+    <h2 class="c-title">
+      <p class="inline-block capitalize mr-2 g-text-primary">pali</p>
+      <p class="inline-block capitalize text-blue-500">dictionary</p>
+    </h2>
+    <p class="pt-2 leading-relaxed g-text-secondary">
       Blue bottle crucifix vinyl post-ironic four dollar toast vegan taxidermy
       banh mi pug.
     </p>
@@ -16,48 +16,44 @@
       <span class="inline-block w-1 h-0.5 ml-1 bg-blue-500 rounded-full"></span>
     </div>
   </div>
-  <div class="dpd dict border-bdc dark:border-bdc-dark">
-    <div class="hidden">
-      <!-- <app-book [config]="bookConfigRight"></app-book> -->
+  <div class="c-dpd c-dict border-bdc dark:border-bdc-dark">
+    <div class="c-book hidden lg:block">
+      <app-book [config]="bookConfigRight"></app-book>
     </div>
-    <div class="">
-      <h2 class="title c-text-primary">dpd</h2>
-      <p class="pt-2 leading-relaxed c-text-secondary">
+    <div>
+      <h2 class="capitalize c-title g-text-primary">Digital Pāḷi Dictionary</h2>
+      <p class="pt-2 leading-relaxed g-text-secondary">
         Blue bottle crucifix vinyl post-ironic four dollar toast vegan
         taxidermy. Gastropub indxgo juice poutine.
       </p>
-      <div class="action pt-4">
-        <button
-          class="downloader p-1 rounded-md border border-bdc dark:border-bdc-dark"
-        >
+      <div class="c-action pt-4">
+        <button class="c-downloader g-button">
           <svg-icon
             src="assets/icons/download.svg"
-            [svgClass]="['c-svg', 'c-hover']"
+            [svgClass]="['g-svg', 'g-hover']"
           ></svg-icon>
         </button>
       </div>
     </div>
   </div>
-  <div class="ncped dict border-bdc dark:border-bdc-dark">
-    <div class="">
-      <p class="title c-text-primary">ncped</p>
-      <p class="pt-2 leading-relaxed c-text-secondary">
+  <div class="c-ncped c-dict border-bdc dark:border-bdc-dark">
+    <div>
+      <p class="c-title g-text-primary">ncped</p>
+      <p class="pt-2 leading-relaxed g-text-secondary">
         Blue bottle crucifix vinyl post-ironic four dollar toast vegan
         taxidermy. Gastropub indxgo juice poutine.
       </p>
-      <div class="action pt-4">
-        <button
-          class="downloader p-1 rounded-md border border-bdc dark:border-bdc-dark"
-        >
+      <div class="c-action pt-4">
+        <button class="c-downloader g-button">
           <svg-icon
             src="assets/icons/download.svg"
-            [svgClass]="['c-svg', 'c-hover']"
+            [svgClass]="['g-svg', 'g-hover']"
           ></svg-icon>
         </button>
       </div>
     </div>
-    <div class="hidden">
-      <!-- <app-book [config]="bookConfigLeft"></app-book> -->
+    <div class="c-book hidden lg:block">
+      <app-book [config]="bookConfigLeft"></app-book>
     </div>
   </div>
 </section>

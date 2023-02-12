@@ -8,7 +8,9 @@ module.exports = {
     extend: {
       spacing: {
         smPadding: "1.75rem",
+        smContentPadding: "3rem",
         lgPadding: "26rem",
+        lgContentPadding: "27rem",
       },
       colors: {
         // backgrund color

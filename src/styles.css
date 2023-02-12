@@ -4,35 +4,39 @@
 
 @layer components {
   /* transition */
-  .c-transition-colors {
+  .g-transition-colors {
     @apply transition-colors duration-300;
   }
 
-  .c-transition-transform {
+  .g-transition-transform {
     @apply transition-transform duration-[400ms] ease-in-out;
   }
 
   /* action */
-  .c-hover {
-    @apply hover:text-blue-400 dark:hover:text-blue-400 c-transition-colors;
+  .g-hover {
+    @apply hover:text-blue-400 dark:hover:text-blue-400 g-transition-colors;
   }
 
-  .c-focus {
-    @apply focus:text-blue-400 dark:focus:text-blue-400 c-transition-colors;
+  .g-focus {
+    @apply focus:text-blue-400 dark:focus:text-blue-400 g-transition-colors;
   }
 
   /* text */
-  .c-text-secondary {
-    @apply text-gray-600 dark:text-gray-200;
-  }
-
-  .c-text-primary {
+  .g-text-primary {
     @apply text-gray-800 dark:text-gray-100;
   }
 
-  /* svg */
-  .c-svg {
-    @apply w-6 h-6 fill-current c-text-secondary;
+  .g-text-secondary {
+    @apply text-gray-600 dark:text-gray-200;
+  }
+
+  /* widget */
+  .g-svg {
+    @apply w-6 h-6 fill-current g-text-secondary;
+  }
+
+  .g-button {
+    @apply p-1 rounded-md border border-bdc dark:border-bdc-dark hover:border-blue-400 dark:hover:border-blue-400;
   }
 }
 

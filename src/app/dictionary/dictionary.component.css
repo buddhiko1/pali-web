@@ -1,8 +1,8 @@
 .c-container {
   display: grid;
   grid-template-rows: auto auto auto auto auto auto;
-  grid-template-columns: theme("spacing.smPadding") 1fr theme(
-      "spacing.smPadding"
+  grid-template-columns: theme("spacing.smContentPadding") 1fr theme(
+      "spacing.smContentPadding"
     );
   grid-template-areas:
     "left-area introduction right-area"
@@ -13,46 +13,65 @@
     "left-area abbr right-area";
 }
 
-.introduction {
+.c-introduction {
   grid-area: introduction;
 }
 
-.dict {
-  @apply pt-8 pb-6 border-b mx-6 lg:mx-60;
-}
-
-.title {
-  @apply text-lg lg:text-xl font-semibold capitalize;
-}
-
-.dpd {
+.c-dpd {
   grid-area: dpd;
 }
 
-.ncped {
+.c-ncped {
+  display: grid;
   grid-area: ncped;
 }
 
-.pts {
+.c-pts {
   grid-area: pts;
 }
 
-.dppn {
+.c-dppn {
   grid-area: dppn;
 }
 
-.abbr {
+.c-abbr {
   grid-area: abbr;
 }
 
-.action {
+.c-dict {
   display: grid;
-  column-gap: 2rem;
+  grid-template-rows: auto;
+  grid-template-columns: 1fr auto;
+  @apply pt-8 lg:pt-24 pb-6 lg:pb-16 border-b;
+}
+
+.c-title {
+  @apply text-lg lg:text-xl font-semibold capitalize;
+}
+
+.c-action {
+  display: grid;
   grid-template-rows: auto;
   grid-template-columns: 1fr;
 }
 
-.downloader {
+.c-action .c-downloader {
   justify-self: right;
   align-self: center;
+}
+
+@media screen and (min-width: theme("screens.lg")) {
+  .c-dict {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .c-container {
+    grid-template-columns: theme("spacing.lgContentPadding") 1fr theme(
+        "spacing.lgContentPadding"
+      );
+  }
+
+  .c-book {
+    place-self: center;
+  }
 }

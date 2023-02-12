@@ -10,17 +10,17 @@ footer {
     "left-area links right-area";
 }
 
-.logo {
+.c-logo {
   grid-area: logo;
   place-self: center;
 }
 
-.copyright {
+.c-copyright {
   grid-area: copyright;
   place-self: center;
 }
 
-.links {
+.c-links {
   grid-area: links;
   place-self: center;
 }
@@ -35,15 +35,15 @@ footer {
     grid-template-areas: "left-area logo copyright links right-area";
   }
 
-  .logo {
+  .c-logo {
     justify-self: start;
   }
 
-  .copyright {
+  .c-copyright {
     justify-self: start;
   }
 
-  .links {
+  .c-links {
     justify-self: end;
   }
 }

@@ -23,7 +23,7 @@ export class NavbarComponent {
     this.navbarService.isDark = !this.navbarService.isDark;
     if (!this.publicService.isLgDevice) {
       // close men after toggle theme
-      this.toggleMenu();
+      // this.toggleMenu();
       if (!this.publicService.atPageTop) {
         this.navbarService.show = false;
       }

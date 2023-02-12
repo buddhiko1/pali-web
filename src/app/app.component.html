@@ -1,5 +1,5 @@
 <div
-  [class]="['c-container', isDark ? 'bg-dark' : 'bg']"
+  [class]="['h-screen', 'c-container', isDark ? 'c-bg-dark' : 'c-bg']"
   (click)="toggleMenuBtn()"
 >
   <app-overlay></app-overlay>
@@ -9,14 +9,14 @@
   <button
     (click)="displayMenu()"
     [class.scale-0]="!showMenuBtn"
-    class="menu-btn lg:hidden fixed p-1 bottom-10 right-smPadding z-20 rounded-full border border-bdc dark:border-bdc-dark c-transition-transform"
+    class="menu-btn lg:hidden fixed p-1 bottom-10 right-smPadding z-20 rounded-full border border-bdc dark:border-bdc-dark g-transition-transform"
   >
     <svg-icon
       src="assets/icons/plus.svg"
       [svgClass]="[
-        'c-svg',
+        'g-svg',
         'opacity-25',
-        'c-transition-transform',
+        'g-transition-transform',
         isMenuShow ? 'rotate-45' : ''
       ]"
     ></svg-icon>

@@ -13,17 +13,17 @@
   transform: translateY(-100%);
 }
 
-.logo {
+.c-logo {
   grid-area: logo;
   justify-self: start;
 }
 
-.toggle {
+.c-toggle {
   grid-area: toggle;
   justify-self: end;
 }
 
-.menu {
+.c-menu {
   grid-area: menu;
   position: absolute;
   display: grid;
@@ -37,26 +37,26 @@
     "left-area theme donation right-area";
 }
 
-.menu-close {
+.c-menu-close {
   opacity: 0;
   transform: translateX(-100%);
 }
 
-.index {
+.c-index {
   grid-area: index;
   padding-top: theme("spacing.2");
 }
 
-.divider {
+.c-divider {
   grid-area: divider;
 }
 
-.theme {
+.c-theme {
   grid-area: theme;
   justify-self: end;
 }
 
-.donation {
+.c-donation {
   grid-area: donation;
   justify-self: start;
 }
@@ -72,24 +72,24 @@
     align-items: baseline;
   }
 
-  .menu {
+  .c-menu {
     display: contents;
   }
 
-  .index {
+  .c-index {
     padding-top: theme("spacing.0");
     padding-left: theme("spacing.16");
   }
-  .index-item {
+  .c-index-item {
     display: inline;
   }
 
-  .theme {
+  .c-theme {
     justify-self: start;
     align-self: center;
   }
 
-  .donation {
+  .c-donation {
     justify-self: end;
     align-self: center;
   }
