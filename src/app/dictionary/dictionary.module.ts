@@ -1,19 +1,19 @@
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HomeRoutingModule } from './home-routing.module';
 import { AngularSvgIconModule } from 'angular-svg-icon';
-import { HomeComponent } from './home.component';
+import { DictionaryComponent } from './dictionary.component';
+import { DictionaryRoutingModule } from './dictionary-routing.module';
 import { BookComponent } from '../book/book.component';
 
 @NgModule({
-  declarations: [HomeComponent],
-  exports: [HomeComponent],
+  declarations: [DictionaryComponent],
+  exports: [DictionaryComponent],
   imports: [
     CommonModule,
-    HomeRoutingModule,
+    DictionaryRoutingModule,
     AngularSvgIconModule,
     BookComponent,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
-export class HomeModule {}
+export class DictionaryModule {}

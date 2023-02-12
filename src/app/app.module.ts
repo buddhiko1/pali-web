@@ -11,6 +11,7 @@ import { AppComponent } from './app.component';
 import { NavbarModule } from './navbar/navbar.module';
 import { HomeModule } from './home/home.module';
 import { FooterModule } from './footer/footer.module';
+import { DictionaryModule } from './dictionary/dictionary.module';
 import { OverlayComponent } from './overlay/overlay.component';
 
 @NgModule({
@@ -24,6 +25,7 @@ import { OverlayComponent } from './overlay/overlay.component';
     CommonModule,
     NavbarModule,
     HomeModule,
+    DictionaryModule,
     FooterModule,
   ],
   providers: [],

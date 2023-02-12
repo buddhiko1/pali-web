@@ -1,22 +1,22 @@
 lockfileVersion: 5.4
 
 specifiers:
-  "@angular-devkit/build-angular": ^15.1.2
+  "@angular-devkit/build-angular": ^15.1.5
   "@angular-eslint/builder": 15.2.1
   "@angular-eslint/eslint-plugin": 15.2.1
   "@angular-eslint/eslint-plugin-template": 15.2.1
   "@angular-eslint/schematics": 15.2.1
   "@angular-eslint/template-parser": 15.2.1
-  "@angular/animations": ^15.1.1
-  "@angular/cli": ~15.1.2
-  "@angular/common": ^15.1.1
-  "@angular/compiler": ^15.1.1
+  "@angular/animations": ^15.1.4
+  "@angular/cli": ~15.1.5
+  "@angular/common": ^15.1.4
+  "@angular/compiler": ^15.1.4
   "@angular/compiler-cli": ^15.1.2
-  "@angular/core": ^15.1.1
-  "@angular/forms": ^15.1.1
-  "@angular/platform-browser": ^15.1.1
-  "@angular/platform-browser-dynamic": ^15.1.1
-  "@angular/router": ^15.1.1
+  "@angular/core": ^15.1.4
+  "@angular/forms": ^15.1.4
+  "@angular/platform-browser": ^15.1.4
+  "@angular/platform-browser-dynamic": ^15.1.4
+  "@angular/router": ^15.1.4
   "@types/jasmine": ~4.0.0
   "@typescript-eslint/eslint-plugin": 5.43.0
   "@typescript-eslint/parser": 5.43.0
@@ -42,29 +42,29 @@ specifiers:
   zone.js: ~0.11.4
 
 dependencies:
-  "@angular/animations": registry.npmmirror.com/@angular/animations/15.1.1_@angular+core@15.1.1
-  "@angular/common": registry.npmmirror.com/@angular/common/15.1.1_b7rzt7oxfii52bruda63nn3sn4
-  "@angular/compiler": registry.npmmirror.com/@angular/compiler/15.1.1_@angular+core@15.1.1
-  "@angular/core": registry.npmmirror.com/@angular/core/15.1.1_rxjs@7.5.7+zone.js@0.11.8
-  "@angular/forms": registry.npmmirror.com/@angular/forms/15.1.1_vfkrm5jz5r53wb6ivhztykwcdi
-  "@angular/platform-browser": registry.npmmirror.com/@angular/platform-browser/15.1.1_rxpvwy5ptuio6t6exix22goh4e
-  "@angular/platform-browser-dynamic": registry.npmmirror.com/@angular/platform-browser-dynamic/15.1.1_hbzc5xw3mja47ogky4se7iwkze
-  "@angular/router": registry.npmmirror.com/@angular/router/15.1.1_vfkrm5jz5r53wb6ivhztykwcdi
-  angular-svg-icon: registry.npmmirror.com/angular-svg-icon/14.0.0_uwz6f5lb54zo72s4ml4s6d57ei
-  ngx-device-detector: registry.npmmirror.com/ngx-device-detector/4.0.1_cf2znwwzbqrks45m73dwryrkym
+  "@angular/animations": registry.npmmirror.com/@angular/animations/15.1.4_@angular+core@15.1.4
+  "@angular/common": registry.npmmirror.com/@angular/common/15.1.4_dvdedfppyzvqzripn7o7dhxzvi
+  "@angular/compiler": registry.npmmirror.com/@angular/compiler/15.1.4_@angular+core@15.1.4
+  "@angular/core": registry.npmmirror.com/@angular/core/15.1.4_rxjs@7.5.7+zone.js@0.11.8
+  "@angular/forms": registry.npmmirror.com/@angular/forms/15.1.4_4l3qh73lrkow277xsiaqr2m4xu
+  "@angular/platform-browser": registry.npmmirror.com/@angular/platform-browser/15.1.4_vztyff4teqf7syhiw43dlsmbye
+  "@angular/platform-browser-dynamic": registry.npmmirror.com/@angular/platform-browser-dynamic/15.1.4_ohokuiwz5epmc3j7lxm4wjl25a
+  "@angular/router": registry.npmmirror.com/@angular/router/15.1.4_4l3qh73lrkow277xsiaqr2m4xu
+  angular-svg-icon: registry.npmmirror.com/angular-svg-icon/14.0.0_jskq7mzavt5bdeilc4pktvvwdy
+  ngx-device-detector: registry.npmmirror.com/ngx-device-detector/4.0.1_7ja4ey4czlmo7rvvxywvjqjcby
   rxjs: registry.npmmirror.com/rxjs/7.5.7
   tslib: registry.npmmirror.com/tslib/2.4.1
   zone.js: registry.npmmirror.com/zone.js/0.11.8
 
 devDependencies:
-  "@angular-devkit/build-angular": registry.npmmirror.com/@angular-devkit/build-angular/15.1.2_tkqbij3kfw6dyeewsdeihe7ocq
+  "@angular-devkit/build-angular": registry.npmmirror.com/@angular-devkit/build-angular/15.1.5_tkqbij3kfw6dyeewsdeihe7ocq
   "@angular-eslint/builder": registry.npmmirror.com/@angular-eslint/builder/15.2.1_zksrc6ykdxhogxjbhb5axiabwi
   "@angular-eslint/eslint-plugin": registry.npmmirror.com/@angular-eslint/eslint-plugin/15.2.1_zksrc6ykdxhogxjbhb5axiabwi
   "@angular-eslint/eslint-plugin-template": registry.npmmirror.com/@angular-eslint/eslint-plugin-template/15.2.1_zksrc6ykdxhogxjbhb5axiabwi
-  "@angular-eslint/schematics": registry.npmmirror.com/@angular-eslint/schematics/15.2.1_77quaqq64orkpsc4i3bai7xru4
+  "@angular-eslint/schematics": registry.npmmirror.com/@angular-eslint/schematics/15.2.1_cfnjtq3m3yuf3waj6fxsknogbi
   "@angular-eslint/template-parser": registry.npmmirror.com/@angular-eslint/template-parser/15.2.1_zksrc6ykdxhogxjbhb5axiabwi
-  "@angular/cli": registry.npmmirror.com/@angular/cli/15.1.2
-  "@angular/compiler-cli": registry.npmmirror.com/@angular/compiler-cli/15.1.4_hrxss42ayizz7ltu4rdx3l3hqu
+  "@angular/cli": registry.npmmirror.com/@angular/cli/15.1.5
+  "@angular/compiler-cli": registry.npmmirror.com/@angular/compiler-cli/15.1.4_gxhcaysw2mn5qvgnic4tqxdt5u
   "@types/jasmine": registry.npmmirror.com/@types/jasmine/4.0.3
   "@typescript-eslint/eslint-plugin": registry.npmmirror.com/@typescript-eslint/eslint-plugin/5.43.0_ol5heeoi7wmwb4tenztnb7jlze
   "@typescript-eslint/parser": registry.npmmirror.com/@typescript-eslint/parser/5.43.0_zksrc6ykdxhogxjbhb5axiabwi
@@ -100,15 +100,15 @@ packages:
       "@jridgewell/trace-mapping": registry.npmmirror.com/@jridgewell/trace-mapping/0.3.17
     dev: true
 
-  registry.npmmirror.com/@angular-devkit/architect/0.1501.2:
+  registry.npmmirror.com/@angular-devkit/architect/0.1501.5:
     resolution:
       {
-        integrity: sha512-AfORVGLN0FBIUXO3FkfGOKu+Gz6oJjF8Bu8cPn27duiI0wszxGNY3fATKwbSg7JcKx1oQS/G7RjyC5OiTA6a0Q==,
+        integrity: sha512-T4zJMvJvCqZeeENdeHcFtdrISrZSe8MycQOWZwPYU9zBTGMmdYpa4GQKQmFRZGBwX2PKHFlkQ1HLLe366sySAQ==,
         registry: https://registry.npm.taobao.org/,
-        tarball: https://registry.npmmirror.com/@angular-devkit/architect/-/architect-0.1501.2.tgz,
+        tarball: https://registry.npmmirror.com/@angular-devkit/architect/-/architect-0.1501.5.tgz,
       }
     name: "@angular-devkit/architect"
-    version: 0.1501.2
+    version: 0.1501.5
     engines:
       {
         node: ^14.20.0 || ^16.13.0 || >=18.10.0,
@@ -116,22 +116,22 @@ packages:
         yarn: ">= 1.13.0",
       }
     dependencies:
-      "@angular-devkit/core": registry.npmmirror.com/@angular-devkit/core/15.1.2
+      "@angular-devkit/core": registry.npmmirror.com/@angular-devkit/core/15.1.5
       rxjs: registry.npmmirror.com/rxjs/6.6.7
     transitivePeerDependencies:
       - chokidar
     dev: true
 
-  registry.npmmirror.com/@angular-devkit/architect/0.1501.2_chokidar@3.5.3:
+  registry.npmmirror.com/@angular-devkit/architect/0.1501.5_chokidar@3.5.3:
     resolution:
       {
-        integrity: sha512-AfORVGLN0FBIUXO3FkfGOKu+Gz6oJjF8Bu8cPn27duiI0wszxGNY3fATKwbSg7JcKx1oQS/G7RjyC5OiTA6a0Q==,
+        integrity: sha512-T4zJMvJvCqZeeENdeHcFtdrISrZSe8MycQOWZwPYU9zBTGMmdYpa4GQKQmFRZGBwX2PKHFlkQ1HLLe366sySAQ==,
         registry: https://registry.npm.taobao.org/,
-        tarball: https://registry.npmmirror.com/@angular-devkit/architect/-/architect-0.1501.2.tgz,
+        tarball: https://registry.npmmirror.com/@angular-devkit/architect/-/architect-0.1501.5.tgz,
       }
-    id: registry.npmmirror.com/@angular-devkit/architect/0.1501.2
+    id: registry.npmmirror.com/@angular-devkit/architect/0.1501.5
     name: "@angular-devkit/architect"
-    version: 0.1501.2
+    version: 0.1501.5
     engines:
       {
         node: ^14.20.0 || ^16.13.0 || >=18.10.0,
@@ -139,22 +139,22 @@ packages:
         yarn: ">= 1.13.0",
       }
     dependencies:
-      "@angular-devkit/core": registry.npmmirror.com/@angular-devkit/core/15.1.2_chokidar@3.5.3
+      "@angular-devkit/core": registry.npmmirror.com/@angular-devkit/core/15.1.5_chokidar@3.5.3
       rxjs: registry.npmmirror.com/rxjs/6.6.7
     transitivePeerDependencies:
       - chokidar
     dev: true
 
-  registry.npmmirror.com/@angular-devkit/build-angular/15.1.2_tkqbij3kfw6dyeewsdeihe7ocq:
+  registry.npmmirror.com/@angular-devkit/build-angular/15.1.5_tkqbij3kfw6dyeewsdeihe7ocq:
     resolution:
       {
-        integrity: sha512-8udBKfHo3c/hOuh6VB11UKQZcqbolcNW2smtM9HJMm3fcykvyFEIitoCyl/tgraST+14/kA4aiINdl4EQ4BanQ==,
+        integrity: sha512-tMWfBdhdl5zLtFHqeI3GVXAL9j7rm51rd5g0RU3KhUsohAvA6AS/bZTRWwr8BYPHQzYovgDDOcdd2Sapxibv7w==,
         registry: https://registry.npm.taobao.org/,
-        tarball: https://registry.npmmirror.com/@angular-devkit/build-angular/-/build-angular-15.1.2.tgz,
+        tarball: https://registry.npmmirror.com/@angular-devkit/build-angular/-/build-angular-15.1.5.tgz,
       }
-    id: registry.npmmirror.com/@angular-devkit/build-angular/15.1.2
+    id: registry.npmmirror.com/@angular-devkit/build-angular/15.1.5
     name: "@angular-devkit/build-angular"
-    version: 15.1.2
+    version: 15.1.5
     engines:
       {
         node: ^14.20.0 || ^16.13.0 || >=18.10.0,
@@ -188,10 +188,10 @@ packages:
         optional: true
     dependencies:
       "@ampproject/remapping": registry.npmmirror.com/@ampproject/remapping/2.2.0
-      "@angular-devkit/architect": registry.npmmirror.com/@angular-devkit/architect/0.1501.2_chokidar@3.5.3
-      "@angular-devkit/build-webpack": registry.npmmirror.com/@angular-devkit/build-webpack/0.1501.2_oc46zsvsns3nh7f43oasdmifbu
-      "@angular-devkit/core": registry.npmmirror.com/@angular-devkit/core/15.1.2_chokidar@3.5.3
-      "@angular/compiler-cli": registry.npmmirror.com/@angular/compiler-cli/15.1.4_hrxss42ayizz7ltu4rdx3l3hqu
+      "@angular-devkit/architect": registry.npmmirror.com/@angular-devkit/architect/0.1501.5_chokidar@3.5.3
+      "@angular-devkit/build-webpack": registry.npmmirror.com/@angular-devkit/build-webpack/0.1501.5_oc46zsvsns3nh7f43oasdmifbu
+      "@angular-devkit/core": registry.npmmirror.com/@angular-devkit/core/15.1.5_chokidar@3.5.3
+      "@angular/compiler-cli": registry.npmmirror.com/@angular/compiler-cli/15.1.4_gxhcaysw2mn5qvgnic4tqxdt5u
       "@babel/core": registry.npmmirror.com/@babel/core/7.20.12
       "@babel/generator": registry.npmmirror.com/@babel/generator/7.20.7
       "@babel/helper-annotate-as-pure": registry.npmmirror.com/@babel/helper-annotate-as-pure/7.18.6
@@ -202,7 +202,7 @@ packages:
       "@babel/runtime": registry.npmmirror.com/@babel/runtime/7.20.7
       "@babel/template": registry.npmmirror.com/@babel/template/7.20.7
       "@discoveryjs/json-ext": registry.npmmirror.com/@discoveryjs/json-ext/0.5.7
-      "@ngtools/webpack": registry.npmmirror.com/@ngtools/webpack/15.1.2_oru4v2corrpvbez6oekbdqqwke
+      "@ngtools/webpack": registry.npmmirror.com/@ngtools/webpack/15.1.5_oru4v2corrpvbez6oekbdqqwke
       ansi-colors: registry.npmmirror.com/ansi-colors/4.1.3
       autoprefixer: registry.npmmirror.com/autoprefixer/10.4.13_postcss@8.4.21
       babel-loader: registry.npmmirror.com/babel-loader/9.1.2_la66t7xldg4uecmyawueag5wkm
@@ -267,16 +267,16 @@ packages:
       - webpack-cli
     dev: true
 
-  registry.npmmirror.com/@angular-devkit/build-webpack/0.1501.2_oc46zsvsns3nh7f43oasdmifbu:
+  registry.npmmirror.com/@angular-devkit/build-webpack/0.1501.5_oc46zsvsns3nh7f43oasdmifbu:
     resolution:
       {
-        integrity: sha512-FzslFvjuAabwtz2wMTCeemYCJA4NqRECz+WEsEZbtwESBMmKdaqmpbdW9ypsepB2iC7eIbHK43R95XAM75utTw==,
+        integrity: sha512-qLDxRBPfiNBRPwgfN8Abs0a+4vBApMnQsL0iWc0FKT729SCy7lgD6h/hP70wZue2shiiih23Qp5RdKT6oCeXwQ==,
         registry: https://registry.npm.taobao.org/,
-        tarball: https://registry.npmmirror.com/@angular-devkit/build-webpack/-/build-webpack-0.1501.2.tgz,
+        tarball: https://registry.npmmirror.com/@angular-devkit/build-webpack/-/build-webpack-0.1501.5.tgz,
       }
-    id: registry.npmmirror.com/@angular-devkit/build-webpack/0.1501.2
+    id: registry.npmmirror.com/@angular-devkit/build-webpack/0.1501.5
     name: "@angular-devkit/build-webpack"
-    version: 0.1501.2
+    version: 0.1501.5
     engines:
       {
         node: ^14.20.0 || ^16.13.0 || >=18.10.0,
@@ -287,7 +287,7 @@ packages:
       webpack: ^5.30.0
       webpack-dev-server: ^4.0.0
     dependencies:
-      "@angular-devkit/architect": registry.npmmirror.com/@angular-devkit/architect/0.1501.2_chokidar@3.5.3
+      "@angular-devkit/architect": registry.npmmirror.com/@angular-devkit/architect/0.1501.5_chokidar@3.5.3
       rxjs: registry.npmmirror.com/rxjs/6.6.7
       webpack: registry.npmmirror.com/webpack/5.75.0
       webpack-dev-server: registry.npmmirror.com/webpack-dev-server/4.11.1_webpack@5.75.0
@@ -295,15 +295,15 @@ packages:
       - chokidar
     dev: true
 
-  registry.npmmirror.com/@angular-devkit/core/15.1.2:
+  registry.npmmirror.com/@angular-devkit/core/15.1.5:
     resolution:
       {
-        integrity: sha512-wkLZYvTZt30Ge6Z83Gxsr6mO1TIHCu3SImdE0zwW63EdU9o1NYkU74z1D9VUZ9Up7uHi1cHs/dssbxUuZ4eWOA==,
+        integrity: sha512-SkGQFkruTwVM77WEOIQivfFBtnHW41tttsGrT6MTrti98hs8tvOTlzfYD/sDTyh0WKbZGeAtkRXx0raevb63YQ==,
         registry: https://registry.npm.taobao.org/,
-        tarball: https://registry.npmmirror.com/@angular-devkit/core/-/core-15.1.2.tgz,
+        tarball: https://registry.npmmirror.com/@angular-devkit/core/-/core-15.1.5.tgz,
       }
     name: "@angular-devkit/core"
-    version: 15.1.2
+    version: 15.1.5
     engines:
       {
         node: ^14.20.0 || ^16.13.0 || >=18.10.0,
@@ -323,16 +323,16 @@ packages:
       source-map: registry.npmmirror.com/source-map/0.7.4
     dev: true
 
-  registry.npmmirror.com/@angular-devkit/core/15.1.2_chokidar@3.5.3:
+  registry.npmmirror.com/@angular-devkit/core/15.1.5_chokidar@3.5.3:
     resolution:
       {
-        integrity: sha512-wkLZYvTZt30Ge6Z83Gxsr6mO1TIHCu3SImdE0zwW63EdU9o1NYkU74z1D9VUZ9Up7uHi1cHs/dssbxUuZ4eWOA==,
+        integrity: sha512-SkGQFkruTwVM77WEOIQivfFBtnHW41tttsGrT6MTrti98hs8tvOTlzfYD/sDTyh0WKbZGeAtkRXx0raevb63YQ==,
         registry: https://registry.npm.taobao.org/,
-        tarball: https://registry.npmmirror.com/@angular-devkit/core/-/core-15.1.2.tgz,
+        tarball: https://registry.npmmirror.com/@angular-devkit/core/-/core-15.1.5.tgz,
       }
-    id: registry.npmmirror.com/@angular-devkit/core/15.1.2
+    id: registry.npmmirror.com/@angular-devkit/core/15.1.5
     name: "@angular-devkit/core"
-    version: 15.1.2
+    version: 15.1.5
     engines:
       {
         node: ^14.20.0 || ^16.13.0 || >=18.10.0,
@@ -353,15 +353,15 @@ packages:
       source-map: registry.npmmirror.com/source-map/0.7.4
     dev: true
 
-  registry.npmmirror.com/@angular-devkit/schematics/15.1.2:
+  registry.npmmirror.com/@angular-devkit/schematics/15.1.5:
     resolution:
       {
-        integrity: sha512-HjJPm+4SS5TdAHHvdpXLv25wsvwVOn5RYs0A9MazTndlm80ct3PKeYUgakNDRFjRj8uORNlJMKmQIIhUSDjFsw==,
+        integrity: sha512-9MPuy0BjJAlSJVMqPmt50lDq6nq6AL5XJwv6NVP1fLSLXABlLBZe7jjaHLg8XVHaKbzS7BSPnHaGfHJkUipP+A==,
         registry: https://registry.npm.taobao.org/,
-        tarball: https://registry.npmmirror.com/@angular-devkit/schematics/-/schematics-15.1.2.tgz,
+        tarball: https://registry.npmmirror.com/@angular-devkit/schematics/-/schematics-15.1.5.tgz,
       }
     name: "@angular-devkit/schematics"
-    version: 15.1.2
+    version: 15.1.5
     engines:
       {
         node: ^14.20.0 || ^16.13.0 || >=18.10.0,
@@ -369,7 +369,7 @@ packages:
         yarn: ">= 1.13.0",
       }
     dependencies:
-      "@angular-devkit/core": registry.npmmirror.com/@angular-devkit/core/15.1.2
+      "@angular-devkit/core": registry.npmmirror.com/@angular-devkit/core/15.1.5
       jsonc-parser: registry.npmmirror.com/jsonc-parser/3.2.0
       magic-string: registry.npmmirror.com/magic-string/0.27.0
       ora: registry.npmmirror.com/ora/5.4.1
@@ -455,7 +455,7 @@ packages:
       - supports-color
     dev: true
 
-  registry.npmmirror.com/@angular-eslint/schematics/15.2.1_77quaqq64orkpsc4i3bai7xru4:
+  registry.npmmirror.com/@angular-eslint/schematics/15.2.1_cfnjtq3m3yuf3waj6fxsknogbi:
     resolution:
       {
         integrity: sha512-0ZfBCejHWIcgy3J5kFs9sS/jqi8i5AptxggOwFySOlCLJ+CzNrktjD4jff1Zy8K/VLzY0Ci0BSZXvgWfP0k9Rg==,
@@ -470,7 +470,7 @@ packages:
     dependencies:
       "@angular-eslint/eslint-plugin": registry.npmmirror.com/@angular-eslint/eslint-plugin/15.2.1_zksrc6ykdxhogxjbhb5axiabwi
       "@angular-eslint/eslint-plugin-template": registry.npmmirror.com/@angular-eslint/eslint-plugin-template/15.2.1_zksrc6ykdxhogxjbhb5axiabwi
-      "@angular/cli": registry.npmmirror.com/@angular/cli/15.1.2
+      "@angular/cli": registry.npmmirror.com/@angular/cli/15.1.5
       ignore: registry.npmmirror.com/ignore/5.2.4
       strip-json-comments: registry.npmmirror.com/strip-json-comments/3.1.1
       tmp: registry.npmmirror.com/tmp/0.2.1
@@ -522,33 +522,33 @@ packages:
       - supports-color
     dev: true
 
-  registry.npmmirror.com/@angular/animations/15.1.1_@angular+core@15.1.1:
+  registry.npmmirror.com/@angular/animations/15.1.4_@angular+core@15.1.4:
     resolution:
       {
-        integrity: sha512-oQrbO7uDsw1VcqhuSqvwQQPxEUjmssMM3nDbFUrs6A0MX7XIuhGnkB7mN35M6ZSd0Chj9DMzgbrYToPg1LoLHQ==,
+        integrity: sha512-aNLBjEsxykkG+cVA86IMLQaqVym7TSe3yAVM+KrOX4l76V7rDnByR/Fh29mj5tOfx/V08gm4HgIQ7VMqZAhCWw==,
         registry: https://registry.npm.taobao.org/,
-        tarball: https://registry.npmmirror.com/@angular/animations/-/animations-15.1.1.tgz,
+        tarball: https://registry.npmmirror.com/@angular/animations/-/animations-15.1.4.tgz,
       }
-    id: registry.npmmirror.com/@angular/animations/15.1.1
+    id: registry.npmmirror.com/@angular/animations/15.1.4
     name: "@angular/animations"
-    version: 15.1.1
+    version: 15.1.4
     engines: { node: ^14.20.0 || ^16.13.0 || >=18.10.0 }
     peerDependencies:
-      "@angular/core": 15.1.1
+      "@angular/core": 15.1.4
     dependencies:
-      "@angular/core": registry.npmmirror.com/@angular/core/15.1.1_rxjs@7.5.7+zone.js@0.11.8
+      "@angular/core": registry.npmmirror.com/@angular/core/15.1.4_rxjs@7.5.7+zone.js@0.11.8
       tslib: registry.npmmirror.com/tslib/2.4.1
     dev: false
 
-  registry.npmmirror.com/@angular/cli/15.1.2:
+  registry.npmmirror.com/@angular/cli/15.1.5:
     resolution:
       {
-        integrity: sha512-h42k410W6PPnz9KjX8dCtruMqf1mHgIf7UWrLa8icKpk03U2SIgoJzaXgY/spSHiMGIdDnY1dAYKWV0GQS4zEg==,
+        integrity: sha512-R+mi0+IJyBFobinCI9nu7hdGR5tXW6mBa/nsN3fwoebV0Qc07rSf9qqYkvnPjLWMiJ5eQxdLJhPcmMjB9Xs0aA==,
         registry: https://registry.npm.taobao.org/,
-        tarball: https://registry.npmmirror.com/@angular/cli/-/cli-15.1.2.tgz,
+        tarball: https://registry.npmmirror.com/@angular/cli/-/cli-15.1.5.tgz,
       }
     name: "@angular/cli"
-    version: 15.1.2
+    version: 15.1.5
     engines:
       {
         node: ^14.20.0 || ^16.13.0 || >=18.10.0,
@@ -557,10 +557,10 @@ packages:
       }
     hasBin: true
     dependencies:
-      "@angular-devkit/architect": registry.npmmirror.com/@angular-devkit/architect/0.1501.2
-      "@angular-devkit/core": registry.npmmirror.com/@angular-devkit/core/15.1.2
-      "@angular-devkit/schematics": registry.npmmirror.com/@angular-devkit/schematics/15.1.2
-      "@schematics/angular": registry.npmmirror.com/@schematics/angular/15.1.2
+      "@angular-devkit/architect": registry.npmmirror.com/@angular-devkit/architect/0.1501.5
+      "@angular-devkit/core": registry.npmmirror.com/@angular-devkit/core/15.1.5
+      "@angular-devkit/schematics": registry.npmmirror.com/@angular-devkit/schematics/15.1.5
+      "@schematics/angular": registry.npmmirror.com/@schematics/angular/15.1.5
       "@yarnpkg/lockfile": registry.npmmirror.com/@yarnpkg/lockfile/1.1.0
       ansi-colors: registry.npmmirror.com/ansi-colors/4.1.3
       ini: registry.npmmirror.com/ini/3.0.1
@@ -581,27 +581,27 @@ packages:
       - supports-color
     dev: true
 
-  registry.npmmirror.com/@angular/common/15.1.1_b7rzt7oxfii52bruda63nn3sn4:
+  registry.npmmirror.com/@angular/common/15.1.4_dvdedfppyzvqzripn7o7dhxzvi:
     resolution:
       {
-        integrity: sha512-P4f2rK/YBQQT4clQrcQ9goLf53RS63Q1x2d1dvz7Syr3gcOUyxO7NZQ7Au5afzvbIKZ5Okd+X0+TCGV4q9wQjw==,
+        integrity: sha512-E2klptW9CbXDAYZEL988RQ0XWQPf8obr6p+/+j2zy8kn14VJgsjn/27S9M8sX76nfXOaA6vQSbofZycTU7IiFQ==,
         registry: https://registry.npm.taobao.org/,
-        tarball: https://registry.npmmirror.com/@angular/common/-/common-15.1.1.tgz,
+        tarball: https://registry.npmmirror.com/@angular/common/-/common-15.1.4.tgz,
       }
-    id: registry.npmmirror.com/@angular/common/15.1.1
+    id: registry.npmmirror.com/@angular/common/15.1.4
     name: "@angular/common"
-    version: 15.1.1
+    version: 15.1.4
     engines: { node: ^14.20.0 || ^16.13.0 || >=18.10.0 }
     peerDependencies:
-      "@angular/core": 15.1.1
+      "@angular/core": 15.1.4
       rxjs: ^6.5.3 || ^7.4.0
     dependencies:
-      "@angular/core": registry.npmmirror.com/@angular/core/15.1.1_rxjs@7.5.7+zone.js@0.11.8
+      "@angular/core": registry.npmmirror.com/@angular/core/15.1.4_rxjs@7.5.7+zone.js@0.11.8
       rxjs: registry.npmmirror.com/rxjs/7.5.7
       tslib: registry.npmmirror.com/tslib/2.4.1
     dev: false
 
-  registry.npmmirror.com/@angular/compiler-cli/15.1.4_hrxss42ayizz7ltu4rdx3l3hqu:
+  registry.npmmirror.com/@angular/compiler-cli/15.1.4_gxhcaysw2mn5qvgnic4tqxdt5u:
     resolution:
       {
         integrity: sha512-FupMkr69YLZcjvPa7Y79ua6VvbzNroPUTDexEpqYkmnyKK8fNSHwTEOCz4IQbUeOxaZkRP5pHAI87foZigNPCA==,
@@ -617,7 +617,7 @@ packages:
       "@angular/compiler": 15.1.4
       typescript: ">=4.8.2 <5.0"
     dependencies:
-      "@angular/compiler": registry.npmmirror.com/@angular/compiler/15.1.1_@angular+core@15.1.1
+      "@angular/compiler": registry.npmmirror.com/@angular/compiler/15.1.4_@angular+core@15.1.4
       "@babel/core": registry.npmmirror.com/@babel/core/7.19.3
       "@jridgewell/sourcemap-codec": registry.npmmirror.com/@jridgewell/sourcemap-codec/1.4.14
       chokidar: registry.npmmirror.com/chokidar/3.5.3
@@ -633,36 +633,36 @@ packages:
       - supports-color
     dev: true
 
-  registry.npmmirror.com/@angular/compiler/15.1.1_@angular+core@15.1.1:
+  registry.npmmirror.com/@angular/compiler/15.1.4_@angular+core@15.1.4:
     resolution:
       {
-        integrity: sha512-A35iXLTTDEej4F2tm5t1flA+5Tv+jYAkQx+d0xvH6LDiWvsiDsOe5OjP8L2LD8dejwWl/JYUz2TH0JZcvw0uqA==,
+        integrity: sha512-b2jH336pl647IKgMYzsmJ/2Qpw6JqlP/OeCsOnAJ55LIQa37w+bnuTpdPh4pk8qV9h735rV9NXNO5t3pQFOo3Q==,
         registry: https://registry.npm.taobao.org/,
-        tarball: https://registry.npmmirror.com/@angular/compiler/-/compiler-15.1.1.tgz,
+        tarball: https://registry.npmmirror.com/@angular/compiler/-/compiler-15.1.4.tgz,
       }
-    id: registry.npmmirror.com/@angular/compiler/15.1.1
+    id: registry.npmmirror.com/@angular/compiler/15.1.4
     name: "@angular/compiler"
-    version: 15.1.1
+    version: 15.1.4
     engines: { node: ^14.20.0 || ^16.13.0 || >=18.10.0 }
     peerDependencies:
-      "@angular/core": 15.1.1
+      "@angular/core": 15.1.4
     peerDependenciesMeta:
       "@angular/core":
         optional: true
     dependencies:
-      "@angular/core": registry.npmmirror.com/@angular/core/15.1.1_rxjs@7.5.7+zone.js@0.11.8
+      "@angular/core": registry.npmmirror.com/@angular/core/15.1.4_rxjs@7.5.7+zone.js@0.11.8
       tslib: registry.npmmirror.com/tslib/2.4.1
 
-  registry.npmmirror.com/@angular/core/15.1.1_rxjs@7.5.7+zone.js@0.11.8:
+  registry.npmmirror.com/@angular/core/15.1.4_rxjs@7.5.7+zone.js@0.11.8:
     resolution:
       {
-        integrity: sha512-nsz+IXdkQanAGhqA2vcwTrGGyw5zIm3TgtYQ/JqK185qkmlhsQfSRvdSPsFPhmIFYp9ngZVUbkhY3D4P3gDzIg==,
+        integrity: sha512-eWXtL4pe/pG4klehsm1URpgF4gnUjFpCXzHJ0Shp5HwLszoflZMbzdoRTSyOG5iMxDhsk0wwnHTfG+j4NTJN3A==,
         registry: https://registry.npm.taobao.org/,
-        tarball: https://registry.npmmirror.com/@angular/core/-/core-15.1.1.tgz,
+        tarball: https://registry.npmmirror.com/@angular/core/-/core-15.1.4.tgz,
       }
-    id: registry.npmmirror.com/@angular/core/15.1.1
+    id: registry.npmmirror.com/@angular/core/15.1.4
     name: "@angular/core"
-    version: 15.1.1
+    version: 15.1.4
     engines: { node: ^14.20.0 || ^16.13.0 || >=18.10.0 }
     peerDependencies:
       rxjs: ^6.5.3 || ^7.4.0
@@ -672,99 +672,99 @@ packages:
       tslib: registry.npmmirror.com/tslib/2.4.1
       zone.js: registry.npmmirror.com/zone.js/0.11.8
 
-  registry.npmmirror.com/@angular/forms/15.1.1_vfkrm5jz5r53wb6ivhztykwcdi:
+  registry.npmmirror.com/@angular/forms/15.1.4_4l3qh73lrkow277xsiaqr2m4xu:
     resolution:
       {
-        integrity: sha512-1c/oZD+eSbGzDCcmC+hOqkPH+AzLOiGHxII5QiOOj8so8M958UBrsFBwrnLz06d9OK5Z4IrR4UL2JJspZNbpjw==,
+        integrity: sha512-gUBenRZS4gTevA3AJdpCVIuMeWU++OTqj6Rd8bv+x42W/RoOSVVcb3bInVECJFedAhx6P2/TWFGV1sVGwW+3sg==,
         registry: https://registry.npm.taobao.org/,
-        tarball: https://registry.npmmirror.com/@angular/forms/-/forms-15.1.1.tgz,
+        tarball: https://registry.npmmirror.com/@angular/forms/-/forms-15.1.4.tgz,
       }
-    id: registry.npmmirror.com/@angular/forms/15.1.1
+    id: registry.npmmirror.com/@angular/forms/15.1.4
     name: "@angular/forms"
-    version: 15.1.1
+    version: 15.1.4
     engines: { node: ^14.20.0 || ^16.13.0 || >=18.10.0 }
     peerDependencies:
-      "@angular/common": 15.1.1
-      "@angular/core": 15.1.1
-      "@angular/platform-browser": 15.1.1
+      "@angular/common": 15.1.4
+      "@angular/core": 15.1.4
+      "@angular/platform-browser": 15.1.4
       rxjs: ^6.5.3 || ^7.4.0
     dependencies:
-      "@angular/common": registry.npmmirror.com/@angular/common/15.1.1_b7rzt7oxfii52bruda63nn3sn4
-      "@angular/core": registry.npmmirror.com/@angular/core/15.1.1_rxjs@7.5.7+zone.js@0.11.8
-      "@angular/platform-browser": registry.npmmirror.com/@angular/platform-browser/15.1.1_rxpvwy5ptuio6t6exix22goh4e
+      "@angular/common": registry.npmmirror.com/@angular/common/15.1.4_dvdedfppyzvqzripn7o7dhxzvi
+      "@angular/core": registry.npmmirror.com/@angular/core/15.1.4_rxjs@7.5.7+zone.js@0.11.8
+      "@angular/platform-browser": registry.npmmirror.com/@angular/platform-browser/15.1.4_vztyff4teqf7syhiw43dlsmbye
       rxjs: registry.npmmirror.com/rxjs/7.5.7
       tslib: registry.npmmirror.com/tslib/2.4.1
     dev: false
 
-  registry.npmmirror.com/@angular/platform-browser-dynamic/15.1.1_hbzc5xw3mja47ogky4se7iwkze:
+  registry.npmmirror.com/@angular/platform-browser-dynamic/15.1.4_ohokuiwz5epmc3j7lxm4wjl25a:
     resolution:
       {
-        integrity: sha512-iCbvYduSGtyBWuQfTzm/MDZy7Rd5MNsjpknEtJ45nbjZzv9EL1tGo6qufaTgPXHP8Nbfcco/4UO9w84Gp5irLA==,
+        integrity: sha512-C1M5xqh57OQpQwFjGthIvqvBozhHBZtTbMFGn8zcbmkedm+oH++PsibRSHAKgsERvIIqQafxEr+9NM4En+CpFA==,
         registry: https://registry.npm.taobao.org/,
-        tarball: https://registry.npmmirror.com/@angular/platform-browser-dynamic/-/platform-browser-dynamic-15.1.1.tgz,
+        tarball: https://registry.npmmirror.com/@angular/platform-browser-dynamic/-/platform-browser-dynamic-15.1.4.tgz,
       }
-    id: registry.npmmirror.com/@angular/platform-browser-dynamic/15.1.1
+    id: registry.npmmirror.com/@angular/platform-browser-dynamic/15.1.4
     name: "@angular/platform-browser-dynamic"
-    version: 15.1.1
+    version: 15.1.4
     engines: { node: ^14.20.0 || ^16.13.0 || >=18.10.0 }
     peerDependencies:
-      "@angular/common": 15.1.1
-      "@angular/compiler": 15.1.1
-      "@angular/core": 15.1.1
-      "@angular/platform-browser": 15.1.1
+      "@angular/common": 15.1.4
+      "@angular/compiler": 15.1.4
+      "@angular/core": 15.1.4
+      "@angular/platform-browser": 15.1.4
     dependencies:
-      "@angular/common": registry.npmmirror.com/@angular/common/15.1.1_b7rzt7oxfii52bruda63nn3sn4
-      "@angular/compiler": registry.npmmirror.com/@angular/compiler/15.1.1_@angular+core@15.1.1
-      "@angular/core": registry.npmmirror.com/@angular/core/15.1.1_rxjs@7.5.7+zone.js@0.11.8
-      "@angular/platform-browser": registry.npmmirror.com/@angular/platform-browser/15.1.1_rxpvwy5ptuio6t6exix22goh4e
+      "@angular/common": registry.npmmirror.com/@angular/common/15.1.4_dvdedfppyzvqzripn7o7dhxzvi
+      "@angular/compiler": registry.npmmirror.com/@angular/compiler/15.1.4_@angular+core@15.1.4
+      "@angular/core": registry.npmmirror.com/@angular/core/15.1.4_rxjs@7.5.7+zone.js@0.11.8
+      "@angular/platform-browser": registry.npmmirror.com/@angular/platform-browser/15.1.4_vztyff4teqf7syhiw43dlsmbye
       tslib: registry.npmmirror.com/tslib/2.4.1
     dev: false
 
-  registry.npmmirror.com/@angular/platform-browser/15.1.1_rxpvwy5ptuio6t6exix22goh4e:
+  registry.npmmirror.com/@angular/platform-browser/15.1.4_vztyff4teqf7syhiw43dlsmbye:
     resolution:
       {
-        integrity: sha512-U1MXowvyigmMpffsnMQI6e9gX7tA6Su7unY0pjN5u9wRYJIkEbKuFyVijguQ83bt+JK3ZBHXD0dvskYnscGUzg==,
+        integrity: sha512-PrRNVbnPY38eh0zVDoNlx2EDHe4AzQ4bhJv3Wsrm+IFgi0e4yet8FQuL6sj1JBjLztKuZsndG2M/fyRWIpYkMQ==,
         registry: https://registry.npm.taobao.org/,
-        tarball: https://registry.npmmirror.com/@angular/platform-browser/-/platform-browser-15.1.1.tgz,
+        tarball: https://registry.npmmirror.com/@angular/platform-browser/-/platform-browser-15.1.4.tgz,
       }
-    id: registry.npmmirror.com/@angular/platform-browser/15.1.1
+    id: registry.npmmirror.com/@angular/platform-browser/15.1.4
     name: "@angular/platform-browser"
-    version: 15.1.1
+    version: 15.1.4
     engines: { node: ^14.20.0 || ^16.13.0 || >=18.10.0 }
     peerDependencies:
-      "@angular/animations": 15.1.1
-      "@angular/common": 15.1.1
-      "@angular/core": 15.1.1
+      "@angular/animations": 15.1.4
+      "@angular/common": 15.1.4
+      "@angular/core": 15.1.4
     peerDependenciesMeta:
       "@angular/animations":
         optional: true
     dependencies:
-      "@angular/animations": registry.npmmirror.com/@angular/animations/15.1.1_@angular+core@15.1.1
-      "@angular/common": registry.npmmirror.com/@angular/common/15.1.1_b7rzt7oxfii52bruda63nn3sn4
-      "@angular/core": registry.npmmirror.com/@angular/core/15.1.1_rxjs@7.5.7+zone.js@0.11.8
+      "@angular/animations": registry.npmmirror.com/@angular/animations/15.1.4_@angular+core@15.1.4
+      "@angular/common": registry.npmmirror.com/@angular/common/15.1.4_dvdedfppyzvqzripn7o7dhxzvi
+      "@angular/core": registry.npmmirror.com/@angular/core/15.1.4_rxjs@7.5.7+zone.js@0.11.8
       tslib: registry.npmmirror.com/tslib/2.4.1
     dev: false
 
-  registry.npmmirror.com/@angular/router/15.1.1_vfkrm5jz5r53wb6ivhztykwcdi:
+  registry.npmmirror.com/@angular/router/15.1.4_4l3qh73lrkow277xsiaqr2m4xu:
     resolution:
       {
-        integrity: sha512-5l1+6MzeJW01BeO8ZNfYe/TEVzxIHDKHWUrsmGE6oQW01LezG5LUjwR1T23YeR8G5zzRs/p+AU72wTn/aPGQHg==,
+        integrity: sha512-umHlpz1JQjgMT9VffoKX3NZG/i+Ayb1PtSLmJjo4KRSANUudILRreW9NWLYihFBotO/sX78/m2p1IHZeuyh1jw==,
         registry: https://registry.npm.taobao.org/,
-        tarball: https://registry.npmmirror.com/@angular/router/-/router-15.1.1.tgz,
+        tarball: https://registry.npmmirror.com/@angular/router/-/router-15.1.4.tgz,
       }
-    id: registry.npmmirror.com/@angular/router/15.1.1
+    id: registry.npmmirror.com/@angular/router/15.1.4
     name: "@angular/router"
-    version: 15.1.1
+    version: 15.1.4
     engines: { node: ^14.20.0 || ^16.13.0 || >=18.10.0 }
     peerDependencies:
-      "@angular/common": 15.1.1
-      "@angular/core": 15.1.1
-      "@angular/platform-browser": 15.1.1
+      "@angular/common": 15.1.4
+      "@angular/core": 15.1.4
+      "@angular/platform-browser": 15.1.4
       rxjs: ^6.5.3 || ^7.4.0
     dependencies:
-      "@angular/common": registry.npmmirror.com/@angular/common/15.1.1_b7rzt7oxfii52bruda63nn3sn4
-      "@angular/core": registry.npmmirror.com/@angular/core/15.1.1_rxjs@7.5.7+zone.js@0.11.8
-      "@angular/platform-browser": registry.npmmirror.com/@angular/platform-browser/15.1.1_rxpvwy5ptuio6t6exix22goh4e
+      "@angular/common": registry.npmmirror.com/@angular/common/15.1.4_dvdedfppyzvqzripn7o7dhxzvi
+      "@angular/core": registry.npmmirror.com/@angular/core/15.1.4_rxjs@7.5.7+zone.js@0.11.8
+      "@angular/platform-browser": registry.npmmirror.com/@angular/platform-browser/15.1.4_vztyff4teqf7syhiw43dlsmbye
       rxjs: registry.npmmirror.com/rxjs/7.5.7
       tslib: registry.npmmirror.com/tslib/2.4.1
     dev: false
@@ -792,18 +792,6 @@ packages:
     engines: { node: ">=6.9.0" }
     dependencies:
       "@babel/highlight": registry.npmmirror.com/@babel/highlight/7.18.6
-    dev: true
-
-  registry.npmmirror.com/@babel/compat-data/7.20.1:
-    resolution:
-      {
-        integrity: sha512-EWZ4mE2diW3QALKvDMiXnbZpRvlj+nayZ112nK93SnhqOtpdsbVD4W+2tEoT3YNBAG9RBR0ISY758ZkOgsn6pQ==,
-        registry: https://registry.npm.taobao.org/,
-        tarball: https://registry.npmmirror.com/@babel/compat-data/-/compat-data-7.20.1.tgz,
-      }
-    name: "@babel/compat-data"
-    version: 7.20.1
-    engines: { node: ">=6.9.0" }
     dev: true
 
   registry.npmmirror.com/@babel/compat-data/7.20.10:
@@ -863,36 +851,6 @@ packages:
       "@babel/code-frame": registry.npmmirror.com/@babel/code-frame/7.18.6
       "@babel/generator": registry.npmmirror.com/@babel/generator/7.20.7
       "@babel/helper-compilation-targets": registry.npmmirror.com/@babel/helper-compilation-targets/7.20.7_@babel+core@7.20.12
-      "@babel/helper-module-transforms": registry.npmmirror.com/@babel/helper-module-transforms/7.20.11
-      "@babel/helpers": registry.npmmirror.com/@babel/helpers/7.20.7
-      "@babel/parser": registry.npmmirror.com/@babel/parser/7.20.7
-      "@babel/template": registry.npmmirror.com/@babel/template/7.20.7
-      "@babel/traverse": registry.npmmirror.com/@babel/traverse/7.20.12
-      "@babel/types": registry.npmmirror.com/@babel/types/7.20.7
-      convert-source-map: registry.npmmirror.com/convert-source-map/1.9.0
-      debug: registry.npmmirror.com/debug/4.3.4
-      gensync: registry.npmmirror.com/gensync/1.0.0-beta.2
-      json5: registry.npmmirror.com/json5/2.2.3
-      semver: registry.npmmirror.com/semver/6.3.0
-    transitivePeerDependencies:
-      - supports-color
-    dev: true
-
-  registry.npmmirror.com/@babel/core/7.20.2:
-    resolution:
-      {
-        integrity: sha512-w7DbG8DtMrJcFOi4VrLm+8QM4az8Mo+PuLBKLp2zrYRCow8W/f9xiXm5sN53C8HksCyDQwCKha9JiDoIyPjT2g==,
-        registry: https://registry.npm.taobao.org/,
-        tarball: https://registry.npmmirror.com/@babel/core/-/core-7.20.2.tgz,
-      }
-    name: "@babel/core"
-    version: 7.20.2
-    engines: { node: ">=6.9.0" }
-    dependencies:
-      "@ampproject/remapping": registry.npmmirror.com/@ampproject/remapping/2.2.0
-      "@babel/code-frame": registry.npmmirror.com/@babel/code-frame/7.18.6
-      "@babel/generator": registry.npmmirror.com/@babel/generator/7.20.7
-      "@babel/helper-compilation-targets": registry.npmmirror.com/@babel/helper-compilation-targets/7.20.7_@babel+core@7.20.2
       "@babel/helper-module-transforms": registry.npmmirror.com/@babel/helper-module-transforms/7.20.11
       "@babel/helpers": registry.npmmirror.com/@babel/helpers/7.20.7
       "@babel/parser": registry.npmmirror.com/@babel/parser/7.20.7
@@ -991,28 +949,6 @@ packages:
     dependencies:
       "@babel/compat-data": registry.npmmirror.com/@babel/compat-data/7.20.10
       "@babel/core": registry.npmmirror.com/@babel/core/7.20.12
-      "@babel/helper-validator-option": registry.npmmirror.com/@babel/helper-validator-option/7.18.6
-      browserslist: registry.npmmirror.com/browserslist/4.21.4
-      lru-cache: registry.npmmirror.com/lru-cache/5.1.1
-      semver: registry.npmmirror.com/semver/6.3.0
-    dev: true
-
-  registry.npmmirror.com/@babel/helper-compilation-targets/7.20.7_@babel+core@7.20.2:
-    resolution:
-      {
-        integrity: sha512-4tGORmfQcrc+bvrjb5y3dG9Mx1IOZjsHqQVUz7XCNHO+iTmqxWnVg3KRygjGmpRLJGdQSKuvFinbIb0CnZwHAQ==,
-        registry: https://registry.npm.taobao.org/,
-        tarball: https://registry.npmmirror.com/@babel/helper-compilation-targets/-/helper-compilation-targets-7.20.7.tgz,
-      }
-    id: registry.npmmirror.com/@babel/helper-compilation-targets/7.20.7
-    name: "@babel/helper-compilation-targets"
-    version: 7.20.7
-    engines: { node: ">=6.9.0" }
-    peerDependencies:
-      "@babel/core": ^7.0.0
-    dependencies:
-      "@babel/compat-data": registry.npmmirror.com/@babel/compat-data/7.20.10
-      "@babel/core": registry.npmmirror.com/@babel/core/7.20.2
       "@babel/helper-validator-option": registry.npmmirror.com/@babel/helper-validator-option/7.18.6
       browserslist: registry.npmmirror.com/browserslist/4.21.4
       lru-cache: registry.npmmirror.com/lru-cache/5.1.1
@@ -2680,7 +2616,7 @@ packages:
     peerDependencies:
       "@babel/core": ^7.0.0-0
     dependencies:
-      "@babel/compat-data": registry.npmmirror.com/@babel/compat-data/7.20.1
+      "@babel/compat-data": registry.npmmirror.com/@babel/compat-data/7.20.10
       "@babel/core": registry.npmmirror.com/@babel/core/7.20.12
       "@babel/helper-compilation-targets": registry.npmmirror.com/@babel/helper-compilation-targets/7.20.7_@babel+core@7.20.12
       "@babel/helper-plugin-utils": registry.npmmirror.com/@babel/helper-plugin-utils/7.20.2
@@ -3439,16 +3375,16 @@ packages:
     version: 2.0.4
     dev: true
 
-  registry.npmmirror.com/@ngtools/webpack/15.1.2_oru4v2corrpvbez6oekbdqqwke:
+  registry.npmmirror.com/@ngtools/webpack/15.1.5_oru4v2corrpvbez6oekbdqqwke:
     resolution:
       {
-        integrity: sha512-IxKPqyA5hiwUioAAptFaETF2TifH6cTGOc7qKYFxFgzK+llZtEBcNj3w9zrL5uCFnPHWDZqdIDhH3/WM4zBmkw==,
+        integrity: sha512-/rneUv2A7a473ID6vNMWVEq6ImgITYRmyAwcF4wsrUguRSbQzwuuxEDapakMJaYnb8ejoMahD/1lSKO6ZV1nig==,
         registry: https://registry.npm.taobao.org/,
-        tarball: https://registry.npmmirror.com/@ngtools/webpack/-/webpack-15.1.2.tgz,
+        tarball: https://registry.npmmirror.com/@ngtools/webpack/-/webpack-15.1.5.tgz,
       }
-    id: registry.npmmirror.com/@ngtools/webpack/15.1.2
+    id: registry.npmmirror.com/@ngtools/webpack/15.1.5
     name: "@ngtools/webpack"
-    version: 15.1.2
+    version: 15.1.5
     engines:
       {
         node: ^14.20.0 || ^16.13.0 || >=18.10.0,
@@ -3460,7 +3396,7 @@ packages:
       typescript: ">=4.8.2 <5.0"
       webpack: ^5.54.0
     dependencies:
-      "@angular/compiler-cli": registry.npmmirror.com/@angular/compiler-cli/15.1.4_hrxss42ayizz7ltu4rdx3l3hqu
+      "@angular/compiler-cli": registry.npmmirror.com/@angular/compiler-cli/15.1.4_gxhcaysw2mn5qvgnic4tqxdt5u
       typescript: registry.npmmirror.com/typescript/4.8.4
       webpack: registry.npmmirror.com/webpack/5.75.0
     dev: true
@@ -3639,15 +3575,15 @@ packages:
       - supports-color
     dev: true
 
-  registry.npmmirror.com/@schematics/angular/15.1.2:
+  registry.npmmirror.com/@schematics/angular/15.1.5:
     resolution:
       {
-        integrity: sha512-PcAbjbWvaW3yKvcGCqHrlHm4BTwGuqr58czCASc49Hy6tJba+dRblYatzB0D1tzdJOTsa684Ghg7knCN86fHeg==,
+        integrity: sha512-mw5adVNSLX8h6c8F0tNEe11LVOlj100c1PrPggZNVz9nd2fwb32SVFSx+FmOxLVfE1kfnPgsvLpDH23z8SF6bg==,
         registry: https://registry.npm.taobao.org/,
-        tarball: https://registry.npmmirror.com/@schematics/angular/-/angular-15.1.2.tgz,
+        tarball: https://registry.npmmirror.com/@schematics/angular/-/angular-15.1.5.tgz,
       }
     name: "@schematics/angular"
-    version: 15.1.2
+    version: 15.1.5
     engines:
       {
         node: ^14.20.0 || ^16.13.0 || >=18.10.0,
@@ -3655,8 +3591,8 @@ packages:
         yarn: ">= 1.13.0",
       }
     dependencies:
-      "@angular-devkit/core": registry.npmmirror.com/@angular-devkit/core/15.1.2
-      "@angular-devkit/schematics": registry.npmmirror.com/@angular-devkit/schematics/15.1.2
+      "@angular-devkit/core": registry.npmmirror.com/@angular-devkit/core/15.1.5
+      "@angular-devkit/schematics": registry.npmmirror.com/@angular-devkit/schematics/15.1.5
       jsonc-parser: registry.npmmirror.com/jsonc-parser/3.2.0
     transitivePeerDependencies:
       - chokidar
@@ -4838,7 +4774,7 @@ packages:
       uri-js: registry.npmmirror.com/uri-js/4.4.1
     dev: true
 
-  registry.npmmirror.com/angular-svg-icon/14.0.0_uwz6f5lb54zo72s4ml4s6d57ei:
+  registry.npmmirror.com/angular-svg-icon/14.0.0_jskq7mzavt5bdeilc4pktvvwdy:
     resolution:
       {
         integrity: sha512-WIEl7vp2wtacRauf/Rmfcyy5PTg5P4FHhdmm6oy3hWOY9aK/QEqEW5zzLKDXsh1djRlChLWnnC3ptaPC0wyHDw==,
@@ -4853,8 +4789,8 @@ packages:
       "@angular/core": ">=14.0.0"
       rxjs: ">=6.6.3"
     dependencies:
-      "@angular/common": registry.npmmirror.com/@angular/common/15.1.1_b7rzt7oxfii52bruda63nn3sn4
-      "@angular/core": registry.npmmirror.com/@angular/core/15.1.1_rxjs@7.5.7+zone.js@0.11.8
+      "@angular/common": registry.npmmirror.com/@angular/common/15.1.4_dvdedfppyzvqzripn7o7dhxzvi
+      "@angular/core": registry.npmmirror.com/@angular/core/15.1.4_rxjs@7.5.7+zone.js@0.11.8
       rxjs: registry.npmmirror.com/rxjs/7.5.7
       tslib: registry.npmmirror.com/tslib/2.4.1
     dev: false
@@ -9292,7 +9228,7 @@ packages:
     version: 5.2.1
     engines: { node: ">=8" }
     dependencies:
-      "@babel/core": registry.npmmirror.com/@babel/core/7.20.2
+      "@babel/core": registry.npmmirror.com/@babel/core/7.20.12
       "@babel/parser": registry.npmmirror.com/@babel/parser/7.20.3
       "@istanbuljs/schema": registry.npmmirror.com/@istanbuljs/schema/0.1.3
       istanbul-lib-coverage: registry.npmmirror.com/istanbul-lib-coverage/3.2.0
@@ -10663,7 +10599,7 @@ packages:
     version: 2.6.2
     dev: true
 
-  registry.npmmirror.com/ngx-device-detector/4.0.1_cf2znwwzbqrks45m73dwryrkym:
+  registry.npmmirror.com/ngx-device-detector/4.0.1_7ja4ey4czlmo7rvvxywvjqjcby:
     resolution:
       {
         integrity: sha512-n0c9nOs7900r0pL/m4L0vaDvyf72xhKIC6bpr4BZYazWeRxankO1SqJZijqoMGxiUZnZAQqXkyhRkBIErgoKVg==,
@@ -10677,8 +10613,8 @@ packages:
       "@angular/common": ^14.0.0
       "@angular/core": ^14.0.0
     dependencies:
-      "@angular/common": registry.npmmirror.com/@angular/common/15.1.1_b7rzt7oxfii52bruda63nn3sn4
-      "@angular/core": registry.npmmirror.com/@angular/core/15.1.1_rxjs@7.5.7+zone.js@0.11.8
+      "@angular/common": registry.npmmirror.com/@angular/common/15.1.4_dvdedfppyzvqzripn7o7dhxzvi
+      "@angular/core": registry.npmmirror.com/@angular/core/15.1.4_rxjs@7.5.7+zone.js@0.11.8
       tslib: registry.npmmirror.com/tslib/2.4.1
     dev: false
 
