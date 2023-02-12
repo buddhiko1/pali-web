@@ -1,17 +1,20 @@
-<footer class="pb-5 bg-bgc dark:bg-bgc-dark c-text">
-  <p class="logo py-1 lg:pr-4 text-xl lg:text-2xl capitalize">pali</p>
+<footer class="pt-8 pb-5 bg-bgc dark:bg-bgc-dark">
+  <p class="logo py-1 lg:pr-4 text-xl lg:text-2xl capitalize c-text-secondary">
+    pali
+  </p>
 
   <p
-    class="copyright lg:pl-4 lg:border-l-2 border-bdc dark:border-bdc-dark text-sm"
+    class="copyright lg:pl-4 lg:border-l-2 border-bdc dark:border-bdc-dark text-sm c-text-secondary"
   >
     © Copyright 2023. All Rights Reserved.
   </p>
 
   <div class="links py-5">
-    <button
-      class="menu-btn p-1 rounded-md border border-bdc dark:border-bdc-dark c-hover"
-    >
-      <svg-icon src="assets/icons/mail.svg" [svgClass]="['c-svg']"></svg-icon>
+    <button class="p-1 rounded-md border border-bdc dark:border-bdc-dark">
+      <svg-icon
+        src="assets/icons/mail.svg"
+        [svgClass]="['c-svg', 'lg:c-hover']"
+      ></svg-icon>
     </button>
   </div>
 </footer>

@@ -1,10 +1,10 @@
 <nav
-  [class]="show ? '' : 'nav-hidden'"
-  class="nav sticky z-20 top-0 bg-bgc dark:bg-bgc-dark backdrop-blur-sm c-text shadow dark:shadow-none c-transition-transform"
+  [class]="show ? '' : 'c-container-hidden'"
+  class="c-container sticky z-20 top-0 bg-bgc dark:bg-bgc-dark backdrop-blur-sm shadow dark:shadow-none c-transition-transform"
 >
   <a
     href="#"
-    class="logo py-3 text-2xl lg:text-3xl font-bold text-gray-800 dark:text-white c-hover"
+    class="logo py-3 text-2xl lg:text-3xl font-bold c-text-primary c-hover"
     >Pali</a
   >
 
@@ -30,19 +30,29 @@
     class="menu w-full pb-3 bg-bgc dark:bg-bgc-dark transition-all duration-500 ease-in-out"
   >
     <ul (click)="toggleMenu()" class="index">
-      <li class="index-item mt-2 lg:mt-0 lg:mx-4 c-hover c-focus">
+      <li
+        class="index-item mt-2 lg:mt-0 lg:mx-4 c-text-secondary c-hover c-focus"
+      >
         <a href="#">Reading</a>
       </li>
-      <li class="index-item mt-2 lg:mt-0 lg:mx-4 c-hover c-focus">
+      <li
+        class="index-item mt-2 lg:mt-0 lg:mx-4 c-text-secondary c-hover c-focus"
+      >
         <a href="#">Dictionary</a>
       </li>
-      <li class="index-item mt-2 lg:mt-0 lg:mx-4 c-hover c-focus">
+      <li
+        class="index-item mt-2 lg:mt-0 lg:mx-4 c-text-secondary c-hover c-focus"
+      >
         <a href="#">Grammar</a>
       </li>
-      <li class="index-item mt-2 lg:mt-0 lg:mx-4 c-hover c-focus">
+      <li
+        class="index-item mt-2 lg:mt-0 lg:mx-4 c-text-secondary c-hover c-focus"
+      >
         <a href="#">Tipitaka</a>
       </li>
-      <li class="index-item mt-2 lg:mt-0 lg:mx-4 c-hover c-focus">
+      <li
+        class="index-item mt-2 lg:mt-0 lg:mx-4 c-text-secondary c-hover c-focus"
+      >
         <a href="#">Blog</a>
       </li>
     </ul>
@@ -55,26 +65,25 @@
       (click)="toggleDark()"
       type="button"
       aria-label="theme"
-      class="theme focus:outline-none c-hover"
+      class="theme c-hover"
     >
       <svg-icon
         *ngIf="isDark"
         src="assets/icons/moon.svg"
-        [svgClass]="['c-svg']"
+        [svgClass]="['c-svg', 'c-hover']"
       ></svg-icon>
       <svg-icon
         *ngIf="!isDark"
         src="assets/icons/sun.svg"
-        [svgClass]="['c-svg']"
+        [svgClass]="['c-svg', 'c-hover']"
       ></svg-icon>
     </button>
 
-    <a
-      href="#"
-      aria-label="donation"
-      class="donation ml-9 focus:outline-none c-hover"
-    >
-      <svg-icon src="assets/icons/heart.svg" [svgClass]="['c-svg']"></svg-icon>
+    <a href="#" aria-label="donation" class="donation ml-9">
+      <svg-icon
+        src="assets/icons/heart.svg"
+        [svgClass]="['c-svg', 'c-hover', 'c-transition-transform']"
+      ></svg-icon>
     </a>
   </section>
 </nav>

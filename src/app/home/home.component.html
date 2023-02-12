@@ -1,157 +1,63 @@
-<section class="text bg-bgc dark:bg-bgc-dark text-gray-600 dark:text-gray-300">
-  <div class="container px-7 lg:px-60 pb-5 pt-12 lg:pt-20 mx-auto">
-    <h1
-      class="text-xl font-semibold text-gray-800 capitalize lg:text-2xl dark:text-white"
-    >
-      study <span class="text-blue-500">pali language</span>
-    </h1>
-    <p class="text-gray-500s mt-3">
+<section class="nav bg-bgc dark:bg-bgc-dark">
+  <div class="introduction px-6 lg:px-60 pt-10">
+    <p class="title">
+      <span class="c-text-primary mr-2">study</span
+      ><span class="text-blue-500">pali language</span>
+    </p>
+    <p class="pt-2 leading-relaxed c-text-secondary">
       Blue bottle crucifix vinyl post-ironic four dollar toast vegan taxidermy
       banh mi pug.
     </p>
-
-    <div class="mt-2">
-      <span class="inline-block w-40 h-0.5 bg-blue-500 rounded-full"></span>
+    <div class="pt-2">
+      <span
+        class="inline-block w-40 lg:w-72 h-0.5 bg-blue-500 rounded-full"
+      ></span>
       <span class="inline-block w-3 h-0.5 ml-1 bg-blue-500 rounded-full"></span>
       <span class="inline-block w-1 h-0.5 ml-1 bg-blue-500 rounded-full"></span>
     </div>
   </div>
-  <div class="container px-6 lg:px-60 pb-10 lg:py-10 mx-auto">
-    <div
-      class="flex items-center mx-auto border-b pb-10 lg:pb-5 mb-10 border-gray-200 dark:border-gray-700 sm:flex-row flex-col"
-    >
-      <div class="hidden lg:flex lg:w-1/2 lg:justify-center">
-        <app-book [config]="bookConfigRight"></app-book>
-      </div>
-      <div class="flex-grow sm:text-left text-center mt-6 sm:mt-0">
-        <h2
-          class="text-gray-900 dark:text-white text-lg font-semibold mb-2 capitalize"
+  <div class="dpd dict border-bdc dark:border-bdc-dark">
+    <div class="hidden">
+      <app-book [config]="bookConfigRight"></app-book>
+    </div>
+    <div class="">
+      <h2 class="title c-text-primary">dpd</h2>
+      <p class="pt-2 leading-relaxed c-text-secondary">
+        Blue bottle crucifix vinyl post-ironic four dollar toast vegan
+        taxidermy. Gastropub indxgo juice poutine.
+      </p>
+      <div class="action pt-4">
+        <button
+          class="downloader p-1 rounded-md border border-bdc dark:border-bdc-dark"
         >
-          dictionary
-        </h2>
-        <p class="leading-relaxed text-base dark:text-gray-200">
-          Blue bottle crucifix vinyl post-ironic four dollar toast vegan
-          taxidermy. Gastropub indxgo juice poutine.
-        </p>
-        <a class="mt-3 text-blue-500 inline-flex items-center"
-          >Learn More
-          <svg
-            fill="none"
-            stroke="currentColor"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            class="w-4 h-4 ml-2"
-            viewBox="0 0 24 24"
-          >
-            <path d="M5 12h14M12 5l7 7-7 7"></path>
-          </svg>
-        </a>
+          <svg-icon
+            src="assets/icons/download.svg"
+            [svgClass]="['c-svg', 'c-hover']"
+          ></svg-icon>
+        </button>
       </div>
     </div>
-    <div
-      class="flex items-center mx-auto border-b pb-10 lg:pb-5 mb-10 border-gray-200 dark:border-gray-700 sm:flex-row flex-col"
-    >
-      <div class="flex-grow sm:text-left text-center mt-6 sm:mt-0">
-        <h2
-          class="text-gray-900 dark:text-white text-lg font-semibold mb-2 capitalize"
+  </div>
+  <div class="ncped dict border-bdc dark:border-bdc-dark">
+    <div class="">
+      <p class="title c-text-primary">ncped</p>
+      <p class="pt-2 leading-relaxed c-text-secondary">
+        Blue bottle crucifix vinyl post-ironic four dollar toast vegan
+        taxidermy. Gastropub indxgo juice poutine.
+      </p>
+      <div class="action pt-4">
+        <button
+          class="downloader p-1 rounded-md border border-bdc dark:border-bdc-dark"
         >
-          Grammar book
-        </h2>
-        <p class="leading-relaxed text-base">
-          Blue bottle crucifix vinyl post-ironic four dollar toast vegan
-          taxidermy. Gastropub indxgo juice poutine.
-        </p>
-        <a class="mt-3 text-blue-500 inline-flex items-center"
-          >Learn More
-          <svg
-            fill="none"
-            stroke="currentColor"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            class="w-4 h-4 ml-2"
-            viewBox="0 0 24 24"
-          >
-            <path d="M5 12h14M12 5l7 7-7 7"></path>
-          </svg>
-        </a>
-      </div>
-      <div class="hidden lg:flex lg:w-1/2 lg:justify-center">
-        <app-book [config]="bookConfigLeft"></app-book>
+          <svg-icon
+            src="assets/icons/download.svg"
+            [svgClass]="['c-svg', 'c-hover']"
+          ></svg-icon>
+        </button>
       </div>
     </div>
-    <div
-      class="flex items-center mx-auto border-b pb-10 lg:pb-5 mb-10 border-gray-200 dark:border-gray-700 sm:flex-row flex-col"
-    >
-      <div class="hidden lg:flex lg:w-1/2 lg:justify-center">
-        <svg-icon
-          src="assets/icons/dictionary.svg"
-          [svgClass]="['w-80', 'h-80', 'fill-current']"
-        >
-        </svg-icon>
-      </div>
-      <div class="flex-grow sm:text-left text-center mt-6 sm:mt-0">
-        <h2
-          class="text-gray-900 dark:text-white text-lg font-semibold mb-2 capitalize"
-        >
-          tipitaka epub
-        </h2>
-        <p class="leading-relaxed text-base dark:text-gray-200">
-          Blue bottle crucifix vinyl post-ironic four dollar toast vegan
-          taxidermy. Gastropub indxgo juice poutine.
-        </p>
-        <a class="mt-3 text-blue-500 inline-flex items-center"
-          >Learn More
-          <svg
-            fill="none"
-            stroke="currentColor"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            class="w-4 h-4 ml-2"
-            viewBox="0 0 24 24"
-          >
-            <path d="M5 12h14M12 5l7 7-7 7"></path>
-          </svg>
-        </a>
-      </div>
-    </div>
-    <div
-      class="flex items-center mx-auto border-b pb-10 lg:pb-5 mb-10 border-gray-200 dark:border-gray-700 sm:flex-row flex-col"
-    >
-      <div class="flex-grow sm:text-left text-center mt-6 sm:mt-0">
-        <h2
-          class="text-gray-900 dark:text-white text-lg font-semibold mb-2 capitalize"
-        >
-          reading
-        </h2>
-        <p class="leading-relaxed text-base">
-          Blue bottle crucifix vinyl post-ironic four dollar toast vegan
-          taxidermy. Gastropub indxgo juice poutine.
-        </p>
-        <a class="mt-3 text-blue-500 inline-flex items-center"
-          >Learn More
-          <svg
-            fill="none"
-            stroke="currentColor"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            class="w-4 h-4 ml-2"
-            viewBox="0 0 24 24"
-          >
-            <path d="M5 12h14M12 5l7 7-7 7"></path>
-          </svg>
-        </a>
-      </div>
-      <div class="hidden lg:flex lg:w-1/2 lg:justify-center">
-        <svg-icon
-          src="assets/icons/manu.svg"
-          [svgClass]="['w-80', 'h-80', 'fill-current']"
-        >
-        </svg-icon>
-      </div>
+    <div class="hidden">
+      <app-book [config]="bookConfigLeft"></app-book>
     </div>
   </div>
 </section>

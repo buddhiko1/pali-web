@@ -21,7 +21,8 @@ export class HomeComponent implements OnInit {
     this.bookConfigLeft = {
       height: '16rem',
       width: '12rem',
-      header: 'buddha tipitaka',
+      image: 'assets/images/cover.jpeg',
+      // header: 'buddha tipitaka',
       spine: 'happy new day',
       direction: 'left-view',
     };

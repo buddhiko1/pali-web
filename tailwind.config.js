@@ -19,7 +19,7 @@ module.exports = {
         // border color
         bdc: {
           DEFAULT: colors.gray["300"],
-          dark: colors.gray["700"],
+          dark: colors.gray["600"],
         },
       },
     },

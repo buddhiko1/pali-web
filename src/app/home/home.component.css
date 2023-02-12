@@ -1,3 +1,58 @@
-.test {
-  color: #333333;
+.c-container {
+  display: grid;
+  grid-template-rows: auto auto auto auto auto auto;
+  grid-template-columns: theme("spacing.smPadding") 1fr theme(
+      "spacing.smPadding"
+    );
+  grid-template-areas:
+    "left-area introduction right-area"
+    "left-area dpd right-area"
+    "left-area ncped right-area"
+    "left-area pts right-area"
+    "left-area dppn right-area"
+    "left-area abbr right-area";
+}
+
+.introduction {
+  grid-area: introduction;
+}
+
+.dict {
+  @apply pt-8 pb-6 border-b mx-6 lg:mx-60;
+}
+
+.title {
+  @apply text-lg lg:text-xl font-semibold capitalize;
+}
+
+.dpd {
+  grid-area: dpd;
+}
+
+.ncped {
+  grid-area: ncped;
+}
+
+.pts {
+  grid-area: pts;
+}
+
+.dppn {
+  grid-area: dppn;
+}
+
+.abbr {
+  grid-area: abbr;
+}
+
+.action {
+  display: grid;
+  column-gap: 2rem;
+  grid-template-rows: auto;
+  grid-template-columns: 1fr;
+}
+
+.downloader {
+  justify-self: right;
+  align-self: center;
 }

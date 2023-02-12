@@ -10,7 +10,7 @@ import { OverlayService } from './overlay/overlay.service';
 export class AppComponent {
   title = 'pali-web';
   lastScroll = 0;
-  scrollSpan = 25;
+  scrollSpan = 30;
   showMenuBtn = false;
   menuBtnTimoutId = 0;
 
@@ -38,20 +38,20 @@ export class AppComponent {
   }
 
   toggleMenuBtn(): void {
-    if (this.menuBtnTimoutId) {
-      window.clearTimeout(this.menuBtnTimoutId);
-    }
-    if (!this.showMenuBtn) {
-      if (!this.navbarService.show) {
-        this.showMenuBtn = true;
-        // hide menu button after 3s
-        this.menuBtnTimoutId = window.setTimeout(() => {
-          this.showMenuBtn = false;
-        }, 3000);
-      }
-    } else {
-      this.showMenuBtn = false;
-    }
+    // if (this.menuBtnTimoutId) {
+    //   window.clearTimeout(this.menuBtnTimoutId);
+    // }
+    // if (!this.showMenuBtn) {
+    //   if (!this.navbarService.show) {
+    //     this.showMenuBtn = true;
+    //     // hide menu button after 3s
+    //     this.menuBtnTimoutId = window.setTimeout(() => {
+    //       this.showMenuBtn = false;
+    //     }, 3000);
+    //   }
+    // } else {
+    //   this.showMenuBtn = false;
+    // }
   }
 
   @HostListener('window:scroll')

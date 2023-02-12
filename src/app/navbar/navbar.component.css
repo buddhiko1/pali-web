@@ -1,4 +1,4 @@
-.nav {
+.c-container {
   display: grid;
   grid-template-rows: auto auto;
   grid-template-columns: theme("spacing.smPadding") auto auto theme(
@@ -9,7 +9,7 @@
     "menu menu menu menu";
 }
 
-.nav-hidden {
+.c-container-hidden {
   transform: translateY(-100%);
 }
 
@@ -62,7 +62,7 @@
 }
 
 @media screen and (min-width: theme("screens.lg")) {
-  .nav {
+  .c-container {
     grid-template-rows: auto;
     grid-template-columns: theme("spacing.lgPadding") auto 1fr auto auto theme(
         "spacing.lgPadding"
