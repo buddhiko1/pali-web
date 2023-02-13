@@ -21,10 +21,16 @@
       <app-book [config]="bookConfigRight"></app-book>
     </div>
     <div>
-      <h2 class="capitalize c-title g-text-primary">Digital Pāḷi Dictionary</h2>
+      <p class="c-title g-text-primary">Digital Pali Dictionary</p>
       <p class="pt-2 leading-relaxed g-text-secondary">
-        Blue bottle crucifix vinyl post-ironic four dollar toast vegan
-        taxidermy. Gastropub indxgo juice poutine.
+        DPD is a feature-rich Pali-English dictionary which runs in GoldenDict,
+        or any other application that supports the Stardict format. DPD contains
+        five different dictionaries:<i>Pali to English Dictionary</i>,<i
+          >Pali Roots Dictionary</i
+        >,<i>English to Pali Dictionary</i>,<i
+          >Compound Deconstruction Dictionary</i
+        >, and <i>Abbreviations and Help Dictionary</i>.DPD recognises
+        <strong>1.1 million</strong> unique inflected forms of Pali words.
       </p>
       <div class="c-action pt-4">
         <button class="c-downloader g-button">
@@ -38,10 +44,14 @@
   </div>
   <div class="c-ncped c-dict border-bdc dark:border-bdc-dark">
     <div>
-      <p class="c-title g-text-primary">ncped</p>
+      <p class="c-title g-text-primary">Concise Pali-English Dictionary</p>
       <p class="pt-2 leading-relaxed g-text-secondary">
-        Blue bottle crucifix vinyl post-ironic four dollar toast vegan
-        taxidermy. Gastropub indxgo juice poutine.
+        This Concise Pali-English Dictionary has been prepared mainly for use by
+        students in schools and colleges. The author is not only an eminent
+        Elder of the Buddhist Order but one of the leading Pali scholars
+        recognized both in the East and the West as an authority on the subject.
+        His experience as a teacher and as a writer of textbooks made him
+        admirably suited for the undertaking.
       </p>
       <div class="c-action pt-4">
         <button class="c-downloader g-button">
@@ -54,6 +64,72 @@
     </div>
     <div class="c-book hidden lg:block">
       <app-book [config]="bookConfigLeft"></app-book>
+    </div>
+  </div>
+  <div class="c-pts c-dict border-bdc dark:border-bdc-dark">
+    <div class="c-book hidden lg:block">
+      <app-book [config]="bookConfigRight"></app-book>
+    </div>
+    <div>
+      <p class="c-title g-text-primary">
+        The Pali Text Society's Pali-English Dictionary
+      </p>
+      <p class="pt-2 leading-relaxed g-text-secondary">
+        This work has been selected by scholars as being culturally important,
+        and is part of the knowledge base of civilization as we know it. This
+        work was reproduced from the original artifact, and remains as true to
+        the original work as possible. Therefore, you will see the original
+        copyright references, library stamps (as most of these works have been
+        housed in our most important libraries around the world), and other
+        notations in the work.
+      </p>
+      <div class="c-action pt-4">
+        <button class="c-downloader g-button">
+          <svg-icon
+            src="assets/icons/download.svg"
+            [svgClass]="['g-svg']"
+          ></svg-icon>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="c-dppn c-dict border-bdc dark:border-bdc-dark">
+    <div>
+      <p class="c-title g-text-primary">Dictionary of Pali Proper Names</p>
+      <p class="pt-2 leading-relaxed g-text-secondary">
+        Dictionary of Pali Proper Names is a work of erudition. The author has
+        collected a vast number of entries from Pali canonocal and non-canonical
+        literature on the proper names to make it his magnum opus. It is an
+        indispensable tool for the study of Buddhism.
+      </p>
+      <div class="c-action pt-4">
+        <button class="c-downloader g-button">
+          <svg-icon
+            src="assets/icons/download.svg"
+            [svgClass]="['g-svg']"
+          ></svg-icon>
+        </button>
+      </div>
+    </div>
+    <div class="c-book hidden lg:block">
+      <app-book [config]="bookConfigLeft"></app-book>
+    </div>
+  </div>
+  <div class="c-abbr c-dict border-bdc dark:border-bdc-dark">
+    <div class="c-book hidden lg:block">
+      <app-book [config]="bookConfigRight"></app-book>
+    </div>
+    <div>
+      <p class="c-title g-text-primary">Dictionary of Abbreviation</p>
+      <p class="pt-2 leading-relaxed g-text-secondary"></p>
+      <div class="c-action pt-4">
+        <button class="c-downloader g-button">
+          <svg-icon
+            src="assets/icons/download.svg"
+            [svgClass]="['g-svg']"
+          ></svg-icon>
+        </button>
+      </div>
     </div>
   </div>
 </section>

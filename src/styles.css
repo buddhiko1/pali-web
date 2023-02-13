@@ -32,7 +32,7 @@
 
   /* widget */
   .g-svg {
-    @apply w-6 h-6 fill-current g-text-secondary;
+    @apply w-6 h-6 fill-current border-none focus:ring-0 g-text-secondary;
   }
 
   .g-button {
