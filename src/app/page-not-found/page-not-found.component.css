@@ -1,0 +1,22 @@
+.c-container {
+  display: grid;
+  grid-template-rows: auto auto auto;
+  grid-template-columns: 1fr;
+  place-items: center;
+  grid-template-areas:
+    "title"
+    "description"
+    "action";
+}
+
+.c-title {
+  grid-area: title;
+}
+
+.c-description {
+  grid-area: description;
+}
+
+.c-action {
+  grid-area: action;
+}
