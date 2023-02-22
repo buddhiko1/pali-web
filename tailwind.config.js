@@ -13,7 +13,7 @@ module.exports = {
         lgContentPadding: "27rem",
       },
       colors: {
-        // backgrund color
+        // background color
         bgc: {
           DEFAULT: colors.white,
           dark: colors.gray["800"],
@@ -26,5 +26,5 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [require("tailwind-scrollbar")({ nocompatible: true })],
 };

@@ -67,6 +67,7 @@ export class AppComponent {
 
   @HostListener('window:scroll')
   onScroll(): void {
+    console.log('on scroll');
     //
     // if (this.menuBtnTimoutId) {
     //   window.clearTimeout(this.menuBtnTimoutId);
@@ -80,13 +81,11 @@ export class AppComponent {
       return;
     }
 
-    // toggle navbar
-    if (currentScroll > this.lastScroll && this.navbarService.show) {
+    // hide navbar
+    if (this.navbarService.show) {
       this.navbarService.show = false;
-    } else if (currentScroll < this.lastScroll && this.navbarService.show) {
-      this.navbarService.show = false;
-      // this.showMenuBtn = false;
     }
+
     this.lastScroll = currentScroll;
 
     // show menu button if necessary
