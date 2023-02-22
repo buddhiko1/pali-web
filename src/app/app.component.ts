@@ -1,4 +1,4 @@
-import { Component, HostListener } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { ChildrenOutletContexts } from '@angular/router';
 import { NavbarService } from './navbar/navbar.service';
 import { OverlayService } from './overlay/overlay.service';
@@ -10,10 +10,12 @@ import { easeAnimation } from './app.animations';
   styleUrls: ['./app.component.css'],
   animations: [easeAnimation],
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'pali-web';
   lastScroll = 0;
   scrollSpan = 30;
+  isScrollbarShow = false;
+  scrollbarTimoutId = 0;
   showMenuBtn = false;
   menuBtnTimoutId = 0;
 
@@ -22,6 +24,10 @@ export class AppComponent {
     private navbarService: NavbarService,
     private overlayService: OverlayService
   ) {}
+
+  ngOnInit(): void {
+    this._showScrollbar();
+  }
 
   getRouteAnimationData() {
     return this.contexts.getContext('primary')?.route?.snapshot?.data?.[
@@ -65,9 +71,27 @@ export class AppComponent {
     // }
   }
 
+  private _showScrollbar(): void {
+    console.log('show scrollbar...');
+    if (this.scrollbarTimoutId) {
+      window.clearTimeout(this.scrollbarTimoutId);
+    }
+    document.documentElement.classList.remove('g-scrollbar-hide');
+    document.documentElement.classList.add('g-scrollbar-show');
+    this.scrollbarTimoutId = window.setTimeout(() => {
+      this._hideScrollbar();
+    }, 3000);
+    this.isScrollbarShow = true;
+  }
+
+  private _hideScrollbar(): void {
+    document.documentElement.classList.remove('g-scrollbar-show');
+    document.documentElement.classList.add('g-scrollbar-hide');
+    this.isScrollbarShow = false;
+  }
+
   @HostListener('window:scroll')
   onScroll(): void {
-    console.log('on scroll');
     //
     // if (this.menuBtnTimoutId) {
     //   window.clearTimeout(this.menuBtnTimoutId);
@@ -81,9 +105,13 @@ export class AppComponent {
       return;
     }
 
-    // hide navbar
+    // deal with navbar
     if (this.navbarService.show) {
       this.navbarService.show = false;
+    }
+    // deal with scrollbar
+    if (!this.isScrollbarShow) {
+      this._showScrollbar();
     }
 
     this.lastScroll = currentScroll;
