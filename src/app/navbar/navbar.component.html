@@ -4,7 +4,8 @@
 >
   <a
     (click)="toggleMenu()"
-    routerLink="home"
+    routerLink="{{ UrlEnum.Home }}"
+    [class.g-active]="isActiveUrl(UrlEnum.Home)"
     class="c-logo py-3 text-2xl lg:text-3xl font-bold g-text-primary focus:text-blue-500 g-hover"
     >Pali</a
   >
@@ -27,32 +28,49 @@
   </button>
 
   <section
-    [class]="openMenu ? '' : 'c-menu-close'"
+    [class.c-menu-close]="!openMenu"
     class="c-menu w-full pb-3 bg-bgc dark:bg-bgc-dark transition-all duration-500 ease-in-out"
   >
     <ul (click)="toggleMenu()" class="c-index">
       <li class="c-index-item mt-2 lg:mt-0 lg:mx-4">
-        <a routerLink="/reading" class="g-text-secondary g-hover g-focus"
-          >Reading</a
+        <a
+          routerLink="{{ UrlEnum.Reading }}"
+          [class.g-active]="isActiveUrl(UrlEnum.Reading)"
+          class="g-text-secondary g-hover g-focus"
+          >{{ UrlEnum.Reading | titlecase }}</a
         >
       </li>
       <li class="c-index-item mt-2 lg:mt-0 lg:mx-4">
-        <a routerLink="/dictionary" class="g-text-secondary g-hover g-focus"
-          >Dictionary</a
+        <a
+          routerLink="{{ UrlEnum.Dictionary }}"
+          [class.g-active]="isActiveUrl(UrlEnum.Dictionary)"
+          class="g-text-secondary g-hover g-focus"
+          >{{ UrlEnum.Dictionary | titlecase }}</a
         >
       </li>
       <li class="c-index-item mt-2 lg:mt-0 lg:mx-4">
-        <a routerLink="grammar" class="g-text-secondary g-hover g-focus"
-          >Grammar</a
+        <a
+          routerLink="{{ UrlEnum.Grammar }}"
+          [class.g-active]="isActiveUrl(UrlEnum.Grammar)"
+          class="g-text-secondary g-hover g-focus"
+          >{{ UrlEnum.Grammar | titlecase }}</a
         >
       </li>
       <li class="c-index-item mt-2 lg:mt-0 lg:mx-4">
-        <a routerLink="tipitaka" class="g-text-secondary g-hover g-focus"
-          >Tipitaka</a
+        <a
+          routerLink="{{ UrlEnum.Tipitaka }}"
+          [class.g-active]="isActiveUrl(UrlEnum.Tipitaka)"
+          class="g-text-secondary g-hover g-focus"
+          >{{ UrlEnum.Tipitaka | titlecase }}</a
         >
       </li>
       <li class="c-index-item mt-2 lg:mt-0 lg:mx-4">
-        <a routerLink="blog" class="g-text-secondary g-hover g-focus">Blog</a>
+        <a
+          routerLink="{{ UrlEnum.Blog }}"
+          [class.g-active]="isActiveUrl(UrlEnum.Blog)"
+          class="g-text-secondary g-hover g-focus"
+          >{{ UrlEnum.Blog | titlecase }}</a
+        >
       </li>
     </ul>
 

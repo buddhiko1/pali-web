@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
+import { Router, NavigationEnd } from '@angular/router';
 import { NavbarService } from './navbar.service';
 import { OverlayService } from '../overlay/overlay.service';
 import { PublicService } from '../core/public.service';
+import { UrlEnum } from '../app-routing.module';
 
 @Component({
   selector: 'app-navbar',
@@ -9,14 +11,28 @@ import { PublicService } from '../core/public.service';
   styleUrls: ['./navbar.component.css'],
 })
 export class NavbarComponent {
+  UrlEnum: typeof UrlEnum = UrlEnum;
+  url: string = this.UrlEnum.Home;
+
   constructor(
+    private router: Router,
     private navbarService: NavbarService,
     private overlayService: OverlayService,
     private publicService: PublicService
-  ) {}
+  ) {
+    this.router.events.subscribe((val) => {
+      if (val instanceof NavigationEnd) {
+        this.url = val.url.slice(1);
+      }
+    });
+  }
 
   get isDark(): boolean {
     return this.navbarService.isDark;
+  }
+
+  isActiveUrl(url: string): boolean {
+    return url === this.url;
   }
 
   toggleDark(): void {

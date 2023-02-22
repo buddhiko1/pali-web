@@ -2,6 +2,7 @@
 const colors = require("tailwindcss/colors");
 
 module.exports = {
+  important: true,
   darkMode: "class",
   content: ["./src/**/*.{html,ts,svg}"],
   theme: {
@@ -22,6 +23,11 @@ module.exports = {
         bdc: {
           DEFAULT: colors.gray["300"],
           dark: colors.gray["600"],
+        },
+        // color of focus text
+        tfc: {
+          DEFAULT: colors.blue["400"],
+          dark: colors.blue["400"],
         },
       },
     },
