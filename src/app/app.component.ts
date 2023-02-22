@@ -1,11 +1,14 @@
 import { Component, HostListener } from '@angular/core';
+import { ChildrenOutletContexts } from '@angular/router';
 import { NavbarService } from './navbar/navbar.service';
 import { OverlayService } from './overlay/overlay.service';
+import { easeAnimation } from './app.animations';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
+  animations: [easeAnimation],
 })
 export class AppComponent {
   title = 'pali-web';
@@ -15,13 +18,21 @@ export class AppComponent {
   menuBtnTimoutId = 0;
 
   constructor(
+    private contexts: ChildrenOutletContexts,
     private navbarService: NavbarService,
     private overlayService: OverlayService
   ) {}
 
+  getRouteAnimationData() {
+    return this.contexts.getContext('primary')?.route?.snapshot?.data?.[
+      'animation'
+    ];
+  }
+
   get isDark(): boolean {
     return this.navbarService.isDark;
   }
+
   get openMenu(): boolean {
     return this.navbarService.openMenu;
   }
