@@ -12,7 +12,7 @@ import { UrlEnum, RedirectTo } from '../app-routing.module';
 })
 export class NavbarComponent {
   UrlEnum: typeof UrlEnum = UrlEnum;
-  url: string = this.UrlEnum.Home;
+  private _url: string = this.UrlEnum.Home;
 
   constructor(
     private router: Router,
@@ -22,7 +22,7 @@ export class NavbarComponent {
   ) {
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
-        this.url = event.url.slice(1) == '' ? RedirectTo : event.url.slice(1);
+        this._url = event.url.slice(1) == '' ? RedirectTo : event.url.slice(1);
       }
     });
   }
@@ -31,8 +31,16 @@ export class NavbarComponent {
     return this.navbarService.isDark;
   }
 
+  get isMenuOpen(): boolean {
+    return this.navbarService.isMenuOpen;
+  }
+
+  get isShow(): boolean {
+    return this.navbarService.isShow;
+  }
+
   isActiveUrl(url: string): boolean {
-    return url === this.url;
+    return url === this._url;
   }
 
   toggleDark(): void {
@@ -41,24 +49,25 @@ export class NavbarComponent {
       // close men after toggle theme
       // this.toggleMenu();
       if (!this.publicService.atPageTop) {
-        this.navbarService.show = false;
+        this.navbarService.isShow = false;
       }
     }
   }
 
-  get openMenu(): boolean {
-    return this.navbarService.openMenu;
+  closeMenu(): void {
+    if (!this.publicService.isLgDevice) {
+      this.navbarService.isMenuOpen = false;
+      this.overlayService.isActive = false;
+    }
   }
 
   toggleMenu(): void {
     if (!this.publicService.isLgDevice) {
       // active overlay when open menu
-      this.navbarService.openMenu = !this.navbarService.openMenu;
-      this.overlayService.isActive = this.navbarService.openMenu ? true : false;
+      this.navbarService.isMenuOpen = !this.navbarService.isMenuOpen;
+      this.overlayService.isActive = this.navbarService.isMenuOpen
+        ? true
+        : false;
     }
-  }
-
-  get show(): boolean {
-    return this.navbarService.show;
   }
 }

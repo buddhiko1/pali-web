@@ -5,13 +5,13 @@ import { Injectable } from '@angular/core';
 })
 export class NavbarService {
   private _isDark: boolean;
-  private _openMenu: boolean;
-  private _show: boolean;
+  private _isMenuOpen: boolean;
+  private _isShow: boolean;
 
   constructor() {
     this._isDark = false;
-    this._openMenu = false;
-    this._show = true;
+    this._isMenuOpen = false;
+    this._isShow = true;
   }
 
   get isDark(): boolean {
@@ -29,19 +29,19 @@ export class NavbarService {
     this._isDark = value;
   }
 
-  get openMenu(): boolean {
-    return this._openMenu;
+  get isMenuOpen(): boolean {
+    return this._isMenuOpen;
   }
 
-  set openMenu(value: boolean) {
-    this._openMenu = value;
+  set isMenuOpen(value: boolean) {
+    this._isMenuOpen = value;
   }
 
-  get show(): boolean {
-    return this._show;
+  get isShow(): boolean {
+    return this._isShow;
   }
 
-  set show(value: boolean) {
-    this._show = value;
+  set isShow(value: boolean) {
+    this._isShow = value;
   }
 }

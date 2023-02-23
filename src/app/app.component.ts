@@ -40,18 +40,18 @@ export class AppComponent implements OnInit {
   }
 
   get openMenu(): boolean {
-    return this.navbarService.openMenu;
+    return this.navbarService.isMenuOpen;
   }
 
   get isMenuShow(): boolean {
-    return this.navbarService.openMenu;
+    return this.navbarService.isMenuOpen;
   }
 
   displayMenu(): void {
     this.showMenuBtn = false;
     this.overlayService.isActive = true;
-    this.navbarService.show = true;
-    this.navbarService.openMenu = true;
+    this.navbarService.isShow = true;
+    this.navbarService.isMenuOpen = true;
   }
 
   toggleMenuBtn(): void {
@@ -100,14 +100,14 @@ export class AppComponent implements OnInit {
     // reach the top
     const currentScroll = window.scrollY;
     if (currentScroll <= 0) {
-      this.navbarService.show = true;
+      this.navbarService.isShow = true;
       this.showMenuBtn = false;
       return;
     }
 
     // deal with navbar
-    if (this.navbarService.show) {
-      this.navbarService.show = false;
+    if (this.navbarService.isShow) {
+      this.navbarService.isShow = false;
     }
     // deal with scrollbar
     if (!this.isScrollbarShow) {

@@ -1,8 +1,9 @@
 <nav
-  [class]="show ? '' : 'c-container-hidden'"
+  [class]="isShow ? '' : 'c-container-hidden'"
   class="c-container sticky z-20 top-0 bg-bgc dark:bg-bgc-dark backdrop-blur-sm shadow dark:shadow-none g-transition-transform"
 >
   <a
+    (click)="closeMenu()"
     routerLink="{{ UrlEnum.Home }}"
     class="c-logo py-3 text-2xl lg:text-3xl font-bold g-text-primary g-hover"
     [class.text-blue-500]="isActiveUrl(UrlEnum.Home)"
@@ -21,14 +22,14 @@
       [svgClass]="[
         'g-svg',
         'g-transition-transform',
-        openMenu ? 'rotate-45' : ''
+        isMenuOpen ? 'rotate-45' : ''
       ]"
     ></svg-icon>
   </button>
 
   <section
     class="c-menu w-full pb-3 bg-bgc dark:bg-bgc-dark transition-all duration-500 ease-in-out"
-    [class.c-menu-close]="!openMenu"
+    [class.c-menu-close]="!isMenuOpen"
   >
     <ul (click)="toggleMenu()" class="c-index">
       <li class="c-index-item mt-2 lg:mt-0 lg:mx-4">
