@@ -14,7 +14,7 @@ export class OverlayService {
     return this._isActive;
   }
 
-  set isActive(value: boolean) {
+  active(value: boolean) {
     this._isActive = value;
     if (value) {
       // disable body scroll

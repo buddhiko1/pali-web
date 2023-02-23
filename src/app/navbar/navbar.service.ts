@@ -1,47 +1,46 @@
 import { Injectable } from '@angular/core';
+import { PublicService } from '../core/public.service';
+import { OverlayService } from '../overlay/overlay.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class NavbarService {
-  private _isDark: boolean;
   private _isMenuOpen: boolean;
-  private _isShow: boolean;
+  private _isHeaderShow: boolean;
 
-  constructor() {
-    this._isDark = false;
+  constructor(
+    private _publicService: PublicService,
+    private _overlayService: OverlayService
+  ) {
     this._isMenuOpen = false;
-    this._isShow = true;
-  }
-
-  get isDark(): boolean {
-    return this._isDark;
-  }
-
-  set isDark(value: boolean) {
-    // bug fix of tailwindcss background color
-    if (value) {
-      document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-    }
-    //
-    this._isDark = value;
+    this._isHeaderShow = true;
   }
 
   get isMenuOpen(): boolean {
     return this._isMenuOpen;
   }
 
-  set isMenuOpen(value: boolean) {
-    this._isMenuOpen = value;
+  openMenu(): void {
+    if (!this._publicService.isLgDevice) {
+      this._overlayService.active(true);
+      this._isHeaderShow = true;
+      this._isMenuOpen = true;
+    }
   }
 
-  get isShow(): boolean {
-    return this._isShow;
+  closeMenu(): void {
+    if (!this._publicService.isLgDevice) {
+      this._isMenuOpen = false;
+      this._overlayService.active(false);
+    }
   }
 
-  set isShow(value: boolean) {
-    this._isShow = value;
+  get isHeaderShow(): boolean {
+    return this._isHeaderShow;
+  }
+
+  showHeader(value: boolean) {
+    this._isHeaderShow = value;
   }
 }

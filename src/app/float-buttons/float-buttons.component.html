@@ -1,0 +1,15 @@
+<button
+  (click)="toggleMenuBtn()"
+  [class.scale-0]="!showMenuBtn"
+  class="menu-btn lg:hidden fixed p-1 bottom-10 right-smPadding z-20 rounded-full border border-bdc dark:border-bdc-dark g-transition-transform"
+>
+  <svg-icon
+    src="assets/icons/plus.svg"
+    [svgClass]="[
+      'g-svg',
+      'opacity-25',
+      'g-transition-transform',
+      showMenuBtn ? 'rotate-45' : ''
+    ]"
+  ></svg-icon>
+</button>

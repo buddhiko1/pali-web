@@ -1,26 +1,8 @@
-<div
-  [class]="['h-screen', 'c-container', isDark ? 'c-bg-dark' : 'c-bg']"
-  (click)="toggleMenuBtn()"
->
+<div [class]="['h-screen', 'c-container', isDark ? 'c-bg-dark' : 'c-bg']">
   <app-overlay></app-overlay>
   <app-navbar></app-navbar>
   <div [@routeAnimations]="getRouteAnimationData()">
     <router-outlet></router-outlet>
   </div>
   <app-footer></app-footer>
-  <button
-    (click)="displayMenu()"
-    [class.scale-0]="!showMenuBtn"
-    class="menu-btn lg:hidden fixed p-1 bottom-10 right-smPadding z-20 rounded-full border border-bdc dark:border-bdc-dark g-transition-transform"
-  >
-    <svg-icon
-      src="assets/icons/plus.svg"
-      [svgClass]="[
-        'g-svg',
-        'opacity-25',
-        'g-transition-transform',
-        isMenuShow ? 'rotate-45' : ''
-      ]"
-    ></svg-icon>
-  </button>
 </div>

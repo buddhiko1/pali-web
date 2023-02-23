@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 import { NavbarService } from './navbar.service';
-import { OverlayService } from '../overlay/overlay.service';
 import { PublicService } from '../core/public.service';
 import { UrlEnum, RedirectTo } from '../app-routing.module';
 
@@ -15,12 +14,11 @@ export class NavbarComponent {
   private _url: string = this.UrlEnum.Home;
 
   constructor(
-    private router: Router,
-    private navbarService: NavbarService,
-    private overlayService: OverlayService,
-    private publicService: PublicService
+    private _router: Router,
+    private _navbarService: NavbarService,
+    private _publicService: PublicService
   ) {
-    this.router.events.subscribe((event) => {
+    this._router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
         this._url = event.url.slice(1) == '' ? RedirectTo : event.url.slice(1);
       }
@@ -28,46 +26,34 @@ export class NavbarComponent {
   }
 
   get isDark(): boolean {
-    return this.navbarService.isDark;
+    return this._publicService.isDark;
+  }
+
+  toggleDark(): void {
+    this._publicService.toggleDark();
   }
 
   get isMenuOpen(): boolean {
-    return this.navbarService.isMenuOpen;
+    return this._navbarService.isMenuOpen;
   }
 
-  get isShow(): boolean {
-    return this.navbarService.isShow;
+  closeMenu(): void {
+    this._navbarService.closeMenu();
+  }
+
+  toggleMenu(): void {
+    if (this.isMenuOpen) {
+      this._navbarService.closeMenu();
+    } else {
+      this._navbarService.openMenu();
+    }
+  }
+
+  get isHeaderShow(): boolean {
+    return this._navbarService.isHeaderShow;
   }
 
   isActiveUrl(url: string): boolean {
     return url === this._url;
-  }
-
-  toggleDark(): void {
-    this.navbarService.isDark = !this.navbarService.isDark;
-    if (!this.publicService.isLgDevice) {
-      // close men after toggle theme
-      // this.toggleMenu();
-      if (!this.publicService.atPageTop) {
-        this.navbarService.isShow = false;
-      }
-    }
-  }
-
-  closeMenu(): void {
-    if (!this.publicService.isLgDevice) {
-      this.navbarService.isMenuOpen = false;
-      this.overlayService.isActive = false;
-    }
-  }
-
-  toggleMenu(): void {
-    if (!this.publicService.isLgDevice) {
-      // active overlay when open menu
-      this.navbarService.isMenuOpen = !this.navbarService.isMenuOpen;
-      this.overlayService.isActive = this.navbarService.isMenuOpen
-        ? true
-        : false;
-    }
   }
 }

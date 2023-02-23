@@ -5,12 +5,13 @@ import { DeviceDetectorService } from 'ngx-device-detector';
   providedIn: 'root',
 })
 export class PublicService {
+  private _isDark: boolean;
   private _isLgDevice: boolean;
   private _isScrollbarShow = false;
-  // private _scrollbarTimoutId = 0;
 
   constructor(private deviceService: DeviceDetectorService) {
     this._isLgDevice = this.deviceService.isDesktop();
+    this._isDark = false;
   }
 
   get isLgDevice(): boolean {
@@ -19,6 +20,25 @@ export class PublicService {
 
   get atPageTop(): boolean {
     return window.scrollY <= 0;
+  }
+
+  get isDark(): boolean {
+    return this._isDark;
+  }
+
+  activeDark(value: boolean) {
+    // bug fix of tailwindcss background color
+    if (value) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+    //
+    this._isDark = value;
+  }
+
+  toggleDark(): void {
+    this._isDark ? this.activeDark(false) : this.activeDark(true);
   }
 
   get isScrollbarShow(): boolean {
