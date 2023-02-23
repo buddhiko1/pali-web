@@ -1,8 +1,9 @@
-<div [class]="['h-screen', 'c-container', isDark ? 'c-bg-dark' : 'c-bg']">
+<div
+  [class]="['h-screen', 'c-container', isDark ? 'c-bg-dark' : 'c-bg']"
+  [@routeAnimations]="getRouteAnimationData()"
+>
   <app-overlay></app-overlay>
   <app-navbar></app-navbar>
-  <div [@routeAnimations]="getRouteAnimationData()">
-    <router-outlet></router-outlet>
-  </div>
+  <router-outlet></router-outlet>
   <app-footer></app-footer>
 </div>

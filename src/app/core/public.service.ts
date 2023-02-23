@@ -8,6 +8,7 @@ export class PublicService {
   private _isDark: boolean;
   private _isLgDevice: boolean;
   private _isScrollbarShow = false;
+  private _scrollbarTimeoutId = 0;
 
   constructor(private deviceService: DeviceDetectorService) {
     this._isLgDevice = this.deviceService.isDesktop();
@@ -16,10 +17,6 @@ export class PublicService {
 
   get isLgDevice(): boolean {
     return this._isLgDevice;
-  }
-
-  get atPageTop(): boolean {
-    return window.scrollY <= 0;
   }
 
   get isDark(): boolean {
@@ -38,7 +35,12 @@ export class PublicService {
   }
 
   toggleDark(): void {
+    // hide scrollbar when switch theme
+    if (this._isScrollbarShow) {
+      this._hideScrollbar();
+    }
     this._isDark ? this.activeDark(false) : this.activeDark(true);
+    this.showScrollbar();
   }
 
   get isScrollbarShow(): boolean {
@@ -46,7 +48,12 @@ export class PublicService {
   }
 
   private _hideScrollbar(): void {
-    document.documentElement.classList.remove('g-scrollbar-show');
+    if (this._scrollbarTimeoutId) {
+      window.clearTimeout(this._scrollbarTimeoutId);
+      this._scrollbarTimeoutId = 0;
+    }
+    document.documentElement.classList.remove('g-scrollbar');
+    document.documentElement.classList.remove('g-scrollbar-dark');
     document.documentElement.classList.add('g-scrollbar-hide');
     this._isScrollbarShow = false;
   }
@@ -57,9 +64,12 @@ export class PublicService {
       return;
     }
     document.documentElement.classList.remove('g-scrollbar-hide');
-    document.documentElement.classList.add('g-scrollbar-show');
-    window.setTimeout(() => {
+    document.documentElement.classList.add(
+      this._isDark ? 'g-scrollbar-dark' : 'g-scrollbar'
+    );
+    this._scrollbarTimeoutId = window.setTimeout(() => {
       this._hideScrollbar();
+      this._scrollbarTimeoutId = 0;
     }, 3000);
     this._isScrollbarShow = true;
   }

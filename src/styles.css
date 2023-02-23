@@ -43,8 +43,12 @@
     @apply p-1 rounded-md bg-blue-50 hover:bg-blue-200 dark:bg-gray-700  dark:hover:bg-gray-500 g-transition-colors;
   }
 
-  .g-scrollbar-show {
-    @apply scrollbar-thin scrollbar-w-1.5 scrollbar-thumb-bdc dark:scrollbar-thumb-bdc-dark scrollbar-track-bgc dark:scrollbar-track-bgc-dark;
+  .g-scrollbar {
+    @apply scrollbar-thin scrollbar-w-1.5 scrollbar-thumb-bdc scrollbar-track-bgc;
+  }
+
+  .g-scrollbar-dark {
+    @apply scrollbar-thin scrollbar-w-1.5 scrollbar-thumb-bdc-dark scrollbar-track-bgc-dark;
   }
 
   .g-scrollbar-hide {
