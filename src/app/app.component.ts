@@ -71,8 +71,8 @@ export class AppComponent implements OnInit {
     // }
   }
 
+  // fix bug of tailwindcss-scrollbar
   private _showScrollbar(): void {
-    console.log('show scrollbar...');
     if (this.scrollbarTimoutId) {
       window.clearTimeout(this.scrollbarTimoutId);
     }

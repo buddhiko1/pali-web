@@ -3,7 +3,7 @@ import { Router, NavigationEnd } from '@angular/router';
 import { NavbarService } from './navbar.service';
 import { OverlayService } from '../overlay/overlay.service';
 import { PublicService } from '../core/public.service';
-import { UrlEnum } from '../app-routing.module';
+import { UrlEnum, RedirectTo } from '../app-routing.module';
 
 @Component({
   selector: 'app-navbar',
@@ -20,9 +20,9 @@ export class NavbarComponent {
     private overlayService: OverlayService,
     private publicService: PublicService
   ) {
-    this.router.events.subscribe((val) => {
-      if (val instanceof NavigationEnd) {
-        this.url = val.url.slice(1);
+    this.router.events.subscribe((event) => {
+      if (event instanceof NavigationEnd) {
+        this.url = event.url.slice(1) == '' ? RedirectTo : event.url.slice(1);
       }
     });
   }

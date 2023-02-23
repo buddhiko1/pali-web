@@ -44,10 +44,11 @@
   }
 
   .g-scrollbar-show {
-    @apply scrollbar-thin scrollbar-w-1.5 scrollbar-thumb-bdc dark:scrollbar-thumb-bdc-dark scrollbar-track-bgc dark:scrollbar-track-bgc-dark g-transition-transform;
+    @apply scrollbar-thin scrollbar-w-1.5 scrollbar-thumb-bdc dark:scrollbar-thumb-bdc-dark scrollbar-track-bgc dark:scrollbar-track-bgc-dark;
   }
+
   .g-scrollbar-hide {
-    @apply scrollbar-none g-transition-transform;
+    @apply scrollbar-none;
   }
 }
 

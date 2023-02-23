@@ -11,8 +11,10 @@ export enum UrlEnum {
   Blog = 'blog',
 }
 
+export const RedirectTo = UrlEnum.Dictionary;
+
 const routes: Routes = [
-  { path: '', redirectTo: '/dictionary', pathMatch: 'full' },
+  { path: '', redirectTo: RedirectTo, pathMatch: 'full' },
   {
     path: UrlEnum.Home,
     loadChildren: () => import('./home/home.module').then((m) => m.HomeModule),
