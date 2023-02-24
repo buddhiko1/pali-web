@@ -27,7 +27,7 @@
 
   /* text */
   .g-text-primary {
-    @apply text-gray-600 dark:text-gray-100 g-transition-colors;
+    @apply text-gray-700 dark:text-gray-100 g-transition-colors;
   }
 
   .g-text-secondary {
