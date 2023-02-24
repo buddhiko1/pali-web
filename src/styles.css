@@ -18,7 +18,7 @@
   }
 
   .g-focus {
-    @apply focus:text-tfc dark:focus:text-tfc-dark g-transition-colors;
+    @apply focus:text-tfc focus:outline-none dark:focus:text-tfc-dark g-transition-colors;
   }
 
   .g-active {
