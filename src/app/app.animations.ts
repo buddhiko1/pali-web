@@ -9,7 +9,11 @@ import {
 
 export const easeAnimation = trigger('routeAnimations', [
   transition('* <=> *', [
-    query(':enter', [style({ opacity: 0 })], { optional: true }),
+    query(
+      ':enter',
+      [style({ opacity: 0, position: 'absolute', top: '100vh' })],
+      { optional: true }
+    ),
     query(':leave', [style({ opacity: 1 })], { optional: true }),
     group([
       query(':enter', [animate('500ms ease-in', style({ opacity: 1 }))], {
