@@ -5,7 +5,7 @@
       "spacing.smContentPadding"
     );
   grid-template-areas:
-    "left-area introduction right-area"
+    "left-area preface right-area"
     "left-area dpd right-area"
     "left-area ncped right-area"
     "left-area pts right-area"
@@ -13,8 +13,8 @@
     "left-area abbr right-area";
 }
 
-.c-introduction {
-  grid-area: introduction;
+.c-preface {
+  grid-area: preface;
 }
 
 .c-dpd {
@@ -22,7 +22,6 @@
 }
 
 .c-ncped {
-  display: grid;
   grid-area: ncped;
 }
 
@@ -42,17 +41,25 @@
   display: grid;
   grid-template-rows: auto;
   grid-template-columns: 1fr auto;
-  @apply pt-8 lg:pt-24 pb-6 lg:pb-16 border-b;
+  @apply pt-12 pb-8 border-b;
 }
 
 .c-title {
-  @apply text-lg lg:text-xl font-semibold capitalize;
+  @apply text-lg font-semibold capitalize;
+}
+
+.c-introduction {
+  @apply leading-relaxed pt-4;
 }
 
 .c-action {
+  column-gap: 1rem;
   display: grid;
   grid-template-rows: auto;
-  grid-template-columns: 1fr;
+  grid-template-columns: auto;
+  grid-auto-flow: column;
+  justify-content: end;
+  @apply pt-6;
 }
 
 .c-action .c-downloader {
@@ -63,15 +70,29 @@
 @media screen and (min-width: theme("screens.lg")) {
   .c-dict {
     grid-template-columns: 1fr 1fr;
+    @apply pt-36 pb-24;
+  }
+
+  .c-book {
+    align-self: start;
+    justify-self: center;
+  }
+
+  .c-title {
+    @apply text-xl;
+  }
+
+  .c-introduction {
+    @apply pt-8;
+  }
+
+  .c-action {
+    @apply pt-16;
   }
 
   .c-container {
     grid-template-columns: theme("spacing.lgContentPadding") 1fr theme(
         "spacing.lgContentPadding"
       );
-  }
-
-  .c-book {
-    place-self: center;
   }
 }
