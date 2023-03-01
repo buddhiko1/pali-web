@@ -27,7 +27,7 @@
 
   /* text */
   .g-text-primary {
-    @apply text-gray-700 dark:text-gray-100 g-transition-colors;
+    @apply text-gray-700 dark:text-gray-50 g-transition-colors;
   }
 
   .g-text-secondary {
@@ -54,6 +54,25 @@
   .g-scrollbar-hide {
     @apply scrollbar-none;
   }
+}
+
+.g-slide {
+  position: relative;
+  transform: translateY(30px);
+  opacity: 0;
+  transition: 1s all ease;
+}
+
+.g-slide-lg {
+  position: relative;
+  transform: translateY(100px);
+  opacity: 0;
+  transition: 1s all ease;
+}
+
+.g-slide-active {
+  transform: translateY(0);
+  opacity: 1;
 }
 
 * {

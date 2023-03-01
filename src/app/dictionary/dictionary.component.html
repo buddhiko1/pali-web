@@ -1,5 +1,5 @@
 <section class="c-container bg-bgc dark:bg-bgc-dark">
-  <div class="c-preface pt-10 lg:pt-24">
+  <div class="c-preface pt-10 lg:pt-24 appSlideElement">
     <h2 class="c-title">
       <p class="inline-block capitalize mr-2 g-text-primary">pali</p>
       <p class="inline-block capitalize text-blue-500">dictionary</p>
@@ -81,7 +81,7 @@
       <app-book [config]="ncpedConfig"></app-book>
     </div>
   </div>
-  <div class="c-pts c-dict border-bdc dark:border-bdc-dark">
+  <div appSlideElement class="c-pts c-dict border-bdc dark:border-bdc-dark">
     <div class="c-book hidden lg:block">
       <app-book [config]="ptsConfig"></app-book>
     </div>
@@ -114,7 +114,7 @@
       </div>
     </div>
   </div>
-  <div class="c-dppn c-dict border-bdc dark:border-bdc-dark">
+  <div appSlideElement class="c-dppn c-dict border-bdc dark:border-bdc-dark">
     <div>
       <p class="c-title g-text-primary">Dictionary of Pali Proper Names</p>
       <p class="c-introduction g-text-secondary">
@@ -142,7 +142,7 @@
       <app-book [config]="dppnConfig"></app-book>
     </div>
   </div>
-  <div class="c-abbr c-dict border-bdc dark:border-bdc-dark">
+  <div appSlideElement class="c-abbr c-dict border-bdc dark:border-bdc-dark">
     <div class="c-book hidden lg:block">
       <app-book [config]="abbrConfig"></app-book>
     </div>

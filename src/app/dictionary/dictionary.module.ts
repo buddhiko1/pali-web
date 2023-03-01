@@ -4,6 +4,7 @@ import { AngularSvgIconModule } from 'angular-svg-icon';
 import { DictionaryComponent } from './dictionary.component';
 import { DictionaryRoutingModule } from './dictionary-routing.module';
 import { BookComponent } from '../book/book.component';
+import { SlideElementDirective } from '../slide.directive';
 
 @NgModule({
   declarations: [DictionaryComponent],
@@ -13,6 +14,7 @@ import { BookComponent } from '../book/book.component';
     DictionaryRoutingModule,
     AngularSvgIconModule,
     BookComponent,
+    SlideElementDirective,
   ],
 })
 export class DictionaryModule {}
