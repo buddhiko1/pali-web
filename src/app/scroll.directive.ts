@@ -17,7 +17,7 @@ export class ScrollDirective {
     const currentScroll = window.scrollY;
 
     // deal with navbar
-    if (currentScroll <= 0) {
+    if (currentScroll <= 50) {
       // reach the top
       this._navbarService.showHeader(true);
       return;

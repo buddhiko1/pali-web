@@ -92,3 +92,6 @@
 .book.left-view:hover {
   transform: rotate3d(0, 1, 0, 0deg);
 }
+.book.front-view {
+  transform: rotate3d(0, 1, 0, 0deg);
+}

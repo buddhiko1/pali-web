@@ -30,13 +30,24 @@
     @apply text-gray-700 dark:text-gray-50 g-transition-colors;
   }
 
+  .g-text-primary-invert {
+    @apply dark:text-gray-700 text-gray-50 g-transition-colors;
+  }
+
   .g-text-secondary {
     @apply text-gray-500 dark:text-gray-200 g-transition-colors;
   }
 
+  .g-text-secondary-invert {
+    @apply dark:text-gray-500 text-gray-200 g-transition-colors;
+  }
   /* widget */
   .g-svg {
     @apply w-6 h-6 fill-current border-none focus:ring-0 g-text-secondary;
+  }
+
+  .g-svg-invert {
+    @apply w-6 h-6 fill-current border-none focus:ring-0 g-text-secondary-invert;
   }
 
   .g-button {
@@ -53,6 +64,17 @@
 
   .g-scrollbar-hide {
     @apply scrollbar-none;
+  }
+
+  .g-border {
+    @apply border-bdc dark:border-bdc-dark;
+  }
+
+  .g-bg {
+    @apply bg-bgc dark:bg-bgc-dark;
+  }
+  .g-bg-invert {
+    @apply dark:bg-bgc bg-bgc-dark;
   }
 }
 

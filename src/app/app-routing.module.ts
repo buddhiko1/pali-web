@@ -7,24 +7,30 @@ export enum UrlEnum {
   Reading = 'reading',
   Dictionary = 'dictionary',
   Grammar = 'grammar',
-  Tipitaka = 'tipitak',
+  Tipitaka = 'tipitaka',
   Blog = 'blog',
 }
 
-export const RedirectTo = UrlEnum.Dictionary;
+export const RedirectTo = UrlEnum.Tipitaka;
 
 const routes: Routes = [
   { path: '', redirectTo: RedirectTo, pathMatch: 'full' },
   {
     path: UrlEnum.Home,
     loadChildren: () => import('./home/home.module').then((m) => m.HomeModule),
-    data: { animation: 'home' },
+    data: { animation: UrlEnum.Home },
   },
   {
     path: UrlEnum.Dictionary,
     loadChildren: () =>
       import('./dictionary/dictionary.module').then((m) => m.DictionaryModule),
-    data: { animation: 'dictionary' },
+    data: { animation: UrlEnum.Dictionary },
+  },
+  {
+    path: UrlEnum.Tipitaka,
+    loadChildren: () =>
+      import('./tipitaka/tipitaka.module').then((m) => m.TipitakaModule),
+    data: { animation: UrlEnum.Tipitaka },
   },
   {
     path: '**',

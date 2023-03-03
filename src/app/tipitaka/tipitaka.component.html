@@ -1,0 +1,120 @@
+<section class="c-container g-bg">
+  <div class="c-banner bg-cover bg-center lg:mt-12"></div>
+  <div class="c-books pt-16 lg:pt-28">
+    <div class="c-title pb-4 lg:pb-10 border-b g-border">
+      <p
+        class="text-center text-xl lg:text-3xl uppercase tracking-widest lg:tracking-[.25em] g-text-primary"
+      >
+        Tipiṭaka Epub
+      </p>
+    </div>
+    <div class="c-book c-suttas">
+      <app-book [config]="suttasConfig"></app-book>
+      <div class="c-action w-full pt-10 pb-4 border-b g-border">
+        <button class="g-button">
+          <svg-icon
+            src="assets/icons/info.svg"
+            [svgClass]="['g-svg']"
+          ></svg-icon>
+        </button>
+        <button class="g-button">
+          <svg-icon
+            src="assets/icons/download.svg"
+            [svgClass]="['g-svg']"
+          ></svg-icon>
+        </button>
+      </div>
+    </div>
+    <div class="c-book c-vinaya">
+      <app-book [config]="vinayaConfig"></app-book>
+      <div class="c-action w-full pt-10 pb-4 border-b g-border">
+        <button class="g-button">
+          <svg-icon
+            src="assets/icons/info.svg"
+            [svgClass]="['g-svg']"
+          ></svg-icon>
+        </button>
+        <button class="g-button">
+          <svg-icon
+            src="assets/icons/download.svg"
+            [svgClass]="['g-svg']"
+          ></svg-icon>
+        </button>
+      </div>
+    </div>
+    <div class="c-book c-abhidhamma">
+      <app-book [config]="abhidhammaConfig"></app-book>
+      <div class="c-action w-full pt-10 pb-4 border-b g-border">
+        <button class="g-button">
+          <svg-icon
+            src="assets/icons/info.svg"
+            [svgClass]="['g-svg']"
+          ></svg-icon>
+        </button>
+        <button class="g-button">
+          <svg-icon
+            src="assets/icons/download.svg"
+            [svgClass]="['g-svg']"
+          ></svg-icon>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="c-cites mt-16 lg:mt-28 py-16 lg:py-28 g-bg-invert">
+    <div class="c-title pb-4 lg:pb-10 border-b g-border">
+      <p
+        class="text-center text-xl lg:text-3xl uppercase tracking-widest lg:tracking-[.25em] g-text-primary-invert"
+      >
+        bante said
+      </p>
+    </div>
+    <div class="c-cite c-first-cite lg:mr-12">
+      <svg-icon
+        src="assets/icons/quotes.svg"
+        [svgClass]="['g-svg-invert']"
+        [svgStyle]="{ 'width.px': 50, 'height.px': 50 }"
+      ></svg-icon>
+      <p class="pt-2 lg:pt-4 text-center g-text-secondary-invert">
+        These books of the Pali Canon correctly represent the Buddhaʼs Teaching,
+        and can be regarded as trustworthy throughout. (Vinayapiṭaka:)
+        Suttavibhaṅga, Mahāvagga, Cūḷavagga; (Suttapiṭaka:) Dīghanikāya,
+        Majjhimanikāya, Saṃyuttanikāya, Aṅguttaranikāya, Suttanipāta,
+        Dhammapada, Udāna, Itivuttaka, Theratherīgāthā. No other Pali books
+        whatsoever should be taken as authoritative; and ignorance of them (and
+        particularly of the traditional Commentaries) may be counted a positive
+        advantage, as leaving less to be unlearned.
+      </p>
+      <div class="bante">
+        <div class="w-28 my-6 lg:my-8 border-b g-border"></div>
+        <a
+          href="https://www.nanavira.org/"
+          class="g-text-secondary-invert text-red-400"
+          >BHANTE ÑĀṆAVĪRA</a
+        >
+      </div>
+    </div>
+    <div class="c-cite c-second-cite lg:ml-12">
+      <svg-icon
+        src="assets/icons/quotes.svg"
+        [svgClass]="['g-svg-invert']"
+        [svgStyle]="{ 'width.px': 50, 'height.px': 50 }"
+      ></svg-icon>
+      <p class="pt-2 lg:pt-4 text-center g-text-secondary-invert">
+        It was necessary for a monk to spend time to learn the language of Pāli.
+        The Suttas are written in Pāli and, in order to avoid being misled by
+        imperfect translations, it is better to read them in their original
+        language. One could feel much closer to the Buddha if one reads his
+        discourses in Pāli – “one could almost hear the Buddha’s voice.” Pāli
+        has a deep connection with the ancient world of dhamma.
+      </p>
+      <div class="bante">
+        <div class="w-28 my-6 lg:my-8 border-b g-border"></div>
+        <a
+          href="https://pathpress.org/the-island-within/"
+          class="g-text-secondary-invert text-red-400"
+          >BHANTE ÑĀṆADĪPA</a
+        >
+      </div>
+    </div>
+  </div>
+</section>

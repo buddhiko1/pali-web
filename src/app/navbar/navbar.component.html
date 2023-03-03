@@ -1,11 +1,11 @@
 <nav
-  class="c-container sticky z-20 top-0 bg-bgc dark:bg-bgc-dark backdrop-blur-sm shadow g-transition-transform"
+  class="c-container sticky z-20 top-0 backdrop-blur-sm shadow g-transition-transform g-bg"
   [class.c-container-hidden]="!isHeaderShow"
 >
   <a
     (click)="closeMenu()"
     routerLink="{{ UrlEnum.Home }}"
-    class="c-logo py-3 text-2xl lg:text-3xl font-bold g-text-primary g-hover"
+    class="c-logo py-3 text-2xl lg:text-3xl uppercase tracking-widest font-bold g-text-primary g-hover"
     [class.text-blue-500]="isActiveUrl(UrlEnum.Home)"
     >Pali</a
   >
@@ -28,7 +28,7 @@
   </button>
 
   <section
-    class="c-menu w-full pb-3 bg-bgc dark:bg-bgc-dark transition-transform duration-500 ease-in-out"
+    class="c-menu w-full pb-3 transition-transform duration-500 ease-in-out g-bg"
     [class.c-menu-close]="!isMenuOpen"
   >
     <ul (click)="toggleMenu()" class="c-index">
@@ -74,9 +74,7 @@
       </li>
     </ul>
 
-    <div
-      class="c-divider lg:hidden mb-5 h-6 border-b border-bdc dark:border-bdc-dark"
-    ></div>
+    <div class="c-divider lg:hidden mb-5 h-6 border-b g-border"></div>
 
     <button
       (click)="toggleDark()"

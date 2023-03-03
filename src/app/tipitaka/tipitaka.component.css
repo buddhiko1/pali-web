@@ -1,0 +1,122 @@
+.c-container {
+  display: grid;
+  grid-template-rows: auto auto auto;
+  grid-template-columns: theme("spacing.smContentPadding") 1fr theme(
+      "spacing.smContentPadding"
+    );
+  grid-template-areas:
+    "banner banner banner"
+    "left-area books right-area"
+    "cites cites cites";
+}
+
+.c-banner {
+  grid-area: banner;
+  height: 50rem;
+  background-image: url("../../assets/images/bg.jpg");
+}
+
+.c-books {
+  grid-area: books;
+  display: grid;
+  grid-template-rows: auto auto auto auto;
+  grid-template-columns: 1fr;
+}
+
+.c-book {
+  place-self: center;
+  @apply pt-14 lg:pt-28;
+}
+
+.c-book .c-action {
+  display: grid;
+  column-gap: 1rem;
+  grid-template-rows: auto;
+  grid-template-columns: auto;
+  grid-auto-flow: column;
+  justify-content: center;
+}
+
+.c-cites {
+  grid-area: cites;
+  display: grid;
+  grid-template-rows: auto auto auto;
+  grid-template-columns: theme("spacing.smContentPadding") 1fr theme(
+      "spacing.smContentPadding"
+    );
+  grid-template-areas:
+    "left-area cites-title right-area"
+    "left-area first-cite right-area"
+    "left-area second-cite right-area";
+}
+
+.c-cites .c-title {
+  grid-area: cites-title;
+}
+
+.c-first-cite {
+  grid-area: first-cite;
+}
+
+.c-second-cite {
+  grid-area: second-cite;
+}
+
+.c-cite {
+  display: grid;
+  place-items: center;
+  grid-template-rows: auto auto auto;
+  grid-template-columns: 1fr;
+  @apply pt-8;
+}
+
+.bante {
+  display: grid;
+  place-items: center;
+}
+
+@media screen and (min-width: theme("screens.lg")) {
+  .c-container {
+    grid-template-columns: theme("spacing.lgContentPadding") 1fr theme(
+        "spacing.lgContentPadding"
+      );
+  }
+
+  .c-books {
+    grid-template-rows: auto auto;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas:
+      "books-title books-title books-title"
+      "suttas vinaya abhidhamma";
+  }
+
+  .c-books .c-title {
+    grid-area: books-title;
+  }
+
+  .c-suttas {
+    grid-area: suttas;
+  }
+
+  .c-vinaya {
+    grid-area: vinaya;
+  }
+
+  .c-abhidhamma {
+    grid-area: abhidhamma;
+  }
+
+  .c-cites {
+    grid-template-rows: auto auto;
+    grid-template-columns: theme("spacing.lgContentPadding") 1fr 1fr theme(
+        "spacing.lgContentPadding"
+      );
+    grid-template-areas:
+      "left-area cites-title cites-title right-area"
+      "left-area first-cite second-cite right-area";
+  }
+  .c-cite {
+    align-content: space-between;
+    @apply pt-12;
+  }
+}

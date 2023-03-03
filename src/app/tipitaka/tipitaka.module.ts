@@ -1,20 +1,20 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AngularSvgIconModule } from 'angular-svg-icon';
-import { DictionaryComponent } from './dictionary.component';
-import { DictionaryRoutingModule } from './dictionary-routing.module';
 import { BookComponent } from '../book/book.component';
 import { SlideElementDirective } from '../slide.directive';
+import { TipitakaComponent } from './tipitaka.component';
+import { TipitakaRoutingModule } from './tipitaka-routing.module';
 
 @NgModule({
-  declarations: [DictionaryComponent],
+  declarations: [TipitakaComponent],
   imports: [
     CommonModule,
-    DictionaryRoutingModule,
+    TipitakaRoutingModule,
     AngularSvgIconModule,
     BookComponent,
     SlideElementDirective,
   ],
-  exports: [DictionaryComponent],
+  exports: [TipitakaComponent],
 })
-export class DictionaryModule {}
+export class TipitakaModule {}
