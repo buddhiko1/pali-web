@@ -7,16 +7,16 @@ import { Config as BookConfig } from '../book/book.model';
   styleUrls: ['./tipitaka.component.css'],
 })
 export class TipitakaComponent {
-  suttasConfig: BookConfig;
+  suttaConfig: BookConfig;
   vinayaConfig: BookConfig;
   abhidhammaConfig: BookConfig;
   private _color = '#477999';
   constructor() {
-    this.suttasConfig = {
+    this.suttaConfig = {
       height: '16rem',
       width: '12rem',
       // header: 'Digital Pali Dictionary',
-      image: 'assets/images/dpd.jpg',
+      image: 'assets/images/sutta.jpg',
       color: this._color,
       direction: 'front-view',
     };
@@ -24,7 +24,7 @@ export class TipitakaComponent {
       height: '16rem',
       width: '12rem',
       // header: 'Digital Pali Dictionary',
-      image: 'assets/images/dpd.jpg',
+      image: 'assets/images/vinaya.jpg',
       color: this._color,
       direction: 'front-view',
     };
@@ -32,7 +32,7 @@ export class TipitakaComponent {
       height: '16rem',
       width: '12rem',
       // header: 'Digital Pali Dictionary',
-      image: 'assets/images/dpd.jpg',
+      image: 'assets/images/abhidhamma.jpg',
       color: this._color,
       direction: 'front-view',
     };

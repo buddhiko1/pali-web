@@ -29,6 +29,10 @@ module.exports = {
           DEFAULT: colors.blue["400"],
           dark: colors.blue["400"],
         },
+        trc: {
+          DEFAULT: "#ad0101",
+          dark: "#ad0101",
+        },
       },
     },
   },
