@@ -86,15 +86,15 @@
 
 .g-slide-lg {
   position: relative;
-  transform: translateY(100px);
+  transform: translateY(60px);
   opacity: 0;
 }
 
-.g-slide-1s {
+.g-slide-1000ms {
   transition: 1s all ease;
 }
 
-.g-slide-2s {
+.g-slide-1500ms {
   transition: 2s all ease;
 }
 
