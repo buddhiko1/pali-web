@@ -1,5 +1,6 @@
 <nav
-  class="c-container sticky z-20 top-0 backdrop-blur-sm shadow g-transition-transform g-bg"
+  class="c-container pt-1 lg:pt-4 sticky z-20 top-0 backdrop-blur-sm g-transition-transform g-bg"
+  [class.shadow]="!isAtTop"
   [class.c-container-hidden]="!isHeaderShow"
 >
   <a
@@ -35,7 +36,7 @@
       <li class="c-index-item mt-2 lg:mt-0 lg:mx-4">
         <a
           routerLink="{{ UrlEnum.Reading }}"
-          class="g-text-secondary g-hover"
+          class="tracking-wide g-text-secondary g-hover"
           [class.g-active]="isActiveUrl(UrlEnum.Reading)"
           >{{ UrlEnum.Reading | titlecase }}</a
         >
@@ -43,7 +44,7 @@
       <li class="c-index-item mt-2 lg:mt-0 lg:mx-4">
         <a
           routerLink="{{ UrlEnum.Dictionary }}"
-          class="g-text-secondary g-hover"
+          class="tracking-wide g-text-secondary g-hover"
           [class.g-active]="isActiveUrl(UrlEnum.Dictionary)"
           >{{ UrlEnum.Dictionary | titlecase }}</a
         >
@@ -51,7 +52,7 @@
       <li class="c-index-item mt-2 lg:mt-0 lg:mx-4">
         <a
           routerLink="{{ UrlEnum.Grammar }}"
-          class="g-text-secondary g-hover"
+          class="tracking-wide g-text-secondary g-hover"
           [class.g-active]="isActiveUrl(UrlEnum.Grammar)"
           >{{ UrlEnum.Grammar | titlecase }}</a
         >
@@ -59,7 +60,7 @@
       <li class="c-index-item mt-2 lg:mt-0 lg:mx-4">
         <a
           routerLink="{{ UrlEnum.Tipitaka }}"
-          class="g-text-secondary g-hover"
+          class="tracking-wide g-text-secondary g-hover"
           [class.g-active]="isActiveUrl(UrlEnum.Tipitaka)"
           >{{ UrlEnum.Tipitaka | titlecase }}</a
         >
@@ -67,7 +68,7 @@
       <li class="c-index-item mt-2 lg:mt-0 lg:mx-4">
         <a
           routerLink="{{ UrlEnum.Blog }}"
-          class="g-text-secondary g-hover"
+          class="tracking-wide g-text-secondary g-hover"
           [class.g-active]="isActiveUrl(UrlEnum.Blog)"
           >{{ UrlEnum.Blog | titlecase }}</a
         >

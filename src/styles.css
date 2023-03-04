@@ -82,14 +82,20 @@
   position: relative;
   transform: translateY(30px);
   opacity: 0;
-  transition: 1s all ease;
 }
 
 .g-slide-lg {
   position: relative;
   transform: translateY(100px);
   opacity: 0;
+}
+
+.g-slide-1s {
   transition: 1s all ease;
+}
+
+.g-slide-2s {
+  transition: 2s all ease;
 }
 
 .g-slide-active {

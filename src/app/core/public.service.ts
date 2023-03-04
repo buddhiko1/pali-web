@@ -58,6 +58,10 @@ export class PublicService {
     this._isScrollbarShow = false;
   }
 
+  get isAtTop(): boolean {
+    return window.scrollY <= 0;
+  }
+
   // fix bug of tailwindcss-scrollbar
   showScrollbar(): void {
     if (this._isScrollbarShow) {

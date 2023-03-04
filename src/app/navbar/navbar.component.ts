@@ -25,6 +25,9 @@ export class NavbarComponent {
     });
   }
 
+  get isAtTop(): boolean {
+    return this._publicService.isAtTop;
+  }
   get isDark(): boolean {
     return this._publicService.isDark;
   }

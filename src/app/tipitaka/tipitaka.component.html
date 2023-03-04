@@ -1,6 +1,21 @@
 <section class="c-container g-bg">
-  <div class="c-banner bg-cover bg-center lg:mt-12"></div>
-  <div class="c-books pt-16 lg:pt-28">
+  <div class="c-banner bg-cover bg-center lg:mt-12">
+    <p
+      appLoadSlide
+      [slideDelay]="500"
+      class="text-center pt-32 text-lg tracking-widest g-text-secondary-invert"
+    >
+      THE AWARD-WINNING BOOK BY JOELBROWN
+    </p>
+    <p
+      appLoadSlide
+      [slideDelay]="1500"
+      class="text-center pt-10 text-6xl tracking-wide g-text-primary-invert"
+    >
+      The Real Story
+    </p>
+  </div>
+  <div class="c-books py-16 lg:py-32">
     <div class="c-title pb-4 lg:pb-10 border-b g-border">
       <p
         class="text-center text-xl lg:text-3xl uppercase tracking-widest lg:tracking-[.25em] g-text-primary"
@@ -60,7 +75,7 @@
       </div>
     </div>
   </div>
-  <div class="c-cites mt-16 lg:mt-28 py-16 lg:py-28 g-bg-invert">
+  <div class="c-cites py-16 lg:py-32 g-bg-invert">
     <div class="c-title pb-4 lg:pb-10 border-b g-border">
       <p
         class="text-center text-xl lg:text-3xl uppercase tracking-widest lg:tracking-[.25em] g-text-primary-invert"
