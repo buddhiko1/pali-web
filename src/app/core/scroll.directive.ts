@@ -1,6 +1,6 @@
 import { Directive, HostListener } from '@angular/core';
-import { NavbarService } from './navbar/navbar.service';
-import { PublicService } from './core/public.service';
+import { NavbarService } from '../navbar/navbar.service';
+import { PublicService } from './public.service';
 
 @Directive({
   selector: '[appScroll]',

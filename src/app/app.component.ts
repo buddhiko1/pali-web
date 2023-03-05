@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ChildrenOutletContexts } from '@angular/router';
 import { PublicService } from './core/public.service';
 import { easeAnimation } from './app.animations';
-import { ScrollDirective } from './scroll.directive';
+import { ScrollDirective } from './core/scroll.directive';
 
 @Component({
   selector: 'app-root',

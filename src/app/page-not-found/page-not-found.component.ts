@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AngularSvgIconModule } from 'angular-svg-icon';
-import { BackButtonDirective } from '../back-button.directive';
+import { BackButtonDirective } from '../core/back-button.directive';
 
 @Component({
   selector: 'app-page-not-found',

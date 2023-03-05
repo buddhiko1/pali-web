@@ -1,6 +1,6 @@
 import { Directive, ElementRef, Input, OnDestroy, OnInit } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
-import { PublicService } from './core/public.service';
+import { PublicService } from './public.service';
 
 const slideDurationClass = 'g-slide-1500ms';
 

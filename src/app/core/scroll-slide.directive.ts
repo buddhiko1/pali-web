@@ -1,7 +1,7 @@
 import { fromEvent, Subscription } from 'rxjs';
 import { tap, throttleTime } from 'rxjs/operators';
 import { Directive, ElementRef, OnDestroy } from '@angular/core';
-import { PublicService } from './core/public.service';
+import { PublicService } from './public.service';
 
 const slideDurationClass = 'g-slide-1000ms';
 
