@@ -41,7 +41,11 @@
   display: grid;
   grid-template-rows: auto;
   grid-template-columns: 1fr auto;
-  @apply pt-12 pb-8 border-b;
+  @apply pt-12 pb-8;
+}
+
+.c-dict:not(:last-child) {
+  @apply border-b;
 }
 
 .c-title {
