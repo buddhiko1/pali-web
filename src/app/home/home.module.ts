@@ -4,6 +4,7 @@ import { HomeRoutingModule } from './home-routing.module';
 import { AngularSvgIconModule } from 'angular-svg-icon';
 import { HomeComponent } from './home.component';
 import { BookComponent } from '../book/book.component';
+import { LoadingComponent } from '../loading/loading.component';
 
 @NgModule({
   declarations: [HomeComponent],
@@ -13,6 +14,7 @@ import { BookComponent } from '../book/book.component';
     HomeRoutingModule,
     AngularSvgIconModule,
     BookComponent,
+    LoadingComponent,
   ],
 })
 export class HomeModule {}
