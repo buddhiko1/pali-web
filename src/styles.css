@@ -90,12 +90,12 @@
   opacity: 0;
 }
 
-.g-slide-1000ms {
-  transition: 1s all ease;
+.g-slide-500ms {
+  transition: 0.5s all ease;
 }
 
 .g-slide-1500ms {
-  transition: 2s all ease;
+  transition: 1.5s all ease;
 }
 
 .g-slide-active {

@@ -11,7 +11,7 @@ export enum UrlEnum {
   Blog = 'blog',
 }
 
-export const RedirectTo = UrlEnum.Tipitaka;
+export const RedirectTo = UrlEnum.Home;
 
 const routes: Routes = [
   { path: '', redirectTo: RedirectTo, pathMatch: 'full' },

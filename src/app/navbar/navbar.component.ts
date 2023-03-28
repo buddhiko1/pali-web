@@ -33,7 +33,9 @@ export class NavbarComponent {
   }
 
   get enableShadow(): boolean {
-    return this._url !== this.UrlEnum.Tipitaka;
+    return (
+      this._url !== this.UrlEnum.Tipitaka && this._url !== this.UrlEnum.Home
+    );
   }
 
   toggleDark(): void {

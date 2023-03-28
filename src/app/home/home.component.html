@@ -1,157 +1,37 @@
-<section class="text text-gray-600 dark:text-gray-300 g-bg">
-  <div class="container px-7 lg:px-60 pb-5 pt-12 lg:pt-20 mx-auto">
-    <h1
-      class="text-lg font-semibold text-gray-800 capitalize lg:text-xl dark:text-white"
+<section class="c-container g-bg">
+  <div class="c-banner lg:mt-12 h-[47rem] lg:h-[50rem] bg-cover bg-center">
+    <p
+      appLoadSlide
+      [slideDelay]="500"
+      class="text-center mt-48 lg:mt-56 px-14 font-light text-2xl lg:text-6xl tracking-wide text-gray-50"
     >
-      study <span class="text-blue-500">pali language</span>
-    </h1>
-    <p class="text-gray-500s mt-3">
-      Blue bottle crucifix vinyl post-ironic four dollar toast vegan taxidermy
-      banh mi pug.
+      Learning Pali language
     </p>
-    <app-loading></app-loading>
-    <div class="mt-2">
-      <span class="inline-block w-40 h-0.5 bg-blue-500 rounded-full"></span>
-      <span class="inline-block w-3 h-0.5 ml-1 bg-blue-500 rounded-full"></span>
-      <span class="inline-block w-1 h-0.5 ml-1 bg-blue-500 rounded-full"></span>
-    </div>
+    <p
+      appLoadSlide
+      [slideDelay]="1000"
+      class="text-center px-14 pt-8 lg:pt-10 lg:text-xl tracking-wide font-thin text-gray-200"
+    >
+      Explore the most authentic and ancient Buddhist sutra on your own
+    </p>
+    <button
+      appLoadSlide
+      [slideDelay]="1500"
+      class="mt-24 py-1 px-4 grid grid-flow-col rounded-md mx-auto bg-blue-400"
+    >
+      <span
+        class="inline-block self-center lg:text-xl tracking-wide font-light text-gray-50"
+      >
+        Tutorial
+      </span>
+      <svg-icon
+        src="assets/icons/arrow_right.svg"
+        [svgClass]="['w-8', 'h-8', 'pl-2', 'fill-gray-50', 'inline-block']"
+      ></svg-icon>
+    </button>
   </div>
-  <div class="container px-6 lg:px-60 pb-10 lg:py-10 mx-auto">
-    <div
-      class="flex items-center mx-auto border-b pb-10 lg:pb-5 mb-10 border-gray-200 dark:border-gray-700 sm:flex-row flex-col"
-    >
-      <div class="hidden lg:flex lg:w-1/2 lg:justify-center">
-        <app-book [config]="bookConfigRight"></app-book>
-      </div>
-      <div class="flex-grow sm:text-left text-center mt-6 sm:mt-0">
-        <h2
-          class="text-gray-900 dark:text-white text-lg font-semibold mb-2 capitalize"
-        >
-          dictionary
-        </h2>
-        <p class="leading-relaxed text-base dark:text-gray-200">
-          Blue bottle crucifix vinyl post-ironic four dollar toast vegan
-          taxidermy. Gastropub indxgo juice poutine.
-        </p>
-        <a class="mt-3 text-blue-500 inline-flex items-center"
-          >Learn More
-          <svg
-            fill="none"
-            stroke="currentColor"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            class="w-4 h-4 ml-2"
-            viewBox="0 0 24 24"
-          >
-            <path d="M5 12h14M12 5l7 7-7 7"></path>
-          </svg>
-        </a>
-      </div>
-    </div>
-    <div
-      class="flex items-center mx-auto border-b pb-10 lg:pb-5 mb-10 border-gray-200 dark:border-gray-700 sm:flex-row flex-col"
-    >
-      <div class="flex-grow sm:text-left text-center mt-6 sm:mt-0">
-        <h2
-          class="text-gray-900 dark:text-white text-lg font-semibold mb-2 capitalize"
-        >
-          Grammar book
-        </h2>
-        <p class="leading-relaxed text-base">
-          Blue bottle crucifix vinyl post-ironic four dollar toast vegan
-          taxidermy. Gastropub indxgo juice poutine.
-        </p>
-        <a class="mt-3 text-blue-500 inline-flex items-center"
-          >Learn More
-          <svg
-            fill="none"
-            stroke="currentColor"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            class="w-4 h-4 ml-2"
-            viewBox="0 0 24 24"
-          >
-            <path d="M5 12h14M12 5l7 7-7 7"></path>
-          </svg>
-        </a>
-      </div>
-      <div class="hidden lg:flex lg:w-1/2 lg:justify-center">
-        <app-book [config]="bookConfigLeft"></app-book>
-      </div>
-    </div>
-    <div
-      class="flex items-center mx-auto border-b pb-10 lg:pb-5 mb-10 border-gray-200 dark:border-gray-700 sm:flex-row flex-col"
-    >
-      <div class="hidden lg:flex lg:w-1/2 lg:justify-center">
-        <svg-icon
-          src="assets/icons/dictionary.svg"
-          [svgClass]="['w-80', 'h-80', 'fill-current']"
-        >
-        </svg-icon>
-      </div>
-      <div class="flex-grow sm:text-left text-center mt-6 sm:mt-0">
-        <h2
-          class="text-gray-900 dark:text-white text-lg font-semibold mb-2 capitalize"
-        >
-          tipitaka epub
-        </h2>
-        <p class="leading-relaxed text-base dark:text-gray-200">
-          Blue bottle crucifix vinyl post-ironic four dollar toast vegan
-          taxidermy. Gastropub indxgo juice poutine.
-        </p>
-        <a class="mt-3 text-blue-500 inline-flex items-center"
-          >Learn More
-          <svg
-            fill="none"
-            stroke="currentColor"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            class="w-4 h-4 ml-2"
-            viewBox="0 0 24 24"
-          >
-            <path d="M5 12h14M12 5l7 7-7 7"></path>
-          </svg>
-        </a>
-      </div>
-    </div>
-    <div
-      class="flex items-center mx-auto border-b pb-10 lg:pb-5 mb-10 border-gray-200 dark:border-gray-700 sm:flex-row flex-col"
-    >
-      <div class="flex-grow sm:text-left text-center mt-6 sm:mt-0">
-        <h2
-          class="text-gray-900 dark:text-white text-lg font-semibold mb-2 capitalize"
-        >
-          reading
-        </h2>
-        <p class="leading-relaxed text-base">
-          Blue bottle crucifix vinyl post-ironic four dollar toast vegan
-          taxidermy. Gastropub indxgo juice poutine.
-        </p>
-        <a class="mt-3 text-blue-500 inline-flex items-center"
-          >Learn More
-          <svg
-            fill="none"
-            stroke="currentColor"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            class="w-4 h-4 ml-2"
-            viewBox="0 0 24 24"
-          >
-            <path d="M5 12h14M12 5l7 7-7 7"></path>
-          </svg>
-        </a>
-      </div>
-      <div class="hidden lg:flex lg:w-1/2 lg:justify-center">
-        <svg-icon
-          src="assets/icons/manu.svg"
-          [svgClass]="['w-80', 'h-80', 'fill-current']"
-        >
-        </svg-icon>
-      </div>
-    </div>
-  </div>
+  <div
+    class="c-vacana h-[45rem] lg:h-[50rem] bg-cover bg-center lg:mt-12"
+  ></div>
+  <div class="c-intro h-[45rem] lg:h-[50rem] bg-cover bg-center lg:mt-12"></div>
 </section>

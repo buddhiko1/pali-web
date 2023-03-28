@@ -1,0 +1,19 @@
+.c-container {
+  display: grid;
+  grid-template-rows: auto auto auto;
+  grid-template-columns: theme("spacing.smContentPadding") 1fr theme(
+      "spacing.smContentPadding"
+    );
+  grid-template-areas:
+    "banner banner banner"
+    "left-area vacana right-area"
+    "left-area intro right-area";
+}
+
+.c-banner {
+  grid-area: banner;
+  display: grid;
+  justify-content: center;
+  align-content: start;
+  background-image: url("../../assets/images/leaf.png");
+}
