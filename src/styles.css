@@ -27,15 +27,15 @@
 
   /* text */
   .g-text-primary {
-    @apply text-gray-700 dark:text-gray-50 g-transition-colors;
+    @apply tracking-wide text-gray-700 dark:text-gray-50 g-transition-colors;
   }
 
   .g-text-primary-invert {
-    @apply dark:text-gray-700 text-gray-50 g-transition-colors;
+    @apply tracking-wide dark:text-gray-700 text-gray-50 g-transition-colors;
   }
 
   .g-text-secondary {
-    @apply text-gray-500 dark:text-gray-200 g-transition-colors;
+    @apply tracking-wide text-gray-500 dark:text-gray-200 g-transition-colors;
   }
 
   .g-text-secondary-invert {

@@ -4,10 +4,11 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 
 export enum UrlEnum {
   Home = 'home',
-  Reading = 'reading',
-  Dictionary = 'dictionary',
   Grammar = 'grammar',
+  Dictionary = 'dictionary',
+  Vocabulary = 'vocabulary',
   Tipitaka = 'tipitaka',
+  Reading = 'reading',
   Blog = 'blog',
 }
 

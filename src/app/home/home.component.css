@@ -1,12 +1,11 @@
 .c-container {
   display: grid;
-  grid-template-rows: auto auto auto;
+  grid-template-rows: auto auto;
   grid-template-columns: theme("spacing.smContentPadding") 1fr theme(
       "spacing.smContentPadding"
     );
   grid-template-areas:
     "banner banner banner"
-    "left-area vacana right-area"
     "left-area intro right-area";
 }
 
@@ -16,4 +15,41 @@
   justify-content: center;
   align-content: start;
   background-image: url("../../assets/images/leaf.png");
+}
+
+.c-intro {
+  grid-area: intro;
+  display: grid;
+  grid-auto-flow: row;
+  grid-row-gap: 2.5rem;
+}
+
+.c-section a {
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: end;
+}
+
+@media screen and (min-width: theme("screens.lg")) {
+  .c-container {
+    grid-template-columns: theme("spacing.lgContentPadding") 1fr theme(
+        "spacing.lgContentPadding"
+      );
+  }
+  .c-intro {
+    grid-area: intro;
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-row-gap: 7rem;
+    grid-column-gap: 4rem;
+  }
+  .c-section {
+    display: grid;
+    align-content: space-between;
+  }
+
+  .c-section a {
+    justify-self: end;
+  }
 }

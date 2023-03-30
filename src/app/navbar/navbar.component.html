@@ -35,10 +35,10 @@
     <ul (click)="toggleMenu()" class="c-index">
       <li class="c-index-item mt-2 lg:mt-0 lg:mx-4">
         <a
-          routerLink="{{ UrlEnum.Reading }}"
+          routerLink="{{ UrlEnum.Grammar }}"
           class="tracking-wide g-text-secondary g-hover"
-          [class.g-active]="isActiveUrl(UrlEnum.Reading)"
-          >{{ UrlEnum.Reading | titlecase }}</a
+          [class.g-active]="isActiveUrl(UrlEnum.Grammar)"
+          >{{ UrlEnum.Grammar | titlecase }}</a
         >
       </li>
       <li class="c-index-item mt-2 lg:mt-0 lg:mx-4">
@@ -51,10 +51,10 @@
       </li>
       <li class="c-index-item mt-2 lg:mt-0 lg:mx-4">
         <a
-          routerLink="{{ UrlEnum.Grammar }}"
+          routerLink="{{ UrlEnum.Vocabulary }}"
           class="tracking-wide g-text-secondary g-hover"
-          [class.g-active]="isActiveUrl(UrlEnum.Grammar)"
-          >{{ UrlEnum.Grammar | titlecase }}</a
+          [class.g-active]="isActiveUrl(UrlEnum.Vocabulary)"
+          >{{ UrlEnum.Vocabulary | titlecase }}</a
         >
       </li>
       <li class="c-index-item mt-2 lg:mt-0 lg:mx-4">
@@ -63,6 +63,14 @@
           class="tracking-wide g-text-secondary g-hover"
           [class.g-active]="isActiveUrl(UrlEnum.Tipitaka)"
           >{{ UrlEnum.Tipitaka | titlecase }}</a
+        >
+      </li>
+      <li class="c-index-item mt-2 lg:mt-0 lg:mx-4">
+        <a
+          routerLink="{{ UrlEnum.Reading }}"
+          class="tracking-wide g-text-secondary g-hover"
+          [class.g-active]="isActiveUrl(UrlEnum.Reading)"
+          >{{ UrlEnum.Reading | titlecase }}</a
         >
       </li>
       <li class="c-index-item mt-2 lg:mt-0 lg:mx-4">
