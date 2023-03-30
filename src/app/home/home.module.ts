@@ -4,6 +4,7 @@ import { HomeRoutingModule } from './home-routing.module';
 import { AngularSvgIconModule } from 'angular-svg-icon';
 import { HomeComponent } from './home.component';
 import { LoadSlideDirective } from '../core/load-slide.directive';
+import { TypingDirective } from '../core/typing.directive';
 
 @NgModule({
   declarations: [HomeComponent],
@@ -12,6 +13,7 @@ import { LoadSlideDirective } from '../core/load-slide.directive';
     CommonModule,
     AngularSvgIconModule,
     LoadSlideDirective,
+    TypingDirective,
     HomeRoutingModule,
   ],
 })
