@@ -19,42 +19,46 @@ export class TypingDirective implements OnInit {
     setTimeout(this._typing.bind(this), this.delay);
   }
 
-  private _blinking(): void {
-    const speed = 700; // ms
-    const counter = 14;
-    interval(speed)
+  private _typing(): void {
+    interval(this.speed)
       .pipe(
-        map((i) => i + 1),
-        take(counter)
+        map((i) => i),
+        take(this._charList.length)
       )
       .subscribe((i) => {
-        const text = this._el.nativeElement.innerHTML;
-        if (i == 1) {
-          this._el.nativeElement.innerHTML += ' ▌';
-        } else if (i == counter) {
-          this._el.nativeElement.innerHTML = text.slice(0, -2);
+        const charToInsert = this._charList[i];
+        if (i == 0) {
+          this._el.nativeElement.innerHTML += `${charToInsert}▌`;
         } else {
-          const lastChar = text.charAt(text.length - 1);
-          this._el.nativeElement.innerHTML = text.slice(0, -1);
-          if (lastChar == '▌') {
-            this._el.nativeElement.innerHTML += ' ';
-          } else {
-            this._el.nativeElement.innerHTML += '▌';
-          }
+          this._el.nativeElement.innerHTML =
+            this._el.nativeElement.innerHTML.slice(0, -1) + `${charToInsert}▌`;
+        }
+        if (i == this._charList.length - 1) {
+          this._el.nativeElement.innerHTML =
+            this._el.nativeElement.innerHTML.slice(0, -1); // remove last char '▌'
+          this._blinking();
         }
       });
   }
 
-  private _typing(): void {
-    interval(this.speed)
+  private _blinking(): void {
+    const speed = 700; // ms
+    const counter = 10;
+    interval(speed)
       .pipe(
-        map((i) => this._charList[i]),
-        take(this._charList.length)
+        map((i) => i),
+        take(counter)
       )
-      .subscribe((char) => {
-        this._el.nativeElement.innerHTML += `${char}`;
-        if (this._el.nativeElement.innerHTML.length == this._charList.length) {
-          this._blinking();
+      .subscribe((i) => {
+        const text = this._el.nativeElement.innerHTML;
+        if (i == 0) {
+          this._el.nativeElement.innerHTML += '▌';
+        } else if (i == counter - 1) {
+          this._el.nativeElement.innerHTML = text.slice(0, -1);
+        } else {
+          const lastChar = text.charAt(text.length - 1);
+          this._el.nativeElement.innerHTML = text.slice(0, -1);
+          this._el.nativeElement.innerHTML += lastChar == '▌' ? ' ' : '▋';
         }
       });
   }
