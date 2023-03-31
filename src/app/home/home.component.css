@@ -6,6 +6,7 @@
     );
   grid-template-areas:
     "banner banner banner"
+    "left-area phrase right-area"
     "left-area intro right-area";
 }
 
@@ -15,6 +16,10 @@
   justify-content: center;
   align-content: start;
   background-image: url("../../assets/images/leaf.png");
+}
+
+.c-phrase {
+  grid-area: phrase;
 }
 
 .c-intro {
