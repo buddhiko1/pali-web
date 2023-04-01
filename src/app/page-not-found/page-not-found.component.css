@@ -1,22 +1,27 @@
 .c-container {
   display: grid;
-  grid-template-rows: 1fr 2fr 1fr;
-  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.c-bg {
+  grid-row: 1/5;
+  grid-column: 1/4;
+}
+
+.c-content {
+  z-index: 10;
+  grid-row: 2/3;
+  grid-column: 2/3;
+  justify-self: center;
+  align-self: start;
+  display: grid;
   place-items: center;
-  grid-template-areas:
-    "title"
-    "description"
-    "action";
 }
 
-.c-title {
-  grid-area: title;
-}
-
-.c-description {
-  grid-area: description;
-}
-
-.c-action {
-  grid-area: action;
+.c-fox {
+  z-index: 10;
+  grid-row: 4/5;
+  grid-column: 3/4;
+  place-self: center;
 }

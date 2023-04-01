@@ -1,17 +1,19 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
 import { Config as BookConfig } from '../book/book.model';
+import { NavbarService } from '../navbar/navbar.service';
 
 @Component({
   selector: 'app-tipitaka',
   templateUrl: './tipitaka.component.html',
   styleUrls: ['./tipitaka.component.css'],
 })
-export class TipitakaComponent {
+export class TipitakaComponent implements OnDestroy {
   suttaConfig: BookConfig;
   vinayaConfig: BookConfig;
   abhidhammaConfig: BookConfig;
   private _color = '#477999';
-  constructor() {
+
+  constructor(private _navbarService: NavbarService) {
     this.suttaConfig = {
       height: '16rem',
       width: '12rem',
@@ -36,5 +38,10 @@ export class TipitakaComponent {
       color: this._color,
       direction: 'front-view',
     };
+    this._navbarService.showShadow(false);
+  }
+
+  ngOnDestroy(): void {
+    this._navbarService.showShadow(true);
   }
 }

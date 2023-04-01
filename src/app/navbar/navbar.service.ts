@@ -8,6 +8,7 @@ import { OverlayService } from '../overlay/overlay.service';
 export class NavbarService {
   private _isMenuOpen: boolean;
   private _isHeaderShow: boolean;
+  private _isShadowShow: boolean;
 
   constructor(
     private _publicService: PublicService,
@@ -15,6 +16,7 @@ export class NavbarService {
   ) {
     this._isMenuOpen = false;
     this._isHeaderShow = true;
+    this._isShadowShow = true;
   }
 
   get isMenuOpen(): boolean {
@@ -42,5 +44,13 @@ export class NavbarService {
 
   showHeader(value: boolean) {
     this._isHeaderShow = value;
+  }
+
+  get isShadowShow(): boolean {
+    return this._isShadowShow;
+  }
+
+  showShadow(value: boolean) {
+    this._isShadowShow = value;
   }
 }

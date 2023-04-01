@@ -32,10 +32,8 @@ export class NavbarComponent {
     return this._publicService.isDark;
   }
 
-  get enableShadow(): boolean {
-    return (
-      this._url !== this.UrlEnum.Tipitaka && this._url !== this.UrlEnum.Home
-    );
+  get isShadowShow(): boolean {
+    return this._navbarService.isShadowShow;
   }
 
   toggleDark(): void {
