@@ -26,7 +26,7 @@ class Particle {
     this.x = Math.random() * this._width;
     this.xToMove = Math.random() * 1 - 0.5;
     this.yToMove = Math.random() * 0.5 + 0.4; // speed of snow landing
-    this.radius = Math.floor(Math.random() * 6) + 5;
+    this.radius = Math.random() * 5 + 2;
   }
 
   update(): void {
@@ -50,7 +50,7 @@ class Particles {
   constructor(private _canvas: HTMLCanvasElement) {
     this._height = this._canvas.height;
     this._width = this._canvas.width;
-    const quantity = (this._height * this._width) / 15000;
+    const quantity = (this._height * this._width) / 10000;
     for (let i = 0; i < quantity; i++) {
       this._particles.push(new Particle(this._height, this._width));
     }

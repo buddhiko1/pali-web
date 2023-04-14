@@ -19,7 +19,6 @@
   >
     <svg-icon
       src="assets/icons/plus.svg"
-      class="open-icon"
       [svgClass]="[
         'g-svg',
         'g-transition-transform',
@@ -85,12 +84,7 @@
 
     <div class="c-divider lg:hidden mb-5 h-6 border-b g-border"></div>
 
-    <button
-      (click)="toggleDark()"
-      type="button"
-      aria-label="theme"
-      class="c-theme g-hover"
-    >
+    <button (click)="toggleDark()" aria-label="theme" class="c-theme">
       <svg-icon
         *ngIf="isDark"
         src="assets/icons/moon.svg"
@@ -103,11 +97,22 @@
       ></svg-icon>
     </button>
 
-    <a routerLink="/dictionary" aria-label="donation" class="c-donation ml-9">
+    <button
+      (click)="routeToDonation()"
+      aria-label="donation"
+      class="c-donation lg:mx-6"
+    >
       <svg-icon
         src="assets/icons/heart.svg"
+        [svgClass]="['g-svg', 'g-hover', 'w-5', 'h-5']"
+      ></svg-icon>
+    </button>
+
+    <button (click)="routeToAccount()" aria-label="account" class="c-account">
+      <svg-icon
+        src="assets/icons/person.svg"
         [svgClass]="['g-svg', 'g-hover']"
       ></svg-icon>
-    </a>
+    </button>
   </section>
 </nav>

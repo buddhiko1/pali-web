@@ -1,0 +1,23 @@
+.d-title {
+  @apply text-xl font-medium g-text-primary g-transition-colors;
+}
+
+.d-input-base {
+  @apply py-1 px-3 rounded border outline-none focus:ring-1 focus:ring-blue-200 text-base leading-relaxed g-transition-colors;
+}
+
+.d-input {
+  @apply d-input-base bg-white dark:bg-gray-600 dark:bg-opacity-20 dark:focus:bg-transparent border-gray-300 dark:border-gray-400  focus:border-blue-400 text-gray-700 dark:text-gray-100;
+}
+
+.d-label {
+  @apply leading-relaxed text-sm text-gray-600 dark:text-gray-400 g-transition-colors;
+}
+
+.d-button {
+  @apply rounded-md py-2 text-gray-50 bg-blue-400 hover:bg-blue-500 g-transition-colors;
+}
+
+.d-tips {
+  @apply leading-relaxed text-sm text-gray-600 dark:text-gray-400 g-transition-colors;
+}

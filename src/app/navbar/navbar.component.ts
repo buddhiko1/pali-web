@@ -38,6 +38,17 @@ export class NavbarComponent {
 
   toggleDark(): void {
     this._publicService.toggleDark();
+    this.closeMenu();
+  }
+
+  routeToAccount(): void {
+    this._router.navigateByUrl(UrlEnum.Account);
+    this.closeMenu();
+  }
+
+  routeToDonation(): void {
+    // this._router.navigateByUrl(UrlEnum.Donation);
+    this.closeMenu();
   }
 
   get isMenuOpen(): boolean {

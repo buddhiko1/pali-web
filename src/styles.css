@@ -11,6 +11,7 @@
   .g-transition-transform {
     @apply transition-transform duration-[400ms] ease-in-out;
   }
+  /* transition end */
 
   /* action */
   .g-hover {
@@ -24,6 +25,7 @@
   .g-active {
     @apply !text-tfc dark:!text-tfc-dark;
   }
+  /* action end */
 
   /* text */
   .g-text-primary {
@@ -41,6 +43,8 @@
   .g-text-secondary-invert {
     @apply dark:text-gray-500 text-gray-200 g-transition-colors;
   }
+  /* text end */
+
   /* widget */
   .g-svg {
     @apply w-6 h-6 fill-current border-none focus:ring-0 g-text-secondary;
@@ -73,36 +77,45 @@
   .g-bg {
     @apply bg-bgc dark:bg-bgc-dark;
   }
+
   .g-bg-invert {
     @apply dark:bg-bgc bg-bgc-dark;
   }
-}
+  .g-slide {
+    position: relative;
+    transform: translateY(30px);
+    opacity: 0;
+  }
 
-.g-slide {
-  position: relative;
-  transform: translateY(30px);
-  opacity: 0;
-}
+  .g-slide-lg {
+    position: relative;
+    transform: translateY(60px);
+    opacity: 0;
+  }
 
-.g-slide-lg {
-  position: relative;
-  transform: translateY(60px);
-  opacity: 0;
-}
+  .g-slide-500ms {
+    transition: 0.5s all ease;
+  }
 
-.g-slide-500ms {
-  transition: 0.5s all ease;
-}
+  .g-slide-1500ms {
+    transition: 1.5s all ease;
+  }
 
-.g-slide-1500ms {
-  transition: 1.5s all ease;
-}
+  .g-slide-active {
+    transform: translateY(0);
+    opacity: 1;
+  }
 
-.g-slide-active {
-  transform: translateY(0);
-  opacity: 1;
-}
+  .g-link {
+    @apply text-blue-400;
+  }
+  /* widget end */
 
-* {
-  -webkit-tap-highlight-color: transparent;
+  /* property */
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
+  /* property end */
+
+  @import "css/dialog.css";
 }

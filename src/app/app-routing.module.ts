@@ -10,6 +10,7 @@ export enum UrlEnum {
   Tipitaka = 'tipitaka',
   Reading = 'reading',
   Blog = 'blog',
+  Account = 'account',
 }
 
 export const RedirectTo = UrlEnum.Home;
@@ -32,6 +33,12 @@ const routes: Routes = [
     loadChildren: () =>
       import('./tipitaka/tipitaka.module').then((m) => m.TipitakaModule),
     data: { animation: UrlEnum.Tipitaka },
+  },
+  {
+    path: UrlEnum.Account,
+    loadChildren: () =>
+      import('./account/account.module').then((m) => m.AccountModule),
+    data: { animation: UrlEnum.Account },
   },
   {
     path: '**',
