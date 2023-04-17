@@ -1,5 +1,5 @@
 import { fromEvent, Subscription } from 'rxjs';
-import { tap, throttleTime } from 'rxjs/operators';
+import { throttleTime } from 'rxjs/operators';
 import { Directive, ElementRef, OnDestroy } from '@angular/core';
 import { PublicService } from './public.service';
 
@@ -24,11 +24,8 @@ export class ScrollSlideDirective implements OnDestroy {
     this._el.nativeElement.classList.add(slideDurationClass);
 
     this._eventSub = fromEvent(window, 'scroll')
-      .pipe(
-        throttleTime(50),
-        tap(() => this._slideOnScroll())
-      )
-      .subscribe();
+      .pipe(throttleTime(50))
+      .subscribe(() => this._slideOnScroll());
   }
 
   private _slideOnScroll(): void {

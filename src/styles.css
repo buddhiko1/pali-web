@@ -1,11 +1,14 @@
 @tailwind base;
 @tailwind components;
-@tailwind utilities;
+
+@layer base {
+  @import "css/base.css";
+}
 
 @layer components {
   /* transition */
   .g-transition-colors {
-    @apply transition-colors duration-300;
+    @apply transition-colors duration-300 ease-in-out;
   }
 
   .g-transition-transform {
@@ -111,11 +114,7 @@
   }
   /* widget end */
 
-  /* property */
-  * {
-    -webkit-tap-highlight-color: transparent;
-  }
-  /* property end */
-
   @import "css/dialog.css";
 }
+
+@tailwind utilities;

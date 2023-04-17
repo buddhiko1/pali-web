@@ -15,21 +15,21 @@ export class AppComponent implements OnInit {
   title = 'pali-web';
 
   constructor(
-    private contexts: ChildrenOutletContexts,
-    private publicService: PublicService
+    private _contexts: ChildrenOutletContexts,
+    private _publicService: PublicService
   ) {}
 
   ngOnInit(): void {
-    this.publicService.showScrollbar();
+    this._publicService.showScrollbar();
   }
 
   getRouteAnimationData() {
-    return this.contexts.getContext('primary')?.route?.snapshot?.data?.[
+    return this._contexts.getContext('primary')?.route?.snapshot?.data?.[
       'animation'
     ];
   }
 
   get isDark(): boolean {
-    return this.publicService.isDark;
+    return this._publicService.isDark;
   }
 }

@@ -14,8 +14,12 @@
   @apply leading-relaxed text-sm text-gray-600 dark:text-gray-400 g-transition-colors;
 }
 
+.d-form-error {
+  @apply text-red-500 text-sm pt-1;
+}
+
 .d-button {
-  @apply rounded-md py-2 text-gray-50 bg-blue-400 hover:bg-blue-500 g-transition-colors;
+  @apply rounded-md py-2 text-gray-50 bg-blue-400 hover:bg-blue-500 disabled:hover:bg-blue-400 disabled:opacity-60 g-transition-colors;
 }
 
 .d-tips {

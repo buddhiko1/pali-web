@@ -59,6 +59,16 @@
   grid-area: button;
 }
 
+.c-email label:after {
+  content: "*";
+  color: theme("colors.red.600");
+}
+
+.c-password label:after {
+  content: "*";
+  color: theme("colors.red.600");
+}
+
 @media screen and (min-width: theme("screens.lg")) {
   .c-container {
     grid-template-columns: theme("spacing.lgPadding") 25vw theme(

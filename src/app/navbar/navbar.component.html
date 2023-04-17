@@ -108,10 +108,18 @@
       ></svg-icon>
     </button>
 
-    <button (click)="routeToAccount()" aria-label="account" class="c-account">
+    <button
+      (click)="routeToAccount()"
+      aria-label="account"
+      class="c-account g-active"
+    >
       <svg-icon
         src="assets/icons/person.svg"
-        [svgClass]="['g-svg', 'g-hover']"
+        [svgClass]="[
+          'g-svg',
+          'g-hover',
+          isActiveUrl(UrlEnum.Account) ? 'g-active' : ''
+        ]"
       ></svg-icon>
     </button>
   </section>

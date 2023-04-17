@@ -16,7 +16,7 @@ footer {
   footer {
     display: grid;
     grid-template-rows: auto;
-    column-gap: 5rem;
+    column-gap: theme("spacing.20");
     grid-template-columns: theme("spacing.lgPadding") auto auto theme(
         "spacing.lgPadding"
       );
