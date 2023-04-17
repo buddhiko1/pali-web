@@ -2,6 +2,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { UnregisteredEmailValidator } from '../shared/email.validator';
+import { UrlEnum } from '../account-routing.module';
 
 @Component({
   selector: 'app-login',
@@ -9,10 +10,13 @@ import { UnregisteredEmailValidator } from '../shared/email.validator';
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
+  UrlEnum: typeof UrlEnum = UrlEnum;
   loginForm!: FormGroup;
+
   constructor(
     private _unregisteredEmailValidator: UnregisteredEmailValidator
   ) {}
+
   ngOnInit(): void {
     this.loginForm = new FormGroup({
       email: new FormControl('', {
