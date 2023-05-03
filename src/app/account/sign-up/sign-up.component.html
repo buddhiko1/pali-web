@@ -20,9 +20,6 @@
         >
           <div *ngIf="email.errors?.['required']">Email is required.</div>
           <div *ngIf="email.errors?.['email']">Invalid address format.</div>
-          <div *ngIf="email.errors?.['duplicate']">
-            This email has been registered.
-          </div>
         </div>
       </div>
       <button

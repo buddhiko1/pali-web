@@ -20,13 +20,12 @@
         >
           <div *ngIf="email.errors?.['required']">Email is required.</div>
           <div *ngIf="email.errors?.['email']">Invalid address format.</div>
-          <div *ngIf="email.errors?.['unregistered']">unregistered email.</div>
         </div>
       </div>
       <div class="c-password">
         <div class="c-password-label">
           <label for="password" class="d-label">Password</label>
-          <a href="#!" class="text-sm g-link">Forgot</a>
+          <a href="#!" class="text-sm g-link">Forgot?</a>
         </div>
         <input
           type="password"
