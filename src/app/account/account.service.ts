@@ -24,6 +24,10 @@ export class AccountService {
     return of(isRegistered).pipe(delay(400));
   }
 
+  get isLoginned(): boolean {
+    return !!this._storageService.accessToken;
+  }
+
   login(loginArgs: AuthLoginMutationVariables): Promise<void> {
     return new Promise<void>((resolve, reject) => {
       const client = this._urqlService.loginClient;
@@ -61,9 +65,5 @@ export class AccountService {
         this._storageService.clear();
       }
     });
-  }
-
-  get isLoginned(): boolean {
-    return !!this._storageService.accessToken;
   }
 }

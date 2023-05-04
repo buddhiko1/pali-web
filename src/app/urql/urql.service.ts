@@ -1,7 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Client, cacheExchange, fetchExchange, mapExchange } from '@urql/core';
 import { authExchange } from '@urql/exchange-auth';
+import { environment } from 'src/environments/environment';
 import { StorageService } from '../core/storage.service';
+
 import {
   AuthRefreshDocument,
   AuthRefreshMutationVariables,
@@ -15,11 +17,11 @@ export class UrqlService {
 
   constructor(private _storageService: StorageService) {
     this.loginClient = new Client({
-      url: 'http://localhost:9000/graphql/system',
+      url: `${environment.host}/graphql/system`,
       exchanges: [fetchExchange],
     });
     this.dataClient = new Client({
-      url: 'http://localhost:9000/graphql',
+      url: `${environment.host}/graphql`,
       exchanges: [
         cacheExchange,
         mapExchange({
@@ -38,7 +40,7 @@ export class UrqlService {
     const refreshToken = this._storageService.refreshToken;
     const clearStorage = this._storageService.clear;
     this.systemClient = new Client({
-      url: 'http://localhost:9000/graphql/system',
+      url: `${environment.host}/graphql/system`,
       exchanges: [
         authExchange(async (utils) => {
           return {
