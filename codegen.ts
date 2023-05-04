@@ -19,7 +19,7 @@ const config: CodegenConfig = {
   ],
   generates: {
     './src/app/gql/': {
-      documents: ['src/**/*.ts'],
+      documents: ['src/**/*.gql.ts'],
       preset: 'client',
     },
   },

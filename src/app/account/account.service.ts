@@ -1,9 +1,16 @@
 import { Injectable } from '@angular/core';
+import { CombinedError } from '@urql/core';
 import { Observable, of } from 'rxjs';
 import { delay } from 'rxjs/operators';
 import { UrqlService } from '../urql/urql.service';
 import { StorageService } from '../core/storage.service';
-import { LoginDocument, MutationAuth_LoginArgs } from '../gql/graphql';
+import {
+  AuthLoginDocument,
+  AuthLoginMutationVariables,
+  AuthLogoutDocument,
+  AuthLogoutMutationVariables,
+  Auth_Tokens,
+} from '../gql/graphql';
 
 @Injectable({ providedIn: 'root' })
 export class AccountService {
@@ -17,13 +24,43 @@ export class AccountService {
     return of(isRegistered).pipe(delay(400));
   }
 
-  async login(loginArgs: MutationAuth_LoginArgs): Promise<void> {
-    const client = this._urqlService.loginClient;
-    const result = await client.mutation(LoginDocument, loginArgs);
-    // this._storageService.saveAuthToken(
-    //   result.data.auth_login,
-    // );
-    console.log(result);
+  login(loginArgs: AuthLoginMutationVariables): Promise<void> {
+    return new Promise<void>((resolve, reject) => {
+      const client = this._urqlService.loginClient;
+      client
+        .mutation(AuthLoginDocument, loginArgs)
+        .toPromise()
+        .then((result) => {
+          if (result.data?.auth_login) {
+            this._storageService.saveAuthToken(
+              result.data?.auth_login as Auth_Tokens
+            );
+            resolve();
+          } else {
+            const error = result.error as CombinedError;
+            const errorMessage =
+              error.networkError?.message ?? error.graphQLErrors[0].message;
+            reject(Error(errorMessage));
+          }
+        });
+    });
+  }
+
+  logout(logoutArgs?: AuthLogoutMutationVariables): Promise<void> {
+    return new Promise<void>((resolve) => {
+      if (logoutArgs) {
+        const client = this._urqlService.loginClient;
+        client
+          .mutation(AuthLogoutDocument, logoutArgs)
+          .toPromise()
+          .then(() => {
+            this._storageService.clear();
+            resolve();
+          });
+      } else {
+        this._storageService.clear();
+      }
+    });
   }
 
   get isLoginned(): boolean {

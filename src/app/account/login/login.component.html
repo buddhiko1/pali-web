@@ -43,9 +43,14 @@
             Password must be at least 6 characters long.
           </div>
         </div>
+        <div *ngIf="loginError" class="d-form-error">
+          <div>
+            {{ loginError }}
+          </div>
+        </div>
       </div>
       <button
-        (click)="login()"
+        #loginBtn
         [disabled]="!loginForm.valid"
         class="c-button d-button w-full mt-3"
       >

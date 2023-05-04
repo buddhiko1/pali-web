@@ -1,8 +1,11 @@
 import { Injectable } from '@angular/core';
-import { Client, cacheExchange, fetchExchange } from '@urql/core';
+import { Client, cacheExchange, fetchExchange, mapExchange } from '@urql/core';
 import { authExchange } from '@urql/exchange-auth';
 import { StorageService } from '../core/storage.service';
-import { RefreshTokenDocument } from '../gql/graphql';
+import {
+  AuthRefreshDocument,
+  AuthRefreshMutationVariables,
+} from '../gql/graphql';
 
 @Injectable({ providedIn: 'root' })
 export class UrqlService {
@@ -17,12 +20,23 @@ export class UrqlService {
     });
     this.dataClient = new Client({
       url: 'http://localhost:9000/graphql',
-      exchanges: [cacheExchange, fetchExchange],
+      exchanges: [
+        cacheExchange,
+        mapExchange({
+          onError(error, operation) {
+            console.log(
+              `The operation ${operation.key} has errored with:`,
+              error
+            );
+          },
+        }),
+        fetchExchange,
+      ],
     });
     const saveAuthToken = this._storageService.saveAuthToken;
-    const clearStorage = this._storageService.clear;
     const accessToken = this._storageService.accessToken;
     const refreshToken = this._storageService.refreshToken;
+    const clearStorage = this._storageService.clear;
     this.systemClient = new Client({
       url: 'http://localhost:9000/graphql/system',
       exchanges: [
@@ -41,17 +55,20 @@ export class UrqlService {
             },
             async refreshAuth() {
               if (!refreshToken) {
-                // logout();
+                clearStorage();
                 return;
               }
-              const result = await utils.mutate(RefreshTokenDocument, {
+              const refreshArgs: AuthRefreshMutationVariables = {
                 refreshToken,
-              });
+              };
+              const result = await utils.mutate(
+                AuthRefreshDocument,
+                refreshArgs
+              );
               if (result.data?.auth_refresh) {
                 saveAuthToken(result.data.auth_refresh);
               } else {
                 clearStorage();
-                // logout();
               }
             },
           };

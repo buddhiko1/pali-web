@@ -5,22 +5,22 @@ import { Auth_Tokens } from '../gql/graphql';
   providedIn: 'root',
 })
 export class StorageService {
-  private _authToken = 'authToken';
-  private _refreshToken = 'refreshToken';
+  private _authTokenKey = 'authToken';
+  private _refreshTokenKey = 'refreshToken';
 
   constructor() {}
 
   get accessToken() {
-    return localStorage.getItem(this._authToken);
+    return localStorage.getItem(this._authTokenKey);
   }
 
   get refreshToken() {
-    return localStorage.getItem(this._refreshToken);
+    return localStorage.getItem(this._refreshTokenKey);
   }
 
   saveAuthToken(authToken: Auth_Tokens) {
-    localStorage.setItem(this._authToken, authToken.access_token ?? '');
-    localStorage.setItem(this._refreshToken, authToken.refresh_token ?? '');
+    localStorage.setItem(this._authTokenKey, authToken.access_token ?? '');
+    localStorage.setItem(this._refreshTokenKey, authToken.refresh_token ?? '');
   }
 
   clear() {
