@@ -8,7 +8,10 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "lint": "ng lint",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "generate": "graphql-codegen",
+    "prestart": "pnpm generate",
+    "predev": "pnpm generate"
   },
   "private": true,
   "dependencies": {
@@ -39,6 +42,9 @@
     "@angular-eslint/template-parser": "15.2.1",
     "@angular/cli": "~15.1.6",
     "@angular/compiler-cli": "^15.2.4",
+    "@graphql-codegen/cli": "^3.3.1",
+    "@graphql-codegen/client-preset": "^3.0.1",
+    "@graphql-typed-document-node/core": "^3.2.0",
     "@types/jasmine": "~4.0.3",
     "@typescript-eslint/eslint-plugin": "5.43.0",
     "@typescript-eslint/parser": "5.43.0",

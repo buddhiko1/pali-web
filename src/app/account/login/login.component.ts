@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { UrlEnum } from '../account-routing.module';
 import { AccountService } from '../account.service';
+import { MutationAuth_LoginArgs } from '../../gql/graphql';
 
 @Component({
   selector: 'app-login',
@@ -29,9 +30,11 @@ export class LoginComponent implements OnInit {
   }
 
   async login(): Promise<void> {
-    const email = this.loginForm.getRawValue().email;
-    const password = this.loginForm.getRawValue().password;
-    await this._accountService.login(email, password);
+    const loginArgs: MutationAuth_LoginArgs = {
+      email: this.loginForm.getRawValue().email,
+      password: this.loginForm.getRawValue().password,
+    };
+    await this._accountService.login(loginArgs);
   }
 
   get email() {

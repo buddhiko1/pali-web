@@ -1,19 +1,9 @@
 import { Injectable } from '@angular/core';
-import { gql } from '@urql/core';
-import { print } from 'graphql';
 import { Observable, of } from 'rxjs';
 import { delay } from 'rxjs/operators';
 import { UrqlService } from '../urql/urql.service';
 import { StorageService } from '../core/storage.service';
-
-const LOGIN = gql`
-  mutation ($email: String!, $password: String!) {
-    auth_login(email: $email, password: $password) {
-      access_token
-      refresh_token
-    }
-  }
-`;
+import { LoginDocument, MutationAuth_LoginArgs } from '../gql/graphql';
 
 @Injectable({ providedIn: 'root' })
 export class AccountService {
@@ -27,21 +17,16 @@ export class AccountService {
     return of(isRegistered).pipe(delay(400));
   }
 
-  async login(email: string, password: string) {
+  async login(loginArgs: MutationAuth_LoginArgs): Promise<void> {
     const client = this._urqlService.loginClient;
-    console.log(print(LOGIN));
-    const result = await client.mutation(LOGIN, {
-      email,
-      password,
-    });
-    this._storageService.saveAuthToken(
-      result.data.auth_login.access_token,
-      result.data.auth_login.refresh_token
-    );
+    const result = await client.mutation(LoginDocument, loginArgs);
+    // this._storageService.saveAuthToken(
+    //   result.data.auth_login,
+    // );
     console.log(result);
   }
 
   get isLoginned(): boolean {
-    return !!this._storageService.getAuthToken();
+    return !!this._storageService.accessToken;
   }
 }

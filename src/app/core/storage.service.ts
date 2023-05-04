@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Auth_Tokens } from '../gql/graphql';
 
 @Injectable({
   providedIn: 'root',
@@ -9,15 +10,17 @@ export class StorageService {
 
   constructor() {}
 
-  getAuthToken() {
-    const token = localStorage.getItem(this._authToken);
-    const refreshToken = localStorage.getItem(this._refreshToken);
-    return { token, refreshToken };
+  get accessToken() {
+    return localStorage.getItem(this._authToken);
   }
 
-  saveAuthToken(token: string, refreshToken: string) {
-    localStorage.setItem(this._authToken, token);
-    localStorage.setItem(this._refreshToken, refreshToken);
+  get refreshToken() {
+    return localStorage.getItem(this._refreshToken);
+  }
+
+  saveAuthToken(authToken: Auth_Tokens) {
+    localStorage.setItem(this._authToken, authToken.access_token ?? '');
+    localStorage.setItem(this._refreshToken, authToken.refresh_token ?? '');
   }
 
   clear() {

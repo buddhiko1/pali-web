@@ -1,16 +1,8 @@
 import { Injectable } from '@angular/core';
-import { gql, Client, cacheExchange, fetchExchange } from '@urql/core';
+import { Client, cacheExchange, fetchExchange } from '@urql/core';
 import { authExchange } from '@urql/exchange-auth';
 import { StorageService } from '../core/storage.service';
-
-const REFRESH = gql`
-  mutation refresh($refreshToken: String!) {
-    auth_refresh(refresh_token: $refreshToken, mode: json) {
-      access_token
-      refresh_token
-    }
-  }
-`;
+import { RefreshTokenDocument } from '../gql/graphql';
 
 @Injectable({ providedIn: 'root' })
 export class UrqlService {
@@ -29,16 +21,17 @@ export class UrqlService {
     });
     const saveAuthToken = this._storageService.saveAuthToken;
     const clearStorage = this._storageService.clear;
+    const accessToken = this._storageService.accessToken;
+    const refreshToken = this._storageService.refreshToken;
     this.systemClient = new Client({
       url: 'http://localhost:9000/graphql/system',
       exchanges: [
         authExchange(async (utils) => {
-          const { token, refreshToken } = this._storageService.getAuthToken();
           return {
             addAuthToOperation(operation) {
-              if (!token) return operation;
+              if (!accessToken) return operation;
               return utils.appendHeaders(operation, {
-                Authorization: `Bearer ${token}`,
+                Authorization: `Bearer ${accessToken}`,
               });
             },
             didAuthError(error) {
@@ -47,12 +40,15 @@ export class UrqlService {
               );
             },
             async refreshAuth() {
-              const result = await utils.mutate(REFRESH, { refreshToken });
-              if (result.data?.access_token) {
-                saveAuthToken(
-                  result.data.access_token,
-                  result.data.refresh_token
-                );
+              if (!refreshToken) {
+                // logout();
+                return;
+              }
+              const result = await utils.mutate(RefreshTokenDocument, {
+                refreshToken,
+              });
+              if (result.data?.auth_refresh) {
+                saveAuthToken(result.data.auth_refresh);
               } else {
                 clearStorage();
                 // logout();
