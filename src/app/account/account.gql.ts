@@ -1,6 +1,9 @@
 import { graphql } from '../gql';
 
 graphql(`
+  mutation UsersInvite($email: String!, $role: String!, $invite_url: String) {
+    users_invite(email: $email, role: $role, invite_url: $invite_url)
+  }
   mutation AuthLogin($email: String!, $password: String!) {
     auth_login(email: $email, password: $password) {
       access_token

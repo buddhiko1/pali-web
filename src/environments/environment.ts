@@ -5,6 +5,8 @@
 export const environment = {
   production: false,
   host: 'http://localhost:9000',
+  gqlToken: '8-N2d1wFhJobtSpsxcWC-rKzrHTzuhbA',
+  roleIdToSignUp: '731cc0bd-afc6-40d9-9d0b-c2ccb17bceb2',
 };
 
 /*

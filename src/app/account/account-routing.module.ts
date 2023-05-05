@@ -8,6 +8,7 @@ export enum UrlEnum {
   SignIn = 'signIn',
   SignUp = 'signUp',
   Reset = 'reset',
+  Invite = 'invite',
 }
 
 const routes: Routes = [

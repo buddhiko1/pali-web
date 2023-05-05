@@ -55,6 +55,7 @@ export class LoginComponent implements OnInit, AfterViewInit {
       .login(loginArgs)
       .then(() => {
         console.log('login successful');
+        this.loginError = '';
       })
       .catch((error) => {
         this.loginError = error.message;

@@ -23,7 +23,7 @@
         </div>
       </div>
       <button
-        (click)="signUp()"
+        #signUpBtn
         [disabled]="!signUpForm.valid"
         class="c-button d-button w-full mt-3"
       >
@@ -32,7 +32,7 @@
     </form>
     <p class="c-tips d-tips">
       <span>Have an account ?</span
-      ><a routerLink="{{ UrlEnum.SignIn }}" class="text-sm g-link pl-4"
+      ><a routerLink="../{{ UrlEnum.SignIn }}" class="text-sm g-link pl-4"
         >Sign In</a
       >
     </p>

@@ -10,6 +10,8 @@ import {
   AuthLogoutDocument,
   AuthLogoutMutationVariables,
   Auth_Tokens,
+  UsersInviteDocument,
+  UsersInviteMutationVariables,
 } from '../gql/graphql';
 
 @Injectable({ providedIn: 'root' })
@@ -26,6 +28,18 @@ export class AccountService {
 
   get isLoginned(): boolean {
     return !!this._storageService.accessToken;
+  }
+
+  invite(inviteArgs: UsersInviteMutationVariables): Promise<void> {
+    return new Promise<void>((resolve) => {
+      const client = this._urqlService.loginClient;
+      client
+        .mutation(UsersInviteDocument, inviteArgs)
+        .toPromise()
+        .then(() => {
+          resolve();
+        });
+    });
   }
 
   login(loginArgs: AuthLoginMutationVariables): Promise<void> {

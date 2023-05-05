@@ -1,21 +1,10 @@
 import { CodegenConfig } from '@graphql-codegen/cli';
+import { environment } from './src/environments/environment';
 
 const config: CodegenConfig = {
   schema: [
-    {
-      'http://localhost:9000/graphql': {
-        headers: {
-          Authorization: 'Trk53nUhc3gDtT9cBy8eBS7Rpal-S1Cy',
-        },
-      },
-    },
-    {
-      'http://localhost:9000/graphql/system': {
-        headers: {
-          Authorization: 'Trk53nUhc3gDtT9cBy8eBS7Rpal-S1Cy',
-        },
-      },
-    },
+    `${environment.host}/graphql?access_token=${environment.gqlToken}`,
+    `${environment.host}/graphql/system?access_token=${environment.gqlToken}`,
   ],
   generates: {
     './src/app/gql/': {
