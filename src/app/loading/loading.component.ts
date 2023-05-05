@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AngularSvgIconModule } from 'angular-svg-icon';
-import { OverlayService } from '../overlay/overlay.service';
+import { OverlayService } from 'src/app/overlay/overlay.service';
 
 @Component({
   selector: 'app-loading',

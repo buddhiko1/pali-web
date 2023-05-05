@@ -1,6 +1,6 @@
 import { Component, OnDestroy } from '@angular/core';
-import { UrlEnum } from '../app-routing.module';
-import { NavbarService } from '../navbar/navbar.service';
+import { UrlEnum } from 'src/app/app-routing.module';
+import { NavbarService } from 'src/app/navbar/navbar.service';
 
 @Component({
   selector: 'app-home',

@@ -1,6 +1,6 @@
 import { Component, OnDestroy } from '@angular/core';
-import { Config as BookConfig } from '../book/book.model';
-import { NavbarService } from '../navbar/navbar.service';
+import { Config as BookConfig } from 'src/app/book/book.model';
+import { NavbarService } from 'src/app/navbar/navbar.service';
 
 @Component({
   selector: 'app-tipitaka',

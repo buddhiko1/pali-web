@@ -1,8 +1,9 @@
 import { Component, HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { NavbarService } from '../navbar/navbar.service';
-import { PublicService } from '../core/public.service';
 import { AngularSvgIconModule } from 'angular-svg-icon';
+
+import { NavbarService } from 'src/app/navbar/navbar.service';
+import { PublicService } from 'src/app/core/public.service';
 
 @Component({
   selector: 'app-float-buttons',

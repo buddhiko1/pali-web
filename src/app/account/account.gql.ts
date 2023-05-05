@@ -1,4 +1,4 @@
-import { graphql } from '../gql';
+import { graphql } from 'src/gql';
 
 graphql(`
   mutation UsersInvite($email: String!, $role: String!, $invite_url: String) {

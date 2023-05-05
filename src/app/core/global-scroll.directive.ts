@@ -1,5 +1,5 @@
 import { Directive, HostListener } from '@angular/core';
-import { NavbarService } from '../navbar/navbar.service';
+import { NavbarService } from 'src/app/navbar/navbar.service';
 import { PublicService } from './public.service';
 
 @Directive({

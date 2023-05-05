@@ -1,6 +1,6 @@
+import { Directive, ElementRef, OnDestroy } from '@angular/core';
 import { fromEvent, Subscription } from 'rxjs';
 import { throttleTime } from 'rxjs/operators';
-import { Directive, ElementRef, OnDestroy } from '@angular/core';
 import { PublicService } from './public.service';
 
 const slideDurationClass = 'g-slide-1000ms';

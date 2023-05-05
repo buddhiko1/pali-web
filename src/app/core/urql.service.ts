@@ -1,13 +1,14 @@
 import { Injectable } from '@angular/core';
 import { Client, cacheExchange, fetchExchange, mapExchange } from '@urql/core';
 import { authExchange } from '@urql/exchange-auth';
+
 import { environment } from 'src/environments/environment';
-import { StorageService } from '../core/storage.service';
+import { StorageService } from 'src/app/core/storage.service';
 
 import {
   AuthRefreshDocument,
   AuthRefreshMutationVariables,
-} from '../gql/graphql';
+} from 'src/gql/graphql';
 
 @Injectable({ providedIn: 'root' })
 export class UrqlService {

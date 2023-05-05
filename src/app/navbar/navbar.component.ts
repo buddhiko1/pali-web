@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
+
+import { PublicService } from 'src/app/core/public.service';
+import { UrlEnum, RedirectTo } from 'src/app/app-routing.module';
+
 import { NavbarService } from './navbar.service';
-import { PublicService } from '../core/public.service';
-import { UrlEnum, RedirectTo } from '../app-routing.module';
 
 @Component({
   selector: 'app-navbar',

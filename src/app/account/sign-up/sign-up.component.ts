@@ -9,9 +9,11 @@ import {
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { fromEvent } from 'rxjs';
 import { throttleTime } from 'rxjs/operators';
-import { UsersInviteMutationVariables } from '../../gql/graphql';
+
+import { UsersInviteMutationVariables } from 'src/gql/graphql';
 import { environment } from 'src/environments/environment';
 import { UrlEnum as ModuleUrlEnum } from 'src/app/app-routing.module';
+
 import { UrlEnum } from '../account-routing.module';
 import { AccountService } from '../account.service';
 

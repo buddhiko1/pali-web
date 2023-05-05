@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Auth_Tokens } from '../gql/graphql';
+import { Auth_Tokens } from 'src/gql/graphql';
 
 @Injectable({
   providedIn: 'root',

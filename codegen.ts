@@ -7,7 +7,7 @@ const config: CodegenConfig = {
     `${environment.host}/graphql/system?access_token=${environment.gqlToken}`,
   ],
   generates: {
-    './src/app/gql/': {
+    './src/gql/': {
       documents: ['src/**/*.gql.ts'],
       preset: 'client',
     },

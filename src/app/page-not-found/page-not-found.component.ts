@@ -1,10 +1,11 @@
 import { Component, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AngularSvgIconModule } from 'angular-svg-icon';
-import { BackButtonDirective } from '../core/back-button.directive';
-import { NavbarService } from '../navbar/navbar.service';
-import { PublicService } from '../core/public.service';
-import { SnowBgComponent } from '../snow-bg/snow-bg.component';
+
+import { BackButtonDirective } from 'src/app/core/back-button.directive';
+import { NavbarService } from 'src/app/navbar/navbar.service';
+import { PublicService } from 'src/app/core/public.service';
+import { SnowBgComponent } from 'src/app/snow-bg/snow-bg.component';
 
 @Component({
   selector: 'app-page-not-found',

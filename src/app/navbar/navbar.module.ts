@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule, TitleCasePipe } from '@angular/common';
 import { RouterLink } from '@angular/router';
-import { NavbarComponent } from './navbar.component';
 import { AngularSvgIconModule } from 'angular-svg-icon';
+
+import { NavbarComponent } from './navbar.component';
 
 @NgModule({
   declarations: [NavbarComponent],

@@ -1,11 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HomeRoutingModule } from './home-routing.module';
 import { AngularSvgIconModule } from 'angular-svg-icon';
+
+import { LoadSlideDirective } from 'src/app/core/load-slide.directive';
+import { TypingDirective } from 'src/app/core/typing.directive';
+import { PhraseComponent } from 'src/app/phrase/phrase.component';
+
+import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home.component';
-import { LoadSlideDirective } from '../core/load-slide.directive';
-import { TypingDirective } from '../core/typing.directive';
-import { PhraseComponent } from '../phrase/phrase.component';
 
 @NgModule({
   declarations: [HomeComponent],

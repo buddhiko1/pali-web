@@ -9,9 +9,11 @@ import {
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { fromEvent } from 'rxjs';
 import { throttleTime } from 'rxjs/operators';
+
+import { AuthLoginMutationVariables } from 'src/gql/graphql';
+
 import { UrlEnum } from '../account-routing.module';
 import { AccountService } from '../account.service';
-import { AuthLoginMutationVariables } from '../../gql/graphql';
 
 @Component({
   selector: 'app-login',

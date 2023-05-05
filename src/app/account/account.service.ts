@@ -2,8 +2,9 @@ import { Injectable } from '@angular/core';
 import { CombinedError } from '@urql/core';
 import { Observable, of } from 'rxjs';
 import { delay } from 'rxjs/operators';
-import { UrqlService } from '../urql/urql.service';
-import { StorageService } from '../core/storage.service';
+
+import { UrqlService } from 'src/app/core/urql.service';
+import { StorageService } from 'src/app/core/storage.service';
 import {
   AuthLoginDocument,
   AuthLoginMutationVariables,
@@ -12,7 +13,7 @@ import {
   Auth_Tokens,
   UsersInviteDocument,
   UsersInviteMutationVariables,
-} from '../gql/graphql';
+} from 'src/gql/graphql';
 
 @Injectable({ providedIn: 'root' })
 export class AccountService {
