@@ -28,14 +28,14 @@
   grid-template-rows: auto auto auto;
   grid-template-columns: 1fr;
   grid-template-areas:
-    "username"
+    "email"
     "password"
     "button";
   row-gap: theme(spacing.6);
 }
 
-.c-username {
-  grid-area: username;
+.c-email {
+  grid-area: email;
 }
 
 .c-password {
@@ -53,7 +53,7 @@
   grid-area: button;
 }
 
-.c-username label:after {
+.c-email label:after {
   content: "*";
   color: theme("colors.red.600");
 }

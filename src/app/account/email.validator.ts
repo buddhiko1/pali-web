@@ -4,8 +4,6 @@ import {
   AbstractControl,
   ValidationErrors,
 } from '@angular/forms';
-import { catchError, map } from 'rxjs/operators';
-import { Observable, of } from 'rxjs';
 
 import { AccountService } from './account.service';
 
@@ -13,22 +11,26 @@ import { AccountService } from './account.service';
 export class UnregisteredEmailValidator implements AsyncValidator {
   constructor(private _accountService: AccountService) {}
 
-  validate(control: AbstractControl): Observable<ValidationErrors | null> {
-    return this._accountService.isRegisteredEmail(control.value).pipe(
-      map((isResigtered) => (isResigtered ? null : { unregistered: true })),
-      catchError(() => of(null))
-    );
+  validate(control: AbstractControl): Promise<ValidationErrors | null> {
+    return this._accountService
+      .isRegisteredEmail(control.value)
+      .then((result) => {
+        return result ? { unregistered: true } : null;
+      })
+      .catch(() => null);
   }
 }
 
 @Injectable({ providedIn: 'root' })
-export class DuplicateEmailValidator implements AsyncValidator {
+export class RegisteredEmailValidator implements AsyncValidator {
   constructor(private _accountService: AccountService) {}
 
-  validate(control: AbstractControl): Observable<ValidationErrors | null> {
-    return this._accountService.isRegisteredEmail(control.value).pipe(
-      map((isResigtered) => (isResigtered ? { duplicate: true } : null)),
-      catchError(() => of(null))
-    );
+  validate(control: AbstractControl): Promise<ValidationErrors | null> {
+    return this._accountService
+      .isRegisteredEmail(control.value)
+      .then((result) => {
+        return result ? null : { registered: true };
+      })
+      .catch(() => null);
   }
 }

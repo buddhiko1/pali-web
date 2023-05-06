@@ -24,13 +24,13 @@ export class LoginComponent implements OnInit, AfterViewInit {
   @ViewChild('loginBtn')
   loginBtn!: ElementRef<HTMLCanvasElement>;
   UrlEnum: typeof UrlEnum = UrlEnum;
-  loginForm!: FormGroup;
-  loginError = '';
+  form!: FormGroup;
+  error = '';
 
   constructor(private _accountService: AccountService) {}
 
   ngOnInit(): void {
-    this.loginForm = new FormGroup({
+    this.form = new FormGroup({
       email: new FormControl('', {
         validators: [Validators.required, Validators.email],
         updateOn: 'blur',
@@ -50,25 +50,25 @@ export class LoginComponent implements OnInit, AfterViewInit {
 
   login(): void {
     const args: LoginMutationVariables = {
-      email: this.loginForm.getRawValue().email,
-      password: this.loginForm.getRawValue().password,
+      email: this.form.getRawValue().email,
+      password: this.form.getRawValue().password,
     };
     this._accountService
       .login(args)
       .then(() => {
         console.log('login successful');
-        this.loginError = '';
+        this.error = '';
       })
       .catch((error) => {
-        this.loginError = error.message;
+        this.error = error.message;
       });
   }
 
   get email() {
-    return this.loginForm.get('email')!;
+    return this.form.get('email')!;
   }
 
   get password() {
-    return this.loginForm.get('password')!;
+    return this.form.get('password')!;
   }
 }

@@ -1,7 +1,5 @@
 import { Injectable } from '@angular/core';
 import { CombinedError } from '@urql/core';
-import { Observable, of } from 'rxjs';
-import { delay } from 'rxjs/operators';
 
 import { UrqlService } from 'src/app/core/urql.service';
 import { StorageService } from 'src/app/core/storage.service';
@@ -15,6 +13,8 @@ import {
   SignUpMutationVariables,
   AccountInitDocument,
   AccountInitMutationVariables,
+  UserWithEmailDocument,
+  UserWithEmailQueryVariables,
 } from 'src/gql/graphql';
 
 @Injectable({ providedIn: 'root' })
@@ -24,9 +24,27 @@ export class AccountService {
     private _storageService: StorageService
   ) {}
 
-  isRegisteredEmail(email: string): Observable<boolean> {
-    const isRegistered = email == 'example@outlook.com';
-    return of(isRegistered).pipe(delay(400));
+  isRegisteredEmail(email: string): Promise<boolean> {
+    return new Promise<boolean>((resolve, reject) => {
+      const client = this._urqlService.loginClient;
+      const args: UserWithEmailQueryVariables = {
+        email,
+      };
+      client
+        .query(UserWithEmailDocument, args)
+        .toPromise()
+        .then((result) => {
+          if (result.data?.users) {
+            if (result.data.users.length > 0) {
+              resolve(true);
+            } else {
+              resolve(false);
+            }
+          } else {
+            reject();
+          }
+        });
+    });
   }
 
   get isLoginned(): boolean {

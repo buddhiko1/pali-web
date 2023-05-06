@@ -28,4 +28,9 @@ graphql(`
   mutation PasswordReset($token: String!, $password: String!) {
     auth_password_reset(token: $token, password: $password)
   }
+  query UserWithEmail($email: String!) {
+    users(filter: { email: { _eq: $email } }) {
+      id
+    }
+  }
 `);

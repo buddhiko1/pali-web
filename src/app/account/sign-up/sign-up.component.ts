@@ -16,9 +16,10 @@ import { UrlEnum as ModuleUrlEnum } from 'src/app/app-routing.module';
 
 import { UrlEnum } from '../account-routing.module';
 import { AccountService } from '../account.service';
+import { UnregisteredEmailValidator } from '../email.validator';
 
 @Component({
-  selector: 'app-login',
+  selector: 'app-sign-up',
   templateUrl: './sign-up.component.html',
   styleUrls: ['./sign-up.component.css'],
 })
@@ -26,14 +27,22 @@ export class SignUpComponent implements OnInit, AfterViewInit {
   @ViewChild('signUpBtn')
   signUpBtn!: ElementRef<HTMLCanvasElement>;
   UrlEnum: typeof UrlEnum = UrlEnum;
-  signUpForm!: FormGroup;
+  form!: FormGroup;
 
-  constructor(private _accountService: AccountService) {}
+  constructor(
+    private _accountService: AccountService,
+    private _unregisteredEmailValidator: UnregisteredEmailValidator
+  ) {}
 
   ngOnInit(): void {
-    this.signUpForm = new FormGroup({
+    this.form = new FormGroup({
       email: new FormControl('', {
         validators: [Validators.required, Validators.email],
+        asyncValidators: [
+          this._unregisteredEmailValidator.validate.bind(
+            this._unregisteredEmailValidator
+          ),
+        ],
         updateOn: 'blur',
       }),
     });
@@ -46,12 +55,12 @@ export class SignUpComponent implements OnInit, AfterViewInit {
   }
 
   get email() {
-    return this.signUpForm.get('email')!;
+    return this.form.get('email')!;
   }
 
   signUp(): void {
     const args: SignUpMutationVariables = {
-      email: this.signUpForm.getRawValue().email,
+      email: this.form.getRawValue().email,
       role: `${environment.roleIdToSignUp}`,
       urlForInit: `${environment.host}/${ModuleUrlEnum.Account}/${this.UrlEnum.Init}`,
     };

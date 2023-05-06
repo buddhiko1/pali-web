@@ -2,8 +2,8 @@
   <div
     class="c-dialog rounded-lg bg-gray-100 dark:bg-gray-700 p-8 my-32 lg:my-[25vh]"
   >
-    <h2 class="c-title d-title">Init</h2>
-    <form [formGroup]="initForm" class="c-form">
+    <h2 class="c-title d-title">Initialize</h2>
+    <form [formGroup]="form" class="c-form">
       <div class="c-email">
         <label for="email" class="d-label">Email</label>
         <input
@@ -12,15 +12,8 @@
           id="email"
           formControlName="email"
           required
-          class="w-full d-input"
+          class="disabled:cursor-not-allowed disabled:opacity-75 w-full d-input"
         />
-        <div
-          *ngIf="email.invalid && (email.dirty || email.touched)"
-          class="d-form-error"
-        >
-          <div *ngIf="email.errors?.['required']">Email is required.</div>
-          <div *ngIf="email.errors?.['email']">Invalid address format.</div>
-        </div>
       </div>
       <div class="c-password">
         <label for="password" class="d-label">Password</label>
@@ -40,10 +33,15 @@
             Password must be at least 6 characters long.
           </div>
         </div>
+        <div *ngIf="error" class="d-form-error">
+          <div>
+            {{ error }}
+          </div>
+        </div>
       </div>
       <button
         #initBtn
-        [disabled]="!initForm.valid"
+        [disabled]="!form.valid"
         class="c-button d-button w-full mt-3"
       >
         Ok
