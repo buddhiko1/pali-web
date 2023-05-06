@@ -3,12 +3,13 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { LoginComponent } from './login/login.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
+import { InitComponent } from './init/init.component';
 
 export enum UrlEnum {
   SignIn = 'signIn',
   SignUp = 'signUp',
   Reset = 'reset',
-  Invite = 'invite',
+  Init = 'init',
 }
 
 const routes: Routes = [
@@ -26,6 +27,11 @@ const routes: Routes = [
     path: UrlEnum.SignUp,
     component: SignUpComponent,
     data: { animation: UrlEnum.SignUp },
+  },
+  {
+    path: UrlEnum.Init,
+    component: InitComponent,
+    data: { animation: UrlEnum.Init },
   },
 ];
 

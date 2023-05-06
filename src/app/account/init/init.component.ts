@@ -10,27 +10,26 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { fromEvent } from 'rxjs';
 import { throttleTime } from 'rxjs/operators';
 
-import { LoginMutationVariables } from 'src/gql/graphql';
+import { AccountInitMutationVariables } from 'src/gql/graphql';
 
 import { UrlEnum } from '../account-routing.module';
 import { AccountService } from '../account.service';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css'],
+  selector: 'app-init',
+  templateUrl: './init.component.html',
+  styleUrls: ['./init.component.css'],
 })
-export class LoginComponent implements OnInit, AfterViewInit {
-  @ViewChild('loginBtn')
-  loginBtn!: ElementRef<HTMLCanvasElement>;
+export class InitComponent implements OnInit, AfterViewInit {
+  @ViewChild('initBtn')
+  initBtn!: ElementRef<HTMLCanvasElement>;
   UrlEnum: typeof UrlEnum = UrlEnum;
-  loginForm!: FormGroup;
-  loginError = '';
+  initForm!: FormGroup;
 
   constructor(private _accountService: AccountService) {}
 
   ngOnInit(): void {
-    this.loginForm = new FormGroup({
+    this.initForm = new FormGroup({
       email: new FormControl('', {
         validators: [Validators.required, Validators.email],
         updateOn: 'blur',
@@ -43,32 +42,26 @@ export class LoginComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-    fromEvent(this.loginBtn.nativeElement, 'click')
+    fromEvent(this.initBtn.nativeElement, 'click')
       .pipe(throttleTime(1000))
-      .subscribe(() => this.login());
-  }
-
-  login(): void {
-    const args: LoginMutationVariables = {
-      email: this.loginForm.getRawValue().email,
-      password: this.loginForm.getRawValue().password,
-    };
-    this._accountService
-      .login(args)
-      .then(() => {
-        console.log('login successful');
-        this.loginError = '';
-      })
-      .catch((error) => {
-        this.loginError = error.message;
-      });
+      .subscribe(() => this.initAccount());
   }
 
   get email() {
-    return this.loginForm.get('email')!;
+    return this.initForm.get('email')!;
   }
 
   get password() {
-    return this.loginForm.get('password')!;
+    return this.initForm.get('password')!;
+  }
+
+  initAccount(): void {
+    const args: AccountInitMutationVariables = {
+      token: 'abc',
+      password: this.initForm.getRawValue().password,
+    };
+    this._accountService.InitAccount(args).then(() => {
+      console.log('Account init success');
+    });
   }
 }

@@ -10,7 +10,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { fromEvent } from 'rxjs';
 import { throttleTime } from 'rxjs/operators';
 
-import { UsersInviteMutationVariables } from 'src/gql/graphql';
+import { SignUpMutationVariables } from 'src/gql/graphql';
 import { environment } from 'src/environments/environment';
 import { UrlEnum as ModuleUrlEnum } from 'src/app/app-routing.module';
 
@@ -50,12 +50,12 @@ export class SignUpComponent implements OnInit, AfterViewInit {
   }
 
   signUp(): void {
-    const inviteArgs: UsersInviteMutationVariables = {
+    const args: SignUpMutationVariables = {
       email: this.signUpForm.getRawValue().email,
       role: `${environment.roleIdToSignUp}`,
-      invite_url: `${environment.host}/${ModuleUrlEnum.Account}/${this.UrlEnum.Invite}`,
+      urlForInit: `${environment.host}/${ModuleUrlEnum.Account}/${this.UrlEnum.Init}`,
     };
-    this._accountService.invite(inviteArgs).then(() => {
+    this._accountService.signUp(args).then(() => {
       console.log('SignUp successful');
     });
   }

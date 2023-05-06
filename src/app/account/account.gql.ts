@@ -1,28 +1,31 @@
 import { graphql } from 'src/gql';
 
 graphql(`
-  mutation UsersInvite($email: String!, $role: String!, $invite_url: String) {
-    users_invite(email: $email, role: $role, invite_url: $invite_url)
+  mutation SignUp($email: String!, $role: String!, $urlForInit: String) {
+    users_invite(email: $email, role: $role, invite_url: $urlForInit)
   }
-  mutation AuthLogin($email: String!, $password: String!) {
-    auth_login(email: $email, password: $password) {
+  mutation AccountInit($token: String!, $password: String!) {
+    users_invite_accept(token: $token, password: $password)
+  }
+  mutation Login($email: String!, $password: String!) {
+    login: auth_login(email: $email, password: $password) {
       access_token
       refresh_token
     }
   }
-  mutation AuthLogout($refreshToken: String!) {
+  mutation Logout($refreshToken: String!) {
     auth_logout(refresh_token: $refreshToken)
   }
-  mutation AuthRefresh($refreshToken: String!) {
-    auth_refresh(refresh_token: $refreshToken, mode: json) {
+  mutation Refresh($refreshToken: String!) {
+    refresh: auth_refresh(refresh_token: $refreshToken, mode: json) {
       access_token
       refresh_token
     }
   }
-  mutation AuthPasswordRequest($email: String!) {
+  mutation PasswordRequest($email: String!) {
     auth_password_request(email: $email)
   }
-  mutation AuthPasswordReset($token: String!, $password: String!) {
+  mutation PasswordReset($token: String!, $password: String!) {
     auth_password_reset(token: $token, password: $password)
   }
 `);

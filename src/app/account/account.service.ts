@@ -6,13 +6,15 @@ import { delay } from 'rxjs/operators';
 import { UrqlService } from 'src/app/core/urql.service';
 import { StorageService } from 'src/app/core/storage.service';
 import {
-  AuthLoginDocument,
-  AuthLoginMutationVariables,
-  AuthLogoutDocument,
-  AuthLogoutMutationVariables,
+  LoginDocument,
+  LoginMutationVariables,
+  LogoutDocument,
+  LogoutMutationVariables,
   Auth_Tokens,
-  UsersInviteDocument,
-  UsersInviteMutationVariables,
+  SignUpDocument,
+  SignUpMutationVariables,
+  AccountInitDocument,
+  AccountInitMutationVariables,
 } from 'src/gql/graphql';
 
 @Injectable({ providedIn: 'root' })
@@ -31,11 +33,11 @@ export class AccountService {
     return !!this._storageService.accessToken;
   }
 
-  invite(inviteArgs: UsersInviteMutationVariables): Promise<void> {
+  signUp(args: SignUpMutationVariables): Promise<void> {
     return new Promise<void>((resolve) => {
       const client = this._urqlService.loginClient;
       client
-        .mutation(UsersInviteDocument, inviteArgs)
+        .mutation(SignUpDocument, args)
         .toPromise()
         .then(() => {
           resolve();
@@ -43,16 +45,29 @@ export class AccountService {
     });
   }
 
-  login(loginArgs: AuthLoginMutationVariables): Promise<void> {
+  InitAccount(args: AccountInitMutationVariables): Promise<void> {
+    return new Promise<void>((resolve) => {
+      const client = this._urqlService.loginClient;
+      client
+        .mutation(AccountInitDocument, args)
+        .toPromise()
+        .then(() => {
+          resolve();
+        });
+    });
+  }
+
+  login(args: LoginMutationVariables): Promise<void> {
     return new Promise<void>((resolve, reject) => {
       const client = this._urqlService.loginClient;
       client
-        .mutation(AuthLoginDocument, loginArgs)
+        .mutation(LoginDocument, args)
         .toPromise()
         .then((result) => {
-          if (result.data?.auth_login) {
+          if (result.data?.login) {
+            console.log(result);
             this._storageService.saveAuthToken(
-              result.data?.auth_login as Auth_Tokens
+              result.data?.login as Auth_Tokens
             );
             resolve();
           } else {
@@ -65,12 +80,12 @@ export class AccountService {
     });
   }
 
-  logout(logoutArgs?: AuthLogoutMutationVariables): Promise<void> {
+  logout(args?: LogoutMutationVariables): Promise<void> {
     return new Promise<void>((resolve) => {
-      if (logoutArgs) {
+      if (args) {
         const client = this._urqlService.loginClient;
         client
-          .mutation(AuthLogoutDocument, logoutArgs)
+          .mutation(LogoutDocument, args)
           .toPromise()
           .then(() => {
             this._storageService.clear();
