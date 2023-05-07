@@ -12,8 +12,9 @@
           id="email"
           formControlName="email"
           required
-          class="w-full d-input"
+          class="inline-block w-full d-input"
         />
+        <app-mark-loader [status]="validatorStatusOfEmail"></app-mark-loader>
         <div
           *ngIf="email.invalid && (email.dirty || email.touched)"
           class="d-form-error"
@@ -35,7 +36,9 @@
     </form>
     <p class="c-tips d-tips">
       <span>Have an account ?</span
-      ><a routerLink="../{{ UrlEnum.SignIn }}" class="text-sm g-link pl-4"
+      ><a
+        routerLink="../{{ AccountUrlEnum.SignIn }}"
+        class="text-sm g-link pl-4"
         >Sign In</a
       >
     </p>

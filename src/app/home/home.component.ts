@@ -8,7 +8,7 @@ import { NavbarService } from 'src/app/navbar/navbar.service';
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnDestroy {
-  UrlEnum: typeof UrlEnum = UrlEnum;
+  UrlEnum = UrlEnum;
 
   constructor(private _navbarService: NavbarService) {
     this._navbarService.showShadow(false);

@@ -27,7 +27,7 @@ import { AccountService } from '../account.service';
 export class InitComponent implements OnInit, AfterViewInit {
   @ViewChild('initBtn')
   initBtn!: ElementRef<HTMLCanvasElement>;
-  UrlEnum: typeof UrlEnum = UrlEnum;
+  UrlEnum = UrlEnum;
   form!: FormGroup;
   error = '';
   private _token = '';

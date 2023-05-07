@@ -12,7 +12,7 @@ import { NavbarService } from './navbar.service';
   styleUrls: ['./navbar.component.css'],
 })
 export class NavbarComponent {
-  UrlEnum: typeof UrlEnum = UrlEnum;
+  UrlEnum = UrlEnum;
   private _url: string = this.UrlEnum.Home;
 
   constructor(

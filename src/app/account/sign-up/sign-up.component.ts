@@ -12,9 +12,10 @@ import { throttleTime } from 'rxjs/operators';
 
 import { SignUpMutationVariables } from 'src/gql/graphql';
 import { environment } from 'src/environments/environment';
-import { UrlEnum as ModuleUrlEnum } from 'src/app/app-routing.module';
+import { UrlEnum as AppUrlEnum } from 'src/app/app-routing.module';
+import { StatusEnum as LoaderEnum } from 'src/app/mark-loader/mark-loader.component';
 
-import { UrlEnum } from '../account-routing.module';
+import { UrlEnum as AccountUrlEnum } from '../account-routing.module';
 import { AccountService } from '../account.service';
 import { UnregisteredEmailValidator } from '../email.validator';
 
@@ -26,7 +27,7 @@ import { UnregisteredEmailValidator } from '../email.validator';
 export class SignUpComponent implements OnInit, AfterViewInit {
   @ViewChild('signUpBtn')
   signUpBtn!: ElementRef<HTMLCanvasElement>;
-  UrlEnum: typeof UrlEnum = UrlEnum;
+  AccountUrlEnum = AccountUrlEnum;
   form!: FormGroup;
 
   constructor(
@@ -58,11 +59,21 @@ export class SignUpComponent implements OnInit, AfterViewInit {
     return this.form.get('email')!;
   }
 
+  get validatorStatusOfEmail() {
+    if (this.email.status === 'PENDING') {
+      return LoaderEnum.Loading;
+    } else if (this.email.status === 'VALID') {
+      return LoaderEnum.Successful;
+    } else {
+      return LoaderEnum.Idle;
+    }
+  }
+
   signUp(): void {
     const args: SignUpMutationVariables = {
       email: this.form.getRawValue().email,
       role: `${environment.roleIdToSignUp}`,
-      urlForInit: `${environment.host}/${ModuleUrlEnum.Account}/${this.UrlEnum.Init}`,
+      urlForInit: `${environment.host}/${AppUrlEnum.Account}/${AccountUrlEnum.Init}`,
     };
     this._accountService.signUp(args).then(() => {
       console.log('SignUp successful');

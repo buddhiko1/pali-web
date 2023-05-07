@@ -23,8 +23,8 @@ import { AccountService } from '../account.service';
 export class LoginComponent implements OnInit, AfterViewInit {
   @ViewChild('loginBtn')
   loginBtn!: ElementRef<HTMLCanvasElement>;
-  UrlEnum: typeof UrlEnum = UrlEnum;
   form!: FormGroup;
+  UrlEnum = UrlEnum;
   error = '';
 
   constructor(private _accountService: AccountService) {}
