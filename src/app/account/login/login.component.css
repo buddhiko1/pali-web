@@ -61,12 +61,12 @@
 
 .c-email label:after {
   content: "*";
-  color: theme("colors.red.600");
+  color: theme("colors.error.DEFAULT");
 }
 
 .c-password label:after {
   content: "*";
-  color: theme("colors.red.600");
+  color: theme("colors.error.DEFAULT");
 }
 
 @media screen and (min-width: theme("screens.lg")) {

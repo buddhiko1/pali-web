@@ -6,7 +6,7 @@
   <a
     (click)="closeMenu()"
     routerLink="{{ UrlEnum.Home }}"
-    class="c-logo py-3 text-2xl lg:text-3xl uppercase tracking-widest font-bold g-text-primary g-hover"
+    class="c-logo py-3 text-2xl lg:text-3xl uppercase tracking-widest font-bold g-title g-hover"
     [class.text-blue-500]="isActiveUrl(UrlEnum.Home)"
     >Pali</a
   >
@@ -35,7 +35,7 @@
       <li class="c-index-item mt-2 lg:mt-0 lg:mx-4">
         <a
           routerLink="{{ UrlEnum.Grammar }}"
-          class="tracking-wide g-text-secondary g-hover"
+          class="g-text g-hover"
           [class.g-active]="isActiveUrl(UrlEnum.Grammar)"
           >{{ UrlEnum.Grammar | titlecase }}</a
         >
@@ -43,7 +43,7 @@
       <li class="c-index-item mt-2 lg:mt-0 lg:mx-4">
         <a
           routerLink="{{ UrlEnum.Dictionary }}"
-          class="tracking-wide g-text-secondary g-hover"
+          class="g-text g-hover"
           [class.g-active]="isActiveUrl(UrlEnum.Dictionary)"
           >{{ UrlEnum.Dictionary | titlecase }}</a
         >
@@ -51,7 +51,7 @@
       <li class="c-index-item mt-2 lg:mt-0 lg:mx-4">
         <a
           routerLink="{{ UrlEnum.Vocabulary }}"
-          class="tracking-wide g-text-secondary g-hover"
+          class="g-text g-hover"
           [class.g-active]="isActiveUrl(UrlEnum.Vocabulary)"
           >{{ UrlEnum.Vocabulary | titlecase }}</a
         >
@@ -59,7 +59,7 @@
       <li class="c-index-item mt-2 lg:mt-0 lg:mx-4">
         <a
           routerLink="{{ UrlEnum.Tipitaka }}"
-          class="tracking-wide g-text-secondary g-hover"
+          class="g-text g-hover"
           [class.g-active]="isActiveUrl(UrlEnum.Tipitaka)"
           >{{ UrlEnum.Tipitaka | titlecase }}</a
         >
@@ -67,7 +67,7 @@
       <li class="c-index-item mt-2 lg:mt-0 lg:mx-4">
         <a
           routerLink="{{ UrlEnum.Reading }}"
-          class="tracking-wide g-text-secondary g-hover"
+          class="g-text g-hover"
           [class.g-active]="isActiveUrl(UrlEnum.Reading)"
           >{{ UrlEnum.Reading | titlecase }}</a
         >
@@ -75,7 +75,7 @@
       <li class="c-index-item mt-2 lg:mt-0 lg:mx-4">
         <a
           routerLink="{{ UrlEnum.Blog }}"
-          class="tracking-wide g-text-secondary g-hover"
+          class="g-text g-hover"
           [class.g-active]="isActiveUrl(UrlEnum.Blog)"
           >{{ UrlEnum.Blog | titlecase }}</a
         >

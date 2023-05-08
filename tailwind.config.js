@@ -14,24 +14,30 @@ module.exports = {
         lgContentPadding: "27rem",
       },
       colors: {
-        // background color
-        bgc: {
+        background: {
           DEFAULT: colors.white,
           dark: colors.gray["800"],
         },
-        // border color
-        bdc: {
+        border: {
           DEFAULT: colors.gray["300"],
           dark: colors.gray["600"],
         },
-        // color of focus text
-        tfc: {
+        title: {
+          DEFAULT: colors.gray["700"],
+          dark: colors.gray["50"],
+        },
+        text: {
+          DEFAULT: colors.gray["500"],
+          dark: colors.gray["200"],
+          red: colors.red["400"],
+        },
+        focus: {
           DEFAULT: colors.blue["400"],
           dark: colors.blue["400"],
         },
-        trc: {
-          DEFAULT: "#ad0101",
-          dark: "#ad0101",
+        error: {
+          DEFAULT: colors.red["500"],
+          dark: colors.red["500"],
         },
       },
     },

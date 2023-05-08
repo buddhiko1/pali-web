@@ -18,43 +18,43 @@
 
   /* action */
   .g-hover {
-    @apply hover:text-tfc dark:hover:text-tfc-dark g-transition-colors;
+    @apply hover:text-focus dark:hover:text-focus-dark g-transition-colors;
   }
 
   .g-focus {
-    @apply focus:text-tfc focus:outline-none dark:focus:text-tfc-dark g-transition-colors;
+    @apply focus:text-focus focus:outline-none dark:focus:text-focus-dark g-transition-colors;
   }
 
   .g-active {
-    @apply !text-tfc dark:!text-tfc-dark;
+    @apply !text-focus dark:!text-focus-dark;
   }
   /* action end */
 
   /* text */
-  .g-text-primary {
-    @apply tracking-wide text-gray-700 dark:text-gray-50 g-transition-colors;
+  .g-title {
+    @apply tracking-wide text-title dark:text-title-dark g-transition-colors;
   }
 
-  .g-text-primary-invert {
-    @apply tracking-wide dark:text-gray-700 text-gray-50 g-transition-colors;
+  .g-title-invert {
+    @apply tracking-wide text-title-dark dark:text-title g-transition-colors;
   }
 
-  .g-text-secondary {
-    @apply tracking-wide text-gray-500 dark:text-gray-200 g-transition-colors;
+  .g-text {
+    @apply tracking-wide text-text dark:text-text-dark g-transition-colors;
   }
 
-  .g-text-secondary-invert {
-    @apply dark:text-gray-500 text-gray-200 g-transition-colors;
+  .g-text-invert {
+    @apply tracking-wide text-text-dark dark:text-text g-transition-colors;
   }
   /* text end */
 
   /* widget */
   .g-svg {
-    @apply w-6 h-6 fill-current border-none focus:ring-0 g-text-secondary;
+    @apply w-6 h-6 fill-current border-none focus:ring-0 g-text;
   }
 
   .g-svg-invert {
-    @apply w-6 h-6 fill-current border-none focus:ring-0 g-text-secondary-invert;
+    @apply w-6 h-6 fill-current border-none focus:ring-0 g-text-invert;
   }
 
   .g-button {
@@ -62,11 +62,11 @@
   }
 
   .g-scrollbar {
-    @apply scrollbar-thin scrollbar-w-1.5 scrollbar-thumb-bdc scrollbar-track-bgc;
+    @apply scrollbar-thin scrollbar-w-1.5 scrollbar-thumb-border scrollbar-track-background;
   }
 
   .g-scrollbar-dark {
-    @apply scrollbar-thin scrollbar-w-1.5 scrollbar-thumb-bdc-dark scrollbar-track-bgc-dark;
+    @apply scrollbar-thin scrollbar-w-1.5 scrollbar-thumb-border-dark scrollbar-track-background-dark;
   }
 
   .g-scrollbar-hide {
@@ -74,15 +74,15 @@
   }
 
   .g-border {
-    @apply border-bdc dark:border-bdc-dark;
+    @apply border-border dark:border-border-dark;
   }
 
   .g-bg {
-    @apply bg-bgc dark:bg-bgc-dark;
+    @apply bg-background dark:bg-background-dark;
   }
 
   .g-bg-invert {
-    @apply dark:bg-bgc bg-bgc-dark;
+    @apply dark:bg-background bg-background-dark;
   }
   .g-slide {
     position: relative;
@@ -110,7 +110,7 @@
   }
 
   .g-link {
-    @apply text-blue-400;
+    @apply text-focus;
   }
   /* widget end */
 
