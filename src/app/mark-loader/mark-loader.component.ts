@@ -1,12 +1,6 @@
 import { Component, Input, HostBinding } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {
-  trigger,
-  state,
-  style,
-  animate,
-  transition,
-} from '@angular/animations';
+import { trigger, style, animate, transition } from '@angular/animations';
 import { AngularSvgIconModule } from 'angular-svg-icon';
 
 export enum StatusEnum {

@@ -12,7 +12,6 @@
           required
           class="inline-block w-full d-input"
         />
-        <app-mark-loader [status]="validatorStatusOfEmail"></app-mark-loader>
         <div
           *ngIf="email.invalid && (email.dirty || email.touched)"
           class="d-form-error"

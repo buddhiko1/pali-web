@@ -13,7 +13,7 @@ import { throttleTime } from 'rxjs/operators';
 import { SignUpMutationVariables } from 'src/gql/graphql';
 import { environment } from 'src/environments/environment';
 import { UrlEnum as AppUrlEnum } from 'src/app/app-routing.module';
-import { StatusEnum as LoaderEnum } from 'src/app/mark-loader/mark-loader.component';
+// import { StatusEnum as LoaderEnum } from 'src/app/mark-loader/mark-loader.component';
 
 import { UrlEnum as AccountUrlEnum } from '../account-routing.module';
 import { AccountService } from '../account.service';
@@ -59,18 +59,18 @@ export class SignUpComponent implements OnInit, AfterViewInit {
     return this.form.get('email')!;
   }
 
-  get validatorStatusOfEmail() {
-    console.log('email status:', this.email.status);
-    if (this.email.pending) {
-      return LoaderEnum.Loading;
-    } else if (this.email.valid) {
-      return LoaderEnum.Successful;
-    } else if (this.email.invalid) {
-      return LoaderEnum.Failed;
-    } else {
-      return LoaderEnum.Idle;
-    }
-  }
+  // get validatorStatusOfEmail() {
+  //   console.log("email status:", this.email.status)
+  //   if (this.email.pending) {
+  //     return LoaderEnum.Loading;
+  //   } else if (this.email.valid) {
+  //     return LoaderEnum.Successful;
+  //   } else if(this.email.invalid) {
+  //     return LoaderEnum.Failed;
+  //   } else {
+  //     return LoaderEnum.Idle;
+  //   }
+  // }
 
   signUp(): void {
     const args: SignUpMutationVariables = {
