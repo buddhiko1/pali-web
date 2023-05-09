@@ -16,7 +16,7 @@ module.exports = {
       colors: {
         background: {
           DEFAULT: colors.white,
-          dark: colors.gray["800"],
+          dark: colors.gray["900"],
         },
         border: {
           DEFAULT: colors.gray["300"],
