@@ -1,1 +1,21 @@
-<div [class]="divClass"></div>
+<div
+  *ngIf="isShowing"
+  class="relative box-border duration-700 transition-all c-loader"
+  [class.c-successful]="isSuccessful"
+  [class.c-failed]="isFailed"
+>
+  <svg-icon
+    *ngIf="isSuccessful"
+    [@inOutAnimation]
+    src="assets/icons/check.svg"
+    [svgClass]="['c-svg', 'fill-current', 'text-success']"
+  >
+  </svg-icon>
+  <svg-icon
+    *ngIf="isFailed"
+    [@inOutAnimation]
+    src="assets/icons/close.svg"
+    [svgClass]="['c-svg', 'fill-current', 'text-error']"
+  >
+  </svg-icon>
+</div>

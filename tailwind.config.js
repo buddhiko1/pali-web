@@ -39,6 +39,10 @@ module.exports = {
           DEFAULT: colors.red["500"],
           dark: colors.red["500"],
         },
+        success: {
+          DEFAULT: colors.blue["500"],
+          dark: colors.blue["500"],
+        },
       },
     },
   },

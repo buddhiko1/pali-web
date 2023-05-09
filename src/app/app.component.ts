@@ -2,13 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { ChildrenOutletContexts } from '@angular/router';
 import { PublicService } from './core/public.service';
 import { ScrollDirective } from './core/global-scroll.directive';
-import { EaseAnimation } from './app.animations';
+import { RouteAnimation } from './app.animations';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  animations: [EaseAnimation],
+  animations: [RouteAnimation],
   hostDirectives: [ScrollDirective],
 })
 export class AppComponent implements OnInit {

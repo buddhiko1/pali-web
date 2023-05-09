@@ -7,7 +7,7 @@ import {
   query,
 } from '@angular/animations';
 
-export const EaseAnimation = trigger('routeAnimations', [
+export const RouteAnimation = trigger('routeAnimations', [
   transition('* <=> *', [
     query(
       ':enter',

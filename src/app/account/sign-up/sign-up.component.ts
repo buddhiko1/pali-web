@@ -60,10 +60,13 @@ export class SignUpComponent implements OnInit, AfterViewInit {
   }
 
   get validatorStatusOfEmail() {
-    if (this.email.status === 'PENDING') {
+    console.log('email status:', this.email.status);
+    if (this.email.pending) {
       return LoaderEnum.Loading;
-    } else if (this.email.status === 'VALID') {
+    } else if (this.email.valid) {
       return LoaderEnum.Successful;
+    } else if (this.email.invalid) {
+      return LoaderEnum.Failed;
     } else {
       return LoaderEnum.Idle;
     }
