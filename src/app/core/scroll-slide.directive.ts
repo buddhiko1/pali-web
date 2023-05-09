@@ -1,7 +1,7 @@
 import { Directive, ElementRef, OnDestroy } from '@angular/core';
 import { fromEvent, Subscription } from 'rxjs';
 import { throttleTime } from 'rxjs/operators';
-import { PublicService } from './public.service';
+import { DeviceDetectorService } from 'ngx-device-detector';
 
 const slideDurationClass = 'g-slide-1000ms';
 
@@ -16,8 +16,11 @@ export class ScrollSlideDirective implements OnDestroy {
   private _eventSub!: Subscription;
   private _slideClass: string;
 
-  constructor(private _el: ElementRef, private _publicService: PublicService) {
-    this._slideClass = this._publicService.isLgDevice
+  constructor(
+    private _el: ElementRef,
+    private _deviceService: DeviceDetectorService
+  ) {
+    this._slideClass = this._deviceService.isDesktop()
       ? 'g-slide-lg'
       : 'g-slide';
     this._el.nativeElement.classList.add(this._slideClass);

@@ -1,10 +1,10 @@
 import { Component, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AngularSvgIconModule } from 'angular-svg-icon';
+import { DeviceDetectorService } from 'ngx-device-detector';
 
 import { BackButtonDirective } from 'src/app/core/back-button.directive';
 import { NavbarService } from 'src/app/navbar/navbar.service';
-import { PublicService } from 'src/app/core/public.service';
 import { SnowBgComponent } from 'src/app/snow-bg/snow-bg.component';
 
 @Component({
@@ -21,16 +21,16 @@ import { SnowBgComponent } from 'src/app/snow-bg/snow-bg.component';
 })
 export class PageNotFoundComponent implements OnDestroy {
   constructor(
-    private _publicService: PublicService,
+    private _deviceService: DeviceDetectorService,
     private _navbarService: NavbarService
   ) {
-    if (this._publicService.isLgDevice) {
+    if (this._deviceService.isDesktop()) {
       this._navbarService.showShadow(false);
     }
   }
 
   ngOnDestroy(): void {
-    if (this._publicService.isLgDevice) {
+    if (this._deviceService.isDesktop()) {
       this._navbarService.showShadow(true);
     }
   }

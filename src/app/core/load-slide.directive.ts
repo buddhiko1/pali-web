@@ -1,6 +1,6 @@
 import { Directive, ElementRef, Input, OnDestroy, OnInit } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
-import { PublicService } from './public.service';
+import { DeviceDetectorService } from 'ngx-device-detector';
 
 const slideDurationClass = 'g-slide-1500ms';
 
@@ -17,10 +17,10 @@ export class LoadSlideDirective implements OnDestroy, OnInit {
 
   constructor(
     private _el: ElementRef,
-    private _publicService: PublicService,
+    private _deviceService: DeviceDetectorService,
     private _router: Router
   ) {
-    this._slideClass = this._publicService.isLgDevice
+    this._slideClass = this._deviceService.isDesktop()
       ? 'g-slide-lg'
       : 'g-slide';
     this._el.nativeElement.classList.add(this._slideClass);

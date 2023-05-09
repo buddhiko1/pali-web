@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 
-import { PublicService } from 'src/app/core/public.service';
+import { ScrollbarService } from 'src/app/core/scrollbar.service';
 import { UrlEnum, RedirectTo } from 'src/app/app-routing.module';
 
 import { NavbarService } from './navbar.service';
@@ -18,7 +18,7 @@ export class NavbarComponent {
   constructor(
     private _router: Router,
     private _navbarService: NavbarService,
-    private _publicService: PublicService
+    private _scrollbarService: ScrollbarService
   ) {
     this._router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
@@ -27,11 +27,8 @@ export class NavbarComponent {
     });
   }
 
-  get isAtTop(): boolean {
-    return this._publicService.isAtTop;
-  }
   get isDark(): boolean {
-    return this._publicService.isDark;
+    return this._navbarService.isDark;
   }
 
   get isShadowShow(): boolean {
@@ -39,8 +36,14 @@ export class NavbarComponent {
   }
 
   toggleDark(): void {
-    this._publicService.toggleDark();
-    this.closeMenu();
+    this._scrollbarService.hideScrollbar();
+    this.isDark
+      ? this._navbarService.activeDark(false)
+      : this._navbarService.activeDark(true);
+    this._scrollbarService.showScrollbar(this.isDark);
+    if (this._navbarService.isMenuOpen) {
+      this.closeMenu();
+    }
   }
 
   routeToAccount(): void {

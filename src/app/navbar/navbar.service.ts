@@ -1,22 +1,31 @@
 import { Injectable } from '@angular/core';
-import { PublicService } from '../core/public.service';
+import { DeviceDetectorService } from 'ngx-device-detector';
+
 import { OverlayService } from '../overlay/overlay.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class NavbarService {
-  private _isMenuOpen: boolean;
-  private _isHeaderShow: boolean;
-  private _isShadowShow: boolean;
+  private _isMenuOpen = false;
+  private _isHeaderShow = true;
+  private _isShadowShow = true;
+  private _isDark = false;
 
   constructor(
-    private _publicService: PublicService,
+    private _deviceService: DeviceDetectorService,
     private _overlayService: OverlayService
-  ) {
-    this._isMenuOpen = false;
-    this._isHeaderShow = true;
-    this._isShadowShow = true;
+  ) {}
+
+  get isDark(): boolean {
+    return this._isDark;
+  }
+
+  activeDark(value: boolean) {
+    value
+      ? document.documentElement.classList.add('dark')
+      : document.documentElement.classList.remove('dark');
+    this._isDark = value;
   }
 
   get isMenuOpen(): boolean {
@@ -24,7 +33,7 @@ export class NavbarService {
   }
 
   openMenu(): void {
-    if (!this._publicService.isLgDevice) {
+    if (!this._deviceService.isDesktop()) {
       this._overlayService.active(true);
       this._isHeaderShow = true;
       this._isMenuOpen = true;
@@ -32,7 +41,7 @@ export class NavbarService {
   }
 
   closeMenu(): void {
-    if (!this._publicService.isLgDevice) {
+    if (!this._deviceService.isDesktop()) {
       this._isMenuOpen = false;
       this._overlayService.active(false);
     }

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ChildrenOutletContexts } from '@angular/router';
-import { PublicService } from './core/public.service';
+import { ScrollbarService } from './core/scrollbar.service';
 import { ScrollDirective } from './core/global-scroll.directive';
 import { RouteAnimation } from './app.animations';
 
@@ -16,20 +16,16 @@ export class AppComponent implements OnInit {
 
   constructor(
     private _contexts: ChildrenOutletContexts,
-    private _publicService: PublicService
+    private _scrollbarService: ScrollbarService
   ) {}
 
   ngOnInit(): void {
-    this._publicService.showScrollbar();
+    this._scrollbarService.showScrollbar(false);
   }
 
   getRouteAnimationData() {
     return this._contexts.getContext('primary')?.route?.snapshot?.data?.[
       'animation'
     ];
-  }
-
-  get isDark(): boolean {
-    return this._publicService.isDark;
   }
 }
