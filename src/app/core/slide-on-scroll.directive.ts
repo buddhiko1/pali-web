@@ -6,10 +6,10 @@ import { DeviceDetectorService } from 'ngx-device-detector';
 const slideDurationClass = 'g-slide-1000ms';
 
 @Directive({
-  selector: '[appScrollSlide]',
+  selector: '[appSlideOnScroll]',
   standalone: true,
 })
-export class ScrollSlideDirective implements OnDestroy {
+export class SlideOnScrollDirective implements OnDestroy {
   private _windowHeight = window.innerHeight;
   private _thresholdHeight = 30;
   private _isDisplayed = false;

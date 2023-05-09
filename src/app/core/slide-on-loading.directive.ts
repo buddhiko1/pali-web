@@ -5,10 +5,10 @@ import { DeviceDetectorService } from 'ngx-device-detector';
 const slideDurationClass = 'g-slide-1500ms';
 
 @Directive({
-  selector: '[appLoadSlide]',
+  selector: '[appSlideOnLoading]',
   standalone: true,
 })
-export class LoadSlideDirective implements OnDestroy, OnInit {
+export class SlideOnLoadingDirective implements OnDestroy, OnInit {
   private _isDisplayed = false;
   private _timeoutId = 0;
   private _slideClass: string;
