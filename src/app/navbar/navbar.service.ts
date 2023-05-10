@@ -23,8 +23,8 @@ export class NavbarService {
 
   activeDark(value: boolean) {
     value
-      ? document.documentElement.classList.add('dark')
-      : document.documentElement.classList.remove('dark');
+      ? document.documentElement.classList.add('night')
+      : document.documentElement.classList.remove('night');
     this._isDark = value;
   }
 

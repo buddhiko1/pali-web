@@ -49,7 +49,7 @@
 }
 
 .c-title {
-  @apply text-lg text-red-400 capitalize;
+  @apply capitalize;
 }
 
 .c-introduction {

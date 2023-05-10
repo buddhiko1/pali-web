@@ -14,35 +14,18 @@ module.exports = {
         lgContentPadding: "27rem",
       },
       colors: {
-        background: {
-          DEFAULT: colors.white,
-          dark: colors.gray["900"],
-        },
-        border: {
-          DEFAULT: colors.gray["300"],
-          dark: colors.gray["600"],
-        },
-        title: {
-          DEFAULT: colors.gray["700"],
-          dark: colors.gray["50"],
-        },
-        text: {
-          DEFAULT: colors.gray["500"],
-          dark: colors.gray["200"],
-          red: colors.red["400"],
-        },
-        focus: {
-          DEFAULT: colors.blue["400"],
-          dark: colors.blue["400"],
-        },
-        error: {
-          DEFAULT: colors.red["500"],
-          dark: colors.red["500"],
-        },
-        success: {
-          DEFAULT: colors.blue["500"],
-          dark: colors.blue["500"],
-        },
+        bg: "var(--colors-bg)",
+        border: "var(--colors-border)",
+        title: "var(--colors-title)",
+        titleHighlight: "var(--colors-title-highlight)",
+        text: "var(--colors-text)",
+        focus: "var(--colors-focus)",
+        error: "var(--colors-error)",
+        success: "var(--colors-success)",
+        dialogBg: "var(--colors-dialog-bg)",
+        footerBg: "var(--colors-footer-bg)",
+        buttonBg: "var(--colors-button-bg)",
+        buttonHover: "var(--colors-button-hover)",
       },
     },
   },

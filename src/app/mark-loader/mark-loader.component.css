@@ -1,8 +1,8 @@
 .c-loader {
   width: var(--size);
   height: var(--size);
-  border-right: var(--borderWidth) solid theme("colors.focus.DEFAULT");
-  border-left: var(--borderWidth) solid theme("colors.focus.DEFAULT");
+  border-right: var(--borderWidth) solid theme("colors.focus");
+  border-left: var(--borderWidth) solid theme("colors.focus");
   border-top: var(--borderWidth) solid rgba(0, 0, 0, 0);
   border-bottom: var(--borderWidth) solid rgba(0, 0, 0, 0);
   border-radius: var(--size);
@@ -13,12 +13,12 @@
 }
 
 .c-loader.c-successful {
-  border: var(--borderWidth) solid theme("colors.focus.DEFAULT");
+  border: var(--borderWidth) solid theme("colors.focus");
   animation: none;
 }
 
 .c-loader.c-failed {
-  border: var(--borderWidth) solid theme("colors.error.DEFAULT");
+  border: var(--borderWidth) solid theme("colors.error");
   animation: none;
 }
 

@@ -20,7 +20,7 @@ export class AppComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this._scrollbarService.showScrollbar(false);
+    this._scrollbarService.showScrollbar();
   }
 
   getRouteAnimationData() {

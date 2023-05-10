@@ -22,19 +22,16 @@ export class ScrollbarService {
       this._scrollbarTimeoutId = 0;
     }
     document.documentElement.classList.remove('g-scrollbar');
-    document.documentElement.classList.remove('g-scrollbar-dark');
     document.documentElement.classList.add('g-scrollbar-hidden');
     this._isScrollbarShow = false;
   }
 
-  showScrollbar(isDark: boolean): void {
+  showScrollbar(): void {
     if (this._isScrollbarShow) {
       return;
     }
     document.documentElement.classList.remove('g-scrollbar-hidden');
-    document.documentElement.classList.add(
-      isDark ? 'g-scrollbar-dark' : 'g-scrollbar'
-    );
+    document.documentElement.classList.add('g-scrollbar');
     // hide scrollbar automatically after 3 seconds
     this._scrollbarTimeoutId = window.setTimeout(() => {
       this.hideScrollbar();

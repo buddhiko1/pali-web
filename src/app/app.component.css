@@ -1,8 +1,0 @@
-/* fix bug of background color when element is hiddened  */
-.c-bg {
-  background-color: theme("colors.background.DEFAULT");
-}
-
-.c-bg-dark {
-  background-color: theme("colors.background.dark");
-}

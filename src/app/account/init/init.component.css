@@ -55,12 +55,12 @@
 
 .c-email label:after {
   content: "*";
-  color: theme("colors.error.DEFAULT");
+  color: theme("colors.error");
 }
 
 .c-password label:after {
   content: "*";
-  color: theme("colors.error.DEFAULT");
+  color: theme("colors.error");
 }
 
 @media screen and (min-width: theme("screens.lg")) {

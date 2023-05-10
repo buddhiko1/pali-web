@@ -1,0 +1,64 @@
+.g-text {
+  @apply tracking-wide text-text;
+}
+
+.g-title {
+  @apply tracking-wide  text-lg text-title;
+}
+
+.g-title-highlight {
+  @apply tracking-wide text-lg text-titleHighlight;
+}
+
+.g-card {
+  @apply bg-dialogBg rounded-lg;
+}
+
+.g-svg {
+  @apply w-6 h-6 fill-current border-none focus:ring-0 text-text;
+}
+
+.g-button {
+  @apply p-1 rounded-md bg-buttonBg hover:bg-buttonHover;
+}
+
+.g-scrollbar {
+  @apply scrollbar-thin scrollbar-w-1.5 scrollbar-thumb-border scrollbar-track-bg;
+}
+
+.g-scrollbar-hidden {
+  @apply scrollbar-none;
+}
+
+.g-border {
+  @apply border-border;
+}
+
+.g-slider {
+  position: relative;
+  transform: translateY(30px);
+  opacity: 0;
+}
+
+.g-slider-lg {
+  position: relative;
+  transform: translateY(60px);
+  opacity: 0;
+}
+
+.g-slider-500ms {
+  transition: 0.5s all ease;
+}
+
+.g-slider-1500ms {
+  transition: 1.5s all ease;
+}
+
+.g-slider-active {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.g-link {
+  @apply text-focus;
+}

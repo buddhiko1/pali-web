@@ -1,0 +1,29 @@
+:root {
+  --colors-bg: theme("colors.white");
+  --colors-title: theme("colors.gray.700");
+  --colors-title-highlight: theme("colors.red.400");
+  --colors-text: theme("colors.gray.500");
+  --colors-border: theme("colors.gray.300");
+  --colors-focus: theme("colors.blue.400");
+  --colors-error: theme("colors.red.500");
+  --colors-success: theme("colors.blue.500");
+  --colors-dialog-bg: theme("colors.gray.100");
+  --colors-footer-bg: theme("colors.gray.100");
+  --colors-button-bg: theme("colors.blue.50");
+  --colors-button-hover: theme("colors.blue.200");
+}
+
+.night {
+  --colors-bg: theme("colors.gray.900");
+  --colors-title: theme("colors.gray.100");
+  --colors-title-highlight: theme("colors.red.400");
+  --colors-text: theme("colors.gray.200");
+  --colors-border: theme("colors.gray.600");
+  --colors-focus: theme("colors.blue.400");
+  --colors-error: theme("colors.red.500");
+  --colors-success: theme("colors.blue.500");
+  --colors-dialog-bg: theme("colors.gray.700");
+  --colors-footer-bg: theme("colors.gray.800");
+  --colors-button-bg: theme("colors.gray.700");
+  --colors-button-hover: theme("colors.gray.500");
+}
