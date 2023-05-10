@@ -35,7 +35,7 @@
     @apply tracking-wide text-title dark:text-title-dark g-transition-colors;
   }
 
-  .g-title-invert {
+  .g-title-inverted {
     @apply tracking-wide text-title-dark dark:text-title g-transition-colors;
   }
 
@@ -43,7 +43,7 @@
     @apply tracking-wide text-text dark:text-text-dark g-transition-colors;
   }
 
-  .g-text-invert {
+  .g-text-inverted {
     @apply tracking-wide text-text-dark dark:text-text g-transition-colors;
   }
   /* text end */
@@ -53,8 +53,8 @@
     @apply w-6 h-6 fill-current border-none focus:ring-0 g-text;
   }
 
-  .g-svg-invert {
-    @apply w-6 h-6 fill-current border-none focus:ring-0 g-text-invert;
+  .g-svg-inverted {
+    @apply w-6 h-6 fill-current border-none focus:ring-0 g-text-inverted;
   }
 
   .g-button {
@@ -69,7 +69,7 @@
     @apply scrollbar-thin scrollbar-w-1.5 scrollbar-thumb-border-dark scrollbar-track-background-dark;
   }
 
-  .g-scrollbar-hide {
+  .g-scrollbar-hidden {
     @apply scrollbar-none;
   }
 
@@ -81,30 +81,30 @@
     @apply bg-background dark:bg-background-dark;
   }
 
-  .g-bg-invert {
+  .g-bg-inverted {
     @apply dark:bg-background bg-background-dark;
   }
-  .g-slide {
+  .g-slider {
     position: relative;
     transform: translateY(30px);
     opacity: 0;
   }
 
-  .g-slide-lg {
+  .g-slider-lg {
     position: relative;
     transform: translateY(60px);
     opacity: 0;
   }
 
-  .g-slide-500ms {
+  .g-slider-500ms {
     transition: 0.5s all ease;
   }
 
-  .g-slide-1500ms {
+  .g-slider-1500ms {
     transition: 1.5s all ease;
   }
 
-  .g-slide-active {
+  .g-slider-active {
     transform: translateY(0);
     opacity: 1;
   }

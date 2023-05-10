@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Inject, Renderer2 } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 
 import { ScrollbarService } from 'src/app/core/scrollbar.service';
@@ -16,6 +16,7 @@ export class NavbarComponent {
   private _url: string = this.UrlEnum.Home;
 
   constructor(
+    private _renderer: Renderer2,
     private _router: Router,
     private _navbarService: NavbarService,
     private _scrollbarService: ScrollbarService

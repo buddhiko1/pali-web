@@ -44,8 +44,8 @@ dependencies:
     specifier: ~7.8.1
     version: registry.npmmirror.com/rxjs@7.8.1
   tailwind-scrollbar:
-    specifier: ^3.0.0
-    version: registry.npmmirror.com/tailwind-scrollbar@3.0.0(tailwindcss@3.3.2)
+    specifier: ^2.1.0
+    version: registry.npmmirror.com/tailwind-scrollbar@2.1.0(tailwindcss@3.3.2)
   tslib:
     specifier: ^2.5.0
     version: registry.npmmirror.com/tslib@2.5.0
@@ -17804,16 +17804,16 @@ packages:
     engines: { node: ">=0.10" }
     dev: true
 
-  registry.npmmirror.com/tailwind-scrollbar@3.0.0(tailwindcss@3.3.2):
+  registry.npmmirror.com/tailwind-scrollbar@2.1.0(tailwindcss@3.3.2):
     resolution:
       {
-        integrity: sha512-OkVRX9Q1T769vk979UZ519jhj/j/zNBHql7zPLI+tlhX+ahksYO4ZryWD29lOETDx9Wj1sw+K1OeW7W3+ECQOA==,
+        integrity: sha512-zpvY5mDs0130YzYjZKBiDaw32rygxk5RyJ4KmeHjGnwkvbjm/PszON1m4Bbt2DkMRIXlXsfNevykAESgURN4KA==,
         registry: https://registry.npm.taobao.org/,
-        tarball: https://registry.npmmirror.com/tailwind-scrollbar/-/tailwind-scrollbar-3.0.0.tgz,
+        tarball: https://registry.npmmirror.com/tailwind-scrollbar/-/tailwind-scrollbar-2.1.0.tgz,
       }
-    id: registry.npmmirror.com/tailwind-scrollbar/3.0.0
+    id: registry.npmmirror.com/tailwind-scrollbar/2.1.0
     name: tailwind-scrollbar
-    version: 3.0.0
+    version: 2.1.0
     engines: { node: ">=12.13.0" }
     peerDependencies:
       tailwindcss: 3.x

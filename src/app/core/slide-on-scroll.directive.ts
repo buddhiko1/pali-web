@@ -3,7 +3,7 @@ import { fromEvent, Subscription } from 'rxjs';
 import { throttleTime } from 'rxjs/operators';
 import { DeviceDetectorService } from 'ngx-device-detector';
 
-const slideDurationClass = 'g-slide-1000ms';
+const slideDurationClass = 'g-slider-1000ms';
 
 @Directive({
   selector: '[appSlideOnScroll]',
@@ -21,8 +21,8 @@ export class SlideOnScrollDirective implements OnDestroy {
     private _deviceService: DeviceDetectorService
   ) {
     this._slideClass = this._deviceService.isDesktop()
-      ? 'g-slide-lg'
-      : 'g-slide';
+      ? 'g-slider-lg'
+      : 'g-slider';
     this._el.nativeElement.classList.add(this._slideClass);
     this._el.nativeElement.classList.add(slideDurationClass);
 
@@ -37,7 +37,7 @@ export class SlideOnScrollDirective implements OnDestroy {
     }
     const elementTop = this._el.nativeElement.getBoundingClientRect().top;
     if (elementTop < this._windowHeight - this._thresholdHeight) {
-      this._el.nativeElement.classList.add('g-slide-active');
+      this._el.nativeElement.classList.add('g-slider-active');
       this._isDisplayed = true;
       window.setTimeout(() => {
         this._el.nativeElement.classList.remove(slideDurationClass);

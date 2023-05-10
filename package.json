@@ -29,7 +29,7 @@
     "graphql": "^16.6.0",
     "ngx-device-detector": "^5.0.1",
     "rxjs": "~7.8.1",
-    "tailwind-scrollbar": "^3.0.0",
+    "tailwind-scrollbar": "^2.1.0",
     "tslib": "^2.5.0",
     "zone.js": "~0.13.0"
   },
