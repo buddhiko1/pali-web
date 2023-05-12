@@ -13,7 +13,7 @@ export class SlideOnLoadingDirective implements OnDestroy, OnInit {
   private _timeoutId = 0;
   private _slideClass: string;
 
-  @Input() slideDelay = 0; // ms
+  @Input() slideDelay = 0;
 
   constructor(
     private _el: ElementRef,

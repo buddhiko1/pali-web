@@ -32,11 +32,11 @@ export class ScrollbarService {
     }
     document.documentElement.classList.remove('g-scrollbar-hidden');
     document.documentElement.classList.add('g-scrollbar');
+    this._isScrollbarShow = true;
     // hide scrollbar automatically after 3 seconds
-    this._scrollbarTimeoutId = window.setTimeout(() => {
+    this._scrollbarTimeoutId = setTimeout(() => {
       this.hideScrollbar();
       this._scrollbarTimeoutId = 0;
     }, 3000);
-    this._isScrollbarShow = true;
   }
 }
