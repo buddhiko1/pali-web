@@ -6,7 +6,7 @@
     );
   grid-template-areas:
     "banner banner banner"
-    "left-area books right-area"
+    "left-padding books right-padding"
     "cites cites cites";
 }
 
@@ -44,9 +44,9 @@
       "spacing.smContentPadding"
     );
   grid-template-areas:
-    "left-area cites-title right-area"
-    "left-area first-cite right-area"
-    "left-area second-cite right-area";
+    "left-padding cites-title right-padding"
+    "left-padding first-cite right-padding"
+    "left-padding second-cite right-padding";
 }
 
 .c-cites .c-title {
@@ -111,8 +111,8 @@
         "spacing.lgContentPadding"
       );
     grid-template-areas:
-      "left-area cites-title cites-title right-area"
-      "left-area first-cite second-cite right-area";
+      "left-padding cites-title cites-title right-padding"
+      "left-padding first-cite second-cite right-padding";
   }
   .c-cite {
     align-content: space-between;

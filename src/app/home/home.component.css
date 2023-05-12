@@ -6,8 +6,8 @@
     );
   grid-template-areas:
     "banner banner banner"
-    "left-area phrase right-area"
-    "left-area intro right-area";
+    "left-padding phrase right-padding"
+    "left-padding intro right-padding";
 }
 
 .c-banner {

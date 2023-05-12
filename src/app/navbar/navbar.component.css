@@ -5,7 +5,7 @@
       "spacing.smPadding"
     );
   grid-template-areas:
-    "left-area logo toggle right-area"
+    "left-padding logo toggle right-padding"
     "menu menu menu menu";
 }
 
@@ -32,9 +32,9 @@
       "spacing.smPadding"
     );
   grid-template-areas:
-    "left-area index index index right-area"
-    "left-area divider divider divider right-area"
-    "left-area theme donation account right-area";
+    "left-padding index index index right-padding"
+    "left-padding divider divider divider right-padding"
+    "left-padding theme donation account right-padding";
 }
 
 .c-menu-close {
@@ -75,7 +75,7 @@
     grid-template-columns: theme("spacing.lgPadding") auto 1fr auto auto auto theme(
         "spacing.lgPadding"
       );
-    grid-template-areas: "left-area logo index theme donation account right-area";
+    grid-template-areas: "left-padding logo index theme donation account right-padding";
     place-content: center;
     align-items: baseline;
   }
