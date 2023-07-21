@@ -4,4 +4,4 @@
 # format
 pnpm exec pretty-quick --staged
 # fix error
-ng lint --fix
+~/.local/share/pnpm/ng lint --fix

@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ChildrenOutletContexts } from '@angular/router';
+
 import { ScrollbarService } from './core/scrollbar.service';
 import { ScrollBehaviorDirective } from './core/scroll-behavior.directive';
 import { RouteAnimation } from './app.animations';
-import { fromEvent } from 'rxjs';
 
 @Component({
   selector: 'app-root',

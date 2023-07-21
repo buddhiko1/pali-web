@@ -14,7 +14,7 @@
   --colors-button-bg: theme("colors.blue.50");
   --colors-button-hover: theme("colors.blue.200");
   --colors-ring: theme("colors.blue.200");
-  --colors-reading-bg: #e0c9a6;
+  --colors-reading-bg: theme("colors.red.900");
 }
 
 .night {
@@ -33,5 +33,5 @@
   --colors-button-bg: theme("colors.gray.700");
   --colors-button-hover: theme("colors.gray.500");
   --colors-ring: theme("colors.blue.200");
-  --colors-reading-bg: #e0c9a6;
+  --colors-reading-bg: theme("colors.red.900");
 }
