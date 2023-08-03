@@ -3,7 +3,10 @@ import { fromEvent, Subscription } from 'rxjs';
 import { throttleTime } from 'rxjs/operators';
 import { DeviceDetectorService } from 'ngx-device-detector';
 
-const slideDurationClass = 'g-slider-1000ms';
+const SLIDER_CLASS = 'g-slider';
+const SLIDER_LG_CLASS = 'g-slider-lg';
+const SLIDING_CLASS = 'g-slider-1000ms';
+const SLIDER_ACTIVE_CLASS = 'g-slider-active';
 
 @Directive({
   selector: '[appSlideOnScroll]',
@@ -14,17 +17,17 @@ export class SlideOnScrollDirective implements OnDestroy {
   private _thresholdHeight = 30;
   private _isDisplayed = false;
   private _eventSub!: Subscription;
-  private _slideClass: string;
+  private _sliderClass: string;
 
   constructor(
     private _el: ElementRef,
     private _deviceService: DeviceDetectorService
   ) {
-    this._slideClass = this._deviceService.isDesktop()
-      ? 'g-slider-lg'
-      : 'g-slider';
-    this._el.nativeElement.classList.add(this._slideClass);
-    this._el.nativeElement.classList.add(slideDurationClass);
+    this._sliderClass = this._deviceService.isDesktop()
+      ? SLIDER_LG_CLASS
+      : SLIDER_CLASS;
+    this._el.nativeElement.classList.add(this._sliderClass);
+    this._el.nativeElement.classList.add(SLIDING_CLASS);
 
     this._eventSub = fromEvent(window, 'scroll')
       .pipe(throttleTime(50))
@@ -37,11 +40,11 @@ export class SlideOnScrollDirective implements OnDestroy {
     }
     const elementTop = this._el.nativeElement.getBoundingClientRect().top;
     if (elementTop < this._windowHeight - this._thresholdHeight) {
-      this._el.nativeElement.classList.add('g-slider-active');
+      this._el.nativeElement.classList.add(SLIDER_ACTIVE_CLASS);
       this._isDisplayed = true;
       window.setTimeout(() => {
-        this._el.nativeElement.classList.remove(slideDurationClass);
-        this._el.nativeElement.classList.remove(this._slideClass);
+        this._el.nativeElement.classList.remove(SLIDING_CLASS);
+        this._el.nativeElement.classList.remove(this._sliderClass);
       }, 1500);
     }
   }

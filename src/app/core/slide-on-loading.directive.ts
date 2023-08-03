@@ -2,7 +2,10 @@ import { Directive, ElementRef, Input, OnDestroy, OnInit } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 import { DeviceDetectorService } from 'ngx-device-detector';
 
-const slideDurationClass = 'g-slider-1500ms';
+const SLIDER_CLASS = 'g-slider';
+const SLIDER_LG_CLASS = 'g-slider-lg';
+const SLIDING_CLASS = 'g-slider-1500ms';
+const SLIDER_ACTIVE_CLASS = 'g-slider-active';
 
 @Directive({
   selector: '[appSlideOnLoading]',
@@ -11,7 +14,7 @@ const slideDurationClass = 'g-slider-1500ms';
 export class SlideOnLoadingDirective implements OnDestroy, OnInit {
   private _isDisplayed = false;
   private _timeoutId = 0;
-  private _slideClass: string;
+  private _sliderClass: string;
 
   @Input() slideDelay = 0;
 
@@ -20,11 +23,11 @@ export class SlideOnLoadingDirective implements OnDestroy, OnInit {
     private _deviceService: DeviceDetectorService,
     private _router: Router
   ) {
-    this._slideClass = this._deviceService.isDesktop()
-      ? 'g-slider-lg'
-      : 'g-slider';
-    this._el.nativeElement.classList.add(this._slideClass);
-    this._el.nativeElement.classList.add(slideDurationClass);
+    this._sliderClass = this._deviceService.isDesktop()
+      ? SLIDER_LG_CLASS
+      : SLIDER_CLASS;
+    this._el.nativeElement.classList.add(this._sliderClass);
+    this._el.nativeElement.classList.add(SLIDING_CLASS);
   }
 
   ngOnInit(): void {
@@ -41,11 +44,11 @@ export class SlideOnLoadingDirective implements OnDestroy, OnInit {
       return;
     }
     this._timeoutId = window.setTimeout(() => {
-      this._el.nativeElement.classList.add('g-slider-active');
+      this._el.nativeElement.classList.add(SLIDER_ACTIVE_CLASS);
       this._isDisplayed = true;
       window.setTimeout(() => {
-        this._el.nativeElement.classList.remove(slideDurationClass);
-        this._el.nativeElement.classList.remove(this._slideClass);
+        this._el.nativeElement.classList.remove(SLIDING_CLASS);
+        this._el.nativeElement.classList.remove(this._sliderClass);
       }, 2000);
       this._timeoutId = 0;
     }, this.slideDelay);
