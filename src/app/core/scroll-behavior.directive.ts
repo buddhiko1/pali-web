@@ -1,5 +1,5 @@
 import { Directive, OnDestroy } from '@angular/core';
-import { fromEvent, Subscription, throttleTime } from 'rxjs';
+import { fromEvent, Subscription } from 'rxjs';
 
 import { NavbarService } from 'src/app/navbar/navbar.service';
 import { ScrollbarService } from 'src/app/core/scrollbar.service';
