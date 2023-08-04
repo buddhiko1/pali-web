@@ -6,18 +6,13 @@ import { SignUpComponent } from './sign-up/sign-up.component';
 import { InitComponent } from './init/init.component';
 
 export enum UrlEnum {
-  SignIn = 'signIn',
+  SignIn = '',
   SignUp = 'signUp',
   Reset = 'reset',
   Init = 'init',
 }
 
 const routes: Routes = [
-  {
-    path: '',
-    component: LoginComponent,
-    data: { animation: UrlEnum.SignIn },
-  },
   {
     path: UrlEnum.SignIn,
     component: LoginComponent,

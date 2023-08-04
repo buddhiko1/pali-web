@@ -37,9 +37,7 @@ export class NavbarComponent {
 
   toggleDark(): void {
     this._scrollbarService.hideScrollbar();
-    this.isDark
-      ? this._navbarService.activeDark(false)
-      : this._navbarService.activeDark(true);
+    this._navbarService.activeDark(!this.isDark);
     this._scrollbarService.showScrollbar();
     if (this._navbarService.isMenuOpen) {
       this.closeMenu();
@@ -65,11 +63,9 @@ export class NavbarComponent {
   }
 
   toggleMenu(): void {
-    if (this.isMenuOpen) {
-      this._navbarService.closeMenu();
-    } else {
-      this._navbarService.openMenu();
-    }
+    this.isMenuOpen
+      ? this._navbarService.closeMenu()
+      : this._navbarService.openMenu();
   }
 
   get isHeaderShow(): boolean {

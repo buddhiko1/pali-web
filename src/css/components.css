@@ -34,31 +34,6 @@
   @apply border-border;
 }
 
-.g-slider {
-  position: relative;
-  transform: translateY(30px);
-  opacity: 0;
-}
-
-.g-slider-lg {
-  position: relative;
-  transform: translateY(60px);
-  opacity: 0;
-}
-
-.g-slider-500ms {
-  transition: 0.5s all ease;
-}
-
-.g-slider-1500ms {
-  transition: 1.5s all ease;
-}
-
-.g-slider-active {
-  transform: translateY(0);
-  opacity: 1;
-}
-
 .g-link {
   @apply text-focus;
 }

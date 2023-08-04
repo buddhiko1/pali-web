@@ -76,7 +76,7 @@ export class SignUpComponent implements OnInit, AfterViewInit {
     const args: SignUpMutationVariables = {
       email: this.form.getRawValue().email,
       role: `${environment.roleIdToSignUp}`,
-      urlForInit: `${environment.host}/${AppUrlEnum.Account}/${AccountUrlEnum.Init}`,
+      urlForInit: `${environment.host}/${AppUrlEnum.Account}/${AccountUrlEnum.Init}`, // confiured in the config.json of pali-cms.
     };
     this._accountService.signUp(args).then(() => {
       console.log('SignUp successful');
