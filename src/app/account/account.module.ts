@@ -7,11 +7,11 @@ import { SlideOnLoadingDirective } from 'src/app/core/slide-on-loading.directive
 
 import { AccountRoutingModule } from './account-routing.module';
 import { LoginComponent } from './login/login.component';
-import { SignUpComponent } from './sign-up/sign-up.component';
-import { InitComponent } from './init/init.component';
+import { AccountCreateComponent } from './account-create/account-create.component';
+import { AccountInitComponent } from './account-init/account-init.component';
 
 @NgModule({
-  declarations: [LoginComponent, SignUpComponent, InitComponent],
+  declarations: [LoginComponent, AccountCreateComponent, AccountInitComponent],
   imports: [
     CommonModule,
     ReactiveFormsModule,

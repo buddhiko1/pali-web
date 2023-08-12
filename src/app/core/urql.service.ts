@@ -5,7 +5,10 @@ import { authExchange } from '@urql/exchange-auth';
 import { environment } from 'src/environments/environment';
 import { StorageService } from 'src/app/core/storage.service';
 
-import { RefreshDocument, RefreshMutationVariables } from 'src/gql/graphql';
+import {
+  RefreshTokenDocument,
+  RefreshTokenMutationVariables,
+} from 'src/gql/graphql';
 
 @Injectable({ providedIn: 'root' })
 export class UrqlService {
@@ -68,10 +71,10 @@ export class UrqlService {
                 clearStorage();
                 return;
               }
-              const args: RefreshMutationVariables = {
+              const args: RefreshTokenMutationVariables = {
                 refreshToken,
               };
-              const result = await utils.mutate(RefreshDocument, args);
+              const result = await utils.mutate(RefreshTokenDocument, args);
               if (result.data?.refresh) {
                 saveAuthToken(result.data.refresh);
               } else {

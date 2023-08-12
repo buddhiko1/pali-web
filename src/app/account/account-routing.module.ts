@@ -2,31 +2,32 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { LoginComponent } from './login/login.component';
-import { SignUpComponent } from './sign-up/sign-up.component';
-import { InitComponent } from './init/init.component';
+import { AccountCreateComponent } from './account-create/account-create.component';
+import { AccountInitComponent } from './account-init/account-init.component';
 
 export enum UrlEnum {
-  SignIn = '',
-  SignUp = 'signUp',
-  Reset = 'reset',
-  Init = 'init',
+  Login = '',
+  AccountCreate = 'create',
+  AccountInit = 'init',
+  PwdRequest = 'pwdRequest',
+  RwdReset = 'reset',
 }
 
 const routes: Routes = [
   {
-    path: UrlEnum.SignIn,
+    path: UrlEnum.Login,
     component: LoginComponent,
-    data: { animation: UrlEnum.SignIn },
+    data: { animation: UrlEnum.Login },
   },
   {
-    path: UrlEnum.SignUp,
-    component: SignUpComponent,
-    data: { animation: UrlEnum.SignUp },
+    path: UrlEnum.AccountCreate,
+    component: AccountCreateComponent,
+    data: { animation: UrlEnum.AccountCreate },
   },
   {
-    path: UrlEnum.Init,
-    component: InitComponent,
-    data: { animation: UrlEnum.Init },
+    path: UrlEnum.AccountInit,
+    component: AccountInitComponent,
+    data: { animation: UrlEnum.AccountInit },
   },
 ];
 

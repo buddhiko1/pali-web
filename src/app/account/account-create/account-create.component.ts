@@ -10,22 +10,21 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { fromEvent } from 'rxjs';
 import { throttleTime } from 'rxjs/operators';
 
-import { SignUpMutationVariables } from 'src/gql/graphql';
+import { CreateAccountMutationVariables } from 'src/gql/graphql';
 import { environment } from 'src/environments/environment';
 import { UrlEnum as AppUrlEnum } from 'src/app/app-routing.module';
-// import { StatusEnum as LoaderEnum } from 'src/app/mark-loader/mark-loader.component';
 
 import { UrlEnum as AccountUrlEnum } from '../account-routing.module';
 import { AccountService } from '../account.service';
 import { UnregisteredEmailValidator } from '../email.validator';
 
 @Component({
-  selector: 'app-sign-up',
-  templateUrl: './sign-up.component.html',
-  styleUrls: ['./sign-up.component.css'],
+  selector: 'app-account-create',
+  templateUrl: './account-create.component.html',
+  styleUrls: ['./account-create.component.css'],
 })
-export class SignUpComponent implements OnInit, AfterViewInit {
-  @ViewChild('signUpBtn')
+export class AccountCreateComponent implements OnInit, AfterViewInit {
+  @ViewChild('createBtn')
   signUpBtn!: ElementRef<HTMLCanvasElement>;
   AccountUrlEnum = AccountUrlEnum;
   form!: FormGroup;
@@ -52,34 +51,21 @@ export class SignUpComponent implements OnInit, AfterViewInit {
   ngAfterViewInit(): void {
     fromEvent(this.signUpBtn.nativeElement, 'click')
       .pipe(throttleTime(1000))
-      .subscribe(() => this.signUp());
+      .subscribe(() => this.create());
   }
 
   get email() {
     return this.form.get('email')!;
   }
 
-  // get validatorStatusOfEmail() {
-  //   console.log("email status:", this.email.status)
-  //   if (this.email.pending) {
-  //     return LoaderEnum.Loading;
-  //   } else if (this.email.valid) {
-  //     return LoaderEnum.Successful;
-  //   } else if(this.email.invalid) {
-  //     return LoaderEnum.Failed;
-  //   } else {
-  //     return LoaderEnum.Idle;
-  //   }
-  // }
-
-  signUp(): void {
-    const args: SignUpMutationVariables = {
+  create(): void {
+    const args: CreateAccountMutationVariables = {
       email: this.form.getRawValue().email,
       role: `${environment.roleIdToSignUp}`,
-      urlForInit: `${environment.host}/${AppUrlEnum.Account}/${AccountUrlEnum.Init}`, // confiured in the config.json of pali-cms.
+      urlForInit: `${environment.host}/${AppUrlEnum.Account}/${AccountUrlEnum.AccountInit}`, // confiured in the config.json of pali-cms.
     };
-    this._accountService.signUp(args).then(() => {
-      console.log('SignUp successful');
+    this._accountService.createAccount(args).then(() => {
+      console.log('create account successfully!');
     });
   }
 }

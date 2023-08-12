@@ -12,7 +12,7 @@ import { fromEvent } from 'rxjs';
 import { throttleTime } from 'rxjs/operators';
 
 import {
-  AccountInitMutationVariables,
+  InitAccountMutationVariables,
   LoginMutationVariables,
 } from 'src/gql/graphql';
 
@@ -21,10 +21,10 @@ import { AccountService } from '../account.service';
 
 @Component({
   selector: 'app-account-init',
-  templateUrl: './init.component.html',
-  styleUrls: ['./init.component.css'],
+  templateUrl: './account-init.component.html',
+  styleUrls: ['./account-init.component.css'],
 })
-export class InitComponent implements OnInit, AfterViewInit {
+export class AccountInitComponent implements OnInit, AfterViewInit {
   @ViewChild('initBtn')
   initBtn!: ElementRef<HTMLCanvasElement>;
   UrlEnum = UrlEnum;
@@ -67,11 +67,11 @@ export class InitComponent implements OnInit, AfterViewInit {
   }
 
   initAccount(): void {
-    const args: AccountInitMutationVariables = {
+    const args: InitAccountMutationVariables = {
       token: this._token,
       password: this.form.getRawValue().password,
     };
-    this._accountService.InitAccount(args).then(() => {
+    this._accountService.initAccount(args).then(() => {
       this._isInitialized = true;
       console.log('Account init success');
     });
