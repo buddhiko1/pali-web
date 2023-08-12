@@ -9,14 +9,24 @@ import { RefreshDocument, RefreshMutationVariables } from 'src/gql/graphql';
 
 @Injectable({ providedIn: 'root' })
 export class UrqlService {
-  loginClient: Client;
+  authClient: Client;
   dataClient: Client;
   systemClient: Client;
 
   constructor(private _storageService: StorageService) {
-    this.loginClient = new Client({
+    this.authClient = new Client({
       url: `${environment.host}/graphql/system`,
-      exchanges: [fetchExchange],
+      exchanges: [
+        mapExchange({
+          onError(error, operation) {
+            console.log(
+              `The operation ${operation.key} has errored with:`,
+              error
+            );
+          },
+        }),
+        fetchExchange,
+      ],
     });
     this.dataClient = new Client({
       url: `${environment.host}/graphql`,
