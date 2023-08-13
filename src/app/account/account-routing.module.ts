@@ -4,13 +4,15 @@ import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { AccountCreateComponent } from './account-create/account-create.component';
 import { AccountInitComponent } from './account-init/account-init.component';
+import { PasswordResetComponent } from './password-reset/password-reset.component';
+import { ResetRequestComponent } from './reset-request/reset-request.component';
 
 export enum UrlEnum {
   Login = '',
   AccountCreate = 'create',
   AccountInit = 'init',
-  PwdRequest = 'pwdRequest',
-  RwdReset = 'reset',
+  ResetRequest = 'request',
+  PasswordReset = 'reset',
 }
 
 const routes: Routes = [
@@ -28,6 +30,16 @@ const routes: Routes = [
     path: UrlEnum.AccountInit,
     component: AccountInitComponent,
     data: { animation: UrlEnum.AccountInit },
+  },
+  {
+    path: UrlEnum.ResetRequest,
+    component: ResetRequestComponent,
+    data: { animation: UrlEnum.ResetRequest },
+  },
+  {
+    path: UrlEnum.PasswordReset,
+    component: PasswordResetComponent,
+    data: { animation: UrlEnum.PasswordReset },
   },
 ];
 

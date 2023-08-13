@@ -9,9 +9,17 @@ import { AccountRoutingModule } from './account-routing.module';
 import { LoginComponent } from './login/login.component';
 import { AccountCreateComponent } from './account-create/account-create.component';
 import { AccountInitComponent } from './account-init/account-init.component';
+import { PasswordResetComponent } from './password-reset/password-reset.component';
+import { ResetRequestComponent } from './reset-request/reset-request.component';
 
 @NgModule({
-  declarations: [LoginComponent, AccountCreateComponent, AccountInitComponent],
+  declarations: [
+    LoginComponent,
+    AccountCreateComponent,
+    AccountInitComponent,
+    PasswordResetComponent,
+    ResetRequestComponent,
+  ],
   imports: [
     CommonModule,
     ReactiveFormsModule,

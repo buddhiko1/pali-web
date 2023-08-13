@@ -1,0 +1,35 @@
+<section appSlideOnLoading [slideDelay]="400" class="c-container">
+  <div class="c-dialog d-bg p-8 lg:p-12 my-32 lg:my-[25vh]">
+    <h2 class="c-title d-title">Request Reset</h2>
+    <form [formGroup]="form" class="c-form">
+      <div class="c-email">
+        <label for="email" class="d-subText">Email</label>
+        <input
+          type="email"
+          name="email"
+          id="email"
+          formControlName="email"
+          required
+          class="inline-block w-full d-input"
+        />
+        <div
+          *ngIf="email.invalid && (email.dirty || email.touched)"
+          class="d-form-error"
+        >
+          <div *ngIf="email.errors?.['required']">Email is required.</div>
+          <div *ngIf="email.errors?.['email']">Invalid address format.</div>
+          <div *ngIf="email.errors?.['registered']">
+            Email hasn't been registered.
+          </div>
+        </div>
+      </div>
+      <button
+        #requestBtn
+        [disabled]="!form.valid"
+        class="c-button d-button w-full mt-3"
+      >
+        Request
+      </button>
+    </form>
+  </div>
+</section>

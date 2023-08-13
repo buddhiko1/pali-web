@@ -6,30 +6,31 @@ import {
   AfterViewInit,
   OnInit,
 } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { fromEvent } from 'rxjs';
 import { throttleTime } from 'rxjs/operators';
 
-import { InitAccountMutationVariables } from 'src/gql/graphql';
+import { ResetPasswordMutationVariables } from 'src/gql/graphql';
 
 import { UrlEnum } from '../account-routing.module';
 import { AccountService } from '../account.service';
 
 @Component({
-  selector: 'app-account-init',
-  templateUrl: './account-init.component.html',
-  styleUrls: ['./account-init.component.css'],
+  selector: 'app-password-reset',
+  templateUrl: './password-reset.component.html',
+  styleUrls: ['./password-reset.component.css'],
 })
-export class AccountInitComponent implements OnInit, AfterViewInit {
-  @ViewChild('initBtn')
-  initBtn!: ElementRef<HTMLCanvasElement>;
+export class PasswordResetComponent implements OnInit, AfterViewInit {
+  @ViewChild('resetBtn')
+  resetBtn!: ElementRef<HTMLCanvasElement>;
   UrlEnum = UrlEnum;
   form!: FormGroup;
   error = '';
   private _token = '';
 
   constructor(
+    private _router: Router,
     private _accountService: AccountService,
     private _activeRoute: ActivatedRoute
   ) {
@@ -51,10 +52,10 @@ export class AccountInitComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-    fromEvent(this.initBtn.nativeElement, 'click')
+    fromEvent(this.resetBtn.nativeElement, 'click')
       .pipe(throttleTime(1000))
       .subscribe(() => {
-        this.initAccount();
+        this.resetPassword();
       });
   }
 
@@ -62,13 +63,13 @@ export class AccountInitComponent implements OnInit, AfterViewInit {
     return this.form.get('password')!;
   }
 
-  initAccount(): void {
-    const args: InitAccountMutationVariables = {
+  resetPassword(): void {
+    const args: ResetPasswordMutationVariables = {
       token: this._token,
       password: this.form.getRawValue().password,
     };
-    this._accountService.initAccount(args).then(() => {
-      // direct to login
+    this._accountService.resetPassword(args).then(() => {
+      this._router.navigate(['../'], { relativeTo: this._activeRoute });
     });
   }
 }
