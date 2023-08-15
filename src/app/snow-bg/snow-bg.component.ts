@@ -7,7 +7,6 @@ import {
   HostListener,
   HostBinding,
   Input,
-  OnDestroy,
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -60,7 +59,7 @@ class Particles {
   updateParticles() {
     const context = this._canvas.getContext('2d');
     context!.clearRect(0, 0, this._width, this._height);
-    context!.fillStyle = '#f6f9fa'; // set color of snow
+    context!.fillStyle = 'white'; // set color of snow
     this._particles.forEach((particle) => {
       particle.update();
       context!.beginPath();
@@ -85,7 +84,7 @@ class Particles {
   templateUrl: './snow-bg.component.html',
   styleUrls: ['./snow-bg.component.css'],
 })
-export class SnowBgComponent implements AfterViewInit, OnDestroy {
+export class SnowBgComponent implements AfterViewInit {
   private _particles!: Particles;
   @Input() height = '90vh';
   @ViewChild('snow')
@@ -98,15 +97,9 @@ export class SnowBgComponent implements AfterViewInit, OnDestroy {
   }
 
   ngAfterViewInit(): void {
-    document.documentElement.classList.add('bg-[#f6f9fa]');
     this._makeSnow();
     this._particles.updateParticles();
     window.addEventListener('resize', this._makeSnow);
-  }
-
-  ngOnDestroy(): void {
-    // set background color as ground color.
-    document.documentElement.classList.remove('bg-[#f6f9fa]');
   }
 
   @HostListener('window:resize')
