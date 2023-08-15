@@ -4,7 +4,7 @@
   grid-template-columns: 1fr 1fr 1fr;
 }
 
-.c-bg {
+.c-snow {
   grid-row: 1/5;
   grid-column: 1/4;
 }
