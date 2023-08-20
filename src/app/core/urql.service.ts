@@ -16,12 +16,13 @@ export class UrqlService {
   dataClient: Client;
   systemClient: Client;
 
-  constructor(private _storageService: StorageService) {
+  constructor() {
     this.authClient = new Client({
       url: `${environment.host}/graphql/system`,
       exchanges: [
         mapExchange({
           onError(error, operation) {
+            //TODO replace with error message
             console.log(
               `The operation ${operation.key} has errored with:`,
               error
@@ -31,12 +32,14 @@ export class UrqlService {
         fetchExchange,
       ],
     });
+
     this.dataClient = new Client({
       url: `${environment.host}/graphql`,
       exchanges: [
         cacheExchange,
         mapExchange({
           onError(error, operation) {
+            //TODO replace with error message
             console.log(
               `The operation ${operation.key} has errored with:`,
               error
@@ -46,19 +49,17 @@ export class UrqlService {
         fetchExchange,
       ],
     });
-    const saveAuthToken = this._storageService.saveAuthToken;
-    const accessToken = this._storageService.accessToken;
-    const refreshToken = this._storageService.refreshToken;
-    const clearStorage = this._storageService.clear;
+
+    const storageService = new StorageService();
     this.systemClient = new Client({
       url: `${environment.host}/graphql/system`,
       exchanges: [
         authExchange(async (utils) => {
           return {
             addAuthToOperation(operation) {
-              if (!accessToken) return operation;
+              if (!storageService.accessToken) return operation;
               return utils.appendHeaders(operation, {
-                Authorization: `Bearer ${accessToken}`,
+                Authorization: `Bearer ${storageService.accessToken}`,
               });
             },
             didAuthError(error) {
@@ -67,18 +68,18 @@ export class UrqlService {
               );
             },
             async refreshAuth() {
-              if (!refreshToken) {
-                clearStorage();
+              if (!storageService.refreshToken) {
+                storageService.clear();
                 return;
               }
               const args: RefreshTokenMutationVariables = {
-                refreshToken,
+                refreshToken: storageService.refreshToken,
               };
               const result = await utils.mutate(RefreshTokenDocument, args);
               if (result.data?.refresh) {
-                saveAuthToken(result.data.refresh);
+                storageService.saveAuthToken(result.data.refresh);
               } else {
-                clearStorage();
+                storageService.clear();
               }
             },
           };
