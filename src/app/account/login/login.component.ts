@@ -7,6 +7,7 @@ import {
   OnInit,
 } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
 import { fromEvent } from 'rxjs';
 import { throttleTime } from 'rxjs/operators';
 
@@ -27,7 +28,11 @@ export class LoginComponent implements OnInit, AfterViewInit {
   UrlEnum = UrlEnum;
   error = '';
 
-  constructor(private _accountService: AccountService) {}
+  constructor(
+    private _router: Router,
+    private _activeRoute: ActivatedRoute,
+    private _accountService: AccountService
+  ) {}
 
   ngOnInit(): void {
     this.form = new FormGroup({
@@ -56,8 +61,9 @@ export class LoginComponent implements OnInit, AfterViewInit {
     this._accountService
       .login(args)
       .then(() => {
-        console.log('login successful');
-        this.error = '';
+        this._router.navigate([`./${UrlEnum.Profile}`], {
+          relativeTo: this._activeRoute,
+        });
       })
       .catch((error) => {
         this.error = error.message;

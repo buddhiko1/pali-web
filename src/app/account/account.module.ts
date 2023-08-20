@@ -11,6 +11,7 @@ import { AccountCreateComponent } from './account-create/account-create.componen
 import { AccountInitComponent } from './account-init/account-init.component';
 import { PasswordResetComponent } from './password-reset/password-reset.component';
 import { ResetRequestComponent } from './reset-request/reset-request.component';
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { ResetRequestComponent } from './reset-request/reset-request.component';
     AccountInitComponent,
     PasswordResetComponent,
     ResetRequestComponent,
+    ProfileComponent,
   ],
   imports: [
     CommonModule,

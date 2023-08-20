@@ -11,7 +11,10 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { fromEvent } from 'rxjs';
 import { throttleTime } from 'rxjs/operators';
 
-import { ResetPasswordMutationVariables } from 'src/gql/graphql';
+import {
+  ResetPasswordMutationVariables,
+  LoginMutationVariables,
+} from 'src/gql/graphql';
 
 import { UrlEnum } from '../account-routing.module';
 import { AccountService } from '../account.service';
@@ -28,22 +31,24 @@ export class PasswordResetComponent implements OnInit, AfterViewInit {
   form!: FormGroup;
   error = '';
   private _token = '';
+  private _email = '';
 
   constructor(
     private _router: Router,
-    private _accountService: AccountService,
-    private _activeRoute: ActivatedRoute
+    private _activeRoute: ActivatedRoute,
+    private _accountService: AccountService
   ) {
     this._activeRoute.queryParams.subscribe((params) => {
       this._token = params['token'];
+      this._email = JSON.parse(
+        window.atob(params['token'].split('.')[1])
+      ).email;
     });
   }
 
   ngOnInit(): void {
-    const tokenInfo = JSON.parse(window.atob(this._token.split('.')[1]));
-    const email = tokenInfo.email;
     this.form = new FormGroup({
-      email: new FormControl({ value: email, disabled: true }),
+      email: new FormControl({ value: this._email, disabled: true }),
       password: new FormControl('', {
         validators: [Validators.required, Validators.minLength(6)],
         updateOn: 'blur',
@@ -64,12 +69,21 @@ export class PasswordResetComponent implements OnInit, AfterViewInit {
   }
 
   resetPassword(): void {
+    const password = this.form.getRawValue().password;
     const args: ResetPasswordMutationVariables = {
       token: this._token,
-      password: this.form.getRawValue().password,
+      password: password,
     };
     this._accountService.resetPassword(args).then(() => {
-      this._router.navigate(['../'], { relativeTo: this._activeRoute });
+      const args: LoginMutationVariables = {
+        email: this._email,
+        password: password,
+      };
+      this._accountService.login(args).then(() => {
+        this._router.navigate([`../${UrlEnum.Profile}`], {
+          relativeTo: this._activeRoute,
+        });
+      });
     });
   }
 }

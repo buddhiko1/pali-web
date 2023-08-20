@@ -6,6 +6,7 @@ import { AccountCreateComponent } from './account-create/account-create.componen
 import { AccountInitComponent } from './account-init/account-init.component';
 import { PasswordResetComponent } from './password-reset/password-reset.component';
 import { ResetRequestComponent } from './reset-request/reset-request.component';
+import { ProfileComponent } from './profile/profile.component';
 
 export enum UrlEnum {
   Login = '',
@@ -13,6 +14,7 @@ export enum UrlEnum {
   AccountInit = 'init',
   ResetRequest = 'request',
   PasswordReset = 'reset',
+  Profile = 'profile',
 }
 
 const routes: Routes = [
@@ -40,6 +42,11 @@ const routes: Routes = [
     path: UrlEnum.PasswordReset,
     component: PasswordResetComponent,
     data: { animation: UrlEnum.PasswordReset },
+  },
+  {
+    path: UrlEnum.Profile,
+    component: ProfileComponent,
+    data: { animation: UrlEnum.Profile },
   },
 ];
 
