@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 
-import { MarkLoaderComponent } from 'src/app/mark-loader/mark-loader.component';
 import { SlideOnLoadingDirective } from 'src/app/core/slide-on-loading.directive';
 
 import { AccountRoutingModule } from './account-routing.module';
@@ -26,7 +25,6 @@ import { MeComponent } from './me/me.component';
     CommonModule,
     ReactiveFormsModule,
     AccountRoutingModule,
-    MarkLoaderComponent,
     SlideOnLoadingDirective,
   ],
 })
