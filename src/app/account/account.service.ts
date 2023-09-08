@@ -32,6 +32,7 @@ export class AccountService {
   ) {}
 
   isRegisteredEmail(email: string): Promise<boolean> {
+    // The public role must be granted permission to read users' information.
     return new Promise<boolean>((resolve, reject) => {
       const client = this._urqlService.authClient;
       const args: UserWithEmailQueryVariables = {

@@ -28,6 +28,7 @@ export class AccountCreateComponent implements OnInit, AfterViewInit {
   @ViewChild('createBtn')
   signUpBtn!: ElementRef<HTMLCanvasElement>;
   AccountUrlEnum = AccountUrlEnum;
+  isCreated = false;
   form!: FormGroup;
 
   constructor(
@@ -61,14 +62,14 @@ export class AccountCreateComponent implements OnInit, AfterViewInit {
   }
 
   create(): void {
-    const args: CreateAccountMutationVariables = {
-      email: this.form.getRawValue().email,
-      role: `${environment.roleIdToSignUp}`,
-      urlForInit: `${environment.host}/${AppUrlEnum.Account}/${AccountUrlEnum.AccountInit}`, // confiured in the config.json of pali-cms.
-    };
-    this._accountService.createAccount(args).then(() => {
-      console.log('create account successfully!');
-      this._navigationService.back();
-    });
+    this.isCreated = true;
+    // const args: CreateAccountMutationVariables = {
+    //   email: this.form.getRawValue().email,
+    //   role: `${environment.roleIdToSignUp}`,
+    //   urlForInit: `${environment.host}/${AppUrlEnum.Account}/${AccountUrlEnum.AccountInit}`, // confiured in the config.json of pali-cms.
+    // };
+    // this._accountService.createAccount(args).then(() => {
+    //   this._navigationService.back();
+    // });
   }
 }

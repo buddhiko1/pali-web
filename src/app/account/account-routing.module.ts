@@ -1,8 +1,7 @@
 import { NgModule, inject } from '@angular/core';
-import { Routes, Router, RouterModule, CanActivateFn } from '@angular/router';
+import { Routes, Router, RouterModule } from '@angular/router';
 
 import { RoleService } from 'src/app/core/role.service';
-import { RoleEnum } from 'src/app/core/value.cms';
 import { UrlEnum as AppUrlEnum } from 'src/app/app-routing.module';
 import { LoginComponent } from './login/login.component';
 import { AccountCreateComponent } from './account-create/account-create.component';
@@ -45,33 +44,27 @@ const routes: Routes = [
     path: UrlEnum.Me,
     canActivate: [() => canActiveMe()],
     component: MeComponent,
-    data: { animation: UrlEnum.Me },
   },
   {
     path: UrlEnum.Login,
     canActivate: [() => canActiveLogin()],
     component: LoginComponent,
-    data: { animation: UrlEnum.Login },
   },
   {
     path: UrlEnum.AccountCreate,
     component: AccountCreateComponent,
-    data: { animation: UrlEnum.AccountCreate },
   },
   {
     path: UrlEnum.AccountInit,
     component: AccountInitComponent,
-    data: { animation: UrlEnum.AccountInit },
   },
   {
     path: UrlEnum.ResetRequest,
     component: ResetRequestComponent,
-    data: { animation: UrlEnum.ResetRequest },
   },
   {
     path: UrlEnum.PasswordReset,
     component: PasswordResetComponent,
-    data: { animation: UrlEnum.PasswordReset },
   },
 ];
 

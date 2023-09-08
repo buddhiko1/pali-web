@@ -1,5 +1,8 @@
 <section appSlideOnLoading [slideDelay]="400" class="c-container">
-  <div class="c-dialog d-bg p-8 lg:p-12 my-32 lg:my-[25vh]">
+  <div
+    *ngIf="!isCreated; else tips"
+    class="c-dialog d-bg p-8 lg:p-12 my-32 lg:my-[25vh]"
+  >
     <h2 class="c-title d-title">Sign Up</h2>
     <form [formGroup]="form" class="c-form">
       <div class="c-email">
@@ -38,4 +41,9 @@
       >
     </p>
   </div>
+  <ng-template #tips>
+    <div class="c-dialog d-bg p-8 lg:p-12 my-32 lg:my-[25vh]">
+      <p>Please click the registet link in your email.</p>
+    </div>
+  </ng-template>
 </section>

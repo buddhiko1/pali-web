@@ -24,7 +24,7 @@ export class UrqlService {
           // handle error globally.
           onError(error, operation) {
             //TODO replace with error message
-            console.log(
+            console.error(
               `The operation ${operation.key} has errored with:`,
               error
             );
@@ -42,7 +42,7 @@ export class UrqlService {
           // handle error globally.
           onError(error, operation) {
             //TODO replace with error message
-            console.log(
+            console.error(
               `The operation ${operation.key} has errored with:`,
               error
             );
