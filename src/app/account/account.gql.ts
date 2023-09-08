@@ -37,4 +37,18 @@ graphql(`
       id
     }
   }
+  query Me {
+    users_me {
+      id
+      first_name
+      last_name
+      avatar {
+        location
+      }
+      email
+      role {
+        name
+      }
+    }
+  }
 `);

@@ -13,6 +13,7 @@ import { throttleTime } from 'rxjs/operators';
 import { CreateAccountMutationVariables } from 'src/gql/graphql';
 import { environment } from 'src/environments/environment';
 import { UrlEnum as AppUrlEnum } from 'src/app/app-routing.module';
+import { NavigationService } from 'src/app/core/navigation.service';
 
 import { UrlEnum as AccountUrlEnum } from '../account-routing.module';
 import { AccountService } from '../account.service';
@@ -31,7 +32,8 @@ export class AccountCreateComponent implements OnInit, AfterViewInit {
 
   constructor(
     private _accountService: AccountService,
-    private _unregisteredEmailValidator: UnregisteredEmailValidator
+    private _unregisteredEmailValidator: UnregisteredEmailValidator,
+    private _navigationService: NavigationService
   ) {}
 
   ngOnInit(): void {
@@ -66,6 +68,7 @@ export class AccountCreateComponent implements OnInit, AfterViewInit {
     };
     this._accountService.createAccount(args).then(() => {
       console.log('create account successfully!');
+      this._navigationService.back();
     });
   }
 }

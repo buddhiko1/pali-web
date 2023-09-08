@@ -13,6 +13,7 @@ import { throttleTime } from 'rxjs/operators';
 
 import { LoginMutationVariables } from 'src/gql/graphql';
 
+import { NavigationService } from 'src/app/core/navigation.service';
 import { UrlEnum } from '../account-routing.module';
 import { AccountService } from '../account.service';
 
@@ -31,7 +32,8 @@ export class LoginComponent implements OnInit, AfterViewInit {
   constructor(
     private _router: Router,
     private _activeRoute: ActivatedRoute,
-    private _accountService: AccountService
+    private _accountService: AccountService,
+    private _navigateService: NavigationService
   ) {}
 
   ngOnInit(): void {
@@ -61,13 +63,23 @@ export class LoginComponent implements OnInit, AfterViewInit {
     this._accountService
       .login(args)
       .then(() => {
-        this._router.navigate([`./${UrlEnum.Profile}`], {
-          relativeTo: this._activeRoute,
-        });
+        this._navigateService.back();
       })
       .catch((error) => {
         this.error = error.message;
       });
+  }
+
+  routeToResetRequest(): void {
+    this._router.navigate([`../${UrlEnum.ResetRequest}`], {
+      relativeTo: this._activeRoute,
+    });
+  }
+
+  routeToAccountCreate(): void {
+    this._router.navigate([`../${UrlEnum.AccountCreate}`], {
+      relativeTo: this._activeRoute,
+    });
   }
 
   get email() {

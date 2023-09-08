@@ -1,0 +1,22 @@
+<section class="c-container">
+  <img
+    class="c-avatar rounded-full w-24 h-24"
+    src="https://www.seiu1000.org/sites/main/files/main-images/camera_lense_0.jpeg"
+    alt="My image"
+  />
+  <p>{{ me?.email }}</p>
+  <div>
+    <button (click)="logout()" aria-label="donation" class="g-button lg:mx-6">
+      Logout
+    </button>
+  </div>
+  <div>
+    <button
+      (click)="resetPassword()"
+      aria-label="donation"
+      class="g-button lg:mx-6"
+    >
+      Reset Password
+    </button>
+  </div>
+</section>

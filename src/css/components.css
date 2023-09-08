@@ -35,5 +35,5 @@
 }
 
 .g-link {
-  @apply text-focus;
+  @apply text-focus cursor-pointer;
 }

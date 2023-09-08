@@ -80,7 +80,7 @@ export class AccountInitComponent implements OnInit, AfterViewInit {
         password: password,
       };
       this._accountService.login(args).then(() => {
-        this._router.navigate([`../${UrlEnum.Profile}`], {
+        this._router.navigate([`../${UrlEnum.Me}`], {
           relativeTo: this._activeRoute,
         });
       });

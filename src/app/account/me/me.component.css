@@ -1,0 +1,15 @@
+.c-container {
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: theme("spacing.smContentPadding") 1fr theme(
+      "spacing.smContentPadding"
+    );
+  grid-template-areas: "left-padding avatar right-padding";
+}
+
+.c-avatar {
+  grid-area: avatar;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+}

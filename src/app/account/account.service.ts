@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { CombinedError } from '@urql/core';
 
+import { Directus_Users } from 'src/gql/graphql';
 import { UrqlService } from 'src/app/core/urql.service';
 import { StorageService } from 'src/app/core/storage.service';
 import {
@@ -19,6 +20,8 @@ import {
   ResetPasswordMutationVariables,
   UserWithEmailDocument,
   UserWithEmailQueryVariables,
+  MeDocument,
+  MeQueryVariables,
 } from 'src/gql/graphql';
 
 @Injectable({ providedIn: 'root' })
@@ -49,10 +52,6 @@ export class AccountService {
           }
         });
     });
-  }
-
-  get isLoginned(): boolean {
-    return !!this._storageService.accessToken;
   }
 
   createAccount(args: CreateAccountMutationVariables): Promise<void> {
@@ -111,10 +110,10 @@ export class AccountService {
         .toPromise()
         .then((result) => {
           if (result.data?.login) {
-            console.log(result);
             this._storageService.saveAuthToken(
               result.data?.login as Auth_Tokens
             );
+            this.fetchMe();
             resolve();
           } else {
             const error = result.error as CombinedError;
@@ -140,6 +139,21 @@ export class AccountService {
       } else {
         this._storageService.clear();
       }
+    });
+  }
+
+  fetchMe(): Promise<void> {
+    return new Promise<void>((resolve) => {
+      const client = this._urqlService.systemClient;
+      const args: MeQueryVariables = {};
+      client
+        .query(MeDocument, args)
+        .toPromise()
+        .then((result) => {
+          const me = result.data?.users_me;
+          this._storageService.saveMe(me);
+          resolve();
+        });
     });
   }
 }

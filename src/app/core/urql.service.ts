@@ -21,6 +21,7 @@ export class UrqlService {
       url: `${environment.host}/graphql/system`,
       exchanges: [
         mapExchange({
+          // handle error globally.
           onError(error, operation) {
             //TODO replace with error message
             console.log(
@@ -38,6 +39,7 @@ export class UrqlService {
       exchanges: [
         cacheExchange,
         mapExchange({
+          // handle error globally.
           onError(error, operation) {
             //TODO replace with error message
             console.log(

@@ -23,9 +23,7 @@
       <div class="c-password">
         <div class="c-password-label">
           <label for="password" class="d-subText">Password</label>
-          <a routerLink="{{ UrlEnum.ResetRequest }}" class="text-sm g-link"
-            >Forgot?</a
-          >
+          <a (click)="routeToResetRequest()" class="text-sm g-link">Forgot?</a>
         </div>
         <input
           type="password"
@@ -59,7 +57,7 @@
     </form>
     <p class="c-tips d-subText">
       <span>Don't have an account?</span
-      ><a routerLink="{{ UrlEnum.AccountCreate }}" class="text-sm g-link pl-4"
+      ><a (click)="routeToAccountCreate()" class="text-sm g-link pl-4"
         >Sign Up</a
       >
     </p>

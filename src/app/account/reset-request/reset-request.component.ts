@@ -14,6 +14,7 @@ import { RequestResetMutationVariables } from 'src/gql/graphql';
 
 import { environment } from 'src/environments/environment';
 import { UrlEnum as AppUrlEnum } from 'src/app/app-routing.module';
+import { NavigationService } from 'src/app/core/navigation.service';
 
 import { UrlEnum as AccountUrlEnum } from '../account-routing.module';
 import { AccountService } from '../account.service';
@@ -32,7 +33,8 @@ export class ResetRequestComponent implements OnInit, AfterViewInit {
 
   constructor(
     private _accountService: AccountService,
-    private _registeredEmailValidator: RegisteredEmailValidator
+    private _registeredEmailValidator: RegisteredEmailValidator,
+    private _navigationService: NavigationService
   ) {}
 
   ngOnInit(): void {
@@ -66,6 +68,7 @@ export class ResetRequestComponent implements OnInit, AfterViewInit {
     };
     this._accountService.requestReset(args).then(() => {
       console.log('request sent');
+      this._navigationService.back();
     });
   }
 }
