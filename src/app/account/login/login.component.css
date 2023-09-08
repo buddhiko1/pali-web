@@ -44,8 +44,18 @@
   grid-area: email;
 }
 
+.c-email label:after {
+  content: "*";
+  color: theme("colors.error");
+}
+
 .c-password {
   grid-area: password;
+}
+
+.c-password label:after {
+  content: "*";
+  color: theme("colors.error");
 }
 
 .c-password-label {
@@ -57,16 +67,6 @@
 
 .c-button {
   grid-area: button;
-}
-
-.c-email label:after {
-  content: "*";
-  color: theme("colors.error");
-}
-
-.c-password label:after {
-  content: "*";
-  color: theme("colors.error");
 }
 
 @media screen and (min-width: theme("screens.lg")) {

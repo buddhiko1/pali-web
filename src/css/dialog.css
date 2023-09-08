@@ -10,6 +10,10 @@
   @apply leading-relaxed text-sm text-text;
 }
 
+.d-message {
+  @apply leading-relaxed text-lg text-text;
+}
+
 .d-input-base {
   @apply py-1 px-3 rounded border outline-none focus:ring-1 focus:ring-ring leading-relaxed;
 }

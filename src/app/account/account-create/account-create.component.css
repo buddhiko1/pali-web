@@ -14,7 +14,7 @@
   grid-template-columns: 1fr;
   grid-template-areas:
     "title"
-    "form"
+    "content"
     "tips";
   row-gap: theme(spacing.7);
 }
@@ -24,7 +24,7 @@
 }
 
 .c-form {
-  grid-area: form;
+  grid-area: content;
   display: grid;
   grid-template-rows: auto auto;
   grid-template-columns: 1fr;
@@ -34,22 +34,27 @@
   row-gap: theme(spacing.6);
 }
 
-.c-tips {
-  grid-area: tips;
-  justify-self: end;
-}
-
 .c-email {
   grid-area: email;
+}
+
+.c-email label:after {
+  content: "*";
+  color: theme("colors.error");
 }
 
 .c-button {
   grid-area: button;
 }
 
-.c-email label:after {
-  content: "*";
-  color: theme("colors.error");
+.c-tips {
+  grid-area: tips;
+  justify-self: end;
+}
+
+.c-message {
+  grid-area: content;
+  justify-self: center;
 }
 
 @media screen and (min-width: theme("screens.lg")) {

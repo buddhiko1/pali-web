@@ -37,15 +37,14 @@
   grid-area: email;
 }
 
-.c-button {
-  grid-area: button;
-}
-
 .c-email label:after {
   content: "*";
   color: theme("colors.error");
 }
 
+.c-button {
+  grid-area: button;
+}
 @media screen and (min-width: theme("screens.lg")) {
   .c-container {
     grid-template-columns: theme("spacing.lgPadding") 25vw theme(
