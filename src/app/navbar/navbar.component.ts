@@ -45,8 +45,8 @@ export class NavbarComponent {
   }
 
   routeTo(page: UrlEnum): void {
-    this._router.navigateByUrl(page);
     this.closeMenu();
+    this._router.navigateByUrl(page);
   }
 
   get isMenuOpen(): boolean {

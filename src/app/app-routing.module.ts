@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
-import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { PlaceholderPageComponent } from './placeholder-page/placeholder-page.component';
 
 export enum UrlEnum {
   Home = 'home',
@@ -10,6 +10,7 @@ export enum UrlEnum {
   Tipitaka = 'tipitaka',
   Reading = 'reading',
   Blog = 'blog',
+  Donation = 'donation',
   Account = 'account',
 }
 
@@ -23,10 +24,20 @@ const routes: Routes = [
     data: { animation: UrlEnum.Home },
   },
   {
+    path: UrlEnum.Grammar,
+    component: PlaceholderPageComponent,
+    data: { animation: UrlEnum.Grammar, text: 'Under development ...' },
+  },
+  {
     path: UrlEnum.Dictionary,
     loadChildren: () =>
       import('./dictionary/dictionary.module').then((m) => m.DictionaryModule),
     data: { animation: UrlEnum.Dictionary },
+  },
+  {
+    path: UrlEnum.Vocabulary,
+    component: PlaceholderPageComponent,
+    data: { animation: UrlEnum.Vocabulary, text: 'Under development ...' },
   },
   {
     path: UrlEnum.Tipitaka,
@@ -41,9 +52,19 @@ const routes: Routes = [
     data: { animation: UrlEnum.Account },
   },
   {
+    path: UrlEnum.Reading,
+    component: PlaceholderPageComponent,
+    data: { animation: UrlEnum.Reading, text: 'Under development ...' },
+  },
+  {
+    path: UrlEnum.Blog,
+    component: PlaceholderPageComponent,
+    data: { animation: UrlEnum.Blog, text: 'Under development ...' },
+  },
+  {
     path: '**',
-    component: PageNotFoundComponent,
-    data: { animation: 'error' },
+    component: PlaceholderPageComponent,
+    data: { animation: 'error', text: '404 Page not found' },
   },
 ];
 

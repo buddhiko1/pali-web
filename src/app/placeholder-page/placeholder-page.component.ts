@@ -1,5 +1,10 @@
 import { Component, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import {
+  ActivatedRoute,
+  ActivatedRouteSnapshot,
+  Params,
+} from '@angular/router';
 import { AngularSvgIconModule } from 'angular-svg-icon';
 import { DeviceDetectorService } from 'ngx-device-detector';
 
@@ -8,7 +13,7 @@ import { NavbarService } from 'src/app/navbar/navbar.service';
 import { SnowBgComponent } from 'src/app/snow-bg/snow-bg.component';
 
 @Component({
-  selector: 'app-page-not-found',
+  selector: 'app-placeholder-page',
   standalone: true,
   imports: [
     CommonModule,
@@ -16,17 +21,27 @@ import { SnowBgComponent } from 'src/app/snow-bg/snow-bg.component';
     BackButtonDirective,
     SnowBgComponent,
   ],
-  templateUrl: './page-not-found.component.html',
-  styleUrls: ['./page-not-found.component.css'],
+  templateUrl: './placeholder-page.component.html',
+  styleUrls: ['./placeholder-page.component.css'],
 })
-export class PageNotFoundComponent implements OnDestroy {
+export class PlaceholderPageComponent implements OnDestroy {
+  text = '';
+
   constructor(
     private _deviceService: DeviceDetectorService,
-    private _navbarService: NavbarService
+    private _navbarService: NavbarService,
+    private _activeRoute: ActivatedRoute
   ) {
     if (this._deviceService.isDesktop()) {
       this._navbarService.showShadow(false);
     }
+    this._activeRoute.params.subscribe((params: Params) => {
+      this.text = params['text'];
+    });
+    this._activeRoute.data.subscribe((data) => {
+      console.log(data);
+      this.text = data['text'];
+    });
   }
 
   ngOnDestroy(): void {
