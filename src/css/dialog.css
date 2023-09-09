@@ -1,5 +1,5 @@
-.d-bg {
-  @apply bg-dialogBg rounded-lg;
+.d-box {
+  @apply bg-dialogBg rounded-lg p-8 lg:p-12 my-20 lg:my-[20vh];
 }
 
 .d-title {

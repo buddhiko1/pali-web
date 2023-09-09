@@ -7,9 +7,5 @@
 }
 
 .g-focus {
-  @apply focus:text-focus focus:outline-none;
-}
-
-.g-active {
   @apply !text-focus;
 }

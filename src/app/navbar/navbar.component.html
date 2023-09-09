@@ -4,8 +4,7 @@
   [class.c-container-hidden]="!isHeaderShow"
 >
   <a
-    (click)="closeMenu()"
-    routerLink="{{ UrlEnum.Home }}"
+    (click)="routeTo(UrlEnum.Home)"
     class="c-logo py-3 text-2xl lg:text-3xl uppercase tracking-widest font-bold g-title g-hover"
     [class.text-highlight]="isActiveUrl(UrlEnum.Home)"
     >Pali</a
@@ -31,52 +30,52 @@
     class="c-menu w-full pb-3 transition-transform duration-500 ease-in-out bg-bg"
     [class.c-menu-close]="!isMenuOpen"
   >
-    <ul (click)="toggleMenu()" class="c-index">
+    <ul class="c-index">
       <li class="c-index-item mt-2 lg:mt-0 lg:mx-4">
         <a
-          routerLink="{{ UrlEnum.Grammar }}"
+          (click)="routeTo(UrlEnum.Grammar)"
           class="g-text g-hover"
-          [class.g-active]="isActiveUrl(UrlEnum.Grammar)"
+          [class.g-focus]="isActiveUrl(UrlEnum.Grammar)"
           >{{ UrlEnum.Grammar | titlecase }}</a
         >
       </li>
       <li class="c-index-item mt-2 lg:mt-0 lg:mx-4">
         <a
-          routerLink="{{ UrlEnum.Dictionary }}"
+          (click)="routeTo(UrlEnum.Dictionary)"
           class="g-text g-hover"
-          [class.g-active]="isActiveUrl(UrlEnum.Dictionary)"
+          [class.g-focus]="isActiveUrl(UrlEnum.Dictionary)"
           >{{ UrlEnum.Dictionary | titlecase }}</a
         >
       </li>
       <li class="c-index-item mt-2 lg:mt-0 lg:mx-4">
         <a
-          routerLink="{{ UrlEnum.Vocabulary }}"
+          (click)="routeTo(UrlEnum.Vocabulary)"
           class="g-text g-hover"
-          [class.g-active]="isActiveUrl(UrlEnum.Vocabulary)"
+          [class.g-focus]="isActiveUrl(UrlEnum.Vocabulary)"
           >{{ UrlEnum.Vocabulary | titlecase }}</a
         >
       </li>
       <li class="c-index-item mt-2 lg:mt-0 lg:mx-4">
         <a
-          routerLink="{{ UrlEnum.Tipitaka }}"
+          (click)="routeTo(UrlEnum.Tipitaka)"
           class="g-text g-hover"
-          [class.g-active]="isActiveUrl(UrlEnum.Tipitaka)"
+          [class.g-focus]="isActiveUrl(UrlEnum.Tipitaka)"
           >{{ UrlEnum.Tipitaka | titlecase }}</a
         >
       </li>
       <li class="c-index-item mt-2 lg:mt-0 lg:mx-4">
         <a
-          routerLink="{{ UrlEnum.Reading }}"
+          (click)="routeTo(UrlEnum.Reading)"
           class="g-text g-hover"
-          [class.g-active]="isActiveUrl(UrlEnum.Reading)"
+          [class.g-focus]="isActiveUrl(UrlEnum.Reading)"
           >{{ UrlEnum.Reading | titlecase }}</a
         >
       </li>
       <li class="c-index-item mt-2 lg:mt-0 lg:mx-4">
         <a
-          routerLink="{{ UrlEnum.Blog }}"
+          (click)="routeTo(UrlEnum.Blog)"
           class="g-text g-hover"
-          [class.g-active]="isActiveUrl(UrlEnum.Blog)"
+          [class.g-focus]="isActiveUrl(UrlEnum.Blog)"
           >{{ UrlEnum.Blog | titlecase }}</a
         >
       </li>
@@ -84,7 +83,7 @@
 
     <div class="c-divider lg:hidden mb-5 h-6 border-b g-border"></div>
 
-    <button (click)="toggleDark()" aria-label="theme" class="c-theme">
+    <a (click)="toggleDark()" class="c-theme">
       <svg-icon
         *ngIf="isDark"
         src="assets/icons/moon.svg"
@@ -95,32 +94,28 @@
         src="assets/icons/sun.svg"
         [svgClass]="['g-svg', 'g-hover']"
       ></svg-icon>
-    </button>
+    </a>
 
-    <button
-      (click)="routeToDonation()"
-      aria-label="donation"
-      class="c-donation lg:mx-6"
-    >
+    <a (click)="routeTo(UrlEnum.Donation)" class="c-donation lg:mx-6">
       <svg-icon
         src="assets/icons/heart.svg"
         [svgClass]="['g-svg', 'g-hover', 'w-5', 'h-5']"
       ></svg-icon>
-    </button>
+    </a>
 
-    <button
-      (click)="routeToAccount()"
-      aria-label="account"
-      class="c-account g-active"
+    <a
+      (click)="routeTo(UrlEnum.Account)"
+      class="c-account"
+      [class.g-focus]="isActiveUrl(UrlEnum.Account)"
     >
       <svg-icon
         src="assets/icons/person.svg"
         [svgClass]="[
           'g-svg',
           'g-hover',
-          isActiveUrl(UrlEnum.Account) ? 'g-active' : ''
+          isActiveUrl(UrlEnum.Account) ? 'g-focus' : ''
         ]"
       ></svg-icon>
-    </button>
+    </a>
   </section>
 </nav>
