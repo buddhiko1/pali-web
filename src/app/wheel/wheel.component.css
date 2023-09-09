@@ -1,5 +1,10 @@
-.g-svg {
+.start {
   animation: loading var(--cycleTime) linear infinite;
+  animation-delay: 600ms;
+}
+
+.stop {
+  animation-play-state: paused;
 }
 
 @keyframes loading {

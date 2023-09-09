@@ -3,14 +3,15 @@ import { CommonModule } from '@angular/common';
 import { AngularSvgIconModule } from 'angular-svg-icon';
 
 @Component({
-  selector: 'app-wheel-loader',
+  selector: 'app-wheel',
   standalone: true,
   imports: [CommonModule, AngularSvgIconModule],
-  templateUrl: './wheel-loader.component.html',
-  styleUrls: ['./wheel-loader.component.css'],
+  templateUrl: './wheel.component.html',
+  styleUrls: ['./wheel.component.css'],
 })
-export class WheelLoaderComponent {
+export class WheelComponent {
   @Input() pxSize = 80;
+  @Input() stop = false;
   @Input() cycleTime = 20; // seconds for a circle to complete
 
   constructor() {}
