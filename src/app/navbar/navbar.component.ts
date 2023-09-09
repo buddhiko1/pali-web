@@ -47,37 +47,6 @@ export class NavbarComponent {
   routeTo(page: UrlEnum): void {
     this._router.navigateByUrl(page);
     this.closeMenu();
-    // switch (page) {
-    //   case UrlEnum.Home: {
-    //     this._router.navigateByUrl(UrlEnum.Home);
-    //     this.closeMenu();
-    //     break;
-    //   }
-    //   case UrlEnum.Grammar: {
-    //     this._router.navigateByUrl(UrlEnum.Grammar);
-    //     break;
-    //   }
-    //   case UrlEnum.Dictionary: {
-    //     this._router.navigateByUrl(UrlEnum.Dictionary);
-    //     break;
-    //   }
-    //   case UrlEnum.Vocabulary: {
-    //     this._router.navigateByUrl(UrlEnum.Vocabulary);
-    //     break;
-    //   }
-    //   case UrlEnum.Tipitaka: {
-    //     this._router.navigateByUrl(UrlEnum.Tipitaka);
-    //     break;
-    //   }
-    //   case UrlEnum.Reading: {
-    //     this._router.navigateByUrl(UrlEnum.Reading);
-    //     break;
-    //   }
-    //   case UrlEnum.Blog: {
-    //     this._router.navigateByUrl(UrlEnum.Dictionary);
-    //     break;
-    //   }
-    // }
   }
 
   get isMenuOpen(): boolean {
@@ -86,7 +55,6 @@ export class NavbarComponent {
 
   closeMenu(): void {
     this._navbarService.closeMenu();
-    console.log('close menu');
   }
 
   toggleMenu(): void {
