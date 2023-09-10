@@ -1,3 +1,12 @@
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 .c-loader {
   width: var(--size);
   height: var(--size);
@@ -6,7 +15,7 @@
   border-top: var(--borderWidth) solid rgba(0, 0, 0, 0);
   border-bottom: var(--borderWidth) solid rgba(0, 0, 0, 0);
   border-radius: var(--size);
-  animation: rotation 1.5s ease-in-out infinite;
+  animation: rotate 1.5s ease-in-out infinite;
   transition: 0.7s ease-in-out;
   display: grid;
   place-items: center;
@@ -25,13 +34,4 @@
 .c-svg {
   width: calc(var(--size) / 1.5);
   transition: 0.7s ease-in-out;
-}
-
-@keyframes rotation {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }
