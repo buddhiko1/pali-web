@@ -10,13 +10,18 @@ import { AngularSvgIconModule } from 'angular-svg-icon';
   styleUrls: ['./wheel.component.css'],
 })
 export class WheelComponent {
-  @Input() pxSize = 80;
+  @Input() wheelSize = 80;
+  @Input() rotateDelay = 0;
+  @Input() cycleTime = 10;
   @Input() stop = false;
-  @Input() cycleTime = 20; // seconds for a circle to complete
 
   constructor() {}
 
   @HostBinding('style.--cycleTime') get _cycleTime() {
     return `${this.cycleTime}s`;
+  }
+
+  @HostBinding('style.--rotateDelay') get _rotateDelay() {
+    return `${this.rotateDelay}s`;
   }
 }
