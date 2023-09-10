@@ -27,5 +27,5 @@
 }
 
 .d-button {
-  @apply rounded-md py-2 text-gray-50 bg-focus hover:bg-highlight disabled:hover:bg-focus disabled:opacity-60;
+  @apply rounded-md py-2 text-gray-50 bg-focus hover:bg-hl disabled:hover:bg-focus disabled:opacity-60;
 }

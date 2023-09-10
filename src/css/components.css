@@ -6,8 +6,8 @@
   @apply tracking-wide  text-lg text-title;
 }
 
-.g-title-highlight {
-  @apply tracking-wide text-lg text-titleHighlight;
+.g-title-hl {
+  @apply tracking-wide text-lg text-titleHl;
 }
 
 .g-card {

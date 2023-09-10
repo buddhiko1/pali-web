@@ -1,13 +1,13 @@
 :root {
   --colors-bg: theme("colors.white");
   --colors-title: theme("colors.gray.700");
-  --colors-title-highlight: theme("colors.red.400");
+  --colors-title-hl: theme("colors.red.400");
   --colors-text: theme("colors.gray.500");
   --colors-border: theme("colors.gray.300");
   --colors-focus: theme("colors.blue.400");
   --colors-error: theme("colors.red.500");
   --colors-success: theme("colors.blue.500");
-  --colors-highlight: theme("colors.blue.500");
+  --colors-hl: theme("colors.blue.500");
   --colors-dialog-bg: theme("colors.gray.100");
   --colors-input-bg: theme("colors.white");
   --colors-footer-bg: theme("colors.gray.100");
@@ -20,13 +20,13 @@
 .night {
   --colors-bg: theme("colors.gray.900");
   --colors-title: theme("colors.gray.100");
-  --colors-title-highlight: theme("colors.red.400");
+  --colors-title-hl: theme("colors.red.400");
   --colors-text: theme("colors.gray.200");
   --colors-border: theme("colors.gray.600");
   --colors-focus: theme("colors.blue.400");
   --colors-error: theme("colors.red.500");
   --colors-success: theme("colors.blue.500");
-  --colors-highlight: theme("colors.blue.500");
+  --colors-hl: theme("colors.blue.500");
   --colors-dialog-bg: theme("colors.gray.700");
   --colors-input-bg: theme("colors.gray.800");
   --colors-footer-bg: theme("colors.gray.800");
