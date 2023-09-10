@@ -22,6 +22,10 @@
   @apply p-1 rounded-md bg-buttonBg hover:bg-buttonHover;
 }
 
+.g-button-hl {
+  @apply py-1 px-4 grid grid-flow-col rounded-md mx-auto my-auto bg-focus tracking-wide font-light text-gray-50;
+}
+
 .g-scrollbar {
   @apply scrollbar-thin scrollbar-w-1.5 scrollbar-thumb-border scrollbar-track-bg;
 }
