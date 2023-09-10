@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { ChildrenOutletContexts } from '@angular/router';
 
 import { ScrollbarService } from './core/scrollbar.service';
-import { ScrollBehaviorDirective } from './core/scroll-behavior.directive';
 import { RouteAnimation } from './app.animations';
 
 @Component({
@@ -10,7 +9,6 @@ import { RouteAnimation } from './app.animations';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
   animations: [RouteAnimation],
-  hostDirectives: [ScrollBehaviorDirective],
 })
 export class AppComponent implements OnInit {
   title = 'pali-web';

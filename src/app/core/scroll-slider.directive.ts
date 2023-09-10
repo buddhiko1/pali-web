@@ -9,10 +9,10 @@ const SLIDING_CLASS = 'g-slider-1000ms';
 const SLIDER_ACTIVE_CLASS = 'g-slider-active';
 
 @Directive({
-  selector: '[appSlideOnScroll]',
+  selector: '[appScrollSlider]',
   standalone: true,
 })
-export class SlideOnScrollDirective implements OnDestroy {
+export class ScrollSliderDirective implements OnDestroy {
   private _windowHeight = window.innerHeight;
   private _thresholdHeight = 30;
   private _isDisplayed = false;
