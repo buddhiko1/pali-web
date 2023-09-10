@@ -1,21 +1,15 @@
 .g-slider {
   position: relative;
   transform: translateY(30px);
+  transition: 1.5s all ease;
   opacity: 0;
 }
 
 .g-slider-lg {
   position: relative;
   transform: translateY(60px);
-  opacity: 0;
-}
-
-.g-slider-500ms {
-  transition: 0.5s all ease;
-}
-
-.g-slider-1500ms {
   transition: 1.5s all ease;
+  opacity: 0;
 }
 
 .g-slider-active {

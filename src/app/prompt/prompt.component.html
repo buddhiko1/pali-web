@@ -7,7 +7,7 @@
     [cycleTime]="10"
     class="c-wheel"
   ></app-wheel>
-  <p *ngIf="isDone" appSlider class="c-prompt g-text">
+  <p *ngIf="isDone" class="c-prompt g-text">
     {{ prompt }}
   </p>
   <button [disabled]="!isDone" class="c-button d-button w-full mt-3">OK</button>
