@@ -7,10 +7,10 @@ const SLIDING_CLASS = 'g-slider-1500ms';
 const SLIDER_ACTIVE_CLASS = 'g-slider-active';
 
 @Directive({
-  selector: '[appSlideOnLoading]',
+  selector: '[appSlider]',
   standalone: true,
 })
-export class SlideOnLoadingDirective implements OnDestroy, OnInit {
+export class SliderDirective implements OnDestroy, OnInit {
   private _isDisplayed = false;
   private _timeoutId = 0;
   private _sliderClass: string;

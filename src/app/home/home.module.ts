@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AngularSvgIconModule } from 'angular-svg-icon';
 
-import { SlideOnLoadingDirective } from 'src/app/core/slide-on-loading.directive';
+import { SliderDirective } from 'src/app/core/slider.directive';
 import { TypingDirective } from 'src/app/core/typing.directive';
 import { PhraseComponent } from 'src/app/phrase/phrase.component';
 
@@ -15,7 +15,7 @@ import { HomeComponent } from './home.component';
   imports: [
     CommonModule,
     AngularSvgIconModule,
-    SlideOnLoadingDirective,
+    SliderDirective,
     TypingDirective,
     HomeRoutingModule,
     PhraseComponent,

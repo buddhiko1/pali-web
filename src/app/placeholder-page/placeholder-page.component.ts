@@ -1,13 +1,10 @@
 import { Component, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {
-  ActivatedRoute,
-  ActivatedRouteSnapshot,
-  Params,
-} from '@angular/router';
+import { ActivatedRoute, Params } from '@angular/router';
 import { AngularSvgIconModule } from 'angular-svg-icon';
 import { DeviceDetectorService } from 'ngx-device-detector';
 
+import { SliderDirective } from 'src/app/core/slider.directive';
 import { BackButtonDirective } from 'src/app/core/back-button.directive';
 import { NavbarService } from 'src/app/navbar/navbar.service';
 import { SnowBgComponent } from 'src/app/snow-bg/snow-bg.component';
@@ -20,6 +17,7 @@ import { SnowBgComponent } from 'src/app/snow-bg/snow-bg.component';
     AngularSvgIconModule,
     BackButtonDirective,
     SnowBgComponent,
+    SliderDirective,
   ],
   templateUrl: './placeholder-page.component.html',
   styleUrls: ['./placeholder-page.component.css'],

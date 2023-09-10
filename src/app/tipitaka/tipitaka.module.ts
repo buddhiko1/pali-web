@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { AngularSvgIconModule } from 'angular-svg-icon';
 
 import { BookComponent } from 'src/app/book/book.component';
-import { SlideOnLoadingDirective } from 'src/app/core/slide-on-loading.directive';
+import { SliderDirective } from 'src/app/core/slider.directive';
 
 import { TipitakaComponent } from './tipitaka.component';
 import { TipitakaRoutingModule } from './tipitaka-routing.module';
@@ -15,7 +15,7 @@ import { TipitakaRoutingModule } from './tipitaka-routing.module';
     TipitakaRoutingModule,
     AngularSvgIconModule,
     BookComponent,
-    SlideOnLoadingDirective,
+    SliderDirective,
   ],
   exports: [TipitakaComponent],
 })

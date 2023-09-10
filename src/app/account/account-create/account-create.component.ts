@@ -52,6 +52,7 @@ export class AccountCreateComponent implements OnInit, AfterViewInit {
         updateOn: 'blur',
       }),
     });
+    // for test
     this.isSubmitted = true;
     this.promptStatus = PromptStatusEnum.Progress;
     setTimeout(() => {
@@ -71,19 +72,13 @@ export class AccountCreateComponent implements OnInit, AfterViewInit {
   }
 
   create(): void {
-    // this.isSubmitted = true;
-    // this.promptStatus = PromptStatusEnum.Progress;
-    // setTimeout(() => {
-    //   this.promptStatus = PromptStatusEnum.Successful;
-    //   this.promptText = 'Please click the registet link in your email';
-    // }, 3000);
-    // const args: CreateAccountMutationVariables = {
-    //   email: this.form.getRawValue().email,
-    //   role: `${environment.roleIdToSignUp}`,
-    //   urlForInit: `${environment.host}/${AppUrlEnum.Account}/${AccountUrlEnum.AccountInit}`, // confiured in the config.json of pali-cms.
-    // };
-    // this._accountService.createAccount(args).then(() => {
-    //   this._navigationService.back();
-    // });
+    const args: CreateAccountMutationVariables = {
+      email: this.form.getRawValue().email,
+      role: `${environment.roleIdToSignUp}`,
+      urlForInit: `${environment.host}/${AppUrlEnum.Account}/${AccountUrlEnum.AccountInit}`, // confiured in the config.json of pali-cms.
+    };
+    this._accountService.createAccount(args).then(() => {
+      this._navigationService.back();
+    });
   }
 }
