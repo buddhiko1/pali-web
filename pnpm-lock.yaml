@@ -40,6 +40,9 @@ dependencies:
   ngx-device-detector:
     specifier: ^5.0.1
     version: registry.npmmirror.com/ngx-device-detector@5.0.1(@angular/common@16.1.8)(@angular/core@16.1.8)
+  ngx-rerender:
+    specifier: ^1.2.0
+    version: registry.npmmirror.com/ngx-rerender@1.2.0(@angular/common@16.1.8)(@angular/core@16.1.8)
   rxjs:
     specifier: ~7.8.1
     version: registry.npmmirror.com/rxjs@7.8.1
@@ -14534,6 +14537,25 @@ packages:
     peerDependencies:
       "@angular/common": ^15.0.0
       "@angular/core": ^15.0.0
+    dependencies:
+      "@angular/common": registry.npmmirror.com/@angular/common@16.1.8(@angular/core@16.1.8)(rxjs@7.8.1)
+      "@angular/core": registry.npmmirror.com/@angular/core@16.1.8(rxjs@7.8.1)(zone.js@0.13.1)
+      tslib: registry.npmmirror.com/tslib@2.6.1
+    dev: false
+
+  registry.npmmirror.com/ngx-rerender@1.2.0(@angular/common@16.1.8)(@angular/core@16.1.8):
+    resolution:
+      {
+        integrity: sha512-7IAT0SbUelvJdpEJVuc3UTaXhYR6F/iO5GjNmdx5vNaXKhcKrygZMu7DYF+CoVuZ8NB51/X7tmzJs/9FjknvUg==,
+        registry: https://registry.npm.taobao.org/,
+        tarball: https://registry.npmmirror.com/ngx-rerender/-/ngx-rerender-1.2.0.tgz,
+      }
+    id: registry.npmmirror.com/ngx-rerender/1.2.0
+    name: ngx-rerender
+    version: 1.2.0
+    peerDependencies:
+      "@angular/common": ">=10.0.0"
+      "@angular/core": ">=10.0.0"
     dependencies:
       "@angular/common": registry.npmmirror.com/@angular/common@16.1.8(@angular/core@16.1.8)(rxjs@7.8.1)
       "@angular/core": registry.npmmirror.com/@angular/core@16.1.8(rxjs@7.8.1)(zone.js@0.13.1)

@@ -28,6 +28,7 @@
     "angular-svg-icon": "^16.0.0",
     "graphql": "^16.7.1",
     "ngx-device-detector": "^5.0.1",
+    "ngx-rerender": "^1.2.0",
     "rxjs": "~7.8.1",
     "tailwind-scrollbar": "^2.1.0",
     "tslib": "^2.6.1",
