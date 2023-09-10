@@ -2,10 +2,9 @@
   <h2 class="c-status d-title">{{ status }}</h2>
   <app-wheel
     *ngIf="!isDone"
-    [wheelSize]="60"
-    [stop]="isDone"
+    [size]="60"
     [cycleTime]="10"
-    [rotateDelay]="1.5"
+    [delay]="1.5"
     class="c-wheel"
   ></app-wheel>
   <p *ngIf="isDone" class="c-prompt g-text">

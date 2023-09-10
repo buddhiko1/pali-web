@@ -8,7 +8,7 @@
 }
 
 .start {
-  animation: rotate var(--cycleTime) linear var(--rotateDelay) infinite;
+  animation: rotate var(--cycleTime) linear var(--delay) infinite;
 }
 
 .stop {
