@@ -1,3 +1,4 @@
+/* keyframe start with 'g-' is public, otherwise is private */
 @keyframes g-slide-in {
   from {
     transform: translateY(30px);
@@ -12,7 +13,7 @@
 @media screen and (min-width: theme("screens.lg")) {
   @keyframes g-slide-in {
     from {
-      transform: translateY(45px);
+      transform: translateY(55px);
       opacity: 0;
     }
     to {
@@ -22,7 +23,7 @@
   }
 }
 
-@keyframes g-fade-in {
+@keyframes _fade-in {
   from {
     opacity: 0;
   }
@@ -31,6 +32,6 @@
   }
 }
 
-.g-page {
-  animation: fade-in 500ms ease-in-out both;
+.g-fade-in {
+  animation: _fade-in 500ms ease-in-out both;
 }

@@ -6,7 +6,7 @@ import { Directive, ElementRef, Input, OnInit, Renderer2 } from '@angular/core';
 })
 export class SliderDirective implements OnInit {
   @Input() slideDelay = 0;
-  @Input() slideDuration = 1500;
+  @Input() slideDuration = 1000;
 
   constructor(private _el: ElementRef, private renderer: Renderer2) {}
 
