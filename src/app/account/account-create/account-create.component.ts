@@ -14,6 +14,7 @@ import { CreateAccountMutationVariables } from 'src/gql/graphql';
 import { environment } from 'src/environments/environment';
 import { UrlEnum as AppUrlEnum } from 'src/app/app-routing.module';
 import { NavigationService } from 'src/app/core/navigation.service';
+import { StatusEnum as PromptStatusEnum } from 'src/app/prompt/prompt.component';
 
 import { UrlEnum as AccountUrlEnum } from '../account-routing.module';
 import { AccountService } from '../account.service';
@@ -27,9 +28,11 @@ import { UnregisteredEmailValidator } from '../email.validator';
 export class AccountCreateComponent implements OnInit, AfterViewInit {
   @ViewChild('createBtn')
   signUpBtn!: ElementRef<HTMLCanvasElement>;
-  AccountUrlEnum = AccountUrlEnum;
-  isCreated = false;
   form!: FormGroup;
+  AccountUrlEnum = AccountUrlEnum;
+  isSubmitted = false;
+  promptStatus = PromptStatusEnum.Idle;
+  promptText = '';
 
   constructor(
     private _accountService: AccountService,
@@ -49,6 +52,12 @@ export class AccountCreateComponent implements OnInit, AfterViewInit {
         updateOn: 'blur',
       }),
     });
+    this.isSubmitted = true;
+    this.promptStatus = PromptStatusEnum.Progress;
+    setTimeout(() => {
+      this.promptStatus = PromptStatusEnum.Successful;
+      this.promptText = 'Please click the registet link in your email.';
+    }, 3000);
   }
 
   ngAfterViewInit(): void {
@@ -62,7 +71,12 @@ export class AccountCreateComponent implements OnInit, AfterViewInit {
   }
 
   create(): void {
-    this.isCreated = true;
+    // this.isSubmitted = true;
+    // this.promptStatus = PromptStatusEnum.Progress;
+    // setTimeout(() => {
+    //   this.promptStatus = PromptStatusEnum.Successful;
+    //   this.promptText = 'Please click the registet link in your email';
+    // }, 3000);
     // const args: CreateAccountMutationVariables = {
     //   email: this.form.getRawValue().email,
     //   role: `${environment.roleIdToSignUp}`,

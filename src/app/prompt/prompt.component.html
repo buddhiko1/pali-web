@@ -1,0 +1,14 @@
+<section appSlideOnLoading class="c-dialog d-box">
+  <h2 class="c-status d-title">{{ status }}</h2>
+  <app-wheel
+    *ngIf="!isDone"
+    [pxSize]="60"
+    [stop]="isDone"
+    [cycleTime]="10"
+    class="c-wheel"
+  ></app-wheel>
+  <p *ngIf="isDone" appSlideOnLoading class="c-prompt g-text">
+    {{ prompt }}
+  </p>
+  <button [disabled]="!isDone" class="c-button d-button w-full mt-3">OK</button>
+</section>

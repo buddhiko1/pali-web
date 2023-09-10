@@ -26,7 +26,7 @@ const routes: Routes = [
   {
     path: UrlEnum.Grammar,
     component: PlaceholderPageComponent,
-    data: { animation: UrlEnum.Grammar, text: 'Under development ...' },
+    data: { animation: UrlEnum.Grammar, text: 'Under development' },
   },
   {
     path: UrlEnum.Dictionary,
@@ -37,7 +37,7 @@ const routes: Routes = [
   {
     path: UrlEnum.Vocabulary,
     component: PlaceholderPageComponent,
-    data: { animation: UrlEnum.Vocabulary, text: 'Under development ...' },
+    data: { animation: UrlEnum.Vocabulary, text: 'Under development' },
   },
   {
     path: UrlEnum.Tipitaka,
@@ -54,12 +54,12 @@ const routes: Routes = [
   {
     path: UrlEnum.Reading,
     component: PlaceholderPageComponent,
-    data: { animation: UrlEnum.Reading, text: 'Under development ...' },
+    data: { animation: UrlEnum.Reading, text: 'Under development' },
   },
   {
     path: UrlEnum.Blog,
     component: PlaceholderPageComponent,
-    data: { animation: UrlEnum.Blog, text: 'Under development ...' },
+    data: { animation: UrlEnum.Blog, text: 'Under development' },
   },
   {
     path: '**',

@@ -14,7 +14,7 @@
   grid-template-columns: 1fr;
   grid-template-areas:
     "title"
-    "content"
+    "form"
     "tips";
   row-gap: theme(spacing.7);
 }
@@ -24,7 +24,7 @@
 }
 
 .c-form {
-  grid-area: content;
+  grid-area: form;
   display: grid;
   grid-template-rows: auto auto;
   grid-template-columns: 1fr;
@@ -52,9 +52,8 @@
   justify-self: end;
 }
 
-.c-message {
-  grid-area: content;
-  justify-self: center;
+.c-prompt {
+  grid-area: dialog;
 }
 
 @media screen and (min-width: theme("screens.lg")) {

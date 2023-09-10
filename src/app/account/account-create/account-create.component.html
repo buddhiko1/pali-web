@@ -1,8 +1,5 @@
 <section appSlideOnLoading [slideDelay]="400" class="c-container">
-  <div
-    *ngIf="!isCreated; else message"
-    class="c-dialog d-bg p-8 lg:p-12 my-32 lg:my-[25vh]"
-  >
+  <div *ngIf="!isSubmitted; else prompt" class="c-dialog d-box">
     <h2 class="c-title d-title">Sign Up</h2>
     <form [formGroup]="form" class="c-form">
       <div class="c-email">
@@ -41,11 +38,11 @@
       >
     </p>
   </div>
-  <ng-template #message>
-    <div appSlideOnLoading class="c-dialog d-bg p-8 lg:p-12 my-32 lg:my-[25vh]">
-      <p class="c-message d-message">
-        Please click the registet link in your email.
-      </p>
-    </div>
+  <ng-template #prompt>
+    <app-prompt
+      [status]="promptStatus"
+      [prompt]="promptText"
+      class="c-prompt"
+    ></app-prompt>
   </ng-template>
 </section>

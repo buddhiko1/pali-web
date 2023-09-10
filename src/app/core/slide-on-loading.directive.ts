@@ -1,5 +1,4 @@
 import { Directive, ElementRef, Input, OnDestroy, OnInit } from '@angular/core';
-import { Router, NavigationEnd } from '@angular/router';
 import { DeviceDetectorService } from 'ngx-device-detector';
 
 const SLIDER_CLASS = 'g-slider';
@@ -20,8 +19,7 @@ export class SlideOnLoadingDirective implements OnDestroy, OnInit {
 
   constructor(
     private _el: ElementRef,
-    private _deviceService: DeviceDetectorService,
-    private _router: Router
+    private _deviceService: DeviceDetectorService
   ) {
     this._sliderClass = this._deviceService.isDesktop()
       ? SLIDER_LG_CLASS
@@ -31,11 +29,6 @@ export class SlideOnLoadingDirective implements OnDestroy, OnInit {
   }
 
   ngOnInit(): void {
-    this._router.events.subscribe((event) => {
-      if (event instanceof NavigationEnd) {
-        this._slideOnLoad();
-      }
-    });
     this._slideOnLoad();
   }
 
