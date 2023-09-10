@@ -8,10 +8,10 @@
 @layer components {
   @import "css/components.css";
   @import "css/dialog.css";
-  @import "css/animation.css";
 }
 
 @tailwind utilities;
 @layer utilities {
+  @import "css/animation.css";
   @import "css/utilities.css";
 }
