@@ -21,50 +21,46 @@ const routes: Routes = [
   {
     path: UrlEnum.Home,
     loadChildren: () => import('./home/home.module').then((m) => m.HomeModule),
-    data: { animation: UrlEnum.Home },
   },
   {
     path: UrlEnum.Grammar,
     component: PlaceholderPageComponent,
-    data: { animation: UrlEnum.Grammar, text: 'Under development' },
+    data: { text: 'Under development' },
   },
   {
     path: UrlEnum.Dictionary,
     loadChildren: () =>
       import('./dictionary/dictionary.module').then((m) => m.DictionaryModule),
-    data: { animation: UrlEnum.Dictionary },
   },
   {
     path: UrlEnum.Vocabulary,
     component: PlaceholderPageComponent,
-    data: { animation: UrlEnum.Vocabulary, text: 'Under development' },
+    data: { text: 'Under development' },
   },
   {
     path: UrlEnum.Tipitaka,
     loadChildren: () =>
       import('./tipitaka/tipitaka.module').then((m) => m.TipitakaModule),
-    data: { animation: UrlEnum.Tipitaka },
   },
   {
     path: UrlEnum.Account,
     loadChildren: () =>
       import('./account/account.module').then((m) => m.AccountModule),
-    data: { animation: UrlEnum.Account },
   },
   {
     path: UrlEnum.Reading,
     component: PlaceholderPageComponent,
-    data: { animation: UrlEnum.Reading, text: 'Under development' },
+    data: { text: 'Under development' },
   },
   {
     path: UrlEnum.Blog,
     component: PlaceholderPageComponent,
-    data: { animation: UrlEnum.Blog, text: 'Under development' },
+    data: { text: 'Under development' },
   },
   {
     path: '**',
     component: PlaceholderPageComponent,
-    data: { animation: 'error', text: '404 Page not found' },
+    data: { text: '404 Page not found' },
   },
 ];
 

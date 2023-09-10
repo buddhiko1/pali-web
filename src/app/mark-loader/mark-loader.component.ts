@@ -1,6 +1,5 @@
 import { Component, Input, HostBinding } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { trigger, style, animate, transition } from '@angular/animations';
 import { AngularSvgIconModule } from 'angular-svg-icon';
 
 export enum StatusEnum {
@@ -16,22 +15,6 @@ export enum StatusEnum {
   imports: [CommonModule, AngularSvgIconModule],
   templateUrl: './mark-loader.component.html',
   styleUrls: ['./mark-loader.component.css'],
-  animations: [
-    trigger('inOutAnimation', [
-      transition(':enter', [
-        style({ opacity: 0 }),
-        animate('1s ease-out', style({ opacity: 1 })),
-      ]),
-      // transition(
-      //   ':leave',
-      //   [
-      //     style({ opacity: 1 }),
-      //     animate('1s ease-in',
-      //             style({ opacity: 0 }))
-      //   ]
-      // )
-    ]),
-  ],
 })
 export class MarkLoaderComponent {
   @Input() status = StatusEnum.Idle;

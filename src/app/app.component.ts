@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ChildrenOutletContexts } from '@angular/router';
 
 import { ScrollbarService } from './core/scrollbar.service';
 
@@ -11,18 +10,9 @@ import { ScrollbarService } from './core/scrollbar.service';
 export class AppComponent implements OnInit {
   title = 'pali-web';
 
-  constructor(
-    private _contexts: ChildrenOutletContexts,
-    private _scrollbarService: ScrollbarService
-  ) {}
+  constructor(private _scrollbarService: ScrollbarService) {}
 
   ngOnInit(): void {
     this._scrollbarService.showScrollbar();
-  }
-
-  getRouteAnimationData() {
-    return this._contexts.getContext('primary')?.route?.snapshot?.data?.[
-      'animation'
-    ];
   }
 }
