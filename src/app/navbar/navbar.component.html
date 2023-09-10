@@ -1,5 +1,5 @@
 <nav
-  class="c-container pt-1 lg:pt-4 sticky z-20 top-0 backdrop-blur-sm g-transition-transform bg-bg"
+  class="c-container pt-1 lg:pt-4 sticky z-20 top-0 backdrop-blur-sm g-transition bg-bg"
   [class.shadow-sm]="isShadowShow"
   [class.c-container-hidden]="!isHeaderShow"
 >
@@ -18,11 +18,7 @@
   >
     <svg-icon
       src="assets/icons/plus.svg"
-      [svgClass]="[
-        'g-svg',
-        'g-transition-transform',
-        isMenuOpen ? 'rotate-45' : ''
-      ]"
+      [svgClass]="['g-svg', 'g-transition', isMenuOpen ? 'rotate-45' : '']"
     ></svg-icon>
   </button>
 

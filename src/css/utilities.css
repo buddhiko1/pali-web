@@ -1,4 +1,4 @@
-.g-transition-transform {
+.g-transition {
   @apply transition-transform duration-[400ms] ease-in-out;
 }
 
