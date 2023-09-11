@@ -19,7 +19,8 @@
   </p>
   <button
     *ngIf="isSuccessful || isFailed"
-    class="c-button d-button-error g-fade-in w-full mt-3"
+    class="c-button d-button g-fade-in w-full mt-3"
+    [class.d-button-error]="isFailed"
     (click)="submit()"
   >
     OK
