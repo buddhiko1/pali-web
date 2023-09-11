@@ -27,52 +27,12 @@
     [class.c-menu-close]="!isMenuOpen"
   >
     <ul class="c-index">
-      <li class="c-index-item mt-2 lg:mt-0 lg:mx-4">
+      <li *ngFor="let url of urlList" class="c-index-item mt-2 lg:mt-0 lg:mx-4">
         <a
-          (click)="routeTo(UrlEnum.Grammar)"
+          (click)="routeTo(url)"
           class="g-text g-hover"
-          [class.g-focus]="isActiveUrl(UrlEnum.Grammar)"
-          >{{ UrlEnum.Grammar | titlecase }}</a
-        >
-      </li>
-      <li class="c-index-item mt-2 lg:mt-0 lg:mx-4">
-        <a
-          (click)="routeTo(UrlEnum.Dictionary)"
-          class="g-text g-hover"
-          [class.g-focus]="isActiveUrl(UrlEnum.Dictionary)"
-          >{{ UrlEnum.Dictionary | titlecase }}</a
-        >
-      </li>
-      <li class="c-index-item mt-2 lg:mt-0 lg:mx-4">
-        <a
-          (click)="routeTo(UrlEnum.Vocabulary)"
-          class="g-text g-hover"
-          [class.g-focus]="isActiveUrl(UrlEnum.Vocabulary)"
-          >{{ UrlEnum.Vocabulary | titlecase }}</a
-        >
-      </li>
-      <li class="c-index-item mt-2 lg:mt-0 lg:mx-4">
-        <a
-          (click)="routeTo(UrlEnum.Tipitaka)"
-          class="g-text g-hover"
-          [class.g-focus]="isActiveUrl(UrlEnum.Tipitaka)"
-          >{{ UrlEnum.Tipitaka | titlecase }}</a
-        >
-      </li>
-      <li class="c-index-item mt-2 lg:mt-0 lg:mx-4">
-        <a
-          (click)="routeTo(UrlEnum.Reading)"
-          class="g-text g-hover"
-          [class.g-focus]="isActiveUrl(UrlEnum.Reading)"
-          >{{ UrlEnum.Reading | titlecase }}</a
-        >
-      </li>
-      <li class="c-index-item mt-2 lg:mt-0 lg:mx-4">
-        <a
-          (click)="routeTo(UrlEnum.Blog)"
-          class="g-text g-hover"
-          [class.g-focus]="isActiveUrl(UrlEnum.Blog)"
-          >{{ UrlEnum.Blog | titlecase }}</a
+          [class.g-focus]="isActiveUrl(url)"
+          >{{ url | titlecase }}</a
         >
       </li>
     </ul>

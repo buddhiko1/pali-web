@@ -13,6 +13,14 @@ import { NavbarService } from './navbar.service';
 })
 export class NavbarComponent {
   UrlEnum = UrlEnum;
+  urlList = [
+    UrlEnum.Grammar,
+    UrlEnum.Dictionary,
+    UrlEnum.Vocabulary,
+    UrlEnum.Tipitaka,
+    UrlEnum.Reading,
+    UrlEnum.Blog,
+  ];
   private _url: string = this.UrlEnum.Home;
 
   constructor(
