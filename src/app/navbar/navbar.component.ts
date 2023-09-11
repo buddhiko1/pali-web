@@ -13,7 +13,7 @@ import { NavbarService } from './navbar.service';
 })
 export class NavbarComponent {
   UrlEnum = UrlEnum;
-  urlList = [
+  textUrlList = [
     UrlEnum.Grammar,
     UrlEnum.Dictionary,
     UrlEnum.Vocabulary,

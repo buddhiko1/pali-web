@@ -79,6 +79,7 @@ export class PasswordResetComponent implements OnInit {
   }
 
   login(): void {
+    this._accountService.logout();
     this._router.navigate([`../${UrlEnum.Login}`], {
       relativeTo: this._activeRoute,
     });

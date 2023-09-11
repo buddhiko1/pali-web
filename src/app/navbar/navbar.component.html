@@ -27,7 +27,10 @@
     [class.c-menu-close]="!isMenuOpen"
   >
     <ul class="c-index">
-      <li *ngFor="let url of urlList" class="c-index-item mt-2 lg:mt-0 lg:mx-4">
+      <li
+        *ngFor="let url of textUrlList"
+        class="c-index-item mt-2 lg:mt-0 lg:mx-4"
+      >
         <a
           (click)="routeTo(url)"
           class="g-text g-hover"
