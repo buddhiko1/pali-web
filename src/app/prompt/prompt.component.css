@@ -6,7 +6,7 @@
     "status"
     "content"
     "button";
-  row-gap: theme(spacing.7);
+  row-gap: theme(spacing.10);
 }
 
 .c-status {
@@ -21,6 +21,8 @@
 
 .c-prompt {
   grid-area: content;
+  justify-self: center;
+  /* animation: g-fade-in 600ms ease-in-out both; */
 }
 
 .c-button {

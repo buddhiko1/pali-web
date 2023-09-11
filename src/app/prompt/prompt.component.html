@@ -1,14 +1,27 @@
-<section appSlider class="c-dialog d-box">
-  <h2 class="c-status d-title">{{ status }}</h2>
+<section g-fade-in class="c-dialog d-box">
+  <h2
+    class="c-status d-title g-fade-in"
+    [class.text-success]="isSuccessful"
+    [class.text-error]="isFailed"
+    *mcRerender="status"
+  >
+    {{ status }}
+  </h2>
   <app-wheel
     *ngIf="!isDone"
-    [size]="60"
+    [size]="isLargeDevice ? 80 : 60"
     [cycleTime]="10"
-    [delay]="1.5"
+    [delay]="0.5"
     class="c-wheel"
   ></app-wheel>
-  <p *ngIf="isDone" class="c-prompt g-text">
+  <p *ngIf="isDone" class="c-prompt g-text g-fade-in mx-4">
     {{ prompt }}
   </p>
-  <button [disabled]="!isDone" class="c-button d-button w-full mt-3">OK</button>
+  <button
+    *ngIf="isDone"
+    class="c-button d-button g-fade-in w-full mt-3"
+    (click)="submit()"
+  >
+    OK
+  </button>
 </section>
