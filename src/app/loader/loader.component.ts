@@ -23,7 +23,7 @@ export enum StatusEnum {
 export class LoaderComponent {
   @Input() prompt = '';
   @Input() status = StatusEnum.Idle;
-  @Output() closed = new EventEmitter<void>();
+  @Output() submitted = new EventEmitter<void>();
 
   constructor(private _deviceService: DeviceDetectorService) {}
 
@@ -43,7 +43,7 @@ export class LoaderComponent {
     return this.status === StatusEnum.Failed;
   }
 
-  close() {
-    this.closed.emit();
+  submit() {
+    this.submitted.emit();
   }
 }

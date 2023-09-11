@@ -45,6 +45,10 @@
 .c-button {
   grid-area: button;
 }
+
+.c-loader {
+  grid-area: dialog;
+}
 @media screen and (min-width: theme("screens.lg")) {
   .c-container {
     grid-template-columns: theme("spacing.lgPadding") 25vw theme(

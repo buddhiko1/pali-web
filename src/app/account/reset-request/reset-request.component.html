@@ -1,5 +1,5 @@
 <section appSlider [slideDelay]="200" class="c-container">
-  <div class="c-dialog d-box">
+  <div *ngIf="!isSubmitted; else loader" class="c-dialog d-box">
     <h2 class="c-title d-title">Request Reset</h2>
     <form [formGroup]="form" class="c-form">
       <div class="c-email">
@@ -32,4 +32,12 @@
       </button>
     </form>
   </div>
+  <ng-template #loader>
+    <app-loader
+      [status]="loaderStatus"
+      [prompt]="loaderPrompt"
+      (closed)="goback()"
+      class="c-loader"
+    ></app-loader>
+  </ng-template>
 </section>

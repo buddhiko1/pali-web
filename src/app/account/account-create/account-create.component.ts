@@ -57,12 +57,12 @@ export class AccountCreateComponent implements OnInit {
       this.loaderStatus = LoaderStatusEnum.Successful;
       this.loaderPrompt = PromptEnum.SignUp;
     }, 5000);
-    // const args: CreateAccountMutationVariables = {
-    //   email: this.form.getRawValue().email,
-    //   role: `${environment.roleIdToSignUp}`,
-    //   urlForInit: `${environment.host}/${AppUrlEnum.Account}/${AccountUrlEnum.AccountInit}`, // confiured in the config.json of pali-cms.
-    // };
-    //
+    const args: CreateAccountMutationVariables = {
+      email: this.form.getRawValue().email,
+      role: `${environment.roleIdToSignUp}`,
+      urlForInit: `${environment.host}/${AppUrlEnum.Account}/${AccountUrlEnum.AccountInit}`, // confiured in the config.json of pali-cms.
+    };
+
     // this._accountService
     //   .createAccount(args)
     //   .then(() => {
