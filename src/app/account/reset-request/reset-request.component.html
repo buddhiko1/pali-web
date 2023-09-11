@@ -24,8 +24,8 @@
         </div>
       </div>
       <button
-        #requestBtn
         [disabled]="!form.valid"
+        (click)="submit()"
         class="c-button d-button w-full mt-3"
       >
         Request

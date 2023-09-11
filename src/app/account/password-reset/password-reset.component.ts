@@ -1,15 +1,6 @@
-/* eslint-disable @typescript-eslint/no-non-null-assertion */
-import {
-  Component,
-  ViewChild,
-  ElementRef,
-  AfterViewInit,
-  OnInit,
-} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { fromEvent } from 'rxjs';
-import { throttleTime } from 'rxjs/operators';
 
 import {
   ResetPasswordMutationVariables,
@@ -24,9 +15,7 @@ import { AccountService } from '../account.service';
   templateUrl: './password-reset.component.html',
   styleUrls: ['./password-reset.component.css'],
 })
-export class PasswordResetComponent implements OnInit, AfterViewInit {
-  @ViewChild('resetBtn')
-  resetBtn!: ElementRef<HTMLCanvasElement>;
+export class PasswordResetComponent implements OnInit {
   UrlEnum = UrlEnum;
   form!: FormGroup;
   error = '';
@@ -56,19 +45,11 @@ export class PasswordResetComponent implements OnInit, AfterViewInit {
     });
   }
 
-  ngAfterViewInit(): void {
-    fromEvent(this.resetBtn.nativeElement, 'click')
-      .pipe(throttleTime(1000))
-      .subscribe(() => {
-        this.resetPassword();
-      });
-  }
-
   get password() {
     return this.form.get('password')!;
   }
 
-  resetPassword(): void {
+  submit(): void {
     const password = this.form.getRawValue().password;
     const args: ResetPasswordMutationVariables = {
       token: this._token,
