@@ -15,6 +15,7 @@ import { RequestResetMutationVariables } from 'src/gql/graphql';
 import { environment } from 'src/environments/environment';
 import { UrlEnum as AppUrlEnum } from 'src/app/app-routing.module';
 import { NavigationService } from 'src/app/core/navigation.service';
+import { StatusEnum as PromptStatusEnum } from 'src/app/prompt/prompt.component';
 
 import { UrlEnum as AccountUrlEnum } from '../account-routing.module';
 import { AccountService } from '../account.service';

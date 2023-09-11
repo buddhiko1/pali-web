@@ -24,7 +24,7 @@
         </div>
       </div>
       <button
-        #createBtn
+        (click)="submit()"
         [disabled]="!form.valid"
         class="c-button d-button w-full mt-3"
       >
@@ -42,6 +42,7 @@
     <app-prompt
       [status]="promptStatus"
       [prompt]="promptText"
+      (closed)="goback()"
       class="c-prompt"
     ></app-prompt>
   </ng-template>

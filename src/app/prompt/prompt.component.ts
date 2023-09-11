@@ -23,7 +23,7 @@ export enum StatusEnum {
 export class PromptComponent {
   @Input() prompt = '';
   @Input() status = StatusEnum.Idle;
-  @Output() submitted = new EventEmitter<void>();
+  @Output() closed = new EventEmitter<void>();
 
   constructor(private _deviceService: DeviceDetectorService) {}
 
@@ -44,6 +44,6 @@ export class PromptComponent {
   }
 
   submit() {
-    this.submitted.emit();
+    this.closed.emit();
   }
 }
