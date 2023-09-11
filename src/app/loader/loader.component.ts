@@ -21,6 +21,7 @@ export enum StatusEnum {
   styleUrls: ['./loader.component.css'],
 })
 export class LoaderComponent {
+  @Input() title = '';
   @Input() prompt = '';
   @Input() status = StatusEnum.Idle;
   @Output() submitted = new EventEmitter<void>();
@@ -31,8 +32,8 @@ export class LoaderComponent {
     return this._deviceService.isDesktop();
   }
 
-  get isDone(): boolean {
-    return this.status !== StatusEnum.Loading;
+  get showPrompt(): boolean {
+    return this.status !== StatusEnum.Loading && Boolean(this.prompt);
   }
 
   get isSuccessful(): boolean {
@@ -41,6 +42,10 @@ export class LoaderComponent {
 
   get isFailed(): boolean {
     return this.status === StatusEnum.Failed;
+  }
+
+  get titleShowing(): string {
+    return this.isSuccessful || this.isFailed ? this.status : this.title;
   }
 
   submit() {

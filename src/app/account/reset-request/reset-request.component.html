@@ -34,9 +34,10 @@
   </div>
   <ng-template #loader>
     <app-loader
+      [title]="'Requesting...'"
       [status]="loaderStatus"
       [prompt]="loaderPrompt"
-      (closed)="goback()"
+      (submitted)="goback()"
       class="c-loader"
     ></app-loader>
   </ng-template>

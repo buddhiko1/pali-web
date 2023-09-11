@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-non-null-assertion */
 import {
   Component,
   ViewChild,
@@ -60,7 +59,7 @@ export class AccountInitComponent implements OnInit, AfterViewInit {
     fromEvent(this.initBtn.nativeElement, 'click')
       .pipe(throttleTime(1000))
       .subscribe(() => {
-        this.initAccount();
+        this.submmit();
       });
   }
 
@@ -68,7 +67,7 @@ export class AccountInitComponent implements OnInit, AfterViewInit {
     return this.form.get('password')!;
   }
 
-  initAccount(): void {
+  submmit(): void {
     const password = this.form.getRawValue().password;
     const args: InitAccountMutationVariables = {
       token: this._token,

@@ -40,6 +40,7 @@
   </div>
   <ng-template #loader>
     <app-loader
+      [title]="'SignUp...'"
       [status]="loaderStatus"
       [prompt]="loaderPrompt"
       (submitted)="goback()"

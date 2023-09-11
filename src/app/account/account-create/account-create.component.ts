@@ -21,6 +21,7 @@ export class AccountCreateComponent implements OnInit {
   form!: FormGroup;
   AccountUrlEnum = AccountUrlEnum;
   isSubmitted = false;
+
   loaderStatus = LoaderStatusEnum.Idle;
   loaderPrompt = '';
 
@@ -52,30 +53,25 @@ export class AccountCreateComponent implements OnInit {
     this.isSubmitted = true;
     this.loaderStatus = LoaderStatusEnum.Loading;
 
-    // wait for 5 seconds for user to receive the email.
-    setTimeout(() => {
-      this.loaderStatus = LoaderStatusEnum.Successful;
-      this.loaderPrompt = PromptEnum.SignUp;
-    }, 5000);
     const args: CreateAccountMutationVariables = {
       email: this.form.getRawValue().email,
       role: `${environment.roleIdToSignUp}`,
       urlForInit: `${environment.host}/${AppUrlEnum.Account}/${AccountUrlEnum.AccountInit}`, // confiured in the config.json of pali-cms.
     };
 
-    // this._accountService
-    //   .createAccount(args)
-    //   .then(() => {
-    //     // wait for 5 seconds for user to receive the email.
-    //     setTimeout(() => {
-    //       this.loaderStatus = LoaderStatusEnum.Successful;
-    //       this.loaderPrompt = PromptEnum.SignUp;
-    //     }, 5000);
-    //   })
-    //   .catch((error) => {
-    //     this.loaderStatus = LoaderStatusEnum.Failed;
-    //     this.loaderPrompt = error.toString();
-    //   });
+    this._accountService
+      .createAccount(args)
+      .then(() => {
+        // wait for 5 seconds for user to receive the email.
+        setTimeout(() => {
+          this.loaderStatus = LoaderStatusEnum.Successful;
+          this.loaderPrompt = PromptEnum.SignUp;
+        }, 5000);
+      })
+      .catch((error) => {
+        this.loaderStatus = LoaderStatusEnum.Failed;
+        this.loaderPrompt = error.toString();
+      });
   }
 
   goback(): void {

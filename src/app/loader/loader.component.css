@@ -3,14 +3,14 @@
   grid-template-rows: auto auto auto;
   grid-template-columns: 1fr;
   grid-template-areas:
-    "status"
+    "title"
     "content"
     "button";
   row-gap: theme(spacing.10);
 }
 
-.c-status {
-  grid-area: status;
+.c-title {
+  grid-area: title;
   align-self: center;
 }
 

@@ -1,23 +1,24 @@
 <section g-fade-in class="c-dialog d-box">
   <h2
-    class="c-status d-title g-fade-in"
+    class="c-title d-title g-fade-in"
     [class.text-success]="isSuccessful"
     [class.text-error]="isFailed"
-    *mcRerender="status"
+    *mcRerender="titleShowing"
   >
-    {{ status }}
+    {{ titleShowing }}
   </h2>
   <app-wheel
-    *ngIf="!isDone"
+    *ngIf="!showPrompt"
     [size]="isLargeDevice ? 5 : 4"
     [delay]="500"
+    [stop]="isSuccessful || isFailed"
     class="c-wheel"
   ></app-wheel>
-  <p *ngIf="isDone" class="c-prompt g-text g-fade-in mx-4">
+  <p *ngIf="showPrompt" class="c-prompt g-text g-fade-in mx-4">
     {{ prompt }}
   </p>
   <button
-    *ngIf="isDone"
+    *ngIf="isSuccessful || isFailed"
     class="c-button d-button g-fade-in w-full mt-3"
     (click)="submit()"
   >
