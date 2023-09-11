@@ -1,9 +1,9 @@
 .d-box {
-  @apply bg-dialogBg rounded-lg p-8 lg:p-12 my-20 lg:my-[20vh];
+  @apply p-8 lg:p-12 my-20 lg:my-[20vh] rounded-lg bg-dialogBg;
 }
 
 .d-title {
-  @apply text-xl font-medium tracking-wide text-title;
+  @apply text-title text-xl font-medium tracking-wide;
 }
 
 .d-subText {
@@ -19,13 +19,17 @@
 }
 
 .d-input {
-  @apply d-input-base bg-inputBg border-border focus:border-focus text-title;
+  @apply d-input-base border-border bg-inputBg focus:border-focus text-title;
 }
 
 .d-form-error {
-  @apply text-error text-sm pt-1;
+  @apply pt-1 text-error text-sm;
 }
 
 .d-button {
-  @apply rounded-md py-2 text-gray-50 bg-focus hover:bg-hl disabled:hover:bg-focus disabled:opacity-60;
+  @apply py-1 px-3 m-auto rounded-md bg-focus hover:bg-hl disabled:opacity-40 tracking-wide font-light text-gray-50;
+}
+
+.d-button-error {
+  @apply py-1 px-3 m-auto rounded-md bg-error hover:bg-hl  disabled:opacity-40 tracking-wide font-light text-gray-50;
 }
