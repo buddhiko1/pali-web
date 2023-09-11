@@ -21,6 +21,7 @@ import { RegisteredEmailValidator } from '../email.validator';
 export class ResetRequestComponent implements OnInit {
   AccountUrlEnum = AccountUrlEnum;
   form!: FormGroup;
+
   isSubmitted = false;
   loaderStatus = LoaderStatusEnum.Idle;
   loaderPrompt = '';

@@ -20,8 +20,8 @@ import { UnregisteredEmailValidator } from '../email.validator';
 export class AccountCreateComponent implements OnInit {
   form!: FormGroup;
   AccountUrlEnum = AccountUrlEnum;
-  isSubmitted = false;
 
+  isSubmitted = false;
   loaderStatus = LoaderStatusEnum.Idle;
   loaderPrompt = '';
 

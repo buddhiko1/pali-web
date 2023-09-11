@@ -1,5 +1,5 @@
 <section appSlider [slideDelay]="200" class="c-container">
-  <div class="c-dialog d-box">
+  <div *ngIf="!isSubmitted; else loader" class="c-dialog d-box">
     <h2 class="c-title d-title">Sign In</h2>
     <form [formGroup]="form" class="c-form">
       <div class="c-email">
@@ -23,7 +23,7 @@
       <div class="c-password">
         <div class="c-password-label">
           <label for="password" class="d-subText">Password</label>
-          <a (click)="routeToResetRequest()" class="text-sm g-link">Forgot?</a>
+          <a (click)="requestReset()" class="text-sm g-link">Forgot?</a>
         </div>
         <input
           type="password"
@@ -41,15 +41,10 @@
             Password must be at least 6 characters long.
           </div>
         </div>
-        <div *ngIf="error" class="d-form-error">
-          <div>
-            {{ error }}
-          </div>
-        </div>
       </div>
       <button
-        #loginBtn
         [disabled]="!form.valid"
+        (click)="submit()"
         class="c-button d-button w-full mt-3"
       >
         Sign In
@@ -57,9 +52,16 @@
     </form>
     <p class="c-tips d-subText">
       <span>Don't have an account?</span
-      ><a (click)="routeToAccountCreate()" class="text-sm g-link pl-4"
-        >Sign Up</a
-      >
+      ><a (click)="createAccount()" class="text-sm g-link pl-4">Sign Up</a>
     </p>
   </div>
+  <ng-template #loader>
+    <app-loader
+      [title]="'Logging...'"
+      [status]="loaderStatus"
+      [prompt]="loaderPrompt"
+      (submitted)="reEdit()"
+      class="c-loader"
+    ></app-loader>
+  </ng-template>
 </section>

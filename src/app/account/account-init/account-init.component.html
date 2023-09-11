@@ -31,15 +31,10 @@
             Password must be at least 6 characters long.
           </div>
         </div>
-        <div *ngIf="error" class="d-form-error">
-          <div>
-            {{ error }}
-          </div>
-        </div>
       </div>
       <button
-        #initBtn
         [disabled]="!form.valid"
+        (click)="submit()"
         class="c-button d-button w-full mt-3"
       >
         Ok

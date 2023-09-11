@@ -1,19 +1,12 @@
-import {
-  Component,
-  ViewChild,
-  ElementRef,
-  AfterViewInit,
-  OnInit,
-} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { fromEvent } from 'rxjs';
-import { throttleTime } from 'rxjs/operators';
 
 import {
   InitAccountMutationVariables,
   LoginMutationVariables,
 } from 'src/gql/graphql';
+import { StatusEnum as LoaderStatusEnum } from 'src/app/loader/loader.component';
 
 import { UrlEnum } from '../account-routing.module';
 import { AccountService } from '../account.service';
@@ -23,14 +16,16 @@ import { AccountService } from '../account.service';
   templateUrl: './account-init.component.html',
   styleUrls: ['./account-init.component.css'],
 })
-export class AccountInitComponent implements OnInit, AfterViewInit {
-  @ViewChild('initBtn')
-  initBtn!: ElementRef<HTMLCanvasElement>;
+export class AccountInitComponent implements OnInit {
   UrlEnum = UrlEnum;
   form!: FormGroup;
-  error = '';
+
   private _token = '';
   private _email = '';
+
+  isSubmitted = false;
+  loaderStatus = LoaderStatusEnum.Idle;
+  loaderPrompt = '';
 
   constructor(
     private _router: Router,
@@ -55,34 +50,35 @@ export class AccountInitComponent implements OnInit, AfterViewInit {
     });
   }
 
-  ngAfterViewInit(): void {
-    fromEvent(this.initBtn.nativeElement, 'click')
-      .pipe(throttleTime(1000))
-      .subscribe(() => {
-        this.submmit();
-      });
-  }
-
   get password() {
     return this.form.get('password')!;
   }
 
-  submmit(): void {
+  submit(): void {
+    this.isSubmitted = true;
+    this.loaderStatus = LoaderStatusEnum.Loading;
+
     const password = this.form.getRawValue().password;
     const args: InitAccountMutationVariables = {
       token: this._token,
       password: password,
     };
-    this._accountService.initAccount(args).then(() => {
-      const args: LoginMutationVariables = {
-        email: this._email,
-        password: password,
-      };
-      this._accountService.login(args).then(() => {
-        this._router.navigate([`../${UrlEnum.Me}`], {
-          relativeTo: this._activeRoute,
+    this._accountService
+      .initAccount(args)
+      .then(() => {
+        const args: LoginMutationVariables = {
+          email: this._email,
+          password: password,
+        };
+        this._accountService.login(args).then(() => {
+          this._router.navigate([`../${UrlEnum.Me}`], {
+            relativeTo: this._activeRoute,
+          });
         });
+      })
+      .catch((error) => {
+        this.loaderStatus = LoaderStatusEnum.Failed;
+        this.loaderPrompt = error.toString();
       });
-    });
   }
 }

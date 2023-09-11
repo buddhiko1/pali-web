@@ -1,19 +1,10 @@
-/* eslint-disable @typescript-eslint/no-non-null-assertion */
-import {
-  Component,
-  ViewChild,
-  ElementRef,
-  AfterViewInit,
-  OnInit,
-} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { fromEvent } from 'rxjs';
-import { throttleTime } from 'rxjs/operators';
 
 import { LoginMutationVariables } from 'src/gql/graphql';
+import { StatusEnum as LoaderStatusEnum } from 'src/app/loader/loader.component';
 
-import { NavigationService } from 'src/app/core/navigation.service';
 import { UrlEnum } from '../account-routing.module';
 import { AccountService } from '../account.service';
 
@@ -22,18 +13,18 @@ import { AccountService } from '../account.service';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
 })
-export class LoginComponent implements OnInit, AfterViewInit {
-  @ViewChild('loginBtn')
-  loginBtn!: ElementRef<HTMLCanvasElement>;
+export class LoginComponent implements OnInit {
   form!: FormGroup;
   UrlEnum = UrlEnum;
-  error = '';
+
+  isSubmitted = false;
+  loaderStatus = LoaderStatusEnum.Idle;
+  loaderPrompt = '';
 
   constructor(
     private _router: Router,
     private _activeRoute: ActivatedRoute,
-    private _accountService: AccountService,
-    private _navigateService: NavigationService
+    private _accountService: AccountService
   ) {}
 
   ngOnInit(): void {
@@ -49,13 +40,18 @@ export class LoginComponent implements OnInit, AfterViewInit {
     });
   }
 
-  ngAfterViewInit(): void {
-    fromEvent(this.loginBtn.nativeElement, 'click')
-      .pipe(throttleTime(1000))
-      .subscribe(() => this.login());
+  get email() {
+    return this.form.get('email')!;
   }
 
-  login(): void {
+  get password() {
+    return this.form.get('password')!;
+  }
+
+  submit(): void {
+    this.isSubmitted = true;
+    this.loaderStatus = LoaderStatusEnum.Loading;
+
     const args: LoginMutationVariables = {
       email: this.form.getRawValue().email,
       password: this.form.getRawValue().password,
@@ -63,30 +59,30 @@ export class LoginComponent implements OnInit, AfterViewInit {
     this._accountService
       .login(args)
       .then(() => {
-        this._navigateService.back();
+        this._router.navigate([`../${UrlEnum.Me}`], {
+          relativeTo: this._activeRoute,
+        });
       })
       .catch((error) => {
-        this.error = error.message;
+        this.loaderStatus = LoaderStatusEnum.Failed;
+        this.loaderPrompt = error.toString();
       });
   }
 
-  routeToResetRequest(): void {
+  reEdit(): void {
+    this.loaderStatus = LoaderStatusEnum.Idle;
+    this.isSubmitted = false;
+  }
+
+  requestReset(): void {
     this._router.navigate([`../${UrlEnum.ResetRequest}`], {
       relativeTo: this._activeRoute,
     });
   }
 
-  routeToAccountCreate(): void {
+  createAccount(): void {
     this._router.navigate([`../${UrlEnum.AccountCreate}`], {
       relativeTo: this._activeRoute,
     });
-  }
-
-  get email() {
-    return this.form.get('email')!;
-  }
-
-  get password() {
-    return this.form.get('password')!;
   }
 }

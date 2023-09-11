@@ -18,7 +18,6 @@ import { AccountService } from '../account.service';
 export class PasswordResetComponent implements OnInit {
   UrlEnum = UrlEnum;
   form!: FormGroup;
-  error = '';
 
   isSubmitted = false;
   loaderStatus = LoaderStatusEnum.Idle;
