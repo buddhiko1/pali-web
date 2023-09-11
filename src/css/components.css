@@ -6,8 +6,8 @@
   @apply tracking-wide text-lg text-title;
 }
 
-.g-title-hl {
-  @apply tracking-wide text-lg text-titleHl;
+.g-title-focus {
+  @apply tracking-wide text-lg text-titleFocus;
 }
 
 .g-card {
@@ -19,11 +19,11 @@
 }
 
 .g-button {
-  @apply p-1 m-auto rounded-md bg-buttonBg hover:bg-buttonHover tracking-wide font-light text-gray-50;
+  @apply p-1 m-auto rounded-md bg-buttonBg hover:bg-hover tracking-wide font-light text-buttonText;
 }
 
 .g-button-hl {
-  @apply py-1 px-4 m-auto rounded-md bg-focus tracking-wide font-light text-gray-50 grid grid-flow-col;
+  @apply py-1 px-4 m-auto rounded-md bg-focus tracking-wide font-light text-buttonText;
 }
 
 .g-scrollbar {

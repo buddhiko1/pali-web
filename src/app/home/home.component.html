@@ -14,7 +14,11 @@
     >
       Explore the most authentic and ancient Buddhist sutra on your own
     </p>
-    <button appSlider [slideDelay]="800" class="mt-24 g-button-hl">
+    <button
+      appSlider
+      [slideDelay]="800"
+      class="mt-24 g-button-hl grid grid-flow-col"
+    >
       <span class="self-center lg:text-xl"> Tutorial </span>
       <svg-icon
         src="assets/icons/arrow_right.svg"
@@ -28,7 +32,7 @@
   <div class="c-intro my-16 lg:my-44">
     <div class="c-section g-card p-5 lg:p-7">
       <div>
-        <p class="g-title-hl">
+        <p class="g-title-focus">
           {{ UrlEnum.Grammar | titlecase }}
         </p>
         <p class="pt-3 g-text">
@@ -48,7 +52,7 @@
     </div>
     <div class="c-section g-card p-5 lg:p-7">
       <div>
-        <p class="g-title-hl">
+        <p class="g-title-focus">
           {{ UrlEnum.Dictionary | titlecase }}
         </p>
         <p class="pt-3 g-text">
@@ -68,7 +72,7 @@
     </div>
     <div class="c-section g-card p-5 lg:p-7">
       <div>
-        <p class="g-title-hl">
+        <p class="g-title-focus">
           {{ UrlEnum.Vocabulary | titlecase }}
         </p>
         <p class="pt-3 g-text">
@@ -87,7 +91,7 @@
     </div>
     <div class="c-section g-card p-5 lg:p-7">
       <div>
-        <p class="g-title-hl">
+        <p class="g-title-focus">
           {{ UrlEnum.Tipitaka | titlecase }}
         </p>
         <p class="pt-3 g-text">
@@ -106,7 +110,7 @@
     </div>
     <div class="c-section g-card p-5 lg:p-7">
       <div>
-        <p class="g-title-hl">
+        <p class="g-title-focus">
           {{ UrlEnum.Reading | titlecase }}
         </p>
         <p class="pt-3 g-text">
@@ -125,7 +129,7 @@
     </div>
     <div class="c-section g-card p-5 lg:p-7">
       <div>
-        <p class="g-title-hl">
+        <p class="g-title-focus">
           {{ UrlEnum.Blog | titlecase }}
         </p>
         <p class="pt-3 g-text">
