@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 
 import { SliderDirective } from 'src/app/core/slider.directive';
-import { PromptComponent } from 'src/app/prompt/prompt.component';
+import { LoaderComponent } from 'src/app/loader/loader.component';
 
 import { AccountRoutingModule } from './account-routing.module';
 import { LoginComponent } from './login/login.component';
@@ -27,7 +27,7 @@ import { MeComponent } from './me/me.component';
     ReactiveFormsModule,
     AccountRoutingModule,
     SliderDirective,
-    PromptComponent,
+    LoaderComponent,
   ],
 })
 export class AccountModule {}

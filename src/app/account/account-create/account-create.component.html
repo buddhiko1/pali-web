@@ -1,5 +1,5 @@
 <section appSlider [slideDelay]="200" class="c-container">
-  <div *ngIf="!isSubmitted; else prompt" class="c-dialog d-box">
+  <div *ngIf="!isSubmitted; else loader" class="c-dialog d-box">
     <h2 class="c-title d-title">Sign Up</h2>
     <form [formGroup]="form" class="c-form">
       <div class="c-email">
@@ -38,12 +38,12 @@
       >
     </p>
   </div>
-  <ng-template #prompt>
-    <app-prompt
-      [status]="promptStatus"
-      [prompt]="promptText"
+  <ng-template #loader>
+    <app-loader
+      [status]="loaderStatus"
+      [prompt]="loaderPrompt"
       (closed)="goback()"
-      class="c-prompt"
-    ></app-prompt>
+      class="c-loader"
+    ></app-loader>
   </ng-template>
 </section>

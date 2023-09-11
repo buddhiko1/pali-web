@@ -52,7 +52,7 @@
   justify-self: end;
 }
 
-.c-prompt {
+.c-loader {
   grid-area: dialog;
 }
 

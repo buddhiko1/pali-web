@@ -5,8 +5,8 @@ import { CreateAccountMutationVariables } from 'src/gql/graphql';
 import { environment } from 'src/environments/environment';
 import { UrlEnum as AppUrlEnum } from 'src/app/app-routing.module';
 import { NavigationService } from 'src/app/core/navigation.service';
-import { PromptEnum } from 'src/app/core/text.prompt';
-import { StatusEnum as PromptStatusEnum } from 'src/app/prompt/prompt.component';
+import { PromptEnum } from 'src/app/core/prompts.interaction';
+import { StatusEnum as LoaderStatusEnum } from 'src/app/loader/loader.component';
 
 import { UrlEnum as AccountUrlEnum } from '../account-routing.module';
 import { AccountService } from '../account.service';
@@ -21,8 +21,8 @@ export class AccountCreateComponent implements OnInit {
   form!: FormGroup;
   AccountUrlEnum = AccountUrlEnum;
   isSubmitted = false;
-  promptStatus = PromptStatusEnum.Idle;
-  promptText = '';
+  loaderStatus = LoaderStatusEnum.Idle;
+  loaderPrompt = '';
 
   constructor(
     private _accountService: AccountService,
@@ -50,27 +50,32 @@ export class AccountCreateComponent implements OnInit {
 
   submit(): void {
     this.isSubmitted = true;
-    this.promptStatus = PromptStatusEnum.Progress;
+    this.loaderStatus = LoaderStatusEnum.Loading;
 
-    const args: CreateAccountMutationVariables = {
-      email: this.form.getRawValue().email,
-      role: `${environment.roleIdToSignUp}`,
-      urlForInit: `${environment.host}/${AppUrlEnum.Account}/${AccountUrlEnum.AccountInit}`, // confiured in the config.json of pali-cms.
-    };
-
-    this._accountService
-      .createAccount(args)
-      .then(() => {
-        // wait for 5 seconds for user to receive the email.
-        setTimeout(() => {
-          this.promptStatus = PromptStatusEnum.Successful;
-          this.promptText = PromptEnum.SignUp;
-        }, 5000);
-      })
-      .catch((error) => {
-        this.promptStatus = PromptStatusEnum.Failed;
-        this.promptText = error.toString();
-      });
+    // wait for 5 seconds for user to receive the email.
+    setTimeout(() => {
+      this.loaderStatus = LoaderStatusEnum.Successful;
+      this.loaderPrompt = PromptEnum.SignUp;
+    }, 5000);
+    // const args: CreateAccountMutationVariables = {
+    //   email: this.form.getRawValue().email,
+    //   role: `${environment.roleIdToSignUp}`,
+    //   urlForInit: `${environment.host}/${AppUrlEnum.Account}/${AccountUrlEnum.AccountInit}`, // confiured in the config.json of pali-cms.
+    // };
+    //
+    // this._accountService
+    //   .createAccount(args)
+    //   .then(() => {
+    //     // wait for 5 seconds for user to receive the email.
+    //     setTimeout(() => {
+    //       this.loaderStatus = LoaderStatusEnum.Successful;
+    //       this.loaderPrompt = PromptEnum.SignUp;
+    //     }, 5000);
+    //   })
+    //   .catch((error) => {
+    //     this.loaderStatus = LoaderStatusEnum.Failed;
+    //     this.loaderPrompt = error.toString();
+    //   });
   }
 
   goback(): void {

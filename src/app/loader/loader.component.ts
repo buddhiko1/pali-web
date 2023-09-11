@@ -8,19 +8,19 @@ import { WheelComponent } from '../wheel/wheel.component';
 
 export enum StatusEnum {
   Idle = 'Idle',
-  Progress = 'In progress ...',
+  Loading = 'Loading ...',
   Successful = 'Successful',
   Failed = 'Failed',
 }
 
 @Component({
-  selector: 'app-prompt',
+  selector: 'app-loader',
   standalone: true,
   imports: [CommonModule, NgxRerenderModule, SliderDirective, WheelComponent],
-  templateUrl: './prompt.component.html',
-  styleUrls: ['./prompt.component.css'],
+  templateUrl: './loader.component.html',
+  styleUrls: ['./loader.component.css'],
 })
-export class PromptComponent {
+export class LoaderComponent {
   @Input() prompt = '';
   @Input() status = StatusEnum.Idle;
   @Output() closed = new EventEmitter<void>();
@@ -32,7 +32,7 @@ export class PromptComponent {
   }
 
   get isDone(): boolean {
-    return this.status !== StatusEnum.Progress;
+    return this.status !== StatusEnum.Loading;
   }
 
   get isSuccessful(): boolean {
@@ -43,7 +43,7 @@ export class PromptComponent {
     return this.status === StatusEnum.Failed;
   }
 
-  submit() {
+  close() {
     this.closed.emit();
   }
 }
