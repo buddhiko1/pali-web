@@ -1,7 +1,7 @@
 <section appSlider [slideDelay]="200" class="c-container">
   <div *ngIf="!isSubmitted; else loader" class="c-dialog d-box">
     <h2 class="c-title d-title">Sign Up</h2>
-    <form [formGroup]="form" class="c-form">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()" class="c-form">
       <div class="c-email">
         <label for="email" class="d-subText">Email</label>
         <input
@@ -23,7 +23,7 @@
           </div>
         </div>
       </div>
-      <button (click)="onSubmit()" class="c-button d-button w-full mt-3">
+      <button type="submit" class="d-button bg-focus w-full mt-3">
         Sign Up
       </button>
     </form>

@@ -63,13 +63,14 @@ export class PasswordResetComponent implements OnInit {
       return;
     }
 
-    this.isSubmitted = true;
-    this.loaderStatus = LoaderStatusEnum.Loading;
-
     const args: ResetPasswordMutationVariables = {
       token: this._token,
       password: this.form.getRawValue().password,
     };
+
+    this.isSubmitted = true;
+    this.loaderStatus = LoaderStatusEnum.Loading;
+
     this._accountService
       .resetPassword(args)
       .then(() => {

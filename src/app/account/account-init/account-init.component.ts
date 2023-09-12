@@ -59,14 +59,15 @@ export class AccountInitComponent implements OnInit {
       return;
     }
 
-    this.isSubmitted = true;
-    this.loaderStatus = LoaderStatusEnum.Loading;
-
     const password = this.form.getRawValue().password;
     const args: InitAccountMutationVariables = {
       token: this._token,
       password: password,
     };
+
+    this.isSubmitted = true;
+    this.loaderStatus = LoaderStatusEnum.Loading;
+
     this._accountService
       .initAccount(args)
       .then(() => {

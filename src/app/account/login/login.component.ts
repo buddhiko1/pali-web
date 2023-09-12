@@ -53,16 +53,18 @@ export class LoginComponent implements OnInit {
       return;
     }
 
-    this.isSubmitted = true;
-    this.loaderStatus = LoaderStatusEnum.Loading;
-
     const args: LoginMutationVariables = {
       email: this.form.getRawValue().email,
       password: this.form.getRawValue().password,
     };
+
+    this.isSubmitted = true;
+    this.loaderStatus = LoaderStatusEnum.Loading;
+
     this._accountService
       .login(args)
       .then(() => {
+        console.log('login success');
         this._router.navigate([`../${UrlEnum.Me}`], {
           relativeTo: this._activeRoute,
         });

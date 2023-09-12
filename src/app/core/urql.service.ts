@@ -13,8 +13,8 @@ import {
 @Injectable({ providedIn: 'root' })
 export class UrqlService {
   authClient: Client;
-  dataClient: Client;
-  systemClient: Client;
+  publicClient: Client;
+  userClient: Client;
 
   constructor() {
     this.authClient = new Client({
@@ -34,7 +34,7 @@ export class UrqlService {
       ],
     });
 
-    this.dataClient = new Client({
+    this.publicClient = new Client({
       url: `${environment.host}/graphql`,
       exchanges: [
         cacheExchange,
@@ -53,7 +53,7 @@ export class UrqlService {
     });
 
     const storageService = new StorageService();
-    this.systemClient = new Client({
+    this.userClient = new Client({
       url: `${environment.host}/graphql/system`,
       exchanges: [
         authExchange(async (utils) => {

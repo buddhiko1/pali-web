@@ -4,6 +4,7 @@ import { CombinedError } from '@urql/core';
 import { Directus_Users } from 'src/gql/graphql';
 import { UrqlService } from 'src/app/core/urql.service';
 import { StorageService } from 'src/app/core/storage.service';
+import { removeNullFields } from 'src/app/core/utils';
 import {
   LoginDocument,
   LoginMutationVariables,
@@ -33,7 +34,7 @@ export class AccountService {
   isRegisteredEmail(email: string): Promise<boolean> {
     // The public role must be granted permission to read users' information.
     return new Promise<boolean>((resolve, reject) => {
-      const client = this._urqlService.authClient;
+      const client = this._urqlService.accountClient;
       const args: UserWithEmailQueryVariables = {
         email,
       };
@@ -56,7 +57,7 @@ export class AccountService {
 
   createAccount(args: CreateAccountMutationVariables): Promise<void> {
     return new Promise<void>((resolve) => {
-      const client = this._urqlService.authClient;
+      const client = this._urqlService.accountClient;
       client
         .mutation(CreateAccountDocument, args)
         .toPromise()
@@ -68,7 +69,7 @@ export class AccountService {
 
   initAccount(args: InitAccountMutationVariables): Promise<void> {
     return new Promise<void>((resolve) => {
-      const client = this._urqlService.authClient;
+      const client = this._urqlService.accountClient;
       client
         .mutation(InitAccountDocument, args)
         .toPromise()
@@ -80,7 +81,7 @@ export class AccountService {
 
   requestReset(args: RequestResetMutationVariables): Promise<void> {
     return new Promise<void>((resolve) => {
-      const client = this._urqlService.authClient;
+      const client = this._urqlService.accountClient;
       client
         .mutation(RequestResetDocument, args)
         .toPromise()
@@ -92,7 +93,7 @@ export class AccountService {
 
   resetPassword(args: ResetPasswordMutationVariables): Promise<void> {
     return new Promise<void>((resolve) => {
-      const client = this._urqlService.authClient;
+      const client = this._urqlService.accountClient;
       client
         .mutation(ResetPasswordDocument, args)
         .toPromise()
@@ -104,7 +105,7 @@ export class AccountService {
 
   login(args: LoginMutationVariables): Promise<void> {
     return new Promise<void>((resolve, reject) => {
-      const client = this._urqlService.authClient;
+      const client = this._urqlService.accountClient;
       client
         .mutation(LoginDocument, args)
         .toPromise()
@@ -113,8 +114,9 @@ export class AccountService {
             this._storageService.saveAuthToken(
               result.data?.login as Auth_Tokens
             );
-            this.fetchMe();
-            resolve();
+            this.fetchMe().then(() => {
+              resolve();
+            });
           } else {
             const error = result.error as CombinedError;
             const errorMessage =
@@ -128,7 +130,7 @@ export class AccountService {
   logout(args?: LogoutMutationVariables): Promise<void> {
     return new Promise<void>((resolve) => {
       if (args) {
-        const client = this._urqlService.authClient;
+        const client = this._urqlService.accountClient;
         client
           .mutation(LogoutDocument, args)
           .toPromise()
@@ -150,9 +152,9 @@ export class AccountService {
         .toPromise()
         .then((result) => {
           const me = result.data?.users_me;
-          if (me) {
-            // this._storageService.saveMe(me);
-          }
+          const valideMe = removeNullFields(me, 'role', 'avatar');
+          this._storageService.saveMe(valideMe);
+          console.log(valideMe);
           resolve();
         });
     });

@@ -54,13 +54,15 @@ export class ResetRequestComponent implements OnInit {
     if (this.form.invalid) {
       return;
     }
-    this.isSubmitted = true;
-    this.loaderStatus = LoaderStatusEnum.Loading;
 
     const args: RequestResetMutationVariables = {
       email: this.form.getRawValue().email,
       urlForReset: `${environment.clientHost}/${AppUrlEnum.Account}/${AccountUrlEnum.PasswordReset}`, // confiured in the config.json of pali-cms.
     };
+
+    this.isSubmitted = true;
+    this.loaderStatus = LoaderStatusEnum.Loading;
+
     this._accountService
       .requestReset(args)
       .then(() => {
