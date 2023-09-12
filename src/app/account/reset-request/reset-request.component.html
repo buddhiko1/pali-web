@@ -23,13 +23,7 @@
           </div>
         </div>
       </div>
-      <button
-        [disabled]="!form.valid"
-        (click)="submit()"
-        class="c-button d-button w-full mt-3"
-      >
-        Request
-      </button>
+      <button (click)="onSubmit()" class="d-button w-full mt-3">Request</button>
     </form>
   </div>
   <ng-template #loader>

@@ -58,7 +58,11 @@ export class PasswordResetComponent implements OnInit {
     return this.loaderStatus === LoaderStatusEnum.Successful;
   }
 
-  submit(): void {
+  onSubmit(): void {
+    if (this.form.invalid) {
+      return;
+    }
+
     this.isSubmitted = true;
     this.loaderStatus = LoaderStatusEnum.Loading;
 

@@ -27,12 +27,12 @@ export class MeComponent implements OnInit {
     return this._storageService.me;
   }
 
-  logout(): void {
+  onLogout(): void {
     this._accountService.logout();
     this._navigationService.back();
   }
 
-  resetPassword(): void {
+  onReset(): void {
     this._router.navigate([`../${UrlEnum.ResetRequest}`], {
       relativeTo: this._activeRoute,
     });

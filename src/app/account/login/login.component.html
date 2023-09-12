@@ -42,13 +42,7 @@
           </div>
         </div>
       </div>
-      <button
-        [disabled]="!form.valid"
-        (click)="submit()"
-        class="c-button d-button w-full mt-3"
-      >
-        Sign In
-      </button>
+      <button (click)="onSubmit()" class="d-button w-full mt-3">Sign In</button>
     </form>
     <p class="c-tips d-subText">
       <span>Don't have an account?</span

@@ -45,7 +45,7 @@ export class AccountInitComponent implements OnInit {
       email: new FormControl({ value: this._email, disabled: true }),
       password: new FormControl('', {
         validators: [Validators.required, Validators.minLength(6)],
-        updateOn: 'blur',
+        updateOn: 'submit',
       }),
     });
   }
@@ -54,7 +54,11 @@ export class AccountInitComponent implements OnInit {
     return this.form.get('password')!;
   }
 
-  submit(): void {
+  onSubmit(): void {
+    if (this.form.invalid) {
+      return;
+    }
+
     this.isSubmitted = true;
     this.loaderStatus = LoaderStatusEnum.Loading;
 

@@ -41,7 +41,7 @@ export class ResetRequestComponent implements OnInit {
             this._registeredEmailValidator
           ),
         ],
-        updateOn: 'blur',
+        updateOn: 'submit',
       }),
     });
   }
@@ -50,7 +50,10 @@ export class ResetRequestComponent implements OnInit {
     return this.form.get('email')!;
   }
 
-  submit(): void {
+  onSubmit(): void {
+    if (this.form.invalid) {
+      return;
+    }
     this.isSubmitted = true;
     this.loaderStatus = LoaderStatusEnum.Loading;
 

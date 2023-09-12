@@ -31,11 +31,11 @@ export class LoginComponent implements OnInit {
     this.form = new FormGroup({
       email: new FormControl('', {
         validators: [Validators.required, Validators.email],
-        updateOn: 'blur',
+        updateOn: 'submit',
       }),
       password: new FormControl('', {
         validators: [Validators.required, Validators.minLength(6)],
-        updateOn: 'blur',
+        updateOn: 'submit',
       }),
     });
   }
@@ -48,7 +48,11 @@ export class LoginComponent implements OnInit {
     return this.form.get('password')!;
   }
 
-  submit(): void {
+  onSubmit(): void {
+    if (this.form.invalid) {
+      return;
+    }
+
     this.isSubmitted = true;
     this.loaderStatus = LoaderStatusEnum.Loading;
 

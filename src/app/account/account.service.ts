@@ -21,7 +21,6 @@ import {
   UserWithEmailDocument,
   UserWithEmailQueryVariables,
   MeDocument,
-  MeQueryVariables,
 } from 'src/gql/graphql';
 
 @Injectable({ providedIn: 'root' })
@@ -145,14 +144,15 @@ export class AccountService {
 
   fetchMe(): Promise<void> {
     return new Promise<void>((resolve) => {
-      const client = this._urqlService.systemClient;
-      const args: MeQueryVariables = {};
+      const client = this._urqlService.userClient;
       client
-        .query(MeDocument, args)
+        .query(MeDocument, {})
         .toPromise()
         .then((result) => {
           const me = result.data?.users_me;
-          this._storageService.saveMe(me);
+          if (me) {
+            // this._storageService.saveMe(me);
+          }
           resolve();
         });
     });

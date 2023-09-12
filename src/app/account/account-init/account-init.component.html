@@ -32,13 +32,7 @@
           </div>
         </div>
       </div>
-      <button
-        [disabled]="!form.valid"
-        (click)="submit()"
-        class="c-button d-button w-full mt-3"
-      >
-        Ok
-      </button>
+      <button (click)="onSubmit()" class="d-button w-full mt-3">Ok</button>
     </form>
   </div>
 </section>

@@ -40,7 +40,7 @@ export class AccountCreateComponent implements OnInit {
             this._unregisteredEmailValidator
           ),
         ],
-        updateOn: 'blur',
+        updateOn: 'submit',
       }),
     });
   }
@@ -49,7 +49,11 @@ export class AccountCreateComponent implements OnInit {
     return this.form.get('email')!;
   }
 
-  submit(): void {
+  onSubmit(): void {
+    if (this.form.invalid) {
+      return;
+    }
+
     this.isSubmitted = true;
     this.loaderStatus = LoaderStatusEnum.Loading;
 

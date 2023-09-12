@@ -6,16 +6,12 @@
   />
   <p>{{ me?.email }}</p>
   <div>
-    <button (click)="logout()" aria-label="donation" class="g-button lg:mx-6">
+    <button (click)="onLogout()" aria-label="donation" class="g-button lg:mx-6">
       Logout
     </button>
   </div>
   <div>
-    <button
-      (click)="resetPassword()"
-      aria-label="donation"
-      class="g-button lg:mx-6"
-    >
+    <button (click)="onReset()" aria-label="donation" class="g-button lg:mx-6">
       Reset Password
     </button>
   </div>
