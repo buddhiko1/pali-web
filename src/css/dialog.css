@@ -27,9 +27,9 @@
 }
 
 .d-button {
-  @apply py-2 px-3 m-auto rounded-md bg-focus opacity-[.9] hover:opacity-100 disabled:opacity-40 tracking-wide font-light text-buttonText;
+  @apply py-2 px-3 m-auto rounded-md bg-focus opacity-[.9] hover:opacity-100 focus:opacity-100 disabled:opacity-40 tracking-wide font-light text-buttonText;
 }
 
 .d-button-error {
-  @apply py-2 px-3 m-auto rounded-md bg-error opacity-[.9] hover:opacity-100 disabled:opacity-40 tracking-wide font-light text-buttonText;
+  @apply py-2 px-3 m-auto rounded-md bg-error opacity-[.9] hover:opacity-100 focus:opacity-100 disabled:opacity-40 tracking-wide font-light text-buttonText;
 }
