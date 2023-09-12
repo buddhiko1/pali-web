@@ -3,7 +3,7 @@ import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 import { PlaceholderPageComponent } from './placeholder-page/placeholder-page.component';
 
 export enum UrlEnum {
-  Home = 'home',
+  Home = '',
   Grammar = 'grammar',
   Dictionary = 'dictionary',
   Vocabulary = 'vocabulary',
@@ -14,10 +14,7 @@ export enum UrlEnum {
   Account = 'account',
 }
 
-export const RedirectTo = UrlEnum.Home;
-
 const routes: Routes = [
-  { path: '', redirectTo: RedirectTo, pathMatch: 'full' },
   {
     path: UrlEnum.Home,
     loadChildren: () => import('./home/home.module').then((m) => m.HomeModule),

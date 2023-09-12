@@ -9,7 +9,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "prepare": "husky install",
-    "codegen": "graphql-codegen",
+    "gen": "graphql-codegen",
     "prestart": "pnpm generate",
     "predev": "pnpm generate"
   },

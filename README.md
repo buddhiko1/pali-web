@@ -15,4 +15,4 @@
 - Public role should have permission to read users' information.
 - When compile error, try it again after delete dist or .angular directory.
 - Update packages: pnpm update.
-- Generate graphql code: pnpm run codegen.
+- Generate graphql code: pnpm run gen.

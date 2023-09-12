@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
-import { Router, NavigationEnd } from '@angular/router';
+import { Router } from '@angular/router';
 
 import { ScrollbarService } from 'src/app/core/scrollbar.service';
-import { UrlEnum, RedirectTo } from 'src/app/app-routing.module';
+import { UrlEnum } from 'src/app/app-routing.module';
 
 import { NavbarService } from './navbar.service';
 
@@ -27,13 +27,7 @@ export class NavbarComponent {
     private _router: Router,
     private _navbarService: NavbarService,
     private _scrollbarService: ScrollbarService
-  ) {
-    this._router.events.subscribe((event) => {
-      if (event instanceof NavigationEnd) {
-        this._url = event.url.slice(1) == '' ? RedirectTo : event.url.slice(1);
-      }
-    });
-  }
+  ) {}
 
   get isDark(): boolean {
     return this._navbarService.isDark;
