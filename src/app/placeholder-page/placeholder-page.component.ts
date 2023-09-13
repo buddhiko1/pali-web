@@ -37,7 +37,6 @@ export class PlaceholderPageComponent implements OnDestroy {
       this.text = params['text'];
     });
     this._activeRoute.data.subscribe((data) => {
-      console.log(data);
       this.text = data['text'];
     });
   }

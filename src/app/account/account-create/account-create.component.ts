@@ -66,11 +66,11 @@ export class AccountCreateComponent implements OnInit {
     this._accountService
       .createAccount(args)
       .then(() => {
-        // wait for 5 seconds for user to receive the email.
+        // wait for 3 seconds for user to receive the email.
         setTimeout(() => {
           this.loaderStatus = LoaderStatusEnum.Successful;
           this.loaderPrompt = PromptEnum.SignUp;
-        }, 5000);
+        }, 3000);
       })
       .catch((error) => {
         this.loaderStatus = LoaderStatusEnum.Failed;
