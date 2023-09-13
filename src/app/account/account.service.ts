@@ -1,10 +1,12 @@
 import { Injectable } from '@angular/core';
 import { CombinedError } from '@urql/core';
 
-import { Directus_Users } from 'src/gql/graphql';
 import { UrqlService } from 'src/app/core/urql.service';
 import { StorageService } from 'src/app/core/storage.service';
-import { removeNullFields } from 'src/app/core/utils';
+import {
+  removeNullFields,
+  validateRequestResult,
+} from 'src/app/core/utils.gql';
 import {
   LoginDocument,
   LoginMutationVariables,
@@ -31,132 +33,60 @@ export class AccountService {
     private _storageService: StorageService
   ) {}
 
-  isRegisteredEmail(email: string): Promise<boolean> {
-    // The public role must be granted permission to read users' information.
-    return new Promise<boolean>((resolve, reject) => {
-      const client = this._urqlService.accountClient;
-      const args: UserWithEmailQueryVariables = {
-        email,
-      };
-      client
-        .query(UserWithEmailDocument, args)
-        .toPromise()
-        .then((result) => {
-          if (result.data?.users) {
-            if (result.data.users.length > 0) {
-              resolve(true);
-            } else {
-              resolve(false);
-            }
-          } else {
-            reject();
-          }
-        });
-    });
+  async isRegisteredEmail(email: string): Promise<boolean> {
+    const client = this._urqlService.systemClient;
+    const args: UserWithEmailQueryVariables = {
+      email,
+    };
+    const result = await client.query(UserWithEmailDocument, args);
+    const data = validateRequestResult(result);
+    return data.users.length > 0;
   }
 
-  createAccount(args: CreateAccountMutationVariables): Promise<void> {
-    return new Promise<void>((resolve) => {
-      const client = this._urqlService.accountClient;
-      client
-        .mutation(CreateAccountDocument, args)
-        .toPromise()
-        .then(() => {
-          resolve();
-        });
-    });
+  async createAccount(args: CreateAccountMutationVariables): Promise<void> {
+    const client = this._urqlService.systemClient;
+    const result = await client.mutation(CreateAccountDocument, args);
+    validateRequestResult(result);
   }
 
-  initAccount(args: InitAccountMutationVariables): Promise<void> {
-    return new Promise<void>((resolve) => {
-      const client = this._urqlService.accountClient;
-      client
-        .mutation(InitAccountDocument, args)
-        .toPromise()
-        .then(() => {
-          resolve();
-        });
-    });
+  async initAccount(args: InitAccountMutationVariables): Promise<void> {
+    const client = this._urqlService.systemClient;
+    const result = await client.mutation(InitAccountDocument, args);
+    validateRequestResult(result);
   }
 
-  requestReset(args: RequestResetMutationVariables): Promise<void> {
-    return new Promise<void>((resolve) => {
-      const client = this._urqlService.accountClient;
-      client
-        .mutation(RequestResetDocument, args)
-        .toPromise()
-        .then(() => {
-          resolve();
-        });
-    });
+  async requestReset(args: RequestResetMutationVariables): Promise<void> {
+    const client = this._urqlService.systemClient;
+    const result = await client.mutation(RequestResetDocument, args);
+    validateRequestResult(result);
   }
 
-  resetPassword(args: ResetPasswordMutationVariables): Promise<void> {
-    return new Promise<void>((resolve) => {
-      const client = this._urqlService.accountClient;
-      client
-        .mutation(ResetPasswordDocument, args)
-        .toPromise()
-        .then(() => {
-          resolve();
-        });
-    });
+  async resetPassword(args: ResetPasswordMutationVariables): Promise<void> {
+    const client = this._urqlService.systemClient;
+    const result = await client.mutation(ResetPasswordDocument, args);
+    validateRequestResult(result);
   }
 
-  login(args: LoginMutationVariables): Promise<void> {
-    return new Promise<void>((resolve, reject) => {
-      const client = this._urqlService.accountClient;
-      client
-        .mutation(LoginDocument, args)
-        .toPromise()
-        .then((result) => {
-          if (result.data?.login) {
-            this._storageService.saveAuthToken(
-              result.data?.login as Auth_Tokens
-            );
-            this.fetchMe().then(() => {
-              resolve();
-            });
-          } else {
-            const error = result.error as CombinedError;
-            const errorMessage =
-              error.networkError?.message ?? error.graphQLErrors[0].message;
-            reject(Error(errorMessage));
-          }
-        });
-    });
+  async login(args: LoginMutationVariables): Promise<void> {
+    const client = this._urqlService.systemClient;
+    const loginResult = await client.mutation(LoginDocument, args);
+    const data = validateRequestResult(loginResult);
+    this._storageService.saveAuthToken(data.login as Auth_Tokens);
+    await this.fetchMe();
   }
 
-  logout(args?: LogoutMutationVariables): Promise<void> {
-    return new Promise<void>((resolve) => {
-      if (args) {
-        const client = this._urqlService.accountClient;
-        client
-          .mutation(LogoutDocument, args)
-          .toPromise()
-          .then(() => {
-            this._storageService.clear();
-            resolve();
-          });
-      } else {
-        this._storageService.clear();
-      }
-    });
+  async logout(): Promise<void> {
+    const client = this._urqlService.systemClient;
+    const args = { refreshToken: this._storageService.refreshToken };
+    await client.mutation(LogoutDocument, args);
+    this._storageService.clearAccountData();
   }
 
-  fetchMe(): Promise<void> {
-    return new Promise<void>((resolve) => {
-      const client = this._urqlService.userClient;
-      client
-        .query(MeDocument, {})
-        .toPromise()
-        .then((result) => {
-          const me = result.data?.users_me;
-          const valideMe = removeNullFields(me, 'role', 'avatar');
-          this._storageService.saveMe(valideMe);
-          console.log(valideMe);
-          resolve();
-        });
-    });
+  async fetchMe(): Promise<void> {
+    const client = this._urqlService.systemClient;
+    const result = await client.query(MeDocument, {});
+    const data = validateRequestResult(result);
+    const me = removeNullFields(data.users_me, 'role', 'avatar');
+    this._storageService.saveMe(me);
   }
 }

@@ -20,16 +20,14 @@ export class MeComponent implements OnInit {
     private _router: Router,
     private _activeRoute: ActivatedRoute
   ) {}
-  ngOnInit(): void {
-    // this._accountService.fetchMe();
-  }
+  ngOnInit(): void {}
   get me(): Directus_Users | null {
     return this._storageService.me;
   }
 
   onLogout(): void {
-    this._accountService.logout();
     this._navigationService.back();
+    this._accountService.logout();
   }
 
   onReset(): void {

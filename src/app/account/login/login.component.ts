@@ -61,18 +61,11 @@ export class LoginComponent implements OnInit {
     this.isSubmitted = true;
     this.loaderStatus = LoaderStatusEnum.Loading;
 
-    this._accountService
-      .login(args)
-      .then(() => {
-        console.log('login success');
-        this._router.navigate([`../${UrlEnum.Me}`], {
-          relativeTo: this._activeRoute,
-        });
-      })
-      .catch((error) => {
-        this.loaderStatus = LoaderStatusEnum.Failed;
-        this.loaderPrompt = error.toString();
+    this._accountService.login(args).then(() => {
+      this._router.navigate([`../${UrlEnum.Me}`], {
+        relativeTo: this._activeRoute,
       });
+    });
   }
 
   reEdit(): void {
@@ -80,13 +73,13 @@ export class LoginComponent implements OnInit {
     this.isSubmitted = false;
   }
 
-  requestReset(): void {
+  onRequestReset(): void {
     this._router.navigate([`../${UrlEnum.ResetRequest}`], {
       relativeTo: this._activeRoute,
     });
   }
 
-  createAccount(): void {
+  onCreateAccount(): void {
     this._router.navigate([`../${UrlEnum.AccountCreate}`], {
       relativeTo: this._activeRoute,
     });

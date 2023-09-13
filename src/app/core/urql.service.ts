@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Exchange } from '@urql/core';
 import { Client, cacheExchange, fetchExchange, mapExchange } from '@urql/core';
 import { authExchange } from '@urql/exchange-auth';
 
@@ -12,80 +13,69 @@ import {
 
 @Injectable({ providedIn: 'root' })
 export class UrqlService {
-  authClient: Client;
-  publicClient: Client;
-  userClient: Client;
+  private _errorExchange: Exchange;
+  private _customAuthExchange: Exchange;
 
-  constructor() {
-    this.authClient = new Client({
+  constructor(private _storageService: StorageService) {
+    this._errorExchange = mapExchange({
+      onError(error, operation) {
+        console.error(
+          `The operation ${operation.key} has errored with:`,
+          error
+        );
+      },
+    });
+    const storageService = this._storageService;
+    this._customAuthExchange = authExchange(async (utils) => {
+      return {
+        addAuthToOperation(operation) {
+          return utils.appendHeaders(operation, {
+            Authorization: `Bearer ${storageService.accessToken}`,
+          });
+        },
+        didAuthError(error) {
+          return error.graphQLErrors.some(
+            (e) => e.extensions?.['code'] === 'FORBIDDEN'
+          );
+        },
+        async refreshAuth() {
+          const args: RefreshTokenMutationVariables = {
+            refreshToken: storageService.refreshToken,
+          };
+          const result = await utils.mutate(RefreshTokenDocument, args);
+          if (result.data?.refresh) {
+            storageService.saveAuthToken(result.data.refresh);
+          } else {
+            storageService.clearAccountData();
+          }
+        },
+      };
+    });
+  }
+
+  get systemClient(): Client {
+    // all exchanges should be ordered synchronous first and asynchronous last.
+    return new Client({
       url: `${environment.host}/graphql/system`,
       exchanges: [
-        mapExchange({
-          // handle error globally.
-          onError(error, operation) {
-            //TODO replace with error message
-            console.error(
-              `The operation ${operation.key} has errored with:`,
-              error
-            );
-          },
-        }),
+        this._errorExchange,
+        this._storageService.isLoggedIn
+          ? this._customAuthExchange
+          : mapExchange({}),
         fetchExchange,
       ],
     });
+  }
 
-    this.publicClient = new Client({
+  get dataClient(): Client {
+    return new Client({
       url: `${environment.host}/graphql`,
       exchanges: [
         cacheExchange,
-        mapExchange({
-          // handle error globally.
-          onError(error, operation) {
-            //TODO replace with error message
-            console.error(
-              `The operation ${operation.key} has errored with:`,
-              error
-            );
-          },
-        }),
-        fetchExchange,
-      ],
-    });
-
-    const storageService = new StorageService();
-    this.userClient = new Client({
-      url: `${environment.host}/graphql/system`,
-      exchanges: [
-        authExchange(async (utils) => {
-          return {
-            addAuthToOperation(operation) {
-              if (!storageService.accessToken) return operation;
-              return utils.appendHeaders(operation, {
-                Authorization: `Bearer ${storageService.accessToken}`,
-              });
-            },
-            didAuthError(error) {
-              return error.graphQLErrors.some(
-                (e) => e.extensions?.['code'] === 'FORBIDDEN'
-              );
-            },
-            async refreshAuth() {
-              if (!storageService.refreshToken) {
-                storageService.clear();
-                return;
-              }
-              const args: RefreshTokenMutationVariables = {
-                refreshToken: storageService.refreshToken,
-              };
-              const result = await utils.mutate(RefreshTokenDocument, args);
-              if (result.data?.refresh) {
-                storageService.saveAuthToken(result.data.refresh);
-              } else {
-                storageService.clear();
-              }
-            },
-          };
-        }),
+        this._errorExchange,
+        this._storageService.isLoggedIn
+          ? this._customAuthExchange
+          : mapExchange({}),
         fetchExchange,
       ],
     });

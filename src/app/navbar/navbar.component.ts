@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, NavigationEnd } from '@angular/router';
 
 import { ScrollbarService } from 'src/app/core/scrollbar.service';
 import { UrlEnum } from 'src/app/app-routing.module';
@@ -21,13 +21,19 @@ export class NavbarComponent {
     UrlEnum.Reading,
     UrlEnum.Blog,
   ];
-  private _url: string = this.UrlEnum.Home;
+  private _activeUrl = '';
 
   constructor(
     private _router: Router,
     private _navbarService: NavbarService,
     private _scrollbarService: ScrollbarService
-  ) {}
+  ) {
+    this._router.events.subscribe((event) => {
+      if (event instanceof NavigationEnd) {
+        this._activeUrl = event.url.slice(1);
+      }
+    });
+  }
 
   get isDark(): boolean {
     return this._navbarService.isDark;
@@ -70,6 +76,6 @@ export class NavbarComponent {
   }
 
   isActiveUrl(url: string): boolean {
-    return url === this._url;
+    return url === this._activeUrl;
   }
 }

@@ -1,10 +1,18 @@
 import { Injectable } from '@angular/core';
 
+import { UrqlService } from 'src/app/core/urql.service';
+import { ModulesDocument, Modules } from 'src/gql/graphql';
+import { validateRequestResult } from 'src/app/core/utils.gql';
+
 @Injectable({
   providedIn: 'root',
 })
 export class HomeService {
-  constructor() {}
+  constructor(private _urqlService: UrqlService) {}
 
-  fetchModules() {}
+  async fetchModules(): Promise<Modules[]> {
+    const client = this._urqlService.dataClient;
+    const result = await client.query(ModulesDocument, {});
+    return validateRequestResult(result);
+  }
 }

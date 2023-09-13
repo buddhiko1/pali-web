@@ -24,10 +24,12 @@ export class StorageService {
     return localStorage.getItem(this._refreshTokenKey) ?? '';
   }
 
-  saveMe(me: any) {
-    if (me) {
-      localStorage.setItem(this._meKey, JSON.stringify(me));
-    }
+  get isLoggedIn(): boolean {
+    return !!this.accessToken;
+  }
+
+  saveMe(me: Directus_Users): void {
+    localStorage.setItem(this._meKey, JSON.stringify(me));
   }
 
   get me(): Directus_Users | null {
@@ -35,7 +37,9 @@ export class StorageService {
     return data ? JSON.parse(data) : null;
   }
 
-  clear() {
-    localStorage.clear();
+  clearAccountData() {
+    localStorage.removeItem(this._authTokenKey);
+    localStorage.removeItem(this._refreshTokenKey);
+    localStorage.removeItem(this._meKey);
   }
 }
