@@ -45,7 +45,7 @@ export class PasswordResetComponent implements OnInit {
       email: new FormControl({ value: this._email, disabled: true }),
       password: new FormControl('', {
         validators: [Validators.required, Validators.minLength(6)],
-        updateOn: 'blur',
+        updateOn: 'change',
       }),
     });
   }

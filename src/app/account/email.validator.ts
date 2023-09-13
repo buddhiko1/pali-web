@@ -8,14 +8,14 @@ import {
 import { AccountService } from './account.service';
 
 @Injectable({ providedIn: 'root' })
-export class UnregisteredEmailValidator implements AsyncValidator {
+export class UnRegisteredEmailValidator implements AsyncValidator {
   constructor(private _accountService: AccountService) {}
 
-  validate(control: AbstractControl): Promise<ValidationErrors | null> {
+  async validate(control: AbstractControl): Promise<ValidationErrors | null> {
     return this._accountService
       .isRegisteredEmail(control.value)
-      .then((result) => {
-        return result ? { unregistered: true } : null;
+      .then((isResgistered) => {
+        return isResgistered ? null : { unRegistered: true };
       })
       .catch(() => null);
   }
@@ -25,11 +25,11 @@ export class UnregisteredEmailValidator implements AsyncValidator {
 export class RegisteredEmailValidator implements AsyncValidator {
   constructor(private _accountService: AccountService) {}
 
-  validate(control: AbstractControl): Promise<ValidationErrors | null> {
+  async validate(control: AbstractControl): Promise<ValidationErrors | null> {
     return this._accountService
       .isRegisteredEmail(control.value)
-      .then((result) => {
-        return result ? null : { registered: true };
+      .then((isResgistered) => {
+        return isResgistered ? { registered: isResgistered } : null;
       })
       .catch(() => null);
   }

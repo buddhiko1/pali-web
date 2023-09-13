@@ -18,12 +18,16 @@
         >
           <div *ngIf="email.errors?.['required']">Email is required.</div>
           <div *ngIf="email.errors?.['email']">Invalid address format.</div>
-          <div *ngIf="email.errors?.['unregistered']">
+          <div *ngIf="email.errors?.['registered']">
             Email has been registered.
           </div>
         </div>
       </div>
-      <button type="submit" class="d-button bg-focus w-full mt-3">
+      <button
+        type="submit"
+        [disabled]="!form.valid"
+        class="d-button bg-focus w-full mt-3"
+      >
         Sign Up
       </button>
     </form>

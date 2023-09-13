@@ -11,7 +11,7 @@ import { StatusEnum as LoaderStatusEnum } from 'src/app/loader/loader.component'
 
 import { UrlEnum as AccountUrlEnum } from '../account-routing.module';
 import { AccountService } from '../account.service';
-import { RegisteredEmailValidator } from '../email.validator';
+import { UnRegisteredEmailValidator } from '../email.validator';
 
 @Component({
   selector: 'app-reset-request',
@@ -28,7 +28,7 @@ export class ResetRequestComponent implements OnInit {
 
   constructor(
     private _accountService: AccountService,
-    private _registeredEmailValidator: RegisteredEmailValidator,
+    private _unregisteredEmailValidator: UnRegisteredEmailValidator,
     private _navigationService: NavigationService
   ) {}
 
@@ -37,11 +37,11 @@ export class ResetRequestComponent implements OnInit {
       email: new FormControl('', {
         validators: [Validators.required, Validators.email],
         asyncValidators: [
-          this._registeredEmailValidator.validate.bind(
-            this._registeredEmailValidator
+          this._unregisteredEmailValidator.validate.bind(
+            this._unregisteredEmailValidator
           ),
         ],
-        updateOn: 'submit',
+        updateOn: 'change',
       }),
     });
   }
@@ -51,10 +51,6 @@ export class ResetRequestComponent implements OnInit {
   }
 
   onSubmit(): void {
-    if (this.form.invalid) {
-      return;
-    }
-
     const args: RequestResetMutationVariables = {
       email: this.form.getRawValue().email,
       urlForReset: `${environment.clientHost}/${AppUrlEnum.Account}/${AccountUrlEnum.PasswordReset}`, // confiured in the config.json of pali-cms.

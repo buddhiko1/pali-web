@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   host: 'http://localhost:9000',
-  clientHost: 'http://localhost:4200',
+  clientHost: 'http://localhost:8000',
   gqlToken: 'SwZVWhOBmlaVZZ1P3rNmd1BnfKirayNg',
   roleIdToSignUp: '680c4884-0fc1-4a5d-8fe7-fe8050833182',
 };

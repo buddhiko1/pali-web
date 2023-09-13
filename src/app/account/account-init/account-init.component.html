@@ -32,7 +32,13 @@
           </div>
         </div>
       </div>
-      <button type="submit" class="d-button bg-focus w-full mt-3">Ok</button>
+      <button
+        type="submit"
+        [disabled]="!form.valid"
+        class="d-button bg-focus w-full mt-3"
+      >
+        Ok
+      </button>
     </form>
   </div>
 </section>

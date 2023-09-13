@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { CombinedError } from '@urql/core';
 
 import { UrqlService } from 'src/app/core/urql.service';
 import { StorageService } from 'src/app/core/storage.service';
@@ -77,7 +76,9 @@ export class AccountService {
 
   async logout(): Promise<void> {
     const client = this._urqlService.systemClient;
-    const args = { refreshToken: this._storageService.refreshToken };
+    const args: LogoutMutationVariables = {
+      refreshToken: this._storageService.refreshToken,
+    };
     await client.mutation(LogoutDocument, args);
     this._storageService.clearAccountData();
   }

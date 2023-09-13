@@ -7,6 +7,7 @@ import { StatusEnum as LoaderStatusEnum } from 'src/app/loader/loader.component'
 
 import { UrlEnum } from '../account-routing.module';
 import { AccountService } from '../account.service';
+import { UnRegisteredEmailValidator } from '../email.validator';
 
 @Component({
   selector: 'app-login',
@@ -24,18 +25,24 @@ export class LoginComponent implements OnInit {
   constructor(
     private _router: Router,
     private _activeRoute: ActivatedRoute,
-    private _accountService: AccountService
+    private _accountService: AccountService,
+    private _unRegisteredEmailValidator: UnRegisteredEmailValidator
   ) {}
 
   ngOnInit(): void {
     this.form = new FormGroup({
       email: new FormControl('', {
         validators: [Validators.required, Validators.email],
-        updateOn: 'submit',
+        asyncValidators: [
+          this._unRegisteredEmailValidator.validate.bind(
+            this._unRegisteredEmailValidator
+          ),
+        ],
+        updateOn: 'change',
       }),
       password: new FormControl('', {
         validators: [Validators.required, Validators.minLength(6)],
-        updateOn: 'submit',
+        updateOn: 'change',
       }),
     });
   }

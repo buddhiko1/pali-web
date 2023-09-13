@@ -10,7 +10,7 @@ import { StatusEnum as LoaderStatusEnum } from 'src/app/loader/loader.component'
 
 import { UrlEnum as AccountUrlEnum } from '../account-routing.module';
 import { AccountService } from '../account.service';
-import { UnregisteredEmailValidator } from '../email.validator';
+import { RegisteredEmailValidator } from '../email.validator';
 
 @Component({
   selector: 'app-account-create',
@@ -27,7 +27,7 @@ export class AccountCreateComponent implements OnInit {
 
   constructor(
     private _accountService: AccountService,
-    private _unregisteredEmailValidator: UnregisteredEmailValidator,
+    private _registeredEmailValidator: RegisteredEmailValidator,
     private _navigationService: NavigationService
   ) {}
 
@@ -36,11 +36,11 @@ export class AccountCreateComponent implements OnInit {
       email: new FormControl('', {
         validators: [Validators.required, Validators.email],
         asyncValidators: [
-          this._unregisteredEmailValidator.validate.bind(
-            this._unregisteredEmailValidator
+          this._registeredEmailValidator.validate.bind(
+            this._registeredEmailValidator
           ),
         ],
-        updateOn: 'submit',
+        updateOn: 'change',
       }),
     });
   }
@@ -57,7 +57,7 @@ export class AccountCreateComponent implements OnInit {
     const args: CreateAccountMutationVariables = {
       email: this.form.getRawValue().email,
       role: `${environment.roleIdToSignUp}`,
-      urlForInit: `${environment.host}/${AppUrlEnum.Account}/${AccountUrlEnum.AccountInit}`, // confiured in the config.json of pali-cms.
+      urlForInit: `${environment.clientHost}/${AppUrlEnum.Account}/${AccountUrlEnum.AccountInit}`, // confiured in the config.json of pali-cms.
     };
 
     this.isSubmitted = true;
