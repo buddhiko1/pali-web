@@ -4,7 +4,7 @@ import { UrqlService } from 'src/app/core/urql.service';
 import { StorageService } from 'src/app/core/storage.service';
 import {
   removeNullFields,
-  validateRequestResult,
+  checkAndExtractResult,
 } from 'src/app/core/utils.gql';
 import {
   LoginDocument,
@@ -38,38 +38,38 @@ export class AccountService {
       email,
     };
     const result = await client.query(UserWithEmailDocument, args);
-    const data = validateRequestResult(result);
+    const data = checkAndExtractResult(result);
     return data.users.length > 0;
   }
 
   async createAccount(args: CreateAccountMutationVariables): Promise<void> {
     const client = this._urqlService.systemClient;
     const result = await client.mutation(CreateAccountDocument, args);
-    validateRequestResult(result);
+    checkAndExtractResult(result);
   }
 
   async initAccount(args: InitAccountMutationVariables): Promise<void> {
     const client = this._urqlService.systemClient;
     const result = await client.mutation(InitAccountDocument, args);
-    validateRequestResult(result);
+    checkAndExtractResult(result);
   }
 
   async requestReset(args: RequestResetMutationVariables): Promise<void> {
     const client = this._urqlService.systemClient;
     const result = await client.mutation(RequestResetDocument, args);
-    validateRequestResult(result);
+    checkAndExtractResult(result);
   }
 
   async resetPassword(args: ResetPasswordMutationVariables): Promise<void> {
     const client = this._urqlService.systemClient;
     const result = await client.mutation(ResetPasswordDocument, args);
-    validateRequestResult(result);
+    checkAndExtractResult(result);
   }
 
   async login(args: LoginMutationVariables): Promise<void> {
     const client = this._urqlService.systemClient;
     const loginResult = await client.mutation(LoginDocument, args);
-    const data = validateRequestResult(loginResult);
+    const data = checkAndExtractResult(loginResult);
     this._storageService.saveAuthToken(data.login as Auth_Tokens);
     await this.fetchMe();
   }
@@ -86,7 +86,7 @@ export class AccountService {
   async fetchMe(): Promise<void> {
     const client = this._urqlService.systemClient;
     const result = await client.query(MeDocument, {});
-    const data = validateRequestResult(result);
+    const data = checkAndExtractResult(result);
     const me = removeNullFields(data.users_me, 'role', 'avatar');
     this._storageService.saveMe(me);
   }

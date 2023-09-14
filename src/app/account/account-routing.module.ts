@@ -2,7 +2,6 @@ import { NgModule, inject } from '@angular/core';
 import { Routes, Router, RouterModule } from '@angular/router';
 
 import { RoleService } from 'src/app/core/role.service';
-import { UrlEnum as AppUrlEnum } from 'src/app/app-routing.module';
 import { LoginComponent } from './login/login.component';
 import { AccountCreateComponent } from './account-create/account-create.component';
 import { AccountInitComponent } from './account-init/account-init.component';
@@ -24,9 +23,7 @@ const canActiveLogin = (
   roleService = inject(RoleService),
   router = inject(Router)
 ) => {
-  return roleService.isPublic
-    ? true
-    : router.parseUrl(`${AppUrlEnum.Account}/${UrlEnum.Me}`);
+  return roleService.isPublic ? true : router.parseUrl(`account/${UrlEnum.Me}`);
 };
 
 const canActiveMe = (
@@ -35,7 +32,7 @@ const canActiveMe = (
 ) => {
   return roleService.isUser
     ? true
-    : router.parseUrl(`${AppUrlEnum.Account}/${UrlEnum.Login}`);
+    : router.parseUrl(`account/${UrlEnum.Login}`);
 };
 
 const routes: Routes = [

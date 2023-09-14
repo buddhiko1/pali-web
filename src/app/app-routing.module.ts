@@ -2,55 +2,43 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 import { PlaceholderPageComponent } from './placeholder-page/placeholder-page.component';
 
-export enum UrlEnum {
-  Home = '',
-  Grammar = 'grammar',
-  Dictionary = 'dictionary',
-  Vocabulary = 'vocabulary',
-  Tipitaka = 'tipitaka',
-  Reading = 'reading',
-  Blog = 'blog',
-  Donation = 'donation',
-  Account = 'account',
-}
-
 const routes: Routes = [
   {
-    path: UrlEnum.Home,
+    path: '',
     loadChildren: () => import('./home/home.module').then((m) => m.HomeModule),
   },
   {
-    path: UrlEnum.Grammar,
+    path: 'grammar',
     component: PlaceholderPageComponent,
     data: { text: 'Under development' },
   },
   {
-    path: UrlEnum.Dictionary,
+    path: 'dictionary',
     loadChildren: () =>
       import('./dictionary/dictionary.module').then((m) => m.DictionaryModule),
   },
   {
-    path: UrlEnum.Vocabulary,
+    path: 'vocabulary',
     component: PlaceholderPageComponent,
     data: { text: 'Under development' },
   },
   {
-    path: UrlEnum.Tipitaka,
+    path: 'tipitaka',
     loadChildren: () =>
       import('./tipitaka/tipitaka.module').then((m) => m.TipitakaModule),
   },
   {
-    path: UrlEnum.Account,
+    path: 'account',
     loadChildren: () =>
       import('./account/account.module').then((m) => m.AccountModule),
   },
   {
-    path: UrlEnum.Reading,
+    path: 'reading',
     component: PlaceholderPageComponent,
     data: { text: 'Under development' },
   },
   {
-    path: UrlEnum.Blog,
+    path: 'blog',
     component: PlaceholderPageComponent,
     data: { text: 'Under development' },
   },

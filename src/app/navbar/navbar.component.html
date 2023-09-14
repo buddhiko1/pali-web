@@ -4,9 +4,9 @@
   [class.c-container-hidden]="!isHeaderShow"
 >
   <a
-    (click)="routeTo(UrlEnum.Home)"
+    (click)="routeTo('')"
     class="c-logo py-3 text-2xl lg:text-3xl uppercase tracking-widest font-bold g-title g-hover"
-    [class.text-focus]="isActiveUrl(UrlEnum.Home)"
+    [class.text-focus]="isActiveUrl('')"
     >Pali</a
   >
 
@@ -28,14 +28,14 @@
   >
     <ul class="c-index">
       <li
-        *ngFor="let url of textUrlList"
+        *ngFor="let module of modules"
         class="c-index-item mt-2 lg:mt-0 lg:mx-4"
       >
         <a
-          (click)="routeTo(url)"
+          (click)="routeTo(module.route)"
           class="g-text g-hover"
-          [class.g-focus]="isActiveUrl(url)"
-          >{{ url | titlecase }}</a
+          [class.g-focus]="isActiveUrl(module.route)"
+          >{{ module.name | titlecase }}</a
         >
       </li>
     </ul>
@@ -55,24 +55,24 @@
       ></svg-icon>
     </a>
 
-    <a (click)="routeTo(UrlEnum.Donation)" class="c-donation lg:mx-6">
+    <a (click)="routeTo('email')" class="c-donation lg:mx-6">
       <svg-icon
-        src="assets/icons/heart.svg"
+        src="assets/icons/email.svg"
         [svgClass]="['g-svg', 'g-hover', 'w-5', 'h-5']"
       ></svg-icon>
     </a>
 
     <a
-      (click)="routeTo(UrlEnum.Account)"
+      (click)="routeTo('account')"
       class="c-account"
-      [class.g-focus]="isActiveUrl(UrlEnum.Account)"
+      [class.g-focus]="isActiveUrl('account')"
     >
       <svg-icon
         src="assets/icons/person.svg"
         [svgClass]="[
           'g-svg',
           'g-hover',
-          isActiveUrl(UrlEnum.Account) ? 'g-focus' : ''
+          isActiveUrl('account') ? 'g-focus' : ''
         ]"
       ></svg-icon>
     </a>

@@ -1,6 +1,6 @@
 import { Component, OnDestroy } from '@angular/core';
-import { UrlEnum } from 'src/app/app-routing.module';
 import { NavbarService } from 'src/app/navbar/navbar.service';
+import { Modules } from 'src/gql/graphql';
 
 import { HomeService } from './home.service';
 
@@ -10,14 +10,20 @@ import { HomeService } from './home.service';
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnDestroy {
-  UrlEnum = UrlEnum;
+  modules: Modules[] = [];
 
   constructor(
     private _navbarService: NavbarService,
     private _homeService: HomeService
   ) {
     this._navbarService.showShadow(false);
-    this._homeService.fetchModules();
+    this.fetchModules();
+  }
+
+  fetchModules(): void {
+    this._homeService.fetchModules().then((modules) => {
+      this.modules = modules;
+    });
   }
 
   ngOnDestroy(): void {

@@ -2,8 +2,9 @@ import { Component } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 
 import { ScrollbarService } from 'src/app/core/scrollbar.service';
-import { UrlEnum } from 'src/app/app-routing.module';
+import { Modules } from 'src/gql/graphql';
 
+import { HomeService } from '../home/home.service';
 import { NavbarService } from './navbar.service';
 
 @Component({
@@ -12,26 +13,26 @@ import { NavbarService } from './navbar.service';
   styleUrls: ['./navbar.component.css'],
 })
 export class NavbarComponent {
-  UrlEnum = UrlEnum;
-  textUrlList = [
-    UrlEnum.Grammar,
-    UrlEnum.Dictionary,
-    UrlEnum.Vocabulary,
-    UrlEnum.Tipitaka,
-    UrlEnum.Reading,
-    UrlEnum.Blog,
-  ];
+  modules: Modules[] = [];
   private _activeUrl = '';
 
   constructor(
     private _router: Router,
     private _navbarService: NavbarService,
+    private _homeService: HomeService,
     private _scrollbarService: ScrollbarService
   ) {
     this._router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
         this._activeUrl = event.url.slice(1);
       }
+    });
+    this.fetchModules();
+  }
+
+  fetchModules(): void {
+    this._homeService.fetchModules().then((modules) => {
+      this.modules = modules;
     });
   }
 
@@ -52,9 +53,9 @@ export class NavbarComponent {
     }
   }
 
-  routeTo(page: UrlEnum): void {
+  routeTo(url: string): void {
     this.closeMenu();
-    this._router.navigateByUrl(page);
+    this._router.navigateByUrl(url);
   }
 
   get isMenuOpen(): boolean {

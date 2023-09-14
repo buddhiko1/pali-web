@@ -30,114 +30,12 @@
     <app-phrase></app-phrase>
   </div>
   <div class="c-intro my-16 lg:my-44">
-    <div class="c-section g-card p-5 lg:p-7">
-      <!-- TODO : iterate with ngFor -->
+    <div *ngFor="let module of modules" class="c-section g-card p-5 lg:p-7">
       <div>
-        <p class="g-title-focus">
-          {{ UrlEnum.Grammar | titlecase }}
-        </p>
-        <p class="pt-3 g-text">
-          The most important thing about grammar books is not popularity or
-          quantity, but quality. Here are the most important grammar books that
-          must be read by any serious Pali students. We will remade these ebooks
-          if possible for a better reading experience.
-        </p>
+        <p class="g-title-focus">{{ module.name | titlecase }}</p>
+        <p class="pt-3 g-text">{{ module.description }}</p>
       </div>
-      <a routerLink="/{{ UrlEnum.Grammar }}" class="pt-5 text-sm capitalize">
-        <span class="self-center tracking-wide text-focus">read more</span>
-        <svg-icon
-          src="assets/icons/arrow_right.svg"
-          [svgClass]="['w-7', 'h-7', 'pl-1', 'fill-blue-400', 'inline-block']"
-        ></svg-icon>
-      </a>
-    </div>
-    <div class="c-section g-card p-5 lg:p-7">
-      <div>
-        <p class="g-title-focus">
-          {{ UrlEnum.Dictionary | titlecase }}
-        </p>
-        <p class="pt-3 g-text">
-          These dictionary collections, which you must have for learning Pali,
-          can be used on Goldendict and Eudic. In order to enhance user
-          experience, we have incorporated special fonts and styles in the
-          design.
-        </p>
-      </div>
-      <a routerLink="/{{ UrlEnum.Dictionary }}" class="pt-5 text-sm capitalize">
-        <span class="self-center tracking-wide text-focus">read more</span>
-        <svg-icon
-          src="assets/icons/arrow_right.svg"
-          [svgClass]="['w-7', 'h-7', 'pl-1', 'fill-blue-400', 'inline-block']"
-        ></svg-icon>
-      </a>
-    </div>
-    <div class="c-section g-card p-5 lg:p-7">
-      <div>
-        <p class="g-title-focus">
-          {{ UrlEnum.Vocabulary | titlecase }}
-        </p>
-        <p class="pt-3 g-text">
-          Study the vocabulary that is important in Buddha's teaching and
-          frequently appears in Tipitaka. We will make this process as easy and
-          comfortable as we can.
-        </p>
-      </div>
-      <a routerLink="/{{ UrlEnum.Tipitaka }}" class="pt-5 text-sm capitalize">
-        <span class="self-center tracking-wide text-focus">read more</span>
-        <svg-icon
-          src="assets/icons/arrow_right.svg"
-          [svgClass]="['w-7', 'h-7', 'pl-1', 'fill-blue-400', 'inline-block']"
-        ></svg-icon>
-      </a>
-    </div>
-    <div class="c-section g-card p-5 lg:p-7">
-      <div>
-        <p class="g-title-focus">
-          {{ UrlEnum.Tipitaka | titlecase }}
-        </p>
-        <p class="pt-3 g-text">
-          These Tipitaka EPUBs, which are made with custom fonts and styles, can
-          provide a comfortable reading experience for you. Due to limitations
-          in the original data, These EPUBs only contain chapter index.
-        </p>
-      </div>
-      <a routerLink="/{{ UrlEnum.Tipitaka }}" class="pt-5 text-sm capitalize">
-        <span class="self-center tracking-wide text-focus">read more</span>
-        <svg-icon
-          src="assets/icons/arrow_right.svg"
-          [svgClass]="['w-7', 'h-7', 'pl-1', 'fill-blue-400', 'inline-block']"
-        ></svg-icon>
-      </a>
-    </div>
-    <div class="c-section g-card p-5 lg:p-7">
-      <div>
-        <p class="g-title-focus">
-          {{ UrlEnum.Reading | titlecase }}
-        </p>
-        <p class="pt-3 g-text">
-          The reading material comes from the most important teachings of
-          Buddha. The analysis is provided in as much detail as possible. We
-          care about the quality, not the quantity.
-        </p>
-      </div>
-      <a routerLink="/{{ UrlEnum.Reading }}" class="pt-5 text-sm capitalize">
-        <span class="self-center tracking-wide text-focus">read more</span>
-        <svg-icon
-          src="assets/icons/arrow_right.svg"
-          [svgClass]="['w-7', 'h-7', 'pl-1', 'fill-blue-400', 'inline-block']"
-        ></svg-icon>
-      </a>
-    </div>
-    <div class="c-section g-card p-5 lg:p-7">
-      <div>
-        <p class="g-title-focus">
-          {{ UrlEnum.Blog | titlecase }}
-        </p>
-        <p class="pt-3 g-text">
-          Explore experience and insights from bante and other Buddhists.
-        </p>
-      </div>
-      <a routerLink="/{{ UrlEnum.Blog }}" class="pt-5 text-sm capitalize">
+      <a routerLink="/{{ module.route }}" class="pt-5 text-sm capitalize">
         <span class="self-center tracking-wide text-focus">read more</span>
         <svg-icon
           src="assets/icons/arrow_right.svg"

@@ -71,8 +71,8 @@ export class UrqlService {
     return new Client({
       url: `${environment.host}/graphql`,
       exchanges: [
-        cacheExchange,
         this._errorExchange,
+        cacheExchange,
         this._storageService.isLoggedIn
           ? this._customAuthExchange
           : mapExchange({}),

@@ -4,12 +4,11 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { RequestResetMutationVariables } from 'src/gql/graphql';
 
 import { environment } from 'src/environments/environment';
-import { UrlEnum as AppUrlEnum } from 'src/app/app-routing.module';
 import { NavigationService } from 'src/app/core/navigation.service';
 import { PromptEnum } from 'src/app/core/prompts.interaction';
 import { StatusEnum as LoaderStatusEnum } from 'src/app/loader/loader.component';
 
-import { UrlEnum as AccountUrlEnum } from '../account-routing.module';
+import { UrlEnum } from '../account-routing.module';
 import { AccountService } from '../account.service';
 import { UnRegisteredEmailValidator } from '../email.validator';
 
@@ -19,7 +18,6 @@ import { UnRegisteredEmailValidator } from '../email.validator';
   styleUrls: ['./reset-request.component.css'],
 })
 export class ResetRequestComponent implements OnInit {
-  AccountUrlEnum = AccountUrlEnum;
   form!: FormGroup;
 
   isSubmitted = false;
@@ -53,7 +51,7 @@ export class ResetRequestComponent implements OnInit {
   onSubmit(): void {
     const args: RequestResetMutationVariables = {
       email: this.form.getRawValue().email,
-      urlForReset: `${environment.clientHost}/${AppUrlEnum.Account}/${AccountUrlEnum.PasswordReset}`, // confiured in the config.json of pali-cms.
+      urlForReset: `${environment.clientHost}/account/${UrlEnum.PasswordReset}`, // confiured in the config.json of pali-cms.
     };
 
     this.isSubmitted = true;

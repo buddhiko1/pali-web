@@ -3,12 +3,11 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 import { CreateAccountMutationVariables } from 'src/gql/graphql';
 import { environment } from 'src/environments/environment';
-import { UrlEnum as AppUrlEnum } from 'src/app/app-routing.module';
 import { NavigationService } from 'src/app/core/navigation.service';
 import { PromptEnum } from 'src/app/core/prompts.interaction';
 import { StatusEnum as LoaderStatusEnum } from 'src/app/loader/loader.component';
 
-import { UrlEnum as AccountUrlEnum } from '../account-routing.module';
+import { UrlEnum } from '../account-routing.module';
 import { AccountService } from '../account.service';
 import { RegisteredEmailValidator } from '../email.validator';
 
@@ -19,7 +18,7 @@ import { RegisteredEmailValidator } from '../email.validator';
 })
 export class AccountCreateComponent implements OnInit {
   form!: FormGroup;
-  AccountUrlEnum = AccountUrlEnum;
+  UrlEnum = UrlEnum;
 
   isSubmitted = false;
   loaderStatus = LoaderStatusEnum.Idle;
@@ -57,7 +56,7 @@ export class AccountCreateComponent implements OnInit {
     const args: CreateAccountMutationVariables = {
       email: this.form.getRawValue().email,
       role: `${environment.roleIdToSignUp}`,
-      urlForInit: `${environment.clientHost}/${AppUrlEnum.Account}/${AccountUrlEnum.AccountInit}`, // confiured in the config.json of pali-cms.
+      urlForInit: `${environment.clientHost}/account/${UrlEnum.AccountInit}`, // confiured in the config.json of pali-cms.
     };
 
     this.isSubmitted = true;

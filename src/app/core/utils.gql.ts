@@ -10,7 +10,7 @@ export function removeNullFields(obj: any, ...fieldsToRemove: string[]): any {
   return filteredObj;
 }
 
-export function validateRequestResult(result: any): any {
+export function checkAndExtractResult(result: any): any {
   if (result.error) {
     const combinedError = result.error as CombinedError;
     throw Error(
