@@ -8,7 +8,6 @@ import { AngularSvgIconModule } from 'angular-svg-icon';
 
 import { AppComponent } from './app.component';
 import { NavbarModule } from './navbar/navbar.module';
-import { HomeModule } from './home/home.module';
 import { FooterModule } from './footer/footer.module';
 import { DictionaryModule } from './dictionary/dictionary.module';
 import { TipitakaModule } from './tipitaka/tipitaka.module';
@@ -23,7 +22,6 @@ import { OverlayComponent } from './overlay/overlay.component';
     AngularSvgIconModule.forRoot(),
     CommonModule,
     NavbarModule,
-    HomeModule,
     DictionaryModule,
     TipitakaModule,
     FooterModule,

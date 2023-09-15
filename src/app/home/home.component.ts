@@ -30,7 +30,7 @@ export class HomeComponent implements OnDestroy {
 
   constructor(
     private _navbarService: NavbarService,
-    private _homeService: HomeService
+    private _homeService: HomeService,
   ) {
     this._navbarService.showShadow(false);
     this._fetchContent();
