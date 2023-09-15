@@ -1,27 +1,26 @@
+/* TODO: remove my */
 .d-box {
   @apply p-8 lg:p-12 my-20 lg:my-[17vh] rounded-lg bg-dialogBg;
 }
 
 .d-title {
-  @apply text-title text-xl font-medium tracking-wide;
+  @apply text-dialogTitle text-xl font-medium tracking-wide;
 }
 
-.d-subText {
-  @apply leading-relaxed text-sm text-text;
+.d-text {
+  @apply leading-relaxed text-sm text-dialogText;
 }
 
-.d-message {
-  @apply leading-relaxed text-lg text-text;
-}
-
+/* TODO: remove */
 .d-input-base {
   @apply py-1 px-3 rounded border outline-none focus:ring-1 focus:ring-hover leading-relaxed;
 }
 
 .d-input {
-  @apply d-input-base border-border bg-inputBg focus:border-focus text-title;
+  @apply d-input-base border-border bg-inputBg focus:border-focus text-dialogText;
 }
 
+/* TODO: rename */
 .d-form-error {
   @apply pt-1 text-error text-sm;
 }

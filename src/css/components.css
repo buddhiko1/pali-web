@@ -1,13 +1,9 @@
-.g-text {
-  @apply tracking-wide text-text;
+.g-paragraph {
+  @apply tracking-wide text-paragraph;
 }
 
-.g-title {
-  @apply tracking-wide text-lg text-title;
-}
-
-.g-title-focus {
-  @apply tracking-wide text-lg text-titleFocus;
+.g-hl-title {
+  @apply tracking-wide text-lg text-hlTitle;
 }
 
 .g-card {
@@ -15,7 +11,7 @@
 }
 
 .g-svg {
-  @apply w-6 h-6 fill-current border-none focus:ring-0 text-text;
+  @apply w-6 h-6 fill-current border-none focus:ring-0 text-paragraph;
 }
 
 .g-button {
@@ -31,7 +27,7 @@
 }
 
 .g-scrollbar {
-  @apply scrollbar-thin scrollbar-w-1.5 scrollbar-thumb-border scrollbar-track-bg;
+  @apply scrollbar-thin scrollbar-w-1.5 scrollbar-thumb-border scrollbar-track-pageBg;
 }
 
 .g-scrollbar-hidden {
@@ -40,8 +36,4 @@
 
 .g-border {
   @apply border-border;
-}
-
-.g-link {
-  @apply text-focus;
 }

@@ -1,11 +1,11 @@
 <nav
-  class="c-container pt-1 lg:pt-4 sticky z-20 top-0 backdrop-blur-sm g-transition bg-bg"
+  class="c-container pt-1 lg:pt-4 sticky z-20 top-0 backdrop-blur-sm g-transition bg-pageBg"
   [class.shadow-sm]="isShadowShow"
   [class.c-container-hidden]="!isHeaderShow"
 >
   <button
     (click)="routeTo('')"
-    class="c-logo p-3 text-2xl lg:text-3xl uppercase tracking-widest font-bold g-title g-hover"
+    class="c-logo p-3 text-2xl lg:text-3xl uppercase tracking-widest font-bold text-logo g-hover"
     [class.text-focus]="isActiveUrl('')"
   >
     Pali
@@ -24,7 +24,7 @@
   </button>
 
   <section
-    class="c-menu w-full pb-3 transition-transform duration-500 ease-in-out bg-bg"
+    class="c-menu w-full pb-3 transition-transform duration-500 ease-in-out bg-pageBg"
     [class.c-menu-close]="!isMenuOpen"
   >
     <ul class="c-index">
@@ -34,7 +34,7 @@
       >
         <button
           (click)="routeTo(module.route)"
-          class="p-1 g-text g-hover"
+          class="p-1 g-paragraph g-hover"
           [class.g-focus]="isActiveUrl(module.route)"
         >
           {{ module.name | titlecase }}

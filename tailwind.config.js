@@ -15,17 +15,20 @@ module.exports = {
       },
       colors: {
         // elements
-        bg: "var(--colors-bg)",
-        readingBg: "var(--colors-reading-bg)",
+        logo: "var(--colors-logo)",
+        pageBg: "var(--colors-page-bg)",
+        phraseBg: "var(--colors-phrase-bg)",
         dialogBg: "var(--colors-dialog-bg)",
+        dialogTitle: "var(--colors-dialog-title)",
+        dialogText: "var(--colors-dialog-text)",
         inputBg: "var(--colors-input-bg)",
         footerBg: "var(--colors-footer-bg)",
         buttonBg: "var(--colors-button-bg)",
         buttonText: "var(--colors-button-text)",
-        title: "var(--colors-title)",
-        titleFocus: "var(--colors-title-focus)",
-        text: "var(--colors-text)",
+        hlTitle: "var(--colors-hl-title)",
+        paragraph: "var(--colors-paragraph)",
         border: "var(--colors-border)",
+
         // status
         hover: "var(--colors-hover)",
         focus: "var(--colors-focus)",

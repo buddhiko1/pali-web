@@ -1,15 +1,17 @@
 :root {
   /* elements */
-  --colors-bg: theme("colors.white");
-  --colors-reading-bg: #e0c9a6;
+  --colors-logo: theme("colors.gray.700");
+  --colors-page-bg: theme("colors.white");
+  --colors-phrase-bg: theme("colors.rose.100");
   --colors-dialog-bg: theme("colors.gray.100");
+  --colors-dialog-title: theme("colors.gray.700");
+  --colors-dialog-text: theme("colors.gray.600");
   --colors-input-bg: theme("colors.white");
   --colors-footer-bg: theme("colors.gray.100");
   --colors-button-bg: theme("colors.blue.50");
   --colors-button-text: theme("colors.gray.50");
-  --colors-title: theme("colors.gray.700");
-  --colors-title-focus: theme("colors.red.400");
-  --colors-text: theme("colors.gray.500");
+  --colors-hl-title: theme("colors.red.400");
+  --colors-paragraph: theme("colors.gray.500");
   --colors-border: theme("colors.gray.300");
 
   /* status */
@@ -21,16 +23,18 @@
 
 .night {
   /* elements */
-  --colors-bg: theme("colors.gray.900");
-  --colors-reading-bg: theme("colors.red.900");
+  --colors-logo: theme("colors.gray.100");
+  --colors-page-bg: theme("colors.gray.900");
+  --colors-phrase-bg: theme("colors.red.900");
   --colors-dialog-bg: theme("colors.gray.700");
+  --colors-dialog-title: theme("colors.gray.100");
+  --colors-dialog-text: theme("colors.gray.50");
   --colors-input-bg: theme("colors.gray.800");
   --colors-footer-bg: theme("colors.gray.800");
   --colors-button-bg: theme("colors.gray.700");
   --colors-button-text: theme("colors.gray.50");
-  --colors-title: theme("colors.gray.100");
-  --colors-title-focus: theme("colors.red.400");
-  --colors-text: theme("colors.gray.200");
+  --colors-hl-title: theme("colors.red.400");
+  --colors-paragraph: theme("colors.gray.200");
   --colors-border: theme("colors.gray.600");
 
   /* status */
