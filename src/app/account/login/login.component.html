@@ -14,7 +14,7 @@
         />
         <div
           *ngIf="email.invalid && (email.dirty || email.touched)"
-          class="d-form-error"
+          class="mt-1 d-error-text"
         >
           <div *ngIf="email.errors?.['required']">Email is required.</div>
           <div *ngIf="email.errors?.['email']">Invalid address format.</div>
@@ -26,7 +26,7 @@
       <div class="c-password">
         <div class="c-password-label">
           <label for="password" class="d-text">Password</label>
-          <button (click)="onRequestReset()" class="g-button-link text-sm">
+          <button (click)="onRequestReset()" class="g-link-button text-sm">
             Forgot?
           </button>
         </div>
@@ -39,7 +39,7 @@
         />
         <div
           *ngIf="password.invalid && (password.dirty || password.touched)"
-          class="d-form-error"
+          class="mt-1 d-error-text"
         >
           <div *ngIf="password.errors?.['required']">Password is required.</div>
           <div *ngIf="password.errors?.['minlength']">
@@ -57,7 +57,7 @@
     </form>
     <p class="c-tips d-text">
       <span>Don't have an account?</span
-      ><button (click)="onCreateAccount()" class="g-button-link text-sm ml-4">
+      ><button (click)="onCreateAccount()" class="g-link-button text-sm ml-4">
         Sign Up
       </button>
     </p>

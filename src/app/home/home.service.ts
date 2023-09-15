@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 
 import { UrqlService } from 'src/app/core/urql.service';
 import { ModulesDocument, Modules } from 'src/gql/graphql';
-import { checkAndExtractResult } from 'src/app/core/utils.gql';
+import { checkAndExtractResult } from 'src/app/core/utilities.gql';
 
 @Injectable({
   providedIn: 'root',

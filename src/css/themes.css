@@ -6,6 +6,8 @@
   --colors-dialog-bg: theme("colors.gray.100");
   --colors-dialog-title: theme("colors.gray.700");
   --colors-dialog-text: theme("colors.gray.600");
+  --colors-page-title: theme("colors.gray.50");
+  --colors-page-subtitle: theme("colors.gray.200");
   --colors-input-bg: theme("colors.white");
   --colors-footer-bg: theme("colors.gray.100");
   --colors-button-bg: theme("colors.blue.50");
@@ -28,6 +30,8 @@
   --colors-phrase-bg: theme("colors.red.900");
   --colors-dialog-bg: theme("colors.gray.700");
   --colors-dialog-title: theme("colors.gray.100");
+  --colors-page-title: theme("colors.gray.50");
+  --colors-page-subtitle: theme("colors.gray.200");
   --colors-dialog-text: theme("colors.gray.50");
   --colors-input-bg: theme("colors.gray.800");
   --colors-footer-bg: theme("colors.gray.800");

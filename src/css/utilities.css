@@ -9,3 +9,8 @@
 .g-focus {
   @apply !text-focus;
 }
+
+.g-hide-scrollbar {
+  @apply scrollbar-none;
+}
+

@@ -18,20 +18,16 @@
   @apply p-1 m-auto rounded-md bg-buttonBg hover:bg-hover tracking-wide font-light text-buttonText;
 }
 
-.g-button-link {
-  @apply text-focus p-1;
+.g-link-button {
+  @apply p-1 text-focus;
 }
 
-.g-button-hl {
+.g-hl-button {
   @apply py-1 px-4 m-auto rounded-md bg-focus tracking-wide font-light text-buttonText;
 }
 
 .g-scrollbar {
   @apply scrollbar-thin scrollbar-w-1.5 scrollbar-thumb-border scrollbar-track-pageBg;
-}
-
-.g-scrollbar-hidden {
-  @apply scrollbar-none;
 }
 
 .g-border {

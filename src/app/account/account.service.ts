@@ -5,7 +5,7 @@ import { StorageService } from 'src/app/core/storage.service';
 import {
   removeNullFields,
   checkAndExtractResult,
-} from 'src/app/core/utils.gql';
+} from 'src/app/core/utilities.gql';
 import {
   LoginDocument,
   LoginMutationVariables,

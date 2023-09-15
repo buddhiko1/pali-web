@@ -11,18 +11,12 @@
   @apply leading-relaxed text-sm text-dialogText;
 }
 
-/* TODO: remove */
-.d-input-base {
-  @apply py-1 px-3 rounded border outline-none focus:ring-1 focus:ring-hover leading-relaxed;
+.d-error-text {
+  @apply text-sm text-error;
 }
 
 .d-input {
-  @apply d-input-base border-border bg-inputBg focus:border-focus text-dialogText;
-}
-
-/* TODO: rename */
-.d-form-error {
-  @apply pt-1 text-error text-sm;
+  @apply py-1 px-3 bg-inputBg rounded border border-border focus:border-focus outline-none focus:ring-1 focus:ring-hover leading-relaxed text-dialogText;
 }
 
 /* 'bg-focus' is invalid when 'type=subimt' */
@@ -30,6 +24,6 @@
   @apply py-2 px-3 m-auto rounded-md bg-focus opacity-[.9] hover:opacity-100 focus:opacity-100 disabled:opacity-40 tracking-wide font-light text-buttonText;
 }
 
-.d-button-error {
+.d-error-button {
   @apply py-2 px-3 m-auto rounded-md bg-error opacity-[.9] hover:opacity-100 focus:opacity-100 disabled:opacity-40 tracking-wide font-light text-buttonText;
 }

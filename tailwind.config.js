@@ -21,6 +21,8 @@ module.exports = {
         dialogBg: "var(--colors-dialog-bg)",
         dialogTitle: "var(--colors-dialog-title)",
         dialogText: "var(--colors-dialog-text)",
+        pageTitle: "var(--colors-page-title)",
+        pageSubTitle: "var(--colors-page-subtitle)",
         inputBg: "var(--colors-input-bg)",
         footerBg: "var(--colors-footer-bg)",
         buttonBg: "var(--colors-button-bg)",

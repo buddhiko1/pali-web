@@ -14,7 +14,7 @@
         />
         <div
           *ngIf="email.invalid && (email.dirty || email.touched)"
-          class="d-form-error"
+          class="mt-1 d-error-text"
         >
           <div *ngIf="email.errors?.['required']">Email is required.</div>
           <div *ngIf="email.errors?.['email']">Invalid address format.</div>

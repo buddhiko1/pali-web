@@ -12,11 +12,11 @@ export class ScrollDirective implements OnDestroy {
   private _subscription: Subscription;
   constructor(
     private _navbarService: NavbarService,
-    private _scrollbarService: ScrollbarService
+    private _scrollbarService: ScrollbarService,
   ) {
     this._subscription = fromEvent(document, 'scroll').subscribe(() => {
       this._scrollbarService.showScrollbar();
-        this._navbarService.showHeader(window.scrollY <= 50);
+      this._navbarService.showHeader(window.scrollY <= 50);
     });
   }
 
