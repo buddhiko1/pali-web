@@ -27,7 +27,7 @@
   /* elements */
   --colors-logo: theme("colors.gray.100");
   --colors-page-bg: theme("colors.gray.900");
-  --colors-phrase-bg: theme("colors.red.900");
+  --colors-phrase-bg: theme("colors.gray.700");
   --colors-dialog-bg: theme("colors.gray.700");
   --colors-dialog-title: theme("colors.gray.100");
   --colors-page-title: theme("colors.gray.50");
