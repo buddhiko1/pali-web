@@ -1,4 +1,3 @@
-/* keyframe start with 'g-' is public, otherwise is private */
 @keyframes g-slide-in {
   from {
     transform: translateY(30px);
@@ -31,8 +30,3 @@
     opacity: 1;
   }
 }
-
-/* TODO: redisgn? */
-/* .g-fade-in { */
-/*   animation: _fade-in 500ms ease-in-out both; */
-/* } */
