@@ -4,6 +4,7 @@ import { AngularSvgIconModule } from 'angular-svg-icon';
 
 import { BookComponent } from 'src/app/book/book.component';
 import { SliderDirective } from 'src/app/core/slider.directive';
+import { FadeInDirective } from '../core/fade-in.directive';
 
 import { TipitakaComponent } from './tipitaka.component';
 import { TipitakaRoutingModule } from './tipitaka-routing.module';
@@ -16,6 +17,7 @@ import { TipitakaRoutingModule } from './tipitaka-routing.module';
     AngularSvgIconModule,
     BookComponent,
     SliderDirective,
+    FadeInDirective,
   ],
   exports: [TipitakaComponent],
 })
