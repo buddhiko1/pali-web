@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 import { CreateAccountMutationVariables } from 'src/gql/graphql';
@@ -25,6 +26,8 @@ export class AccountCreateComponent implements OnInit {
   loaderPrompt = '';
 
   constructor(
+    private _router: Router,
+    private _activeRoute: ActivatedRoute,
     private _accountService: AccountService,
     private _registeredEmailValidator: RegisteredEmailValidator,
     private _navigationService: NavigationService,
@@ -80,5 +83,11 @@ export class AccountCreateComponent implements OnInit {
 
   goback(): void {
     this._navigationService.back();
+  }
+
+  onLogin(): void {
+    this._router.navigate([`../${UrlEnum.Login}`], {
+      relativeTo: this._activeRoute,
+    });
   }
 }
