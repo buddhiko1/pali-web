@@ -17,5 +17,4 @@
 - Update packages: pnpm update.
 - Generate graphql code: pnpm run gen.
 - rgignore is read by telescope.
-- [Prettier and Eslint](https://blog.bitsrc.io/how-ive-set-up-eslint-and-prettier-in-angular-16-and-why-i-did-that-4bfc304284a6) 
-
+- [Prettier and Eslint](https://blog.bitsrc.io/how-ive-set-up-eslint-and-prettier-in-angular-16-and-why-i-did-that-4bfc304284a6)

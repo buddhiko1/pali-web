@@ -40,24 +40,42 @@
 .c-ground:after {
   left: 50%;
   margin-left: -166.6666666667px;
-  box-shadow: -295px 305px 15px #94a3be, -565px 635px 15px #94a3be,
-    -870px 930px 15px #8e9eba, -1195px 1205px 15px #97a6c0,
-    -1485px 1515px 15px #7e90b0, -1785px 1815px 15px #97a6c0,
-    -2130px 2070px 15px #9aa9c2, -2405px 2395px 15px #7e90b0,
-    -2650px 2750px 15px #bac4d5, -3035px 2965px 15px #94a3be,
-    -3325px 3275px 15px #8496b4, -3605px 3595px 15px #a4b1c8,
-    -3885px 3915px 15px #97a6c0, -4190px 4210px 15px #91a1bc,
-    -4500px 4500px 15px #94a3be, -4775px 4825px 15px #91a1bc;
+  box-shadow:
+    -295px 305px 15px #94a3be,
+    -565px 635px 15px #94a3be,
+    -870px 930px 15px #8e9eba,
+    -1195px 1205px 15px #97a6c0,
+    -1485px 1515px 15px #7e90b0,
+    -1785px 1815px 15px #97a6c0,
+    -2130px 2070px 15px #9aa9c2,
+    -2405px 2395px 15px #7e90b0,
+    -2650px 2750px 15px #bac4d5,
+    -3035px 2965px 15px #94a3be,
+    -3325px 3275px 15px #8496b4,
+    -3605px 3595px 15px #a4b1c8,
+    -3885px 3915px 15px #97a6c0,
+    -4190px 4210px 15px #91a1bc,
+    -4500px 4500px 15px #94a3be,
+    -4775px 4825px 15px #91a1bc;
 }
 .c-ground:before {
   right: 50%;
   margin-right: -166.6666666667px;
-  box-shadow: 275px -325px 15px #94a3be, 615px -585px 15px #b4bed1,
-    855px -945px 15px #8193b2, 1205px -1195px 15px #9dabc4,
-    1480px -1520px 15px #8193b2, 1760px -1840px 15px #adb9cd,
-    2055px -2145px 15px #aab6cb, 2450px -2350px 15px #8193b2,
-    2665px -2735px 15px #7e90b0, 3015px -2985px 15px #8798b6,
-    3330px -3270px 15px #b0bccf, 3630px -3570px 15px #aab6cb,
-    3870px -3930px 15px #b0bccf, 4225px -4175px 15px #8193b2,
-    4480px -4520px 15px #b4bed1, 4835px -4765px 15px #8193b2;
+  box-shadow:
+    275px -325px 15px #94a3be,
+    615px -585px 15px #b4bed1,
+    855px -945px 15px #8193b2,
+    1205px -1195px 15px #9dabc4,
+    1480px -1520px 15px #8193b2,
+    1760px -1840px 15px #adb9cd,
+    2055px -2145px 15px #aab6cb,
+    2450px -2350px 15px #8193b2,
+    2665px -2735px 15px #7e90b0,
+    3015px -2985px 15px #8798b6,
+    3330px -3270px 15px #b0bccf,
+    3630px -3570px 15px #aab6cb,
+    3870px -3930px 15px #b0bccf,
+    4225px -4175px 15px #8193b2,
+    4480px -4520px 15px #b4bed1,
+    4835px -4765px 15px #8193b2;
 }

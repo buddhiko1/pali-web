@@ -34,8 +34,8 @@
 }
 
 .c-link {
-  display:grid;
-  justify-content:end;
+  display: grid;
+  justify-content: end;
 }
 
 @media screen and (min-width: theme("screens.lg")) {
