@@ -7,8 +7,6 @@ export class ScrollbarService {
   private _isScrollbarShow = false;
   private _scrollbarTimeoutId = 0;
 
-  constructor() {}
-
   get isScrollbarShow(): boolean {
     return this._isScrollbarShow;
   }

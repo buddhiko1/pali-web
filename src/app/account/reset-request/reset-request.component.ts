@@ -27,7 +27,7 @@ export class ResetRequestComponent implements OnInit {
   constructor(
     private _accountService: AccountService,
     private _unregisteredEmailValidator: UnRegisteredEmailValidator,
-    private _navigationService: NavigationService
+    private _navigationService: NavigationService,
   ) {}
 
   ngOnInit(): void {
@@ -36,7 +36,7 @@ export class ResetRequestComponent implements OnInit {
         validators: [Validators.required, Validators.email],
         asyncValidators: [
           this._unregisteredEmailValidator.validate.bind(
-            this._unregisteredEmailValidator
+            this._unregisteredEmailValidator,
           ),
         ],
         updateOn: 'change',
@@ -45,6 +45,7 @@ export class ResetRequestComponent implements OnInit {
   }
 
   get email() {
+    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
     return this.form.get('email')!;
   }
 
@@ -69,7 +70,7 @@ export class ResetRequestComponent implements OnInit {
       });
   }
 
-  goback(): void {
+  goBack(): void {
     this._navigationService.back();
   }
 }

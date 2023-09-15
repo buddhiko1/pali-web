@@ -29,7 +29,7 @@ import {
 export class AccountService {
   constructor(
     private _urqlService: UrqlService,
-    private _storageService: StorageService
+    private _storageService: StorageService,
   ) {}
 
   async isRegisteredEmail(email: string): Promise<boolean> {

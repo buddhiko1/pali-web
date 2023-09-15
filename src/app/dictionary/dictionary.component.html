@@ -1,180 +1,64 @@
 <section class="c-container">
-  <div appSlider class="c-preface pt-10 lg:pt-24">
-    <h2 class="capitalize lg:text-xl">
-      <p class="inline-block capitalize mr-2 g-title-focus">pali</p>
-      <p class="inline-block capitalize g-title-focus">dictionary</p>
-    </h2>
-    <p class="leading-relaxed pt-4 lg:pt-8 g-text">
-      The following dictionaries can meet the needs of learning Pali. In
-      particular, the comprehensive dictionary
-      <strong>Digital Pali Dictionary</strong>, which has a large thesaurus and
-      detailed explanations, is a must-have. Other dictionaries are provided as
-      supplements for people with specific needs.
-    </p>
-    <div class="pt-4 lg:pt-8">
-      <span
-        class="inline-block w-40 lg:w-72 h-0.5 bg-focus rounded-full"
-      ></span>
-      <span class="inline-block w-3 h-0.5 ml-1 bg-focus rounded-full"></span>
-      <span
-        class="inline-block w-1 h-0.5 ml-1 bg-focus rounded-500 rounded-full"
-      ></span>
-    </div>
-  </div>
-  <div
-    appSlider
-    [slideDelay]="800"
-    class="c-dpd c-dict pt-12 lg:pt-36 pb-8 lg:pb-24 border-b g-border"
-  >
-    <div class="c-book hidden lg:block">
-      <app-book [config]="dpdConfig"></app-book>
-    </div>
-    <div>
-      <p class="capitalize lg:text-xl g-title-focus">Digital Pali Dictionary</p>
-      <p class="leading-relaxed pt-4 lg:pt-8 g-text">
-        DPD is a feature-rich Pali-English dictionary which runs in GoldenDict,
-        or any other application that supports the Stardict format. DPD contains
-        five different dictionaries:<i>Pali to English Dictionary</i>,<i
-          >Pali Roots Dictionary</i
-        >,<i>English to Pali Dictionary</i>,<i
-          >Compound Deconstruction Dictionary</i
-        >, and <i>Abbreviations and Help Dictionary</i>.DPD recognises
-        <strong>1.1 million</strong> unique inflected forms of Pali words.
+  <div class="c-content">
+    <div appSlider class="mt-10 lg:mt-24">
+      <h2 class="capitalize lg:text-xl">
+        <p class="inline-block capitalize mr-2 g-title-focus">pali</p>
+        <p class="inline-block capitalize g-title-focus">dictionary</p>
+      </h2>
+      <p class="leading-relaxed mt-4 lg:mt-8 g-text">
+        The following dictionaries can meet the needs of learning Pali.
+        Inparticular, the comprehensive dictionary
+        <strong>Digital Pali Dictionary</strong>, which has a large thesaurus
+        and detailed explanations, is a must-have. Other dictionaries are
+        provided as supplements for people with specific needs.
       </p>
-      <div class="c-action pt-6 lg:pt-16">
-        <button class="c-downloader g-button">
-          <svg-icon
-            src="assets/icons/Github.svg"
-            [svgClass]="['g-svg']"
-          ></svg-icon>
-        </button>
-        <button class="c-downloader g-button">
-          <svg-icon
-            src="assets/icons/download.svg"
-            [svgClass]="['g-svg']"
-          ></svg-icon>
-        </button>
+      <div class="mt-4 lg:mt-8">
+        <span
+          class="inline-block w-40 lg:w-72 h-0.5 bg-focus rounded-full"
+        ></span>
+        <span class="inline-block w-3 h-0.5 ml-1 bg-focus rounded-full"></span>
+        <span
+          class="inline-block w-1 h-0.5 ml-1 bg-focus rounded-500 rounded-full"
+        ></span>
       </div>
     </div>
-  </div>
-  <div
-    appSlider
-    [slideDelay]="1000"
-    class="c-ncped c-dict pt-12 lg:pt-36 pb-8 lg:pb-24 border-bg-border"
-  >
-    <div>
-      <p class="capitalize lg:text-xl g-title-focus">
-        Concise Pali-English Dictionary
-      </p>
-      <p class="leading-relaxed pt-4 lg:pt-8 g-text">
-        This Concise Pali-English Dictionary has been prepared mainly for use by
-        students in schools and colleges. The author is not only an eminent
-        Elder of the Buddhist Order but one of the leading Pali scholars
-        recognized both in the East and the West as an authority on the subject.
-        His experience as a teacher and as a writer of textbooks made him
-        admirably suited for the undertaking.
-      </p>
-      <div class="c-action pt-6 lg:pt-16">
-        <button class="c-downloader g-button">
-          <svg-icon
-            src="assets/icons/info.svg"
-            [svgClass]="['g-svg']"
-          ></svg-icon>
-        </button>
-        <button class="c-downloader g-button">
-          <svg-icon
-            src="assets/icons/download.svg"
-            [svgClass]="['g-svg']"
-          ></svg-icon>
-        </button>
+    <div
+      *ngFor="let dictionary of dictionaries"
+      appSlider
+      [slideDelay]="dictionary.index === 1 ? 800 : 1000"
+      class="c-dictionary mt-12 lg:mt-36 pb-8 lg:pb-24 border-b g-border"
+    >
+      <div *ngIf="dictionary.index % 2" class="c-book hidden lg:block">
+        <app-book [config]="bookConfigFor(dictionary)"></app-book>
       </div>
-    </div>
-    <div class="c-book hidden lg:block">
-      <app-book [config]="ncpedConfig"></app-book>
-    </div>
-  </div>
-  <div class="c-pts c-dict pt-12 lg:pt-36 pb-8 lg:pb-24 border-b g-border">
-    <div class="c-book hidden lg:block">
-      <app-book [config]="ptsConfig"></app-book>
-    </div>
-    <div>
-      <p class="capitalize lg:text-xl g-title-focus">
-        The Pali Text Society's Pali-English Dictionary
-      </p>
-      <p class="leading-relaxed pt-4 lg:pt-8 g-text">
-        This work has been selected by scholars as being culturally important,
-        and is part of the knowledge base of civilization as we know it. This
-        work was reproduced from the original artifact, and remains as true to
-        the original work as possible. Therefore, you will see the original
-        copyright references, library stamps (as most of these works have been
-        housed in our most important libraries around the world), and other
-        notations in the work.
-      </p>
-      <div class="c-action pt-6 lg:pt-16">
-        <button class="c-downloader g-button">
-          <svg-icon
-            src="assets/icons/info.svg"
-            [svgClass]="['g-svg']"
-          ></svg-icon>
-        </button>
-        <button class="c-downloader g-button">
-          <svg-icon
-            src="assets/icons/download.svg"
-            [svgClass]="['g-svg']"
-          ></svg-icon>
-        </button>
+      <div>
+        <p class="capitalize lg:text-xl g-title-focus">{{ dictionary.name }}</p>
+        <p class="leading-relaxed mt-4 lg:mt-8 g-text">
+          {{ dictionary.description }}
+        </p>
+        <div class="c-action mt-6 lg:mt-16">
+          <button
+            onclick="window.open(dictionary.info_url)"
+            class="c-downloader g-button"
+          >
+            <svg-icon
+              src="assets/icons/Github.svg"
+              [svgClass]="['g-svg']"
+            ></svg-icon>
+          </button>
+          <button
+            onclick="window.open(dictionary.zip)"
+            class="c-downloader g-button"
+          >
+            <svg-icon
+              src="assets/icons/download.svg"
+              [svgClass]="['g-svg']"
+            ></svg-icon>
+          </button>
+        </div>
       </div>
-    </div>
-  </div>
-  <div class="c-dppn c-dict pt-12 lg:pt-36 pb-8 lg:pb-24 border-b g-border">
-    <div>
-      <p class="capitalize lg:text-xl g-title-focus">
-        Dictionary of Pali Proper Names
-      </p>
-      <p class="leading-relaxed pt-4 lg:pt-8 g-text">
-        Dictionary of Pali Proper Names is a work of erudition. The author has
-        collected a vast number of entries from Pali canonocal and non-canonical
-        literature on the proper names to make it his magnum opus. It is an
-        indispensable tool for the study of Buddhism.
-      </p>
-      <div class="c-action pt-6 lg:pt-16">
-        <button class="c-downloader g-button">
-          <svg-icon
-            src="assets/icons/info.svg"
-            [svgClass]="['g-svg']"
-          ></svg-icon>
-        </button>
-        <button class="c-downloader g-button">
-          <svg-icon
-            src="assets/icons/download.svg"
-            [svgClass]="['g-svg']"
-          ></svg-icon>
-        </button>
-      </div>
-    </div>
-    <div class="c-book hidden lg:block">
-      <app-book [config]="dppnConfig"></app-book>
-    </div>
-  </div>
-  <div class="c-abbr c-dict pt-12 lg:pt-36 pb-8 lg:pb-24 g-border">
-    <div class="c-book hidden lg:block">
-      <app-book [config]="abbrConfig"></app-book>
-    </div>
-    <div>
-      <p class="capitalize lg:text-xl g-title-focus">
-        Dictionary of Abbreviation
-      </p>
-      <p class="leading-relaxed pt-4 lg:pt-8 g-text">
-        This dictionary is used to explain the abbreviations of book titles and
-        grammatical terms that abound in the dictionary entries.
-      </p>
-      <div class="c-action pt-6 lg:pt-16">
-        <button class="c-downloader g-button">
-          <svg-icon
-            src="assets/icons/download.svg"
-            [svgClass]="['g-svg']"
-          ></svg-icon>
-        </button>
+      <div *ngIf="!(dictionary.index % 2)" class="c-book hidden lg:block">
+        <app-book [config]="bookConfigFor(dictionary)"></app-book>
       </div>
     </div>
   </div>

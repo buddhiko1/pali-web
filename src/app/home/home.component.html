@@ -3,14 +3,14 @@
     <p
       appSlider
       [slideDelay]="200"
-      class="text-center mt-48 lg:mt-56 px-14 font-light text-2xl lg:text-6xl tracking-wide text-gray-50"
+      class="text-center mt-48 lg:mt-56 mx-14 font-light text-2xl lg:text-6xl tracking-wide text-gray-50"
     >
       Learning Pali language
     </p>
     <p
       appSlider
       [slideDelay]="200"
-      class="text-center px-14 pt-8 lg:pt-10 lg:text-xl tracking-wide font-light text-gray-200"
+      class="text-center mx-14 mt-8 lg:mt-10 lg:text-xl tracking-wide font-light text-gray-200"
     >
       Explore the most authentic and ancient Buddhist sutra on your own
     </p>
@@ -22,7 +22,7 @@
       <span class="self-center lg:text-xl"> Tutorial </span>
       <svg-icon
         src="assets/icons/arrow_right.svg"
-        [svgClass]="['w-8', 'h-8', 'pl-2', 'fill-gray-50', 'inline-block']"
+        [svgClass]="['w-8', 'h-8', 'ml-2', 'fill-gray-50', 'inline-block']"
       ></svg-icon>
     </button>
   </div>
@@ -33,15 +33,20 @@
     <div *ngFor="let module of modules" class="c-section g-card p-5 lg:p-7">
       <div>
         <p class="g-title-focus">{{ module.name | titlecase }}</p>
-        <p class="pt-3 g-text">{{ module.description }}</p>
+        <p class="mt-3 g-text">{{ module.description }}</p>
       </div>
-      <a routerLink="/{{ module.route }}" class="pt-5 text-sm capitalize">
-        <span class="self-center tracking-wide text-focus">read more</span>
-        <svg-icon
-          src="assets/icons/arrow_right.svg"
-          [svgClass]="['w-7', 'h-7', 'pl-1', 'fill-blue-400', 'inline-block']"
-        ></svg-icon>
-      </a>
+      <div class="c-link">
+        <button
+          routerLink="/{{ module.route }}"
+          class="mt-5 mx-auto p-1 text-sm capitalize"
+        >
+          <span class="self-center tracking-wide text-focus">read more</span>
+          <svg-icon
+            src="assets/icons/arrow_right.svg"
+            [svgClass]="['w-7', 'h-7', 'ml-1', 'fill-blue-400', 'inline-block']"
+          ></svg-icon>
+        </button>
+      </div>
     </div>
   </div>
 </section>

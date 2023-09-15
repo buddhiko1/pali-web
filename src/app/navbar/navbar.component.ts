@@ -20,7 +20,7 @@ export class NavbarComponent {
     private _router: Router,
     private _navbarService: NavbarService,
     private _homeService: HomeService,
-    private _scrollbarService: ScrollbarService
+    private _scrollbarService: ScrollbarService,
   ) {
     this._router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {

@@ -28,7 +28,7 @@ export class PlaceholderPageComponent implements OnDestroy {
   constructor(
     private _deviceService: DeviceDetectorService,
     private _navbarService: NavbarService,
-    private _activeRoute: ActivatedRoute
+    private _activeRoute: ActivatedRoute,
   ) {
     if (this._deviceService.isDesktop()) {
       this._navbarService.showShadow(false);

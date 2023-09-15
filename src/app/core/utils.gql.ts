@@ -1,4 +1,5 @@
-import { CombinedError } from '@urql/core';
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import { OperationResult } from '@urql/core';
 
 export function removeNullFields(obj: any, ...fieldsToRemove: string[]): any {
   const filteredObj = Object.assign({}, obj);
@@ -10,12 +11,11 @@ export function removeNullFields(obj: any, ...fieldsToRemove: string[]): any {
   return filteredObj;
 }
 
-export function checkAndExtractResult(result: any): any {
+export function checkAndExtractResult(result: OperationResult): any {
   if (result.error) {
-    const combinedError = result.error as CombinedError;
     throw Error(
-      combinedError.networkError?.message ??
-        combinedError.graphQLErrors[0].message
+      result.error.networkError?.message ??
+        result.error.graphQLErrors[0].message,
     );
   }
   return result.data;

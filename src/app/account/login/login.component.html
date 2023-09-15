@@ -26,7 +26,9 @@
       <div class="c-password">
         <div class="c-password-label">
           <label for="password" class="d-subText">Password</label>
-          <a (click)="onRequestReset()" class="text-sm g-link">Forgot?</a>
+          <button (click)="onRequestReset()" class="text-sm p-1 g-link">
+            Forgot?
+          </button>
         </div>
         <input
           type="password"
@@ -55,7 +57,9 @@
     </form>
     <p class="c-tips d-subText">
       <span>Don't have an account?</span
-      ><a (click)="onCreateAccount()" class="text-sm g-link pl-4">Sign Up</a>
+      ><button (click)="onCreateAccount()" class="text-sm g-link p-1 ml-4">
+        Sign Up
+      </button>
     </p>
   </div>
   <ng-template #loader>

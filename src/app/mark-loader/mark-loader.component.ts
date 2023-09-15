@@ -29,8 +29,6 @@ export class MarkLoaderComponent {
     return this.borderWidth;
   }
 
-  constructor() {}
-
   get isShowing(): boolean {
     return this.status !== StatusEnum.Idle;
   }

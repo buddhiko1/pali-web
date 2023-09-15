@@ -21,14 +21,14 @@ export enum UrlEnum {
 // https://itnext.io/everything-you-need-to-know-about-route-guard-in-angular-697a062d3198
 const canActiveLogin = (
   roleService = inject(RoleService),
-  router = inject(Router)
+  router = inject(Router),
 ) => {
   return roleService.isPublic ? true : router.parseUrl(`account/${UrlEnum.Me}`);
 };
 
 const canActiveMe = (
   roleService = inject(RoleService),
-  router = inject(Router)
+  router = inject(Router),
 ) => {
   return roleService.isUser
     ? true

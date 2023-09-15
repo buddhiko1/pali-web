@@ -9,7 +9,10 @@ import { Router, NavigationStart, NavigationEnd } from '@angular/router';
 export class FooterComponent implements OnInit {
   isVisible = false;
 
-  constructor(private _el: ElementRef, private _router: Router) {}
+  constructor(
+    private _el: ElementRef,
+    private _router: Router,
+  ) {}
 
   ngOnInit(): void {
     // ajsust footer position on every route change

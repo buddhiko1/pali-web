@@ -14,13 +14,13 @@ export class HomeComponent implements OnDestroy {
 
   constructor(
     private _navbarService: NavbarService,
-    private _homeService: HomeService
+    private _homeService: HomeService,
   ) {
     this._navbarService.showShadow(false);
-    this.fetchModules();
+    this._fetchContent();
   }
 
-  fetchModules(): void {
+  private _fetchContent(): void {
     this._homeService.fetchModules().then((modules) => {
       this.modules = modules;
     });

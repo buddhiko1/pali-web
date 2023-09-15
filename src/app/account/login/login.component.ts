@@ -26,7 +26,7 @@ export class LoginComponent implements OnInit {
     private _router: Router,
     private _activeRoute: ActivatedRoute,
     private _accountService: AccountService,
-    private _unRegisteredEmailValidator: UnRegisteredEmailValidator
+    private _unRegisteredEmailValidator: UnRegisteredEmailValidator,
   ) {}
 
   ngOnInit(): void {
@@ -35,7 +35,7 @@ export class LoginComponent implements OnInit {
         validators: [Validators.required, Validators.email],
         asyncValidators: [
           this._unRegisteredEmailValidator.validate.bind(
-            this._unRegisteredEmailValidator
+            this._unRegisteredEmailValidator,
           ),
         ],
         updateOn: 'change',
@@ -48,10 +48,12 @@ export class LoginComponent implements OnInit {
   }
 
   get email() {
+    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
     return this.form.get('email')!;
   }
 
   get password() {
+    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
     return this.form.get('password')!;
   }
 

@@ -14,7 +14,7 @@ export class NavbarService {
 
   constructor(
     private _deviceService: DeviceDetectorService,
-    private _overlayService: OverlayService
+    private _overlayService: OverlayService,
   ) {}
 
   get isDark(): boolean {

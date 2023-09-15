@@ -3,12 +3,13 @@
   [class.shadow-sm]="isShadowShow"
   [class.c-container-hidden]="!isHeaderShow"
 >
-  <a
+  <button
     (click)="routeTo('')"
-    class="c-logo py-3 text-2xl lg:text-3xl uppercase tracking-widest font-bold g-title g-hover"
+    class="c-logo p-3 text-2xl lg:text-3xl uppercase tracking-widest font-bold g-title g-hover"
     [class.text-focus]="isActiveUrl('')"
-    >Pali</a
   >
+    Pali
+  </button>
 
   <button
     (click)="toggleMenu()"
@@ -31,18 +32,19 @@
         *ngFor="let module of modules"
         class="c-index-item mt-2 lg:mt-0 lg:mx-4"
       >
-        <a
+        <button
           (click)="routeTo(module.route)"
-          class="g-text g-hover"
+          class="p-1 g-text g-hover"
           [class.g-focus]="isActiveUrl(module.route)"
-          >{{ module.name | titlecase }}</a
         >
+          {{ module.name | titlecase }}
+        </button>
       </li>
     </ul>
 
     <div class="c-divider lg:hidden mb-5 h-6 border-b g-border"></div>
 
-    <a (click)="toggleDark()" class="c-theme">
+    <button (click)="toggleDark()" class="c-theme p-1">
       <svg-icon
         *ngIf="isDark"
         src="assets/icons/moon.svg"
@@ -53,18 +55,18 @@
         src="assets/icons/sun.svg"
         [svgClass]="['g-svg', 'g-hover']"
       ></svg-icon>
-    </a>
+    </button>
 
-    <a (click)="routeTo('email')" class="c-donation lg:mx-6">
+    <button (click)="routeTo('email')" class="c-donation p-1 lg:mx-6">
       <svg-icon
         src="assets/icons/email.svg"
         [svgClass]="['g-svg', 'g-hover', 'w-5', 'h-5']"
       ></svg-icon>
-    </a>
+    </button>
 
-    <a
+    <button
       (click)="routeTo('account')"
-      class="c-account"
+      class="c-account p-1"
       [class.g-focus]="isActiveUrl('account')"
     >
       <svg-icon
@@ -75,6 +77,6 @@
           isActiveUrl('account') ? 'g-focus' : ''
         ]"
       ></svg-icon>
-    </a>
+    </button>
   </section>
 </nav>

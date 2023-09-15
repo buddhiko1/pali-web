@@ -8,13 +8,16 @@ export class SliderDirective implements OnInit {
   @Input() slideDelay = 0;
   @Input() slideDuration = 1000;
 
-  constructor(private _el: ElementRef, private renderer: Renderer2) {}
+  constructor(
+    private _el: ElementRef,
+    private renderer: Renderer2,
+  ) {}
 
   ngOnInit(): void {
     this.renderer.setStyle(
       this._el.nativeElement,
       'animation',
-      `g-slide-in ${this.slideDuration}ms ease-in-out ${this.slideDelay}ms both`
+      `g-slide-in ${this.slideDuration}ms ease-in-out ${this.slideDelay}ms both`,
     );
   }
 }

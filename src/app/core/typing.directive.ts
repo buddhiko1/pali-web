@@ -23,7 +23,7 @@ export class TypingDirective implements OnInit {
     interval(this.speed)
       .pipe(
         map((i) => i),
-        take(this._charList.length)
+        take(this._charList.length),
       )
       .subscribe((i) => {
         const charToInsert = this._charList[i];
@@ -47,7 +47,7 @@ export class TypingDirective implements OnInit {
     interval(speed)
       .pipe(
         map((i) => i),
-        take(counter)
+        take(counter),
       )
       .subscribe((i) => {
         const text = this._el.nativeElement.innerHTML;

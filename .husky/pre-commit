@@ -1,7 +1,5 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-# format
-pnpm exec pretty-quick --staged
-# fix error
+# prettier will be called by eslint.
 ~/.local/share/pnpm/ng lint --fix

@@ -17,7 +17,10 @@ class Particle {
   yToMove = 0;
   radius = 0;
 
-  constructor(private _height: number, private _width: number) {
+  constructor(
+    private _height: number,
+    private _width: number,
+  ) {
     this.reset();
   }
 
@@ -69,7 +72,7 @@ class Particles {
         particle.radius,
         0,
         Math.PI * 2,
-        false
+        false,
       );
       context!.fill();
     });
@@ -89,8 +92,6 @@ export class SnowBgComponent implements AfterViewInit {
   @Input() height = '90vh';
   @ViewChild('snow')
   snow!: ElementRef<HTMLCanvasElement>;
-
-  constructor() {}
 
   @HostBinding('style.--canvasHeight') get canvasHeight() {
     return this.height;

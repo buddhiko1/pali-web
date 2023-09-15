@@ -30,12 +30,12 @@ export class AccountInitComponent implements OnInit {
   constructor(
     private _router: Router,
     private _activeRoute: ActivatedRoute,
-    private _accountService: AccountService
+    private _accountService: AccountService,
   ) {
     this._activeRoute.queryParams.subscribe((params) => {
       this._token = params['token'];
       this._email = JSON.parse(
-        window.atob(params['token'].split('.')[1])
+        window.atob(params['token'].split('.')[1]),
       ).email;
     });
   }
@@ -51,6 +51,7 @@ export class AccountInitComponent implements OnInit {
   }
 
   get password() {
+    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
     return this.form.get('password')!;
   }
 

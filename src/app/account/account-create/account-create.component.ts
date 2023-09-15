@@ -27,7 +27,7 @@ export class AccountCreateComponent implements OnInit {
   constructor(
     private _accountService: AccountService,
     private _registeredEmailValidator: RegisteredEmailValidator,
-    private _navigationService: NavigationService
+    private _navigationService: NavigationService,
   ) {}
 
   ngOnInit(): void {
@@ -36,7 +36,7 @@ export class AccountCreateComponent implements OnInit {
         validators: [Validators.required, Validators.email],
         asyncValidators: [
           this._registeredEmailValidator.validate.bind(
-            this._registeredEmailValidator
+            this._registeredEmailValidator,
           ),
         ],
         updateOn: 'change',
@@ -45,6 +45,7 @@ export class AccountCreateComponent implements OnInit {
   }
 
   get email() {
+    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
     return this.form.get('email')!;
   }
 

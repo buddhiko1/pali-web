@@ -21,7 +21,7 @@ export class UrqlService {
       onError(error, operation) {
         console.error(
           `The operation ${operation.key} has errored with:`,
-          error
+          error,
         );
       },
     });
@@ -35,7 +35,7 @@ export class UrqlService {
         },
         didAuthError(error) {
           return error.graphQLErrors.some(
-            (e) => e.extensions?.['code'] === 'FORBIDDEN'
+            (e) => e.extensions?.['code'] === 'FORBIDDEN',
           );
         },
         async refreshAuth() {

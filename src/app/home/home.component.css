@@ -31,8 +31,11 @@
 
 .c-section a {
   display: grid;
-  grid-auto-flow: column;
-  justify-content: end;
+}
+
+.c-link {
+  display:grid;
+  justify-content:end;
 }
 
 @media screen and (min-width: theme("screens.lg")) {

@@ -15,8 +15,6 @@ export class WheelComponent {
   @Input() cycleTime = 10000;
   @Input() stop = false;
 
-  constructor() {}
-
   @HostBinding('style.--cycleTime') get _cycleTime() {
     return `${this.cycleTime}ms`;
   }

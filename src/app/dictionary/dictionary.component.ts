@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
+
+import { Dictionaries, Dict_Introduction } from 'src/gql/graphql';
 import { Config as BookConfig } from '../book/book.model';
+import { DictionaryService } from './dictionary.service';
 
 @Component({
   selector: 'app-dictionary',
@@ -7,49 +10,30 @@ import { Config as BookConfig } from '../book/book.model';
   styleUrls: ['./dictionary.component.css'],
 })
 export class DictionaryComponent {
-  dpdConfig: BookConfig;
-  dppnConfig: BookConfig;
-  ncpedConfig: BookConfig;
-  ptsConfig: BookConfig;
-  abbrConfig: BookConfig;
-  private _color = '#477999';
+  introduction: Dict_Introduction = {} as Dict_Introduction;
+  dictionaries: Dictionaries[] = [];
 
-  constructor() {
-    this.dpdConfig = {
+  constructor(private _dictionaryService: DictionaryService) {
+    this._fetchContent();
+  }
+
+  private _fetchContent(): void {
+    this._dictionaryService.fetchIntroduction().then((introduction) => {
+      this.introduction = introduction;
+    });
+    this._dictionaryService.fetchDictionaries().then((dictionaries) => {
+      this.dictionaries = dictionaries;
+      console.log(dictionaries);
+    });
+  }
+
+  bookConfigFor(dictionary: Dictionaries): BookConfig {
+    return {
       height: '16rem',
       width: '12rem',
-      // header: 'Digital Pali Dictionary',
-      image: 'assets/images/dpd.jpg',
-      color: this._color,
-      direction: 'right-view',
-    };
-    this.ncpedConfig = {
-      height: '16rem',
-      width: '12rem',
-      image: 'assets/images/ncped.jpg',
-      color: this._color,
-      direction: 'left-view',
-    };
-    this.dppnConfig = {
-      height: '16rem',
-      width: '12rem',
-      image: 'assets/images/dppn.jpg',
-      color: this._color,
-      direction: 'left-view',
-    };
-    this.ptsConfig = {
-      height: '16rem',
-      width: '12rem',
-      image: 'assets/images/pts.jpg',
-      color: this._color,
-      direction: 'right-view',
-    };
-    this.abbrConfig = {
-      height: '16rem',
-      width: '12rem',
-      image: 'assets/images/abbr.jpg',
-      color: this._color,
-      direction: 'right-view',
+      image: dictionary.cover?.location ?? '',
+      color: '#477999',
+      direction: dictionary.index % 2 ? 'right-view' : 'left-view',
     };
   }
 }

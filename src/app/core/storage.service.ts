@@ -9,8 +9,6 @@ export class StorageService {
   private _refreshTokenKey = 'refreshToken';
   private _meKey = 'me';
 
-  constructor() {}
-
   saveAuthToken(authToken: Auth_Tokens) {
     localStorage.setItem(this._authTokenKey, authToken.access_token ?? '');
     localStorage.setItem(this._refreshTokenKey, authToken.refresh_token ?? '');
