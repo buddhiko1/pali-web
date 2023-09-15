@@ -22,6 +22,10 @@
   @apply p-1 m-auto rounded-md bg-buttonBg hover:bg-hover tracking-wide font-light text-buttonText;
 }
 
+.g-button-link {
+  @apply text-focus p-1;
+}
+
 .g-button-hl {
   @apply py-1 px-4 m-auto rounded-md bg-focus tracking-wide font-light text-buttonText;
 }
