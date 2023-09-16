@@ -29,10 +29,6 @@
   grid-row-gap: 2.5rem;
 }
 
-.c-section a {
-  display: grid;
-}
-
 .c-link {
   display: grid;
   justify-content: end;
@@ -55,9 +51,5 @@
   .c-section {
     display: grid;
     align-content: space-between;
-  }
-
-  .c-section a {
-    justify-self: end;
   }
 }
