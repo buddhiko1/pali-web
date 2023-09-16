@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { DeviceDetectorService } from 'ngx-device-detector';
 
 import { OverlayService } from '../overlay/overlay.service';
 
@@ -7,15 +6,12 @@ import { OverlayService } from '../overlay/overlay.service';
   providedIn: 'root',
 })
 export class NavbarService {
-  private _isMenuOpen = false;
-  private _isHeaderShow = true;
-  private _isShadowShow = true;
+  private _isShow = true;
   private _isDark = false;
+  private _isMenuOpen = false;
+  private _isShadowShow = true;
 
-  constructor(
-    private _deviceService: DeviceDetectorService,
-    private _overlayService: OverlayService,
-  ) {}
+  constructor(private _overlayService: OverlayService) {}
 
   get isDark(): boolean {
     return this._isDark;
@@ -33,26 +29,25 @@ export class NavbarService {
   }
 
   openMenu(): void {
-    if (!this._deviceService.isDesktop()) {
-      this._overlayService.active(true);
-      this._isHeaderShow = true;
-      this._isMenuOpen = true;
-    }
+    this._overlayService.active(true);
+    this._isMenuOpen = true;
   }
 
   closeMenu(): void {
-    if (!this._deviceService.isDesktop()) {
-      this._isMenuOpen = false;
-      this._overlayService.active(false);
-    }
+    this._isMenuOpen = false;
+    this._overlayService.active(false);
   }
 
-  get isHeaderShow(): boolean {
-    return this._isHeaderShow;
+  toggleMenu(): void {
+    this._isMenuOpen ? this.closeMenu() : this.openMenu();
   }
 
-  showHeader(value: boolean) {
-    this._isHeaderShow = value;
+  get isShow(): boolean {
+    return this._isShow;
+  }
+
+  show(value: boolean) {
+    this._isShow = value;
   }
 
   get isShadowShow(): boolean {

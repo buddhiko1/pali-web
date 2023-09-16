@@ -16,7 +16,7 @@ export class ScrollDirective implements OnDestroy {
   ) {
     this._subscription = fromEvent(document, 'scroll').subscribe(() => {
       this._scrollbarService.showScrollbar();
-      this._navbarService.showHeader(window.scrollY <= 50);
+      this._navbarService.show(window.scrollY <= 50);
     });
   }
 

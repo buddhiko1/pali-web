@@ -1,14 +1,13 @@
 <nav
   class="c-container pt-1 lg:pt-4 sticky z-20 top-0 backdrop-blur-sm g-transition bg-pageBg"
   [class.shadow-sm]="isShadowShow"
-  [class.c-container-hidden]="!isHeaderShow"
+  [class.c-container-hidden]="!isShow"
 >
   <button
     (click)="routeTo('')"
-    class="c-logo p-3 text-2xl lg:text-3xl uppercase tracking-widest font-bold text-logo g-hover"
-    [class.text-focus]="isActiveUrl('')"
+    class="c-logo p-3 text-2xl lg:text-3xl uppercase tracking-widest font-bold text-logo"
   >
-    Pali
+    <p class="g-hover" [class.text-focus]="isActiveUrl('')">Pali</p>
   </button>
 
   <button
@@ -35,7 +34,7 @@
         <button
           (click)="routeTo(module.route)"
           class="p-1 g-paragraph g-hover"
-          [class.g-focus]="isActiveUrl(module.route)"
+          [class.text-focus]="isActiveUrl(module.route)"
         >
           {{ module.name | titlecase }}
         </button>
@@ -60,21 +59,23 @@
     <button (click)="routeTo('email')" class="c-donation p-1 lg:mx-6">
       <svg-icon
         src="assets/icons/email.svg"
-        [svgClass]="['g-svg', 'g-hover', 'w-5', 'h-5']"
+        [svgClass]="[
+          'g-svg',
+          'g-hover',
+          'w-5',
+          'h-5',
+          isActiveUrl('email') ? 'text-focus' : ''
+        ]"
       ></svg-icon>
     </button>
 
-    <button
-      (click)="routeTo('account')"
-      class="c-account p-1"
-      [class.g-focus]="isActiveUrl('account')"
-    >
+    <button (click)="routeTo('account')" class="c-account p-1">
       <svg-icon
         src="assets/icons/person.svg"
         [svgClass]="[
           'g-svg',
           'g-hover',
-          isActiveUrl('account') ? 'g-focus' : ''
+          isActiveUrl('account') ? 'text-focus' : ''
         ]"
       ></svg-icon>
     </button>
