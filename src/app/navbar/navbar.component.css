@@ -34,7 +34,7 @@
   grid-template-areas:
     "left-padding index index index right-padding"
     "left-padding divider divider divider right-padding"
-    "left-padding theme donation account right-padding";
+    "left-padding theme email account right-padding";
 }
 
 .c-menu-close {
@@ -57,8 +57,8 @@
   align-self: center;
 }
 
-.c-donation {
-  grid-area: donation;
+.c-email {
+  grid-area: email;
   justify-self: center;
   align-self: center;
 }
@@ -75,7 +75,7 @@
     grid-template-columns: theme("spacing.lgPadding") auto 1fr auto auto auto theme(
         "spacing.lgPadding"
       );
-    grid-template-areas: "left-padding logo index theme donation account right-padding";
+    grid-template-areas: "left-padding logo index theme email account right-padding";
     place-content: center;
     align-items: baseline;
   }
@@ -88,6 +88,7 @@
     padding-top: theme("spacing.0");
     padding-left: theme("spacing.16");
   }
+
   .c-index-item {
     display: inline;
   }
@@ -97,7 +98,7 @@
     align-self: center;
   }
 
-  .c-donation {
+  .c-email {
     justify-self: center;
     align-self: center;
   }

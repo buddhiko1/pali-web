@@ -15,8 +15,8 @@ const routes: Routes = [
   },
   {
     path: 'dictionary',
-    loadChildren: () =>
-      import('./dictionary/dictionary.module').then((m) => m.DictionaryModule),
+    loadComponent: () =>
+      import('./dictionary/dictionary.component').then((m) => m.DictionaryComponent),
   },
   {
     path: 'vocabulary',
@@ -25,8 +25,8 @@ const routes: Routes = [
   },
   {
     path: 'tipitaka',
-    loadChildren: () =>
-      import('./tipitaka/tipitaka.module').then((m) => m.TipitakaModule),
+    loadComponent: () =>
+      import('./tipitaka/tipitaka.component').then((m) => m.TipitakaComponent),
   },
   {
     path: 'account',

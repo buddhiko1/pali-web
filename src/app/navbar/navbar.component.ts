@@ -65,7 +65,7 @@ export class NavbarComponent {
   }
 
   routeTo(url: string): void {
-    if (!this._deviceService.isDesktop()) {
+    if (!this._deviceService.isDesktop() && url) {
       this.toggleMenu();
     }
     this._router.navigateByUrl(url);

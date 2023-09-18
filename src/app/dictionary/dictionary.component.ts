@@ -1,11 +1,22 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { AngularSvgIconModule } from 'angular-svg-icon';
 
-import { Dictionaries, Dict_Introduction } from 'src/gql/graphql';
+import { SliderDirective } from '../core/slider.directive';
+import { BookComponent } from '../book/book.component';
 import { Config as BookConfig } from '../book/book.model';
 import { DictionaryService } from './dictionary.service';
+import { Dictionaries, Dict_Introduction } from 'src/gql/graphql';
 
 @Component({
   selector: 'app-dictionary',
+  standalone: true,
+  imports: [
+    CommonModule,
+    AngularSvgIconModule,
+    SliderDirective,
+    BookComponent,
+  ],
   templateUrl: './dictionary.component.html',
   styleUrls: ['./dictionary.component.css'],
 })
@@ -14,10 +25,6 @@ export class DictionaryComponent {
   dictionaries: Dictionaries[] = [];
 
   constructor(private _dictionaryService: DictionaryService) {
-    this._fetchContent();
-  }
-
-  private _fetchContent(): void {
     this._dictionaryService.fetchIntroduction().then((introduction) => {
       this.introduction = introduction;
     });

@@ -1,16 +1,15 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
-import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
-
 import { AngularSvgIconModule } from 'angular-svg-icon';
 
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
-import { FooterModule } from './footer/footer.module';
-import { DictionaryModule } from './dictionary/dictionary.module';
-import { TipitakaModule } from './tipitaka/tipitaka.module';
+import { FooterComponent } from './footer/footer.component';
+import { DictionaryComponent } from './dictionary/dictionary.component';
+import { TipitakaComponent } from './tipitaka/tipitaka.component';
 import { OverlayComponent } from './overlay/overlay.component';
 
 @NgModule({
@@ -22,9 +21,9 @@ import { OverlayComponent } from './overlay/overlay.component';
     AngularSvgIconModule.forRoot(),
     CommonModule,
     NavbarComponent,
-    DictionaryModule,
-    TipitakaModule,
-    FooterModule,
+    DictionaryComponent,
+    TipitakaComponent,
+    FooterComponent,
   ],
   providers: [],
   bootstrap: [AppComponent],

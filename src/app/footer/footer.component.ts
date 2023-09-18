@@ -1,21 +1,23 @@
 import { Component, OnInit, ElementRef } from '@angular/core';
 import { Router, NavigationStart, NavigationEnd } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import { AngularSvgIconModule } from 'angular-svg-icon';
+import { SliderDirective } from 'src/app/core/slider.directive';
 
 @Component({
   selector: 'app-footer',
+  standalone: true,
+  imports: [CommonModule, AngularSvgIconModule, SliderDirective],
   templateUrl: './footer.component.html',
   styleUrls: ['./footer.component.css'],
 })
 export class FooterComponent implements OnInit {
   isVisible = false;
 
-  constructor(
-    private _el: ElementRef,
-    private _router: Router,
-  ) {}
+  constructor(private _el: ElementRef, private _router: Router) {}
 
   ngOnInit(): void {
-    // ajsust footer position on every route change
+    // ajsust footer position when route change
     this._router.events.subscribe((event) => {
       if (event instanceof NavigationStart) {
         this.isVisible = false;

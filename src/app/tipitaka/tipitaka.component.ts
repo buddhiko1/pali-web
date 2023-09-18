@@ -1,9 +1,23 @@
 import { Component, OnDestroy } from '@angular/core';
-import { Config as BookConfig } from 'src/app/book/book.model';
-import { NavbarService } from 'src/app/navbar/navbar.service';
+import { CommonModule } from '@angular/common';
+import { AngularSvgIconModule } from 'angular-svg-icon';
+
+import { Config as BookConfig } from '../book/book.model';
+import { NavbarService } from '../navbar/navbar.service';
+import { BookComponent } from '../book/book.component';
+import { SliderDirective } from '../core/slider.directive';
+import { FadeInDirective } from '../core/fade-in.directive';
 
 @Component({
   selector: 'app-tipitaka',
+  standalone: true,
+  imports: [
+    CommonModule,
+    AngularSvgIconModule,
+    BookComponent,
+    SliderDirective,
+    FadeInDirective,
+  ],
   templateUrl: './tipitaka.component.html',
   styleUrls: ['./tipitaka.component.css'],
 })
