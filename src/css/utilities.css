@@ -1,7 +1,3 @@
-.g-transition {
-  @apply transition-transform duration-[400ms] ease-in-out;
-}
-
 .g-hover {
   @apply hover:text-focus;
 }
