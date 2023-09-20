@@ -4,7 +4,7 @@ import { Client, cacheExchange, fetchExchange, mapExchange } from '@urql/core';
 import { authExchange } from '@urql/exchange-auth';
 
 import { environment } from 'src/environments/environment';
-import { StorageService } from 'src/app/core/storage.service';
+import { StorageService } from './storage.service';
 
 import {
   RefreshTokenDocument,

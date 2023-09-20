@@ -6,13 +6,11 @@
 >
   <svg-icon
     *ngIf="isSuccessful"
-    [@inOutAnimation]
     src="assets/icons/check.svg"
-    [svgClass]="['c-svg', 'fill-current', 'text-main']"
+    [svgClass]="['c-svg', 'fill-current', 'text-ok']"
   ></svg-icon>
   <svg-icon
     *ngIf="isFailed"
-    [@inOutAnimation]
     src="assets/icons/close.svg"
     [svgClass]="['c-svg', 'fill-current', 'text-error']"
   ></svg-icon>

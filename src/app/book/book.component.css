@@ -1,36 +1,36 @@
-.container {
+.c-container {
   width: var(--width);
   height: var(--height);
   margin: 0rem;
   perspective: 112rem;
 }
-.book {
+.c-book {
   width: 100%;
   transform-style: preserve-3d;
   transition: transform 0.5s;
 }
-.book div {
+.c-book div {
   position: absolute;
 }
-.front {
+.c-front {
   transform-style: preserve-3d;
   transform-origin: 0% 50%;
   transition: transform 0.5s;
   transform: translate3d(0, 0, 1.25rem);
 }
-.front:after {
+.c-front:after {
   content: "";
   position: absolute;
   background-color: var(--color);
 }
-.front > div {
+.c-front > div {
   width: var(--width);
   height: var(--height);
   transform-style: preserve-3d;
   border-radius: 0 0.3rem 0.3rem 0;
   background-color: var(--color);
 }
-.back {
+.c-back {
   width: var(--width);
   height: var(--height);
   transform: rotate3d(0, 1, 0, -180deg) translate3d(0, 0, 1.25rem);
@@ -38,7 +38,7 @@
   border-radius: 0.3rem 0 0 0.3rem;
   background-color: var(--color);
 }
-.right {
+.c-right {
   width: 2.5rem;
   height: calc(var(--height) - 0.75rem);
   left: -1.25rem;
@@ -48,14 +48,14 @@
   /* backface-visibility: hidden; */
   background-color: #fff;
 }
-.left {
+.c-left {
   width: 2.5rem;
   height: var(--height);
   left: -1.25rem;
   transform: rotate3d(0, 1, 0, -90deg);
   background-color: var(--color);
 }
-.left .spine {
+.c-left .c-spine {
   width: var(--height);
   height: 2.5rem;
   line-height: 2.5rem;
@@ -68,30 +68,30 @@
   font-weight: 400;
   font-size: 0.92rem;
 }
-.cover {
+.c-cover {
   background-size: 100% 100%;
   background-repeat: no-repeat;
   background-position: center center;
 }
-.cover .header {
+.c-cover .c-header {
   padding: 2.3rem 1.8rem;
   color: #fff;
   font-weight: 400;
   font-size: 0.8rem;
   padding-right: 1.25rem;
 }
-.book.right-view {
+.c-book.right-view {
   transform: rotate3d(0, 1, 0, 30deg);
 }
-.book.right-view:hover {
+.c-book.right-view:hover {
   transform: rotate3d(0, 1, 0, 0deg);
 }
-.book.left-view {
+.c-book.left-view {
   transform: rotate3d(0, 1, 0, -30deg);
 }
-.book.left-view:hover {
+.c-book.left-view:hover {
   transform: rotate3d(0, 1, 0, 0deg);
 }
-.book.front-view {
+.c-book.front-view {
   transform: rotate3d(0, 1, 0, 0deg);
 }

@@ -19,7 +19,7 @@ export enum StatusEnum {
 export class MarkLoaderComponent {
   @Input() status = StatusEnum.Idle;
   @Input() size = '1.5rem';
-  @Input() borderWidth = '1px';
+  @Input() borderWidth = '0.07rem';
 
   @HostBinding('style.--size') get _size() {
     return this.size;
