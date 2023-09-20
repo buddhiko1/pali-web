@@ -14,7 +14,10 @@ import { SliderDirective } from 'src/app/core/slider.directive';
 export class FooterComponent implements OnInit {
   isVisible = false;
 
-  constructor(private _el: ElementRef, private _router: Router) {}
+  constructor(
+    private _el: ElementRef,
+    private _router: Router,
+  ) {}
 
   ngOnInit(): void {
     // ajsust footer position when route change

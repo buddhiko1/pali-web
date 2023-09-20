@@ -19,6 +19,7 @@ import { NavbarService } from './navbar.service';
 })
 export class NavbarComponent {
   modules: Modules[] = [];
+  menuToggled = false;
   private _activeUrl = '';
 
   constructor(
@@ -55,6 +56,7 @@ export class NavbarComponent {
   }
 
   toggleMenu(): void {
+    this.menuToggled = true;
     this._navbarService.toggleMenu();
   }
 

@@ -11,12 +11,7 @@ import { Dictionaries, Dict_Introduction } from 'src/gql/graphql';
 @Component({
   selector: 'app-dictionary',
   standalone: true,
-  imports: [
-    CommonModule,
-    AngularSvgIconModule,
-    SliderDirective,
-    BookComponent,
-  ],
+  imports: [CommonModule, AngularSvgIconModule, SliderDirective, BookComponent],
   templateUrl: './dictionary.component.html',
   styleUrls: ['./dictionary.component.css'],
 })

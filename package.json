@@ -8,7 +8,7 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "lint": "ng lint",
-    "format": "prettier **/*.{css,json,md} --write",
+    "format": "prettier **/*.{css,json,md,ts} --write",
     "prepare": "husky install",
     "gen": "graphql-codegen",
     "prestart": "pnpm generate",

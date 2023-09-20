@@ -16,7 +16,9 @@ const routes: Routes = [
   {
     path: 'dictionary',
     loadComponent: () =>
-      import('./dictionary/dictionary.component').then((m) => m.DictionaryComponent),
+      import('./dictionary/dictionary.component').then(
+        (m) => m.DictionaryComponent,
+      ),
   },
   {
     path: 'vocabulary',

@@ -1,5 +1,5 @@
 <nav
-  class="c-container pt-1 lg:pt-4 sticky z-20 top-0 backdrop-blur-sm g-transition bg-pageBg"
+  class="c-container pt-1 lg:pt-4 sticky z-20 top-0 backdrop-blur-sm bg-pageBg"
   [class.shadow-sm]="isShadowShow"
   [class.c-container-hidden]="!isShow"
 >
@@ -18,13 +18,20 @@
   >
     <svg-icon
       src="assets/icons/plus.svg"
-      [svgClass]="['g-svg', 'g-transition', isMenuOpen ? 'rotate-45' : '']"
+      [svgClass]="[
+        'g-svg',
+        'transition-transform',
+        'duration-[400ms]',
+        'ease-in-out',
+        isMenuOpen ? 'rotate-45' : ''
+      ]"
     ></svg-icon>
   </button>
 
   <section
-    class="c-menu w-full pb-3 transition-transform duration-500 ease-in-out bg-pageBg"
-    [class.c-menu-close]="!isMenuOpen"
+    class="c-menu w-full pb-3 bg-pageBg"
+    [class.c-menu-close]="!isMenuOpen && menuToggled"
+    [class.c-menu-open]="isMenuOpen"
   >
     <ul class="c-index">
       <li

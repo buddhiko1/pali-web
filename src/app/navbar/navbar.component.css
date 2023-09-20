@@ -35,11 +35,34 @@
     "left-padding index index index right-padding"
     "left-padding divider divider divider right-padding"
     "left-padding theme email account right-padding";
+    transform: translateX(-100%);
+}
+
+@keyframes slide-out {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+/* can't use revers here */
+.c-menu-open {
+  animation: slide-in 300ms ease-in-out both;
 }
 
 .c-menu-close {
-  opacity: 0;
-  transform: translateX(-100%);
+  animation: slide-out 300ms ease-in-out both;
 }
 
 .c-index {
