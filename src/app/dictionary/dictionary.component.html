@@ -1,17 +1,14 @@
 <section class="c-container">
   <div class="c-content">
     <div appSlider class="mt-10 lg:mt-24">
-      <h2 class="capitalize lg:text-xl">
-        <p class="inline-block capitalize mr-2 g-hl-title">pali</p>
-        <p class="inline-block capitalize g-hl-title">dictionary</p>
-      </h2>
-      <p class="leading-relaxed mt-4 lg:mt-8 g-paragraph">
-        The following dictionaries can meet the needs of learning Pali.
-        Inparticular, the comprehensive dictionary
-        <strong>Digital Pali Dictionary</strong>, which has a large thesaurus
-        and detailed explanations, is a must-have. Other dictionaries are
-        provided as supplements for people with specific needs.
-      </p>
+      <p
+        class="inline-block capitalize lg:text-xl g-hl-title"
+        [innerHtml]="introduction.title | safeHtml"
+      ></p>
+      <p
+        class="mt-4 lg:mt-8 leading-relaxed g-paragraph"
+        [innerHtml]="introduction.text | safeHtml"
+      ></p>
       <div class="mt-4 lg:mt-8">
         <span
           class="inline-block w-40 lg:w-72 h-0.5 bg-focus rounded-full"
@@ -34,7 +31,7 @@
       </div>
       <div>
         <p class="capitalize lg:text-xl g-hl-title">{{ dictionary.name }}</p>
-        <p class="leading-relaxed mt-4 lg:mt-8 g-paragraph">
+        <p class="mt-4 lg:mt-8 leading-relaxed g-paragraph" [innerHtml]="dictionary.description | safeHtml">
           {{ dictionary.description }}
         </p>
         <div class="c-action mt-6 lg:mt-16">

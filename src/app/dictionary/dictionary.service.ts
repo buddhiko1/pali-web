@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
 
-import { UrqlService } from 'src/app/core/urql.service';
 import {
   DictionariesDocument,
   Dictionaries,
   DictIntroductionDocument,
   Dict_Introduction,
 } from 'src/gql/graphql';
-import { checkAndExtractResult } from 'src/app/core/utilities.gql';
+import { checkAndExtractResult } from '../core/utilities.gql';
+import { UrqlService } from '../core/urql.service';
 
 @Injectable({
   providedIn: 'root',
