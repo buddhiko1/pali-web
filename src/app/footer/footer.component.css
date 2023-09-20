@@ -1,34 +1,24 @@
 footer {
   display: grid;
   grid-template-rows: auto;
-  place-items: center;
-  grid-template-columns: theme("spacing.smPadding") 1fr theme(
-      "spacing.smPadding"
+  grid-template-columns: theme("spacing.smContentPadding") 1fr theme(
+      "spacing.smContentPadding"
     );
-  grid-template-areas: "left-padding copyright right-padding";
+  grid-template-areas: "left-padding content right-padding";
 }
 
-.c-copyright {
-  grid-area: copyright;
+.c-content {
+  grid-area: content;
+  display: grid;
+  justify-content:center;
+  place-items: center;
+  grid-auto-flow: column;
 }
 
-@media screen and (min-width: theme("screens.md")) {
+@media screen and (min-width: theme("screens.lg")) {
   footer {
-    display: grid;
-    grid-template-rows: auto;
-    column-gap: theme("spacing.20");
-    grid-template-columns: theme("spacing.lgPadding") auto auto theme(
-        "spacing.lgPadding"
+    grid-template-columns: theme("spacing.lgContentPadding") 1fr theme(
+        "spacing.lgContentPadding"
       );
-    grid-template-areas: "left-padding copyright links right-padding";
-  }
-
-  .c-copyright {
-    justify-self: end;
-  }
-
-  .c-links {
-    grid-area: links;
-    justify-self: start;
   }
 }

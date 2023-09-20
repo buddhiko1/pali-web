@@ -2,7 +2,8 @@ import { Component, OnInit, ElementRef } from '@angular/core';
 import { Router, NavigationStart, NavigationEnd } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { AngularSvgIconModule } from 'angular-svg-icon';
-import { SliderDirective } from 'src/app/core/slider.directive';
+
+import { SliderDirective } from '../core/slider.directive';
 
 @Component({
   selector: 'app-footer',

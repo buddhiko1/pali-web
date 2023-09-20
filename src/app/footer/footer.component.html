@@ -1,13 +1,18 @@
-<footer *ngIf="isVisible" appSlider [slideDelay]="300" class="py-6 bg-footerBg">
-  <p
-    class="c-copyright lg:pl-4 lg:border-l-2 g-border text-xs lg:text-sm g-paragraph"
-  >
-    © Copyright 2023. All Rights Reserved.
-  </p>
+<footer
+  *ngIf="isVisible"
+  appSlider
+  [slideDelay]="300"
+  class="py-4 lg:py-5 bg-footerBg"
+>
+  <div class="c-content">
+    <p
+      class="c-copyright lg:pl-4 lg:border-l-2 g-border text-xs lg:text-sm g-paragraph"
+    >
+      © Copyright 2023. All Rights Reserved.
+    </p>
 
-  <div class="c-links hidden lg:block">
-    <button class="g-button">
-      <svg-icon src="assets/icons/email.svg" [svgClass]="['g-svg']"></svg-icon>
+    <button class="hidden lg:inline lg:ml-8 g-button">
+      <svg-icon src="assets/icons/heart.svg" [svgClass]="['g-svg']"></svg-icon>
     </button>
   </div>
 </footer>
