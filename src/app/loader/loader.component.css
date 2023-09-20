@@ -2,31 +2,20 @@
   display: grid;
   grid-template-rows: auto auto auto;
   grid-template-columns: 1fr;
-  grid-template-areas:
-    "title"
-    "content"
-    "button";
+  grid-auto-rows: row;
   row-gap: theme(spacing.10);
 }
 
 .c-title {
-  grid-area: title;
   align-self: center;
 }
 
 .c-wheel {
-  grid-area: content;
   justify-self: center;
 }
 
 .c-prompt {
-  grid-area: content;
   justify-self: center;
-  /* animation: g-fade-in 600ms ease-in-out both; */
-}
-
-.c-button {
-  grid-area: button;
 }
 
 @media screen and (min-width: theme("screens.lg")) {

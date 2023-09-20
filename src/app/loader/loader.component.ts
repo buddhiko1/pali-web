@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { DeviceDetectorService } from 'ngx-device-detector';
 import { NgxRerenderModule } from 'ngx-rerender';
 
-import { SliderDirective } from 'src/app/core/slider.directive';
+import { SliderDirective } from '../core/slider.directive';
 import { WheelComponent } from '../wheel/wheel.component';
 
 export enum StatusEnum {
@@ -48,7 +48,7 @@ export class LoaderComponent {
     return this.isSuccessful || this.isFailed ? this.status : this.title;
   }
 
-  submit() {
+  onSubmit() {
     this.submitted.emit();
   }
 }
