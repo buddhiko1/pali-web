@@ -3,20 +3,28 @@ import { CommonModule } from '@angular/common';
 import { AngularSvgIconModule } from 'angular-svg-icon';
 
 import { SliderDirective } from '../core/slider.directive';
-import { SafeHtmlPipe } from '../core/safe-html.pipe' 
+import { SafeHtmlPipe } from '../core/safe-html.pipe';
 import { BookComponent } from '../book/book.component';
 import { Config as BookConfig } from '../book/book.model';
+import { environment } from 'src/environments/environment';
 import { DictionaryService } from './dictionary.service';
 import { Dictionaries, Dict_Introduction } from 'src/gql/graphql';
 
 @Component({
   selector: 'app-dictionary',
   standalone: true,
-  imports: [CommonModule, AngularSvgIconModule, SliderDirective, SafeHtmlPipe, BookComponent],
+  imports: [
+    CommonModule,
+    AngularSvgIconModule,
+    SliderDirective,
+    SafeHtmlPipe,
+    BookComponent,
+  ],
   templateUrl: './dictionary.component.html',
   styleUrls: ['./dictionary.component.css'],
 })
 export class DictionaryComponent {
+  fileServer = environment.fileServer;
   introduction: Dict_Introduction = {} as Dict_Introduction;
   dictionaries: Dictionaries[] = [];
 
@@ -34,7 +42,9 @@ export class DictionaryComponent {
     return {
       height: '16rem',
       width: '12rem',
-      image: dictionary.cover?.location ?? '',
+      image: dictionary.cover?.id
+        ? `${environment.fileServer}/${dictionary.cover?.id}`
+        : '',
       color: '#477999',
       direction: dictionary.index % 2 ? 'right-view' : 'left-view',
     };

@@ -15,10 +15,10 @@ graphql(`
       description
       info_url
       cover {
-        location
+        id
       }
       zip {
-        location
+        id
       }
     }
   }

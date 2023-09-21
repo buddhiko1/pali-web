@@ -5,7 +5,8 @@
 export const environment = {
   production: false,
   host: 'http://192.168.1.99:9000',
-  clientHost: 'http://192.168.1.99:8000',
+  client: 'http://192.168.1.99:8000',
+  fileServer: 'http://192.168.1.99:9000/assets',
   gqlToken: 'SwZVWhOBmlaVZZ1P3rNmd1BnfKirayNg',
   roleIdToSignUp: '680c4884-0fc1-4a5d-8fe7-fe8050833182',
 };

@@ -60,7 +60,7 @@ export class AccountCreateComponent implements OnInit {
     const args: CreateAccountMutationVariables = {
       email: this.form.getRawValue().email,
       role: `${environment.roleIdToSignUp}`,
-      urlForInit: `${environment.clientHost}/account/${UrlEnum.AccountInit}`, // confiured in the config.json of pali-cms.
+      urlForInit: `${environment.client}/account/${UrlEnum.AccountInit}`, // confiured in the config.json of pali-cms.
     };
 
     this.isSubmitted = true;

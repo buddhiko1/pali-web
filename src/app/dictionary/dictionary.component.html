@@ -35,24 +35,27 @@
           {{ dictionary.description }}
         </p>
         <div class="c-action mt-6 lg:mt-16">
-          <button
-            onclick="window.open(dictionary.info_url)"
+          <a
+            [href]="dictionary.info_url"
+            target="_blank"
             class="c-downloader g-button"
           >
             <svg-icon
               src="assets/icons/Github.svg"
               [svgClass]="['g-svg']"
             ></svg-icon>
-          </button>
-          <button
-            onclick="window.open(dictionary.zip)"
+          </a>
+          <a
+            [href]="fileServer + '/' + dictionary.zip?.id + '?download'"
+            [download]="dictionary.name + '.zip'"
+            target="_blank"
             class="c-downloader g-button"
           >
             <svg-icon
               src="assets/icons/download.svg"
               [svgClass]="['g-svg']"
             ></svg-icon>
-          </button>
+          </a>
         </div>
       </div>
       <div *ngIf="!(dictionary.index % 2)" class="c-book hidden lg:block">
