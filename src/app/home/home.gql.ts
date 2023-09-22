@@ -2,7 +2,7 @@ import { graphql } from 'src/gql';
 
 graphql(`
   query Modules {
-    modules {
+    modules(sort: ["index"]) {
       index
       name
       route

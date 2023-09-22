@@ -31,14 +31,17 @@
       </div>
       <div>
         <p class="capitalize lg:text-xl g-hl-title">{{ dictionary.name }}</p>
-        <p class="mt-4 lg:mt-8 leading-relaxed g-paragraph" [innerHtml]="dictionary.description | safeHtml">
+        <p
+          class="mt-4 lg:mt-8 leading-relaxed g-paragraph"
+          [innerHtml]="dictionary.description | safeHtml"
+        >
           {{ dictionary.description }}
         </p>
         <div class="c-action mt-6 lg:mt-16">
           <a
             [href]="dictionary.info_url"
             target="_blank"
-            class="c-downloader g-button"
+            class="c-link g-button"
           >
             <svg-icon
               src="assets/icons/Github.svg"
@@ -49,7 +52,7 @@
             [href]="fileServer + '/' + dictionary.zip?.id + '?download'"
             [download]="dictionary.name + '.zip'"
             target="_blank"
-            class="c-downloader g-button"
+            class="c-link g-button"
           >
             <svg-icon
               src="assets/icons/download.svg"

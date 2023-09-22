@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 
 import {
-  DictionariesDocument,
-  Dictionaries,
-  DictIntroductionDocument,
-  Dict_Introduction,
+  Tipitaka,
+  TipitakaDocument,
+  Cites,
+  CitesDocument,
 } from 'src/gql/graphql';
 import { checkAndExtractResult } from '../core/utilities.gql';
 import { UrqlService } from '../core/urql.service';
@@ -12,21 +12,20 @@ import { UrqlService } from '../core/urql.service';
 @Injectable({
   providedIn: 'root',
 })
-export class DictionaryService {
+export class TipitakaService {
   constructor(private _urqlService: UrqlService) {}
 
-  async fetchIntroduction(): Promise<Dict_Introduction> {
+  async fetchTipitaka(): Promise<Tipitaka[]> {
     const client = this._urqlService.dataClient;
-    const result = await client.query(DictIntroductionDocument, {});
+    const result = await client.query(TipitakaDocument, {});
     const data = checkAndExtractResult(result);
-    return data.dict_introduction;
+    return data.tipitaka;
   }
 
-  async fetchDictionaries(): Promise<Dictionaries[]> {
+  async fetchCites(): Promise<Cites[]> {
     const client = this._urqlService.dataClient;
-    const result = await client.query(DictionariesDocument, {});
+    const result = await client.query(CitesDocument, {});
     const data = checkAndExtractResult(result);
-    console.log(data);
-    return data.dictionaries;
+    return data.cites;
   }
 }

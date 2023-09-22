@@ -4,7 +4,7 @@ import { AngularSvgIconModule } from 'angular-svg-icon';
 
 import { SliderDirective } from '../core/slider.directive';
 import { SafeHtmlPipe } from '../core/safe-html.pipe';
-import { BookComponent } from '../book/book.component';
+import { BookComponent, DirectionEnum } from '../book/book.component';
 import { Config as BookConfig } from '../book/book.model';
 import { environment } from 'src/environments/environment';
 import { DictionaryService } from './dictionary.service';
@@ -46,7 +46,7 @@ export class DictionaryComponent {
         ? `${environment.fileServer}/${dictionary.cover?.id}`
         : '',
       color: '#477999',
-      direction: dictionary.index % 2 ? 'right-view' : 'left-view',
+      direction: dictionary.index % 2 ? DirectionEnum.RightView : DirectionEnum.LeftView,
     };
   }
 }

@@ -29,7 +29,7 @@
   justify-content: end;
 }
 
-.c-action .c-downloader {
+.c-action .c-link {
   justify-self: right;
   align-self: center;
 }

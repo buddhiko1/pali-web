@@ -8,7 +8,7 @@ graphql(`
     }
   }
   query Dictionaries {
-    dictionaries {
+    dictionaries(sort: ["index"]) {
       index
       name
       abbreviation

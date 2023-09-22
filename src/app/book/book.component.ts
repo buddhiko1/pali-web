@@ -1,6 +1,12 @@
 import { Component, Input, HostBinding } from '@angular/core';
 import { Config } from './book.model';
 
+export enum DirectionEnum {
+  RightView = 'right-view',
+  LeftView = 'left-view',
+  FrontView = 'front-view',
+}
+
 @Component({
   standalone: true,
   selector: 'app-book',
@@ -20,13 +26,5 @@ export class BookComponent {
 
   @HostBinding('style.--color') get color() {
     return this.config.color ?? '#F33139';
-  }
-
-  get transformClass() {
-    return this.config.direction ?? 'right-view';
-  }
-
-  set transformClass(value: string) {
-    this.transformClass = value; // 'right-view' 'left-view'
   }
 }

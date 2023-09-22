@@ -23,111 +23,51 @@
         Tipiṭaka Epub
       </p>
     </div>
-    <div class="c-book c-suttas">
-      <app-book [config]="suttaConfig"></app-book>
+    <div *ngFor="let book of tipitaka" class="c-book pt-14 lg:pt-28">
+      <app-book [config]="bookConfigFor(book)"></app-book>
       <div class="c-action w-full mt-10 pb-4 border-b g-border">
-        <button class="g-button">
+        <a [href]="book.info_url" target="_blank" class="g-button">
           <svg-icon
-            src="assets/icons/info.svg"
+            src="assets/icons/Github.svg"
             [svgClass]="['g-svg']"
           ></svg-icon>
-        </button>
-        <button class="g-button">
+        </a>
+        <a
+          [href]="fileServer + '/' + book.zip?.id + '?download'"
+          [download]="book.name + '.zip'"
+          target="_blank"
+          class="g-button"
+        >
           <svg-icon
             src="assets/icons/download.svg"
             [svgClass]="['g-svg']"
           ></svg-icon>
-        </button>
-      </div>
-    </div>
-    <div class="c-book c-vinaya">
-      <app-book [config]="vinayaConfig"></app-book>
-      <div class="c-action w-full mt-10 pb-4 border-b g-border">
-        <button class="g-button">
-          <svg-icon
-            src="assets/icons/info.svg"
-            [svgClass]="['g-svg']"
-          ></svg-icon>
-        </button>
-        <button class="g-button">
-          <svg-icon
-            src="assets/icons/download.svg"
-            [svgClass]="['g-svg']"
-          ></svg-icon>
-        </button>
-      </div>
-    </div>
-    <div class="c-book c-abhidhamma">
-      <app-book [config]="abhidhammaConfig"></app-book>
-      <div class="c-action w-full mt-10 pb-4 border-b g-border">
-        <button class="g-button">
-          <svg-icon
-            src="assets/icons/info.svg"
-            [svgClass]="['g-svg']"
-          ></svg-icon>
-        </button>
-        <button class="g-button">
-          <svg-icon
-            src="assets/icons/download.svg"
-            [svgClass]="['g-svg']"
-          ></svg-icon>
-        </button>
+        </a>
       </div>
     </div>
   </div>
   <div class="c-cites py-16 lg:py-32 bg-pageBg night">
-    <div class="c-title pb-4 lg:pb-10 border-b g-border">
-      <p
-        class="text-center text-xl lg:text-3xl uppercase tracking-widest lg:tracking-[.25em] g-hl-title"
-      >
-        bante said
-      </p>
-    </div>
-    <div class="c-cite c-first-cite lg:mr-12">
-      <svg-icon
-        src="assets/icons/quotes.svg"
-        [svgClass]="['g-svg']"
-        [svgStyle]="{ 'width.rem': 3, 'height.rem': 3 }"
-      ></svg-icon>
-      <p class="mt-2 lg:mt-4 text-center g-paragraph">
-        These books of the Pali Canon correctly represent the Buddhaʼs Teaching,
-        and can be regarded as trustworthy throughout. (Vinayapiṭaka:)
-        Suttavibhaṅga, Mahāvagga, Cūḷavagga; (Suttapiṭaka:) Dīghanikāya,
-        Majjhimanikāya, Saṃyuttanikāya, Aṅguttaranikāya, Suttanipāta,
-        Dhammapada, Udāna, Itivuttaka, Theratherīgāthā. No other Pali books
-        whatsoever should be taken as authoritative; and ignorance of them (and
-        particularly of the traditional Commentaries) may be counted a positive
-        advantage, as leaving less to be unlearned.
-      </p>
-      <div class="bante">
-        <div class="w-28 my-6 lg:my-8 border-b g-border"></div>
-        <a target="_blank" href="https://www.nanavira.org/" class="g-hl-title"
-          >BHANTE ÑĀṆAVĪRA</a
+    <div class="c-content">
+      <div class="c-title pb-4 lg:pb-10 border-b g-border">
+        <p
+          class="text-center text-xl lg:text-3xl uppercase tracking-widest lg:tracking-[.25em] g-hl-title"
         >
+          bante said
+        </p>
       </div>
-    </div>
-    <div class="c-cite c-second-cite lg:ml-12">
-      <svg-icon
-        src="assets/icons/quotes.svg"
-        [svgClass]="['g-svg']"
-        [svgStyle]="{ 'width.px': 50, 'height.px': 50 }"
-      ></svg-icon>
-      <p class="pt-2 lg:pt-4 text-center g-paragraph">
-        It was necessary for a monk to spend time to learn the language of Pāli.
-        The Suttas are written in Pāli and, in order to avoid being misled by
-        imperfect translations, it is better to read them in their original
-        language. One could feel much closer to the Buddha if one reads his
-        discourses in Pāli – “one could almost hear the Buddha’s voice.” Pāli
-        has a deep connection with the ancient world of dhamma.
-      </p>
-      <div class="bante">
+      <div *ngFor="let cite of cites" class="c-cite pt-8 lg:pt-12">
+        <svg-icon
+          src="assets/icons/quotes.svg"
+          [svgClass]="['g-svg']"
+          [svgStyle]="{ 'width.rem': 3, 'height.rem': 3 }"
+        ></svg-icon>
+        <p class="mt-2 lg:mt-4 text-center g-paragraph">
+          {{ cite.text }}
+        </p>
         <div class="w-28 my-6 lg:my-8 border-b g-border"></div>
-        <a
-          target="_blank"
-          href="https://pathpress.org/the-island-within/"
-          class="g-hl-title"
-          >BHANTE ÑĀṆADĪPA</a
-        >
+        <a target="_blank" [href]="cite.author_url" class="text-base lg:text-lg g-focus">{{
+          cite.author
+        }}</a>
       </div>
     </div>
   </div>

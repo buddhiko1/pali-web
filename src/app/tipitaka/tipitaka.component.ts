@@ -4,9 +4,12 @@ import { AngularSvgIconModule } from 'angular-svg-icon';
 
 import { Config as BookConfig } from '../book/book.model';
 import { NavbarService } from '../navbar/navbar.service';
-import { BookComponent } from '../book/book.component';
+import { BookComponent, DirectionEnum } from '../book/book.component';
 import { SliderDirective } from '../core/slider.directive';
 import { FadeInDirective } from '../core/fade-in.directive';
+import { environment } from 'src/environments/environment';
+import { Tipitaka, Cites } from 'src/gql/graphql';
+import { TipitakaService } from './tipitaka.service';
 
 @Component({
   selector: 'app-tipitaka',
@@ -22,37 +25,33 @@ import { FadeInDirective } from '../core/fade-in.directive';
   styleUrls: ['./tipitaka.component.css'],
 })
 export class TipitakaComponent implements OnDestroy {
-  suttaConfig: BookConfig;
-  vinayaConfig: BookConfig;
-  abhidhammaConfig: BookConfig;
-  private _color = '#477999';
+  fileServer = environment.fileServer;
+  tipitaka: Tipitaka[] = [];
+  cites: Cites[] = [];
 
-  constructor(private _navbarService: NavbarService) {
-    this.suttaConfig = {
-      height: '16rem',
-      width: '12rem',
-      // header: 'Digital Pali Dictionary',
-      image: 'assets/images/sutta.jpg',
-      color: this._color,
-      direction: 'front-view',
-    };
-    this.vinayaConfig = {
-      height: '16rem',
-      width: '12rem',
-      // header: 'Digital Pali Dictionary',
-      image: 'assets/images/vinaya.jpg',
-      color: this._color,
-      direction: 'front-view',
-    };
-    this.abhidhammaConfig = {
-      height: '16rem',
-      width: '12rem',
-      // header: 'Digital Pali Dictionary',
-      image: 'assets/images/abhidhamma.jpg',
-      color: this._color,
-      direction: 'front-view',
-    };
+  constructor(
+    private _navbarService: NavbarService,
+    private _tipitakaService: TipitakaService
+  ) {
+    this._tipitakaService.fetchTipitaka().then((tipitaka) => {
+      this.tipitaka = tipitaka;
+    });
+    this._tipitakaService.fetchCites().then((cites) => {
+      this.cites = cites;
+    });
     this._navbarService.showShadow(false);
+  }
+
+  bookConfigFor(tipitaka: Tipitaka): BookConfig {
+    return {
+      height: '16rem',
+      width: '12rem',
+      image: tipitaka.cover?.id
+        ? `${environment.fileServer}/${tipitaka.cover?.id}`
+        : '',
+      color: '#477999',
+      direction: DirectionEnum.FrontView,
+    };
   }
 
   ngOnDestroy(): void {
