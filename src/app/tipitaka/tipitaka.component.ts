@@ -31,7 +31,7 @@ export class TipitakaComponent implements OnDestroy {
 
   constructor(
     private _navbarService: NavbarService,
-    private _tipitakaService: TipitakaService
+    private _tipitakaService: TipitakaService,
   ) {
     this._tipitakaService.fetchTipitaka().then((tipitaka) => {
       this.tipitaka = tipitaka;

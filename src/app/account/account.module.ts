@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
+import { AngularSvgIconModule } from 'angular-svg-icon';
 
 import { SliderDirective } from 'src/app/core/slider.directive';
 import { LoaderComponent } from 'src/app/loader/loader.component';
@@ -24,6 +25,7 @@ import { MeComponent } from './me/me.component';
   ],
   imports: [
     CommonModule,
+    AngularSvgIconModule,
     ReactiveFormsModule,
     AccountRoutingModule,
     SliderDirective,

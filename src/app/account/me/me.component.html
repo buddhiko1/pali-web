@@ -1,14 +1,18 @@
 <section appSlider [slideDelay]="200" class="c-container">
-  <img
-    class="c-avatar rounded-full w-24 h-24"
-    src="https://www.seiu1000.org/sites/main/files/main-images/camera_lense_0.jpeg"
-    alt="My image"
-  />
-  <p>{{ me?.email }}</p>
-  <div>
-    <button (click)="onLogout()" class="g-button lg:mx-6">Logout</button>
-  </div>
-  <div>
-    <button (click)="onReset()" class="g-button lg:mx-6">Reset Password</button>
+  <div class="c-content mt-24">
+    <img
+      *ngIf="me?.avatar; else icon"
+      class="c-avatar rounded-full w-24 h-24"
+      [src]="fileServer + '/' + me?.avatar?.id"
+      alt="My avatar"
+    />
+    <ng-template #icon>
+      <svg-icon
+        src="assets/icons/person.svg"
+        [svgClass]="['g-svg', 'w-24', 'h-24', 'g-hover']"
+      ></svg-icon>
+    </ng-template>
+    <p class="text-paragraph">{{ me?.email }}</p>
+    <button (click)="onLogout()" class="d-button mt-12">Logout</button>
   </div>
 </section>

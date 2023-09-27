@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
 import { Directus_Users } from 'src/gql/graphql';
+import { environment } from 'src/environments/environment';
 import { StorageService } from 'src/app/core/storage.service';
 import { NavigationService } from 'src/app/core/navigation.service';
 import { AccountService } from '../account.service';
@@ -13,6 +14,8 @@ import { UrlEnum } from '../account-routing.module';
   styleUrls: ['./me.component.css'],
 })
 export class MeComponent implements OnInit {
+  fileServer = environment.fileServer;
+
   constructor(
     private _accountService: AccountService,
     private _storageService: StorageService,
@@ -20,9 +23,11 @@ export class MeComponent implements OnInit {
     private _router: Router,
     private _activeRoute: ActivatedRoute,
   ) {}
+
   ngOnInit(): void {
     console.log('me');
   }
+
   get me(): Directus_Users | null {
     return this._storageService.me;
   }

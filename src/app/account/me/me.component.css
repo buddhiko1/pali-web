@@ -4,12 +4,14 @@
   grid-template-columns: theme("spacing.smContentPadding") 1fr theme(
       "spacing.smContentPadding"
     );
-  grid-template-areas: "left-padding avatar right-padding";
+  grid-template-areas: "left-padding content right-padding";
 }
 
-.c-avatar {
-  grid-area: avatar;
+.c-content {
+  grid-area: content;
   display: grid;
-  justify-content: center;
-  align-content: center;
+  grid-auto-flow: row;
+  place-items: center;
+  place-content: center;
+  grid-row-gap: theme("spacing.5");
 }

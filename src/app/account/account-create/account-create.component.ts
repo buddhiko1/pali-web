@@ -3,10 +3,10 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 import { CreateAccountMutationVariables } from 'src/gql/graphql';
-import { environment } from 'src/environments/environment';
 import { NavigationService } from 'src/app/core/navigation.service';
 import { PromptEnum } from 'src/app/core/prompts.interaction';
 import { StatusEnum as LoaderStatusEnum } from 'src/app/loader/loader.component';
+import { environment } from 'src/environments/environment';
 
 import { UrlEnum } from '../account-routing.module';
 import { AccountService } from '../account.service';

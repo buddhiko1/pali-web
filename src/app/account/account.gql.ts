@@ -43,7 +43,7 @@ graphql(`
       first_name
       last_name
       avatar {
-        location
+        id
       }
       email
       role {

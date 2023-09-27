@@ -46,7 +46,8 @@ export class DictionaryComponent {
         ? `${environment.fileServer}/${dictionary.cover?.id}`
         : '',
       color: '#477999',
-      direction: dictionary.index % 2 ? DirectionEnum.RightView : DirectionEnum.LeftView,
+      direction:
+        dictionary.index % 2 ? DirectionEnum.RightView : DirectionEnum.LeftView,
     };
   }
 }
