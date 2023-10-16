@@ -4,6 +4,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AngularSvgIconModule } from 'angular-svg-icon';
 
 import { SliderDirective } from 'src/app/core/slider.directive';
+import { FadeInDirective } from '../core/fade-in.directive';
 import { LoaderComponent } from 'src/app/loader/loader.component';
 
 import { AccountRoutingModule } from './account-routing.module';
@@ -29,6 +30,7 @@ import { MeComponent } from './me/me.component';
     ReactiveFormsModule,
     AccountRoutingModule,
     SliderDirective,
+    FadeInDirective,
     LoaderComponent,
   ],
 })

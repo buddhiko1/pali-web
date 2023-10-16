@@ -35,7 +35,7 @@ export class UrqlService {
         },
         didAuthError(error) {
           return error.graphQLErrors.some(
-            (e) => e.extensions?.['code'] === 'FORBIDDEN',
+            (e) => e.extensions?.['code'] === "TOKEN_EXPIRED"
           );
         },
         async refreshAuth() {
@@ -44,8 +44,10 @@ export class UrqlService {
           };
           const result = await utils.mutate(RefreshTokenDocument, args);
           if (result.data?.refresh) {
+            console.log('refresh successful,refresh token:', result.data.refresh);
             storageService.saveAuthToken(result.data.refresh);
           } else {
+            console.error('refresh failed, result:', result);
             storageService.clearAccountData();
           }
         },

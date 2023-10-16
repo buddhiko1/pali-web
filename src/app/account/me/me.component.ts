@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
 import { Directus_Users } from 'src/gql/graphql';
@@ -13,7 +13,7 @@ import { UrlEnum } from '../account-routing.module';
   templateUrl: './me.component.html',
   styleUrls: ['./me.component.css'],
 })
-export class MeComponent implements OnInit {
+export class MeComponent {
   fileServer = environment.fileServer;
 
   constructor(
@@ -21,12 +21,8 @@ export class MeComponent implements OnInit {
     private _storageService: StorageService,
     private _navigationService: NavigationService,
     private _router: Router,
-    private _activeRoute: ActivatedRoute,
+    private _activeRoute: ActivatedRoute
   ) {}
-
-  ngOnInit(): void {
-    console.log('me');
-  }
 
   get me(): Directus_Users | null {
     return this._storageService.me;

@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 
 import { LoginMutationVariables } from 'src/gql/graphql';
 import { StatusEnum as LoaderStatusEnum } from 'src/app/loader/loader.component';
+import { OverlayService } from 'src/app/overlay/overlay.service';
 
 import { UrlEnum } from '../account-routing.module';
 import { AccountService } from '../account.service';
@@ -27,6 +28,7 @@ export class LoginComponent implements OnInit {
     private _activeRoute: ActivatedRoute,
     private _accountService: AccountService,
     private _unRegisteredEmailValidator: UnRegisteredEmailValidator,
+    private _overlayService: OverlayService,
   ) {}
 
   ngOnInit(): void {
@@ -45,6 +47,7 @@ export class LoginComponent implements OnInit {
         updateOn: 'change',
       }),
     });
+    // this._overlayService.active(true);
   }
 
   get email() {
