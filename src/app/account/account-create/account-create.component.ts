@@ -1,10 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 import { CreateAccountMutationVariables } from 'src/gql/graphql';
 import { NavigationService } from 'src/app/core/navigation.service';
 import { PromptEnum } from 'src/app/core/prompts.interaction';
+import { OverlayService } from 'src/app/overlay/overlay.service';
 import { StatusEnum as LoaderStatusEnum } from 'src/app/loader/loader.component';
 import { environment } from 'src/environments/environment';
 
@@ -17,7 +18,7 @@ import { RegisteredEmailValidator } from '../email.validator';
   templateUrl: './account-create.component.html',
   styleUrls: ['./account-create.component.css'],
 })
-export class AccountCreateComponent implements OnInit {
+export class AccountCreateComponent implements OnInit, OnDestroy {
   form!: FormGroup;
   UrlEnum = UrlEnum;
 
@@ -31,6 +32,7 @@ export class AccountCreateComponent implements OnInit {
     private _accountService: AccountService,
     private _registeredEmailValidator: RegisteredEmailValidator,
     private _navigationService: NavigationService,
+    private _overlayService: OverlayService,
   ) {}
 
   ngOnInit(): void {
@@ -45,6 +47,11 @@ export class AccountCreateComponent implements OnInit {
         updateOn: 'change',
       }),
     });
+    this._overlayService.active(true);
+  }
+
+  ngOnDestroy(): void {
+    this._overlayService.active(false);
   }
 
   get email() {

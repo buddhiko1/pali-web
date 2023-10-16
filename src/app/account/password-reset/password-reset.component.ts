@@ -1,10 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 import { ResetPasswordMutationVariables } from 'src/gql/graphql';
 import { NavigationService } from 'src/app/core/navigation.service';
 import { PromptEnum } from 'src/app/core/prompts.interaction';
+import { OverlayService } from 'src/app/overlay/overlay.service';
 import { StatusEnum as LoaderStatusEnum } from 'src/app/loader/loader.component';
 
 import { UrlEnum } from '../account-routing.module';
@@ -15,7 +16,7 @@ import { AccountService } from '../account.service';
   templateUrl: './password-reset.component.html',
   styleUrls: ['./password-reset.component.css'],
 })
-export class PasswordResetComponent implements OnInit {
+export class PasswordResetComponent implements OnInit, OnDestroy {
   UrlEnum = UrlEnum;
   form!: FormGroup;
 
@@ -31,6 +32,7 @@ export class PasswordResetComponent implements OnInit {
     private _activeRoute: ActivatedRoute,
     private _accountService: AccountService,
     private _navigationService: NavigationService,
+    private _overlayService: OverlayService,
   ) {
     this._activeRoute.queryParams.subscribe((params) => {
       this._token = params['token'];
@@ -48,6 +50,11 @@ export class PasswordResetComponent implements OnInit {
         updateOn: 'change',
       }),
     });
+    this._overlayService.active(true);
+  }
+
+  ngOnDestroy(): void {
+    this._overlayService.active(false);
   }
 
   get password() {

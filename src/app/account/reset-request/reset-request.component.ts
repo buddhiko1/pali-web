@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 import { RequestResetMutationVariables } from 'src/gql/graphql';
@@ -6,6 +6,7 @@ import { RequestResetMutationVariables } from 'src/gql/graphql';
 import { environment } from 'src/environments/environment';
 import { NavigationService } from 'src/app/core/navigation.service';
 import { PromptEnum } from 'src/app/core/prompts.interaction';
+import { OverlayService } from 'src/app/overlay/overlay.service';
 import { StatusEnum as LoaderStatusEnum } from 'src/app/loader/loader.component';
 
 import { UrlEnum } from '../account-routing.module';
@@ -17,7 +18,7 @@ import { UnRegisteredEmailValidator } from '../email.validator';
   templateUrl: './reset-request.component.html',
   styleUrls: ['./reset-request.component.css'],
 })
-export class ResetRequestComponent implements OnInit {
+export class ResetRequestComponent implements OnInit, OnDestroy {
   form!: FormGroup;
 
   isSubmitted = false;
@@ -28,6 +29,7 @@ export class ResetRequestComponent implements OnInit {
     private _accountService: AccountService,
     private _unregisteredEmailValidator: UnRegisteredEmailValidator,
     private _navigationService: NavigationService,
+    private _overlayService: OverlayService,
   ) {}
 
   ngOnInit(): void {
@@ -42,6 +44,11 @@ export class ResetRequestComponent implements OnInit {
         updateOn: 'change',
       }),
     });
+    this._overlayService.active(true);
+  }
+
+  ngOnDestroy(): void {
+    this._overlayService.active(false);
   }
 
   get email() {

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 
@@ -7,6 +7,7 @@ import {
   LoginMutationVariables,
 } from 'src/gql/graphql';
 import { StatusEnum as LoaderStatusEnum } from 'src/app/loader/loader.component';
+import { OverlayService } from 'src/app/overlay/overlay.service';
 
 import { UrlEnum } from '../account-routing.module';
 import { AccountService } from '../account.service';
@@ -16,7 +17,7 @@ import { AccountService } from '../account.service';
   templateUrl: './account-init.component.html',
   styleUrls: ['./account-init.component.css'],
 })
-export class AccountInitComponent implements OnInit {
+export class AccountInitComponent implements OnInit, OnDestroy {
   UrlEnum = UrlEnum;
   form!: FormGroup;
 
@@ -31,6 +32,7 @@ export class AccountInitComponent implements OnInit {
     private _router: Router,
     private _activeRoute: ActivatedRoute,
     private _accountService: AccountService,
+    private _overlayService: OverlayService,
   ) {
     this._activeRoute.queryParams.subscribe((params) => {
       this._token = params['token'];
@@ -48,6 +50,11 @@ export class AccountInitComponent implements OnInit {
         updateOn: 'change',
       }),
     });
+    this._overlayService.active(true);
+  }
+
+  ngOnDestroy(): void {
+    this._overlayService.active(false);
   }
 
   get password() {
