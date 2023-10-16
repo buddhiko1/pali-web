@@ -21,7 +21,7 @@ export class MeComponent {
     private _storageService: StorageService,
     private _navigationService: NavigationService,
     private _router: Router,
-    private _activeRoute: ActivatedRoute
+    private _activeRoute: ActivatedRoute,
   ) {}
 
   get me(): Directus_Users | null {

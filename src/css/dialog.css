@@ -1,14 +1,14 @@
 /* TODO: remove my */
 .d-box {
-  @apply p-8 lg:p-12 my-20 lg:my-[17vh] rounded-lg bg-dialogBg;
+  @apply p-8 lg:p-12 my-20 lg:my-[17vh] rounded-lg bg-pageBg;
 }
 
 .d-title {
-  @apply text-dialogTitle text-xl font-medium tracking-wide;
+  @apply text-title text-xl font-medium tracking-wide;
 }
 
 .d-text {
-  @apply leading-relaxed text-sm text-dialogText;
+  @apply leading-relaxed text-sm text-text;
 }
 
 .d-error-text {
@@ -16,7 +16,7 @@
 }
 
 .d-input {
-  @apply py-1 px-3 bg-inputBg rounded border border-border focus:border-focus outline-none focus:ring-1 focus:ring-hover leading-relaxed text-dialogText;
+  @apply py-1 px-3 bg-inputBg rounded border border-border focus:border-focus outline-none focus:ring-1 focus:ring-hover leading-relaxed text-text;
 }
 
 /* 'bg-focus' is invalid when 'type=subimt' */

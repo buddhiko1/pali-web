@@ -3,14 +3,14 @@
     <p
       appSlider
       [slideDelay]="200"
-      class="text-center mt-48 lg:mt-56 mx-14 font-light text-2xl lg:text-6xl tracking-wide text-pageTitle"
+      class="text-center mt-48 lg:mt-56 mx-14 font-light text-2xl lg:text-6xl tracking-wide text-bannerTitle"
     >
       Learning Pali language
     </p>
     <p
       appSlider
       [slideDelay]="800"
-      class="text-center mx-14 mt-8 lg:mt-10 lg:text-xl tracking-wide font-light text-pageSubTitle"
+      class="text-center mx-14 mt-8 lg:mt-10 lg:text-xl tracking-wide font-light text-bannerSubTitle"
     >
       Explore the most authentic and ancient Buddhist sutra on your own
     </p>
@@ -34,7 +34,7 @@
       <div *ngFor="let module of modules" class="c-section g-card p-5 lg:p-7">
         <div>
           <p class="g-hl-title">{{ module.name | titlecase }}</p>
-          <p class="mt-3 g-paragraph">{{ module.description }}</p>
+          <p class="mt-3 g-text">{{ module.description }}</p>
         </div>
         <div class="c-link">
           <button

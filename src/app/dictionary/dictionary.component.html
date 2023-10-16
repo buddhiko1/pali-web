@@ -6,7 +6,7 @@
         [innerHtml]="introduction.title | safeHtml"
       ></p>
       <p
-        class="mt-4 lg:mt-8 leading-relaxed g-paragraph"
+        class="mt-4 lg:mt-8 leading-relaxed g-text"
         [innerHtml]="introduction.text | safeHtml"
       ></p>
       <div class="mt-4 lg:mt-8">
@@ -32,7 +32,7 @@
       <div>
         <p class="capitalize lg:text-xl g-hl-title">{{ dictionary.name }}</p>
         <p
-          class="mt-4 lg:mt-8 leading-relaxed g-paragraph"
+          class="mt-4 lg:mt-8 leading-relaxed g-text"
           [innerHtml]="dictionary.description | safeHtml"
         >
           {{ dictionary.description }}

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 
@@ -15,7 +15,7 @@ import { UnRegisteredEmailValidator } from '../email.validator';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent implements OnInit, OnDestroy {
   form!: FormGroup;
   UrlEnum = UrlEnum;
 
@@ -47,7 +47,11 @@ export class LoginComponent implements OnInit {
         updateOn: 'change',
       }),
     });
-    // this._overlayService.active(true);
+    this._overlayService.active(true);
+  }
+
+  ngOnDestroy(): void {
+    this._overlayService.active(false);
   }
 
   get email() {

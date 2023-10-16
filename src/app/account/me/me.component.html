@@ -1,4 +1,4 @@
-<section  appFader [fadeDelay]="300" class="c-container">
+<section appFader [fadeDelay]="300" class="c-container">
   <div class="c-content mt-24 lg:mt-[20vh]">
     <img
       *ngIf="me?.avatar; else icon"
@@ -12,7 +12,7 @@
         [svgClass]="['g-svg', 'w-24', 'h-24', 'g-hover']"
       ></svg-icon>
     </ng-template>
-    <p class="text-paragraph">{{ me?.email }}</p>
+    <p class="text-text">{{ me?.email }}</p>
     <button (click)="onLogout()" class="d-button mt-12">Logout</button>
   </div>
 </section>

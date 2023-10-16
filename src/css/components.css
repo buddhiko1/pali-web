@@ -1,5 +1,5 @@
-.g-paragraph {
-  @apply tracking-wide text-paragraph;
+.g-text {
+  @apply tracking-wide text-text;
 }
 
 .g-hl-title {
@@ -7,11 +7,11 @@
 }
 
 .g-card {
-  @apply bg-dialogBg rounded-lg;
+  @apply bg-cardBg rounded-lg;
 }
 
 .g-svg {
-  @apply w-6 h-6 fill-current border-none focus:ring-0 text-paragraph;
+  @apply w-6 h-6 fill-current border-none focus:ring-0 text-text;
 }
 
 .g-button {
