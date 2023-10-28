@@ -61,7 +61,7 @@ export class UrqlService {
   get systemClient(): Client {
     // all exchanges should be ordered synchronous first and asynchronous last.
     return new Client({
-      url: `${environment.host}/graphql/system`,
+      url: `${environment.cms}/graphql/system`,
       exchanges: [
         this._errorExchange,
         this._storageService.isLoggedIn
@@ -74,7 +74,7 @@ export class UrqlService {
 
   get dataClient(): Client {
     return new Client({
-      url: `${environment.host}/graphql`,
+      url: `${environment.cms}/graphql`,
       exchanges: [
         this._errorExchange,
         cacheExchange,

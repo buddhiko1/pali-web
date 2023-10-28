@@ -67,7 +67,7 @@ export class AccountCreateComponent implements OnInit, OnDestroy {
     const args: CreateAccountMutationVariables = {
       email: this.form.getRawValue().email,
       role: `${environment.roleIdToSignUp}`,
-      urlForInit: `${environment.client}/account/${UrlEnum.AccountInit}`, // confiured in the config.json of pali-cms.
+      urlForInit: `${environment.localhost}/account/${UrlEnum.AccountInit}`, // confiured in the config.json of pali-cms.
     };
 
     this.isSubmitted = true;

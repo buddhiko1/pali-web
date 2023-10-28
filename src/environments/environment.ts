@@ -4,9 +4,9 @@
 
 export const environment = {
   production: false,
-  host: 'http://192.168.1.99:9000',
-  client: 'http://192.168.1.99:8000',
-  fileServer: 'http://192.168.1.99:9000/assets',
+  cms: 'https://cms.buddhiko.com',
+  localhost: 'http://192.168.1.99:8000',
+  fileServer: 'https://cms.buddhiko.com/assets',
   gqlToken: 'SwZVWhOBmlaVZZ1P3rNmd1BnfKirayNg',
   roleIdToSignUp: '680c4884-0fc1-4a5d-8fe7-fe8050833182',
 };
