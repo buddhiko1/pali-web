@@ -26,7 +26,6 @@ export class DictionaryService {
     const client = this._urqlService.dataClient;
     const result = await client.query(DictionariesDocument, {});
     const data = checkAndExtractResult(result);
-    console.log(data.dictionaries)
     return data.dictionaries;
   }
 }

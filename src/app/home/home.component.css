@@ -21,7 +21,7 @@
   display: grid;
   justify-content: center;
   align-content: start;
-  background-image: url("../../assets/images/leaf.png");
+  background-image: url("../../assets/images/leaf.webp");
 }
 
 .c-modules {

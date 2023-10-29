@@ -34,7 +34,6 @@ export class DictionaryComponent {
     });
     this._dictionaryService.fetchDictionaries().then((dictionaries) => {
       this.dictionaries = dictionaries;
-      console.log(dictionaries);
     });
   }
 
