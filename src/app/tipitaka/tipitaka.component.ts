@@ -47,7 +47,7 @@ export class TipitakaComponent implements OnDestroy {
       height: '16rem',
       width: '12rem',
       image: tipitaka.cover?.id
-        ? `${environment.fileServer}/${tipitaka.cover?.id}`
+        ? `${environment.fileServer}/${tipitaka.cover?.id}.webp`
         : '',
       color: '#477999',
       direction: DirectionEnum.FrontView,

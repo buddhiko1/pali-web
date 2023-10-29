@@ -42,7 +42,7 @@ export class DictionaryComponent {
       height: '16rem',
       width: '12rem',
       image: dictionary.cover?.id
-        ? `${environment.fileServer}/${dictionary.cover?.id}`
+        ? `${environment.fileServer}/${dictionary.cover?.id}.webp`
         : '',
       color: '#477999',
       direction:
