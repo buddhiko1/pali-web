@@ -8,15 +8,12 @@ import { RoleEnum } from 'src/app/core/value.cms';
 import { PromptEnum } from 'src/app/core/prompts.interaction';
 import { OverlayService } from 'src/app/overlay/overlay.service';
 import { StatusEnum as LoaderStatusEnum } from 'src/app/loader/loader.component';
-import { environment } from 'src/environments/environment';
 
 import { UrlEnum } from '../account-routing.module';
 import { AccountService } from '../account.service';
 import { RegisteredEmailValidator } from '../email.validator';
 
-import {
-  Directus_Roles,
-} from 'src/gql/graphql';
+import { Directus_Roles } from 'src/gql/graphql';
 
 @Component({
   selector: 'app-account-create',

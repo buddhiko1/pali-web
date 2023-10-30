@@ -43,7 +43,8 @@ graphql(`
       first_name
       last_name
       avatar {
-        id
+        id,
+        filename_disk
       }
       email
       role {
@@ -53,7 +54,7 @@ graphql(`
   }
   query Roles {
     roles {
-      id,
+      id
       name
     }
   }

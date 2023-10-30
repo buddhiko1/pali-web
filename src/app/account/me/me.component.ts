@@ -27,7 +27,7 @@ export class MeComponent {
   }
 
   get avatarImage(): string {
-    return `${environment.fileServer}/${this.me?.avatar?.id}.webp`;
+    return `${environment.fileServer}/${this.me?.avatar?.filename_disk}`;
   }
 
   onLogout(): void {
