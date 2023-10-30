@@ -51,4 +51,10 @@ graphql(`
       }
     }
   }
+  query Roles {
+    roles {
+      id,
+      name
+    }
+  }
 `);

@@ -4,6 +4,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 import { CreateAccountMutationVariables } from 'src/gql/graphql';
 import { NavigationService } from 'src/app/core/navigation.service';
+import { RoleEnum } from 'src/app/core/value.cms';
 import { PromptEnum } from 'src/app/core/prompts.interaction';
 import { OverlayService } from 'src/app/overlay/overlay.service';
 import { StatusEnum as LoaderStatusEnum } from 'src/app/loader/loader.component';
@@ -12,6 +13,10 @@ import { environment } from 'src/environments/environment';
 import { UrlEnum } from '../account-routing.module';
 import { AccountService } from '../account.service';
 import { RegisteredEmailValidator } from '../email.validator';
+
+import {
+  Directus_Roles,
+} from 'src/gql/graphql';
 
 @Component({
   selector: 'app-account-create',
@@ -59,15 +64,17 @@ export class AccountCreateComponent implements OnInit, OnDestroy {
     return this.form.get('email')!;
   }
 
-  onSubmit(): void {
+  async onSubmit(): Promise<void> {
     if (this.form.invalid) {
       return;
     }
 
+    const roles: Directus_Roles[] = await this._accountService.fetchRoles();
+    const role = roles.find((role) => role.name === RoleEnum.User)!;
     const args: CreateAccountMutationVariables = {
       email: this.form.getRawValue().email,
-      role: `${environment.roleIdToSignUp}`,
-      urlForInit: `${environment.localhost}/account/${UrlEnum.AccountInit}`, // confiured in the config.json of pali-cms.
+      role: role.id,
+      urlForInit: `${location.protocol}//${location.host}/account/${UrlEnum.AccountInit}`, // confiured in the config.json of pali-cms.
     };
 
     this.isSubmitted = true;

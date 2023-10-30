@@ -59,7 +59,7 @@ export class ResetRequestComponent implements OnInit, OnDestroy {
   onSubmit(): void {
     const args: RequestResetMutationVariables = {
       email: this.form.getRawValue().email,
-      urlForReset: `${environment.localhost}/account/${UrlEnum.PasswordReset}`, // confiured in the config.json of pali-cms.
+      urlForReset: `${location.protocol}//${location.host}/account/${UrlEnum.PasswordReset}`, // confiured in the config.json of pali-cms.
     };
 
     this.isSubmitted = true;

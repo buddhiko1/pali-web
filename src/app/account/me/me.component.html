@@ -3,7 +3,7 @@
     <img
       *ngIf="me?.avatar; else icon"
       class="c-avatar rounded-full w-24 h-24"
-      [src]="fileServer + '/' + me?.avatar?.id"
+      [src]="avatarImage"
       alt="My avatar"
     />
     <ng-template #icon>

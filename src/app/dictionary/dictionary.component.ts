@@ -25,7 +25,7 @@ import { Dictionaries, Dict_Introduction } from 'src/gql/graphql';
 })
 export class DictionaryComponent {
   fileServer = environment.fileServer;
-  introduction: Dict_Introduction = {} as Dict_Introduction;
+  introduction!: Dict_Introduction;
   dictionaries: Dictionaries[] = [];
 
   constructor(private _dictionaryService: DictionaryService) {

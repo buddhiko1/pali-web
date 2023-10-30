@@ -6,7 +6,7 @@ import {
   DictIntroductionDocument,
   Dict_Introduction,
 } from 'src/gql/graphql';
-import { checkAndExtractResult } from '../core/utilities.gql';
+import { validateAndExtractResult } from '../core/utilities.gql';
 import { UrqlService } from '../core/urql.service';
 
 @Injectable({
@@ -18,15 +18,15 @@ export class DictionaryService {
   async fetchIntroduction(): Promise<Dict_Introduction> {
     const client = this._urqlService.dataClient;
     const result = await client.query(DictIntroductionDocument, {});
-    const data = checkAndExtractResult(result);
+    const data = validateAndExtractResult(result);
     return data.dict_introduction;
   }
 
   async fetchDictionaries(): Promise<Dictionaries[]> {
     const client = this._urqlService.dataClient;
     const result = await client.query(DictionariesDocument, {});
-    const data = checkAndExtractResult(result);
-    console.log(data.dictionaries);
+    const data = validateAndExtractResult(result);
+
     return data.dictionaries;
   }
 }

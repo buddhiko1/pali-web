@@ -11,7 +11,7 @@ export function removeNullFields(obj: any, ...fieldsToRemove: string[]): any {
   return filteredObj;
 }
 
-export function checkAndExtractResult(result: OperationResult): any {
+export function validateAndExtractResult(result: OperationResult): any {
   if (result.error) {
     throw Error(
       result.error.networkError?.message ??

@@ -3,16 +3,20 @@ import { Component, OnInit, ElementRef } from '@angular/core';
 import { Router, NavigationEnd, NavigationStart } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { AngularSvgIconModule } from 'angular-svg-icon';
+import { FadeInDirective } from '../core/fade-in.directive';
 
 @Component({
   selector: 'app-footer',
   standalone: true,
-  imports: [CommonModule, AngularSvgIconModule],
+  imports: [CommonModule, AngularSvgIconModule, FadeInDirective],
   templateUrl: './footer.component.html',
   styleUrls: ['./footer.component.css'],
 })
 export class FooterComponent implements OnInit {
-  constructor(private _el: ElementRef, private _router: Router) {}
+  constructor(
+    private _el: ElementRef,
+    private _router: Router,
+  ) {}
 
   ngOnInit(): void {
     this._router.events.subscribe((event) => {

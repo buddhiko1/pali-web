@@ -14,8 +14,6 @@ import { UrlEnum } from '../account-routing.module';
   styleUrls: ['./me.component.css'],
 })
 export class MeComponent {
-  fileServer = environment.fileServer;
-
   constructor(
     private _accountService: AccountService,
     private _storageService: StorageService,
@@ -26,6 +24,10 @@ export class MeComponent {
 
   get me(): Directus_Users | null {
     return this._storageService.me;
+  }
+
+  get avatarImage(): string {
+    return `${environment.fileServer}/${this.me?.avatar?.id}.webp`;
   }
 
   onLogout(): void {

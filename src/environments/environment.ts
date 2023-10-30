@@ -4,11 +4,9 @@
 
 export const environment = {
   production: false,
-  localhost: 'http://192.168.1.99:8000',
   cms: 'https://cms.buddhiko.com',
   fileServer: 'https://file.buddhiko.com',
   gqlToken: 'SwZVWhOBmlaVZZ1P3rNmd1BnfKirayNg',
-  roleIdToSignUp: '680c4884-0fc1-4a5d-8fe7-fe8050833182',
 };
 
 /*
