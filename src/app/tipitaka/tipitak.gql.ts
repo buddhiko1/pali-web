@@ -8,9 +8,11 @@ graphql(`
       info_url
       cover {
         id
+        filename_disk
       }
       zip {
         id
+        filename_disk
       }
     }
   }

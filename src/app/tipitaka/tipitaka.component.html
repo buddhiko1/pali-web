@@ -33,7 +33,7 @@
           ></svg-icon>
         </a>
         <a
-          [href]="fileServer + '/' + book.zip?.id + '?download'"
+          [href]="fileServer + '/' + book.zip?.filename_disk + '?download'"
           [download]="book.name + '.zip'"
           target="_blank"
           class="g-button"
