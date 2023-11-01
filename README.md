@@ -2,7 +2,7 @@
 
 ## Developer's guide
 
-- Css class attribute order: size, shape, color, action, text.
+- Class attribute order of css file: size, shape, color, action, text.
 - The component's css only focused on the layout.
 - The unit of time for components should be milliseconds.
 - Use 'hl' to represent 'highlight, 'bg' to represent 'background'.
