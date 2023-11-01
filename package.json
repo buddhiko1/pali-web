@@ -24,6 +24,7 @@
     "@angular/platform-browser": "^16.1.8",
     "@angular/platform-browser-dynamic": "^16.1.8",
     "@angular/router": "^16.1.8",
+    "@directus/sdk": "^13.0.1",
     "@urql/core": "^4.1.1",
     "@urql/exchange-auth": "^2.1.6",
     "angular-svg-icon": "^16.0.0",

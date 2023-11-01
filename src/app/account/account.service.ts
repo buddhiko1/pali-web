@@ -10,7 +10,6 @@ import {
   LoginDocument,
   LoginMutationVariables,
   LogoutDocument,
-  LogoutMutationVariables,
   Auth_Tokens,
   CreateAccountDocument,
   CreateAccountMutationVariables,
@@ -21,7 +20,6 @@ import {
   ResetPasswordDocument,
   ResetPasswordMutationVariables,
   UserWithEmailDocument,
-  UserWithEmailQueryVariables,
   MeDocument,
   Directus_Roles,
   RolesDocument,
@@ -36,10 +34,7 @@ export class AccountService {
 
   async isRegisteredEmail(email: string): Promise<boolean> {
     const client = this._urqlService.systemClient;
-    const args: UserWithEmailQueryVariables = {
-      email,
-    };
-    const result = await client.query(UserWithEmailDocument, args);
+    const result = await client.query(UserWithEmailDocument, { email });
     const data = validateAndExtractResult(result);
     return data.users.length > 0;
   }
@@ -78,10 +73,9 @@ export class AccountService {
 
   async logout(): Promise<void> {
     const client = this._urqlService.systemClient;
-    const args: LogoutMutationVariables = {
+    await client.mutation(LogoutDocument, {
       refreshToken: this._storageService.refreshToken,
-    };
-    await client.mutation(LogoutDocument, args);
+    });
     this._storageService.clearAccountData();
   }
 

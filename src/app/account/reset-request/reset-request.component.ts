@@ -3,7 +3,6 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 import { RequestResetMutationVariables } from 'src/gql/graphql';
 
-import { environment } from 'src/environments/environment';
 import { NavigationService } from 'src/app/core/navigation.service';
 import { PromptEnum } from 'src/app/core/prompts.interaction';
 import { OverlayService } from 'src/app/overlay/overlay.service';

@@ -40,4 +40,15 @@ export class MeComponent {
       relativeTo: this._activeRoute,
     });
   }
+
+  async onAvatarSelected(event: any) {
+    const file = event.target.files[0];
+
+    const formData = new FormData();
+    formData.append('file', file);
+
+    // this.http.post('https://api.example.com/upload', formData).subscribe((response) => {
+    //   // Handle the response from the backend server
+    // });
+  }
 }

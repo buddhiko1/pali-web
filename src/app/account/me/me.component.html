@@ -1,11 +1,14 @@
 <section appFader [fadeDelay]="300" class="c-container">
   <div class="c-content mt-24 lg:mt-[20vh]">
-    <img
-      *ngIf="me?.avatar; else icon"
-      class="c-avatar rounded-full w-24 h-24"
-      [src]="avatarImage"
-      alt="My avatar"
-    />
+    <label class="avatar-button">
+      <input type="file" (change)="onAvatarSelected($event)" />
+      <img
+        *ngIf="me?.avatar; else icon"
+        class="c-avatar rounded-full w-24 h-24"
+        [src]="avatarImage"
+        alt="My avatar"
+      />
+    </label>
     <ng-template #icon>
       <svg-icon
         src="assets/icons/person.svg"

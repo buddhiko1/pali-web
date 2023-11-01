@@ -3,11 +3,11 @@
     <div appSlider class="mt-10 lg:mt-24">
       <p
         class="inline-block capitalize lg:text-xl g-hl-title"
-        [innerHtml]="introduction.title | safeHtml"
+        [innerHtml]="(introduction ? introduction.title : '') | safeHtml"
       ></p>
       <p
         class="mt-4 lg:mt-8 leading-relaxed g-text"
-        [innerHtml]="introduction.text | safeHtml"
+        [innerHtml]="(introduction ? introduction.text : '') | safeHtml"
       ></p>
       <div class="mt-4 lg:mt-8">
         <span

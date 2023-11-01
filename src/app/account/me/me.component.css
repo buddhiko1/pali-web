@@ -15,3 +15,12 @@
   place-content: center;
   grid-row-gap: theme("spacing.5");
 }
+
+.avatar-button {
+  display: inline-block;
+  cursor: pointer;
+}
+
+.avatar-button input {
+  display: none;
+}

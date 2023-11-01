@@ -28,7 +28,7 @@ export class LoginComponent implements OnInit, OnDestroy {
     private _activeRoute: ActivatedRoute,
     private _accountService: AccountService,
     private _unRegisteredEmailValidator: UnRegisteredEmailValidator,
-    private _overlayService: OverlayService
+    private _overlayService: OverlayService,
   ) {}
 
   ngOnInit(): void {
@@ -37,7 +37,7 @@ export class LoginComponent implements OnInit, OnDestroy {
         validators: [Validators.required, Validators.email],
         asyncValidators: [
           this._unRegisteredEmailValidator.validate.bind(
-            this._unRegisteredEmailValidator
+            this._unRegisteredEmailValidator,
           ),
         ],
         updateOn: 'change',
