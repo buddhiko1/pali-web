@@ -28,7 +28,7 @@ export class LoginComponent implements OnInit, OnDestroy {
     private _activeRoute: ActivatedRoute,
     private _accountService: AccountService,
     private _unRegisteredEmailValidator: UnRegisteredEmailValidator,
-    private _overlayService: OverlayService,
+    private _overlayService: OverlayService
   ) {}
 
   ngOnInit(): void {
@@ -37,7 +37,7 @@ export class LoginComponent implements OnInit, OnDestroy {
         validators: [Validators.required, Validators.email],
         asyncValidators: [
           this._unRegisteredEmailValidator.validate.bind(
-            this._unRegisteredEmailValidator,
+            this._unRegisteredEmailValidator
           ),
         ],
         updateOn: 'change',
@@ -77,11 +77,17 @@ export class LoginComponent implements OnInit, OnDestroy {
     this.isSubmitted = true;
     this.loaderStatus = LoaderStatusEnum.Loading;
 
-    this._accountService.login(args).then(() => {
-      this._router.navigate([`../${UrlEnum.Me}`], {
-        relativeTo: this._activeRoute,
+    this._accountService
+      .login(args)
+      .then(() => {
+        this._router.navigate([`../${UrlEnum.Me}`], {
+          relativeTo: this._activeRoute,
+        });
+      })
+      .catch((error) => {
+        this.loaderStatus = LoaderStatusEnum.Failed;
+        this.loaderPrompt = error.toString();
       });
-    });
   }
 
   reEdit(): void {

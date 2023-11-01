@@ -19,11 +19,13 @@ export class UrqlService {
   constructor(private _storageService: StorageService) {
     this._errorExchange = mapExchange({
       onError(error, operation) {
-        console.error(
-          `The operation ${operation.key} has errored with:`,
-          error,
-        );
+        console.error(operation, error);
       },
+    });
+
+    const refreshClient = new Client({
+      url: `${environment.cms}/graphql/system`,
+      exchanges: [this._errorExchange, mapExchange({}), fetchExchange],
     });
     const storageService = this._storageService;
     this._customAuthExchange = authExchange(async (utils) => {
@@ -35,23 +37,21 @@ export class UrqlService {
         },
         didAuthError(error) {
           return error.graphQLErrors.some(
-            (e) => e.extensions?.['code'] === 'TOKEN_EXPIRED',
+            (e) => e.extensions?.['code'] === 'TOKEN_EXPIRED'
           );
         },
         async refreshAuth() {
           const args: RefreshTokenMutationVariables = {
             refreshToken: storageService.refreshToken,
           };
-          const result = await utils.mutate(RefreshTokenDocument, args);
-          if (result.data?.refresh) {
-            console.log(
-              'refresh successful,refresh token:',
-              result.data.refresh,
-            );
-            storageService.saveAuthToken(result.data.refresh);
+          const result = await refreshClient.mutation(
+            RefreshTokenDocument,
+            args
+          );
+          if (result?.data?.refresh) {
+            storageService.saveAuthToken(result?.data?.refresh);
           } else {
-            console.error('refresh failed, result:', result);
-            storageService.clearAccountData();
+            storageService.clearAccountData()
           }
         },
       };
