@@ -1,10 +1,10 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { OperationResult } from '@urql/core';
 
-export function removeNullFields(obj: any, ...fieldsToRemove: string[]): any {
+export function removeNullFields(obj: any): any {
   const filteredObj = Object.assign({}, obj);
   for (const key in obj) {
-    if (fieldsToRemove.includes(key) && obj[key] === null) {
+    if (obj[key] === null) {
       delete filteredObj[key];
     }
   }

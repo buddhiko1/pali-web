@@ -10,8 +10,8 @@ module.exports = {
       spacing: {
         smPadding: "1.75rem",
         smContentPadding: "3rem",
-        lgPadding: "26rem",
-        lgContentPadding: "27rem",
+        lgPadding: "21.5vw",
+        lgContentPadding: "23.5vw",
       },
       colors: {
         // elements

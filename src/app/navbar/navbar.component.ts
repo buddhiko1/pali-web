@@ -27,7 +27,7 @@ export class NavbarComponent {
     private _deviceService: DeviceDetectorService,
     private _homeService: HomeService,
     private _scrollbarService: ScrollbarService,
-    private _navbarService: NavbarService,
+    private _navbarService: NavbarService
   ) {
     this._router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
@@ -67,10 +67,12 @@ export class NavbarComponent {
   }
 
   routeTo(url: string): void {
-    if (!this._deviceService.isDesktop() && url) {
-      this.toggleMenu();
+    if (this._activeUrl !== url) {
+      if (!this._deviceService.isDesktop() && url) {
+        this.toggleMenu();
+      }
+      this._router.navigateByUrl(url);
     }
-    this._router.navigateByUrl(url);
   }
 
   isActiveUrl(url: string): boolean {
