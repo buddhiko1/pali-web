@@ -3,9 +3,7 @@ import { Injectable } from '@angular/core';
 import { createDirectus, staticToken, rest, uploadFiles } from '@directus/sdk';
 import { StorageService } from 'src/app/core/storage.service';
 import { UrqlService, refreshToken } from 'src/app/core/urql.service';
-import {
-  validateAndExtractResult,
-} from 'src/app/core/utilities.gql';
+import { validateAndExtractResult } from 'src/app/core/utilities.gql';
 import {
   LoginDocument,
   LoginMutationVariables,
@@ -28,7 +26,7 @@ import {
   Update_Directus_Users_Input,
   MeFieldsFragment,
   DeleteOldAvatarDocument,
-  DeleteOldAvatarMutationVariables
+  DeleteOldAvatarMutationVariables,
 } from 'src/gql/graphql';
 import { environment } from 'src/environments/environment';
 
@@ -112,13 +110,13 @@ export class AccountService {
   async updateMe(args: Update_Directus_Users_Input): Promise<MeFieldsFragment> {
     const client = this._urqlService.systemClient;
     const result = await client.mutation(UpdateMeDocument, {
-      data: args
+      data: args,
     });
     const data = validateAndExtractResult(result);
-    return data.update_users_me
+    return data.update_users_me;
   }
 
-  async deleteOldAvatar(args:DeleteOldAvatarMutationVariables ): Promise<void> {
+  async deleteOldAvatar(args: DeleteOldAvatarMutationVariables): Promise<void> {
     const client = this._urqlService.systemClient;
     await client.mutation(DeleteOldAvatarDocument, args);
   }

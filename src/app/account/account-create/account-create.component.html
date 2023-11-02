@@ -1,5 +1,5 @@
 <section appSlider [slideDelay]="200" class="c-container relative z-20">
-  <div *ngIf="!isSubmitted; else loader" class="c-dialog d-box">
+  <div *ngIf="!isLoaderActived; else loader" class="c-dialog d-box">
     <h2 class="c-title d-title">Sign Up</h2>
     <form [formGroup]="form" (ngSubmit)="onSubmit()" class="c-form">
       <div class="c-email">
@@ -33,7 +33,7 @@
     </form>
     <p class="c-tips d-text">
       <span>Have an account ?</span
-      ><button (click)="onLogin()" class="g-link-button text-sm ml-4">
+      ><button (click)="routeToLogin()" class="g-link-button text-sm ml-4">
         Sign In
       </button>
     </p>
@@ -43,7 +43,10 @@
       [title]="'SignUp...'"
       [status]="loaderStatus"
       [prompt]="loaderPrompt"
-      (submitted)="goback()"
+      [stayWhenSuccessful]="true"
+      [stayWhenFailed]="true"
+      (failed)="goback()"
+      (successful)="routeToLogin()"
       class="c-loader"
     ></app-loader>
   </ng-template>

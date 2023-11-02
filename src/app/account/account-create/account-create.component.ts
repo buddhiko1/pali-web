@@ -24,7 +24,6 @@ export class AccountCreateComponent implements OnInit, OnDestroy {
   form!: FormGroup;
   UrlEnum = UrlEnum;
 
-  isSubmitted = false;
   loaderStatus = LoaderStatusEnum.Idle;
   loaderPrompt = '';
 
@@ -56,6 +55,10 @@ export class AccountCreateComponent implements OnInit, OnDestroy {
     this._overlayService.deactive();
   }
 
+  get isLoaderActived(): boolean {
+    return this.loaderStatus !== LoaderStatusEnum.Idle;
+  }
+
   get email() {
     // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
     return this.form.get('email')!;
@@ -74,7 +77,6 @@ export class AccountCreateComponent implements OnInit, OnDestroy {
       urlForInit: `${location.protocol}//${location.host}/account/${UrlEnum.AccountInit}`, // confiured in the config.json of pali-cms.
     };
 
-    this.isSubmitted = true;
     this.loaderStatus = LoaderStatusEnum.Loading;
 
     this._accountService
@@ -96,7 +98,7 @@ export class AccountCreateComponent implements OnInit, OnDestroy {
     this._navigationService.back();
   }
 
-  onLogin(): void {
+  routeToLogin(): void {
     this._router.navigate([`../${UrlEnum.Login}`], {
       relativeTo: this._activeRoute,
     });

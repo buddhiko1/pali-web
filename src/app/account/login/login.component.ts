@@ -19,7 +19,6 @@ export class LoginComponent implements OnInit, OnDestroy {
   form!: FormGroup;
   UrlEnum = UrlEnum;
 
-  isSubmitted = false;
   loaderStatus = LoaderStatusEnum.Idle;
   loaderPrompt = '';
 
@@ -54,6 +53,10 @@ export class LoginComponent implements OnInit, OnDestroy {
     this._overlayService.deactive();
   }
 
+  get isLoaderActived(): boolean {
+    return this.loaderStatus !== LoaderStatusEnum.Idle;
+  }
+
   get email() {
     // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
     return this.form.get('email')!;
@@ -74,15 +77,12 @@ export class LoginComponent implements OnInit, OnDestroy {
       password: this.form.getRawValue().password,
     };
 
-    this.isSubmitted = true;
     this.loaderStatus = LoaderStatusEnum.Loading;
 
     this._accountService
       .login(args)
       .then(() => {
-        this._router.navigate([`../${UrlEnum.Me}`], {
-          relativeTo: this._activeRoute,
-        });
+        this.loaderStatus = LoaderStatusEnum.Successful;
       })
       .catch((error) => {
         this.loaderStatus = LoaderStatusEnum.Failed;
@@ -92,7 +92,12 @@ export class LoginComponent implements OnInit, OnDestroy {
 
   reEdit(): void {
     this.loaderStatus = LoaderStatusEnum.Idle;
-    this.isSubmitted = false;
+  }
+
+  routeToMe(): void {
+    this._router.navigate([`../${UrlEnum.Me}`], {
+      relativeTo: this._activeRoute,
+    });
   }
 
   onRequestReset(): void {

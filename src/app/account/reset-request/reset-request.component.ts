@@ -20,7 +20,6 @@ import { UnRegisteredEmailValidator } from '../email.validator';
 export class ResetRequestComponent implements OnInit, OnDestroy {
   form!: FormGroup;
 
-  isSubmitted = false;
   loaderStatus = LoaderStatusEnum.Idle;
   loaderPrompt = '';
 
@@ -50,6 +49,10 @@ export class ResetRequestComponent implements OnInit, OnDestroy {
     this._overlayService.deactive();
   }
 
+  get isLoderActived(): boolean {
+    return this.loaderStatus !== LoaderStatusEnum.Idle;
+  }
+
   get email() {
     // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
     return this.form.get('email')!;
@@ -61,7 +64,6 @@ export class ResetRequestComponent implements OnInit, OnDestroy {
       urlForReset: `${location.protocol}//${location.host}/account/${UrlEnum.PasswordReset}`, // confiured in the config.json of pali-cms.
     };
 
-    this.isSubmitted = true;
     this.loaderStatus = LoaderStatusEnum.Loading;
 
     this._accountService

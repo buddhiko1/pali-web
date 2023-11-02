@@ -61,7 +61,7 @@ graphql(`
     }
   }
   mutation DeleteOldAvatar($avatarId: ID!) {
-    delete_files_item(id: $avatarId){
+    delete_files_item(id: $avatarId) {
       id
     }
   }

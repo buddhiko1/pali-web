@@ -20,7 +20,6 @@ export class PasswordResetComponent implements OnInit, OnDestroy {
   UrlEnum = UrlEnum;
   form!: FormGroup;
 
-  isSubmitted = false;
   loaderStatus = LoaderStatusEnum.Idle;
   loaderPrompt = '';
 
@@ -57,6 +56,10 @@ export class PasswordResetComponent implements OnInit, OnDestroy {
     this._overlayService.deactive();
   }
 
+  get isLoaderActived(): boolean {
+   return this.loaderStatus !== LoaderStatusEnum.Idle;
+  }
+
   get password() {
     // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
     return this.form.get('password')!;
@@ -76,7 +79,6 @@ export class PasswordResetComponent implements OnInit, OnDestroy {
       password: this.form.getRawValue().password,
     };
 
-    this.isSubmitted = true;
     this.loaderStatus = LoaderStatusEnum.Loading;
 
     this._accountService
@@ -91,7 +93,7 @@ export class PasswordResetComponent implements OnInit, OnDestroy {
       });
   }
 
-  login(): void {
+  routeToLogin(): void {
     this._accountService.logout();
     this._router.navigate([`../${UrlEnum.Login}`], {
       relativeTo: this._activeRoute,

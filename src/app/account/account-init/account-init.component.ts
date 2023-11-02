@@ -24,7 +24,6 @@ export class AccountInitComponent implements OnInit, OnDestroy {
   private _token = '';
   private _email = '';
 
-  isSubmitted = false;
   loaderStatus = LoaderStatusEnum.Idle;
   loaderPrompt = '';
 
@@ -57,6 +56,10 @@ export class AccountInitComponent implements OnInit, OnDestroy {
     this._overlayService.deactive();
   }
 
+  isLoaderActived(): boolean {
+    return this.loaderStatus !== LoaderStatusEnum.Idle;
+  }
+
   get password() {
     // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
     return this.form.get('password')!;
@@ -73,7 +76,6 @@ export class AccountInitComponent implements OnInit, OnDestroy {
       password: password,
     };
 
-    this.isSubmitted = true;
     this.loaderStatus = LoaderStatusEnum.Loading;
 
     this._accountService
