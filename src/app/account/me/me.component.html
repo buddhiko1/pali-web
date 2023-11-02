@@ -1,21 +1,23 @@
-<section appFader [fadeDelay]="300" class="c-container">
-  <div class="c-content mt-24 lg:mt-[20vh]">
-    <label class="avatar-button">
+<section appFader [fadeDelay]="300" class="c-container relative z-20">
+  <div *ngIf="!isLoaderActived" class="c-content mt-24 lg:mt-[20vh]">
+    <label class="c-label">
       <input type="file" (change)="onAvatarSelected($event)" />
       <img
-        *ngIf="me?.avatar; else icon"
         class="c-avatar rounded-full w-24 h-24"
-        [src]="avatarImage"
-        alt="My avatar"
+        [src]="avatarUrl"
+        alt="avatar"
       />
     </label>
-    <ng-template #icon>
-      <svg-icon
-        src="assets/icons/person.svg"
-        [svgClass]="['g-svg', 'w-24', 'h-24', 'g-hover']"
-      ></svg-icon>
-    </ng-template>
     <p class="text-text">{{ me?.email }}</p>
     <button (click)="onLogout()" class="d-button mt-12">Logout</button>
   </div>
+  <app-loader
+    *ngIf="isLoaderActived"
+    [title]="'Uploading...'"
+    [status]="loaderStatus"
+    [prompt]="loaderPrompt"
+    [stayWhenFailed]="true"
+    (failed)="rmLoader()"
+    class="c-loader"
+  ></app-loader>
 </section>

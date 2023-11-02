@@ -1,5 +1,5 @@
 <section appSlider [slideDelay]="200" class="c-container relative z-20">
-  <div *ngIf="!isLoaderActived; else loader" class="c-dialog d-box">
+  <div *ngIf="!isLoaderActived" class="c-dialog d-box">
     <h2 class="c-title d-title">Sign Up</h2>
     <form [formGroup]="form" (ngSubmit)="onSubmit()" class="c-form">
       <div class="c-email">
@@ -38,16 +38,15 @@
       </button>
     </p>
   </div>
-  <ng-template #loader>
-    <app-loader
-      [title]="'SignUp...'"
-      [status]="loaderStatus"
-      [prompt]="loaderPrompt"
-      [stayWhenSuccessful]="true"
-      [stayWhenFailed]="true"
-      (failed)="goback()"
-      (successful)="routeToLogin()"
-      class="c-loader"
-    ></app-loader>
-  </ng-template>
+  <app-loader
+    *ngIf="!isLoaderActived"
+    [title]="'SignUp...'"
+    [status]="loaderStatus"
+    [prompt]="loaderPrompt"
+    [stayWhenSuccessful]="true"
+    [stayWhenFailed]="true"
+    (failed)="goback()"
+    (successful)="routeToLogin()"
+    class="c-loader"
+  ></app-loader>
 </section>

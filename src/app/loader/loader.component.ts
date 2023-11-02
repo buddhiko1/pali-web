@@ -29,8 +29,8 @@ export enum StatusEnum {
 })
 export class LoaderComponent implements OnChanges {
   @Input() title = '';
-  @Input() prompt = '';
   @Input() status = StatusEnum.Idle;
+  @Input() prompt = '';
   @Input() stayWhenSuccessful = false;
   @Input() stayWhenFailed = false;
   @Output() failed = new EventEmitter<void>();
@@ -43,8 +43,7 @@ export class LoaderComponent implements OnChanges {
       if (changes['status'].currentValue === StatusEnum.Successful) {
         this.successful.emit();
       }
-    }
-    if (!this.stayWhenFailed) {
+    } else if (!this.stayWhenFailed) {
       if (changes['status'].currentValue === StatusEnum.Failed) {
         this.failed.emit();
       }

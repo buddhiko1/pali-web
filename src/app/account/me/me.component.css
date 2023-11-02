@@ -16,11 +16,28 @@
   grid-row-gap: theme("spacing.5");
 }
 
-.avatar-button {
+.c-label {
   display: inline-block;
   cursor: pointer;
 }
 
-.avatar-button input {
+.c-label input {
   display: none;
+}
+
+.c-loader {
+  grid-area: content;
+  max-width: 100%;
+}
+
+@media screen and (min-width: theme("screens.lg")) {
+  .c-container {
+    grid-template-columns: theme("spacing.lgPadding") 1fr theme(
+        "spacing.lgPadding"
+      );
+    justify-items: center;
+  }
+  .c-loader {
+    min-width: 50%;
+  }
 }
