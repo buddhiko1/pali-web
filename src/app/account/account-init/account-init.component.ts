@@ -8,6 +8,7 @@ import {
 } from 'src/gql/graphql';
 import { StatusEnum as LoaderStatusEnum } from 'src/app/loader/loader.component';
 import { OverlayService } from 'src/app/overlay/overlay.service';
+import { NavigationService } from 'src/app/core/navigation.service';
 
 import { UrlEnum } from '../account-routing.module';
 import { AccountService } from '../account.service';
@@ -31,12 +32,13 @@ export class AccountInitComponent implements OnInit, OnDestroy {
     private _router: Router,
     private _activeRoute: ActivatedRoute,
     private _accountService: AccountService,
-    private _overlayService: OverlayService,
+    private _navigationService: NavigationService,
+    private _overlayService: OverlayService
   ) {
     this._activeRoute.queryParams.subscribe((params) => {
       this._token = params['token'];
       this._email = JSON.parse(
-        window.atob(params['token'].split('.')[1]),
+        window.atob(params['token'].split('.')[1])
       ).email;
     });
   }
@@ -70,30 +72,35 @@ export class AccountInitComponent implements OnInit, OnDestroy {
       return;
     }
 
-    const password = this.form.getRawValue().password;
+    this.loaderStatus = LoaderStatusEnum.Loading;
     const args: InitAccountMutationVariables = {
       token: this._token,
-      password: password,
+      password: this.form.getRawValue().password
     };
-
-    this.loaderStatus = LoaderStatusEnum.Loading;
-
     this._accountService
       .initAccount(args)
       .then(() => {
-        const args: LoginMutationVariables = {
-          email: this._email,
-          password: password,
-        };
-        this._accountService.login(args).then(() => {
-          this._router.navigate([`../${UrlEnum.Me}`], {
-            relativeTo: this._activeRoute,
-          });
-        });
+        this.loaderStatus = LoaderStatusEnum.Successful;
       })
       .catch((error) => {
         this.loaderStatus = LoaderStatusEnum.Failed;
         this.loaderPrompt = error.toString();
       });
+  }
+
+  goback(): void {
+    this._navigationService.back();
+  }
+
+  login(): void {
+    const args: LoginMutationVariables = {
+      email: this._email,
+      password: this.form.getRawValue().password
+    };
+    this._accountService.login(args).then(() => {
+      this._router.navigate([`../${UrlEnum.Me}`], {
+        relativeTo: this._activeRoute,
+      });
+    });
   }
 }

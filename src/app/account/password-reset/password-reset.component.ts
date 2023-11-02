@@ -57,7 +57,7 @@ export class PasswordResetComponent implements OnInit, OnDestroy {
   }
 
   get isLoaderActived(): boolean {
-   return this.loaderStatus !== LoaderStatusEnum.Idle;
+    return this.loaderStatus !== LoaderStatusEnum.Idle;
   }
 
   get password() {

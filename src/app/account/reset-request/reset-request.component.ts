@@ -49,7 +49,7 @@ export class ResetRequestComponent implements OnInit, OnDestroy {
     this._overlayService.deactive();
   }
 
-  get isLoderActived(): boolean {
+  get isLoaderActived(): boolean {
     return this.loaderStatus !== LoaderStatusEnum.Idle;
   }
 
