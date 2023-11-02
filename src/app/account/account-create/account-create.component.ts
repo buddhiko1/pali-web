@@ -13,7 +13,7 @@ import { UrlEnum } from '../account-routing.module';
 import { AccountService } from '../account.service';
 import { RegisteredEmailValidator } from '../email.validator';
 
-import { Directus_Roles } from 'src/gql/graphql';
+import { RoleFieldsFragment } from 'src/gql/graphql';
 
 @Component({
   selector: 'app-account-create',
@@ -49,11 +49,11 @@ export class AccountCreateComponent implements OnInit, OnDestroy {
         updateOn: 'change',
       }),
     });
-    this._overlayService.active(true);
+    this._overlayService.active();
   }
 
   ngOnDestroy(): void {
-    this._overlayService.active(false);
+    this._overlayService.deactive();
   }
 
   get email() {
@@ -66,7 +66,7 @@ export class AccountCreateComponent implements OnInit, OnDestroy {
       return;
     }
 
-    const roles: Directus_Roles[] = await this._accountService.fetchRoles();
+    const roles: RoleFieldsFragment[] = await this._accountService.fetchRoles();
     const role = roles.find((role) => role.name === RoleEnum.User)!;
     const args: CreateAccountMutationVariables = {
       email: this.form.getRawValue().email,

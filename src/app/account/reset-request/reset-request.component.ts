@@ -43,11 +43,11 @@ export class ResetRequestComponent implements OnInit, OnDestroy {
         updateOn: 'change',
       }),
     });
-    this._overlayService.active(true);
+    this._overlayService.active();
   }
 
   ngOnDestroy(): void {
-    this._overlayService.active(false);
+    this._overlayService.deactive();
   }
 
   get email() {

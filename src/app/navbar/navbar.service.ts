@@ -29,13 +29,13 @@ export class NavbarService {
   }
 
   openMenu(): void {
-    this._overlayService.active(true);
+    this._overlayService.active();
     this._isMenuOpen = true;
   }
 
   closeMenu(): void {
     this._isMenuOpen = false;
-    this._overlayService.active(false);
+    this._overlayService.deactive();
   }
 
   toggleMenu(): void {

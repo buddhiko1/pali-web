@@ -1,6 +1,29 @@
 import { graphql } from 'src/gql';
 
 graphql(`
+  fragment MeFields on directus_users {
+    first_name
+    last_name
+    avatar {
+      id
+      filename_disk
+      folder {
+        id
+        name
+      }
+    }
+    email
+    role {
+      name
+    }
+  }
+  fragment RoleFields on directus_roles {
+    id
+    name
+  }
+  fragment FileFields on directus_files {
+    id
+  }
   mutation CreateAccount(
     $email: String!
     $role: String!
@@ -32,6 +55,16 @@ graphql(`
       refresh_token
     }
   }
+  mutation UpdateMe($data: update_directus_users_input!) {
+    update_users_me(data: $data) {
+      ...MeFields
+    }
+  }
+  mutation DeleteOldAvatar($avatarId: ID!) {
+    delete_files_item(id: $avatarId){
+      id
+    }
+  }
   query UserWithEmail($email: String!) {
     users(filter: { email: { _eq: $email } }) {
       id
@@ -39,23 +72,12 @@ graphql(`
   }
   query Me {
     users_me {
-      id
-      first_name
-      last_name
-      avatar {
-        id
-        filename_disk
-      }
-      email
-      role {
-        name
-      }
+      ...MeFields
     }
   }
   query Roles {
     roles {
-      id
-      name
+      ...RoleFields
     }
   }
 `);

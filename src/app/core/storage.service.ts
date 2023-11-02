@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Auth_Tokens, Directus_Users } from 'src/gql/graphql';
+import { Auth_Tokens, MeFieldsFragment } from 'src/gql/graphql';
 
 @Injectable({
   providedIn: 'root',
@@ -26,11 +26,11 @@ export class StorageService {
     return !!this.accessToken;
   }
 
-  saveMe(me: Directus_Users): void {
+  saveMe(me: MeFieldsFragment): void {
     localStorage.setItem(this._meKey, JSON.stringify(me));
   }
 
-  get me(): Directus_Users | null {
+  get me(): MeFieldsFragment | null {
     const data = localStorage.getItem(this._meKey);
     return data ? JSON.parse(data) : null;
   }

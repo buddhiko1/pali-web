@@ -27,7 +27,7 @@ export class NavbarComponent {
     private _deviceService: DeviceDetectorService,
     private _homeService: HomeService,
     private _scrollbarService: ScrollbarService,
-    private _navbarService: NavbarService
+    private _navbarService: NavbarService,
   ) {
     this._router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {

@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 
-import { UrqlService } from 'src/app/core/urql.service';
+import { createDirectus, staticToken, rest, uploadFiles } from '@directus/sdk';
 import { StorageService } from 'src/app/core/storage.service';
+import { UrqlService, refreshToken } from 'src/app/core/urql.service';
 import {
-  removeNullFields,
   validateAndExtractResult,
 } from 'src/app/core/utilities.gql';
 import {
@@ -21,9 +21,16 @@ import {
   ResetPasswordMutationVariables,
   UserWithEmailDocument,
   MeDocument,
-  Directus_Roles,
+  RoleFieldsFragment,
   RolesDocument,
+  FileFieldsFragment,
+  UpdateMeDocument,
+  Update_Directus_Users_Input,
+  MeFieldsFragment,
+  DeleteOldAvatarDocument,
+  DeleteOldAvatarMutationVariables
 } from 'src/gql/graphql';
+import { environment } from 'src/environments/environment';
 
 @Injectable({ providedIn: 'root' })
 export class AccountService {
@@ -83,14 +90,36 @@ export class AccountService {
     const client = this._urqlService.systemClient;
     const result = await client.query(MeDocument, {});
     const data = validateAndExtractResult(result);
-    const me = removeNullFields(data.users_me, 'role', 'avatar');
+    const me = data.users_me;
     this._storageService.saveMe(me);
   }
 
-  async fetchRoles(): Promise<Directus_Roles[]> {
+  async fetchRoles(): Promise<RoleFieldsFragment[]> {
     const client = this._urqlService.systemClient;
     const result = await client.query(RolesDocument, {});
     const data = validateAndExtractResult(result);
     return data.roles;
+  }
+
+  async uploadAvatar(formData: FormData): Promise<FileFieldsFragment> {
+    await refreshToken();
+    const client = createDirectus<FileFieldsFragment>(environment.cms)
+      .with(staticToken(this._storageService.accessToken))
+      .with(rest());
+    return await client.request(uploadFiles(formData));
+  }
+
+  async updateMe(args: Update_Directus_Users_Input): Promise<MeFieldsFragment> {
+    const client = this._urqlService.systemClient;
+    const result = await client.mutation(UpdateMeDocument, {
+      data: args
+    });
+    const data = validateAndExtractResult(result);
+    return data.update_users_me
+  }
+
+  async deleteOldAvatar(args:DeleteOldAvatarMutationVariables ): Promise<void> {
+    const client = this._urqlService.systemClient;
+    await client.mutation(DeleteOldAvatarDocument, args);
   }
 }
