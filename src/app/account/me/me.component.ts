@@ -25,7 +25,7 @@ export class MeComponent {
     private _overlayService: OverlayService,
     private _navigationService: NavigationService,
     private _router: Router,
-    private _activeRoute: ActivatedRoute
+    private _activeRoute: ActivatedRoute,
   ) {}
 
   get isLoaderActived(): boolean {
