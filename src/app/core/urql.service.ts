@@ -13,6 +13,21 @@ const _errorExchange = mapExchange({
   },
 });
 
+export async function refreshToken() {
+  const client = new Client({
+    url: `${environment.cms}/graphql/system`,
+    exchanges: [_errorExchange, fetchExchange],
+  });
+  const result = await client.mutation(RefreshTokenDocument, {
+    refreshToken: _storageService.refreshToken,
+  });
+  if (result?.data?.refresh) {
+    _storageService.saveAuthToken(result?.data?.refresh);
+  } else {
+    _storageService.clearAccountData();
+  }
+}
+
 const _storageService = new StorageService();
 
 const _customAuthExchange = authExchange(async (utils) => {
@@ -28,18 +43,7 @@ const _customAuthExchange = authExchange(async (utils) => {
       );
     },
     async refreshAuth() {
-      const client = new Client({
-        url: `${environment.cms}/graphql/system`,
-        exchanges: [_errorExchange, fetchExchange],
-      });
-      const result = await client.mutation(RefreshTokenDocument, {
-        refreshToken: _storageService.refreshToken,
-      });
-      if (result?.data?.refresh) {
-        _storageService.saveAuthToken(result?.data?.refresh);
-      } else {
-        _storageService.clearAccountData();
-      }
+      await refreshToken();
     },
   };
 });
@@ -47,11 +51,10 @@ const _customAuthExchange = authExchange(async (utils) => {
 @Injectable({ providedIn: 'root' })
 export class UrqlService {
   get systemClient(): Client {
-    // all exchanges should be ordered synchronous first and asynchronous last.
     return new Client({
       url: `${environment.cms}/graphql/system`,
       exchanges: _storageService.isLoggedIn
-        ? [_errorExchange, _customAuthExchange, fetchExchange]
+        ? [_errorExchange, _customAuthExchange, fetchExchange] // exchanges should be ordered synchronous first and asynchronous last.
         : [_errorExchange, fetchExchange],
     });
   }
