@@ -7,18 +7,19 @@
   >
     {{ titleShowing }}
   </h2>
-  <app-wheel
-    *ngIf="!showPrompt"
-    [size]="isLargeDevice ? 5 : 4"
-    [delay]="500"
-    [stop]="isSuccessful || isFailed"
-    class="c-wheel"
-  ></app-wheel>
-  <p *ngIf="showPrompt" class="c-prompt g-text g-fade-in mx-4">
+  <p *ngIf="showPrompt; else wheel" class="c-prompt g-text g-fade-in mx-4">
     {{ prompt }}
   </p>
+  <ng-template #wheel>
+    <app-wheel
+      [size]="isLargeDevice ? 5 : 4"
+      [delay]="500"
+      [stop]="isSuccessful || isFailed"
+      class="c-wheel"
+    ></app-wheel>
+  </ng-template>
   <button
-    *ngIf="isSuccessful || isFailed"
+    *ngIf="(isSuccessful || isFailed) && (stayWhenSuccessful || stayWhenFailed)"
     class="d-button g-fade-in w-full mt-3"
     [class.d-error-button]="isFailed"
     (click)="onSubmit()"

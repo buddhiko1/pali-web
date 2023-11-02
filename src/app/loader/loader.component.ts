@@ -1,4 +1,11 @@
-import { Component, Input, EventEmitter, Output } from '@angular/core';
+import {
+  Component,
+  OnChanges,
+  SimpleChanges,
+  Input,
+  EventEmitter,
+  Output,
+} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DeviceDetectorService } from 'ngx-device-detector';
 import { NgxRerenderModule } from 'ngx-rerender';
@@ -20,13 +27,29 @@ export enum StatusEnum {
   templateUrl: './loader.component.html',
   styleUrls: ['./loader.component.css'],
 })
-export class LoaderComponent {
+export class LoaderComponent implements OnChanges {
   @Input() title = '';
   @Input() prompt = '';
   @Input() status = StatusEnum.Idle;
-  @Output() submitted = new EventEmitter<void>();
+  @Input() stayWhenSuccessful = false;
+  @Input() stayWhenFailed = false;
+  @Output() failed = new EventEmitter<void>();
+  @Output() successful = new EventEmitter<void>();
 
   constructor(private _deviceService: DeviceDetectorService) {}
+
+  ngOnChanges(changes: SimpleChanges): void {
+    if (!this.stayWhenSuccessful) {
+      if (changes['status'].currentValue === StatusEnum.Successful) {
+        this.successful.emit();
+      }
+    }
+    if (!this.stayWhenFailed) {
+      if (changes['status'].currentValue === StatusEnum.Failed) {
+        this.failed.emit();
+      }
+    }
+  }
 
   get isLargeDevice(): boolean {
     return this._deviceService.isDesktop();
@@ -49,6 +72,6 @@ export class LoaderComponent {
   }
 
   onSubmit() {
-    this.submitted.emit();
+    this.isFailed ? this.failed.emit() : this.successful.emit();
   }
 }
