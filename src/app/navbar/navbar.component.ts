@@ -15,7 +15,13 @@ import { NavbarService } from './navbar.service';
 @Component({
   selector: 'app-navbar',
   standalone: true,
-  imports: [CommonModule, TitleCasePipe, RouterLink, AngularSvgIconModule, FadeInDirective],
+  imports: [
+    CommonModule,
+    TitleCasePipe,
+    RouterLink,
+    AngularSvgIconModule,
+    FadeInDirective,
+  ],
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css'],
 })

@@ -25,7 +25,7 @@ export class MeComponent {
     private _appService: AppService,
     private _navigationService: NavigationService,
     private _router: Router,
-    private _activeRoute: ActivatedRoute
+    private _activeRoute: ActivatedRoute,
   ) {}
 
   get isLoaderActived(): boolean {
@@ -59,7 +59,9 @@ export class MeComponent {
       this.loaderStatus = LoaderStatusEnum.Loading;
 
       const formData = new FormData();
-      formData.append('folder', this.me!.avatar!.folder!.id);
+      if (this.me?.avatar?.folder?.id) {
+        formData.append('folder', this.me.avatar.folder.id);
+      }
       formData.append('file', file);
       this._appService.activeMaskBg();
       try {

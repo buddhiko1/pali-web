@@ -1,4 +1,4 @@
-import { Component, OnInit  } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import { ScrollbarService } from './core/scrollbar.service';
 import { ScrollDirective } from './core/scroll.directive';
@@ -16,9 +16,8 @@ export class AppComponent implements OnInit {
 
   constructor(
     private _appService: AppService,
-    private _scrollbarService: ScrollbarService
-  ) {
-  }
+    private _scrollbarService: ScrollbarService,
+  ) {}
 
   ngOnInit(): void {
     this._scrollbarService.showScrollbar();

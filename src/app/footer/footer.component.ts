@@ -14,7 +14,10 @@ import { FadeInDirective } from '../core/fade-in.directive';
 export class FooterComponent implements OnInit {
   startPath = '';
   fixedPath = ['account', 'vocabulary', 'grammar'];
-  constructor(private _el: ElementRef, private _router: Router) {}
+  constructor(
+    private _el: ElementRef,
+    private _router: Router,
+  ) {}
 
   ngOnInit(): void {
     this._router.events.subscribe((event) => {
