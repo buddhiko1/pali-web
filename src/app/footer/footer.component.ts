@@ -28,7 +28,7 @@ export class FooterComponent implements OnInit {
       if (event instanceof NavigationEnd) {
         this._el.nativeElement.style.display = 'block';
         const activeUrl = event.url.split('/')[1];
-        if (activeUrl === 'account') {
+        if (['account', 'vocabulary', 'grammar'].includes(activeUrl)) {
           this._el.nativeElement.style.position = 'fixed';
           this._el.nativeElement.style.bottom = '0';
           this._el.nativeElement.style.width = '100%';

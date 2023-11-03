@@ -1,4 +1,4 @@
-<section appSlider [slideDelay]="200" class="c-container relative z-20">
+<section appSlider [slideDelay]="200" class="c-container">
   <div *ngIf="!isLoaderActived" class="c-dialog d-box">
     <h2 class="c-title d-title">Sign Up</h2>
     <form [formGroup]="form" (ngSubmit)="onSubmit()" class="c-form">
@@ -39,7 +39,7 @@
     </p>
   </div>
   <app-loader
-    *ngIf="!isLoaderActived"
+    *ngIf="isLoaderActived"
     [title]="'SignUp...'"
     [status]="loaderStatus"
     [prompt]="loaderPrompt"

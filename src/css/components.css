@@ -27,7 +27,7 @@
 }
 
 .g-scrollbar {
-  @apply scrollbar-thin scrollbar-w-1.5 scrollbar-thumb-border scrollbar-track-pageBg;
+  @apply scrollbar-thin scrollbar-w-1.5 scrollbar-thumb-border scrollbar-track-appBg;
 }
 
 .g-border {

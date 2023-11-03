@@ -1,7 +1,8 @@
 :root {
   /* elements */
   --colors-logo: theme("colors.gray.700");
-  --colors-page-bg: theme("colors.white");
+  --colors-app-bg: theme("colors.white");
+  --colors-mask-bg: theme("colors.gray.300");
   --colors-phrase-bg: theme("colors.rose.100");
   --colors-card-bg: theme("colors.gray.100");
   --colors-banner-title: theme("colors.gray.50");
@@ -25,7 +26,8 @@
 .night {
   /* elements */
   --colors-logo: theme("colors.gray.100");
-  --colors-page-bg: theme("colors.gray.900");
+  --colors-app-bg: theme("colors.gray.900");
+  --colors-mask-bg: theme("colors.gray.500");
   --colors-phrase-bg: theme("colors.gray.700");
   --colors-card-bg: theme("colors.gray.700");
   --colors-banner-title: theme("colors.gray.50");

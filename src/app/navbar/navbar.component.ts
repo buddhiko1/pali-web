@@ -6,6 +6,7 @@ import { DeviceDetectorService } from 'ngx-device-detector';
 
 import { ScrollbarService } from '../core/scrollbar.service';
 import { HomeService } from '../home/home.service';
+import { AppService } from '../app.service';
 import { Modules } from 'src/gql/graphql';
 
 import { NavbarService } from './navbar.service';
@@ -28,6 +29,7 @@ export class NavbarComponent {
     private _homeService: HomeService,
     private _scrollbarService: ScrollbarService,
     private _navbarService: NavbarService,
+    private _appService: AppService
   ) {
     this._router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
@@ -53,6 +55,10 @@ export class NavbarComponent {
 
   get isShow(): boolean {
     return this._navbarService.isShow;
+  }
+
+  get isMaskBg(): boolean {
+    return this._appService.isMaskBg;
   }
 
   toggleMenu(): void {

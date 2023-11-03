@@ -4,7 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 
 import { LoginMutationVariables } from 'src/gql/graphql';
 import { StatusEnum as LoaderStatusEnum } from 'src/app/loader/loader.component';
-import { OverlayService } from 'src/app/overlay/overlay.service';
+import { AppService } from 'src/app/app.service';
 
 import { UrlEnum } from '../account-routing.module';
 import { AccountService } from '../account.service';
@@ -27,7 +27,7 @@ export class LoginComponent implements OnInit, OnDestroy {
     private _activeRoute: ActivatedRoute,
     private _accountService: AccountService,
     private _unRegisteredEmailValidator: UnRegisteredEmailValidator,
-    private _overlayService: OverlayService,
+    private _appService: AppService
   ) {}
 
   ngOnInit(): void {
@@ -46,11 +46,11 @@ export class LoginComponent implements OnInit, OnDestroy {
         updateOn: 'change',
       }),
     });
-    this._overlayService.active();
+    this._appService.activeMaskBg();
   }
 
   ngOnDestroy(): void {
-    this._overlayService.deactive();
+    this._appService.deactiveMaskBg();
   }
 
   get isLoaderActived(): boolean {

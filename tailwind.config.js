@@ -16,7 +16,8 @@ module.exports = {
       colors: {
         // elements
         logo: "var(--colors-logo)",
-        pageBg: "var(--colors-page-bg)",
+        appBg: "var(--colors-app-bg)",
+        maskBg: "var(--colors-mask-bg)",
         phraseBg: "var(--colors-phrase-bg)",
         cardBg: "var(--colors-card-bg)",
         bannerTitle: "var(--colors-banner-title)",

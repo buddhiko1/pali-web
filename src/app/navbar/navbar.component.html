@@ -1,5 +1,6 @@
 <nav
-  class="c-container pt-1 lg:pt-4 sticky z-20 top-0 backdrop-blur-sm bg-pageBg transition-transform duration-[400ms] ease-in-out"
+  class="c-container pt-1 lg:pt-4 relative z-30 top-0 bg-appBg transition-transform duration-[400ms] ease-in-out"
+  [class.bg-appBg]="isMenuOpen || isMaskBg"
   [class.shadow-sm]="isShadowShow"
   [class.c-container-hidden]="!isShow"
 >
@@ -29,7 +30,7 @@
   </button>
 
   <section
-    class="c-menu w-full pb-3 bg-pageBg"
+    class="c-menu w-full pb-3 bg-appBg"
     [class.c-menu-close]="!isMenuOpen && menuToggled"
     [class.c-menu-open]="isMenuOpen"
   >

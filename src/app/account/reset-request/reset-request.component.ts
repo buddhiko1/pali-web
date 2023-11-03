@@ -5,7 +5,7 @@ import { RequestResetMutationVariables } from 'src/gql/graphql';
 
 import { NavigationService } from 'src/app/core/navigation.service';
 import { PromptEnum } from 'src/app/core/prompts.interaction';
-import { OverlayService } from 'src/app/overlay/overlay.service';
+import { AppService } from 'src/app/app.service';
 import { StatusEnum as LoaderStatusEnum } from 'src/app/loader/loader.component';
 
 import { UrlEnum } from '../account-routing.module';
@@ -27,7 +27,7 @@ export class ResetRequestComponent implements OnInit, OnDestroy {
     private _accountService: AccountService,
     private _unregisteredEmailValidator: UnRegisteredEmailValidator,
     private _navigationService: NavigationService,
-    private _overlayService: OverlayService,
+    private _appService: AppService,
   ) {}
 
   ngOnInit(): void {
@@ -42,11 +42,11 @@ export class ResetRequestComponent implements OnInit, OnDestroy {
         updateOn: 'change',
       }),
     });
-    this._overlayService.active();
+    this._appService.activeMaskBg();
   }
 
   ngOnDestroy(): void {
-    this._overlayService.deactive();
+    this._appService.deactiveMaskBg();
   }
 
   get isLoaderActived(): boolean {
