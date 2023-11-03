@@ -4,6 +4,7 @@ import { Router, NavigationEnd, RouterLink } from '@angular/router';
 import { AngularSvgIconModule } from 'angular-svg-icon';
 import { DeviceDetectorService } from 'ngx-device-detector';
 
+import { FadeInDirective } from '../core/fade-in.directive';
 import { ScrollbarService } from '../core/scrollbar.service';
 import { HomeService } from '../home/home.service';
 import { AppService } from '../app.service';
@@ -14,7 +15,7 @@ import { NavbarService } from './navbar.service';
 @Component({
   selector: 'app-navbar',
   standalone: true,
-  imports: [CommonModule, TitleCasePipe, RouterLink, AngularSvgIconModule],
+  imports: [CommonModule, TitleCasePipe, RouterLink, AngularSvgIconModule, FadeInDirective],
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css'],
 })
@@ -29,7 +30,7 @@ export class NavbarComponent {
     private _homeService: HomeService,
     private _scrollbarService: ScrollbarService,
     private _navbarService: NavbarService,
-    private _appService: AppService
+    private _appService: AppService,
   ) {
     this._router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {

@@ -36,7 +36,7 @@ export class LoginComponent implements OnInit, OnDestroy {
         validators: [Validators.required, Validators.email],
         asyncValidators: [
           this._unRegisteredEmailValidator.validate.bind(
-            this._unRegisteredEmailValidator,
+            this._unRegisteredEmailValidator
           ),
         ],
         updateOn: 'change',
@@ -46,7 +46,9 @@ export class LoginComponent implements OnInit, OnDestroy {
         updateOn: 'change',
       }),
     });
-    this._appService.activeMaskBg();
+    setTimeout(() => {
+      this._appService.activeMaskBg();
+    });
   }
 
   ngOnDestroy(): void {

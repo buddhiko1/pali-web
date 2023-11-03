@@ -27,7 +27,7 @@
   /* elements */
   --colors-logo: theme("colors.gray.100");
   --colors-app-bg: theme("colors.gray.900");
-  --colors-mask-bg: theme("colors.gray.500");
+  --colors-mask-bg: theme("colors.gray.700");
   --colors-phrase-bg: theme("colors.gray.700");
   --colors-card-bg: theme("colors.gray.700");
   --colors-banner-title: theme("colors.gray.50");

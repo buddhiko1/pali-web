@@ -7,7 +7,7 @@ import {
   LoginMutationVariables,
 } from 'src/gql/graphql';
 import { StatusEnum as LoaderStatusEnum } from 'src/app/loader/loader.component';
-import { OverlayService } from 'src/app/overlay/overlay.service';
+import { AppService } from 'src/app/app.service';
 import { NavigationService } from 'src/app/core/navigation.service';
 
 import { UrlEnum } from '../account-routing.module';
@@ -33,7 +33,7 @@ export class AccountInitComponent implements OnInit, OnDestroy {
     private _activeRoute: ActivatedRoute,
     private _accountService: AccountService,
     private _navigationService: NavigationService,
-    private _overlayService: OverlayService,
+    private _appService: AppService,
   ) {
     this._activeRoute.queryParams.subscribe((params) => {
       this._token = params['token'];
@@ -51,11 +51,13 @@ export class AccountInitComponent implements OnInit, OnDestroy {
         updateOn: 'change',
       }),
     });
-    this._overlayService.active();
+    setTimeout(() => {
+      this._appService.activeMaskBg();
+    });
   }
 
   ngOnDestroy(): void {
-    this._overlayService.deactive();
+    this._appService.deactiveMaskBg();
   }
 
   isLoaderActived(): boolean {

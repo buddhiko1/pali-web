@@ -48,7 +48,9 @@ export class AccountCreateComponent implements OnInit, OnDestroy {
         updateOn: 'change',
       }),
     });
-    this._appService.activeMaskBg();
+    setTimeout(() => {
+      this._appService.activeMaskBg();
+    });
   }
 
   ngOnDestroy(): void {
