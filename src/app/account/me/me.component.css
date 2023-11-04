@@ -30,13 +30,21 @@
   min-width: 100%;
 }
 
-@media screen and (min-width: theme("screens.lg")) {
+@media screen and (min-width: theme("screens.sm")) {
   .c-container {
-    grid-template-columns: theme("spacing.lgPadding") 1fr theme(
-        "spacing.lgPadding"
+    grid-template-columns: theme("spacing.mdContentPadding") 1fr theme(
+        "spacing.mdContentPadding"
       );
   }
   .c-loader {
     min-width: 50%;
+  }
+}
+
+@media screen and (min-width: theme("screens.lg")) {
+  .c-container {
+    grid-template-columns: theme("spacing.lgContentPadding") 1fr theme(
+        "spacing.lgContentPadding"
+      );
   }
 }

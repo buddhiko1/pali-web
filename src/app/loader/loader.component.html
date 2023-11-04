@@ -1,13 +1,13 @@
-<section g-fade-in class="c-dialog d-box">
+<section appFader class="c-dialog d-box">
   <h2
-    class="c-title d-title g-fade-in"
+    class="c-title d-title"
     [class.text-ok]="isSuccessful"
     [class.text-error]="isFailed"
     *mcRerender="titleShowing"
   >
     {{ titleShowing }}
   </h2>
-  <p *ngIf="showPrompt; else wheel" class="c-prompt g-text g-fade-in mx-4">
+  <p *ngIf="showPrompt; else wheel" appFader class="c-prompt g-text mx-4">
     {{ prompt }}
   </p>
   <ng-template #wheel>
@@ -20,7 +20,7 @@
   </ng-template>
   <button
     *ngIf="(isSuccessful || isFailed) && (stayWhenSuccessful || stayWhenFailed)"
-    class="d-button g-fade-in w-full mt-3"
+    class="d-button w-full mt-3"
     [class.d-error-button]="isFailed"
     (click)="onSubmit()"
   >

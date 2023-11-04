@@ -10,7 +10,7 @@ import { CommonModule } from '@angular/common';
 import { DeviceDetectorService } from 'ngx-device-detector';
 import { NgxRerenderModule } from 'ngx-rerender';
 
-import { SliderDirective } from '../core/slider.directive';
+import { FadeInDirective } from '../core/fade-in.directive';
 import { WheelComponent } from '../wheel/wheel.component';
 
 export enum StatusEnum {
@@ -23,7 +23,7 @@ export enum StatusEnum {
 @Component({
   selector: 'app-loader',
   standalone: true,
-  imports: [CommonModule, NgxRerenderModule, SliderDirective, WheelComponent],
+  imports: [CommonModule, NgxRerenderModule, FadeInDirective, WheelComponent],
   templateUrl: './loader.component.html',
   styleUrls: ['./loader.component.css'],
 })

@@ -1,5 +1,9 @@
-<section appFader [fadeDelay]="300" class="c-container relative z-20">
-  <div *ngIf="!isLoaderActived" class="c-content mt-24 lg:mt-[20vh]">
+<section
+  appFader
+  [fadeDelay]="300"
+  class="c-container mt-24 sm:mt-48 lg:mt-[20vh]"
+>
+  <div *ngIf="!isLoaderActived" class="c-content">
     <label class="c-label">
       <input type="file" (change)="onAvatarSelected($event)" />
       <img
@@ -18,6 +22,6 @@
     [prompt]="loaderPrompt"
     [stayWhenFailed]="true"
     (failed)="rmLoader()"
-    class="c-loader mt-24"
+    class="c-loader mt-12 sm:mt-24"
   ></app-loader>
 </section>
