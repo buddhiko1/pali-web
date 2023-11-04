@@ -43,7 +43,7 @@ export class FooterComponent implements OnInit {
           }
           setTimeout(() => {
             this._el.nativeElement.style.display = 'block';
-          }, 500);
+          }, 800);
         }
         this.startPath = activedPath;
       }

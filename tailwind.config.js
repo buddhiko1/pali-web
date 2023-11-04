@@ -10,6 +10,8 @@ module.exports = {
       spacing: {
         smPadding: "1.75rem",
         smContentPadding: "3rem",
+        mdPadding: "3rem",
+        mdContentPadding: "4.5rem",
         lgPadding: "21.5vw",
         lgContentPadding: "23.5vw",
       },

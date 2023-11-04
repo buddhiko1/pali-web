@@ -56,12 +56,23 @@
   grid-area: dialog;
 }
 
+@media screen and (min-width: theme("screens.sm")) {
+  .c-container {
+    grid-template-columns: theme("spacing.mdContentPadding") 60vw theme(
+        "spacing.mdContentPadding"
+      );
+    justify-content: center;
+  }
+  .c-form {
+    row-gap: theme(spacing.7);
+  }
+}
+
 @media screen and (min-width: theme("screens.lg")) {
   .c-container {
     grid-template-columns: theme("spacing.lgPadding") 25vw theme(
         "spacing.lgPadding"
       );
-    justify-content: center;
   }
 
   .c-dialog {

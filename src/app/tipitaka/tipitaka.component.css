@@ -57,6 +57,23 @@
   align-items: start;
 }
 
+@media screen and (min-width: theme("screens.sm")) {
+  .c-container {
+    grid-template-columns: theme("spacing.mdContentPadding") 1fr theme(
+        "spacing.mdContentPadding"
+      );
+  }
+  .c-cites {
+    grid-template-rows: auto;
+    grid-template-columns: theme("spacing.mdContentPadding") 1fr theme(
+        "spacing.mdContentPadding"
+      );
+  }
+  .c-cites .c-content {
+    grid-row-gap: theme(spacing.6);
+  }
+}
+
 @media screen and (min-width: theme("screens.lg")) {
   .c-container {
     grid-template-columns: theme("spacing.lgContentPadding") 1fr theme(
@@ -93,6 +110,7 @@
       "cite cite";
     grid-column-gap: theme("spacing.32");
     place-items: stretch;
+    grid-row-gap: theme(spacing.0);
   }
 
   .c-content .c-title {

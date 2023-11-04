@@ -34,6 +34,14 @@
   align-self: center;
 }
 
+@media screen and (min-width: theme("screens.sm")) {
+  .c-container {
+    grid-template-columns: theme("spacing.mdContentPadding") 1fr theme(
+        "spacing.mdContentPadding"
+      );
+  }
+}
+
 @media screen and (min-width: theme("screens.lg")) {
   .c-container {
     grid-template-columns: theme("spacing.lgContentPadding") 1fr theme(

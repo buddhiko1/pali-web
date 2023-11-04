@@ -66,14 +66,18 @@ export class MeComponent {
       this._appService.activeMaskBg();
       try {
         const newAavatar = await this._accountService.uploadAvatar(formData);
-        const oldAavatarId = this.me!.avatar!.id;
+        const oldAavatarId = this.me?.avatar?.id;
         const updatedMe = await this._accountService.updateMe({
           avatar: {
             id: newAavatar.id,
           },
         });
         this._storageService.saveMe(updatedMe);
-        await this._accountService.deleteOldAvatar({ avatarId: oldAavatarId });
+        if (oldAavatarId) {
+          await this._accountService.deleteOldAvatar({
+            avatarId: oldAavatarId,
+          });
+        }
       } catch (error: any) {
         this.loaderStatus = LoaderStatusEnum.Failed;
         this.loaderPrompt = error.toString();

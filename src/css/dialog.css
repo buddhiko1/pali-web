@@ -1,6 +1,6 @@
 /* TODO: remove my */
 .d-box {
-  @apply p-8 lg:p-12 my-20 lg:my-[17vh] rounded-lg bg-appBg;
+  @apply p-8 sm:p-10 lg:p-12 rounded-lg bg-appBg;
 }
 
 .d-title {

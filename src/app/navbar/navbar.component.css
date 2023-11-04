@@ -35,7 +35,7 @@
     "left-padding index index index right-padding"
     "left-padding divider divider divider right-padding"
     "left-padding theme email account right-padding";
-    transform: translateX(-100%);
+  transform: translateX(-100%);
 }
 
 @keyframes slide-out {
@@ -90,6 +90,17 @@
   grid-area: account;
   justify-self: start;
   align-self: center;
+}
+
+@media screen and (min-width: theme("screens.sm")) {
+  .c-container {
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-template-columns: theme("spacing.mdPadding") auto auto theme(
+        "spacing.mdPadding"
+      );
+    /* row-gap:theme(spacing.14) */
+  }
 }
 
 @media screen and (min-width: theme("screens.lg")) {
