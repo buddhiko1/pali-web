@@ -5,7 +5,11 @@
 >
   <div *ngIf="!isLoaderActived" class="c-content">
     <label class="c-label">
-      <input type="file" (change)="onAvatarSelected($event)" />
+      <input
+        type="file"
+        accept=".jpg, .png, .gif"
+        (change)="onAvatarSelected($event)"
+      />
       <img
         class="c-avatar rounded-full w-24 h-24"
         [src]="avatarUrl"

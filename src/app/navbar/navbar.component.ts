@@ -5,6 +5,7 @@ import { AngularSvgIconModule } from 'angular-svg-icon';
 import { DeviceDetectorService } from 'ngx-device-detector';
 
 import { FadeInDirective } from '../core/fade-in.directive';
+import { OverlayComponent } from '../overlay/overlay.component';
 import { ScrollbarService } from '../core/scrollbar.service';
 import { HomeService } from '../home/home.service';
 import { AppService } from '../app.service';
@@ -21,6 +22,7 @@ import { NavbarService } from './navbar.service';
     RouterLink,
     AngularSvgIconModule,
     FadeInDirective,
+    OverlayComponent,
   ],
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css'],

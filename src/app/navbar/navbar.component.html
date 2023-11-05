@@ -1,92 +1,95 @@
-<nav
-  appFader
-  class="c-container pt-1 lg:pt-4 relative z-30 top-0 bg-appBg transition-transform duration-[400ms] ease-in-out"
-  [class.bg-appBg]="isMenuOpen || isMaskBg"
-  [class.shadow-sm]="isShadowShow"
-  [class.c-container-hidden]="!isShow"
->
-  <button
-    (click)="routeTo('')"
-    class="c-logo p-3 text-2xl lg:text-3xl uppercase tracking-widest font-bold text-logo"
+<section>
+  <app-overlay></app-overlay>
+  <nav
+    appFader
+    class="c-container pt-1 lg:pt-4 relative z-20 top-0 transition-transform duration-[400ms] ease-in-out"
+    [class.bg-appBg]="isMenuOpen || isMaskBg"
+    [class.shadow-sm]="isShadowShow"
+    [class.c-container-hidden]="!isShow"
   >
-    <p class="g-hover" [class.text-focus]="isActiveUrl('')">Pali</p>
-  </button>
+    <button
+      (click)="routeTo('')"
+      class="c-logo p-3 text-2xl lg:text-3xl uppercase tracking-widest font-bold text-logo"
+    >
+      <p class="g-hover" [class.text-focus]="isActiveUrl('')">Pali</p>
+    </button>
 
-  <button
-    (click)="toggleMenu()"
-    type="button"
-    aria-label="toggle menu"
-    class="c-toggle lg:hidden py-3 focus:outline-none"
-  >
-    <svg-icon
-      src="assets/icons/plus.svg"
-      [svgClass]="[
-        'g-svg',
-        'transition-transform',
-        'duration-[400ms]',
-        'ease-in-out',
-        isMenuOpen ? 'rotate-45' : ''
-      ]"
-    ></svg-icon>
-  </button>
+    <button
+      (click)="toggleMenu()"
+      type="button"
+      aria-label="toggle menu"
+      class="c-toggle lg:hidden py-3 focus:outline-none"
+    >
+      <svg-icon
+        src="assets/icons/plus.svg"
+        [svgClass]="[
+          'g-svg',
+          'transition-transform',
+          'duration-[400ms]',
+          'ease-in-out',
+          isMenuOpen ? 'rotate-45' : ''
+        ]"
+      ></svg-icon>
+    </button>
 
-  <section
-    class="c-menu w-full pb-3 bg-appBg"
-    [class.c-menu-close]="!isMenuOpen && menuToggled"
-    [class.c-menu-open]="isMenuOpen"
-  >
-    <ul class="c-index">
-      <li
-        *ngFor="let module of modules"
-        class="c-index-item mt-2 sm:ml-5 lg:mt-0 lg:mx-4"
-      >
-        <button
-          (click)="routeTo(module.route)"
-          class="p-1 g-text g-hover"
-          [class.text-focus]="isActiveUrl(module.route)"
+    <section
+      class="c-menu w-full pb-3 bg-appBg"
+      [class.c-menu-close]="!isMenuOpen && menuToggled"
+      [class.c-menu-open]="isMenuOpen"
+    >
+      <ul class="c-index">
+        <li
+          *ngFor="let module of modules"
+          class="c-index-item mt-2 sm:ml-5 lg:mt-0 lg:mx-4"
         >
-          {{ module.name | titlecase }}
-        </button>
-      </li>
-    </ul>
+          <button
+            (click)="routeTo(module.route)"
+            class="p-1 g-text g-hover"
+            [class.text-focus]="isActiveUrl(module.route)"
+          >
+            {{ module.name | titlecase }}
+          </button>
+        </li>
+      </ul>
 
-    <div class="c-divider lg:hidden mb-5 h-6 border-b g-border"></div>
+      <div class="c-divider lg:hidden mb-5 h-6 border-b g-border"></div>
 
-    <button (click)="toggleDark()" class="c-theme p-1">
-      <svg-icon
-        *ngIf="isDark"
-        src="assets/icons/moon.svg"
-        [svgClass]="['g-svg', 'g-hover']"
-      ></svg-icon>
-      <svg-icon
-        *ngIf="!isDark"
-        src="assets/icons/sun.svg"
-        [svgClass]="['g-svg', 'g-hover']"
-      ></svg-icon>
-    </button>
+      <button (click)="toggleDark()" class="c-theme p-1">
+        <svg-icon
+          *ngIf="isDark"
+          src="assets/icons/moon.svg"
+          [svgClass]="['g-svg', 'g-hover']"
+        ></svg-icon>
+        <svg-icon
+          *ngIf="!isDark"
+          src="assets/icons/sun.svg"
+          [svgClass]="['g-svg', 'g-hover']"
+        ></svg-icon>
+      </button>
 
-    <button (click)="routeTo('email')" class="c-email p-1 lg:mx-6">
-      <svg-icon
-        src="assets/icons/email.svg"
-        [svgClass]="[
-          'g-svg',
-          'g-hover',
-          'w-5',
-          'h-5',
-          isActiveUrl('email') ? 'text-focus' : ''
-        ]"
-      ></svg-icon>
-    </button>
+      <button (click)="routeTo('email')" class="c-email p-1 lg:mx-6">
+        <svg-icon
+          src="assets/icons/email.svg"
+          [svgClass]="[
+            'g-svg',
+            'g-hover',
+            'w-5',
+            'h-5',
+            isActiveUrl('email') ? 'text-focus' : ''
+          ]"
+        ></svg-icon>
+      </button>
 
-    <button (click)="routeTo('account')" class="c-account p-1">
-      <svg-icon
-        src="assets/icons/person.svg"
-        [svgClass]="[
-          'g-svg',
-          'g-hover',
-          isActiveUrl('account') ? 'text-focus' : ''
-        ]"
-      ></svg-icon>
-    </button>
-  </section>
-</nav>
+      <button (click)="routeTo('account')" class="c-account p-1">
+        <svg-icon
+          src="assets/icons/person.svg"
+          [svgClass]="[
+            'g-svg',
+            'g-hover',
+            isActiveUrl('account') ? 'text-focus' : ''
+          ]"
+        ></svg-icon>
+      </button>
+    </section>
+  </nav>
+</section>

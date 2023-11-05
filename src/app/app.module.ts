@@ -10,10 +10,9 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { DictionaryComponent } from './dictionary/dictionary.component';
 import { TipitakaComponent } from './tipitaka/tipitaka.component';
-import { OverlayComponent } from './overlay/overlay.component';
 
 @NgModule({
-  declarations: [AppComponent, OverlayComponent],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
