@@ -20,6 +20,8 @@
   <app-uploader
     *ngIf="showUploader"
     [folderId]="me?.avatar?.folder?.id ?? ''"
+    [allowedExtensions]="['.png', '.jpg', '.jpeg']"
     (successful)="onAvatarUploaded($event)"
+    (failed)="showUploader = false"
   ></app-uploader>
 </div>

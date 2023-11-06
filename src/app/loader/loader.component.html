@@ -13,17 +13,16 @@
     >
       {{ titleShowing }}
     </h2>
-    <p *ngIf="showPrompt; else wheel" appFader class="c-prompt g-text mx-4">
+    <p *ngIf="showPrompt" appFader class="c-prompt g-text text-center mx-4">
       {{ prompt }}
     </p>
-    <ng-template #wheel>
-      <app-wheel
-        [size]="wheelSize"
-        [delay]="500"
-        [stop]="isSuccessful || isFailed"
-        class="c-wheel"
-      ></app-wheel>
-    </ng-template>
+    <app-wheel
+      *ngIf="!showPrompt"
+      [size]="wheelSize"
+      [delay]="500"
+      [stop]="isSuccessful || isFailed"
+      class="c-wheel"
+    ></app-wheel>
     <button
       *ngIf="
         (isSuccessful || isFailed) && (stayWhenSuccessful || stayWhenFailed)

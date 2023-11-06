@@ -13,7 +13,7 @@ import { FadeInDirective } from '../core/fade-in.directive';
 })
 export class FooterComponent implements OnInit {
   startPath = '';
-  fixedPath = ['account', 'vocabulary', 'grammar'];
+  fixedPath = ['account', 'vocabulary', 'grammar', 'reading', 'blog'];
   constructor(
     private _el: ElementRef,
     private _router: Router,

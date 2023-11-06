@@ -1,9 +1,10 @@
 <div class="c-container">
   <input
+    #fileInput
     type="file"
-    id="fileInput"
-    accept=".jpg, .png, .gif"
-    (change)="onSelected($event)"
+    [accept]="allowedExtensions"
+    (change)="onChange($event)"
+    (cancel)="onFailed()"
   />
   <app-loader
     *ngIf="isLoaderActived"
@@ -11,7 +12,7 @@
     [status]="loaderStatus"
     [prompt]="loaderPrompt"
     [stayWhenFailed]="true"
-    (failed)="deactiveLoader()"
+    (failed)="onFailed()"
     class="mt-12 sm:mt-20"
   ></app-loader>
 </div>
