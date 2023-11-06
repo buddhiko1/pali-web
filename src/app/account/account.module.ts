@@ -6,6 +6,8 @@ import { AngularSvgIconModule } from 'angular-svg-icon';
 import { SliderDirective } from 'src/app/core/slider.directive';
 import { FadeInDirective } from '../core/fade-in.directive';
 import { LoaderComponent } from 'src/app/loader/loader.component';
+import { UploaderComponent } from 'src/app/uploader/uploader.component';
+import { OverlayComponent } from 'src/app/overlay/overlay.component';
 
 import { AccountRoutingModule } from './account-routing.module';
 import { LoginComponent } from './login/login.component';
@@ -32,6 +34,8 @@ import { MeComponent } from './me/me.component';
     SliderDirective,
     FadeInDirective,
     LoaderComponent,
+    OverlayComponent,
+    UploaderComponent,
   ],
 })
 export class AccountModule {}

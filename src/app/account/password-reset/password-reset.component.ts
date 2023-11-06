@@ -5,7 +5,6 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { ResetPasswordMutationVariables } from 'src/gql/graphql';
 import { NavigationService } from 'src/app/core/navigation.service';
 import { PromptEnum } from 'src/app/core/prompts.interaction';
-import { AppService } from 'src/app/app.service';
 import { StatusEnum as LoaderStatusEnum } from 'src/app/loader/loader.component';
 
 import { UrlEnum } from '../account-routing.module';
@@ -16,7 +15,7 @@ import { AccountService } from '../account.service';
   templateUrl: './password-reset.component.html',
   styleUrls: ['./password-reset.component.css'],
 })
-export class PasswordResetComponent implements OnInit, OnDestroy {
+export class PasswordResetComponent implements OnInit {
   UrlEnum = UrlEnum;
   form!: FormGroup;
 
@@ -31,7 +30,6 @@ export class PasswordResetComponent implements OnInit, OnDestroy {
     private _activeRoute: ActivatedRoute,
     private _accountService: AccountService,
     private _navigationService: NavigationService,
-    private _appService: AppService,
   ) {
     this._activeRoute.queryParams.subscribe((params) => {
       this._token = params['token'];
@@ -49,13 +47,6 @@ export class PasswordResetComponent implements OnInit, OnDestroy {
         updateOn: 'change',
       }),
     });
-    setTimeout(() => {
-      this._appService.activeMaskBg();
-    });
-  }
-
-  ngOnDestroy(): void {
-    this._appService.deactiveMaskBg();
   }
 
   get isLoaderActived(): boolean {

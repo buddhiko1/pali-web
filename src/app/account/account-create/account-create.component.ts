@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 
@@ -6,7 +6,6 @@ import { CreateAccountMutationVariables } from 'src/gql/graphql';
 import { NavigationService } from 'src/app/core/navigation.service';
 import { RoleEnum } from 'src/app/core/value.cms';
 import { PromptEnum } from 'src/app/core/prompts.interaction';
-import { AppService } from 'src/app/app.service';
 import { StatusEnum as LoaderStatusEnum } from 'src/app/loader/loader.component';
 
 import { UrlEnum } from '../account-routing.module';
@@ -20,7 +19,7 @@ import { RoleFieldsFragment } from 'src/gql/graphql';
   templateUrl: './account-create.component.html',
   styleUrls: ['./account-create.component.css'],
 })
-export class AccountCreateComponent implements OnInit, OnDestroy {
+export class AccountCreateComponent implements OnInit {
   form!: FormGroup;
   UrlEnum = UrlEnum;
 
@@ -33,7 +32,6 @@ export class AccountCreateComponent implements OnInit, OnDestroy {
     private _accountService: AccountService,
     private _registeredEmailValidator: RegisteredEmailValidator,
     private _navigationService: NavigationService,
-    private _appService: AppService,
   ) {}
 
   ngOnInit(): void {
@@ -48,13 +46,6 @@ export class AccountCreateComponent implements OnInit, OnDestroy {
         updateOn: 'change',
       }),
     });
-    setTimeout(() => {
-      this._appService.activeMaskBg();
-    });
-  }
-
-  ngOnDestroy(): void {
-    this._appService.deactiveMaskBg();
   }
 
   get isLoaderActived(): boolean {

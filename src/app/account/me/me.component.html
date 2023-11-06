@@ -1,31 +1,25 @@
-<section
-  appFader
-  [fadeDelay]="300"
-  class="c-container mt-24 sm:mt-48 lg:mt-[20vh]"
->
-  <div *ngIf="!isLoaderActived" class="c-content">
-    <label class="c-label">
-      <input
-        type="file"
-        accept=".jpg, .png, .gif"
-        (change)="onAvatarSelected($event)"
-      />
-      <img
-        class="c-avatar rounded-full w-24 h-24"
-        [src]="avatarUrl"
-        alt="avatar"
-      />
-    </label>
-    <p class="text-text">{{ me?.email }}</p>
-    <button (click)="onLogout()" class="d-button mt-12">Logout</button>
-  </div>
-  <app-loader
-    *ngIf="isLoaderActived"
-    [title]="'Uploading...'"
-    [status]="loaderStatus"
-    [prompt]="loaderPrompt"
-    [stayWhenFailed]="true"
-    (failed)="rmLoader()"
-    class="c-loader mt-12 sm:mt-24"
-  ></app-loader>
-</section>
+<div>
+  <section
+    *ngIf="!showUploader"
+    appFader
+    [fadeDelay]="300"
+    class="c-container mt-24 sm:mt-48 lg:mt-[20vh]"
+  >
+    <div class="c-content">
+      <button (click)="onAvatarClick()">
+        <img
+          class="c-avatar rounded-full w-24 h-24"
+          [src]="avatarUrl"
+          alt="avatar"
+        />
+      </button>
+      <p class="text-text">{{ me?.email }}</p>
+      <button (click)="onLogout()" class="d-button mt-12">Logout</button>
+    </div>
+  </section>
+  <app-uploader
+    *ngIf="showUploader"
+    [folderId]="me?.avatar?.folder?.id ?? ''"
+    (successful)="onAvatarUploaded($event)"
+  ></app-uploader>
+</div>

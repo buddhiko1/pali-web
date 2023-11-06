@@ -57,11 +57,11 @@
 }
 
 /* can't use revers here */
-.c-menu-open {
+.c-menu-opened {
   animation: slide-in 300ms ease-in-out both;
 }
 
-.c-menu-close {
+.c-menu-closed {
   animation: slide-out 300ms ease-in-out both;
 }
 

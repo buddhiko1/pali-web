@@ -1,5 +1,7 @@
-<div [class]="['min-h-screen', isMaskBg ? 'bg-maskBg' : 'bg-appBg']">
-  <app-navbar></app-navbar>
-  <router-outlet></router-outlet>
-  <app-footer></app-footer>
+<div [class]="['min-h-screen', 'bg-appBg']">
+  <app-navbar class="relative z-30"></app-navbar>
+  <div class="relative z-0">
+    <router-outlet></router-outlet>
+  </div>
+  <app-footer class="z-30"></app-footer>
 </div>

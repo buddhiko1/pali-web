@@ -1,9 +1,9 @@
-<section>
-  <app-overlay></app-overlay>
-  <nav
+<nav>
+  <app-overlay *ngIf="showOverlay" [zIndex]="0" [opacity]="0.8"></app-overlay>
+  <div
     appFader
-    class="c-container pt-1 lg:pt-4 relative z-20 top-0 transition-transform duration-[400ms] ease-in-out"
-    [class.bg-appBg]="isMenuOpen || isMaskBg"
+    class="c-container relative pt-1 lg:pt-4 top-0 transition-transform duration-[400ms] ease-in-out"
+    [class.bg-appBg]="isMenuOpened"
     [class.shadow-sm]="isShadowShow"
     [class.c-container-hidden]="!isShow"
   >
@@ -27,15 +27,19 @@
           'transition-transform',
           'duration-[400ms]',
           'ease-in-out',
-          isMenuOpen ? 'rotate-45' : ''
+          isMenuOpened ? 'rotate-45' : ''
         ]"
       ></svg-icon>
     </button>
 
-    <section
-      class="c-menu w-full pb-3 bg-appBg"
-      [class.c-menu-close]="!isMenuOpen && menuToggled"
-      [class.c-menu-open]="isMenuOpen"
+    <div
+      [class]="[
+        'c-menu',
+        isMenuOpened ? 'c-menu-opened' : 'c-menu-closed',
+        'w-full',
+        'pb-3',
+        'bg-appBg'
+      ]"
     >
       <ul class="c-index">
         <li
@@ -90,6 +94,6 @@
           ]"
         ></svg-icon>
       </button>
-    </section>
-  </nav>
-</section>
+    </div>
+  </div>
+</nav>

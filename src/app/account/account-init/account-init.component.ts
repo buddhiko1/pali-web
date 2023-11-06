@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 
@@ -7,7 +7,6 @@ import {
   LoginMutationVariables,
 } from 'src/gql/graphql';
 import { StatusEnum as LoaderStatusEnum } from 'src/app/loader/loader.component';
-import { AppService } from 'src/app/app.service';
 import { NavigationService } from 'src/app/core/navigation.service';
 
 import { UrlEnum } from '../account-routing.module';
@@ -18,7 +17,7 @@ import { AccountService } from '../account.service';
   templateUrl: './account-init.component.html',
   styleUrls: ['./account-init.component.css'],
 })
-export class AccountInitComponent implements OnInit, OnDestroy {
+export class AccountInitComponent implements OnInit {
   UrlEnum = UrlEnum;
   form!: FormGroup;
 
@@ -33,7 +32,6 @@ export class AccountInitComponent implements OnInit, OnDestroy {
     private _activeRoute: ActivatedRoute,
     private _accountService: AccountService,
     private _navigationService: NavigationService,
-    private _appService: AppService,
   ) {
     this._activeRoute.queryParams.subscribe((params) => {
       this._token = params['token'];
@@ -51,13 +49,6 @@ export class AccountInitComponent implements OnInit, OnDestroy {
         updateOn: 'change',
       }),
     });
-    setTimeout(() => {
-      this._appService.activeMaskBg();
-    });
-  }
-
-  ngOnDestroy(): void {
-    this._appService.deactiveMaskBg();
   }
 
   isLoaderActived(): boolean {

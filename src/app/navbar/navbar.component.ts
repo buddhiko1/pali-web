@@ -8,7 +8,6 @@ import { FadeInDirective } from '../core/fade-in.directive';
 import { OverlayComponent } from '../overlay/overlay.component';
 import { ScrollbarService } from '../core/scrollbar.service';
 import { HomeService } from '../home/home.service';
-import { AppService } from '../app.service';
 import { Modules } from 'src/gql/graphql';
 
 import { NavbarService } from './navbar.service';
@@ -28,9 +27,9 @@ import { NavbarService } from './navbar.service';
   styleUrls: ['./navbar.component.css'],
 })
 export class NavbarComponent {
-  modules: Modules[] = [];
-  menuToggled = false;
+  showOverlay = false;
   private _activeUrl = '';
+  modules: Modules[] = [];
 
   constructor(
     private _router: Router,
@@ -38,7 +37,6 @@ export class NavbarComponent {
     private _homeService: HomeService,
     private _scrollbarService: ScrollbarService,
     private _navbarService: NavbarService,
-    private _appService: AppService,
   ) {
     this._router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
@@ -58,7 +56,7 @@ export class NavbarComponent {
     return this._navbarService.isShadowShow;
   }
 
-  get isMenuOpen(): boolean {
+  get isMenuOpened(): boolean {
     return this._navbarService.isMenuOpen;
   }
 
@@ -66,13 +64,14 @@ export class NavbarComponent {
     return this._navbarService.isShow;
   }
 
-  get isMaskBg(): boolean {
-    return this._appService.isMaskBg;
-  }
-
   toggleMenu(): void {
-    this.menuToggled = true;
     this._navbarService.toggleMenu();
+    this.showOverlay = !this.showOverlay;
+    if (this.showOverlay) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.removeProperty('overflow');
+    }
   }
 
   toggleDark(): void {

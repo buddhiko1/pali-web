@@ -1,6 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input, HostBinding } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { OverlayService } from './overlay.service';
 
 @Component({
   selector: 'app-overlay',
@@ -10,9 +9,13 @@ import { OverlayService } from './overlay.service';
   styleUrls: ['./overlay.component.css'],
 })
 export class OverlayComponent {
-  constructor(private overlayService: OverlayService) {}
+  @Input() zIndex!: number;
+  @Input() opacity = 0.4;
 
-  get isActive(): boolean {
-    return this.overlayService.isActive;
+  @HostBinding('style.--zIndex') get inputIndex() {
+    return this.zIndex;
+  }
+  @HostBinding('style.--opacity') get inputOpacity() {
+    return this.opacity;
   }
 }

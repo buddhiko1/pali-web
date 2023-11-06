@@ -1,40 +1,44 @@
-<section
-  appSlider
-  [slideDelay]="200"
-  class="c-container my-20 sm:my-36 lg:my-[17vh]"
->
-  <div *ngIf="!isLoaderActived" class="c-dialog d-box">
-    <h2 class="c-title d-title">Request Reset</h2>
-    <form [formGroup]="form" (ngSubmit)="onSubmit()" class="c-form">
-      <div class="c-email">
-        <label for="email" class="d-text">Email</label>
-        <input
-          type="email"
-          name="email"
-          id="email"
-          formControlName="email"
-          required
-          class="inline-block w-full d-input"
-        />
-        <div
-          *ngIf="email.invalid && (email.dirty || email.touched)"
-          class="mt-1 d-error-text"
-        >
-          <div *ngIf="email.errors?.['required']">Email is required.</div>
-          <div *ngIf="email.errors?.['email']">Invalid address format.</div>
-          <div *ngIf="email.errors?.['unRegistered']">
-            Email hasn't been registered.
+<div>
+  <app-overlay *ngIf="!isLoaderActived" [zIndex]="-1"></app-overlay>
+  <div
+    *ngIf="!isLoaderActived"
+    appSlider
+    [slideDelay]="200"
+    class="c-container py-20 sm:py-36 lg:py-[17vh]"
+  >
+    <div class="c-dialog d-box">
+      <h2 class="c-title d-title">Request Reset</h2>
+      <form [formGroup]="form" (ngSubmit)="onSubmit()" class="c-form">
+        <div class="c-email">
+          <label for="email" class="d-text">Email</label>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            formControlName="email"
+            required
+            class="inline-block w-full d-input"
+          />
+          <div
+            *ngIf="email.invalid && (email.dirty || email.touched)"
+            class="mt-1 d-error-text"
+          >
+            <div *ngIf="email.errors?.['required']">Email is required.</div>
+            <div *ngIf="email.errors?.['email']">Invalid address format.</div>
+            <div *ngIf="email.errors?.['unRegistered']">
+              Email hasn't been registered.
+            </div>
           </div>
         </div>
-      </div>
-      <button
-        type="submit"
-        [disabled]="!form.valid"
-        class="d-button bg-focus w-full mt-3"
-      >
-        Request
-      </button>
-    </form>
+        <button
+          type="submit"
+          [disabled]="!form.valid"
+          class="d-button bg-focus w-full mt-3"
+        >
+          Request
+        </button>
+      </form>
+    </div>
   </div>
   <app-loader
     *ngIf="isLoaderActived"
@@ -45,6 +49,6 @@
     [stayWhenSuccessful]="true"
     (failed)="goBack()"
     (successful)="goBack()"
-    class="c-loader mt-12 sm:mt-16"
+    class="c-loader mt-12 sm:mt-24"
   ></app-loader>
-</section>
+</div>

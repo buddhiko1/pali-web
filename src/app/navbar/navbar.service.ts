@@ -1,7 +1,5 @@
 import { Injectable } from '@angular/core';
 
-import { OverlayService } from '../overlay/overlay.service';
-
 @Injectable({
   providedIn: 'root',
 })
@@ -11,13 +9,12 @@ export class NavbarService {
   private _isMenuOpen = false;
   private _isShadowShow = true;
 
-  constructor(private _overlayService: OverlayService) {}
-
   get isDark(): boolean {
     return this._isDark;
   }
 
   activeDark(value: boolean) {
+    // TODO altenative way
     value
       ? document.documentElement.classList.add('night')
       : document.documentElement.classList.remove('night');
@@ -29,13 +26,11 @@ export class NavbarService {
   }
 
   openMenu(): void {
-    this._overlayService.active();
     this._isMenuOpen = true;
   }
 
   closeMenu(): void {
     this._isMenuOpen = false;
-    this._overlayService.deactive();
   }
 
   toggleMenu(): void {

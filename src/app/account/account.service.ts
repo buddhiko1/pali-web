@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
 
-import { createDirectus, staticToken, rest, uploadFiles } from '@directus/sdk';
 import { StorageService } from 'src/app/core/storage.service';
-import { UrqlService, refreshToken } from 'src/app/core/urql.service';
+import { UrqlService } from 'src/app/core/urql.service';
 import { validateAndExtractResult } from 'src/app/core/utilities.gql';
 import {
   LoginDocument,
@@ -21,14 +20,12 @@ import {
   MeDocument,
   RoleFieldsFragment,
   RolesDocument,
-  FileFieldsFragment,
   UpdateMeDocument,
   Update_Directus_Users_Input,
   MeFieldsFragment,
   DeleteOldAvatarDocument,
   DeleteOldAvatarMutationVariables,
 } from 'src/gql/graphql';
-import { environment } from 'src/environments/environment';
 
 @Injectable({ providedIn: 'root' })
 export class AccountService {
@@ -97,14 +94,6 @@ export class AccountService {
     const result = await client.query(RolesDocument, {});
     const data = validateAndExtractResult(result);
     return data.roles;
-  }
-
-  async uploadAvatar(formData: FormData): Promise<FileFieldsFragment> {
-    await refreshToken();
-    const client = createDirectus<FileFieldsFragment>(environment.cms)
-      .with(staticToken(this._storageService.accessToken))
-      .with(rest());
-    return await client.request(uploadFiles(formData));
   }
 
   async updateMe(args: Update_Directus_Users_Input): Promise<MeFieldsFragment> {

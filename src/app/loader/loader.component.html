@@ -1,29 +1,38 @@
-<section appFader class="c-dialog d-box">
-  <h2
-    class="c-title d-title"
-    [class.text-ok]="isSuccessful"
-    [class.text-error]="isFailed"
-    *mcRerender="titleShowing"
+<div class="c-container">
+  <app-overlay [zIndex]="-1" [opacity]="0.3"></app-overlay>
+  <dialog
+    open
+    appFader
+    class="c-dialog d-box absolute mt-[17vh] sm:mt-[20vh] w-[17rem] sm:w-[20rem] lg:w-[25rem]"
   >
-    {{ titleShowing }}
-  </h2>
-  <p *ngIf="showPrompt; else wheel" appFader class="c-prompt g-text mx-4">
-    {{ prompt }}
-  </p>
-  <ng-template #wheel>
-    <app-wheel
-      [size]="isLargeDevice ? 5 : 4"
-      [delay]="500"
-      [stop]="isSuccessful || isFailed"
-      class="c-wheel"
-    ></app-wheel>
-  </ng-template>
-  <button
-    *ngIf="(isSuccessful || isFailed) && (stayWhenSuccessful || stayWhenFailed)"
-    class="d-button w-full mt-3"
-    [class.d-error-button]="isFailed"
-    (click)="onSubmit()"
-  >
-    OK
-  </button>
-</section>
+    <h2
+      class="c-title d-title"
+      [class.text-ok]="isSuccessful"
+      [class.text-error]="isFailed"
+      *mcRerender="titleShowing"
+    >
+      {{ titleShowing }}
+    </h2>
+    <p *ngIf="showPrompt; else wheel" appFader class="c-prompt g-text mx-4">
+      {{ prompt }}
+    </p>
+    <ng-template #wheel>
+      <app-wheel
+        [size]="wheelSize"
+        [delay]="500"
+        [stop]="isSuccessful || isFailed"
+        class="c-wheel"
+      ></app-wheel>
+    </ng-template>
+    <button
+      *ngIf="
+        (isSuccessful || isFailed) && (stayWhenSuccessful || stayWhenFailed)
+      "
+      class="d-button w-full mt-3"
+      [class.d-error-button]="isFailed"
+      (click)="onSubmit()"
+    >
+      OK
+    </button>
+  </dialog>
+</div>

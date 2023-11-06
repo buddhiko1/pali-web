@@ -21,9 +21,6 @@ graphql(`
     id
     name
   }
-  fragment FileFields on directus_files {
-    id
-  }
   mutation CreateAccount(
     $email: String!
     $role: String!

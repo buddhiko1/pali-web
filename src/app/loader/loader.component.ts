@@ -11,6 +11,7 @@ import { DeviceDetectorService } from 'ngx-device-detector';
 import { NgxRerenderModule } from 'ngx-rerender';
 
 import { FadeInDirective } from '../core/fade-in.directive';
+import { OverlayComponent } from '../overlay/overlay.component';
 import { WheelComponent } from '../wheel/wheel.component';
 
 export enum StatusEnum {
@@ -23,7 +24,13 @@ export enum StatusEnum {
 @Component({
   selector: 'app-loader',
   standalone: true,
-  imports: [CommonModule, NgxRerenderModule, FadeInDirective, WheelComponent],
+  imports: [
+    CommonModule,
+    NgxRerenderModule,
+    FadeInDirective,
+    OverlayComponent,
+    WheelComponent,
+  ],
   templateUrl: './loader.component.html',
   styleUrls: ['./loader.component.css'],
 })
@@ -50,8 +57,12 @@ export class LoaderComponent implements OnChanges {
     }
   }
 
-  get isLargeDevice(): boolean {
-    return this._deviceService.isDesktop();
+  get wheelSize(): number {
+    if (this._deviceService.isMobile()) {
+      return 4;
+    } else {
+      return 6;
+    }
   }
 
   get showPrompt(): boolean {

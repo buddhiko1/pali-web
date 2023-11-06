@@ -1,10 +1,9 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 
 import { LoginMutationVariables } from 'src/gql/graphql';
 import { StatusEnum as LoaderStatusEnum } from 'src/app/loader/loader.component';
-import { AppService } from 'src/app/app.service';
 
 import { UrlEnum } from '../account-routing.module';
 import { AccountService } from '../account.service';
@@ -15,7 +14,7 @@ import { UnRegisteredEmailValidator } from '../email.validator';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
 })
-export class LoginComponent implements OnInit, OnDestroy {
+export class LoginComponent {
   form!: FormGroup;
   UrlEnum = UrlEnum;
 
@@ -27,7 +26,6 @@ export class LoginComponent implements OnInit, OnDestroy {
     private _activeRoute: ActivatedRoute,
     private _accountService: AccountService,
     private _unRegisteredEmailValidator: UnRegisteredEmailValidator,
-    private _appService: AppService,
   ) {}
 
   ngOnInit(): void {
@@ -46,13 +44,6 @@ export class LoginComponent implements OnInit, OnDestroy {
         updateOn: 'change',
       }),
     });
-    setTimeout(() => {
-      this._appService.activeMaskBg();
-    });
-  }
-
-  ngOnDestroy(): void {
-    this._appService.deactiveMaskBg();
   }
 
   get isLoaderActived(): boolean {

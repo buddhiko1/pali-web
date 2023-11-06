@@ -1,11 +1,10 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 import { RequestResetMutationVariables } from 'src/gql/graphql';
 
 import { NavigationService } from 'src/app/core/navigation.service';
 import { PromptEnum } from 'src/app/core/prompts.interaction';
-import { AppService } from 'src/app/app.service';
 import { StatusEnum as LoaderStatusEnum } from 'src/app/loader/loader.component';
 
 import { UrlEnum } from '../account-routing.module';
@@ -17,7 +16,7 @@ import { UnRegisteredEmailValidator } from '../email.validator';
   templateUrl: './reset-request.component.html',
   styleUrls: ['./reset-request.component.css'],
 })
-export class ResetRequestComponent implements OnInit, OnDestroy {
+export class ResetRequestComponent implements OnInit {
   form!: FormGroup;
 
   loaderStatus = LoaderStatusEnum.Idle;
@@ -27,7 +26,6 @@ export class ResetRequestComponent implements OnInit, OnDestroy {
     private _accountService: AccountService,
     private _unregisteredEmailValidator: UnRegisteredEmailValidator,
     private _navigationService: NavigationService,
-    private _appService: AppService,
   ) {}
 
   ngOnInit(): void {
@@ -42,13 +40,6 @@ export class ResetRequestComponent implements OnInit, OnDestroy {
         updateOn: 'change',
       }),
     });
-    setTimeout(() => {
-      this._appService.activeMaskBg();
-    });
-  }
-
-  ngOnDestroy(): void {
-    this._appService.deactiveMaskBg();
   }
 
   get isLoaderActived(): boolean {
