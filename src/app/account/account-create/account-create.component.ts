@@ -63,7 +63,10 @@ export class AccountCreateComponent implements OnInit {
     }
 
     const roles: RoleFieldsFragment[] = await this._accountService.fetchRoles();
-    const role = roles.find((role) => role.name === RoleEnum.User)!;
+    const role = roles.find((role) => role.name === RoleEnum.User);
+    if (!role) {
+      throw new Error('user role not founded');
+    }
     const args: CreateAccountMutationVariables = {
       email: this.form.getRawValue().email,
       role: role.id,
