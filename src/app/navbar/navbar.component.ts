@@ -67,11 +67,6 @@ export class NavbarComponent {
   toggleMenu(): void {
     this._navbarService.toggleMenu();
     this.showOverlay = !this.showOverlay;
-    if (this.showOverlay) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.removeProperty('overflow');
-    }
   }
 
   toggleDark(): void {

@@ -1,4 +1,5 @@
 .c-container {
   z-index: var(--zIndex);
   opacity: var(--opacity);
+  touch-action: none;
 }
