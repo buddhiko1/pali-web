@@ -51,7 +51,7 @@ export class AccountInitComponent implements OnInit {
     });
   }
 
-  isLoaderActived(): boolean {
+  get isLoaderActived(): boolean {
     return this.loaderStatus !== LoaderStatusEnum.Idle;
   }
 
