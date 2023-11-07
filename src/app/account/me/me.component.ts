@@ -65,8 +65,8 @@ export class MeComponent {
   }
 
   onLogout(): void {
-    this._navigationService.back();
     this._accountService.logout();
+    this._navigationService.back();
   }
 
   onReset(): void {

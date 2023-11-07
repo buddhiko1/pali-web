@@ -61,10 +61,6 @@ export class AccountInitComponent implements OnInit {
   }
 
   onSubmit(): void {
-    if (this.form.invalid) {
-      return;
-    }
-
     this.loaderStatus = LoaderStatusEnum.Loading;
     const args: InitAccountMutationVariables = {
       token: this._token,
