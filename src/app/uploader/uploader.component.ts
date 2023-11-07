@@ -93,8 +93,4 @@ export class UploaderComponent implements AfterViewInit {
   onFailed(): void {
     this.failed.emit();
   }
-
-  emitFailEvent(): void {
-    this.failed.emit();
-  }
 }

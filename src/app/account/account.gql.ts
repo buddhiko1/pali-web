@@ -67,6 +67,11 @@ graphql(`
       id
     }
   }
+  query FolderWithName($name: String!) {
+    folders(filter: { name: { _eq: $name } }) {
+      id
+    }
+  }
   query Me {
     users_me {
       ...MeFields

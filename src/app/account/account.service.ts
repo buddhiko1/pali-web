@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { StorageService } from 'src/app/core/storage.service';
 import { UrqlService } from 'src/app/core/urql.service';
 import { validateAndExtractResult } from 'src/app/core/utilities.gql';
+import { FolderEnum } from '../core/value.cms';
 import {
   LoginDocument,
   LoginMutationVariables,
@@ -25,6 +26,8 @@ import {
   MeFieldsFragment,
   DeleteOldAvatarDocument,
   DeleteOldAvatarMutationVariables,
+  FolderWithNameDocument,
+  FolderWithNameQueryVariables,
 } from 'src/gql/graphql';
 
 @Injectable({ providedIn: 'root' })
@@ -103,6 +106,15 @@ export class AccountService {
     });
     const data = validateAndExtractResult(result);
     return data.update_users_me;
+  }
+
+  async fetchAvatarFolderId(): Promise<string> {
+    const client = this._urqlService.systemClient;
+    const result = await client.query(FolderWithNameDocument, {
+      name: FolderEnum.Avatar,
+    });
+    const data = validateAndExtractResult(result);
+    return data.folders[0].id;
   }
 
   async deleteOldAvatar(args: DeleteOldAvatarMutationVariables): Promise<void> {

@@ -15,6 +15,7 @@ import { UrlEnum } from '../account-routing.module';
 })
 export class MeComponent {
   showUploader = false;
+  avatarFolderId = '';
 
   constructor(
     private _accountService: AccountService,
@@ -28,10 +29,39 @@ export class MeComponent {
     return this._storageService.me;
   }
 
+  async initAvatarFolderId(): Promise<void> {
+    if (!this.avatarFolderId) {
+      this.avatarFolderId = await this._accountService.fetchAvatarFolderId();
+    }
+  }
+
   get avatarUrl(): string {
     return this._storageService.me?.avatar
       ? `${environment.fileServer}/${this._storageService.me.avatar.filename_disk}`
-      : 'assets/icons/person.svg';
+      : 'assets/images/deafult_avatar.webp';
+  }
+
+  async onAvatarClick(): Promise<void> {
+    await this.initAvatarFolderId();
+    this.showUploader = true;
+  }
+
+  async onAvatarUploaded(newAvatarId: string): Promise<void> {
+    this.showUploader = false;
+    const oldAavatarId = this.me?.avatar?.id;
+
+    const updatedMe = await this._accountService.updateMe({
+      avatar: {
+        id: newAvatarId,
+      },
+    });
+    this._storageService.saveMe(updatedMe);
+
+    if (oldAavatarId) {
+      await this._accountService.deleteOldAvatar({
+        avatarId: oldAavatarId,
+      });
+    }
   }
 
   onLogout(): void {
@@ -43,25 +73,5 @@ export class MeComponent {
     this._router.navigate([`../${UrlEnum.ResetRequest}`], {
       relativeTo: this._activeRoute,
     });
-  }
-
-  async onAvatarUploaded(newAvatarId: string): Promise<void> {
-    this.showUploader = false;
-    const oldAavatarId = this.me?.avatar?.id;
-    const updatedMe = await this._accountService.updateMe({
-      avatar: {
-        id: newAvatarId,
-      },
-    });
-    this._storageService.saveMe(updatedMe);
-    if (oldAavatarId) {
-      await this._accountService.deleteOldAvatar({
-        avatarId: oldAavatarId,
-      });
-    }
-  }
-
-  onAvatarClick(): void {
-    this.showUploader = true;
   }
 }
