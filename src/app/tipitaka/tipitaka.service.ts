@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Client } from '@urql/core';
 
 import {
   Tipitaka,
@@ -13,18 +14,19 @@ import { UrqlService } from '../core/urql.service';
   providedIn: 'root',
 })
 export class TipitakaService {
-  constructor(private _urqlService: UrqlService) {}
+  private _dataClient: Client;
+  constructor(private _urqlService: UrqlService) {
+    this._dataClient = this._urqlService.dataClient;
+  }
 
   async fetchTipitaka(): Promise<Tipitaka[]> {
-    const client = this._urqlService.dataClient;
-    const result = await client.query(TipitakaDocument, {});
+    const result = await this._dataClient.query(TipitakaDocument, {});
     const data = validateAndExtractResult(result);
     return data.tipitaka;
   }
 
   async fetchCites(): Promise<Cites[]> {
-    const client = this._urqlService.dataClient;
-    const result = await client.query(CitesDocument, {});
+    const result = await this._dataClient.query(CitesDocument, {});
     const data = validateAndExtractResult(result);
     return data.cites;
   }

@@ -50,21 +50,44 @@ const _customAuthExchange = authExchange(async (utils) => {
 
 @Injectable({ providedIn: 'root' })
 export class UrqlService {
-  get systemClient(): Client {
-    return new Client({
+  private _systemClient: Client;
+  private _authedSystemClient: Client;
+  private _dataClient: Client;
+  private _authedDataClient: Client;
+
+  constructor() {
+    this._systemClient = new Client({
       url: `${environment.cms}/graphql/system`,
-      exchanges: _storageService.isLoggedIn
-        ? [_errorExchange, _customAuthExchange, fetchExchange] // exchanges should be ordered synchronous first and asynchronous last.
-        : [_errorExchange, fetchExchange],
+      exchanges: [_errorExchange, fetchExchange],
+    });
+    this._authedSystemClient = new Client({
+      url: `${environment.cms}/graphql/system`,
+      exchanges: [_errorExchange, _customAuthExchange, fetchExchange],
+    });
+    this._dataClient = new Client({
+      url: `${environment.cms}/graphql`,
+      exchanges: [_errorExchange, cacheExchange, fetchExchange],
+    });
+    this._authedDataClient = new Client({
+      url: `${environment.cms}/graphql`,
+      exchanges: [
+        _errorExchange,
+        cacheExchange,
+        _customAuthExchange,
+        fetchExchange,
+      ],
     });
   }
 
+  get systemClient(): Client {
+    return _storageService.isLoggedIn
+      ? this._authedSystemClient
+      : this._systemClient;
+  }
+
   get dataClient(): Client {
-    return new Client({
-      url: `${environment.cms}/graphql`,
-      exchanges: _storageService.isLoggedIn
-        ? [_errorExchange, cacheExchange, _customAuthExchange, fetchExchange]
-        : [_errorExchange, cacheExchange, fetchExchange],
-    });
+    return _storageService.isLoggedIn
+      ? this._authedDataClient
+      : this._dataClient;
   }
 }

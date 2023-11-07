@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Client } from '@urql/core';
 
 import { StorageService } from 'src/app/core/storage.service';
 import { UrqlService } from 'src/app/core/urql.service';
@@ -27,81 +28,84 @@ import {
   DeleteOldAvatarDocument,
   DeleteOldAvatarMutationVariables,
   FolderWithNameDocument,
-  FolderWithNameQueryVariables,
 } from 'src/gql/graphql';
 
 @Injectable({ providedIn: 'root' })
 export class AccountService {
+  private _systemClient: Client;
   constructor(
     private _urqlService: UrqlService,
     private _storageService: StorageService,
-  ) {}
+  ) {
+    this._systemClient = this._urqlService.systemClient;
+  }
 
   async isRegisteredEmail(email: string): Promise<boolean> {
-    const client = this._urqlService.systemClient;
-    const result = await client.query(UserWithEmailDocument, { email });
+    const result = await this._systemClient.query(UserWithEmailDocument, {
+      email,
+    });
     const data = validateAndExtractResult(result);
     return data.users.length > 0;
   }
 
   async createAccount(args: CreateAccountMutationVariables): Promise<void> {
-    const client = this._urqlService.systemClient;
-    const result = await client.mutation(CreateAccountDocument, args);
+    const result = await this._systemClient.mutation(
+      CreateAccountDocument,
+      args,
+    );
     validateAndExtractResult(result);
   }
 
   async initAccount(args: InitAccountMutationVariables): Promise<void> {
-    const client = this._urqlService.systemClient;
-    const result = await client.mutation(InitAccountDocument, args);
+    const result = await this._systemClient.mutation(InitAccountDocument, args);
     validateAndExtractResult(result);
   }
 
   async requestReset(args: RequestResetMutationVariables): Promise<void> {
-    const client = this._urqlService.systemClient;
-    const result = await client.mutation(RequestResetDocument, args);
+    const result = await this._systemClient.mutation(
+      RequestResetDocument,
+      args,
+    );
     validateAndExtractResult(result);
   }
 
   async resetPassword(args: ResetPasswordMutationVariables): Promise<void> {
-    const client = this._urqlService.systemClient;
-    const result = await client.mutation(ResetPasswordDocument, args);
+    const result = await this._systemClient.mutation(
+      ResetPasswordDocument,
+      args,
+    );
     validateAndExtractResult(result);
   }
 
   async login(args: LoginMutationVariables): Promise<void> {
-    const client = this._urqlService.systemClient;
-    const loginResult = await client.mutation(LoginDocument, args);
+    const loginResult = await this._systemClient.mutation(LoginDocument, args);
     const data = validateAndExtractResult(loginResult);
     this._storageService.saveAuthToken(data.login as Auth_Tokens);
     await this.fetchMe();
   }
 
   async logout(): Promise<void> {
-    const client = this._urqlService.systemClient;
-    await client.mutation(LogoutDocument, {
+    await this._systemClient.mutation(LogoutDocument, {
       refreshToken: this._storageService.refreshToken,
     });
     this._storageService.clearAccountData();
   }
 
   async fetchMe(): Promise<void> {
-    const client = this._urqlService.systemClient;
-    const result = await client.query(MeDocument, {});
+    const result = await this._systemClient.query(MeDocument, {});
     const data = validateAndExtractResult(result);
     const me = data.users_me;
     this._storageService.saveMe(me);
   }
 
   async fetchRoles(): Promise<RoleFieldsFragment[]> {
-    const client = this._urqlService.systemClient;
-    const result = await client.query(RolesDocument, {});
+    const result = await this._systemClient.query(RolesDocument, {});
     const data = validateAndExtractResult(result);
     return data.roles;
   }
 
   async updateMe(args: Update_Directus_Users_Input): Promise<MeFieldsFragment> {
-    const client = this._urqlService.systemClient;
-    const result = await client.mutation(UpdateMeDocument, {
+    const result = await this._systemClient.mutation(UpdateMeDocument, {
       data: args,
     });
     const data = validateAndExtractResult(result);
@@ -109,8 +113,7 @@ export class AccountService {
   }
 
   async fetchAvatarFolderId(): Promise<string> {
-    const client = this._urqlService.systemClient;
-    const result = await client.query(FolderWithNameDocument, {
+    const result = await this._systemClient.query(FolderWithNameDocument, {
       name: FolderEnum.Avatar,
     });
     const data = validateAndExtractResult(result);
@@ -118,7 +121,6 @@ export class AccountService {
   }
 
   async deleteOldAvatar(args: DeleteOldAvatarMutationVariables): Promise<void> {
-    const client = this._urqlService.systemClient;
-    await client.mutation(DeleteOldAvatarDocument, args);
+    await this._systemClient.mutation(DeleteOldAvatarDocument, args);
   }
 }

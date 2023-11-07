@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Client } from '@urql/core';
 
 import {
   DictionariesDocument,
@@ -13,20 +14,20 @@ import { UrqlService } from '../core/urql.service';
   providedIn: 'root',
 })
 export class DictionaryService {
-  constructor(private _urqlService: UrqlService) {}
+  private _dataClient: Client;
+  constructor(private _urqlService: UrqlService) {
+    this._dataClient = this._urqlService.dataClient;
+  }
 
   async fetchIntroduction(): Promise<Dict_Introduction> {
-    const client = this._urqlService.dataClient;
-    const result = await client.query(DictIntroductionDocument, {});
+    const result = await this._dataClient.query(DictIntroductionDocument, {});
     const data = validateAndExtractResult(result);
     return data.dict_introduction;
   }
 
   async fetchDictionaries(): Promise<Dictionaries[]> {
-    const client = this._urqlService.dataClient;
-    const result = await client.query(DictionariesDocument, {});
+    const result = await this._dataClient.query(DictionariesDocument, {});
     const data = validateAndExtractResult(result);
-
     return data.dictionaries;
   }
 }
