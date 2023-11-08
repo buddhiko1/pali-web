@@ -64,8 +64,8 @@ export class MeComponent {
     }
   }
 
-  onLogout(): void {
-    this._accountService.logout();
+  async onLogout(): Promise<void> {
+    await this._accountService.logout();
     this._navigationService.back();
   }
 

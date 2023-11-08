@@ -1,24 +1,13 @@
 .c-container {
   height: var(--canvasHeight);
-  position: relative;
   z-index: 0;
   background-color: #d2e1ec;
   background-image: linear-gradient(to bottom, #bbcfe1 0%, #e8f2f6 80%);
-  overflow: hidden;
 }
-.c-snow {
-  position: absolute;
-  top: 0;
-  left: 0;
-  pointer-events: none;
-  z-index: 1;
-}
+
 .c-ground {
-  height: 260px;
+  height: 240px;
   width: 100%;
-  position: absolute;
-  bottom: 0;
-  left: 0;
   background: white;
   box-shadow: 0 0 10px 10px white;
 }
@@ -26,20 +15,18 @@
 /* tree */
 .c-ground:before,
 .c-ground:after {
-  content: "";
-  display: block;
-  width: 250px;
-  height: 250px;
   position: absolute;
-  top: -62.5px;
+  width: 240px;
+  height: 240px;
+  top: -50px;
+  content: "";
   z-index: -1;
-  background: transparent;
   transform: scaleX(0.2) rotate(45deg);
 }
 
 .c-ground:after {
   left: 50%;
-  margin-left: -166.6666666667px;
+  margin-left: -160px;
   box-shadow: -295px 305px 15px #94a3be, -565px 635px 15px #94a3be,
     -870px 930px 15px #8e9eba, -1195px 1205px 15px #97a6c0,
     -1485px 1515px 15px #7e90b0, -1785px 1815px 15px #97a6c0,
@@ -49,9 +36,10 @@
     -3885px 3915px 15px #97a6c0, -4190px 4210px 15px #91a1bc,
     -4500px 4500px 15px #94a3be, -4775px 4825px 15px #91a1bc;
 }
+
 .c-ground:before {
   right: 50%;
-  margin-right: -166.6666666667px;
+  margin-right: -160px;
   box-shadow: 275px -325px 15px #94a3be, 615px -585px 15px #b4bed1,
     855px -945px 15px #8193b2, 1205px -1195px 15px #9dabc4,
     1480px -1520px 15px #8193b2, 1760px -1840px 15px #adb9cd,

@@ -35,10 +35,10 @@ class Particle {
   update(): void {
     this.y += this.yToMove;
     this.x += this.xToMove;
-    if (this.y > this._height) {
+    if (this.y >= this._height) {
       this.y = 0;
     }
-    if (this.x > this._width) {
+    if (this.x >= this._width || this.x < 0) {
       this.reset();
       this.y = 0;
     }
@@ -94,19 +94,19 @@ export class SnowBgComponent implements AfterViewInit {
   snow!: ElementRef<HTMLCanvasElement>;
 
   @HostBinding('style.--canvasHeight') get canvasHeight() {
-    return this.height;
+    return `${this.height}`;
   }
 
   ngAfterViewInit(): void {
     this._makeSnow();
-    this._particles.updateParticles();
-    window.addEventListener('resize', this._makeSnow);
   }
 
   @HostListener('window:resize')
   private _makeSnow(): void {
-    this.snow.nativeElement.height = window.innerHeight;
+    this.snow.nativeElement.height =
+      (window.innerHeight * parseInt(this.height, 10)) / 100;
     this.snow.nativeElement.width = window.innerWidth;
     this._particles = new Particles(this.snow.nativeElement);
+    this._particles.updateParticles();
   }
 }
