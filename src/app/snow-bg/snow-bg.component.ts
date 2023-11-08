@@ -53,7 +53,7 @@ class Particles {
   constructor(private _canvas: HTMLCanvasElement) {
     this._height = this._canvas.height;
     this._width = this._canvas.width;
-    const quantity = (this._height * this._width) / 10000;
+    const quantity = (this._height * this._width) / 12000;
     for (let i = 0; i < quantity; i++) {
       this._particles.push(new Particle(this._height, this._width));
     }
