@@ -18,16 +18,12 @@ export enum StatusEnum {
 })
 export class MarkLoaderComponent {
   @Input() status = StatusEnum.Idle;
-  @Input() size = '1.5rem';
-  @Input() borderWidth = '0.07rem';
-
-  @HostBinding('style.--size') get _size() {
-    return this.size;
-  }
-
-  @HostBinding('style.--borderWidth') get _borderWidth() {
-    return this.borderWidth;
-  }
+  @HostBinding('style.--size')
+  @Input()
+  size = '1.5rem';
+  @HostBinding('style.--borderWidth')
+  @Input()
+  borderWidth = '0.07rem';
 
   get isShowing(): boolean {
     return this.status !== StatusEnum.Idle;

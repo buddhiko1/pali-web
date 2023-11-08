@@ -11,15 +11,11 @@ import { AngularSvgIconModule } from 'angular-svg-icon';
 })
 export class WheelComponent {
   @Input() size = 5;
-  @Input() delay = 0;
-  @Input() cycleTime = 10000;
+  @HostBinding('style.--delay')
+  @Input()
+  delay = '0ms';
+  @HostBinding('style.--cycleTime')
+  @Input()
+  cycleTime = '10000ms';
   @Input() stop = false;
-
-  @HostBinding('style.--cycleTime') get _cycleTime() {
-    return `${this.cycleTime}ms`;
-  }
-
-  @HostBinding('style.--delay') get _delay() {
-    return `${this.delay}ms`;
-  }
 }

@@ -89,13 +89,11 @@ class Particles {
 })
 export class SnowBgComponent implements AfterViewInit {
   private _particles!: Particles;
-  @Input() height = '90vh';
+  @HostBinding('style.--canvasHeight')
+  @Input()
+  height = '90vh';
   @ViewChild('snow')
   snow!: ElementRef<HTMLCanvasElement>;
-
-  @HostBinding('style.--canvasHeight') get canvasHeight() {
-    return `${this.height}`;
-  }
 
   ngAfterViewInit(): void {
     this._makeSnow();
