@@ -18,10 +18,3 @@
   display: grid;
   place-items: center;
 }
-
-.c-fox {
-  z-index: 10;
-  grid-row: 4/5;
-  grid-column: 3/4;
-  place-self: center;
-}

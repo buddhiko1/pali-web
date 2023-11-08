@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { CommonModule, TitleCasePipe } from '@angular/common';
 import { Router, NavigationEnd, RouterLink } from '@angular/router';
 import { AngularSvgIconModule } from 'angular-svg-icon';
-import { DeviceDetectorService } from 'ngx-device-detector';
 
 import { FadeInDirective } from '../core/fade-in.directive';
 import { OverlayComponent } from '../overlay/overlay.component';
@@ -33,7 +32,6 @@ export class NavbarComponent {
 
   constructor(
     private _router: Router,
-    private _deviceService: DeviceDetectorService,
     private _homeService: HomeService,
     private _scrollbarService: ScrollbarService,
     private _navbarService: NavbarService,

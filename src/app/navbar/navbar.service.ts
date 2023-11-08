@@ -14,10 +14,9 @@ export class NavbarService {
   }
 
   activeDark(value: boolean) {
-    // TODO altenative way
     value
-      ? document.documentElement.classList.add('night')
-      : document.documentElement.classList.remove('night');
+      ? document.body.classList.add('night')
+      : document.body.classList.remove('night');
     this._isDark = value;
   }
 
