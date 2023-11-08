@@ -38,7 +38,7 @@ class Particle {
     if (this.y >= this._height) {
       this.y = 0;
     }
-    if (this.x >= this._width || this.x < 0) {
+    if (this.x >= this._width || this.x <= 0) {
       this.reset();
       this.y = 0;
     }
