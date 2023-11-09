@@ -18,14 +18,6 @@ import { ResetRequestComponent } from './reset-request/reset-request.component';
 import { MeComponent } from './me/me.component';
 
 @NgModule({
-  declarations: [
-    LoginComponent,
-    AccountCreateComponent,
-    AccountInitComponent,
-    PasswordResetComponent,
-    ResetRequestComponent,
-    MeComponent,
-  ],
   imports: [
     CommonModule,
     AngularSvgIconModule,
@@ -36,6 +28,12 @@ import { MeComponent } from './me/me.component';
     LoaderComponent,
     OverlayComponent,
     UploaderComponent,
+    LoginComponent,
+    AccountCreateComponent,
+    AccountInitComponent,
+    PasswordResetComponent,
+    ResetRequestComponent,
+    MeComponent,
   ],
 })
 export class AccountModule {}

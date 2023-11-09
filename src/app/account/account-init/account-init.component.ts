@@ -1,6 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import {
+  FormGroup,
+  FormControl,
+  Validators,
+  ReactiveFormsModule,
+} from '@angular/forms';
 
 import {
   InitAccountMutationVariables,
@@ -11,11 +16,23 @@ import { NavigationService } from 'src/app/core/navigation.service';
 
 import { UrlEnum } from '../account-routing.module';
 import { AccountService } from '../account.service';
+import { LoaderComponent } from '../../loader/loader.component';
+import { SliderDirective } from '../../core/slider.directive';
+import { OverlayComponent } from '../../overlay/overlay.component';
+import { NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-account-init',
   templateUrl: './account-init.component.html',
   styleUrls: ['./account-init.component.css'],
+  standalone: true,
+  imports: [
+    NgIf,
+    OverlayComponent,
+    SliderDirective,
+    ReactiveFormsModule,
+    LoaderComponent,
+  ],
 })
 export class AccountInitComponent implements OnInit {
   UrlEnum = UrlEnum;

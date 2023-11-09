@@ -85,6 +85,7 @@ export class UploaderComponent implements AfterViewInit {
         this.loaderStatus = LoaderStatusEnum.Successful;
         this.successful.emit(uploadedFile.id);
       } catch (error) {
+        //TODO set useful error message.
         this.loaderPrompt = 'Failed to upload file.';
         this.loaderStatus = LoaderStatusEnum.Failed;
       }

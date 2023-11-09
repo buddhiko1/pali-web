@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import {
+  FormGroup,
+  FormControl,
+  Validators,
+  ReactiveFormsModule,
+} from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 
 import { LoginMutationVariables } from 'src/gql/graphql';
@@ -8,11 +13,23 @@ import { StatusEnum as LoaderStatusEnum } from 'src/app/loader/loader.component'
 import { UrlEnum } from '../account-routing.module';
 import { AccountService } from '../account.service';
 import { UnRegisteredEmailValidator } from '../email.validator';
+import { LoaderComponent } from '../../loader/loader.component';
+import { SliderDirective } from '../../core/slider.directive';
+import { OverlayComponent } from '../../overlay/overlay.component';
+import { NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
+  standalone: true,
+  imports: [
+    NgIf,
+    OverlayComponent,
+    SliderDirective,
+    ReactiveFormsModule,
+    LoaderComponent,
+  ],
 })
 export class LoginComponent implements OnInit {
   form!: FormGroup;

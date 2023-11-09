@@ -7,11 +7,16 @@ import { StorageService } from 'src/app/core/storage.service';
 import { NavigationService } from 'src/app/core/navigation.service';
 import { AccountService } from '../account.service';
 import { UrlEnum } from '../account-routing.module';
+import { UploaderComponent } from '../../uploader/uploader.component';
+import { FadeInDirective } from '../../core/fade-in.directive';
+import { NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-me',
   templateUrl: './me.component.html',
   styleUrls: ['./me.component.css'],
+  standalone: true,
+  imports: [NgIf, FadeInDirective, UploaderComponent],
 })
 export class MeComponent {
   showUploader = false;

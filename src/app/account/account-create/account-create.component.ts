@@ -1,6 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import {
+  FormGroup,
+  FormControl,
+  Validators,
+  ReactiveFormsModule,
+} from '@angular/forms';
 
 import { CreateAccountMutationVariables } from 'src/gql/graphql';
 import { NavigationService } from 'src/app/core/navigation.service';
@@ -13,11 +18,23 @@ import { AccountService } from '../account.service';
 import { RegisteredEmailValidator } from '../email.validator';
 
 import { RoleFieldsFragment } from 'src/gql/graphql';
+import { LoaderComponent } from '../../loader/loader.component';
+import { SliderDirective } from '../../core/slider.directive';
+import { OverlayComponent } from '../../overlay/overlay.component';
+import { NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-account-create',
   templateUrl: './account-create.component.html',
   styleUrls: ['./account-create.component.css'],
+  standalone: true,
+  imports: [
+    NgIf,
+    OverlayComponent,
+    SliderDirective,
+    ReactiveFormsModule,
+    LoaderComponent,
+  ],
 })
 export class AccountCreateComponent implements OnInit {
   form!: FormGroup;
