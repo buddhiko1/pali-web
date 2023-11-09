@@ -24,24 +24,20 @@ export class NavbarService {
     return this._isMenuOpen;
   }
 
-  openMenu(): void {
-    this._isMenuOpen = true;
-  }
-
-  closeMenu(): void {
-    this._isMenuOpen = false;
-  }
-
   toggleMenu(): void {
-    this._isMenuOpen ? this.closeMenu() : this.openMenu();
+    this._isMenuOpen = !this._isMenuOpen;
   }
 
   get isShow(): boolean {
     return this._isShow;
   }
 
-  show(value: boolean) {
-    this._isShow = value;
+  show() {
+    this._isShow = true;
+  }
+
+  hide() {
+    this._isShow = false;
   }
 
   get isShadowShow(): boolean {

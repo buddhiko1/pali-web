@@ -10,13 +10,18 @@ import { ScrollbarService } from 'src/app/core/scrollbar.service';
 })
 export class ScrollDirective implements OnDestroy {
   private _subscription: Subscription;
+  private _previousScrollPosition = 0;
   constructor(
     private _navbarService: NavbarService,
     private _scrollbarService: ScrollbarService,
   ) {
     this._subscription = fromEvent(document, 'scroll').subscribe(() => {
       this._scrollbarService.showScrollbar();
-      this._navbarService.show(window.scrollY <= 50);
+      const currentScrollPosition = window.scrollY;
+      currentScrollPosition < this._previousScrollPosition
+        ? this._navbarService.show()
+        : this._navbarService.hide();
+      this._previousScrollPosition = currentScrollPosition; // Update the previous scroll position
     });
   }
 
