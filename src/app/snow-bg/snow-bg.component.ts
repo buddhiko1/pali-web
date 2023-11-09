@@ -62,7 +62,7 @@ class Particles {
   updateParticles() {
     const context = this._canvas.getContext('2d');
     context!.clearRect(0, 0, this._width, this._height);
-    context!.fillStyle = 'white'; // set color of snow
+    context!.fillStyle = 'white'; // set snow color
     this._particles.forEach((particle) => {
       particle.update();
       context!.beginPath();
