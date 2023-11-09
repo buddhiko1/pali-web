@@ -1,5 +1,7 @@
 <nav>
-  <app-overlay *ngIf="showOverlay" [zIndex]="0" [opacity]="0.8"></app-overlay>
+  @if (showOverlay) {
+  <app-overlay [zIndex]="0" [opacity]="0.8"></app-overlay>
+  }
   <div
     appFader
     class="c-container relative pt-1 lg:pt-4 top-0 transition-transform duration-[400ms] ease-in-out"
@@ -42,10 +44,8 @@
       ]"
     >
       <ul class="c-index">
-        <li
-          *ngFor="let module of modules"
-          class="c-index-item mt-2 sm:ml-5 lg:mt-0 lg:mx-4"
-        >
+        @for ( module of modules; track module.index) {
+        <li class="c-index-item mt-2 sm:ml-5 lg:mt-0 lg:mx-4">
           <button
             (click)="routeTo(module.route)"
             class="p-1 g-text g-hover"
@@ -54,21 +54,23 @@
             {{ module.name | titlecase }}
           </button>
         </li>
+        }
       </ul>
 
       <div class="c-divider lg:hidden mb-5 h-6 border-b g-border"></div>
 
       <button (click)="toggleDark()" class="c-theme p-1">
+        @if (isDark) {
         <svg-icon
-          *ngIf="isDark"
           src="assets/icons/moon.svg"
           [svgClass]="['g-svg', 'g-hover']"
         ></svg-icon>
+        } @else {
         <svg-icon
-          *ngIf="!isDark"
           src="assets/icons/sun.svg"
           [svgClass]="['g-svg', 'g-hover']"
         ></svg-icon>
+        }
       </button>
 
       <button (click)="routeTo('email')" class="c-email p-1 lg:mx-6">

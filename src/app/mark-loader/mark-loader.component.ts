@@ -25,10 +25,6 @@ export class MarkLoaderComponent {
   @Input()
   borderWidth = '0.07rem';
 
-  get isShowing(): boolean {
-    return this.status !== StatusEnum.Idle;
-  }
-
   get isSuccessful(): boolean {
     return this.status === StatusEnum.Successful;
   }

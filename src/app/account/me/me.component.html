@@ -1,6 +1,13 @@
 <div>
+  @if (showUploader) {
+  <app-uploader
+    [folderId]="avatarFolderId"
+    [allowedExtensions]="['.png', '.jpg', '.jpeg']"
+    (successful)="onAvatarUploaded($event)"
+    (failed)="showUploader = false"
+  ></app-uploader>
+  } @else {
   <section
-    *ngIf="!showUploader"
     appFader
     [fadeDelay]="300"
     class="c-container mt-24 sm:mt-48 lg:mt-[20vh]"
@@ -17,11 +24,5 @@
       <button (click)="onLogout()" class="d-button mt-12">Logout</button>
     </div>
   </section>
-  <app-uploader
-    *ngIf="showUploader"
-    [folderId]="avatarFolderId"
-    [allowedExtensions]="['.png', '.jpg', '.jpeg']"
-    (successful)="onAvatarUploaded($event)"
-    (failed)="showUploader = false"
-  ></app-uploader>
+  }
 </div>

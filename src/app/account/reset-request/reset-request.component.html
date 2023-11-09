@@ -1,7 +1,18 @@
 <div>
-  <app-overlay *ngIf="!isLoaderActived" [zIndex]="-1"></app-overlay>
+  @if (isLoaderActived) {
+  <app-loader
+    title="Requesting..."
+    [status]="loaderStatus"
+    [prompt]="loaderPrompt"
+    [stayWhenFailed]="true"
+    [stayWhenSuccessful]="true"
+    (failed)="goBack()"
+    (successful)="goBack()"
+    class="c-loader mt-12 sm:mt-24"
+  ></app-loader>
+  } @else {
+  <app-overlay [zIndex]="-1"></app-overlay>
   <div
-    *ngIf="!isLoaderActived"
     appSlider
     [slideDelay]="200"
     class="c-container py-20 sm:py-36 lg:py-[17vh]"
@@ -19,16 +30,17 @@
             required
             class="inline-block w-full d-input"
           />
-          <div
-            *ngIf="email.invalid && (email.dirty || email.touched)"
-            class="mt-1 d-error-text"
-          >
-            <div *ngIf="email.errors?.['required']">Email is required.</div>
-            <div *ngIf="email.errors?.['email']">Invalid address format.</div>
-            <div *ngIf="email.errors?.['unRegistered']">
-              Email hasn't been registered.
-            </div>
+          @if (email.invalid && (email.dirty || email.touched)) {
+          <div class="mt-1 d-error-text">
+            @if (email.errors?.['required']) {
+            <div>Email is required.</div>
+            } @else if (email.errors?.['email']) {
+            <div>Invalid address format.</div>
+            } @else if (email.errors?.['unRegistered']) {
+            <div>Email hasn't been registered.</div>
+            }
           </div>
+          }
         </div>
         <button
           type="submit"
@@ -40,15 +52,5 @@
       </form>
     </div>
   </div>
-  <app-loader
-    *ngIf="isLoaderActived"
-    title="Requesting..."
-    [status]="loaderStatus"
-    [prompt]="loaderPrompt"
-    [stayWhenFailed]="true"
-    [stayWhenSuccessful]="true"
-    (failed)="goBack()"
-    (successful)="goBack()"
-    class="c-loader mt-12 sm:mt-24"
-  ></app-loader>
+  }
 </div>

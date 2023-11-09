@@ -19,16 +19,18 @@
         ></span>
       </div>
     </div>
+    @for (dictionary of dictionaries; track dictionary.index) {
     <div
-      *ngFor="let dictionary of dictionaries"
       appSlider
       [slideDelay]="dictionary.index === 1 ? 800 : 1000"
       class="c-dictionary mt-12 lg:mt-36 pb-8 lg:pb-24 border-b g-border"
       [class.border-b]="dictionary.index !== dictionaries.length"
     >
-      <div *ngIf="dictionary.index % 2" class="c-book hidden lg:block">
+      @if (dictionary.index % 2) {
+      <div class="c-book hidden lg:block">
         <app-book [config]="bookConfigFor(dictionary)"></app-book>
       </div>
+      }
       <div>
         <p class="capitalize lg:text-xl g-hl-title">{{ dictionary.name }}</p>
         <p
@@ -61,9 +63,12 @@
           </a>
         </div>
       </div>
-      <div *ngIf="!(dictionary.index % 2)" class="c-book hidden lg:block">
+      @if (!(dictionary.index % 2)) {
+      <div class="c-book hidden lg:block">
         <app-book [config]="bookConfigFor(dictionary)"></app-book>
       </div>
+      }
     </div>
+    }
   </div>
 </div>

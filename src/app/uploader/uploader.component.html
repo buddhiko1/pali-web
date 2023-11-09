@@ -1,13 +1,6 @@
 <div class="c-container">
-  <input
-    #fileInput
-    type="file"
-    [accept]="allowedExtensions"
-    (change)="onChange($event)"
-    (cancel)="onFailed()"
-  />
+  @if (isLoaderActived) {
   <app-loader
-    *ngIf="isLoaderActived"
     title="Uploading..."
     [status]="loaderStatus"
     [prompt]="loaderPrompt"
@@ -15,4 +8,12 @@
     (failed)="onFailed()"
     class="mt-12 sm:mt-20"
   ></app-loader>
+  }
+  <input
+    #fileInput
+    type="file"
+    [accept]="allowedExtensions"
+    (change)="onChange($event)"
+    (cancel)="onFailed()"
+  />
 </div>

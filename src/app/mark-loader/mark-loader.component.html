@@ -1,17 +1,17 @@
 <div
-  *ngIf="isShowing"
   class="relative box-border duration-700 transition-all c-loader"
   [class.c-successful]="isSuccessful"
   [class.c-failed]="isFailed"
 >
+  @if (isSuccessful) {
   <svg-icon
-    *ngIf="isSuccessful"
     src="assets/icons/check.svg"
     [svgClass]="['c-svg', 'fill-current', 'text-ok']"
   ></svg-icon>
+  } @esle if(isFailed) {
   <svg-icon
-    *ngIf="isFailed"
     src="assets/icons/close.svg"
     [svgClass]="['c-svg', 'fill-current', 'text-error']"
   ></svg-icon>
+  }
 </div>

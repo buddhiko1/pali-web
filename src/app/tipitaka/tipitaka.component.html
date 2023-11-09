@@ -23,7 +23,8 @@
         Tipiṭaka Epub
       </p>
     </div>
-    <div *ngFor="let book of tipitaka" class="c-book pt-14 lg:pt-28">
+    @for (book of tipitaka; track book.index) {
+    <div class="c-book pt-14 lg:pt-28">
       <app-book [config]="bookConfigFor(book)"></app-book>
       <div class="c-action w-full mt-10 pb-4 border-b g-border">
         <a [href]="book.info_url" target="_blank" class="g-button">
@@ -45,6 +46,7 @@
         </a>
       </div>
     </div>
+    }
   </div>
   <div class="c-cites py-16 lg:py-32 bg-appBg night">
     <div class="c-content">
@@ -55,7 +57,8 @@
           bante said
         </p>
       </div>
-      <div *ngFor="let cite of cites" class="c-cite pt-8 lg:pt-12">
+      @for (cite of cites; track cite.index) {
+      <div class="c-cite pt-8 lg:pt-12">
         <svg-icon
           src="assets/icons/quotes.svg"
           [svgClass]="['g-svg']"
@@ -72,6 +75,7 @@
           >{{ cite.author }}</a
         >
       </div>
+      }
     </div>
   </div>
 </div>
