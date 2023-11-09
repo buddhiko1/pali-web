@@ -1,6 +1,10 @@
 <nav>
   @if (showOverlay) {
-  <app-overlay [zIndex]="0" [opacity]="0.8"></app-overlay>
+  <app-overlay
+    [zIndex]="0"
+    [opacity]="0.8"
+    (click)="toggleMenu()"
+  ></app-overlay>
   }
   <div
     appFader
