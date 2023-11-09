@@ -14,7 +14,7 @@ export enum StatusEnum {
   standalone: true,
   imports: [CommonModule, AngularSvgIconModule],
   templateUrl: './mark-loader.component.html',
-  styleUrls: ['./mark-loader.component.css'],
+  styleUrl: './mark-loader.component.css',
 })
 export class MarkLoaderComponent {
   @Input() status = StatusEnum.Idle;

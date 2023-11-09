@@ -32,7 +32,7 @@ export enum StatusEnum {
     WheelComponent,
   ],
   templateUrl: './loader.component.html',
-  styleUrls: ['./loader.component.css'],
+  styleUrl: './loader.component.css',
 })
 export class LoaderComponent implements OnChanges {
   @Input() title = '';

@@ -85,7 +85,7 @@ class Particles {
   standalone: true,
   imports: [CommonModule],
   templateUrl: './snow-bg.component.html',
-  styleUrls: ['./snow-bg.component.css'],
+  styleUrl: './snow-bg.component.css',
 })
 export class SnowBgComponent implements AfterViewInit {
   private _particles!: Particles;

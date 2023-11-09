@@ -26,7 +26,7 @@ import { NgIf } from '@angular/common';
 @Component({
   selector: 'app-account-create',
   templateUrl: './account-create.component.html',
-  styleUrls: ['./account-create.component.css'],
+  styleUrl: './account-create.component.css',
   standalone: true,
   imports: [
     NgIf,

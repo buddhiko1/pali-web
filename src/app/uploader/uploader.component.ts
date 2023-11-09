@@ -22,7 +22,7 @@ import { UploaderService } from './uploader.service';
   standalone: true,
   imports: [CommonModule, LoaderComponent, OverlayComponent],
   templateUrl: './uploader.component.html',
-  styleUrls: ['./uploader.component.css'],
+  styleUrl: './uploader.component.css',
 })
 export class UploaderComponent implements AfterViewInit {
   @Input() folderId = '';

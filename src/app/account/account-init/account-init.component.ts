@@ -24,7 +24,7 @@ import { NgIf } from '@angular/common';
 @Component({
   selector: 'app-account-init',
   templateUrl: './account-init.component.html',
-  styleUrls: ['./account-init.component.css'],
+  styleUrl: './account-init.component.css',
   standalone: true,
   imports: [
     NgIf,

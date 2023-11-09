@@ -8,6 +8,6 @@ import { AngularSvgIconModule } from 'angular-svg-icon';
   standalone: true,
   imports: [CommonModule, RouterLink, AngularSvgIconModule],
   templateUrl: './phrase.component.html',
-  styleUrls: ['./phrase.component.css'],
+  styleUrl: './phrase.component.css',
 })
 export class PhraseComponent {}

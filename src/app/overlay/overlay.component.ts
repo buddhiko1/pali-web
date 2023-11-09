@@ -6,7 +6,7 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './overlay.component.html',
-  styleUrls: ['./overlay.component.css'],
+  styleUrl: './overlay.component.css',
 })
 export class OverlayComponent {
   @HostBinding('style.--zIndex')

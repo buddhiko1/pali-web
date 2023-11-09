@@ -22,7 +22,7 @@ import { SnowBgComponent } from 'src/app/snow-bg/snow-bg.component';
     FadeInDirective,
   ],
   templateUrl: './placeholder-page.component.html',
-  styleUrls: ['./placeholder-page.component.css'],
+  styleUrl: './placeholder-page.component.css',
 })
 export class PlaceholderPageComponent implements OnDestroy {
   text = '';

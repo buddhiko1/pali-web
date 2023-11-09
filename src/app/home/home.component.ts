@@ -23,7 +23,7 @@ import { HomeService } from './home.service';
     PhraseComponent,
   ],
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css'],
+  styleUrl: './home.component.css',
 })
 export class HomeComponent implements OnDestroy {
   modules: Modules[] = [];

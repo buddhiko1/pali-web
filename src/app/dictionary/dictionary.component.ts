@@ -21,7 +21,7 @@ import { Dictionaries, Dict_Introduction } from 'src/gql/graphql';
     BookComponent,
   ],
   templateUrl: './dictionary.component.html',
-  styleUrls: ['./dictionary.component.css'],
+  styleUrl: './dictionary.component.css',
 })
 export class DictionaryComponent {
   fileServer = environment.fileServer;

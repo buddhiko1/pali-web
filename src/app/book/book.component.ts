@@ -11,7 +11,7 @@ export enum DirectionEnum {
   standalone: true,
   selector: 'app-book',
   templateUrl: './book.component.html',
-  styleUrls: ['./book.component.css'],
+  styleUrl: './book.component.css',
 })
 export class BookComponent {
   @Input() config!: Config;

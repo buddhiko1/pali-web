@@ -14,7 +14,7 @@ import { NgIf } from '@angular/common';
 @Component({
   selector: 'app-me',
   templateUrl: './me.component.html',
-  styleUrls: ['./me.component.css'],
+  styleUrl: './me.component.css',
   standalone: true,
   imports: [NgIf, FadeInDirective, UploaderComponent],
 })

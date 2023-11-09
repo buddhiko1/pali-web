@@ -22,7 +22,7 @@ import { NgIf } from '@angular/common';
 @Component({
   selector: 'app-password-reset',
   templateUrl: './password-reset.component.html',
-  styleUrls: ['./password-reset.component.css'],
+  styleUrl: './password-reset.component.css',
   standalone: true,
   imports: [
     NgIf,

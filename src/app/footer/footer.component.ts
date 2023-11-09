@@ -9,7 +9,7 @@ import { FadeInDirective } from '../core/fade-in.directive';
   standalone: true,
   imports: [CommonModule, AngularSvgIconModule, FadeInDirective],
   templateUrl: './footer.component.html',
-  styleUrls: ['./footer.component.css'],
+  styleUrl: './footer.component.css',
 })
 export class FooterComponent implements OnInit {
   startPath = '';

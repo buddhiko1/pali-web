@@ -22,7 +22,7 @@ import { TipitakaService } from './tipitaka.service';
     FadeInDirective,
   ],
   templateUrl: './tipitaka.component.html',
-  styleUrls: ['./tipitaka.component.css'],
+  styleUrl: './tipitaka.component.css',
 })
 export class TipitakaComponent implements OnDestroy {
   fileServer = environment.fileServer;

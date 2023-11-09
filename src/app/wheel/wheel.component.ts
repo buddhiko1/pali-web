@@ -7,7 +7,7 @@ import { AngularSvgIconModule } from 'angular-svg-icon';
   standalone: true,
   imports: [CommonModule, AngularSvgIconModule],
   templateUrl: './wheel.component.html',
-  styleUrls: ['./wheel.component.css'],
+  styleUrl: './wheel.component.css',
 })
 export class WheelComponent {
   @Input() size = 5;

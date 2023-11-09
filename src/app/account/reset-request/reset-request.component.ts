@@ -23,7 +23,7 @@ import { NgIf } from '@angular/common';
 @Component({
   selector: 'app-reset-request',
   templateUrl: './reset-request.component.html',
-  styleUrls: ['./reset-request.component.css'],
+  styleUrl: './reset-request.component.css',
   standalone: true,
   imports: [
     NgIf,
