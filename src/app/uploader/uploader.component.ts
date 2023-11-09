@@ -46,9 +46,10 @@ export class UploaderComponent implements AfterViewInit {
     return this.loaderStatus !== LoaderStatusEnum.Idle;
   }
 
-  async onChange(event: any): Promise<void> {
-    const file = event.target.files[0];
-    if (file) {
+  async onChange(event: Event): Promise<void> {
+    const fileInput = event.target as HTMLInputElement;
+    if (fileInput.files) {
+      const file = fileInput.files[0];
       this.loaderStatus = LoaderStatusEnum.Loading;
 
       const fileName = this.fileInput.nativeElement.value;
@@ -62,7 +63,7 @@ export class UploaderComponent implements AfterViewInit {
         )}.`;
       } else if (file.size > this.maxSize * 1024 * 1024) {
         validationError = `File too large, max file size: ${this.maxSize}MB.`;
-      } else if (!this.multiFiles && event.target.files.length > 1) {
+      } else if (!this.multiFiles && fileInput.files.length > 1) {
         validationError = `Only one file allowed.`;
       }
 
@@ -83,8 +84,8 @@ export class UploaderComponent implements AfterViewInit {
         const uploadedFile = await this._uploaderService.upload(formData);
         this.loaderStatus = LoaderStatusEnum.Successful;
         this.successful.emit(uploadedFile.id);
-      } catch (error: any) {
-        this.loaderPrompt = error.toString();
+      } catch (error) {
+        this.loaderPrompt = 'Failed to upload file.';
         this.loaderStatus = LoaderStatusEnum.Failed;
       }
     }
