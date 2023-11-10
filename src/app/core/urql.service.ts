@@ -18,7 +18,7 @@ export async function refreshToken() {
     exchanges: [_errorExchange, fetchExchange],
   });
   const result = await client.mutation(RefreshTokenDocument, {
-    refreshToken: _storageService.refreshToken,
+    tokenForRefresh: _storageService.tokenForRefresh,
   });
   if (result?.data?.refresh) {
     _storageService.saveAuthToken(result?.data?.refresh);
@@ -33,7 +33,7 @@ const _customAuthExchange = authExchange(async (utils) => {
   return {
     addAuthToOperation(operation) {
       return utils.appendHeaders(operation, {
-        Authorization: `Bearer ${_storageService.accessToken}`,
+        Authorization: `Bearer ${_storageService.tokenForAccess}`,
       });
     },
     didAuthError(error) {

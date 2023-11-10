@@ -80,6 +80,6 @@ export class ResetRequestComponent implements OnInit {
   }
 
   onActionDone(): void {
-    this._navigationService.back();
+    this._navigationService.goBack();
   }
 }

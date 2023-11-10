@@ -70,7 +70,7 @@ export class MeComponent {
 
   async onLogout(): Promise<void> {
     await this._accountService.logout();
-    this._navigationService.back();
+    this._navigationService.goBack();
   }
 
   onReset(): void {

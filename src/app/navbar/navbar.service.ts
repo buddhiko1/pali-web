@@ -17,6 +17,6 @@ export class NavbarService {
   async fetchRoutes(): Promise<RoutesFragment[]> {
     const result = await this._dataClient.query(RoutesDocument, {});
     const data = validateAndExtractResult(result);
-    return data.modules;
+    return data.routes;
   }
 }

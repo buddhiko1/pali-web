@@ -57,7 +57,7 @@ export class NavbarComponent {
     fromEvent(document, 'scroll')
       .pipe(throttleTime(100))
       .subscribe(() => {
-        this._scrollbarService.showScrollbar();
+        this._scrollbarService.show();
         const currentScrollPosition = window.scrollY;
         currentScrollPosition < this._previousScrollPosition
           ? (this.isCollapsed = false)
@@ -72,12 +72,12 @@ export class NavbarComponent {
   }
 
   toggleDark(): void {
-    this._scrollbarService.hideScrollbar();
+    this._scrollbarService.hide();
     this.isDark
       ? document.body.classList.remove('night')
       : document.body.classList.add('night');
     this.isDark = !this.isDark;
-    this._scrollbarService.showScrollbar();
+    this._scrollbarService.show();
   }
 
   routeTo(url: string): void {

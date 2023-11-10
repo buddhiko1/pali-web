@@ -10,6 +10,6 @@ export class BackButtonDirective {
 
   @HostListener('click')
   onClick(): void {
-    this.navigation.back();
+    this.navigation.goBack();
   }
 }

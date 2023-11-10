@@ -18,6 +18,6 @@ export class AppComponent implements OnInit {
   constructor(private _scrollbarService: ScrollbarService) {}
 
   ngOnInit(): void {
-    this._scrollbarService.showScrollbar();
+    this._scrollbarService.show();
   }
 }

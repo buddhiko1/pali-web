@@ -107,7 +107,7 @@ export class AccountCreateComponent implements OnInit {
     if (this.successInfo) {
       this.routeToLogin();
     } else {
-      this._navigationService.back();
+      this._navigationService.goBack();
     }
   }
 }

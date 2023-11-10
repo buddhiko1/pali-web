@@ -86,7 +86,7 @@ export class AccountService {
 
   async logout(): Promise<void> {
     await this._systemClient.mutation(LogoutDocument, {
-      refreshToken: this._storageService.refreshToken,
+      tokenForRefresh: this._storageService.tokenForRefresh,
     });
     this._storageService.clearAccountData();
   }

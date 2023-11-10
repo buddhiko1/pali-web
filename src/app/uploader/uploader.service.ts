@@ -13,7 +13,7 @@ export class UploaderService {
   async upload(formData: FormData): Promise<FileFieldsFragment> {
     await refreshToken();
     const client = createDirectus<FileFieldsFragment>(environment.cms)
-      .with(staticToken(this._storageService.accessToken))
+      .with(staticToken(this._storageService.tokenForAccess))
       .with(rest());
     return await client.request(uploadFiles(formData));
   }

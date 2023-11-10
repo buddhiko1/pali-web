@@ -43,11 +43,11 @@ graphql(`
       refresh_token
     }
   }
-  mutation Logout($refreshToken: String!) {
-    auth_logout(refresh_token: $refreshToken)
+  mutation Logout($tokenForRefresh: String!) {
+    auth_logout(refresh_token: $tokenForRefresh)
   }
-  mutation RefreshToken($refreshToken: String!) {
-    refresh: auth_refresh(refresh_token: $refreshToken, mode: json) {
+  mutation RefreshToken($tokenForRefresh: String!) {
+    refresh: auth_refresh(refresh_token: $tokenForRefresh, mode: json) {
       access_token
       refresh_token
     }

@@ -4,37 +4,37 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class ScrollbarService {
-  private _isScrollbarShow = false;
-  private _scrollbarTimeoutId = 0;
+  private _isShow = false;
+  private _timeoutId = 0;
 
-  get isScrollbarShow(): boolean {
-    return this._isScrollbarShow;
+  get isEnabled(): boolean {
+    return this._isShow;
   }
 
-  hideScrollbar(): void {
-    if (!this._isScrollbarShow) {
+  hide(): void {
+    if (!this._isShow) {
       return;
     }
-    if (this._scrollbarTimeoutId) {
-      window.clearTimeout(this._scrollbarTimeoutId);
-      this._scrollbarTimeoutId = 0;
+    if (this._timeoutId) {
+      window.clearTimeout(this._timeoutId);
+      this._timeoutId = 0;
     }
     document.documentElement.classList.remove('g-scrollbar');
     document.documentElement.classList.add('g-hide-scrollbar');
-    this._isScrollbarShow = false;
+    this._isShow = false;
   }
 
-  showScrollbar(): void {
-    if (this._isScrollbarShow) {
+  show(): void {
+    if (this._isShow) {
       return;
     }
     document.documentElement.classList.remove('g-hide-scrollbar');
     document.documentElement.classList.add('g-scrollbar');
-    this._isScrollbarShow = true;
+    this._isShow = true;
     // hide scrollbar automatically after 3 seconds
-    this._scrollbarTimeoutId = setTimeout(() => {
-      this.hideScrollbar();
-      this._scrollbarTimeoutId = 0;
+    this._timeoutId = setTimeout(() => {
+      this.hide();
+      this._timeoutId = 0;
     }, 3000);
   }
 }

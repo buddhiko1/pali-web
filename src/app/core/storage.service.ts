@@ -5,39 +5,42 @@ import { Auth_Tokens, MeFieldsFragment } from 'src/gql/graphql';
   providedIn: 'root',
 })
 export class StorageService {
-  private _authTokenKey = 'authToken';
-  private _refreshTokenKey = 'refreshToken';
-  private _meKey = 'me';
+  private _keyOfAuthToken = 'authToken';
+  private _keyOfRefreshToken = 'refreshToken';
+  private _keyOfMe = 'me';
 
   saveAuthToken(authToken: Auth_Tokens) {
-    localStorage.setItem(this._authTokenKey, authToken.access_token ?? '');
-    localStorage.setItem(this._refreshTokenKey, authToken.refresh_token ?? '');
+    localStorage.setItem(this._keyOfAuthToken, authToken.access_token ?? '');
+    localStorage.setItem(
+      this._keyOfRefreshToken,
+      authToken.refresh_token ?? '',
+    );
   }
 
-  get accessToken(): string {
-    return localStorage.getItem(this._authTokenKey) ?? '';
+  get tokenForAccess(): string {
+    return localStorage.getItem(this._keyOfAuthToken) ?? '';
   }
 
-  get refreshToken(): string {
-    return localStorage.getItem(this._refreshTokenKey) ?? '';
+  get tokenForRefresh(): string {
+    return localStorage.getItem(this._keyOfRefreshToken) ?? '';
   }
 
   get isLoggedIn(): boolean {
-    return !!this.accessToken;
+    return !!this.tokenForAccess;
   }
 
   saveMe(me: MeFieldsFragment): void {
-    localStorage.setItem(this._meKey, JSON.stringify(me));
+    localStorage.setItem(this._keyOfMe, JSON.stringify(me));
   }
 
   get me(): MeFieldsFragment | null {
-    const data = localStorage.getItem(this._meKey);
+    const data = localStorage.getItem(this._keyOfMe);
     return data ? JSON.parse(data) : null;
   }
 
   clearAccountData() {
-    localStorage.removeItem(this._authTokenKey);
-    localStorage.removeItem(this._refreshTokenKey);
-    localStorage.removeItem(this._meKey);
+    localStorage.removeItem(this._keyOfAuthToken);
+    localStorage.removeItem(this._keyOfRefreshToken);
+    localStorage.removeItem(this._keyOfMe);
   }
 }

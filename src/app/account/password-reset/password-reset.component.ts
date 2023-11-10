@@ -98,7 +98,7 @@ export class PasswordResetComponent implements OnInit {
         relativeTo: this._activeRoute,
       });
     } else {
-      this._navigationService.back();
+      this._navigationService.goBack();
     }
   }
 }

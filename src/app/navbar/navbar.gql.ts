@@ -6,7 +6,7 @@ graphql(`
     route
   }
   query Routes {
-    modules(sort: ["index"]) {
+    routes: modules(sort: ["index"]) {
       ...Routes
     }
   }

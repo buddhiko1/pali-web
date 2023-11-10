@@ -17,7 +17,7 @@ export class NavigationService {
     });
   }
 
-  back(): void {
+  goBack(): void {
     this.history.pop();
     if (this.history.length > 0) {
       this.location.back();
