@@ -12,7 +12,7 @@ import { NgxRerenderModule } from 'ngx-rerender';
 
 import { FadeInDirective } from '../core/fade-in.directive';
 import { OverlayComponent } from '../overlay/overlay.component';
-import { WheelComponent } from '../wheel/wheel.component';
+import { WheelSvgComponent } from '../svg/wheel/wheel.component';
 
 export enum StatusEnum {
   Idle = 'Idle',
@@ -29,7 +29,7 @@ export enum StatusEnum {
     NgxRerenderModule,
     FadeInDirective,
     OverlayComponent,
-    WheelComponent,
+    WheelSvgComponent,
   ],
   templateUrl: './loader.component.html',
   styleUrl: './loader.component.css',
@@ -57,11 +57,11 @@ export class LoaderComponent implements OnChanges {
     }
   }
 
-  get wheelSize(): number {
+  get wheelSize(): string {
     if (this._deviceService.isMobile()) {
-      return 4;
+      return '4rem';
     } else {
-      return 6;
+      return '6rem';
     }
   }
 

@@ -1,12 +1,14 @@
 import { Component, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AngularSvgIconModule } from 'angular-svg-icon';
 
 import { Config as BookConfig } from '../book/book.model';
 import { NavbarService } from '../navbar/navbar.service';
 import { BookComponent, DirectionEnum } from '../book/book.component';
 import { SliderDirective } from '../core/slider.directive';
 import { FadeInDirective } from '../core/fade-in.directive';
+import { GithubSvgComponent } from '../svg/github/github.component';
+import { DownloadSvgComponent } from '../svg/download/download.component';
+import { QuoteSvgComponent } from '../svg/quote/quote.component';
 import { environment } from 'src/environments/environment';
 import { Tipitaka, Cites } from 'src/gql/graphql';
 import { TipitakaService } from './tipitaka.service';
@@ -16,8 +18,10 @@ import { TipitakaService } from './tipitaka.service';
   standalone: true,
   imports: [
     CommonModule,
-    AngularSvgIconModule,
     BookComponent,
+    GithubSvgComponent,
+    DownloadSvgComponent,
+    QuoteSvgComponent,
     SliderDirective,
     FadeInDirective,
   ],

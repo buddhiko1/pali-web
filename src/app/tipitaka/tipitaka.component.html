@@ -28,10 +28,7 @@
       <app-book [config]="bookConfigFor(book)"></app-book>
       <div class="c-action w-full mt-10 pb-4 border-b g-border">
         <a [href]="book.info_url" target="_blank" class="g-button">
-          <svg-icon
-            src="assets/icons/Github.svg"
-            [svgClass]="['g-svg']"
-          ></svg-icon>
+          <app-github-svg [class]="['g-svg']"></app-github-svg>
         </a>
         <a
           [href]="fileServer + '/' + book.zip?.filename_disk + '?download'"
@@ -39,10 +36,7 @@
           target="_blank"
           class="g-button"
         >
-          <svg-icon
-            src="assets/icons/download.svg"
-            [svgClass]="['g-svg']"
-          ></svg-icon>
+          <app-download-svg [class]="['g-svg']"></app-download-svg>
         </a>
       </div>
     </div>
@@ -59,11 +53,7 @@
       </div>
       @for (cite of cites; track cite.index) {
       <div class="c-cite pt-8 lg:pt-12">
-        <svg-icon
-          src="assets/icons/quotes.svg"
-          [svgClass]="['g-svg']"
-          [svgStyle]="{ 'width.rem': 3, 'height.rem': 3 }"
-        ></svg-icon>
+        <app-quote-svg [class]="['g-svg']" [size]="'3rem'"></app-quote-svg>
         <p class="mt-2 lg:mt-4 text-center g-text">
           {{ cite.text }}
         </p>

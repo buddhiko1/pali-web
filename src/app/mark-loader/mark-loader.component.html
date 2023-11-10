@@ -4,14 +4,10 @@
   [class.c-failed]="isFailed"
 >
   @if (isSuccessful) {
-  <svg-icon
-    src="assets/icons/check.svg"
-    [svgClass]="['c-svg', 'fill-current', 'text-ok']"
-  ></svg-icon>
+  <app-check-svg [class]="['c-svg', 'fill-current', 'text-ok']"></app-check-svg>
   } @esle if(isFailed) {
-  <svg-icon
-    src="assets/icons/close.svg"
-    [svgClass]="['c-svg', 'fill-current', 'text-error']"
-  ></svg-icon>
+  <app-close-svg
+    [class]="['c-svg', 'fill-current', 'text-error']"
+  ></app-close-svg>
   }
 </div>

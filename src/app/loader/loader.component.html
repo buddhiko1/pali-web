@@ -18,12 +18,12 @@
       {{ prompt }}
     </p>
     } @else {
-    <app-wheel
+    <app-wheel-svg
       [size]="wheelSize"
       delay="500ms"
       [stop]="isSuccessful || isFailed"
       class="c-wheel"
-    ></app-wheel>
+    ></app-wheel-svg>
     } @if ((isSuccessful && stayWhenSuccessful) || (isFailed && stayWhenFailed))
     {
     <button

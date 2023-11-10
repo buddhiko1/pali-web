@@ -8,10 +8,9 @@
       {{ text }}
     </p>
     <button appBackButton class="c-action g-button px-2 mt-[6vh] lg:mt-[7vh]">
-      <svg-icon
-        src="assets/icons/short_left.svg"
-        [svgClass]="['inline-block', 'align-middle', 'g-svg', 'mr-2']"
-      ></svg-icon>
+      <app-larrow-svg
+        [class]="['inline-block', 'align-middle', 'g-svg', 'mr-2']"
+      ></app-larrow-svg>
       <p class="inline-block align-middle pr-1 g-text">Go Back</p>
     </button>
   </div>

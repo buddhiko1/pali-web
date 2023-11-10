@@ -1,12 +1,12 @@
 import { Component, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute, Params } from '@angular/router';
-import { AngularSvgIconModule } from 'angular-svg-icon';
 import { DeviceDetectorService } from 'ngx-device-detector';
 
 import { SliderDirective } from 'src/app/core/slider.directive';
 import { FadeInDirective } from '../core/fade-in.directive';
 import { BackButtonDirective } from 'src/app/core/back-button.directive';
+import { LarrowSvgComponent } from '../svg/larrow/larrow.component';
 import { NavbarService } from 'src/app/navbar/navbar.service';
 import { SnowBgComponent } from 'src/app/snow-bg/snow-bg.component';
 
@@ -15,7 +15,7 @@ import { SnowBgComponent } from 'src/app/snow-bg/snow-bg.component';
   standalone: true,
   imports: [
     CommonModule,
-    AngularSvgIconModule,
+    LarrowSvgComponent,
     BackButtonDirective,
     SnowBgComponent,
     SliderDirective,

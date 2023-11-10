@@ -1,16 +1,15 @@
 import { Component, Input, HostBinding } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AngularSvgIconModule } from 'angular-svg-icon';
 
 @Component({
-  selector: 'app-wheel',
+  selector: 'app-wheel-svg',
   standalone: true,
-  imports: [CommonModule, AngularSvgIconModule],
-  templateUrl: './wheel.component.html',
+  imports: [CommonModule],
+  templateUrl: './wheel.component.svg',
   styleUrl: './wheel.component.css',
 })
-export class WheelComponent {
-  @Input() size = 5;
+export class WheelSvgComponent {
+  @Input() size = '5rem';
   @HostBinding('style.--delay')
   @Input()
   delay = '0ms';
@@ -18,4 +17,8 @@ export class WheelComponent {
   @Input()
   cycleTime = '10000ms';
   @Input() stop = false;
+
+  get class(): string[] {
+    return ['start', this.stop ? 'stop' : ''];
+  }
 }

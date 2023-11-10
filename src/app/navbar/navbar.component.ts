@@ -1,12 +1,17 @@
 import { Component } from '@angular/core';
 import { CommonModule, TitleCasePipe } from '@angular/common';
 import { Router, NavigationEnd, RouterLink } from '@angular/router';
-import { AngularSvgIconModule } from 'angular-svg-icon';
 
 import { FadeInDirective } from '../core/fade-in.directive';
 import { OverlayComponent } from '../overlay/overlay.component';
 import { ScrollbarService } from '../core/scrollbar.service';
 import { HomeService } from '../home/home.service';
+import { PlusSvgComponent } from '../svg/plus/plus.component';
+import { MoonSvgComponent } from '../svg/moon/moon.component';
+import { SunSvgComponent } from '../svg/sun/sun.component';
+import { EmailSvgComponent } from '../svg/email/email.component';
+import { PersonSvgComponent } from '../svg/person/person.component';
+
 import { Modules } from 'src/gql/graphql';
 
 import { NavbarService } from './navbar.service';
@@ -18,7 +23,11 @@ import { NavbarService } from './navbar.service';
     CommonModule,
     TitleCasePipe,
     RouterLink,
-    AngularSvgIconModule,
+    PlusSvgComponent,
+    MoonSvgComponent,
+    SunSvgComponent,
+    EmailSvgComponent,
+    PersonSvgComponent,
     FadeInDirective,
     OverlayComponent,
   ],

@@ -45,10 +45,7 @@
             target="_blank"
             class="c-link g-button"
           >
-            <svg-icon
-              src="assets/icons/Github.svg"
-              [svgClass]="['g-svg']"
-            ></svg-icon>
+            <app-github-svg [class]="['g-svg']"></app-github-svg>
           </a>
           <a
             [href]="fileServer + '/' + dictionary.zip?.id + '?download'"
@@ -56,10 +53,7 @@
             target="_blank"
             class="c-link g-button"
           >
-            <svg-icon
-              src="assets/icons/download.svg"
-              [svgClass]="['g-svg']"
-            ></svg-icon>
+            <app-download-svg [class]="['g-svg']"></app-download-svg>
           </a>
         </div>
       </div>

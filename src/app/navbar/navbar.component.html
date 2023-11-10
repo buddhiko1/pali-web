@@ -25,16 +25,15 @@
       aria-label="toggle menu"
       class="c-toggle lg:hidden py-3 focus:outline-none"
     >
-      <svg-icon
-        src="assets/icons/plus.svg"
-        [svgClass]="[
+      <app-plus-svg
+        [class]="[
           'g-svg',
           'transition-transform',
           'duration-[400ms]',
           'ease-in-out',
           isMenuOpened ? 'rotate-45' : ''
         ]"
-      ></svg-icon>
+      ></app-plus-svg>
     </button>
 
     <div
@@ -64,40 +63,32 @@
 
       <button (click)="toggleDark()" class="c-theme p-1">
         @if (isDark) {
-        <svg-icon
-          src="assets/icons/moon.svg"
-          [svgClass]="['g-svg', 'g-hover']"
-        ></svg-icon>
+        <app-moon-svg [class]="['g-svg', 'g-hover']"></app-moon-svg>
         } @else {
-        <svg-icon
-          src="assets/icons/sun.svg"
-          [svgClass]="['g-svg', 'g-hover']"
-        ></svg-icon>
+        <app-sun-svg [class]="['g-svg', 'g-hover']"></app-sun-svg>
         }
       </button>
 
       <button (click)="routeTo('email')" class="c-email p-1 lg:mx-6">
-        <svg-icon
-          src="assets/icons/email.svg"
-          [svgClass]="[
+        <app-email-svg
+          [class]="[
             'g-svg',
             'g-hover',
             'w-5',
             'h-5',
             isActiveUrl('email') ? 'text-focus' : ''
           ]"
-        ></svg-icon>
+        ></app-email-svg>
       </button>
 
       <button (click)="routeTo('account')" class="c-account p-1">
-        <svg-icon
-          src="assets/icons/person.svg"
-          [svgClass]="[
+        <app-person-svg
+          [class]="[
             'g-svg',
             'g-hover',
             isActiveUrl('account') ? 'text-focus' : ''
           ]"
-        ></svg-icon>
+        ></app-person-svg>
       </button>
     </div>
   </div>

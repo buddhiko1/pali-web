@@ -1,10 +1,10 @@
 import { Component, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
-import { AngularSvgIconModule } from 'angular-svg-icon';
 
 import { Modules } from 'src/gql/graphql';
 import { SliderDirective } from '../core/slider.directive';
+import { RarrowSvgComponent } from '../svg/rarrow/rarrow.component';
 import { FadeInDirective } from '../core/fade-in.directive';
 import { PhraseComponent } from '../phrase/phrase.component';
 import { NavbarService } from '../navbar/navbar.service';
@@ -17,7 +17,7 @@ import { HomeService } from './home.service';
   imports: [
     CommonModule,
     RouterLink,
-    AngularSvgIconModule,
+    RarrowSvgComponent,
     SliderDirective,
     FadeInDirective,
     PhraseComponent,

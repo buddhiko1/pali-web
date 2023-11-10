@@ -1,13 +1,13 @@
 import { Component, OnInit, ElementRef } from '@angular/core';
 import { Router, NavigationEnd, NavigationStart } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { AngularSvgIconModule } from 'angular-svg-icon';
+import { HeartSvgComponent } from '../svg/heart/heart.component';
 import { FadeInDirective } from '../core/fade-in.directive';
 
 @Component({
   selector: 'app-footer',
   standalone: true,
-  imports: [CommonModule, AngularSvgIconModule, FadeInDirective],
+  imports: [CommonModule, HeartSvgComponent, FadeInDirective],
   templateUrl: './footer.component.html',
   styleUrl: './footer.component.css',
 })

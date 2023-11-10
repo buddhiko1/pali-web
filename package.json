@@ -27,7 +27,6 @@
     "@directus/sdk": "^13.0.1",
     "@urql/core": "^4.1.4",
     "@urql/exchange-auth": "^2.1.6",
-    "angular-svg-icon": "^16.1.0",
     "graphql": "^16.8.1",
     "ngx-device-detector": "^6.0.2",
     "ngx-rerender": "^1.2.0",

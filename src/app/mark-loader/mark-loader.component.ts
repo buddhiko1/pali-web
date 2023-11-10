@@ -1,6 +1,7 @@
 import { Component, Input, HostBinding } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AngularSvgIconModule } from 'angular-svg-icon';
+import { CheckSvgComponent } from '../svg/check/check.component';
+import { CloseSvgComponent } from '../svg/close/close.component';
 
 export enum StatusEnum {
   Idle = 'idle',
@@ -12,7 +13,7 @@ export enum StatusEnum {
 @Component({
   selector: 'app-mark-loader',
   standalone: true,
-  imports: [CommonModule, AngularSvgIconModule],
+  imports: [CommonModule, CheckSvgComponent, CloseSvgComponent],
   templateUrl: './mark-loader.component.html',
   styleUrl: './mark-loader.component.css',
 })
