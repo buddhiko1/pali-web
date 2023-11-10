@@ -9,7 +9,7 @@
   <div
     appFader
     class="c-container relative pt-1 lg:pt-4 top-0 bg-appBg shadow-sm sm:shadow-none transition-transform duration-[400ms] ease-in-out"
-    [class.c-container-hidden]="!isShow"
+    [class.c-container-hidden]="isCollapsed"
   >
     <button
       (click)="routeTo('')"

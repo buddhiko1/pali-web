@@ -1,7 +1,7 @@
-import { Component, OnDestroy } from '@angular/core';
+import { Component } from '@angular/core';
 import { CommonModule, TitleCasePipe } from '@angular/common';
 import { Router, NavigationEnd, RouterLink } from '@angular/router';
-import { fromEvent, throttleTime, Subscription } from 'rxjs';
+import { fromEvent, throttleTime } from 'rxjs';
 
 import { FadeInDirective } from '../core/fade-in.directive';
 import { OverlayComponent } from '../overlay/overlay.component';
@@ -32,12 +32,11 @@ import { RoutesFragment } from 'src/gql/graphql';
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.css',
 })
-export class NavbarComponent implements OnDestroy {
+export class NavbarComponent {
   private _activeUrl = '';
   private _previousScrollPosition = 0;
-  private _subscription: Subscription;
   showOverlay = false;
-  isShow = true;
+  isCollapsed = false;
   isDark = false;
   isMenuOpened = false;
   routes: RoutesFragment[] = [];
@@ -47,24 +46,24 @@ export class NavbarComponent implements OnDestroy {
     private _navbarService: NavbarService,
     private _scrollbarService: ScrollbarService,
   ) {
+    this._navbarService.fetchRoutes().then((routes) => {
+      this.routes = routes;
+    });
     this._router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
         this._activeUrl = event.url.split('/')[1];
       }
     });
-    this._subscription = fromEvent(document, 'scroll')
+    fromEvent(document, 'scroll')
       .pipe(throttleTime(100))
       .subscribe(() => {
         this._scrollbarService.showScrollbar();
         const currentScrollPosition = window.scrollY;
         currentScrollPosition < this._previousScrollPosition
-          ? (this.isShow = true)
-          : (this.isShow = false);
+          ? (this.isCollapsed = false)
+          : (this.isCollapsed = true);
         this._previousScrollPosition = currentScrollPosition;
       });
-    this._navbarService.fetchRoutes().then((routes) => {
-      this.routes = routes;
-    });
   }
 
   toggleMenu(): void {
@@ -92,9 +91,5 @@ export class NavbarComponent implements OnDestroy {
 
   isActiveUrl(url: string): boolean {
     return url === this._activeUrl;
-  }
-
-  ngOnDestroy(): void {
-    this._subscription.unsubscribe();
   }
 }
