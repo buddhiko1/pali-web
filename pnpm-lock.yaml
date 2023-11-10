@@ -41,9 +41,6 @@ dependencies:
   graphql:
     specifier: ^16.8.1
     version: registry.npmmirror.com/graphql@16.8.1
-  ngx-rerender:
-    specifier: ^1.2.0
-    version: registry.npmmirror.com/ngx-rerender@1.2.0(@angular/common@17.0.2)(@angular/core@17.0.2)
   rxjs:
     specifier: ~7.8.1
     version: registry.npmmirror.com/rxjs@7.8.1
@@ -4111,7 +4108,7 @@ packages:
       agent-base: registry.npmmirror.com/agent-base@7.1.0
       http-proxy-agent: registry.npmmirror.com/http-proxy-agent@7.0.0
       https-proxy-agent: registry.npmmirror.com/https-proxy-agent@7.0.2
-      lru-cache: registry.npmmirror.com/lru-cache@10.0.1
+      lru-cache: registry.npmmirror.com/lru-cache@10.0.2
       socks-proxy-agent: registry.npmmirror.com/socks-proxy-agent@8.0.2
     transitivePeerDependencies:
       - supports-color
@@ -4133,7 +4130,7 @@ packages:
     engines: {node: ^16.14.0 || >=18.0.0}
     dependencies:
       '@npmcli/promise-spawn': registry.npmmirror.com/@npmcli/promise-spawn@7.0.0
-      lru-cache: registry.npmmirror.com/lru-cache@10.0.1
+      lru-cache: registry.npmmirror.com/lru-cache@10.0.2
       npm-pick-manifest: registry.npmmirror.com/npm-pick-manifest@9.0.0
       proc-log: registry.npmmirror.com/proc-log@3.0.0
       promise-inflight: registry.npmmirror.com/promise-inflight@1.0.1
@@ -5883,7 +5880,7 @@ packages:
     hasBin: true
     dependencies:
       caniuse-lite: registry.npmmirror.com/caniuse-lite@1.0.30001561
-      electron-to-chromium: registry.npmmirror.com/electron-to-chromium@1.4.580
+      electron-to-chromium: registry.npmmirror.com/electron-to-chromium@1.4.581
       node-releases: registry.npmmirror.com/node-releases@2.0.13
       update-browserslist-db: registry.npmmirror.com/update-browserslist-db@1.0.13(browserslist@4.22.1)
     dev: true
@@ -5966,7 +5963,7 @@ packages:
       '@npmcli/fs': registry.npmmirror.com/@npmcli/fs@3.1.0
       fs-minipass: registry.npmmirror.com/fs-minipass@3.0.3
       glob: registry.npmmirror.com/glob@10.3.10
-      lru-cache: registry.npmmirror.com/lru-cache@10.0.1
+      lru-cache: registry.npmmirror.com/lru-cache@10.0.2
       minipass: registry.npmmirror.com/minipass@7.0.4
       minipass-collect: registry.npmmirror.com/minipass-collect@1.0.2
       minipass-flush: registry.npmmirror.com/minipass-flush@1.0.5
@@ -7012,10 +7009,10 @@ packages:
       jake: registry.npmmirror.com/jake@10.8.7
     dev: true
 
-  registry.npmmirror.com/electron-to-chromium@1.4.580:
-    resolution: {integrity: sha512-T5q3pjQon853xxxHUq3ZP68ZpvJHuSMY2+BZaW3QzjS4HvNuvsMmZ/+lU+nCrftre1jFZ+OSlExynXWBihnXzw==, tarball: https://registry.npmmirror.com/electron-to-chromium/-/electron-to-chromium-1.4.580.tgz}
+  registry.npmmirror.com/electron-to-chromium@1.4.581:
+    resolution: {integrity: sha512-6uhqWBIapTJUxgPTCHH9sqdbxIMPt7oXl0VcAL1kOtlU6aECdcMncCrX5Z7sHQ/invtrC9jUQUef7+HhO8vVFw==, tarball: https://registry.npmmirror.com/electron-to-chromium/-/electron-to-chromium-1.4.581.tgz}
     name: electron-to-chromium
-    version: 1.4.580
+    version: 1.4.581
     dev: true
 
   registry.npmmirror.com/emoji-regex@8.0.0:
@@ -7171,10 +7168,10 @@ packages:
       is-arrayish: registry.npmmirror.com/is-arrayish@0.2.1
     dev: true
 
-  registry.npmmirror.com/es-module-lexer@1.3.1:
-    resolution: {integrity: sha512-JUFAyicQV9mXc3YRxPnDlrfBKpqt6hUYzz9/boprUJHs4e4KVr3XwOF70doO6gwXUor6EWZJAyWAfKki84t20Q==, tarball: https://registry.npmmirror.com/es-module-lexer/-/es-module-lexer-1.3.1.tgz}
+  registry.npmmirror.com/es-module-lexer@1.4.0:
+    resolution: {integrity: sha512-lcCr3v3OLezdfFyx9r5NRYHOUTQNnFEQ9E87Mx8Kc+iqyJNkO7MJoB4GQRTlIMw9kLLTwGw0OAkm4BQQud/d9g==, tarball: https://registry.npmmirror.com/es-module-lexer/-/es-module-lexer-1.4.0.tgz}
     name: es-module-lexer
-    version: 1.3.1
+    version: 1.4.0
     dev: true
 
   registry.npmmirror.com/esbuild-wasm@0.19.5:
@@ -8342,7 +8339,7 @@ packages:
     version: 7.0.1
     engines: {node: ^16.14.0 || >=18.0.0}
     dependencies:
-      lru-cache: registry.npmmirror.com/lru-cache@10.0.1
+      lru-cache: registry.npmmirror.com/lru-cache@10.0.2
     dev: true
 
   registry.npmmirror.com/hpack.js@2.1.6:
@@ -9674,11 +9671,13 @@ packages:
       tslib: registry.npmmirror.com/tslib@2.6.2
     dev: true
 
-  registry.npmmirror.com/lru-cache@10.0.1:
-    resolution: {integrity: sha512-IJ4uwUTi2qCccrioU6g9g/5rvvVl13bsdczUUcqbciD9iLr095yj8DQKdObriEvuNSx325N1rV1O0sJFszx75g==, tarball: https://registry.npmmirror.com/lru-cache/-/lru-cache-10.0.1.tgz}
+  registry.npmmirror.com/lru-cache@10.0.2:
+    resolution: {integrity: sha512-Yj9mA8fPiVgOUpByoTZO5pNrcl5Yk37FcSHsUINpAsaBIEZIuqcCclDZJCVxqQShDsmYX8QG63svJiTbOATZwg==, tarball: https://registry.npmmirror.com/lru-cache/-/lru-cache-10.0.2.tgz}
     name: lru-cache
-    version: 10.0.1
+    version: 10.0.2
     engines: {node: 14 || >=16.14}
+    dependencies:
+      semver: registry.npmmirror.com/semver@7.5.4
     dev: true
 
   registry.npmmirror.com/lru-cache@5.1.1:
@@ -10150,20 +10149,6 @@ packages:
     name: neo-async
     version: 2.6.2
     dev: true
-
-  registry.npmmirror.com/ngx-rerender@1.2.0(@angular/common@17.0.2)(@angular/core@17.0.2):
-    resolution: {integrity: sha512-7IAT0SbUelvJdpEJVuc3UTaXhYR6F/iO5GjNmdx5vNaXKhcKrygZMu7DYF+CoVuZ8NB51/X7tmzJs/9FjknvUg==, tarball: https://registry.npmmirror.com/ngx-rerender/-/ngx-rerender-1.2.0.tgz}
-    id: registry.npmmirror.com/ngx-rerender/1.2.0
-    name: ngx-rerender
-    version: 1.2.0
-    peerDependencies:
-      '@angular/common': '>=10.0.0'
-      '@angular/core': '>=10.0.0'
-    dependencies:
-      '@angular/common': registry.npmmirror.com/@angular/common@17.0.2(@angular/core@17.0.2)(rxjs@7.8.1)
-      '@angular/core': registry.npmmirror.com/@angular/core@17.0.2(rxjs@7.8.1)(zone.js@0.14.2)
-      tslib: registry.npmmirror.com/tslib@2.6.2
-    dev: false
 
   registry.npmmirror.com/nice-napi@1.0.2:
     resolution: {integrity: sha512-px/KnJAJZf5RuBGcfD+Sp2pAKq0ytz8j+1NehvgIGFkvtvFrDM3T8E4x/JJODXK9WZow8RRGrbA9QQ3hs+pDhA==, tarball: https://registry.npmmirror.com/nice-napi/-/nice-napi-1.0.2.tgz}
@@ -10905,7 +10890,7 @@ packages:
     version: 1.10.1
     engines: {node: '>=16 || 14 >=14.17'}
     dependencies:
-      lru-cache: registry.npmmirror.com/lru-cache@10.0.1
+      lru-cache: registry.npmmirror.com/lru-cache@10.0.2
       minipass: registry.npmmirror.com/minipass@7.0.4
     dev: true
 
@@ -13427,7 +13412,7 @@ packages:
       browserslist: registry.npmmirror.com/browserslist@4.22.1
       chrome-trace-event: registry.npmmirror.com/chrome-trace-event@1.0.3
       enhanced-resolve: registry.npmmirror.com/enhanced-resolve@5.15.0
-      es-module-lexer: registry.npmmirror.com/es-module-lexer@1.3.1
+      es-module-lexer: registry.npmmirror.com/es-module-lexer@1.4.0
       eslint-scope: registry.npmmirror.com/eslint-scope@5.1.1
       events: registry.npmmirror.com/events@3.3.0
       glob-to-regexp: registry.npmmirror.com/glob-to-regexp@0.4.1

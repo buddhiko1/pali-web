@@ -38,7 +38,7 @@ export class UploaderComponent implements AfterViewInit {
     this.fileInput.nativeElement.click();
   }
 
-  async onChange(event: Event): Promise<void> {
+  async onChanged(event: Event): Promise<void> {
     const fileInput = event.target as HTMLInputElement;
     if (fileInput.files) {
       this.showLoader = true;
@@ -85,7 +85,7 @@ export class UploaderComponent implements AfterViewInit {
   onActionDone(): void {
     this.failed.emit();
   }
-  onCancel(): void {
+  onCanceled(): void {
     this.failed.emit();
   }
 }
