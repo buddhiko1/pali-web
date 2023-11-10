@@ -17,7 +17,7 @@ import { OverlayComponent } from 'src/app/overlay/overlay.component';
 import { UrlEnum } from '../account-routing.module';
 import { AccountService } from '../account.service';
 import { RegisteredEmailValidator } from '../email.validator';
-import { RoleFieldsFragment } from 'src/gql/graphql';
+import { RoleFragment } from 'src/gql/graphql';
 
 @Component({
   selector: 'app-account-create',
@@ -71,7 +71,7 @@ export class AccountCreateComponent implements OnInit {
       return;
     }
 
-    const roles: RoleFieldsFragment[] = await this._accountService.fetchRoles();
+    const roles: RoleFragment[] = await this._accountService.fetchRoles();
     const role = roles.find((role) => role.name === RoleEnum.User);
     if (!role) {
       throw new Error('user role not founded');

@@ -8,7 +8,7 @@ import { UploaderComponent } from 'src/app/uploader/uploader.component';
 import { FadeInDirective } from 'src/app/core/fade-in.directive';
 import { AccountService } from '../account.service';
 import { UrlEnum } from '../account-routing.module';
-import { MeFieldsFragment } from 'src/gql/graphql';
+import { MeFragment } from 'src/gql/graphql';
 
 @Component({
   selector: 'app-me',
@@ -29,7 +29,7 @@ export class MeComponent {
     private _activeRoute: ActivatedRoute,
   ) {}
 
-  get me(): MeFieldsFragment | null {
+  get me(): MeFragment | null {
     return this._storageService.me;
   }
 

@@ -1,7 +1,7 @@
 import { graphql } from 'src/gql';
 
 graphql(`
-  fragment MeFields on directus_users {
+  fragment Me on directus_users {
     first_name
     last_name
     avatar {
@@ -17,7 +17,7 @@ graphql(`
       name
     }
   }
-  fragment RoleFields on directus_roles {
+  fragment Role on directus_roles {
     id
     name
   }
@@ -38,7 +38,7 @@ graphql(`
     auth_password_reset(token: $token, password: $password)
   }
   mutation Login($email: String!, $password: String!) {
-    login: auth_login(email: $email, password: $password) {
+    authToken: auth_login(email: $email, password: $password) {
       access_token
       refresh_token
     }
@@ -47,14 +47,14 @@ graphql(`
     auth_logout(refresh_token: $tokenForRefresh)
   }
   mutation RefreshToken($tokenForRefresh: String!) {
-    refresh: auth_refresh(refresh_token: $tokenForRefresh, mode: json) {
+    refreshedToken: auth_refresh(refresh_token: $tokenForRefresh, mode: json) {
       access_token
       refresh_token
     }
   }
   mutation UpdateMe($data: update_directus_users_input!) {
-    update_users_me(data: $data) {
-      ...MeFields
+    updatedMe: update_users_me(data: $data) {
+      ...Me
     }
   }
   mutation DeleteOldAvatar($avatarId: ID!) {
@@ -72,14 +72,14 @@ graphql(`
       id
     }
   }
-  query Me {
-    users_me {
-      ...MeFields
+  query UserMe {
+    me: users_me {
+      ...Me
     }
   }
   query Roles {
     roles {
-      ...RoleFields
+      ...Role
     }
   }
 `);

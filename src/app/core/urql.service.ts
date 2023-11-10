@@ -20,8 +20,8 @@ export async function refreshToken() {
   const result = await client.mutation(RefreshTokenDocument, {
     tokenForRefresh: _storageService.tokenForRefresh,
   });
-  if (result?.data?.refresh) {
-    _storageService.saveAuthToken(result?.data?.refresh);
+  if (result?.data?.refreshedToken) {
+    _storageService.saveAuthToken(result?.data?.refreshedToken);
   } else {
     _storageService.clearAccountData();
   }

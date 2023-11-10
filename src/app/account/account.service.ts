@@ -19,12 +19,12 @@ import {
   ResetPasswordDocument,
   ResetPasswordMutationVariables,
   UserWithEmailDocument,
-  MeDocument,
-  RoleFieldsFragment,
+  UserMeDocument,
+  RoleFragment,
   RolesDocument,
   UpdateMeDocument,
   Update_Directus_Users_Input,
-  MeFieldsFragment,
+  MeFragment,
   DeleteOldAvatarDocument,
   DeleteOldAvatarMutationVariables,
   FolderWithNameDocument,
@@ -80,7 +80,7 @@ export class AccountService {
   async login(args: LoginMutationVariables): Promise<void> {
     const loginResult = await this._systemClient.mutation(LoginDocument, args);
     const data = validateAndExtractResult(loginResult);
-    this._storageService.saveAuthToken(data.login as Auth_Tokens);
+    this._storageService.saveAuthToken(data.authToken as Auth_Tokens);
     await this.fetchMe();
   }
 
@@ -92,24 +92,24 @@ export class AccountService {
   }
 
   async fetchMe(): Promise<void> {
-    const result = await this._systemClient.query(MeDocument, {});
+    const result = await this._systemClient.query(UserMeDocument, {});
     const data = validateAndExtractResult(result);
-    const me = data.users_me;
+    const me = data.me;
     this._storageService.saveMe(me);
   }
 
-  async fetchRoles(): Promise<RoleFieldsFragment[]> {
+  async fetchRoles(): Promise<RoleFragment[]> {
     const result = await this._systemClient.query(RolesDocument, {});
     const data = validateAndExtractResult(result);
     return data.roles;
   }
 
-  async updateMe(args: Update_Directus_Users_Input): Promise<MeFieldsFragment> {
+  async updateMe(args: Update_Directus_Users_Input): Promise<MeFragment> {
     const result = await this._systemClient.mutation(UpdateMeDocument, {
       data: args,
     });
     const data = validateAndExtractResult(result);
-    return data.update_users_me;
+    return data.updatedMe;
   }
 
   async fetchAvatarFolderId(): Promise<string> {
