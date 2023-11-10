@@ -9,10 +9,7 @@ import {
 
 import { NavigationService } from 'src/app/core/navigation.service';
 import { PromptEnum } from 'src/app/core/prompts.interaction';
-import {
-  StatusEnum as LoaderStatusEnum,
-  LoaderComponent,
-} from 'src/app/loader/loader.component';
+import { LoaderComponent } from 'src/app/loader/loader.component';
 import { SliderDirective } from 'src/app/core/slider.directive';
 import { OverlayComponent } from 'src/app/overlay/overlay.component';
 
@@ -36,11 +33,12 @@ export class PasswordResetComponent implements OnInit {
   UrlEnum = UrlEnum;
   form!: FormGroup;
 
-  loaderStatus = LoaderStatusEnum.Idle;
-  loaderPrompt = '';
-
   private _token = '';
   private _email = '';
+
+  showLoader = false;
+  errorInfo = '';
+  successInfo = '';
 
   constructor(
     private _router: Router,
@@ -66,17 +64,9 @@ export class PasswordResetComponent implements OnInit {
     });
   }
 
-  get isLoaderActived(): boolean {
-    return this.loaderStatus !== LoaderStatusEnum.Idle;
-  }
-
   get password() {
     // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
     return this.form.get('password')!;
-  }
-
-  get isSuccessful(): boolean {
-    return this.loaderStatus === LoaderStatusEnum.Successful;
   }
 
   onSubmit(): void {
@@ -89,28 +79,26 @@ export class PasswordResetComponent implements OnInit {
       password: this.form.getRawValue().password,
     };
 
-    this.loaderStatus = LoaderStatusEnum.Loading;
+    this.showLoader = true;
 
     this._accountService
       .resetPassword(args)
       .then(() => {
-        this.loaderStatus = LoaderStatusEnum.Successful;
-        this.loaderPrompt = PromptEnum.Reset;
+        this.successInfo = PromptEnum.Reset;
       })
       .catch((error) => {
-        this.loaderStatus = LoaderStatusEnum.Failed;
-        this.loaderPrompt = error.toString();
+        this.errorInfo = error.toString();
       });
   }
 
-  routeToLogin(): void {
-    this._accountService.logout();
-    this._router.navigate([`../${UrlEnum.Login}`], {
-      relativeTo: this._activeRoute,
-    });
-  }
-
-  goback(): void {
-    this._navigationService.back();
+  async onActionDone(): Promise<void> {
+    if (this.successInfo) {
+      await this._accountService.logout();
+      this._router.navigate([`../${UrlEnum.Login}`], {
+        relativeTo: this._activeRoute,
+      });
+    } else {
+      this._navigationService.back();
+    }
   }
 }

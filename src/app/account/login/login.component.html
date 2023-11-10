@@ -1,12 +1,10 @@
 <div>
-  @if (isLoaderActived) {
+  @if (showLoader) {
   <app-loader
     title="Logging..."
-    [status]="loaderStatus"
-    [prompt]="loaderPrompt"
-    [stayWhenFailed]="true"
-    (failed)="reEdit()"
-    (successful)="routeToMe()"
+    [errorInfo]="errorInfo"
+    [successInfo]="successInfo"
+    (done)="onActionDone()"
     class="c-loader mt-12 sm:mt-24"
   ></app-loader>
   } @else {

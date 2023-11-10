@@ -11,10 +11,7 @@ import { CreateAccountMutationVariables } from 'src/gql/graphql';
 import { NavigationService } from 'src/app/core/navigation.service';
 import { RoleEnum } from 'src/app/core/value.cms';
 import { PromptEnum } from 'src/app/core/prompts.interaction';
-import {
-  StatusEnum as LoaderStatusEnum,
-  LoaderComponent,
-} from 'src/app/loader/loader.component';
+import { LoaderComponent } from 'src/app/loader/loader.component';
 import { SliderDirective } from 'src/app/core/slider.directive';
 import { OverlayComponent } from 'src/app/overlay/overlay.component';
 import { UrlEnum } from '../account-routing.module';
@@ -38,8 +35,9 @@ export class AccountCreateComponent implements OnInit {
   form!: FormGroup;
   UrlEnum = UrlEnum;
 
-  loaderStatus = LoaderStatusEnum.Idle;
-  loaderPrompt = '';
+  showLoader = false;
+  errorInfo = '';
+  successInfo = '';
 
   constructor(
     private _router: Router,
@@ -63,10 +61,6 @@ export class AccountCreateComponent implements OnInit {
     });
   }
 
-  get isLoaderActived(): boolean {
-    return this.loaderStatus !== LoaderStatusEnum.Idle;
-  }
-
   get email() {
     // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
     return this.form.get('email')!;
@@ -88,30 +82,32 @@ export class AccountCreateComponent implements OnInit {
       urlForInit: `${location.protocol}//${location.host}/account/${UrlEnum.AccountInit}`, // confiured in the config.json of pali-cms.
     };
 
-    this.loaderStatus = LoaderStatusEnum.Loading;
+    this.showLoader = true;
 
     this._accountService
       .createAccount(args)
       .then(() => {
         // wait for 3 seconds for user to receive the email.
         setTimeout(() => {
-          this.loaderStatus = LoaderStatusEnum.Successful;
-          this.loaderPrompt = PromptEnum.SignUp;
+          this.successInfo = PromptEnum.SignUp;
         }, 3000);
       })
       .catch((error) => {
-        this.loaderStatus = LoaderStatusEnum.Failed;
-        this.loaderPrompt = error.toString();
+        this.errorInfo = error.toString();
       });
-  }
-
-  goback(): void {
-    this._navigationService.back();
   }
 
   routeToLogin(): void {
     this._router.navigate([`../${UrlEnum.Login}`], {
       relativeTo: this._activeRoute,
     });
+  }
+
+  onActionDone(): void {
+    if (this.successInfo) {
+      this.routeToLogin();
+    } else {
+      this._navigationService.back();
+    }
   }
 }

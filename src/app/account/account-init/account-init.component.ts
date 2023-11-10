@@ -7,10 +7,7 @@ import {
   ReactiveFormsModule,
 } from '@angular/forms';
 
-import {
-  StatusEnum as LoaderStatusEnum,
-  LoaderComponent,
-} from 'src/app/loader/loader.component';
+import { LoaderComponent } from 'src/app/loader/loader.component';
 import { NavigationService } from 'src/app/core/navigation.service';
 import { SliderDirective } from 'src/app/core/slider.directive';
 import { OverlayComponent } from 'src/app/overlay/overlay.component';
@@ -40,8 +37,9 @@ export class AccountInitComponent implements OnInit {
   private _token = '';
   private _email = '';
 
-  loaderStatus = LoaderStatusEnum.Idle;
-  loaderPrompt = '';
+  showLoader = false;
+  errorInfo = '';
+  successInfo = '';
 
   constructor(
     private _router: Router,
@@ -67,17 +65,13 @@ export class AccountInitComponent implements OnInit {
     });
   }
 
-  get isLoaderActived(): boolean {
-    return this.loaderStatus !== LoaderStatusEnum.Idle;
-  }
-
   get password() {
     // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
     return this.form.get('password')!;
   }
 
   onSubmit(): void {
-    this.loaderStatus = LoaderStatusEnum.Loading;
+    this.showLoader = true;
     const args: InitAccountMutationVariables = {
       token: this._token,
       password: this.form.getRawValue().password,
@@ -85,16 +79,12 @@ export class AccountInitComponent implements OnInit {
     this._accountService
       .initAccount(args)
       .then(() => {
-        this.loaderStatus = LoaderStatusEnum.Successful;
+        this.showLoader = false;
+        this.login();
       })
       .catch((error) => {
-        this.loaderStatus = LoaderStatusEnum.Failed;
-        this.loaderPrompt = error.toString();
+        this.errorInfo = error.toString();
       });
-  }
-
-  goback(): void {
-    this._navigationService.back();
   }
 
   login(): void {
@@ -107,5 +97,9 @@ export class AccountInitComponent implements OnInit {
         relativeTo: this._activeRoute,
       });
     });
+  }
+
+  onActionDone(): void {
+    this._navigationService.back();
   }
 }

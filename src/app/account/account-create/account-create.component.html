@@ -1,13 +1,10 @@
 <div>
-  @if (isLoaderActived) {
+  @if (showLoader) {
   <app-loader
     title="SignUp..."
-    [status]="loaderStatus"
-    [prompt]="loaderPrompt"
-    [stayWhenSuccessful]="true"
-    [stayWhenFailed]="true"
-    (failed)="goback()"
-    (successful)="routeToLogin()"
+    [errorInfo]="errorInfo"
+    [successInfo]="successInfo"
+    (done)="onActionDone()"
     class="c-loader mt-12 sm:mt-24"
   ></app-loader>
   } @else {

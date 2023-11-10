@@ -1,11 +1,10 @@
 <div class="c-container">
-  @if (isLoaderActived) {
+  @if (showLoader) {
   <app-loader
     title="Uploading..."
-    [status]="loaderStatus"
-    [prompt]="loaderPrompt"
-    [stayWhenFailed]="true"
-    (failed)="onFailed()"
+    [errorInfo]="errorInfo"
+    [successInfo]="successInfo"
+    (done)="onActionDone()"
     class="mt-12 sm:mt-20"
   ></app-loader>
   }
@@ -14,6 +13,6 @@
     type="file"
     [accept]="allowedExtensions"
     (change)="onChange($event)"
-    (cancel)="onFailed()"
+    (cancel)="onCancel()"
   />
 </div>

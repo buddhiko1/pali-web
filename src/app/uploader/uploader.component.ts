@@ -9,10 +9,7 @@ import {
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import {
-  StatusEnum as LoaderStatusEnum,
-  LoaderComponent,
-} from '../loader/loader.component';
+import { LoaderComponent } from '../loader/loader.component';
 import { OverlayComponent } from '../overlay/overlay.component';
 import { UploaderService } from './uploader.service';
 
@@ -31,9 +28,9 @@ export class UploaderComponent implements AfterViewInit {
   @Output() successful = new EventEmitter<string>();
   @Output() failed = new EventEmitter<void>();
   @ViewChild('fileInput') fileInput!: ElementRef;
-
-  loaderStatus = LoaderStatusEnum.Idle;
-  loaderPrompt = '';
+  showLoader = false;
+  errorInfo = '';
+  successInfo = '';
 
   constructor(private _uploaderService: UploaderService) {}
 
@@ -41,16 +38,12 @@ export class UploaderComponent implements AfterViewInit {
     this.fileInput.nativeElement.click();
   }
 
-  get isLoaderActived(): boolean {
-    return this.loaderStatus !== LoaderStatusEnum.Idle;
-  }
-
   async onChange(event: Event): Promise<void> {
     const fileInput = event.target as HTMLInputElement;
     if (fileInput.files) {
-      const file = fileInput.files[0];
-      this.loaderStatus = LoaderStatusEnum.Loading;
+      this.showLoader = true;
 
+      const file = fileInput.files[0];
       const fileName = this.fileInput.nativeElement.value;
       const fileExtension = fileName
         .substring(fileName.lastIndexOf('.'))
@@ -68,8 +61,7 @@ export class UploaderComponent implements AfterViewInit {
 
       if (validationError) {
         this.fileInput.nativeElement.value = '';
-        this.loaderPrompt = validationError;
-        this.loaderStatus = LoaderStatusEnum.Failed;
+        this.errorInfo = validationError;
         return;
       }
 
@@ -81,17 +73,19 @@ export class UploaderComponent implements AfterViewInit {
       formData.append('file', file);
       try {
         const uploadedFile = await this._uploaderService.upload(formData);
-        this.loaderStatus = LoaderStatusEnum.Successful;
+        this.showLoader = false;
         this.successful.emit(uploadedFile.id);
       } catch (error) {
         //TODO set useful error message.
-        this.loaderPrompt = 'Failed to upload file.';
-        this.loaderStatus = LoaderStatusEnum.Failed;
+        this.errorInfo = 'Failed to upload file.';
       }
     }
   }
 
-  onFailed(): void {
+  onActionDone(): void {
+    this.failed.emit();
+  }
+  onCancel(): void {
     this.failed.emit();
   }
 }

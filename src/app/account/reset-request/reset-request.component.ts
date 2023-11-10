@@ -8,10 +8,7 @@ import {
 
 import { NavigationService } from 'src/app/core/navigation.service';
 import { PromptEnum } from 'src/app/core/prompts.interaction';
-import {
-  StatusEnum as LoaderStatusEnum,
-  LoaderComponent,
-} from 'src/app/loader/loader.component';
+import { LoaderComponent } from 'src/app/loader/loader.component';
 import { SliderDirective } from 'src/app/core/slider.directive';
 import { OverlayComponent } from 'src/app/overlay/overlay.component';
 
@@ -35,8 +32,9 @@ import { RequestResetMutationVariables } from 'src/gql/graphql';
 export class ResetRequestComponent implements OnInit {
   form!: FormGroup;
 
-  loaderStatus = LoaderStatusEnum.Idle;
-  loaderPrompt = '';
+  showLoader = false;
+  errorInfo = '';
+  successInfo = '';
 
   constructor(
     private _accountService: AccountService,
@@ -58,10 +56,6 @@ export class ResetRequestComponent implements OnInit {
     });
   }
 
-  get isLoaderActived(): boolean {
-    return this.loaderStatus !== LoaderStatusEnum.Idle;
-  }
-
   get email() {
     // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
     return this.form.get('email')!;
@@ -73,21 +67,19 @@ export class ResetRequestComponent implements OnInit {
       urlForReset: `${location.protocol}//${location.host}/account/${UrlEnum.PasswordReset}`, // confiured in the config.json of pali-cms.
     };
 
-    this.loaderStatus = LoaderStatusEnum.Loading;
+    this.showLoader = true;
 
     this._accountService
       .requestReset(args)
       .then(() => {
-        this.loaderStatus = LoaderStatusEnum.Successful;
-        this.loaderPrompt = PromptEnum.RequestReset;
+        this.successInfo = PromptEnum.RequestReset;
       })
       .catch((error) => {
-        this.loaderStatus = LoaderStatusEnum.Failed;
-        this.loaderPrompt = error.toString();
+        this.errorInfo = error.toString();
       });
   }
 
-  goBack(): void {
+  onActionDone(): void {
     this._navigationService.back();
   }
 }

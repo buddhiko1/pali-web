@@ -7,10 +7,7 @@ import {
 } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 
-import {
-  StatusEnum as LoaderStatusEnum,
-  LoaderComponent,
-} from 'src/app/loader/loader.component';
+import { LoaderComponent } from 'src/app/loader/loader.component';
 import { SliderDirective } from 'src/app/core/slider.directive';
 import { OverlayComponent } from 'src/app/overlay/overlay.component';
 import { UrlEnum } from '../account-routing.module';
@@ -34,8 +31,9 @@ export class LoginComponent implements OnInit {
   form!: FormGroup;
   UrlEnum = UrlEnum;
 
-  loaderStatus = LoaderStatusEnum.Idle;
-  loaderPrompt = '';
+  showLoader = false;
+  errorInfo = '';
+  successInfo = '';
 
   constructor(
     private _router: Router,
@@ -62,10 +60,6 @@ export class LoginComponent implements OnInit {
     });
   }
 
-  get isLoaderActived(): boolean {
-    return this.loaderStatus !== LoaderStatusEnum.Idle;
-  }
-
   get email() {
     // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
     return this.form.get('email')!;
@@ -86,27 +80,29 @@ export class LoginComponent implements OnInit {
       password: this.form.getRawValue().password,
     };
 
-    this.loaderStatus = LoaderStatusEnum.Loading;
+    this.showLoader = true;
 
     this._accountService
       .login(args)
       .then(() => {
-        this.loaderStatus = LoaderStatusEnum.Successful;
+        this.showLoader = false;
+        this.routeToMe();
       })
       .catch((error) => {
-        this.loaderStatus = LoaderStatusEnum.Failed;
-        this.loaderPrompt = error.toString();
+        this.errorInfo = error.toString();
       });
-  }
-
-  reEdit(): void {
-    this.loaderStatus = LoaderStatusEnum.Idle;
   }
 
   routeToMe(): void {
     this._router.navigate([`../${UrlEnum.Me}`], {
       relativeTo: this._activeRoute,
     });
+  }
+
+  onActionDone(): void {
+    this.showLoader = false;
+    this.errorInfo = '';
+    this.successInfo = '';
   }
 
   onRequestReset(): void {
