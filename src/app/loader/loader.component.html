@@ -13,16 +13,7 @@
       {{ errorInfo ? "Failed" : successInfo ? "Successful" : title }}
     </h2>
     @if (errorInfo || successInfo) {
-    <p
-      appFader
-      [class]="[
-        'c-text',
-        'g-text',
-        'text-center',
-        'mx-4',
-        successInfo ? 'text-ok' : 'text-error'
-      ]"
-    >
+    <p appFader [class]="['c-text', 'g-text', 'text-center', 'mx-4']">
       {{ errorInfo || successInfo }}
     </p>
     <button
