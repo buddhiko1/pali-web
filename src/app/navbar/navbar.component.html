@@ -45,14 +45,14 @@
       ]"
     >
       <ul class="c-index">
-        @for ( module of modules; track module.index) {
+        @for ( item of routes; track item.name) {
         <li class="c-index-item mt-2 sm:ml-5 lg:mt-0 lg:mx-4">
           <button
-            (click)="routeTo(module.route)"
+            (click)="routeTo(item.route)"
             class="p-1 g-text g-hover"
-            [class.text-focus]="isActiveUrl(module.route)"
+            [class.text-focus]="isActiveUrl(item.route)"
           >
-            {{ module.name | titlecase }}
+            {{ item.name | titlecase }}
           </button>
         </li>
         }

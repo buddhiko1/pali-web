@@ -7,7 +7,6 @@ import { FadeInDirective } from '../core/fade-in.directive';
 import { BackButtonDirective } from '../core/back-button.directive';
 import { LarrowSvgComponent } from '../svg/larrow/larrow.component';
 import { SnowBgComponent } from '../snow-bg/snow-bg.component';
-import { NavbarService } from '../navbar/navbar.service';
 
 @Component({
   selector: 'app-placeholder-page',
@@ -26,10 +25,7 @@ import { NavbarService } from '../navbar/navbar.service';
 export class PlaceholderPageComponent {
   text = '';
 
-  constructor(
-    private _navbarService: NavbarService,
-    private _activeRoute: ActivatedRoute,
-  ) {
+  constructor(private _activeRoute: ActivatedRoute) {
     this._activeRoute.params.subscribe((params: Params) => {
       this.text = params['text'];
     });
