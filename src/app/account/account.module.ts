@@ -2,11 +2,11 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 
-import { SliderDirective } from 'src/app/core/slider.directive';
+import { SliderDirective } from '../core/slider.directive';
 import { FadeInDirective } from '../core/fade-in.directive';
-import { LoaderComponent } from 'src/app/loader/loader.component';
-import { UploaderComponent } from 'src/app/uploader/uploader.component';
-import { OverlayComponent } from 'src/app/overlay/overlay.component';
+import { LoaderComponent } from '../loader/loader.component';
+import { UploaderComponent } from '../uploader/uploader.component';
+import { OverlayComponent } from '../overlay/overlay.component';
 
 import { AccountRoutingModule } from './account-routing.module';
 import { LoginComponent } from './login/login.component';

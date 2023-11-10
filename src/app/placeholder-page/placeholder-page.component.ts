@@ -3,12 +3,12 @@ import { CommonModule } from '@angular/common';
 import { ActivatedRoute, Params } from '@angular/router';
 import { DeviceDetectorService } from 'ngx-device-detector';
 
-import { SliderDirective } from 'src/app/core/slider.directive';
+import { SliderDirective } from '../core/slider.directive';
 import { FadeInDirective } from '../core/fade-in.directive';
-import { BackButtonDirective } from 'src/app/core/back-button.directive';
+import { BackButtonDirective } from '../core/back-button.directive';
 import { LarrowSvgComponent } from '../svg/larrow/larrow.component';
-import { NavbarService } from 'src/app/navbar/navbar.service';
-import { SnowBgComponent } from 'src/app/snow-bg/snow-bg.component';
+import { SnowBgComponent } from '../snow-bg/snow-bg.component';
+import { NavbarService } from '../navbar/navbar.service';
 
 @Component({
   selector: 'app-placeholder-page',

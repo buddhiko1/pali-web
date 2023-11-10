@@ -1,22 +1,21 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
-import { MeFieldsFragment } from 'src/gql/graphql';
 import { environment } from 'src/environments/environment';
 import { StorageService } from 'src/app/core/storage.service';
 import { NavigationService } from 'src/app/core/navigation.service';
+import { UploaderComponent } from 'src/app/uploader/uploader.component';
+import { FadeInDirective } from 'src/app/core/fade-in.directive';
 import { AccountService } from '../account.service';
 import { UrlEnum } from '../account-routing.module';
-import { UploaderComponent } from '../../uploader/uploader.component';
-import { FadeInDirective } from '../../core/fade-in.directive';
-import { NgIf } from '@angular/common';
+import { MeFieldsFragment } from 'src/gql/graphql';
 
 @Component({
   selector: 'app-me',
   templateUrl: './me.component.html',
   styleUrl: './me.component.css',
   standalone: true,
-  imports: [NgIf, FadeInDirective, UploaderComponent],
+  imports: [FadeInDirective, UploaderComponent],
 })
 export class MeComponent {
   showUploader = false;

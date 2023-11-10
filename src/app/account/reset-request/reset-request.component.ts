@@ -6,19 +6,19 @@ import {
   ReactiveFormsModule,
 } from '@angular/forms';
 
-import { RequestResetMutationVariables } from 'src/gql/graphql';
-
 import { NavigationService } from 'src/app/core/navigation.service';
 import { PromptEnum } from 'src/app/core/prompts.interaction';
-import { StatusEnum as LoaderStatusEnum } from 'src/app/loader/loader.component';
+import {
+  StatusEnum as LoaderStatusEnum,
+  LoaderComponent,
+} from 'src/app/loader/loader.component';
+import { SliderDirective } from 'src/app/core/slider.directive';
+import { OverlayComponent } from 'src/app/overlay/overlay.component';
 
 import { UrlEnum } from '../account-routing.module';
 import { AccountService } from '../account.service';
 import { UnRegisteredEmailValidator } from '../email.validator';
-import { LoaderComponent } from '../../loader/loader.component';
-import { SliderDirective } from '../../core/slider.directive';
-import { OverlayComponent } from '../../overlay/overlay.component';
-import { NgIf } from '@angular/common';
+import { RequestResetMutationVariables } from 'src/gql/graphql';
 
 @Component({
   selector: 'app-reset-request',
@@ -26,10 +26,9 @@ import { NgIf } from '@angular/common';
   styleUrl: './reset-request.component.css',
   standalone: true,
   imports: [
-    NgIf,
+    ReactiveFormsModule,
     OverlayComponent,
     SliderDirective,
-    ReactiveFormsModule,
     LoaderComponent,
   ],
 })

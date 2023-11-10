@@ -4,7 +4,6 @@ import { authExchange } from '@urql/exchange-auth';
 
 import { environment } from 'src/environments/environment';
 import { StorageService } from './storage.service';
-
 import { RefreshTokenDocument } from 'src/gql/graphql';
 
 const _errorExchange = mapExchange({

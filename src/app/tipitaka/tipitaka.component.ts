@@ -1,6 +1,7 @@
 import { Component, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+import { environment } from 'src/environments/environment';
 import { Config as BookConfig } from '../book/book.model';
 import { NavbarService } from '../navbar/navbar.service';
 import { BookComponent, DirectionEnum } from '../book/book.component';
@@ -9,9 +10,8 @@ import { FadeInDirective } from '../core/fade-in.directive';
 import { GithubSvgComponent } from '../svg/github/github.component';
 import { DownloadSvgComponent } from '../svg/download/download.component';
 import { QuoteSvgComponent } from '../svg/quote/quote.component';
-import { environment } from 'src/environments/environment';
-import { Tipitaka, Cites } from 'src/gql/graphql';
 import { TipitakaService } from './tipitaka.service';
+import { Tipitaka, Cites } from 'src/gql/graphql';
 
 @Component({
   selector: 'app-tipitaka',

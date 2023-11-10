@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import { StorageService } from 'src/app/core/storage.service';
+import { StorageService } from './storage.service';
 import { RoleEnum } from './value.cms';
 
 @Injectable({

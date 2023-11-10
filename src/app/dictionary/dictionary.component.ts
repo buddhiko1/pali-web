@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+import { environment } from 'src/environments/environment';
 import { SliderDirective } from '../core/slider.directive';
 import { GithubSvgComponent } from '../svg/github/github.component';
 import { DownloadSvgComponent } from '../svg/download/download.component';
 import { SafeHtmlPipe } from '../core/safe-html.pipe';
 import { BookComponent, DirectionEnum } from '../book/book.component';
 import { Config as BookConfig } from '../book/book.model';
-import { environment } from 'src/environments/environment';
 import { DictionaryService } from './dictionary.service';
 import { Dictionaries, Dict_Introduction } from 'src/gql/graphql';
 

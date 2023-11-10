@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 import { createDirectus, staticToken, rest, uploadFiles } from '@directus/sdk';
 
-import { StorageService } from 'src/app/core/storage.service';
-import { refreshToken } from 'src/app/core/urql.service';
-import { FileFieldsFragment } from 'src/gql/graphql';
 import { environment } from 'src/environments/environment';
+import { StorageService } from '../core/storage.service';
+import { refreshToken } from '../core/urql.service';
+import { FileFieldsFragment } from 'src/gql/graphql';
 
 @Injectable({ providedIn: 'root' })
 export class UploaderService {

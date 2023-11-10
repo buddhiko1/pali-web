@@ -11,10 +11,8 @@ import { MoonSvgComponent } from '../svg/moon/moon.component';
 import { SunSvgComponent } from '../svg/sun/sun.component';
 import { EmailSvgComponent } from '../svg/email/email.component';
 import { PersonSvgComponent } from '../svg/person/person.component';
-
-import { Modules } from 'src/gql/graphql';
-
 import { NavbarService } from './navbar.service';
+import { Modules } from 'src/gql/graphql';
 
 @Component({
   selector: 'app-navbar',

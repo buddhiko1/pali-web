@@ -8,18 +8,18 @@ import {
 } from '@angular/forms';
 
 import {
+  StatusEnum as LoaderStatusEnum,
+  LoaderComponent,
+} from 'src/app/loader/loader.component';
+import { NavigationService } from 'src/app/core/navigation.service';
+import { SliderDirective } from 'src/app/core/slider.directive';
+import { OverlayComponent } from 'src/app/overlay/overlay.component';
+import { UrlEnum } from '../account-routing.module';
+import { AccountService } from '../account.service';
+import {
   InitAccountMutationVariables,
   LoginMutationVariables,
 } from 'src/gql/graphql';
-import { StatusEnum as LoaderStatusEnum } from 'src/app/loader/loader.component';
-import { NavigationService } from 'src/app/core/navigation.service';
-
-import { UrlEnum } from '../account-routing.module';
-import { AccountService } from '../account.service';
-import { LoaderComponent } from '../../loader/loader.component';
-import { SliderDirective } from '../../core/slider.directive';
-import { OverlayComponent } from '../../overlay/overlay.component';
-import { NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-account-init',
@@ -27,10 +27,9 @@ import { NgIf } from '@angular/common';
   styleUrl: './account-init.component.css',
   standalone: true,
   imports: [
-    NgIf,
+    ReactiveFormsModule,
     OverlayComponent,
     SliderDirective,
-    ReactiveFormsModule,
     LoaderComponent,
   ],
 })

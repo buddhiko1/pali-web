@@ -11,17 +11,16 @@ import { CreateAccountMutationVariables } from 'src/gql/graphql';
 import { NavigationService } from 'src/app/core/navigation.service';
 import { RoleEnum } from 'src/app/core/value.cms';
 import { PromptEnum } from 'src/app/core/prompts.interaction';
-import { StatusEnum as LoaderStatusEnum } from 'src/app/loader/loader.component';
-
+import {
+  StatusEnum as LoaderStatusEnum,
+  LoaderComponent,
+} from 'src/app/loader/loader.component';
+import { SliderDirective } from 'src/app/core/slider.directive';
+import { OverlayComponent } from 'src/app/overlay/overlay.component';
 import { UrlEnum } from '../account-routing.module';
 import { AccountService } from '../account.service';
 import { RegisteredEmailValidator } from '../email.validator';
-
 import { RoleFieldsFragment } from 'src/gql/graphql';
-import { LoaderComponent } from '../../loader/loader.component';
-import { SliderDirective } from '../../core/slider.directive';
-import { OverlayComponent } from '../../overlay/overlay.component';
-import { NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-account-create',
@@ -29,10 +28,9 @@ import { NgIf } from '@angular/common';
   styleUrl: './account-create.component.css',
   standalone: true,
   imports: [
-    NgIf,
+    ReactiveFormsModule,
     OverlayComponent,
     SliderDirective,
-    ReactiveFormsModule,
     LoaderComponent,
   ],
 })

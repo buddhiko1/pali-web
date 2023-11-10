@@ -1,6 +1,6 @@
 import { Component, OnInit, ElementRef } from '@angular/core';
-import { Router, NavigationEnd, NavigationStart } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { Router, NavigationEnd, NavigationStart } from '@angular/router';
 import { HeartSvgComponent } from '../svg/heart/heart.component';
 import { FadeInDirective } from '../core/fade-in.directive';
 
