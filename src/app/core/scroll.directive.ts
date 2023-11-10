@@ -16,7 +16,7 @@ export class ScrollDirective implements OnDestroy {
     private _scrollbarService: ScrollbarService,
   ) {
     this._subscription = fromEvent(document, 'scroll')
-      .pipe(throttleTime(200))
+      .pipe(throttleTime(100))
       .subscribe(() => {
         this._scrollbarService.showScrollbar();
         const currentScrollPosition = window.scrollY;

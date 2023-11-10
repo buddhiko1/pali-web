@@ -7,7 +7,6 @@ import {
   Output,
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { DeviceDetectorService } from 'ngx-device-detector';
 import { NgxRerenderModule } from 'ngx-rerender';
 
 import { FadeInDirective } from '../core/fade-in.directive';
@@ -43,8 +42,6 @@ export class LoaderComponent implements OnChanges {
   @Output() failed = new EventEmitter<void>();
   @Output() successful = new EventEmitter<void>();
 
-  constructor(private _deviceService: DeviceDetectorService) {}
-
   ngOnChanges(changes: SimpleChanges): void {
     if (!this.stayWhenSuccessful) {
       if (changes['status'].currentValue === StatusEnum.Successful) {
@@ -54,14 +51,6 @@ export class LoaderComponent implements OnChanges {
       if (changes['status'].currentValue === StatusEnum.Failed) {
         this.failed.emit();
       }
-    }
-  }
-
-  get wheelSize(): string {
-    if (this._deviceService.isMobile()) {
-      return '4rem';
-    } else {
-      return '6rem';
     }
   }
 

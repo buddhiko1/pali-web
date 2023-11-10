@@ -57,10 +57,6 @@ export class NavbarComponent {
     return this._navbarService.isDark;
   }
 
-  get isShadowShow(): boolean {
-    return this._navbarService.isShadowShow;
-  }
-
   get isMenuOpened(): boolean {
     return this._navbarService.isMenuOpen;
   }

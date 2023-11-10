@@ -7,7 +7,6 @@ export class NavbarService {
   private _isShow = true;
   private _isDark = false;
   private _isMenuOpen = false;
-  private _isShadowShow = true;
 
   get isDark(): boolean {
     return this._isDark;
@@ -38,13 +37,5 @@ export class NavbarService {
 
   hide() {
     this._isShow = false;
-  }
-
-  get isShadowShow(): boolean {
-    return this._isShadowShow;
-  }
-
-  showShadow(value: boolean) {
-    this._isShadowShow = value;
   }
 }

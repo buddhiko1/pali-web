@@ -19,10 +19,16 @@
     </p>
     } @else {
     <app-wheel-svg
-      [size]="wheelSize"
+      [size]="'4rem'"
       delay="500ms"
       [stop]="isSuccessful || isFailed"
-      class="c-wheel"
+      class="c-wheel md:hidden"
+    ></app-wheel-svg>
+    <app-wheel-svg
+      [size]="'6rem'"
+      delay="500ms"
+      [stop]="isSuccessful || isFailed"
+      class="c-wheel hidden md:block"
     ></app-wheel-svg>
     } @if ((isSuccessful && stayWhenSuccessful) || (isFailed && stayWhenFailed))
     {
