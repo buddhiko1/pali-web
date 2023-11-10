@@ -1,11 +1,11 @@
 <div
   class="relative box-border duration-700 transition-all c-loader"
-  [class.c-successful]="isSuccessful"
-  [class.c-failed]="isFailed"
+  [class.c-successful]="successInfo"
+  [class.c-failed]="errorInfo"
 >
-  @if (isSuccessful) {
+  @if (successInfo) {
   <app-check-svg [class]="['c-svg', 'fill-current', 'text-ok']"></app-check-svg>
-  } @esle if(isFailed) {
+  } @esle if(errorInfo) {
   <app-close-svg
     [class]="['c-svg', 'fill-current', 'text-error']"
   ></app-close-svg>
