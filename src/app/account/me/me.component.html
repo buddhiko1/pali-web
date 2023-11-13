@@ -1,28 +1,28 @@
 <div>
   @if (showUploader) {
-  <app-uploader
-    [folderId]="avatarFolderId"
-    [allowedExtensions]="['.png', '.jpg', '.jpeg']"
-    (successful)="onAvatarUploaded($event)"
-    (failed)="showUploader = false"
-  ></app-uploader>
+    <app-uploader
+      [folderId]="avatarFolderId"
+      [allowedExtensions]="['.png', '.jpg', '.jpeg']"
+      (successful)="onAvatarUploaded($event)"
+      (failed)="showUploader = false"
+    ></app-uploader>
   } @else {
-  <section
-    appFader
-    [fadeDelay]="300"
-    class="c-container mt-24 sm:mt-48 lg:mt-[20vh]"
-  >
-    <div class="c-content">
-      <button (click)="onAvatarClick()">
-        <img
-          class="c-avatar rounded-full w-24 h-24"
-          [src]="avatarUrl"
-          alt="avatar"
-        />
-      </button>
-      <p class="text-text">{{ me?.email }}</p>
-      <button (click)="onLogout()" class="d-button mt-12">Logout</button>
-    </div>
-  </section>
+    <section
+      appFader
+      [fadeDelay]="300"
+      class="c-container mt-24 sm:mt-48 lg:mt-[20vh]"
+    >
+      <div class="c-content">
+        <button (click)="onAvatarClick()">
+          <img
+            class="c-avatar rounded-full w-24 h-24"
+            [src]="avatarUrl"
+            alt="avatar"
+          />
+        </button>
+        <p class="text-text">{{ me?.email }}</p>
+        <button (click)="onLogout()" class="d-button mt-12">Logout</button>
+      </div>
+    </section>
   }
 </div>

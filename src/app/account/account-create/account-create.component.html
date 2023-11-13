@@ -1,59 +1,59 @@
 <div>
   @if (showLoader) {
-  <app-loader
-    title="SignUp..."
-    [errorInfo]="errorInfo"
-    [successInfo]="successInfo"
-    (done)="onActionDone()"
-    class="c-loader mt-12 sm:mt-24"
-  ></app-loader>
+    <app-loader
+      title="SignUp..."
+      [errorInfo]="errorInfo"
+      [successInfo]="successInfo"
+      (done)="onActionDone()"
+      class="c-loader mt-12 sm:mt-24"
+    ></app-loader>
   } @else {
-  <app-overlay [zIndex]="-1"></app-overlay>
-  <div
-    appSlider
-    [slideDelay]="200"
-    class="c-container py-20 sm:py-36 lg:py-[17vh]"
-  >
-    <div class="c-dialog d-box">
-      <h2 class="c-title d-title">Sign Up</h2>
-      <form [formGroup]="form" (ngSubmit)="onSubmit()" class="c-form">
-        <div class="c-email">
-          <label for="email" class="d-text">Email</label>
-          <input
-            type="email"
-            name="email"
-            id="email"
-            formControlName="email"
-            required
-            class="inline-block w-full d-input dark:ring-0"
-          />
-          @if (email.invalid && (email.dirty || email.touched)) {
-          <div class="mt-1 d-error-text">
-            @if (email.errors?.['required']) {
-            <div>Email is required.</div>
-            } @else if (email.errors?.['email']) {
-            <div>Invalid address format.</div>
-            } @else if (email.errors?.['registered']) {
-            <div>Email has been registered.</div>
+    <app-overlay [zIndex]="-1"></app-overlay>
+    <div
+      appSlider
+      [slideDelay]="200"
+      class="c-container py-20 sm:py-36 lg:py-[17vh]"
+    >
+      <div class="c-dialog d-box">
+        <h2 class="c-title d-title">Sign Up</h2>
+        <form [formGroup]="form" (ngSubmit)="onSubmit()" class="c-form">
+          <div class="c-email">
+            <label for="email" class="d-text">Email</label>
+            <input
+              type="email"
+              name="email"
+              id="email"
+              formControlName="email"
+              required
+              class="inline-block w-full d-input dark:ring-0"
+            />
+            @if (email.invalid && (email.dirty || email.touched)) {
+              <div class="mt-1 d-error-text">
+                @if (email.errors?.["required"]) {
+                  <div>Email is required.</div>
+                } @else if (email.errors?.["email"]) {
+                  <div>Invalid address format.</div>
+                } @else if (email.errors?.["registered"]) {
+                  <div>Email has been registered.</div>
+                }
+              </div>
             }
           </div>
-          }
-        </div>
-        <button
-          type="submit"
-          [disabled]="!form.valid"
-          class="d-button bg-focus w-full mt-3"
-        >
-          Sign Up
-        </button>
-      </form>
-      <p class="c-tips d-text">
-        <span>Have an account ?</span
-        ><button (click)="routeToLogin()" class="g-link-button text-sm ml-4">
-          Sign In
-        </button>
-      </p>
+          <button
+            type="submit"
+            [disabled]="!form.valid"
+            class="d-button bg-focus w-full mt-3"
+          >
+            Sign Up
+          </button>
+        </form>
+        <p class="c-tips d-text">
+          <span>Have an account ?</span
+          ><button (click)="routeToLogin()" class="g-link-button text-sm ml-4">
+            Sign In
+          </button>
+        </p>
+      </div>
     </div>
-  </div>
   }
 </div>

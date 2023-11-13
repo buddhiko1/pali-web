@@ -20,49 +20,49 @@
       </div>
     </div>
     @for (dictionary of dictionaries; track dictionary.index) {
-    <div
-      appSlider
-      [slideDelay]="dictionary.index === 1 ? 800 : 1000"
-      class="c-dictionary mt-12 lg:mt-36 pb-8 lg:pb-24 border-b g-border"
-      [class.border-b]="dictionary.index !== dictionaries.length"
-    >
-      @if (dictionary.index % 2) {
-      <div class="c-book hidden lg:block">
-        <app-book [config]="bookConfigFor(dictionary)"></app-book>
-      </div>
-      }
-      <div>
-        <p class="capitalize lg:text-xl g-hl-title">{{ dictionary.name }}</p>
-        <p
-          class="mt-4 lg:mt-8 leading-relaxed g-text"
-          [innerHtml]="dictionary.description | safeHtml"
-        >
-          {{ dictionary.description }}
-        </p>
-        <div class="c-action mt-6 lg:mt-16">
-          <a
-            [href]="dictionary.info_url"
-            target="_blank"
-            class="c-link g-button"
+      <div
+        appSlider
+        [slideDelay]="dictionary.index === 1 ? 800 : 1000"
+        class="c-dictionary mt-12 lg:mt-36 pb-8 lg:pb-24 border-b g-border"
+        [class.border-b]="dictionary.index !== dictionaries.length"
+      >
+        @if (dictionary.index % 2) {
+          <div class="c-book hidden lg:block">
+            <app-book [config]="bookConfigFor(dictionary)"></app-book>
+          </div>
+        }
+        <div>
+          <p class="capitalize lg:text-xl g-hl-title">{{ dictionary.name }}</p>
+          <p
+            class="mt-4 lg:mt-8 leading-relaxed g-text"
+            [innerHtml]="dictionary.description | safeHtml"
           >
-            <app-github-svg [class]="['g-svg']"></app-github-svg>
-          </a>
-          <a
-            [href]="fileServer + '/' + dictionary.zip?.id + '?download'"
-            [download]="dictionary.name + '.zip'"
-            target="_blank"
-            class="c-link g-button"
-          >
-            <app-download-svg [class]="['g-svg']"></app-download-svg>
-          </a>
+            {{ dictionary.description }}
+          </p>
+          <div class="c-action mt-6 lg:mt-16">
+            <a
+              [href]="dictionary.info_url"
+              target="_blank"
+              class="c-link g-button"
+            >
+              <app-github-svg [class]="['g-svg']"></app-github-svg>
+            </a>
+            <a
+              [href]="fileServer + '/' + dictionary.zip?.id + '?download'"
+              [download]="dictionary.name + '.zip'"
+              target="_blank"
+              class="c-link g-button"
+            >
+              <app-download-svg [class]="['g-svg']"></app-download-svg>
+            </a>
+          </div>
         </div>
+        @if (!(dictionary.index % 2)) {
+          <div class="c-book hidden lg:block">
+            <app-book [config]="bookConfigFor(dictionary)"></app-book>
+          </div>
+        }
       </div>
-      @if (!(dictionary.index % 2)) {
-      <div class="c-book hidden lg:block">
-        <app-book [config]="bookConfigFor(dictionary)"></app-book>
-      </div>
-      }
-    </div>
     }
   </div>
 </div>

@@ -24,22 +24,22 @@
       </p>
     </div>
     @for (book of tipitaka; track book.index) {
-    <div class="c-book pt-14 lg:pt-28">
-      <app-book [config]="bookConfigFor(book)"></app-book>
-      <div class="c-action w-full mt-10 pb-4 border-b g-border">
-        <a [href]="book.info_url" target="_blank" class="g-button">
-          <app-github-svg [class]="['g-svg']"></app-github-svg>
-        </a>
-        <a
-          [href]="fileServer + '/' + book.zip?.filename_disk + '?download'"
-          [download]="book.name + '.zip'"
-          target="_blank"
-          class="g-button"
-        >
-          <app-download-svg [class]="['g-svg']"></app-download-svg>
-        </a>
+      <div class="c-book pt-14 lg:pt-28">
+        <app-book [config]="bookConfigFor(book)"></app-book>
+        <div class="c-action w-full mt-10 pb-4 border-b g-border">
+          <a [href]="book.info_url" target="_blank" class="g-button">
+            <app-github-svg [class]="['g-svg']"></app-github-svg>
+          </a>
+          <a
+            [href]="fileServer + '/' + book.zip?.filename_disk + '?download'"
+            [download]="book.name + '.zip'"
+            target="_blank"
+            class="g-button"
+          >
+            <app-download-svg [class]="['g-svg']"></app-download-svg>
+          </a>
+        </div>
       </div>
-    </div>
     }
   </div>
   <div class="c-cites py-16 lg:py-32 bg-appBg night">
@@ -52,19 +52,19 @@
         </p>
       </div>
       @for (cite of cites; track cite.index) {
-      <div class="c-cite pt-8 lg:pt-12">
-        <app-quote-svg [class]="['g-svg']" [size]="'3rem'"></app-quote-svg>
-        <p class="mt-2 lg:mt-4 text-center g-text">
-          {{ cite.text }}
-        </p>
-        <div class="w-28 my-6 lg:my-8 border-b g-border"></div>
-        <a
-          target="_blank"
-          [href]="cite.author_url"
-          class="text-base lg:text-lg g-focus"
-          >{{ cite.author }}</a
-        >
-      </div>
+        <div class="c-cite pt-8 lg:pt-12">
+          <app-quote-svg [class]="['g-svg']" [size]="'3rem'"></app-quote-svg>
+          <p class="mt-2 lg:mt-4 text-center g-text">
+            {{ cite.text }}
+          </p>
+          <div class="w-28 my-6 lg:my-8 border-b g-border"></div>
+          <a
+            target="_blank"
+            [href]="cite.author_url"
+            class="text-base lg:text-lg g-focus"
+            >{{ cite.author }}</a
+          >
+        </div>
       }
     </div>
   </div>

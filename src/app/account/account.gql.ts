@@ -46,12 +46,6 @@ graphql(`
   mutation Logout($tokenForRefresh: String!) {
     auth_logout(refresh_token: $tokenForRefresh)
   }
-  mutation RefreshToken($tokenForRefresh: String!) {
-    refreshedToken: auth_refresh(refresh_token: $tokenForRefresh, mode: json) {
-      access_token
-      refresh_token
-    }
-  }
   mutation UpdateMe($data: update_directus_users_input!) {
     updatedMe: update_users_me(data: $data) {
       ...Me

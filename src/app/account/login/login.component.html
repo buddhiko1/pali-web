@@ -1,83 +1,86 @@
 <div>
   @if (showLoader) {
-  <app-loader
-    title="Logging..."
-    [errorInfo]="errorInfo"
-    [successInfo]="successInfo"
-    (done)="onActionDone()"
-    class="c-loader mt-12 sm:mt-24"
-  ></app-loader>
+    <app-loader
+      title="Logging..."
+      [errorInfo]="errorInfo"
+      [successInfo]="successInfo"
+      (done)="onActionDone()"
+      class="c-loader mt-12 sm:mt-24"
+    ></app-loader>
   } @else {
-  <app-overlay [zIndex]="-1"></app-overlay>
-  <div
-    appSlider
-    [slideDelay]="200"
-    class="c-container py-20 sm:py-36 lg:py-[17vh]"
-  >
-    <div class="c-dialog d-box">
-      <h2 class="c-title d-title">Sign In</h2>
-      <form [formGroup]="form" (ngSubmit)="onSubmit()" class="c-form">
-        <div class="c-email">
-          <label for="email" class="d-text">Email</label>
-          <input
-            type="email"
-            name="email"
-            id="email"
-            formControlName="email"
-            required
-            class="w-full d-input"
-          />
-          @if (email.invalid && (email.dirty || email.touched)) {
-          <div class="mt-1 d-error-text">
-            @if (email.errors?.['required']) {
-            <div>Email is required.</div>
-            } @else if (email.errors?.['email']) {
-            <div>Invalid address format.</div>
-            } @else if (email.errors?.['unRegistered']) {
-            <div>Email hasn't been registered.</div>
+    <app-overlay [zIndex]="-1"></app-overlay>
+    <div
+      appSlider
+      [slideDelay]="200"
+      class="c-container py-20 sm:py-36 lg:py-[17vh]"
+    >
+      <div class="c-dialog d-box">
+        <h2 class="c-title d-title">Sign In</h2>
+        <form [formGroup]="form" (ngSubmit)="onSubmit()" class="c-form">
+          <div class="c-email">
+            <label for="email" class="d-text">Email</label>
+            <input
+              type="email"
+              name="email"
+              id="email"
+              formControlName="email"
+              required
+              class="w-full d-input"
+            />
+            @if (email.invalid && (email.dirty || email.touched)) {
+              <div class="mt-1 d-error-text">
+                @if (email.errors?.["required"]) {
+                  <div>Email is required.</div>
+                } @else if (email.errors?.["email"]) {
+                  <div>Invalid address format.</div>
+                } @else if (email.errors?.["unRegistered"]) {
+                  <div>Email hasn't been registered.</div>
+                }
+              </div>
             }
           </div>
-          }
-        </div>
-        <div class="c-password">
-          <div class="c-password-label">
-            <label for="password" class="d-text">Password</label>
-            <button (click)="onRequestReset()" class="g-link-button text-sm">
-              Forgot?
-            </button>
-          </div>
-          <input
-            type="password"
-            name="password"
-            id="password"
-            formControlName="password"
-            class="w-full d-input"
-          />
-          @if (password.invalid && (password.dirty || password.touched)) {
-          <div class="mt-1 d-error-text">
-            @if (password.errors?.['minlength']) {
-            <div>Password must be at least 6 characters long.</div>
-            } @else if(password.errors?.['required']) {
-            <div>Password is required.</div>
+          <div class="c-password">
+            <div class="c-password-label">
+              <label for="password" class="d-text">Password</label>
+              <button (click)="onRequestReset()" class="g-link-button text-sm">
+                Forgot?
+              </button>
+            </div>
+            <input
+              type="password"
+              name="password"
+              id="password"
+              formControlName="password"
+              class="w-full d-input"
+            />
+            @if (password.invalid && (password.dirty || password.touched)) {
+              <div class="mt-1 d-error-text">
+                @if (password.errors?.["minlength"]) {
+                  <div>Password must be at least 6 characters long.</div>
+                } @else if (password.errors?.["required"]) {
+                  <div>Password is required.</div>
+                }
+              </div>
             }
           </div>
-          }
-        </div>
-        <button
-          type="submit"
-          [disabled]="!form.valid"
-          class="bg-focus d-button w-full mt-3"
-        >
-          Sign In
-        </button>
-      </form>
-      <p class="c-tips d-text">
-        <span>Don't have an account?</span
-        ><button (click)="onCreateAccount()" class="g-link-button text-sm ml-4">
-          Sign Up
-        </button>
-      </p>
+          <button
+            type="submit"
+            [disabled]="!form.valid"
+            class="bg-focus d-button w-full mt-3"
+          >
+            Sign In
+          </button>
+        </form>
+        <p class="c-tips d-text">
+          <span>Don't have an account?</span
+          ><button
+            (click)="onCreateAccount()"
+            class="g-link-button text-sm ml-4"
+          >
+            Sign Up
+          </button>
+        </p>
+      </div>
     </div>
-  </div>
   }
 </div>

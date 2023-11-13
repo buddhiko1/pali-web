@@ -1,10 +1,10 @@
 <nav>
   @if (showOverlay) {
-  <app-overlay
-    [zIndex]="0"
-    [opacity]="0.8"
-    (click)="toggleMenu()"
-  ></app-overlay>
+    <app-overlay
+      [zIndex]="0"
+      [opacity]="0.8"
+      (click)="toggleMenu()"
+    ></app-overlay>
   }
   <div
     appFader
@@ -45,16 +45,16 @@
       ]"
     >
       <ul class="c-index">
-        @for ( item of routes; track item.name) {
-        <li class="c-index-item mt-2 sm:ml-5 lg:mt-0 lg:mx-4">
-          <button
-            (click)="routeTo(item.route)"
-            class="p-1 g-text g-hover"
-            [class.text-focus]="isActiveUrl(item.route)"
-          >
-            {{ item.name | titlecase }}
-          </button>
-        </li>
+        @for (item of routes; track item.name) {
+          <li class="c-index-item mt-2 sm:ml-5 lg:mt-0 lg:mx-4">
+            <button
+              (click)="routeTo(item.route)"
+              class="p-1 g-text g-hover"
+              [class.text-focus]="isActiveUrl(item.route)"
+            >
+              {{ item.name | titlecase }}
+            </button>
+          </li>
         }
       </ul>
 
@@ -62,9 +62,9 @@
 
       <button (click)="toggleDark()" class="c-theme p-1">
         @if (isDark) {
-        <app-moon-svg [class]="['g-svg', 'g-hover']"></app-moon-svg>
+          <app-moon-svg [class]="['g-svg', 'g-hover']"></app-moon-svg>
         } @else {
-        <app-sun-svg [class]="['g-svg', 'g-hover']"></app-sun-svg>
+          <app-sun-svg [class]="['g-svg', 'g-hover']"></app-sun-svg>
         }
       </button>
 
