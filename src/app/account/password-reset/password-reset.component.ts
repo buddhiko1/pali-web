@@ -10,7 +10,7 @@ import {
 import { NavigationService } from 'src/app/core/navigation.service';
 import { PromptEnum } from 'src/app/core/prompts.interaction';
 import { LoaderComponent } from 'src/app/loader/loader.component';
-import { SliderDirective } from 'src/app/core/slider.directive';
+import { SlideInDirective } from 'src/app/core/slide-in.directive';
 import { OverlayComponent } from 'src/app/overlay/overlay.component';
 
 import { UrlEnum } from '../account-routing.module';
@@ -25,7 +25,7 @@ import { ResetPasswordMutationVariables } from 'src/gql/graphql';
   imports: [
     ReactiveFormsModule,
     OverlayComponent,
-    SliderDirective,
+    SlideInDirective,
     LoaderComponent,
   ],
 })

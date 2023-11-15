@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 
-import { SliderDirective } from '../core/slider.directive';
+import { SlideInDirective } from '../core/slide-in.directive';
 import { FadeInDirective } from '../core/fade-in.directive';
 import { LoaderComponent } from '../loader/loader.component';
 import { UploaderComponent } from '../uploader/uploader.component';
@@ -21,7 +21,7 @@ import { MeComponent } from './me/me.component';
     CommonModule,
     ReactiveFormsModule,
     AccountRoutingModule,
-    SliderDirective,
+    SlideInDirective,
     FadeInDirective,
     LoaderComponent,
     OverlayComponent,

@@ -1,6 +1,6 @@
 <div class="c-container">
   <div class="c-content">
-    <div appSlider class="mt-10 lg:mt-24">
+    <div appSlideIn class="mt-10 lg:mt-24">
       <p
         class="inline-block capitalize lg:text-xl g-hl-title"
         [innerHtml]="(introduction ? introduction.title : '') | safeHtml"
@@ -21,8 +21,8 @@
     </div>
     @for (dictionary of dictionaries; track dictionary.index) {
       <div
-        appSlider
-        [slideDelay]="dictionary.index === 1 ? 800 : 1000"
+        appSlideIn
+        [slideInDelay]="dictionary.index === 1 ? 800 : 1000"
         class="c-dictionary mt-12 lg:mt-36 pb-8 lg:pb-24 border-b g-border"
         [class.border-b]="dictionary.index !== dictionaries.length"
       >

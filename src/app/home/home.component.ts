@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 
-import { SliderDirective } from '../core/slider.directive';
+import { SlideInDirective } from '../core/slide-in.directive';
 import { RarrowSvgComponent } from '../svg/rarrow/rarrow.component';
 import { FadeInDirective } from '../core/fade-in.directive';
 import { PhraseComponent } from '../phrase/phrase.component';
@@ -17,7 +17,7 @@ import { Modules } from 'src/gql/graphql';
     CommonModule,
     RouterLink,
     RarrowSvgComponent,
-    SliderDirective,
+    SlideInDirective,
     FadeInDirective,
     PhraseComponent,
   ],

@@ -8,7 +8,7 @@ import {
 import { ActivatedRoute, Router } from '@angular/router';
 
 import { LoaderComponent } from 'src/app/loader/loader.component';
-import { SliderDirective } from 'src/app/core/slider.directive';
+import { SlideInDirective } from 'src/app/core/slide-in.directive';
 import { OverlayComponent } from 'src/app/overlay/overlay.component';
 import { UrlEnum } from '../account-routing.module';
 import { AccountService } from '../account.service';
@@ -23,7 +23,7 @@ import { LoginMutationVariables } from 'src/gql/graphql';
   imports: [
     ReactiveFormsModule,
     OverlayComponent,
-    SliderDirective,
+    SlideInDirective,
     LoaderComponent,
   ],
 })

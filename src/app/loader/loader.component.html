@@ -2,7 +2,7 @@
   <app-overlay [zIndex]="-1" [opacity]="0.3"></app-overlay>
   <dialog
     open
-    appFader
+    appFadeIn
     class="c-dialog d-box absolute mt-[17vh] sm:mt-[20vh] w-[17rem] sm:w-[20rem] lg:w-[25rem]"
   >
     <h2
@@ -13,7 +13,7 @@
       {{ errorInfo ? "Failed" : successInfo ? "Successful" : title }}
     </h2>
     @if (errorInfo || successInfo) {
-      <p appFader [class]="['c-text', 'g-text', 'text-center', 'mx-4']">
+      <p appFadeIn [class]="['c-text', 'g-text', 'text-center', 'mx-4']">
         {{ errorInfo || successInfo }}
       </p>
       <button

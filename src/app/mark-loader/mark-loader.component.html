@@ -7,8 +7,7 @@
     <app-check-svg
       [class]="['c-svg', 'fill-current', 'text-ok']"
     ></app-check-svg>
-  }
-  @esle if (errorInfo) {
+  } @else if (errorInfo) {
     <app-close-svg
       [class]="['c-svg', 'fill-current', 'text-error']"
     ></app-close-svg>

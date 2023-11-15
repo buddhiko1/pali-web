@@ -1,12 +1,12 @@
 import { Directive, ElementRef, Input, OnInit, Renderer2 } from '@angular/core';
 
 @Directive({
-  selector: '[appSlider]',
+  selector: '[appSlideIn]',
   standalone: true,
 })
-export class SliderDirective implements OnInit {
-  @Input() slideDelay = 0;
-  @Input() slideDuration = 1000;
+export class SlideInDirective implements OnInit {
+  @Input() slideInDelay = 0;
+  @Input() slideInDuration = 1000;
 
   constructor(
     private _el: ElementRef,
@@ -17,7 +17,7 @@ export class SliderDirective implements OnInit {
     this.renderer.setStyle(
       this._el.nativeElement,
       'animation',
-      `g-slide-in ${this.slideDuration}ms ease-in-out ${this.slideDelay}ms both`,
+      `g-slide-in ${this.slideInDuration}ms ease-in-out ${this.slideInDelay}ms both`,
     );
   }
 }

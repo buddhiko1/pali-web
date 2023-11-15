@@ -1,12 +1,12 @@
 import { Directive, ElementRef, Input, OnInit, Renderer2 } from '@angular/core';
 
 @Directive({
-  selector: '[appFadeIn]',
+  selector: '[appFaderOut]',
   standalone: true,
 })
-export class FadeInDirective implements OnInit {
-  @Input() fadeInDelay = 0;
-  @Input() fadeInDuration = 1000;
+export class FadeOutDirective implements OnInit {
+  @Input() fadeOutDelay = 0;
+  @Input() fadeOutDuration = 1000;
 
   constructor(
     private _el: ElementRef,
@@ -17,7 +17,7 @@ export class FadeInDirective implements OnInit {
     this.renderer.setStyle(
       this._el.nativeElement,
       'animation',
-      `g-fade-in ${this.fadeInDuration}ms ease-in-out ${this.fadeInDelay}ms both`,
+      `g-fade-out ${this.fadeOutDuration}ms ease-in-out ${this.fadeOutDelay}ms both`,
     );
   }
 }

@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 import { environment } from 'src/environments/environment';
 import { Config as BookConfig } from '../book/book.model';
 import { BookComponent, DirectionEnum } from '../book/book.component';
-import { SliderDirective } from '../core/slider.directive';
+import { SlideInDirective } from '../core/slide-in.directive';
 import { FadeInDirective } from '../core/fade-in.directive';
 import { GithubSvgComponent } from '../svg/github/github.component';
 import { DownloadSvgComponent } from '../svg/download/download.component';
@@ -21,7 +21,7 @@ import { Tipitaka, Cites } from 'src/gql/graphql';
     GithubSvgComponent,
     DownloadSvgComponent,
     QuoteSvgComponent,
-    SliderDirective,
+    SlideInDirective,
     FadeInDirective,
   ],
   templateUrl: './tipitaka.component.html',

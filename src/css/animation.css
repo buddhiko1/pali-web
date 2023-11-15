@@ -22,11 +22,45 @@
   }
 }
 
+@keyframes g-slide-out {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-30px);
+    opacity: 0;
+  }
+}
+
+@media screen and (min-width: theme("screens.lg")) {
+  @keyframes g-slide-out {
+    from {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    to {
+      transform: translateY(55px);
+      opacity: 0;
+    }
+  }
+}
+
 @keyframes g-fade-in {
   from {
     opacity: 0;
   }
   to {
     opacity: 1;
+  }
+}
+
+
+@keyframes g-fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
   }
 }

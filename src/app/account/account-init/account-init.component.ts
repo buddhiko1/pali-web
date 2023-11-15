@@ -9,7 +9,7 @@ import {
 
 import { LoaderComponent } from 'src/app/loader/loader.component';
 import { NavigationService } from 'src/app/core/navigation.service';
-import { SliderDirective } from 'src/app/core/slider.directive';
+import { SlideInDirective } from 'src/app/core/slide-in.directive';
 import { OverlayComponent } from 'src/app/overlay/overlay.component';
 import { UrlEnum } from '../account-routing.module';
 import { AccountService } from '../account.service';
@@ -26,7 +26,7 @@ import {
   imports: [
     ReactiveFormsModule,
     OverlayComponent,
-    SliderDirective,
+    SlideInDirective,
     LoaderComponent,
   ],
 })

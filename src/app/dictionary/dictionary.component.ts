@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { environment } from 'src/environments/environment';
-import { SliderDirective } from '../core/slider.directive';
+import { SlideInDirective } from '../core/slide-in.directive';
 import { GithubSvgComponent } from '../svg/github/github.component';
 import { DownloadSvgComponent } from '../svg/download/download.component';
 import { SafeHtmlPipe } from '../core/safe-html.pipe';
@@ -18,7 +18,7 @@ import { Dictionaries, Dict_Introduction } from 'src/gql/graphql';
     CommonModule,
     GithubSvgComponent,
     DownloadSvgComponent,
-    SliderDirective,
+    SlideInDirective,
     SafeHtmlPipe,
     BookComponent,
   ],

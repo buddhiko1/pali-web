@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute, Params } from '@angular/router';
 
-import { SliderDirective } from '../core/slider.directive';
+import { SlideInDirective } from '../core/slide-in.directive';
 import { FadeInDirective } from '../core/fade-in.directive';
 import { BackButtonDirective } from '../core/back-button.directive';
 import { LarrowSvgComponent } from '../svg/larrow/larrow.component';
@@ -16,7 +16,7 @@ import { SnowBgComponent } from '../snow-bg/snow-bg.component';
     LarrowSvgComponent,
     BackButtonDirective,
     SnowBgComponent,
-    SliderDirective,
+    SlideInDirective,
     FadeInDirective,
   ],
   templateUrl: './placeholder-page.component.html',

@@ -99,7 +99,7 @@ export class SnowBgComponent implements AfterViewInit {
     this._makeSnow();
   }
 
-  @HostListener('window:resize')
+  @HostListener('resize')
   private _makeSnow(): void {
     this.snow.nativeElement.height =
       (window.innerHeight * parseInt(this.height, 10)) / 100;
