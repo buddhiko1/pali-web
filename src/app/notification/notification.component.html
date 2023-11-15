@@ -1,1 +1,13 @@
-<p>notification works!</p>
+@if (!isEmpty) {
+  <div class="c-container fixed bottom-0 w-screen">
+    <div class="c-boxes">
+      @for (notification of notifications; track notification.timestamp) {
+        <app-notification-box
+          appSlideIn
+          [notification]="notification"
+          (closed)="remove(notification)"
+        />
+      }
+    </div>
+  </div>
+}

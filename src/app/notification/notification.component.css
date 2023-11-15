@@ -1,0 +1,15 @@
+.c-container {
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: theme("spacing.smContentPadding") 1fr theme(
+      "spacing.smContentPadding"
+    );
+  grid-template-areas: "left-padding boxes right-padding"
+}
+
+.c-boxes {
+  grid-area: boxes;
+  display:grid;
+  grid-auto-flow: row;
+  grid-row-gap: theme("spacing.5")
+}

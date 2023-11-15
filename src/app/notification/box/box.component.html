@@ -1,0 +1,33 @@
+<div class="c-container p-3 rounded-lg bg-footerBg">
+  <div class="c-bar">
+    <div class="c-icon">
+      @switch (notification.type) {
+        @case (notifcationEnum.INFO) {
+          <app-info-svg [class]="['g-svg']" />
+        }
+        @case (notifcationEnum.SUCCESS) {
+          <app-check-svg [class]="['fill-ok']" />
+        }
+        @case (notifcationEnum.ERROR) {
+          <app-error-svg [class]="['fill-error']" />
+        }
+        @default {}
+      }
+    </div>
+    <div class="c-title border-l-1">{{ title }}</div>
+    @if (content) {
+      <div class="c-action">
+        @if (isContentFolded) {
+          <button (click)="showContent()">
+            <app-unfold-svg [class]="['g-svg', 'g-hover']" />
+          </button>
+        } @else {
+          <button (click)="close()">
+            <app-close-svg [class]="['g-svg', 'g-hover']" />
+          </button>
+        }
+      </div>
+    }
+  </div>
+  <div class="c-content" [class.hidden]="isContentFolded">{{ content }}</div>
+</div>

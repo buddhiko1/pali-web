@@ -1,0 +1,39 @@
+<div class="c-container">
+  <app-overlay [zIndex]="-1" [opacity]="0.3"></app-overlay>
+  <dialog
+    open
+    appFadeIn
+    class="c-dialog d-box absolute mt-[17vh] sm:mt-[20vh] w-[17rem] sm:w-[20rem] lg:w-[25rem]"
+  >
+    <h2
+      class="c-title d-title"
+      [class.text-ok]="successInfo"
+      [class.text-error]="errorInfo"
+    >
+      {{ errorInfo ? "Failed" : successInfo ? "Successful" : title }}
+    </h2>
+    @if (errorInfo || successInfo) {
+      <p appFadeIn [class]="['c-text', 'g-text', 'text-center', 'mx-4']">
+        {{ errorInfo || successInfo }}
+      </p>
+      <button
+        class="d-button w-full mt-3"
+        [class.d-error-button]="errorInfo"
+        (click)="onSubmit()"
+      >
+        OK
+      </button>
+    } @else {
+      <app-wheel-svg
+        [size]="'4rem'"
+        delay="500ms"
+        class="c-wheel md:hidden"
+      ></app-wheel-svg>
+      <app-wheel-svg
+        [size]="'6rem'"
+        delay="500ms"
+        class="c-wheel hidden md:block"
+      ></app-wheel-svg>
+    }
+  </dialog>
+</div>

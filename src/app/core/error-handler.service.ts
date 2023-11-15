@@ -31,18 +31,20 @@ export class ErrorHandlerService implements ErrorHandler {
     ) {
       this._storageService.clearAccountData();
     } else {
-      this._notificationService.pushNotification({
-        message: error.toString(),
+      this._notificationService.push({
+        timestamp: Date.now(),
         type: NotificationEnum.ERROR,
+        message: error.toString(),
       });
     }
   }
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   private _handlerClientError(error: any) {
-    this._notificationService.pushNotification({
-      message: error.toString(),
+    this._notificationService.push({
+      timestamp: Date.now(),
       type: NotificationEnum.ERROR,
+      message: error.toString(),
     });
   }
 }

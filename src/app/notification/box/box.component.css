@@ -1,0 +1,14 @@
+.c-container {
+  display: grid;
+  grid-auto-flow: row;
+}
+
+.c-bar {
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr 5fr 1fr;
+  grid-template-areas: "icon title action";
+}
+
+.c-content {
+}
