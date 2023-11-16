@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { interval } from 'rxjs';
 
 import { SlideInDirective } from '../core/slide-in.directive';
+import { SlideOutDirective } from '../core/slide-out.directive';
 import { BoxComponent } from './box/box.component';
 import { NotificationService } from './notification.service';
 import { Notification, NotificationEnum } from './notification.model';
@@ -10,7 +11,7 @@ import { Notification, NotificationEnum } from './notification.model';
 @Component({
   selector: 'app-notification',
   standalone: true,
-  imports: [CommonModule, BoxComponent, SlideInDirective],
+  imports: [CommonModule, BoxComponent, SlideInDirective, SlideOutDirective],
   templateUrl: './notification.component.html',
   styleUrl: './notification.component.css',
 })

@@ -1,0 +1,21 @@
+.c-container {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "navbar"
+    "page"
+    "footer";
+}
+
+.navbar {
+  grid-area: navbar;
+}
+
+.c-page {
+  grid-area: page;
+}
+
+.c-footer {
+  grid-area: footer;
+}

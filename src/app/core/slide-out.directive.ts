@@ -4,7 +4,7 @@ import { Directive, ElementRef, Input, OnInit, Renderer2 } from '@angular/core';
   selector: '[appSlideOut]',
   standalone: true,
 })
-export class SlideInDirective implements OnInit {
+export class SlideOutDirective implements OnInit {
   @Input() slideOutDelay = 0;
   @Input() slideOutDuration = 1000;
 
