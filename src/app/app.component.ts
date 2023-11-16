@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
-import { ScrollbarService } from './core/scrollbar.service';
 import { FooterComponent } from './footer/footer.component';
 import { RouterOutlet } from '@angular/router';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -18,12 +17,6 @@ import { NotificationComponent } from './notification/notification.component';
     NotificationComponent,
   ],
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
   title = 'pali-web';
-
-  constructor(private _scrollbarService: ScrollbarService) {}
-
-  ngOnInit(): void {
-    this._scrollbarService.show();
-  }
 }

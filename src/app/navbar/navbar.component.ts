@@ -5,7 +5,6 @@ import { fromEvent, throttleTime } from 'rxjs';
 
 import { FadeInDirective } from '../core/fade-in.directive';
 import { OverlayComponent } from '../overlay/overlay.component';
-import { ScrollbarService } from '../core/scrollbar.service';
 import { PlusSvgComponent } from '../svg/plus/plus.component';
 import { MoonSvgComponent } from '../svg/moon/moon.component';
 import { SunSvgComponent } from '../svg/sun/sun.component';
@@ -44,7 +43,6 @@ export class NavbarComponent {
   constructor(
     private _router: Router,
     private _navbarService: NavbarService,
-    private _scrollbarService: ScrollbarService,
   ) {
     this._navbarService.fetchRoutes().then((routes) => {
       this.routes = routes;
@@ -57,7 +55,6 @@ export class NavbarComponent {
     fromEvent(document, 'scroll')
       .pipe(throttleTime(100))
       .subscribe(() => {
-        this._scrollbarService.show();
         const currentScrollPosition = window.scrollY;
         currentScrollPosition < this._previousScrollPosition
           ? (this.isCollapsed = false)
@@ -71,13 +68,12 @@ export class NavbarComponent {
     this.showOverlay = !this.showOverlay;
   }
 
+  //TODO implement with a diffrent way.
   toggleDark(): void {
-    this._scrollbarService.hide();
     this.isDark
       ? document.body.classList.remove('night')
       : document.body.classList.add('night');
     this.isDark = !this.isDark;
-    this._scrollbarService.show();
   }
 
   routeTo(url: string): void {
