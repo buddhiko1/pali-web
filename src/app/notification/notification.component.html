@@ -3,7 +3,6 @@
     <div class="c-boxes">
       @for (notification of notifications; track notification.timestamp) {
         <app-notification-box
-          appSlideIn
           [notification]="notification"
           (closed)="remove(notification)"
         />

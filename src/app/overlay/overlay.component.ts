@@ -9,9 +9,6 @@ import { CommonModule } from '@angular/common';
   styleUrl: './overlay.component.css',
 })
 export class OverlayComponent {
-  @HostBinding('style.--zIndex')
-  @Input()
-  zIndex!: number;
   @HostBinding('style.--opacity')
   @Input()
   opacity = 0.4;

@@ -1,11 +1,10 @@
-<div class="c-container">
+<div class="c-container mt-12 sm:mt-20">
   @if (showLoader) {
     <app-loader
       title="Uploading..."
       [errorInfo]="errorInfo"
       [successInfo]="successInfo"
       (done)="onActionDone()"
-      class="mt-12 sm:mt-20"
     />
   }
   <input

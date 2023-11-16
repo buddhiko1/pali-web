@@ -1,6 +1,7 @@
 .c-container {
   display: grid;
   grid-auto-flow: row;
+  grid-row-gap: theme("spacing.3")
 }
 
 .c-bar {
@@ -10,5 +11,37 @@
   grid-template-areas: "icon title action";
 }
 
-.c-content {
+.c-icon {
+  grid-area: icon;
+}
+
+.c-title {
+  grid-area: title;
+}
+
+.c-action {
+  grid-area: action;
+  display:grid;
+  justify-content:right;
+}
+
+.c-slide-out {
+  animation: g-slide-out 500ms ease-in-out both;
+}
+
+.c-slide-in {
+  animation: g-slide-in 500ms ease-in-out both;
+}
+
+@keyframes unfold {
+  from {
+    height: 0;
+  }
+  to {
+    height: 100%;
+  }
+}
+
+.c-unfold {
+  animation: unfold 300ms ease-in-out both;
 }

@@ -1,4 +1,13 @@
-<div class="c-container p-3 rounded-lg bg-footerBg">
+<div
+  [class]="[
+    'c-container',
+    'p-3',
+    'rounded-lg',
+    'bg-footerBg',
+    shouldSlideOut ? 'c-slide-out' : 'c-slide-in'
+  ]"
+  [class.z-10]="!isContentFolded"
+>
   <div class="c-bar">
     <div class="c-icon">
       @switch (notification.type) {
@@ -14,7 +23,20 @@
         @default {}
       }
     </div>
-    <div class="c-title border-l-1">{{ title }}</div>
+    <div class="c-title border-l-1">
+      @switch (notification.type) {
+        @case (notifcationEnum.INFO) {
+          <p class="g-text">{{ title }}</p>
+        }
+        @case (notifcationEnum.SUCCESS) {
+          <p class="g-text text-ok">{{ title }}</p>
+        }
+        @case (notifcationEnum.ERROR) {
+          <p class="g-text text-error">{{ title }}</p>
+        }
+        @default {}
+      }
+    </div>
     @if (content) {
       <div class="c-action">
         @if (isContentFolded) {
@@ -22,12 +44,30 @@
             <app-unfold-svg [class]="['g-svg', 'g-hover']" />
           </button>
         } @else {
-          <button (click)="close()">
-            <app-close-svg [class]="['g-svg', 'g-hover']" />
+          <button appFadeIn [fadeInDuration]="300" (click)="close()">
+            <app-close-svg [class]="['g-svg', 'g-hover', 'w-5']" />
           </button>
         }
       </div>
     }
   </div>
-  <div class="c-content" [class.hidden]="isContentFolded">{{ content }}</div>
+  <div
+    appFadeIn
+    [fadeInDuration]="300"
+    class="c-content px-3 text-center"
+    [class.hidden]="isContentFolded"
+  >
+    @switch (notification.type) {
+      @case (notifcationEnum.INFO) {
+        <p class="g-text">{{ content }}</p>
+      }
+      @case (notifcationEnum.SUCCESS) {
+        <p class="g-text text-ok">{{ content }}</p>
+      }
+      @case (notifcationEnum.ERROR) {
+        <p class="g-text text-error">{{ content }}</p>
+      }
+      @default {}
+    }
+  </div>
 </div>

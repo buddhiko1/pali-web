@@ -40,7 +40,7 @@
       opacity: 1;
     }
     to {
-      transform: translateY(55px);
+      transform: translateY(-55px);
       opacity: 0;
     }
   }

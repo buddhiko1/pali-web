@@ -15,6 +15,7 @@ import { CheckSvgComponent } from 'src/app/svg/check/check.component';
 import { InfoSvgComponent } from 'src/app/svg/info/info.component';
 import { UnfoldSvgComponent } from 'src/app/svg/unfold/unfold.component';
 import { CloseSvgComponent } from 'src/app/svg/close/close.component';
+import { FadeInDirective } from 'src/app/core/fade-in.directive';
 import { Notification, NotificationEnum } from '../notification.model';
 
 @Component({
@@ -27,6 +28,7 @@ import { Notification, NotificationEnum } from '../notification.model';
     InfoSvgComponent,
     UnfoldSvgComponent,
     CloseSvgComponent,
+    FadeInDirective,
   ],
   templateUrl: './box.component.html',
   styleUrl: './box.component.css',
@@ -37,7 +39,8 @@ export class BoxComponent implements OnInit, OnDestroy {
   @Output() closed = new EventEmitter<void>();
   notifcationEnum = NotificationEnum;
   isContentFolded = true;
-  private _titleLength: number = 10;
+  shouldSlideOut = false;
+  private _titleLength: number = 20;
   private _isMouseEntered = false;
   private _intervalSuscription!: Subscription;
 
@@ -67,7 +70,10 @@ export class BoxComponent implements OnInit, OnDestroy {
   }
 
   close(): void {
-    this.closed.emit();
+    this.shouldSlideOut = true;
+    setTimeout(() => {
+      this.closed.emit();
+    }, 1000);
   }
 
   showContent(): void {
