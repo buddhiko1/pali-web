@@ -1,6 +1,5 @@
 import { Directive, ElementRef, Input, OnInit } from '@angular/core';
-import { interval } from 'rxjs';
-import { map, take } from 'rxjs/operators';
+import { interval, map, take, timer } from 'rxjs';
 
 @Directive({
   selector: '[appTyping]',
@@ -16,7 +15,9 @@ export class TypingDirective implements OnInit {
   ngOnInit(): void {
     this._charList = this._el.nativeElement.innerHTML.split('');
     this._el.nativeElement.innerHTML = '';
-    setTimeout(this._typing.bind(this), this.delay);
+    timer(this.delay).subscribe(() => {
+      this._typing();
+    });
   }
 
   private _typing(): void {

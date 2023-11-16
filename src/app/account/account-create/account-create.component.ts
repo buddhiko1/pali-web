@@ -6,6 +6,7 @@ import {
   Validators,
   ReactiveFormsModule,
 } from '@angular/forms';
+import { timer } from 'rxjs';
 
 import { CreateAccountMutationVariables } from 'src/gql/graphql';
 import { NavigationService } from 'src/app/core/navigation.service';
@@ -88,9 +89,9 @@ export class AccountCreateComponent implements OnInit {
       .createAccount(args)
       .then(() => {
         // wait for 3 seconds for user to receive the email.
-        setTimeout(() => {
+        timer(3000).subscribe(() => {
           this.successInfo = PromptEnum.SignUp;
-        }, 3000);
+        });
       })
       .catch((error) => {
         this.errorInfo = error.toString();

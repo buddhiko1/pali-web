@@ -8,7 +8,7 @@ import {
   HostListener,
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { interval, Subscription } from 'rxjs';
+import { timer, Subscription } from 'rxjs';
 
 import { ErrorSvgComponent } from 'src/app/svg/error/error.component';
 import { CheckSvgComponent } from 'src/app/svg/check/check.component';
@@ -45,7 +45,7 @@ export class BoxComponent implements OnInit, OnDestroy {
   private _intervalSuscription!: Subscription;
 
   ngOnInit(): void {
-    const intervalSubject = interval(this.duration);
+    const intervalSubject = timer(this.duration, this.duration);
     this._intervalSuscription = intervalSubject.subscribe(() => {
       if (!this._isMouseEntered) {
         this.close();
@@ -71,9 +71,9 @@ export class BoxComponent implements OnInit, OnDestroy {
 
   close(): void {
     this.shouldSlideOut = true;
-    setTimeout(() => {
+    timer(1000).subscribe(() => {
       this.closed.emit();
-    }, 1000);
+    });
   }
 
   showContent(): void {
