@@ -25,10 +25,10 @@
     </div>
     @for (book of tipitaka; track book.index) {
       <div class="c-book pt-14 lg:pt-28">
-        <app-book [config]="bookConfigFor(book)"></app-book>
+        <app-book [config]="bookConfigFor(book)" />
         <div class="c-action w-full mt-10 pb-4 border-b g-border">
           <a [href]="book.info_url" target="_blank" class="g-button">
-            <app-github-svg [class]="['g-svg']"></app-github-svg>
+            <app-github-svg [class]="['g-svg']" />
           </a>
           <a
             [href]="fileServer + '/' + book.zip?.filename_disk + '?download'"
@@ -36,7 +36,7 @@
             target="_blank"
             class="g-button"
           >
-            <app-download-svg [class]="['g-svg']"></app-download-svg>
+            <app-download-svg [class]="['g-svg']" />
           </a>
         </div>
       </div>
@@ -53,7 +53,7 @@
       </div>
       @for (cite of cites; track cite.index) {
         <div class="c-cite pt-8 lg:pt-12">
-          <app-quote-svg [class]="['g-svg']" [size]="'3rem'"></app-quote-svg>
+          <app-quote-svg [class]="['g-svg']" [size]="'3rem'" />
           <p class="mt-2 lg:mt-4 text-center g-text">
             {{ cite.text }}
           </p>

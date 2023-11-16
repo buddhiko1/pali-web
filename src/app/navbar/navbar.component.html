@@ -1,4 +1,4 @@
-<nav>
+<nav class="sticky z-10">
   @if (showOverlay) {
     <app-overlay [opacity]="0.8" (click)="toggleMenu()" />
   }
@@ -28,7 +28,7 @@
           'ease-in-out',
           isMenuOpened ? 'rotate-45' : ''
         ]"
-      ></app-plus-svg>
+      />
     </button>
 
     <div
@@ -58,9 +58,9 @@
 
       <button (click)="toggleDark()" class="c-theme p-1">
         @if (isDark) {
-          <app-moon-svg [class]="['g-svg', 'g-hover']"></app-moon-svg>
+          <app-moon-svg [class]="['g-svg', 'g-hover']" />
         } @else {
-          <app-sun-svg [class]="['g-svg', 'g-hover']"></app-sun-svg>
+          <app-sun-svg [class]="['g-svg', 'g-hover']" />
         }
       </button>
 
@@ -73,7 +73,7 @@
             'h-5',
             isActiveUrl('email') ? 'text-focus' : ''
           ]"
-        ></app-email-svg>
+        />
       </button>
 
       <button (click)="routeTo('account')" class="c-account p-1">
@@ -83,7 +83,7 @@
             'g-hover',
             isActiveUrl('account') ? 'text-focus' : ''
           ]"
-        ></app-person-svg>
+        />
       </button>
     </div>
   </div>

@@ -24,16 +24,12 @@
         OK
       </button>
     } @else {
-      <app-wheel-svg
-        [size]="'4rem'"
-        delay="500ms"
-        class="c-wheel md:hidden"
-      ></app-wheel-svg>
+      <app-wheel-svg [size]="'4rem'" delay="500ms" class="c-wheel md:hidden" />
       <app-wheel-svg
         [size]="'6rem'"
         delay="500ms"
         class="c-wheel hidden md:block"
-      ></app-wheel-svg>
+      />
     }
   </dialog>
 </div>

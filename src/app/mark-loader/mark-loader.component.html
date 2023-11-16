@@ -4,12 +4,8 @@
   [class.c-failed]="errorInfo"
 >
   @if (successInfo) {
-    <app-check-svg
-      [class]="['c-svg', 'fill-current', 'text-ok']"
-    ></app-check-svg>
+    <app-check-svg [class]="['c-svg', 'fill-current', 'text-ok']" />
   } @else if (errorInfo) {
-    <app-close-svg
-      [class]="['c-svg', 'fill-current', 'text-error']"
-    ></app-close-svg>
+    <app-close-svg [class]="['c-svg', 'fill-current', 'text-error']" />
   }
 </div>
