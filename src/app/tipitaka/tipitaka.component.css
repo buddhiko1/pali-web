@@ -1,13 +1,11 @@
 .c-container {
   display: grid;
   grid-template-rows: auto auto auto;
-  grid-template-columns: theme("spacing.smContentPadding") 1fr theme(
-      "spacing.smContentPadding"
-    );
+  grid-template-columns: 1fr;
   grid-template-areas:
-    "banner banner banner"
-    "left-padding books right-padding"
-    "cites cites cites";
+    "banner"
+    "books"
+    "cites";
 }
 
 .c-banner {
@@ -38,10 +36,8 @@
   grid-area: cites;
   display: grid;
   grid-template-rows: auto;
-  grid-template-columns: theme("spacing.smContentPadding") 1fr theme(
-      "spacing.smContentPadding"
-    );
-  grid-template-areas: "left-padding content right-padding";
+  grid-template-columns: 1fr;
+  grid-template-areas: "content";
 }
 
 .c-cites .c-content {
@@ -58,29 +54,12 @@
 }
 
 @media screen and (min-width: theme("screens.sm")) {
-  .c-container {
-    grid-template-columns: theme("spacing.mdContentPadding") 1fr theme(
-        "spacing.mdContentPadding"
-      );
-  }
-  .c-cites {
-    grid-template-rows: auto;
-    grid-template-columns: theme("spacing.mdContentPadding") 1fr theme(
-        "spacing.mdContentPadding"
-      );
-  }
   .c-cites .c-content {
     grid-row-gap: theme(spacing.6);
   }
 }
 
 @media screen and (min-width: theme("screens.lg")) {
-  .c-container {
-    grid-template-columns: theme("spacing.lgContentPadding") 1fr theme(
-        "spacing.lgContentPadding"
-      );
-  }
-
   .c-books {
     grid-template-rows: auto auto;
     grid-template-columns: 1fr 1fr 1fr;
@@ -91,13 +70,6 @@
 
   .c-books .c-title {
     grid-area: books-title;
-  }
-
-  .c-cites {
-    grid-template-rows: auto;
-    grid-template-columns: theme("spacing.lgContentPadding") 1fr theme(
-        "spacing.lgContentPadding"
-      );
   }
 
   .c-cites .c-content {

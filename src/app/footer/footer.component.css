@@ -13,5 +13,8 @@ footer {
   grid-auto-flow: column;
 }
 
+@media screen and (min-width: theme("screens.sm")) {
+}
+
 @media screen and (min-width: theme("screens.lg")) {
 }

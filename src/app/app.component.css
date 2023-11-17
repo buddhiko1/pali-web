@@ -1,7 +1,7 @@
 .c-container {
   display: grid;
   grid-template-rows: auto 1fr auto;
-  grid-template-columns: theme("spacing.smPadding") 1fr theme("spacing.smPadding");
+  grid-template-columns: theme("spacing.smPageXspan") 1fr theme("spacing.smPageXspan");
   grid-template-areas:
     "navbar navbar navbar"
     "left-padding page right-padding"
@@ -23,16 +23,16 @@
 
 @media screen and (min-width: theme("screens.sm")) {
   .c-container {
-    grid-template-columns: theme("spacing.mdPadding") 1fr theme(
-        "spacing.mdPadding"
+    grid-template-columns: theme("spacing.mdPageXspan") 1fr theme(
+        "spacing.mdPageXspan"
       );
   }
 }
 
 @media screen and (min-width: theme("screens.lg")) {
   .c-container {
-    grid-template-columns: theme("spacing.lgPadding") 1fr theme(
-        "spacing.lgPadding"
+    grid-template-columns: theme("spacing.lgPageXspan") 1fr theme(
+        "spacing.lgPageXspan"
       );
   }
 }

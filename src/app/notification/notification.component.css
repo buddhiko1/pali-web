@@ -1,10 +1,8 @@
 .c-container {
   display: grid;
   grid-template-rows: 1fr;
-  grid-template-columns: theme("spacing.smContentPadding") 1fr theme(
-      "spacing.smContentPadding"
-    );
-  grid-template-areas: "left-padding boxes right-padding";
+  grid-template-columns: 1fr;
+  grid-template-areas: "boxes";
 }
 
 .c-boxes {

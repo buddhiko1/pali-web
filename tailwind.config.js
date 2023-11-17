@@ -8,12 +8,12 @@ module.exports = {
   theme: {
     extend: {
       spacing: {
-        smPadding: "1.75rem",
-        smContentPadding: "3rem",
-        mdPadding: "3rem",
-        mdContentPadding: "4.5rem",
-        lgPadding: "21.5vw",
-        lgContentPadding: "23.5vw",
+        smXspan: "1.75rem",
+        smPageXspan: "3rem",
+        mdXspan: "3rem",
+        mdPageXspan: "4.5rem",
+        lgXspan: "21.5vw",
+        lgPageXspan: "23.5vw",
       },
       colors: {
         // elements

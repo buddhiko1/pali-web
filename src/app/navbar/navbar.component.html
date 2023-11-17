@@ -1,10 +1,10 @@
-<nav class="sticky z-10 c-container lg:px-lgPadding">
+<nav class="sticky z-10 c-container lg:px-lgXspan bg-appBg">
   @if (showOverlay) {
     <app-overlay [opacity]="0.8" (click)="toggleMenu()" class="c-overlay" />
   }
   <div
     appFadeIn
-    class="c-banner relative px-smPadding sm:px-mdPadding lg:px-0 pt-1 lg:pt-4 bg-appBg shadow-sm sm:shadow-none transition-transform duration-[400ms] ease-in-out"
+    class="c-banner relative px-smXspan sm:px-mdXspan lg:px-0 pt-1 lg:pt-4 bg-appBg shadow-sm sm:shadow-none transition-transform duration-[400ms] ease-in-out"
     [class.c-container-hidden]="isCollapsed"
   >
     <button
@@ -33,7 +33,7 @@
   </div>
 
   <div
-    class="c-menu w-full lg:w-full px-smPadding sm:px-mdPadding lg:px-0 pb-3 lg:pb-0 bg-appBg"
+    class="c-menu w-full lg:w-full px-smXspan sm:px-mdXspan lg:px-0 pb-3 lg:pb-0 bg-appBg"
     [class.c-menu-opened]="isMenuOpened"
     [class.c-menu-closed]="!isMenuOpened"
   >

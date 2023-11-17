@@ -1,10 +1,8 @@
 .c-container {
   display: grid;
   grid-template-rows: auto;
-  grid-template-columns: theme("spacing.smContentPadding") 1fr theme(
-      "spacing.smContentPadding"
-    );
-  grid-template-areas: "left-padding content right-padding";
+  grid-template-columns: 1fr;
+  grid-template-areas: "content";
 }
 
 .c-content {
@@ -35,20 +33,9 @@
 }
 
 @media screen and (min-width: theme("screens.sm")) {
-  .c-container {
-    grid-template-columns: theme("spacing.mdContentPadding") 1fr theme(
-        "spacing.mdContentPadding"
-      );
-  }
 }
 
 @media screen and (min-width: theme("screens.lg")) {
-  .c-container {
-    grid-template-columns: theme("spacing.lgContentPadding") 1fr theme(
-        "spacing.lgContentPadding"
-      );
-  }
-
   .c-dictionary {
     grid-template-columns: 1fr 1fr;
   }

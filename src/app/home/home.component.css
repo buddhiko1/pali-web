@@ -1,19 +1,10 @@
 .c-container {
   display: grid;
   grid-template-rows: auto auto;
-  grid-template-columns: theme("spacing.smContentPadding") 1fr theme(
-      "spacing.smContentPadding"
-    );
+  grid-template-columns: 1fr;
   grid-template-areas:
-    "banner banner banner"
-    "left-padding content right-padding";
-}
-
-.c-content {
-  grid-area: content;
-  display: grid;
-  grid-auto-flow: row;
-  grid-template-columns: auto;
+    "banner"
+    "content";
 }
 
 .c-banner {
@@ -22,6 +13,13 @@
   justify-content: center;
   align-content: start;
   background-image: url("../../assets/images/leaf.webp");
+}
+
+.c-content {
+  grid-area: content;
+  display: grid;
+  grid-auto-flow: row;
+  grid-template-columns: auto;
 }
 
 .c-modules {
@@ -40,22 +38,12 @@
 }
 
 @media screen and (min-width: theme("screens.sm")) {
-  .c-container {
-    grid-template-columns: theme("spacing.mdContentPadding") 1fr theme(
-        "spacing.mdContentPadding"
-      );
-  }
   .c-modules {
     grid-row-gap: 3.5rem;
   }
 }
 
 @media screen and (min-width: theme("screens.lg")) {
-  .c-container {
-    grid-template-columns: theme("spacing.lgContentPadding") 1fr theme(
-        "spacing.lgContentPadding"
-      );
-  }
   .c-modules {
     grid-template-rows: auto auto;
     grid-template-columns: 1fr 1fr 1fr;

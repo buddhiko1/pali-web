@@ -2,10 +2,8 @@
   display: grid;
   grid-template-rows: auto;
   justify-items: center;
-  grid-template-columns: theme("spacing.smContentPadding") 1fr theme(
-      "spacing.smContentPadding"
-    );
-  grid-template-areas: "left-padding content right-padding";
+  grid-template-columns: 1fr;
+  grid-template-areas: "content";
 }
 
 .c-content {
@@ -32,9 +30,7 @@
 
 @media screen and (min-width: theme("screens.sm")) {
   .c-container {
-    grid-template-columns: theme("spacing.mdContentPadding") 1fr theme(
-        "spacing.mdContentPadding"
-      );
+    grid-template-columns: 1fr;
   }
   .c-loader {
     min-width: 50%;
@@ -43,8 +39,6 @@
 
 @media screen and (min-width: theme("screens.lg")) {
   .c-container {
-    grid-template-columns: theme("spacing.lgContentPadding") 1fr theme(
-        "spacing.lgContentPadding"
-      );
+    grid-template-columns: 1fr;
   }
 }
