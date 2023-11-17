@@ -4,12 +4,19 @@
   grid-template-columns: theme("spacing.smContentPadding") 1fr theme(
       "spacing.smContentPadding"
     );
-  grid-template-areas: "left-padding boxes right-padding"
+  grid-template-areas: "left-padding boxes right-padding";
 }
 
 .c-boxes {
   grid-area: boxes;
-  display:grid;
+  display: grid;
   grid-auto-flow: row;
-  grid-row-gap: theme("spacing.5")
+  grid-row-gap: theme("spacing.5");
+}
+
+@media screen and (min-width: theme("screens.sm")) {
+  .c-container {
+    grid-template-columns: 1fr;
+    grid-template-areas: "boxes";
+  }
 }

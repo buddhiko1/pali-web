@@ -47,7 +47,7 @@ export class BoxComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     const intervalSubject = timer(this.duration, this.duration);
     this._intervalSuscription = intervalSubject.subscribe(() => {
-      if (!this._isMouseEntered) {
+      if (!this._isMouseEntered && this.isContentFolded) {
         this.close();
       }
     });
@@ -67,6 +67,19 @@ export class BoxComponent implements OnInit, OnDestroy {
     return this.notification.message.length > this._titleLength
       ? this.notification.message
       : '';
+  }
+
+  get textClass(): string {
+    switch (this.notification.type) {
+      case NotificationEnum.INFO:
+        return 'g-text';
+      case NotificationEnum.SUCCESS:
+        return 'g-text text-ok';
+      case NotificationEnum.ERROR:
+        return 'g-text text-error';
+      default:
+        return '';
+    }
   }
 
   close(): void {
