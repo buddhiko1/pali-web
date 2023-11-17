@@ -11,7 +11,7 @@
       (click)="routeTo('')"
       class="c-logo -ml-3 p-3 text-2xl lg:text-3xl uppercase tracking-widest font-bold text-logo"
     >
-      <p class="g-hover" [class.text-focus]="isActiveUrl('')">Pali</p>
+      <p class="u-hover" [class.text-focus]="isActiveUrl('')">Pali</p>
     </button>
 
     <button
@@ -43,7 +43,7 @@
         <li class="c-route-item mt-2 lg:mt-0 lg:mx-4">
           <button
             (click)="routeTo(route.route)"
-            class="g-text g-hover lg:px-1 lg:py-3"
+            class="g-text u-hover lg:px-1 lg:py-3"
             [class.text-focus]="isActiveUrl(route.route)"
           >
             {{ route.name | titlecase }}
@@ -56,9 +56,9 @@
 
     <button (click)="toggleDark()" class="c-theme p-1">
       @if (isDark) {
-        <app-moon-svg [class]="['g-svg', 'g-hover']" />
+        <app-moon-svg [class]="['g-svg', 'u-hover']" />
       } @else {
-        <app-sun-svg [class]="['g-svg', 'g-hover']" />
+        <app-sun-svg [class]="['g-svg', 'u-hover']" />
       }
     </button>
 
@@ -66,7 +66,7 @@
       <app-email-svg
         [class]="[
           'g-svg',
-          'g-hover',
+          'u-hover',
           'w-5',
           'h-5',
           isActiveUrl('email') ? 'text-focus' : ''
@@ -78,7 +78,7 @@
       <app-person-svg
         [class]="[
           'g-svg',
-          'g-hover',
+          'u-hover',
           isActiveUrl('account') ? 'text-focus' : ''
         ]"
       />

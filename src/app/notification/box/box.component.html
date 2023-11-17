@@ -35,11 +35,11 @@
       <div class="c-action">
         @if (isContentFolded) {
           <button (click)="showContent()">
-            <app-unfold-svg [class]="['g-svg', 'g-hover']" />
+            <app-unfold-svg [class]="['g-svg', 'u-hover']" />
           </button>
         } @else {
           <button appFadeIn [fadeInDuration]="300" (click)="close()">
-            <app-close-svg [class]="['g-svg', 'g-hover', 'w-5']" />
+            <app-close-svg [class]="['g-svg', 'u-hover', 'w-5']" />
           </button>
         }
       </div>
