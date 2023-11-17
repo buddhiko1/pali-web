@@ -1,15 +1,15 @@
-<nav class="sticky z-10">
+<nav class="sticky z-10 c-container lg:px-lgPadding">
   @if (showOverlay) {
-    <app-overlay [opacity]="0.8" (click)="toggleMenu()" />
+    <app-overlay [opacity]="0.8" (click)="toggleMenu()" class="c-overlay" />
   }
   <div
     appFadeIn
-    class="c-container relative pt-1 lg:pt-4 top-0 bg-appBg shadow-sm sm:shadow-none transition-transform duration-[400ms] ease-in-out"
+    class="c-banner relative px-smPadding sm:px-mdPadding lg:px-0 pt-1 lg:pt-4 bg-appBg shadow-sm sm:shadow-none transition-transform duration-[400ms] ease-in-out"
     [class.c-container-hidden]="isCollapsed"
   >
     <button
       (click)="routeTo('')"
-      class="c-logo p-3 text-2xl lg:text-3xl uppercase tracking-widest font-bold text-logo"
+      class="c-logo -ml-3 p-3 text-2xl lg:text-3xl uppercase tracking-widest font-bold text-logo"
     >
       <p class="g-hover" [class.text-focus]="isActiveUrl('')">Pali</p>
     </button>
@@ -30,61 +30,58 @@
         ]"
       />
     </button>
+  </div>
 
-    <div
-      [class]="[
-        'c-menu',
-        isMenuOpened ? 'c-menu-opened' : 'c-menu-closed',
-        'w-full',
-        'pb-3',
-        'bg-appBg'
-      ]"
-    >
-      <ul class="c-index">
-        @for (item of routes; track item.name) {
-          <li class="c-index-item mt-2 sm:ml-5 lg:mt-0 lg:mx-4">
-            <button
-              (click)="routeTo(item.route)"
-              class="p-1 g-text g-hover"
-              [class.text-focus]="isActiveUrl(item.route)"
-            >
-              {{ item.name | titlecase }}
-            </button>
-          </li>
-        }
-      </ul>
+  <div
+    class="c-menu w-full lg:w-full px-smPadding sm:px-mdPadding lg:px-0 pb-3 lg:pb-0 bg-appBg"
+    [class.c-menu-opened]="isMenuOpened"
+    [class.c-menu-closed]="!isMenuOpened"
+  >
+    <!-- TODO rename route to path in cms -->
+    <ul class="c-routes ml-2 sm:ml-3 ld:ml-0">
+      @for (route of routes; track route.name) {
+        <li class="c-route-item mt-2 lg:mt-0 lg:mx-4">
+          <button
+            (click)="routeTo(route.route)"
+            class="g-text g-hover lg:px-1 lg:py-3"
+            [class.text-focus]="isActiveUrl(route.route)"
+          >
+            {{ route.name | titlecase }}
+          </button>
+        </li>
+      }
+    </ul>
 
-      <div class="c-divider lg:hidden mb-5 h-6 border-b g-border"></div>
+    <div class="c-divider lg:hidden mb-5 h-6 border-b g-border"></div>
 
-      <button (click)="toggleDark()" class="c-theme p-1">
-        @if (isDark) {
-          <app-moon-svg [class]="['g-svg', 'g-hover']" />
-        } @else {
-          <app-sun-svg [class]="['g-svg', 'g-hover']" />
-        }
-      </button>
+    <button (click)="toggleDark()" class="c-theme p-1">
+      @if (isDark) {
+        <app-moon-svg [class]="['g-svg', 'g-hover']" />
+      } @else {
+        <app-sun-svg [class]="['g-svg', 'g-hover']" />
+      }
+    </button>
 
-      <button (click)="routeTo('email')" class="c-email p-1 lg:mx-6">
-        <app-email-svg
-          [class]="[
-            'g-svg',
-            'g-hover',
-            'w-5',
-            'h-5',
-            isActiveUrl('email') ? 'text-focus' : ''
-          ]"
-        />
-      </button>
+    <button (click)="routeTo('email')" class="c-email p-1 lg:mx-6">
+      <app-email-svg
+        [class]="[
+          'g-svg',
+          'g-hover',
+          'w-5',
+          'h-5',
+          isActiveUrl('email') ? 'text-focus' : ''
+        ]"
+      />
+    </button>
 
-      <button (click)="routeTo('account')" class="c-account p-1">
-        <app-person-svg
-          [class]="[
-            'g-svg',
-            'g-hover',
-            isActiveUrl('account') ? 'text-focus' : ''
-          ]"
-        />
-      </button>
-    </div>
+    <button (click)="routeTo('account')" class="c-account p-1">
+      <app-person-svg
+        [class]="[
+          'g-svg',
+          'g-hover',
+          isActiveUrl('account') ? 'text-focus' : ''
+        ]"
+      />
+    </button>
   </div>
 </nav>

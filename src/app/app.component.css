@@ -1,14 +1,14 @@
 .c-container {
   display: grid;
   grid-template-rows: auto 1fr auto;
-  grid-template-columns: 1fr;
+  grid-template-columns: theme("spacing.smPadding") 1fr theme("spacing.smPadding");
   grid-template-areas:
-    "navbar"
-    "page"
-    "footer";
+    "navbar navbar navbar"
+    "left-padding page right-padding"
+    "footer footer footer";
 }
 
-.navbar {
+.c-navbar {
   grid-area: navbar;
 }
 
@@ -18,4 +18,21 @@
 
 .c-footer {
   grid-area: footer;
+}
+
+
+@media screen and (min-width: theme("screens.sm")) {
+  .c-container {
+    grid-template-columns: theme("spacing.mdPadding") 1fr theme(
+        "spacing.mdPadding"
+      );
+  }
+}
+
+@media screen and (min-width: theme("screens.lg")) {
+  .c-container {
+    grid-template-columns: theme("spacing.lgPadding") 1fr theme(
+        "spacing.lgPadding"
+      );
+  }
 }

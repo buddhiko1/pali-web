@@ -1,16 +1,22 @@
 .c-container {
   display: grid;
   grid-template-rows: auto auto;
-  grid-template-columns: theme("spacing.smPadding") auto auto theme(
-      "spacing.smPadding"
-    );
+  grid-template-columns: auto;
   grid-template-areas:
-    "left-padding logo toggle right-padding"
-    "menu menu menu menu";
+    "banner"
+    "menu";
 }
 
-.c-container-hidden {
-  transform: translateY(-100%);
+.c-overlay {
+  grid-area: 1/1/2/1;
+}
+
+.c-banner {
+  grid-area: banner;
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: auto auto;
+  grid-template-areas: "logo toggle";
 }
 
 .c-logo {
@@ -28,14 +34,16 @@
   position: absolute;
   display: grid;
   grid-template-rows: auto auto auto;
-  grid-template-columns: theme("spacing.smPadding") auto auto auto theme(
-      "spacing.smPadding"
-    );
+  grid-template-columns: auto auto auto;
   grid-template-areas:
-    "left-padding index index index right-padding"
-    "left-padding divider divider divider right-padding"
-    "left-padding theme email account right-padding";
+    "routes routes routes"
+    "divider divider divider"
+    "theme email account";
   transform: translateX(-100%);
+}
+
+.c-container-hidden {
+  transform: translateY(-100%);
 }
 
 @keyframes slide-out {
@@ -56,7 +64,7 @@
   }
 }
 
-/* can't use revers here */
+/* TODO can't use revers here */
 .c-menu-opened {
   animation: slide-in 300ms ease-in-out both;
 }
@@ -65,9 +73,8 @@
   animation: slide-out 300ms ease-in-out both;
 }
 
-.c-index {
-  grid-area: index;
-  padding-top: theme("spacing.2");
+.c-routes {
+  grid-area: routes;
 }
 
 .c-divider {
@@ -93,52 +100,44 @@
 }
 
 @media screen and (min-width: theme("screens.sm")) {
-  .c-container {
-    display: grid;
-    grid-template-rows: auto auto;
-    grid-template-columns: theme("spacing.mdPadding") auto auto theme(
-        "spacing.mdPadding"
-      );
-    /* row-gap:theme(spacing.14) */
-  }
 }
 
 @media screen and (min-width: theme("screens.lg")) {
   .c-container {
-    grid-template-rows: auto;
-    grid-template-columns: theme("spacing.lgPadding") auto 1fr auto auto auto theme(
-        "spacing.lgPadding"
-      );
-    grid-template-areas: "left-padding logo index theme email account right-padding";
-    place-content: center;
+    grid-template-rows: 1fr;
+    grid-template-columns: auto 1fr 14fr;
+    grid-template-areas: "banner span menu";
     align-items: baseline;
   }
 
+  .c-overlay {
+    grid-area: 1/1/1/3;
+  }
+
+  .c-banner {
+    grid-template-rows: auto;
+    grid-template-columns: auto;
+    grid-template-areas: "logo";
+  }
+
   .c-menu {
-    display: contents;
+    grid-template-rows: 1fr;
+    grid-template-columns: 6fr 1fr auto auto auto;
+    grid-template-areas: "routes span theme email account";
+    transform: translateX(0);
+    justify-self: end;
+    align-self: end;
   }
 
-  .c-index {
-    padding-top: theme("spacing.0");
-    padding-left: theme("spacing.16");
-  }
-
-  .c-index-item {
+  .c-route-item {
     display: inline;
   }
 
-  .c-theme {
-    justify-self: start;
-    align-self: center;
+  .c-menu-opened {
+    animation: none;
   }
 
-  .c-email {
-    justify-self: center;
-    align-self: center;
-  }
-
-  .c-account {
-    justify-self: start;
-    align-self: center;
+  .c-menu-closed {
+    animation: none;
   }
 }
