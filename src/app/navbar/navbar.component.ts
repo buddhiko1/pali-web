@@ -56,6 +56,7 @@ export class NavbarComponent {
       .pipe(throttleTime(100))
       .subscribe(() => {
         const currentScrollPosition = window.scrollY;
+        console.error(currentScrollPosition, this._previousScrollPosition);
         currentScrollPosition < this._previousScrollPosition
           ? (this.isCollapsed = false)
           : (this.isCollapsed = true);

@@ -107,7 +107,6 @@
     grid-template-rows: 1fr;
     grid-template-columns: auto 1fr 14fr;
     grid-template-areas: "banner span menu";
-    align-items: baseline;
   }
 
   .c-overlay {

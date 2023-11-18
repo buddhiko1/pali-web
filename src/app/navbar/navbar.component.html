@@ -1,11 +1,13 @@
-<nav class="sticky z-10 c-container lg:px-lgXspan bg-appBg">
+<nav
+  class="relative c-container lg:px-lgXspan bg-appBg transition-transform duration-[400ms] ease-in-out"
+  [class.c-container-hidden]="isCollapsed"
+>
   @if (showOverlay) {
     <app-overlay [opacity]="0.8" (click)="toggleMenu()" class="c-overlay" />
   }
   <div
     appFadeIn
-    class="c-banner relative px-smXspan sm:px-mdXspan lg:px-0 pt-1 lg:pt-4 bg-appBg shadow-sm sm:shadow-none transition-transform duration-[400ms] ease-in-out"
-    [class.c-container-hidden]="isCollapsed"
+    class="c-banner px-smXspan sm:px-mdXspan lg:px-0 pt-1 lg:pt-4 bg-appBg shadow-sm sm:shadow-none"
   >
     <button
       (click)="routeTo('')"
@@ -40,7 +42,7 @@
     <!-- TODO rename route to path in cms -->
     <ul class="c-routes ml-2 sm:ml-3 ld:ml-0">
       @for (route of routes; track route.name) {
-        <li class="c-route-item mt-2 lg:mt-0 lg:mx-4">
+        <li class="c-route-item mt-2 lg:mt-0 lg:mx-[0.7vw]">
           <button
             (click)="routeTo(route.route)"
             class="g-text u-hover lg:px-1 lg:py-3"

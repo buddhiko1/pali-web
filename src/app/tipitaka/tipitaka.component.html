@@ -1,6 +1,6 @@
 <div appFadeIn class="c-container">
   <div
-    class="c-banner u-rm-app-span h-[45rem] lg:h-[50rem] bg-cover bg-center lg:mt-12"
+    class="c-banner u-rm-page-span h-[45rem] lg:h-[50rem] bg-cover bg-center lg:mt-12"
   >
     <p
       appSlideIn
@@ -44,8 +44,8 @@
       </div>
     }
   </div>
-  <div class="c-cites u-rm-app-span py-16 lg:py-32 bg-appBg night">
-    <div class="c-content u-add-app-span">
+  <div class="c-cites u-rm-page-span py-16 lg:py-32 bg-appBg night">
+    <div class="c-content u-add-page-span">
       <div class="c-title pb-4 lg:pb-10 border-b g-border">
         <p
           class="text-center text-xl lg:text-3xl uppercase tracking-widest lg:tracking-[.25em] g-hl-title"
@@ -60,10 +60,11 @@
             {{ cite.text }}
           </p>
           <div class="w-28 my-6 lg:my-8 border-b g-border"></div>
+          <!-- TODO rm text-focus -->
           <a
             target="_blank"
             [href]="cite.author_url"
-            class="text-base lg:text-lg u-focus"
+            class="text-base lg:text-lg text-focus"
             >{{ cite.author }}</a
           >
         </div>

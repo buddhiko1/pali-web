@@ -2,14 +2,10 @@
   @apply hover:text-focus;
 }
 
-.u-focus {
-  @apply !text-focus;
-}
-
-.u-rm-app-span {
+.u-rm-page-span {
   @apply -mx-smPageXspan sm:-mx-mdPageXspan lg:-mx-lgPageXspan;
 }
 
-.u-add-app-span {
+.u-add-page-span {
   @apply mx-smPageXspan sm:mx-mdPageXspan lg:mx-lgPageXspan;
 }
