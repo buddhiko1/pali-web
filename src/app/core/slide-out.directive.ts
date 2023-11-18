@@ -17,7 +17,7 @@ export class SlideOutDirective implements OnInit {
     this.renderer.setStyle(
       this._el.nativeElement,
       'animation',
-      `g-slide-out ${this.slideOutDuration}ms ease-in-out ${this.slideOutDelay}ms both`,
+      `ga-slide-out-to-top ${this.slideOutDuration}ms ease-in-out ${this.slideOutDelay}ms both`,
     );
   }
 }

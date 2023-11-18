@@ -14,21 +14,21 @@
       [slideInDelay]="200"
       class="c-container py-20 sm:py-36 lg:py-[17vh]"
     >
-      <div class="c-dialog d-box">
-        <h2 class="c-title d-title">Sign Up</h2>
+      <div class="c-dialog gd-box">
+        <h2 class="c-title gd-title">Sign Up</h2>
         <form [formGroup]="form" (ngSubmit)="onSubmit()" class="c-form">
           <div class="c-email">
-            <label for="email" class="d-text">Email</label>
+            <label for="email" class="gd-text">Email</label>
             <input
               type="email"
               name="email"
               id="email"
               formControlName="email"
               required
-              class="inline-block w-full d-input dark:ring-0"
+              class="inline-block w-full gd-input dark:ring-0"
             />
             @if (email.invalid && (email.dirty || email.touched)) {
-              <div class="mt-1 d-error-text">
+              <div class="mt-1 gd-error-text">
                 @if (email.errors?.["required"]) {
                   <div>Email is required.</div>
                 } @else if (email.errors?.["email"]) {
@@ -42,14 +42,14 @@
           <button
             type="submit"
             [disabled]="!form.valid"
-            class="d-button bg-focus w-full mt-3"
+            class="gd-button bg-focus w-full mt-3"
           >
             Sign Up
           </button>
         </form>
-        <p class="c-tips d-text">
+        <p class="c-tips gd-text">
           <span>Have an account ?</span
-          ><button (click)="routeToLogin()" class="g-link-button text-sm ml-4">
+          ><button (click)="routeToLogin()" class="gc-link-button text-sm ml-4">
             Sign In
           </button>
         </p>

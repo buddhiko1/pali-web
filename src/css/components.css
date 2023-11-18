@@ -1,35 +1,35 @@
-.g-text {
+.gc-text {
   @apply tracking-wide text-text;
 }
 
-.g-hl-title {
+.gc-hl-title {
   @apply tracking-wide text-lg text-hlTitle;
 }
 
-.g-card {
+.gc-card {
   @apply bg-cardBg rounded-lg;
 }
 
-.g-svg {
+.gc-svg {
   @apply w-6 h-6 fill-current border-none focus:ring-0 text-text;
 }
 
-.g-button {
+.gc-button {
   @apply p-1 m-auto rounded-md bg-buttonBg hover:bg-hover tracking-wide font-light text-buttonText;
 }
 
-.g-link-button {
+.gc-link-button {
   @apply p-1 text-focus;
 }
 
-.g-hl-button {
+.gc-hl-button {
   @apply py-1 px-4 m-auto rounded-md bg-focus tracking-wide font-light text-buttonText;
 }
 
-.g-scrollbar {
+.gc-scrollbar {
   @apply scrollbar-thin scrollbar-thumb-rounded-full scrollbar-thumb-border scrollbar-track-appBg;
 }
 
-.g-border {
+.gc-border {
   @apply border-border;
 }

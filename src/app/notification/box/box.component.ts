@@ -72,11 +72,11 @@ export class BoxComponent implements OnInit, OnDestroy {
   get textClass(): string {
     switch (this.notification.type) {
       case NotificationEnum.INFO:
-        return 'g-text';
+        return 'gc-text';
       case NotificationEnum.SUCCESS:
-        return 'g-text text-ok';
+        return 'gc-text text-ok';
       case NotificationEnum.ERROR:
-        return 'g-text text-error';
+        return 'gc-text text-error';
       default:
         return '';
     }

@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
-
-import { FooterComponent } from './footer/footer.component';
 import { RouterOutlet } from '@angular/router';
+
+import { FadeInDirective } from './core/fade-in.directive';
 import { NavbarComponent } from './navbar/navbar.component';
+import { FooterComponent } from './footer/footer.component';
 import { NotificationComponent } from './notification/notification.component';
 
 @Component({
@@ -13,6 +14,7 @@ import { NotificationComponent } from './notification/notification.component';
   imports: [
     NavbarComponent,
     RouterOutlet,
+    FadeInDirective,
     FooterComponent,
     NotificationComponent,
   ],

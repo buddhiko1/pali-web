@@ -46,31 +46,13 @@
   transform: translateY(-100%);
 }
 
-@keyframes slide-out {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-100%);
-  }
-}
-
-@keyframes slide-in {
-  from {
-    transform: translateX(-100%);
-  }
-  to {
-    transform: translateX(0);
-  }
-}
-
 /* TODO can't use revers here */
 .c-menu-opened {
-  animation: slide-in 300ms ease-in-out both;
+  animation: g-slide-in-from-left 300ms ease-in-out both;
 }
 
 .c-menu-closed {
-  animation: slide-out 300ms ease-in-out both;
+  animation: g-slide-out-to-left 300ms ease-in-out both;
 }
 
 .c-routes {

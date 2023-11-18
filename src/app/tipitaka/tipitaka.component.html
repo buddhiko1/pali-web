@@ -1,6 +1,6 @@
 <div appFadeIn class="c-container">
   <div
-    class="c-banner u-rm-page-span h-[45rem] lg:h-[50rem] bg-cover bg-center lg:mt-12"
+    class="c-banner gu-rm-page-span h-[45rem] lg:h-[50rem] bg-cover bg-center lg:mt-12"
   >
     <p
       appSlideIn
@@ -18,9 +18,9 @@
     </p>
   </div>
   <div class="c-books py-16 lg:py-32">
-    <div class="c-title pb-4 lg:pb-10 border-b g-border">
+    <div class="c-title pb-4 lg:pb-10 border-b gc-border">
       <p
-        class="text-center text-xl lg:text-3xl uppercase tracking-widest lg:tracking-[.25em] g-hl-title"
+        class="text-center text-xl lg:text-3xl uppercase tracking-widest lg:tracking-[.25em] gc-hl-title"
       >
         Tipiṭaka Epub
       </p>
@@ -28,38 +28,38 @@
     @for (book of tipitaka; track book.index) {
       <div class="c-book pt-14 lg:pt-28">
         <app-book [config]="bookConfigFor(book)" />
-        <div class="c-action w-full mt-10 pb-4 border-b g-border">
-          <a [href]="book.info_url" target="_blank" class="g-button">
-            <app-github-svg [class]="['g-svg']" />
+        <div class="c-action w-full mt-10 pb-4 border-b gc-border">
+          <a [href]="book.info_url" target="_blank" class="gc-button">
+            <app-github-svg [class]="['gc-svg']" />
           </a>
           <a
             [href]="fileServer + '/' + book.zip?.filename_disk + '?download'"
             [download]="book.name + '.zip'"
             target="_blank"
-            class="g-button"
+            class="gc-button"
           >
-            <app-download-svg [class]="['g-svg']" />
+            <app-download-svg [class]="['gc-svg']" />
           </a>
         </div>
       </div>
     }
   </div>
-  <div class="c-cites u-rm-page-span py-16 lg:py-32 bg-appBg night">
-    <div class="c-content u-add-page-span">
-      <div class="c-title pb-4 lg:pb-10 border-b g-border">
+  <div class="c-cites gu-rm-page-span py-16 lg:py-32 bg-appBg night">
+    <div class="c-content gu-add-page-span">
+      <div class="c-title pb-4 lg:pb-10 border-b gc-border">
         <p
-          class="text-center text-xl lg:text-3xl uppercase tracking-widest lg:tracking-[.25em] g-hl-title"
+          class="text-center text-xl lg:text-3xl uppercase tracking-widest lg:tracking-[.25em] gc-hl-title"
         >
           bante said
         </p>
       </div>
       @for (cite of cites; track cite.index) {
         <div class="c-cite pt-8 lg:pt-12">
-          <app-quote-svg [class]="['g-svg']" [size]="'3rem'" />
-          <p class="mt-2 lg:mt-4 text-center g-text">
+          <app-quote-svg [class]="['gc-svg']" [size]="'3rem'" />
+          <p class="mt-2 lg:mt-4 text-center gc-text">
             {{ cite.text }}
           </p>
-          <div class="w-28 my-6 lg:my-8 border-b g-border"></div>
+          <div class="w-28 my-6 lg:my-8 border-b gc-border"></div>
           <!-- TODO rm text-focus -->
           <a
             target="_blank"

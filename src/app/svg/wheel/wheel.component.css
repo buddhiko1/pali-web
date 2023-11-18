@@ -1,14 +1,5 @@
-@keyframes rotate {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
 .start {
-  animation: rotate var(--cycleTime) linear var(--delay) infinite;
+  animation: ga-rotate var(--cycleTime) linear var(--delay) infinite;
 }
 
 .stop {

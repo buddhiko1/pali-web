@@ -14,31 +14,31 @@
       [slideInDelay]="200"
       class="c-container py-20 sm:py-36 lg:py-[17vh]"
     >
-      <div class="c-dialog d-box">
-        <h2 class="c-title d-title">Initialize</h2>
+      <div class="c-dialog gd-box">
+        <h2 class="c-title gd-title">Initialize</h2>
         <form [formGroup]="form" (ngSubmit)="onSubmit()" class="c-form">
           <div class="c-email">
-            <label for="email" class="d-text">Email</label>
+            <label for="email" class="gd-text">Email</label>
             <input
               type="email"
               name="email"
               id="email"
               formControlName="email"
               required
-              class="disabled:cursor-not-allowed disabled:opacity-75 w-full d-input"
+              class="disabled:cursor-not-allowed disabled:opacity-75 w-full gd-input"
             />
           </div>
           <div class="c-password">
-            <label for="password" class="d-text">Password</label>
+            <label for="password" class="gd-text">Password</label>
             <input
               type="password"
               name="password"
               id="password"
               formControlName="password"
-              class="w-full d-input"
+              class="w-full gd-input"
             />
             @if (password.invalid && (password.dirty || password.touched)) {
-              <div class="mt-1 d-error-text">
+              <div class="mt-1 gd-error-text">
                 @if (password.errors?.["minlength"]) {
                   <div>Password must be at least 6 characters long.</div>
                 } @else if (password.errors?.["required"]) {
@@ -50,7 +50,7 @@
           <button
             type="submit"
             [disabled]="!form.valid"
-            class="d-button bg-focus w-full mt-3"
+            class="gd-button bg-focus w-full mt-3"
           >
             Ok
           </button>

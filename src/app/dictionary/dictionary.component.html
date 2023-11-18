@@ -2,11 +2,11 @@
   <div class="c-content">
     <div appSlideIn class="mt-10 lg:mt-24">
       <p
-        class="inline-block capitalize lg:text-xl g-hl-title"
+        class="inline-block capitalize lg:text-xl gc-hl-title"
         [innerHtml]="(introduction ? introduction.title : '') | safeHtml"
       ></p>
       <p
-        class="mt-4 lg:mt-8 leading-relaxed g-text"
+        class="mt-4 lg:mt-8 leading-relaxed gc-text"
         [innerHtml]="(introduction ? introduction.text : '') | safeHtml"
       ></p>
       <div class="mt-4 lg:mt-8">
@@ -23,7 +23,7 @@
       <div
         appSlideIn
         [slideInDelay]="dictionary.index === 1 ? 800 : 1000"
-        class="c-dictionary mt-12 lg:mt-36 pb-8 lg:pb-24 border-b g-border"
+        class="c-dictionary mt-12 lg:mt-36 pb-8 lg:pb-24 border-b gc-border"
         [class.border-b]="dictionary.index !== dictionaries.length"
       >
         @if (dictionary.index % 2) {
@@ -32,9 +32,9 @@
           </div>
         }
         <div>
-          <p class="capitalize lg:text-xl g-hl-title">{{ dictionary.name }}</p>
+          <p class="capitalize lg:text-xl gc-hl-title">{{ dictionary.name }}</p>
           <p
-            class="mt-4 lg:mt-8 leading-relaxed g-text"
+            class="mt-4 lg:mt-8 leading-relaxed gc-text"
             [innerHtml]="dictionary.description | safeHtml"
           >
             {{ dictionary.description }}
@@ -43,17 +43,17 @@
             <a
               [href]="dictionary.info_url"
               target="_blank"
-              class="c-link g-button"
+              class="c-link gc-button"
             >
-              <app-github-svg [class]="['g-svg']" />
+              <app-github-svg [class]="['gc-svg']" />
             </a>
             <a
               [href]="fileServer + '/' + dictionary.zip?.id + '?download'"
               [download]="dictionary.name + '.zip'"
               target="_blank"
-              class="c-link g-button"
+              class="c-link gc-button"
             >
-              <app-download-svg [class]="['g-svg']" />
+              <app-download-svg [class]="['gc-svg']" />
             </a>
           </div>
         </div>

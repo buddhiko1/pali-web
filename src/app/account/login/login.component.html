@@ -14,21 +14,21 @@
       [slideInDelay]="200"
       class="c-container py-20 sm:py-36 lg:py-[17vh]"
     >
-      <div class="c-dialog d-box">
-        <h2 class="c-title d-title">Sign In</h2>
+      <div class="c-dialog gd-box">
+        <h2 class="c-title gd-title">Sign In</h2>
         <form [formGroup]="form" (ngSubmit)="onSubmit()" class="c-form">
           <div class="c-email">
-            <label for="email" class="d-text">Email</label>
+            <label for="email" class="gd-text">Email</label>
             <input
               type="email"
               name="email"
               id="email"
               formControlName="email"
               required
-              class="w-full d-input"
+              class="w-full gd-input"
             />
             @if (email.invalid && (email.dirty || email.touched)) {
-              <div class="mt-1 d-error-text">
+              <div class="mt-1 gd-error-text">
                 @if (email.errors?.["required"]) {
                   <div>Email is required.</div>
                 } @else if (email.errors?.["email"]) {
@@ -41,8 +41,8 @@
           </div>
           <div class="c-password">
             <div class="c-password-label">
-              <label for="password" class="d-text">Password</label>
-              <button (click)="onRequestReset()" class="g-link-button text-sm">
+              <label for="password" class="gd-text">Password</label>
+              <button (click)="onRequestReset()" class="gc-link-button text-sm">
                 Forgot?
               </button>
             </div>
@@ -51,10 +51,10 @@
               name="password"
               id="password"
               formControlName="password"
-              class="w-full d-input"
+              class="w-full gd-input"
             />
             @if (password.invalid && (password.dirty || password.touched)) {
-              <div class="mt-1 d-error-text">
+              <div class="mt-1 gd-error-text">
                 @if (password.errors?.["minlength"]) {
                   <div>Password must be at least 6 characters long.</div>
                 } @else if (password.errors?.["required"]) {
@@ -66,16 +66,16 @@
           <button
             type="submit"
             [disabled]="!form.valid"
-            class="bg-focus d-button w-full mt-3"
+            class="bg-focus gd-button w-full mt-3"
           >
             Sign In
           </button>
         </form>
-        <p class="c-tips d-text">
+        <p class="c-tips gd-text">
           <span>Don't have an account?</span
           ><button
             (click)="onCreateAccount()"
-            class="g-link-button text-sm ml-4"
+            class="gc-link-button text-sm ml-4"
           >
             Sign Up
           </button>

@@ -17,7 +17,7 @@ export class FadeOutDirective implements OnInit {
     this.renderer.setStyle(
       this._el.nativeElement,
       'animation',
-      `g-fade-out ${this.fadeOutDuration}ms ease-in-out ${this.fadeOutDelay}ms both`,
+      `ga-fade-out ${this.fadeOutDuration}ms ease-in-out ${this.fadeOutDelay}ms both`,
     );
   }
 }

@@ -1,11 +1,11 @@
-.u-hover {
+.gu-hover {
   @apply hover:text-focus;
 }
 
-.u-rm-page-span {
+.gu-rm-page-span {
   @apply -mx-smPageXspan sm:-mx-mdPageXspan lg:-mx-lgPageXspan;
 }
 
-.u-add-page-span {
+.gu-add-page-span {
   @apply mx-smPageXspan sm:mx-mdPageXspan lg:mx-lgPageXspan;
 }

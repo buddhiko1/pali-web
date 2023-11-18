@@ -17,7 +17,7 @@ export class SlideInDirective implements OnInit {
     this.renderer.setStyle(
       this._el.nativeElement,
       'animation',
-      `g-slide-in ${this.slideInDuration}ms ease-in-out ${this.slideInDelay}ms both`,
+      `ga-slide-in-from-bottom ${this.slideInDuration}ms ease-in-out ${this.slideInDelay}ms both`,
     );
   }
 }

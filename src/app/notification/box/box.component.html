@@ -17,7 +17,7 @@
     <div class="c-icon">
       @switch (notification.type) {
         @case (notifcationEnum.INFO) {
-          <app-info-svg [class]="['g-svg']" />
+          <app-info-svg [class]="['gc-svg']" />
         }
         @case (notifcationEnum.SUCCESS) {
           <app-check-svg [class]="['fill-ok']" />
@@ -35,11 +35,11 @@
       <div class="c-action">
         @if (isContentFolded) {
           <button (click)="showContent()">
-            <app-unfold-svg [class]="['g-svg', 'u-hover']" />
+            <app-unfold-svg [class]="['gc-svg', 'gu-hover']" />
           </button>
         } @else {
           <button appFadeIn [fadeInDuration]="300" (click)="close()">
-            <app-close-svg [class]="['g-svg', 'u-hover', 'w-5']" />
+            <app-close-svg [class]="['gc-svg', 'gu-hover', 'w-5']" />
           </button>
         }
       </div>

@@ -3,22 +3,22 @@
   <dialog
     open
     appFadeIn
-    class="c-dialog d-box absolute mt-[17vh] sm:mt-[20vh] w-[17rem] sm:w-[20rem] lg:w-[25rem]"
+    class="c-dialog gd-box absolute mt-[17vh] sm:mt-[20vh] w-[17rem] sm:w-[20rem] lg:w-[25rem]"
   >
     <h2
-      class="c-title d-title"
+      class="c-title gd-title"
       [class.text-ok]="successInfo"
       [class.text-error]="errorInfo"
     >
       {{ errorInfo ? "Failed" : successInfo ? "Successful" : title }}
     </h2>
     @if (errorInfo || successInfo) {
-      <p appFadeIn [class]="['c-text', 'g-text', 'text-center', 'mx-4']">
+      <p appFadeIn [class]="['c-text', 'gc-text', 'text-center', 'mx-4']">
         {{ errorInfo || successInfo }}
       </p>
       <button
-        class="d-button w-full mt-3"
-        [class.d-error-button]="errorInfo"
+        class="gd-button w-full mt-3"
+        [class.gd-error-button]="errorInfo"
         (click)="onSubmit()"
       >
         OK

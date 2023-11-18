@@ -6,7 +6,7 @@
 - The component's css only focused on the layout.
 - The unit of time for components should be milliseconds.
 - Use 'hl' to represent 'highlight, 'bg' to represent 'background'.
-- 'g-': global css, 'u-': utility css, 'd-': dialog css, 'c-': component css.
+- Css class: 'ga-': global animation, 'gc-': global component, 'gu-': globalutility, 'gd-': global dialog, 'c-': component.
 - Colors of the element must get from the theme.css.
 
 ## Tips

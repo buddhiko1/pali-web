@@ -1,4 +1,4 @@
-@keyframes g-slide-in {
+@keyframes ga-slide-in-from-bottom {
   from {
     transform: translateY(30px);
     opacity: 0;
@@ -10,7 +10,7 @@
 }
 
 @media screen and (min-width: theme("screens.lg")) {
-  @keyframes g-slide-in {
+  @keyframes ga-slide-in-from-bottom {
     from {
       transform: translateY(55px);
       opacity: 0;
@@ -22,7 +22,7 @@
   }
 }
 
-@keyframes g-slide-out {
+@keyframes ga-slide-out-to-top {
   from {
     transform: translateY(0);
     opacity: 1;
@@ -34,7 +34,7 @@
 }
 
 @media screen and (min-width: theme("screens.lg")) {
-  @keyframes g-slide-out {
+  @keyframes ga-slide-out-to-top {
     from {
       transform: translateY(0);
       opacity: 1;
@@ -46,7 +46,25 @@
   }
 }
 
-@keyframes g-fade-in {
+@keyframes ga-slide-out-to-left {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes ga-slide-in-from-left {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes ga-fade-in {
   from {
     opacity: 0;
   }
@@ -55,8 +73,7 @@
   }
 }
 
-
-@keyframes g-fade-out {
+@keyframes ga-fade-out {
   from {
     opacity: 1;
   }
@@ -64,3 +81,13 @@
     opacity: 0;
   }
 }
+
+@keyframes ga-rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+

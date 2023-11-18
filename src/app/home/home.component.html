@@ -1,6 +1,6 @@
 <div appFaderIn class="c-container">
   <div
-    class="c-banner u-rm-page-span lg:mt-12 h-[47rem] lg:h-[50rem] bg-cover bg-center"
+    class="c-banner gu-rm-page-span lg:mt-12 h-[47rem] lg:h-[50rem] bg-cover bg-center"
   >
     <p
       appSlideIn
@@ -19,7 +19,7 @@
     <button
       appFadeIn
       [fadeInDelay]="1600"
-      class="mt-24 g-hl-button grid grid-flow-col"
+      class="mt-24 gc-hl-button grid grid-flow-col"
     >
       <span class="self-center lg:text-xl"> Tutorial </span>
       <app-rarrow-svg
@@ -33,15 +33,15 @@
     </div>
     <div class="c-modules my-16 lg:my-44">
       @for (module of modules; track module.index) {
-        <div class="c-section g-card p-5 lg:p-7">
+        <div class="c-section gc-card p-5 lg:p-7">
           <div>
-            <p class="g-hl-title">{{ module.name | titlecase }}</p>
-            <p class="mt-3 g-text">{{ module.description }}</p>
+            <p class="gc-hl-title">{{ module.name | titlecase }}</p>
+            <p class="mt-3 gc-text">{{ module.description }}</p>
           </div>
           <div class="c-link">
             <button
               routerLink="/{{ module.route }}"
-              class="g-link-button mt-5 mx-auto"
+              class="gc-link-button mt-5 mx-auto"
             >
               <span class="tracking-wide text-sm capitalize">read more</span>
               <app-rarrow-svg

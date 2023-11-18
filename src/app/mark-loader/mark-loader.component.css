@@ -1,12 +1,3 @@
-@keyframes rotate {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
 .c-loader {
   width: var(--size);
   height: var(--size);
@@ -15,7 +6,7 @@
   border-top: var(--borderWidth) solid rgba(0, 0, 0, 0);
   border-bottom: var(--borderWidth) solid rgba(0, 0, 0, 0);
   border-radius: var(--size);
-  animation: rotate 1.5s ease-in-out infinite;
+  animation: ga-rotate 1.5s ease-in-out infinite;
   /* TODO:remove transition */
   transition: 0.7s ease-in-out;
   display: grid;

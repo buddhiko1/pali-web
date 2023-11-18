@@ -1,89 +1,91 @@
-<nav
-  class="relative c-container lg:px-lgXspan bg-appBg transition-transform duration-[400ms] ease-in-out"
-  [class.c-container-hidden]="isCollapsed"
->
+<div>
   @if (showOverlay) {
     <app-overlay [opacity]="0.8" (click)="toggleMenu()" class="c-overlay" />
   }
-  <div
-    appFadeIn
-    class="c-banner px-smXspan sm:px-mdXspan lg:px-0 pt-1 lg:pt-4 bg-appBg shadow-sm sm:shadow-none"
+  <nav
+    class="relative c-container lg:px-lgXspan transition-transform duration-[400ms] ease-in-out bg-appBg"
+    [class.c-container-hidden]="isCollapsed"
   >
-    <button
-      (click)="routeTo('')"
-      class="c-logo -ml-3 p-3 text-2xl lg:text-3xl uppercase tracking-widest font-bold text-logo"
+    <div
+      appFadeIn
+      class="c-banner px-smXspan sm:px-mdXspan lg:px-0 pt-1 lg:pt-4 shadow-sm sm:shadow-none"
     >
-      <p class="u-hover" [class.text-focus]="isActiveUrl('')">Pali</p>
-    </button>
+      <button
+        (click)="routeTo('')"
+        class="c-logo -ml-3 p-3 text-2xl lg:text-3xl uppercase tracking-widest font-bold text-logo"
+      >
+        <p class="gu-hover" [class.text-focus]="isActiveUrl('')">Pali</p>
+      </button>
 
-    <button
-      (click)="toggleMenu()"
-      type="button"
-      aria-label="toggle menu"
-      class="c-toggle lg:hidden py-3 focus:outline-none"
+      <button
+        (click)="toggleMenu()"
+        type="button"
+        aria-label="toggle menu"
+        class="c-toggle lg:hidden py-3 focus:outline-none"
+      >
+        <app-plus-svg
+          [class]="[
+            'gc-svg',
+            'transition-transform',
+            'duration-[400ms]',
+            'ease-in-out',
+            isMenuOpened ? 'rotate-45' : ''
+          ]"
+        />
+      </button>
+    </div>
+
+    <div
+      class="c-menu w-full lg:w-full px-smXspan sm:px-mdXspan lg:px-0 pb-3 lg:pb-0 bg-appBg lg:bg-transparent"
+      [class.c-menu-opened]="isMenuOpened"
+      [class.c-menu-closed]="!isMenuOpened"
     >
-      <app-plus-svg
-        [class]="[
-          'g-svg',
-          'transition-transform',
-          'duration-[400ms]',
-          'ease-in-out',
-          isMenuOpened ? 'rotate-45' : ''
-        ]"
-      />
-    </button>
-  </div>
+      <!-- TODO rename route to path in cms -->
+      <ul class="c-routes ml-2 sm:ml-3 ld:ml-0">
+        @for (route of routes; track route.name) {
+          <li class="c-route-item mt-2 lg:mt-0 lg:mx-[0.7vw]">
+            <button
+              (click)="routeTo(route.route)"
+              class="gc-text gu-hover lg:px-1 lg:py-3"
+              [class.text-focus]="isActiveUrl(route.route)"
+            >
+              {{ route.name | titlecase }}
+            </button>
+          </li>
+        }
+      </ul>
 
-  <div
-    class="c-menu w-full lg:w-full px-smXspan sm:px-mdXspan lg:px-0 pb-3 lg:pb-0 bg-appBg"
-    [class.c-menu-opened]="isMenuOpened"
-    [class.c-menu-closed]="!isMenuOpened"
-  >
-    <!-- TODO rename route to path in cms -->
-    <ul class="c-routes ml-2 sm:ml-3 ld:ml-0">
-      @for (route of routes; track route.name) {
-        <li class="c-route-item mt-2 lg:mt-0 lg:mx-[0.7vw]">
-          <button
-            (click)="routeTo(route.route)"
-            class="g-text u-hover lg:px-1 lg:py-3"
-            [class.text-focus]="isActiveUrl(route.route)"
-          >
-            {{ route.name | titlecase }}
-          </button>
-        </li>
-      }
-    </ul>
+      <div class="c-divider lg:hidden mb-5 h-6 border-b gc-border"></div>
 
-    <div class="c-divider lg:hidden mb-5 h-6 border-b g-border"></div>
+      <button (click)="toggleDark()" class="c-theme p-1">
+        @if (isDark) {
+          <app-moon-svg [class]="['gc-svg', 'gu-hover']" />
+        } @else {
+          <app-sun-svg [class]="['gc-svg', 'gu-hover']" />
+        }
+      </button>
 
-    <button (click)="toggleDark()" class="c-theme p-1">
-      @if (isDark) {
-        <app-moon-svg [class]="['g-svg', 'u-hover']" />
-      } @else {
-        <app-sun-svg [class]="['g-svg', 'u-hover']" />
-      }
-    </button>
+      <button (click)="routeTo('email')" class="c-email p-1 lg:mx-6">
+        <app-email-svg
+          [class]="[
+            'gc-svg',
+            'gu-hover',
+            'w-5',
+            'h-5',
+            isActiveUrl('email') ? 'text-focus' : ''
+          ]"
+        />
+      </button>
 
-    <button (click)="routeTo('email')" class="c-email p-1 lg:mx-6">
-      <app-email-svg
-        [class]="[
-          'g-svg',
-          'u-hover',
-          'w-5',
-          'h-5',
-          isActiveUrl('email') ? 'text-focus' : ''
-        ]"
-      />
-    </button>
-
-    <button (click)="routeTo('account')" class="c-account p-1">
-      <app-person-svg
-        [class]="[
-          'g-svg',
-          'u-hover',
-          isActiveUrl('account') ? 'text-focus' : ''
-        ]"
-      />
-    </button>
-  </div>
-</nav>
+      <button (click)="routeTo('account')" class="c-account p-1">
+        <app-person-svg
+          [class]="[
+            'gc-svg',
+            'gu-hover',
+            isActiveUrl('account') ? 'text-focus' : ''
+          ]"
+        />
+      </button>
+    </div>
+  </nav>
+</div>
