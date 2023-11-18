@@ -7,6 +7,7 @@ import { Directive, ElementRef, Input, OnInit, Renderer2 } from '@angular/core';
 export class SlideInDirective implements OnInit {
   @Input() slideInDelay = 0;
   @Input() slideInDuration = 1000;
+  @Input() slideInClass = 'ga-slide-in-from-bottom';
 
   constructor(
     private _el: ElementRef,
@@ -17,7 +18,7 @@ export class SlideInDirective implements OnInit {
     this.renderer.setStyle(
       this._el.nativeElement,
       'animation',
-      `ga-slide-in-from-bottom ${this.slideInDuration}ms ease-in-out ${this.slideInDelay}ms both`,
+      `${this.slideInClass} ${this.slideInDuration}ms ease-in-out ${this.slideInDelay}ms both`,
     );
   }
 }

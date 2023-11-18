@@ -7,6 +7,7 @@ import { Directive, ElementRef, Input, OnInit, Renderer2 } from '@angular/core';
 export class SlideOutDirective implements OnInit {
   @Input() slideOutDelay = 0;
   @Input() slideOutDuration = 1000;
+  @Input() slideOutClass = 'ga-slide-out-to-top';
 
   constructor(
     private _el: ElementRef,
@@ -17,7 +18,7 @@ export class SlideOutDirective implements OnInit {
     this.renderer.setStyle(
       this._el.nativeElement,
       'animation',
-      `ga-slide-out-to-top ${this.slideOutDuration}ms ease-in-out ${this.slideOutDelay}ms both`,
+      `${this.slideOutClass} ${this.slideOutDuration}ms ease-in-out ${this.slideOutDelay}ms both`,
     );
   }
 }

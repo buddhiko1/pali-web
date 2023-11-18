@@ -40,16 +40,15 @@
       [class.c-menu-opened]="isMenuOpened"
       [class.c-menu-closed]="!isMenuOpened"
     >
-      <!-- TODO rename route to path in cms -->
       <ul class="c-routes ml-2 sm:ml-3 ld:ml-0">
-        @for (route of routes; track route.name) {
+        @for (item of routes; track item.name) {
           <li class="c-route-item mt-2 lg:mt-0 lg:mx-[0.7vw]">
             <button
-              (click)="routeTo(route.route)"
+              (click)="routeTo(item.route)"
               class="gc-text gu-hover lg:px-1 lg:py-3"
-              [class.text-focus]="isActiveUrl(route.route)"
+              [class.text-focus]="isActiveUrl(item.route)"
             >
-              {{ route.name | titlecase }}
+              {{ item.name | titlecase }}
             </button>
           </li>
         }
@@ -57,11 +56,14 @@
 
       <div class="c-divider lg:hidden mb-5 h-6 border-b gc-border"></div>
 
-      <button (click)="toggleDark()" class="c-theme p-1">
-        @if (isDark) {
-          <app-moon-svg [class]="['gc-svg', 'gu-hover']" />
-        } @else {
-          <app-sun-svg [class]="['gc-svg', 'gu-hover']" />
+      <button (click)="switchTheme()" class="c-theme p-1">
+        @switch (theme) {
+          @case (ThemeEnum.DEFAULT) {
+            <app-sun-svg [class]="['gc-svg', 'gu-hover']" />
+          }
+          @case (ThemeEnum.NIGHT) {
+            <app-moon-svg [class]="['gc-svg', 'gu-hover']" />
+          }
         }
       </button>
 

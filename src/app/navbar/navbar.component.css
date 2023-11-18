@@ -48,11 +48,11 @@
 
 /* TODO can't use revers here */
 .c-menu-opened {
-  animation: g-slide-in-from-left 300ms ease-in-out both;
+  animation: ga-slide-in-from-left 300ms ease-in-out both;
 }
 
 .c-menu-closed {
-  animation: g-slide-out-to-left 300ms ease-in-out both;
+  animation: ga-slide-out-to-left 300ms ease-in-out both;
 }
 
 .c-routes {

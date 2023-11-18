@@ -10,6 +10,7 @@ import { MoonSvgComponent } from '../svg/moon/moon.component';
 import { SunSvgComponent } from '../svg/sun/sun.component';
 import { EmailSvgComponent } from '../svg/email/email.component';
 import { PersonSvgComponent } from '../svg/person/person.component';
+import { ThemeEnum } from './navbar.model';
 import { NavbarService } from './navbar.service';
 import { RoutesFragment } from 'src/gql/graphql';
 
@@ -34,9 +35,9 @@ import { RoutesFragment } from 'src/gql/graphql';
 export class NavbarComponent {
   private _activeUrl = '';
   private _previousScrollPosition = 0;
+  ThemeEnum: typeof ThemeEnum = ThemeEnum;
   showOverlay = false;
   isCollapsed = false;
-  isDark = false;
   isMenuOpened = false;
   routes: RoutesFragment[] = [];
 
@@ -69,12 +70,19 @@ export class NavbarComponent {
     this.showOverlay = !this.showOverlay;
   }
 
-  //TODO implement with a diffrent way.
-  toggleDark(): void {
-    this.isDark
-      ? document.body.classList.remove('night')
-      : document.body.classList.add('night');
-    this.isDark = !this.isDark;
+  switchTheme(): void {
+    switch (this._navbarService.theme) {
+      case ThemeEnum.DEFAULT:
+        this._navbarService.theme = ThemeEnum.NIGHT;
+        break;
+      case ThemeEnum.NIGHT:
+        this._navbarService.theme = ThemeEnum.DEFAULT;
+        break;
+    }
+  }
+
+  get theme(): ThemeEnum {
+    return this._navbarService.theme;
   }
 
   routeTo(url: string): void {
