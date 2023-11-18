@@ -40,7 +40,6 @@ export class BoxComponent implements OnInit, OnDestroy {
   notifcationEnum = NotificationEnum;
   isContentFolded = true;
   shouldSlideOut = false;
-  private _titleLength: number = 20;
   private _isMouseEntered = false;
   private _intervalSuscription!: Subscription;
 
@@ -55,18 +54,6 @@ export class BoxComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     this._intervalSuscription.unsubscribe();
-  }
-
-  get title(): string {
-    return this.notification.message.length > this._titleLength
-      ? `${this.notification.message.substring(0, this._titleLength)}...`
-      : this.notification.message;
-  }
-
-  get content(): string {
-    return this.notification.message.length > this._titleLength
-      ? this.notification.message
-      : '';
   }
 
   get textClass(): string {

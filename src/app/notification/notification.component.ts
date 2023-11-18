@@ -33,8 +33,9 @@ export class NotificationComponent implements OnInit {
     intervalSubject.subscribe((n) => {
       this._notificationService.notificationsSubject.next({
         timestamp: Date.now(),
+        title: 'test title',
         type: n % 2 ? NotificationEnum.ERROR : NotificationEnum.INFO,
-        message: n % 2 ? 'the world is dangerous, keep safe!' : 'what?',
+        content: n % 2 ? 'the world is dangerous, keep safe!' : 'what?',
       });
     });
   }

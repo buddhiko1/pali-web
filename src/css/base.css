@@ -1,11 +1,10 @@
-/* TODO: remove */
-body * {
-  -webkit-tap-highlight-color: transparent;
-  @apply transition-colors duration-200 ease-in-out;
-}
-
 a {
   cursor: pointer;
+}
+
+button {
+  -webkit-tap-highlight-color: transparent;
+  @apply transition-colors duration-200 ease-in-out;
 }
 
 button:disabled {

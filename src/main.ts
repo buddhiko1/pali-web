@@ -6,7 +6,6 @@ import { CommonModule } from '@angular/common';
 import { AppRoutingModule } from './app/app-routing.module';
 import { bootstrapApplication } from '@angular/platform-browser';
 
-//TODO delete this?
 if (environment.production) {
   enableProdMode();
 }

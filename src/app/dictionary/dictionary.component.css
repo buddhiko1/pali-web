@@ -1,15 +1,8 @@
 .c-container {
   display: grid;
-  grid-template-rows: auto;
-  grid-template-columns: 1fr;
-  grid-template-areas: "content";
-}
-
-.c-content {
-  display: grid;
   grid-area: content;
   grid-auto-flow: row;
-  grid-template-columns: auto;
+  grid-template-columns: 1fr;
 }
 
 .c-dictionary {

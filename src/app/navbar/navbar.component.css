@@ -46,7 +46,6 @@
   transform: translateY(-100%);
 }
 
-/* TODO can't use revers here */
 .c-menu-opened {
   animation: ga-slide-in-from-left 300ms ease-in-out both;
 }

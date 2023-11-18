@@ -36,9 +36,19 @@
     </div>
 
     <div
-      class="c-menu w-full lg:w-full px-smXspan sm:px-mdXspan lg:px-0 pb-3 lg:pb-0 bg-appBg lg:bg-transparent"
-      [class.c-menu-opened]="isMenuOpened"
-      [class.c-menu-closed]="!isMenuOpened"
+      [class]="[
+        'c-menu',
+        'w-full',
+        'lg:w-full',
+        'px-smXspan',
+        'sm:px-mdXspan',
+        'lg:px-0',
+        'pb-3',
+        'lg:pb-0',
+        'bg-appBg',
+        'lg:bg-transparent',
+        animationClass
+      ]"
     >
       <ul class="c-routes ml-2 sm:ml-3 ld:ml-0">
         @for (item of routes; track item.name) {

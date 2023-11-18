@@ -26,11 +26,11 @@
 }
 
 .c-slide-out {
-  animation: g-slide-out 500ms ease-in-out both;
+  animation: ga-slide-out-to-top 500ms ease-in-out both;
 }
 
 .c-slide-in {
-  animation: g-slide-in 500ms ease-in-out both;
+  animation: ga-slide-in-from-bottom 500ms ease-in-out both;
 }
 
 @keyframes unfold {

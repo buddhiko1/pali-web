@@ -35,6 +35,7 @@ import { RoutesFragment } from 'src/gql/graphql';
 export class NavbarComponent {
   private _activeUrl = '';
   private _previousScrollPosition = 0;
+  private _isMenuHaveBeenToggled = false;
   ThemeEnum: typeof ThemeEnum = ThemeEnum;
   showOverlay = false;
   isCollapsed = false;
@@ -66,6 +67,9 @@ export class NavbarComponent {
   }
 
   toggleMenu(): void {
+    if (!this._isMenuHaveBeenToggled) {
+      this._isMenuHaveBeenToggled = true;
+    }
     this.isMenuOpened = !this.isMenuOpened;
     this.showOverlay = !this.showOverlay;
   }
@@ -83,6 +87,13 @@ export class NavbarComponent {
 
   get theme(): ThemeEnum {
     return this._navbarService.theme;
+  }
+
+  get animationClass(): string {
+    if (this._isMenuHaveBeenToggled) {
+      return this.isMenuOpened ? 'c-menu-opened' : 'c-menu-closed';
+    }
+    return '';
   }
 
   routeTo(url: string): void {

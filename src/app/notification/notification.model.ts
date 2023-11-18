@@ -6,5 +6,6 @@ export enum NotificationEnum {
 export interface Notification {
   timestamp: number;
   type: NotificationEnum;
-  message: string;
+  title: string;
+  content: string;
 }
