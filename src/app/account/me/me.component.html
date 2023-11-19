@@ -2,7 +2,7 @@
   @if (showUploader) {
     <app-uploader
       [folderId]="avatarFolderId"
-      [allowedExtensions]="['.png', '.jpg', '.jpeg']"
+      [allowedExtensions]="['.png', '.jpg', '.jpeg', '.webp']"
       (successful)="onAvatarUploaded($event)"
       (failed)="showUploader = false"
     />
