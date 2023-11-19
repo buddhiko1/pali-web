@@ -9,3 +9,7 @@
 .gu-add-page-span {
   @apply mx-smPageXspan sm:mx-mdPageXspan lg:mx-lgPageXspan;
 }
+
+.gu-disable-scroll {
+  overflow:hidden;
+}

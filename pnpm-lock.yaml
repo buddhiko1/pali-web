@@ -6,32 +6,32 @@ settings:
 
 dependencies:
   '@angular/animations':
-    specifier: ^17.0.2
-    version: registry.npmmirror.com/@angular/animations@17.0.2(@angular/core@17.0.2)
+    specifier: ^17.0.3
+    version: registry.npmmirror.com/@angular/animations@17.0.3(@angular/core@17.0.3)
   '@angular/common':
-    specifier: ^17.0.2
-    version: registry.npmmirror.com/@angular/common@17.0.2(@angular/core@17.0.2)(rxjs@7.8.1)
+    specifier: ^17.0.3
+    version: registry.npmmirror.com/@angular/common@17.0.3(@angular/core@17.0.3)(rxjs@7.8.1)
   '@angular/compiler':
-    specifier: ^17.0.2
-    version: registry.npmmirror.com/@angular/compiler@17.0.2(@angular/core@17.0.2)
+    specifier: ^17.0.3
+    version: registry.npmmirror.com/@angular/compiler@17.0.3(@angular/core@17.0.3)
   '@angular/core':
-    specifier: ^17.0.2
-    version: registry.npmmirror.com/@angular/core@17.0.2(rxjs@7.8.1)(zone.js@0.14.2)
+    specifier: ^17.0.3
+    version: registry.npmmirror.com/@angular/core@17.0.3(rxjs@7.8.1)(zone.js@0.14.2)
   '@angular/forms':
-    specifier: ^17.0.2
-    version: registry.npmmirror.com/@angular/forms@17.0.2(@angular/common@17.0.2)(@angular/core@17.0.2)(@angular/platform-browser@17.0.2)(rxjs@7.8.1)
+    specifier: ^17.0.3
+    version: registry.npmmirror.com/@angular/forms@17.0.3(@angular/common@17.0.3)(@angular/core@17.0.3)(@angular/platform-browser@17.0.3)(rxjs@7.8.1)
   '@angular/platform-browser':
-    specifier: ^17.0.2
-    version: registry.npmmirror.com/@angular/platform-browser@17.0.2(@angular/animations@17.0.2)(@angular/common@17.0.2)(@angular/core@17.0.2)
+    specifier: ^17.0.3
+    version: registry.npmmirror.com/@angular/platform-browser@17.0.3(@angular/animations@17.0.3)(@angular/common@17.0.3)(@angular/core@17.0.3)
   '@angular/platform-browser-dynamic':
-    specifier: ^17.0.2
-    version: registry.npmmirror.com/@angular/platform-browser-dynamic@17.0.2(@angular/common@17.0.2)(@angular/compiler@17.0.2)(@angular/core@17.0.2)(@angular/platform-browser@17.0.2)
+    specifier: ^17.0.3
+    version: registry.npmmirror.com/@angular/platform-browser-dynamic@17.0.3(@angular/common@17.0.3)(@angular/compiler@17.0.3)(@angular/core@17.0.3)(@angular/platform-browser@17.0.3)
   '@angular/router':
-    specifier: ^17.0.2
-    version: registry.npmmirror.com/@angular/router@17.0.2(@angular/common@17.0.2)(@angular/core@17.0.2)(@angular/platform-browser@17.0.2)(rxjs@7.8.1)
+    specifier: ^17.0.3
+    version: registry.npmmirror.com/@angular/router@17.0.3(@angular/common@17.0.3)(@angular/core@17.0.3)(@angular/platform-browser@17.0.3)(rxjs@7.8.1)
   '@directus/sdk':
-    specifier: ^13.0.1
-    version: registry.npmmirror.com/@directus/sdk@13.0.1
+    specifier: ^13.0.2
+    version: registry.npmmirror.com/@directus/sdk@13.0.2
   '@urql/core':
     specifier: ^4.2.0
     version: registry.npmmirror.com/@urql/core@4.2.0(graphql@16.8.1)
@@ -56,29 +56,29 @@ dependencies:
 
 devDependencies:
   '@angular-devkit/build-angular':
-    specifier: ^17.0.0
-    version: registry.npmmirror.com/@angular-devkit/build-angular@17.0.0(@angular/compiler-cli@17.0.2)(karma@6.4.2)(tailwindcss@3.3.5)(typescript@5.2.2)
+    specifier: ^17.0.1
+    version: registry.npmmirror.com/@angular-devkit/build-angular@17.0.1(@angular/compiler-cli@17.0.3)(karma@6.4.2)(tailwindcss@3.3.5)(typescript@5.2.2)
   '@angular-eslint/builder':
-    specifier: ^17.0.1
-    version: registry.npmmirror.com/@angular-eslint/builder@17.0.1(eslint@8.53.0)(typescript@5.2.2)
+    specifier: ^17.1.0
+    version: registry.npmmirror.com/@angular-eslint/builder@17.1.0(eslint@8.54.0)(typescript@5.2.2)
   '@angular-eslint/eslint-plugin':
-    specifier: ^17.0.1
-    version: registry.npmmirror.com/@angular-eslint/eslint-plugin@17.0.1(eslint@8.53.0)(typescript@5.2.2)
+    specifier: ^17.1.0
+    version: registry.npmmirror.com/@angular-eslint/eslint-plugin@17.1.0(eslint@8.54.0)(typescript@5.2.2)
   '@angular-eslint/eslint-plugin-template':
-    specifier: ^17.0.1
-    version: registry.npmmirror.com/@angular-eslint/eslint-plugin-template@17.0.1(eslint@8.53.0)(typescript@5.2.2)
+    specifier: ^17.1.0
+    version: registry.npmmirror.com/@angular-eslint/eslint-plugin-template@17.1.0(eslint@8.54.0)(typescript@5.2.2)
   '@angular-eslint/schematics':
-    specifier: ^17.0.1
-    version: registry.npmmirror.com/@angular-eslint/schematics@17.0.1(@angular/cli@17.0.0)(eslint@8.53.0)(typescript@5.2.2)
+    specifier: ^17.1.0
+    version: registry.npmmirror.com/@angular-eslint/schematics@17.1.0(@angular/cli@17.0.1)(eslint@8.54.0)(typescript@5.2.2)
   '@angular-eslint/template-parser':
-    specifier: 17.0.1
-    version: registry.npmmirror.com/@angular-eslint/template-parser@17.0.1(eslint@8.53.0)(typescript@5.2.2)
+    specifier: 17.1.0
+    version: registry.npmmirror.com/@angular-eslint/template-parser@17.1.0(eslint@8.54.0)(typescript@5.2.2)
   '@angular/cli':
-    specifier: ^17.0.0
-    version: registry.npmmirror.com/@angular/cli@17.0.0
+    specifier: ^17.0.1
+    version: registry.npmmirror.com/@angular/cli@17.0.1
   '@angular/compiler-cli':
-    specifier: ^17.0.2
-    version: registry.npmmirror.com/@angular/compiler-cli@17.0.2(@angular/compiler@17.0.2)(typescript@5.2.2)
+    specifier: ^17.0.3
+    version: registry.npmmirror.com/@angular/compiler-cli@17.0.3(@angular/compiler@17.0.3)(typescript@5.2.2)
   '@graphql-codegen/cli':
     specifier: ^5.0.0
     version: registry.npmmirror.com/@graphql-codegen/cli@5.0.0(graphql@16.8.1)(typescript@5.2.2)
@@ -93,10 +93,10 @@ devDependencies:
     version: registry.npmmirror.com/@types/jasmine@5.1.2
   '@typescript-eslint/eslint-plugin':
     specifier: 6.11.0
-    version: registry.npmmirror.com/@typescript-eslint/eslint-plugin@6.11.0(@typescript-eslint/parser@6.11.0)(eslint@8.53.0)(typescript@5.2.2)
+    version: registry.npmmirror.com/@typescript-eslint/eslint-plugin@6.11.0(@typescript-eslint/parser@6.11.0)(eslint@8.54.0)(typescript@5.2.2)
   '@typescript-eslint/parser':
     specifier: 6.11.0
-    version: registry.npmmirror.com/@typescript-eslint/parser@6.11.0(eslint@8.53.0)(typescript@5.2.2)
+    version: registry.npmmirror.com/@typescript-eslint/parser@6.11.0(eslint@8.54.0)(typescript@5.2.2)
   '@urql/devtools':
     specifier: ^2.0.3
     version: registry.npmmirror.com/@urql/devtools@2.0.3(@urql/core@4.2.0)(graphql@16.8.1)
@@ -104,14 +104,14 @@ devDependencies:
     specifier: ^10.4.16
     version: registry.npmmirror.com/autoprefixer@10.4.16(postcss@8.4.31)
   eslint:
-    specifier: ^8.53.0
-    version: registry.npmmirror.com/eslint@8.53.0
+    specifier: ^8.54.0
+    version: registry.npmmirror.com/eslint@8.54.0
   eslint-config-prettier:
     specifier: ^9.0.0
-    version: registry.npmmirror.com/eslint-config-prettier@9.0.0(eslint@8.53.0)
+    version: registry.npmmirror.com/eslint-config-prettier@9.0.0(eslint@8.54.0)
   eslint-plugin-prettier:
     specifier: ^5.0.1
-    version: registry.npmmirror.com/eslint-plugin-prettier@5.0.1(eslint-config-prettier@9.0.0)(eslint@8.53.0)(prettier@3.1.0)
+    version: registry.npmmirror.com/eslint-plugin-prettier@5.0.1(eslint-config-prettier@9.0.0)(eslint@8.54.0)(prettier@3.1.0)
   husky:
     specifier: ^8.0.3
     version: registry.npmmirror.com/husky@8.0.3
@@ -184,24 +184,24 @@ packages:
       '@jridgewell/trace-mapping': registry.npmmirror.com/@jridgewell/trace-mapping@0.3.20
     dev: true
 
-  registry.npmmirror.com/@angular-devkit/architect@0.1700.0(chokidar@3.5.3):
-    resolution: {integrity: sha512-whi7HvOjv1J3He9f+H8xNJWKyjAmWuWNl8gxNW6EZP/XLcrOu+/5QT4bPtXQBRIL/avZuc++5sNQS+kReaNCig==, tarball: https://registry.npmmirror.com/@angular-devkit/architect/-/architect-0.1700.0.tgz}
-    id: registry.npmmirror.com/@angular-devkit/architect/0.1700.0
+  registry.npmmirror.com/@angular-devkit/architect@0.1700.1(chokidar@3.5.3):
+    resolution: {integrity: sha512-w84luzQNRjlt7XxX3+jyzcwBBv3gAjjvFWTjN1E5mlpDCUXgYmQ3CMowFHeu0U06HD5Sapap9p2l6GoajuZK5Q==, tarball: https://registry.npmmirror.com/@angular-devkit/architect/-/architect-0.1700.1.tgz}
+    id: registry.npmmirror.com/@angular-devkit/architect/0.1700.1
     name: '@angular-devkit/architect'
-    version: 0.1700.0
+    version: 0.1700.1
     engines: {node: ^18.13.0 || >=20.9.0, npm: ^6.11.0 || ^7.5.6 || >=8.0.0, yarn: '>= 1.13.0'}
     dependencies:
-      '@angular-devkit/core': registry.npmmirror.com/@angular-devkit/core@17.0.0(chokidar@3.5.3)
+      '@angular-devkit/core': registry.npmmirror.com/@angular-devkit/core@17.0.1(chokidar@3.5.3)
       rxjs: registry.npmmirror.com/rxjs@7.8.1
     transitivePeerDependencies:
       - chokidar
     dev: true
 
-  registry.npmmirror.com/@angular-devkit/build-angular@17.0.0(@angular/compiler-cli@17.0.2)(karma@6.4.2)(tailwindcss@3.3.5)(typescript@5.2.2):
-    resolution: {integrity: sha512-hkV8k4moAnUquac2Dz5XPd5izDDgEF82NeUkSwizcTaqlJqYOdmWASMsXyVBzdrTmDtFKQiphfA96i7eo5MlvA==, tarball: https://registry.npmmirror.com/@angular-devkit/build-angular/-/build-angular-17.0.0.tgz}
-    id: registry.npmmirror.com/@angular-devkit/build-angular/17.0.0
+  registry.npmmirror.com/@angular-devkit/build-angular@17.0.1(@angular/compiler-cli@17.0.3)(karma@6.4.2)(tailwindcss@3.3.5)(typescript@5.2.2):
+    resolution: {integrity: sha512-OomGAeBg/OOxzPpoU7EkdD3WwhKip+0Giy/cGtkalSgQ5vWTuZhf8UnxwTf7xEXW5LtvfoTtv7sKmb1dJT7FzA==, tarball: https://registry.npmmirror.com/@angular-devkit/build-angular/-/build-angular-17.0.1.tgz}
+    id: registry.npmmirror.com/@angular-devkit/build-angular/17.0.1
     name: '@angular-devkit/build-angular'
-    version: 17.0.0
+    version: 17.0.1
     engines: {node: ^18.13.0 || >=20.9.0, npm: ^6.11.0 || ^7.5.6 || >=8.0.0, yarn: '>= 1.13.0'}
     peerDependencies:
       '@angular/compiler-cli': ^17.0.0
@@ -236,10 +236,10 @@ packages:
         optional: true
     dependencies:
       '@ampproject/remapping': registry.npmmirror.com/@ampproject/remapping@2.2.1
-      '@angular-devkit/architect': registry.npmmirror.com/@angular-devkit/architect@0.1700.0(chokidar@3.5.3)
-      '@angular-devkit/build-webpack': registry.npmmirror.com/@angular-devkit/build-webpack@0.1700.0(chokidar@3.5.3)(webpack-dev-server@4.15.1)(webpack@5.89.0)
-      '@angular-devkit/core': registry.npmmirror.com/@angular-devkit/core@17.0.0(chokidar@3.5.3)
-      '@angular/compiler-cli': registry.npmmirror.com/@angular/compiler-cli@17.0.2(@angular/compiler@17.0.2)(typescript@5.2.2)
+      '@angular-devkit/architect': registry.npmmirror.com/@angular-devkit/architect@0.1700.1(chokidar@3.5.3)
+      '@angular-devkit/build-webpack': registry.npmmirror.com/@angular-devkit/build-webpack@0.1700.1(chokidar@3.5.3)(webpack-dev-server@4.15.1)(webpack@5.89.0)
+      '@angular-devkit/core': registry.npmmirror.com/@angular-devkit/core@17.0.1(chokidar@3.5.3)
+      '@angular/compiler-cli': registry.npmmirror.com/@angular/compiler-cli@17.0.3(@angular/compiler@17.0.3)(typescript@5.2.2)
       '@babel/core': registry.npmmirror.com/@babel/core@7.23.2
       '@babel/generator': registry.npmmirror.com/@babel/generator@7.23.0
       '@babel/helper-annotate-as-pure': registry.npmmirror.com/@babel/helper-annotate-as-pure@7.22.5
@@ -250,7 +250,7 @@ packages:
       '@babel/preset-env': registry.npmmirror.com/@babel/preset-env@7.23.2(@babel/core@7.23.2)
       '@babel/runtime': registry.npmmirror.com/@babel/runtime@7.23.2
       '@discoveryjs/json-ext': registry.npmmirror.com/@discoveryjs/json-ext@0.5.7
-      '@ngtools/webpack': registry.npmmirror.com/@ngtools/webpack@17.0.0(@angular/compiler-cli@17.0.2)(typescript@5.2.2)(webpack@5.89.0)
+      '@ngtools/webpack': registry.npmmirror.com/@ngtools/webpack@17.0.1(@angular/compiler-cli@17.0.3)(typescript@5.2.2)(webpack@5.89.0)
       '@vitejs/plugin-basic-ssl': registry.npmmirror.com/@vitejs/plugin-basic-ssl@1.0.1(vite@4.5.0)
       ansi-colors: registry.npmmirror.com/ansi-colors@4.1.3
       autoprefixer: registry.npmmirror.com/autoprefixer@10.4.16(postcss@8.4.31)
@@ -325,17 +325,17 @@ packages:
       - webpack-cli
     dev: true
 
-  registry.npmmirror.com/@angular-devkit/build-webpack@0.1700.0(chokidar@3.5.3)(webpack-dev-server@4.15.1)(webpack@5.89.0):
-    resolution: {integrity: sha512-Hx9JUb32gigsHlbBZJ5sw3q3H7qHeX8HTh4aIq4Glvb/5e+HgPlclVSIA5BY2ZYatHixU+CUAXRmcIKxViS02Q==, tarball: https://registry.npmmirror.com/@angular-devkit/build-webpack/-/build-webpack-0.1700.0.tgz}
-    id: registry.npmmirror.com/@angular-devkit/build-webpack/0.1700.0
+  registry.npmmirror.com/@angular-devkit/build-webpack@0.1700.1(chokidar@3.5.3)(webpack-dev-server@4.15.1)(webpack@5.89.0):
+    resolution: {integrity: sha512-u9LTcG9Kg2J6WkF1WSoBLdDabhbKxcuHY24SouAJTwg33j6YksglL7qnofOsNxny3Gdnze2BhCjQ1GS9Y8ovXw==, tarball: https://registry.npmmirror.com/@angular-devkit/build-webpack/-/build-webpack-0.1700.1.tgz}
+    id: registry.npmmirror.com/@angular-devkit/build-webpack/0.1700.1
     name: '@angular-devkit/build-webpack'
-    version: 0.1700.0
+    version: 0.1700.1
     engines: {node: ^18.13.0 || >=20.9.0, npm: ^6.11.0 || ^7.5.6 || >=8.0.0, yarn: '>= 1.13.0'}
     peerDependencies:
       webpack: ^5.30.0
       webpack-dev-server: ^4.0.0
     dependencies:
-      '@angular-devkit/architect': registry.npmmirror.com/@angular-devkit/architect@0.1700.0(chokidar@3.5.3)
+      '@angular-devkit/architect': registry.npmmirror.com/@angular-devkit/architect@0.1700.1(chokidar@3.5.3)
       rxjs: registry.npmmirror.com/rxjs@7.8.1
       webpack: registry.npmmirror.com/webpack@5.89.0(esbuild@0.19.5)
       webpack-dev-server: registry.npmmirror.com/webpack-dev-server@4.15.1(webpack@5.89.0)
@@ -343,11 +343,11 @@ packages:
       - chokidar
     dev: true
 
-  registry.npmmirror.com/@angular-devkit/core@17.0.0(chokidar@3.5.3):
-    resolution: {integrity: sha512-QUu3LnEi4A8t733v2+I0sLtyBJx3Q7zdTAhaauCbxbFhDid0cbYm8hYsyG/njor1irTPxSJbn6UoetVkwUQZxg==, tarball: https://registry.npmmirror.com/@angular-devkit/core/-/core-17.0.0.tgz}
-    id: registry.npmmirror.com/@angular-devkit/core/17.0.0
+  registry.npmmirror.com/@angular-devkit/core@17.0.1(chokidar@3.5.3):
+    resolution: {integrity: sha512-UjNx9fZW0oU7UaeoB0HblYz/Nm8MWtinAe39XkY+zjECLWqKAcHPotfYjucXiky1UlBUOScIKbwjMDdEY8xkuw==, tarball: https://registry.npmmirror.com/@angular-devkit/core/-/core-17.0.1.tgz}
+    id: registry.npmmirror.com/@angular-devkit/core/17.0.1
     name: '@angular-devkit/core'
-    version: 17.0.0
+    version: 17.0.1
     engines: {node: ^18.13.0 || >=20.9.0, npm: ^6.11.0 || ^7.5.6 || >=8.0.0, yarn: '>= 1.13.0'}
     peerDependencies:
       chokidar: ^3.5.2
@@ -364,13 +364,13 @@ packages:
       source-map: registry.npmmirror.com/source-map@0.7.4
     dev: true
 
-  registry.npmmirror.com/@angular-devkit/schematics@17.0.0:
-    resolution: {integrity: sha512-LD7fjDORuBf139/oJ/gSwbIzQPfsm6Y67s1FD+XLi0QXaRt6dw4r7BMD08l1r//oPQofNgbEH4coGVO4NdCL/A==, tarball: https://registry.npmmirror.com/@angular-devkit/schematics/-/schematics-17.0.0.tgz}
+  registry.npmmirror.com/@angular-devkit/schematics@17.0.1:
+    resolution: {integrity: sha512-bwgdGviRZC5X8Tl4QcjtIJAcC0p8yIhOyYVFrq4PWYvI+DfV9P6w3OFuoS6rwEoiIQR90+12iKBYMt1MfL/c0Q==, tarball: https://registry.npmmirror.com/@angular-devkit/schematics/-/schematics-17.0.1.tgz}
     name: '@angular-devkit/schematics'
-    version: 17.0.0
+    version: 17.0.1
     engines: {node: ^18.13.0 || >=20.9.0, npm: ^6.11.0 || ^7.5.6 || >=8.0.0, yarn: '>= 1.13.0'}
     dependencies:
-      '@angular-devkit/core': registry.npmmirror.com/@angular-devkit/core@17.0.0(chokidar@3.5.3)
+      '@angular-devkit/core': registry.npmmirror.com/@angular-devkit/core@17.0.1(chokidar@3.5.3)
       jsonc-parser: registry.npmmirror.com/jsonc-parser@3.2.0
       magic-string: registry.npmmirror.com/magic-string@0.30.5
       ora: registry.npmmirror.com/ora@5.4.1
@@ -379,18 +379,18 @@ packages:
       - chokidar
     dev: true
 
-  registry.npmmirror.com/@angular-eslint/builder@17.0.1(eslint@8.53.0)(typescript@5.2.2):
-    resolution: {integrity: sha512-bNXi5tdqIFdNDHxphDRUUbzA+7v6emOX2B/PFLG2pe+K6/JpHS0auwY/nq7hCroH7pMS5HZ+Q4i90q0GN/DWPg==, tarball: https://registry.npmmirror.com/@angular-eslint/builder/-/builder-17.0.1.tgz}
-    id: registry.npmmirror.com/@angular-eslint/builder/17.0.1
+  registry.npmmirror.com/@angular-eslint/builder@17.1.0(eslint@8.54.0)(typescript@5.2.2):
+    resolution: {integrity: sha512-rLIInxx9q82DDrfcg5gzjNftxhkqdLILUgjlA9XtA9LayU3rz4CS81we+vAOAPbbnGxoMsEeBg5nVecbKN3dVQ==, tarball: https://registry.npmmirror.com/@angular-eslint/builder/-/builder-17.1.0.tgz}
+    id: registry.npmmirror.com/@angular-eslint/builder/17.1.0
     name: '@angular-eslint/builder'
-    version: 17.0.1
+    version: 17.1.0
     peerDependencies:
       eslint: ^7.20.0 || ^8.0.0
       typescript: '*'
     dependencies:
-      '@nx/devkit': registry.npmmirror.com/@nx/devkit@17.0.3(nx@17.0.3)
-      eslint: registry.npmmirror.com/eslint@8.53.0
-      nx: registry.npmmirror.com/nx@17.0.3
+      '@nx/devkit': registry.npmmirror.com/@nx/devkit@17.1.2(nx@17.1.2)
+      eslint: registry.npmmirror.com/eslint@8.54.0
+      nx: registry.npmmirror.com/nx@17.1.2
       typescript: registry.npmmirror.com/typescript@5.2.2
     transitivePeerDependencies:
       - '@swc-node/register'
@@ -398,64 +398,64 @@ packages:
       - debug
     dev: true
 
-  registry.npmmirror.com/@angular-eslint/bundled-angular-compiler@17.0.1:
-    resolution: {integrity: sha512-E3YK9/uIBsuKC76i6uvPdtq8bwA63WDKDYpsPSTLF2XmL3a5LGev0+NmJCD2zR/0uMenHYB27BwjZotpk1rycg==, tarball: https://registry.npmmirror.com/@angular-eslint/bundled-angular-compiler/-/bundled-angular-compiler-17.0.1.tgz}
+  registry.npmmirror.com/@angular-eslint/bundled-angular-compiler@17.1.0:
+    resolution: {integrity: sha512-Y+CN/8nQZaYjsb2b2sXbkQr0LrgBWhCzyLZ+rLfnLE60B9k4GeDt5b7z/OdSObi1xozXfqiaAZ1eXo0iQMN3JA==, tarball: https://registry.npmmirror.com/@angular-eslint/bundled-angular-compiler/-/bundled-angular-compiler-17.1.0.tgz}
     name: '@angular-eslint/bundled-angular-compiler'
-    version: 17.0.1
+    version: 17.1.0
     dev: true
 
-  registry.npmmirror.com/@angular-eslint/eslint-plugin-template@17.0.1(eslint@8.53.0)(typescript@5.2.2):
-    resolution: {integrity: sha512-7aQYUUCrdOvAKesUNsWSNUnPjzb9WI69Mlr/VhKSb4SNWwMr6SmYOsNqSqydIrtpHo4sIgyStGGfzELZ4Kub9Q==, tarball: https://registry.npmmirror.com/@angular-eslint/eslint-plugin-template/-/eslint-plugin-template-17.0.1.tgz}
-    id: registry.npmmirror.com/@angular-eslint/eslint-plugin-template/17.0.1
+  registry.npmmirror.com/@angular-eslint/eslint-plugin-template@17.1.0(eslint@8.54.0)(typescript@5.2.2):
+    resolution: {integrity: sha512-nL9VhChwFQLIRQM4xbTY8Vo095Q4/D77hPtqt3ShYIrORjYTwaWa8+neexToAqXVMapce7oFmFa/OqtxvEerLg==, tarball: https://registry.npmmirror.com/@angular-eslint/eslint-plugin-template/-/eslint-plugin-template-17.1.0.tgz}
+    id: registry.npmmirror.com/@angular-eslint/eslint-plugin-template/17.1.0
     name: '@angular-eslint/eslint-plugin-template'
-    version: 17.0.1
+    version: 17.1.0
     peerDependencies:
       eslint: ^7.20.0 || ^8.0.0
       typescript: '*'
     dependencies:
-      '@angular-eslint/bundled-angular-compiler': registry.npmmirror.com/@angular-eslint/bundled-angular-compiler@17.0.1
-      '@angular-eslint/utils': registry.npmmirror.com/@angular-eslint/utils@17.0.1(eslint@8.53.0)(typescript@5.2.2)
-      '@typescript-eslint/type-utils': registry.npmmirror.com/@typescript-eslint/type-utils@6.10.0(eslint@8.53.0)(typescript@5.2.2)
-      '@typescript-eslint/utils': registry.npmmirror.com/@typescript-eslint/utils@6.10.0(eslint@8.53.0)(typescript@5.2.2)
+      '@angular-eslint/bundled-angular-compiler': registry.npmmirror.com/@angular-eslint/bundled-angular-compiler@17.1.0
+      '@angular-eslint/utils': registry.npmmirror.com/@angular-eslint/utils@17.1.0(eslint@8.54.0)(typescript@5.2.2)
+      '@typescript-eslint/type-utils': registry.npmmirror.com/@typescript-eslint/type-utils@6.11.0(eslint@8.54.0)(typescript@5.2.2)
+      '@typescript-eslint/utils': registry.npmmirror.com/@typescript-eslint/utils@6.11.0(eslint@8.54.0)(typescript@5.2.2)
       aria-query: registry.npmmirror.com/aria-query@5.3.0
       axobject-query: registry.npmmirror.com/axobject-query@4.0.0
-      eslint: registry.npmmirror.com/eslint@8.53.0
+      eslint: registry.npmmirror.com/eslint@8.54.0
       typescript: registry.npmmirror.com/typescript@5.2.2
     transitivePeerDependencies:
       - supports-color
     dev: true
 
-  registry.npmmirror.com/@angular-eslint/eslint-plugin@17.0.1(eslint@8.53.0)(typescript@5.2.2):
-    resolution: {integrity: sha512-HNXzjvqTCfaxENnfjVHJXcWrfzv/3LDH6aEHF7P8B363JSgx0g4SZtGKBrdbXcJPmf5arVfVgRUvKMJ7Es9aiQ==, tarball: https://registry.npmmirror.com/@angular-eslint/eslint-plugin/-/eslint-plugin-17.0.1.tgz}
-    id: registry.npmmirror.com/@angular-eslint/eslint-plugin/17.0.1
+  registry.npmmirror.com/@angular-eslint/eslint-plugin@17.1.0(eslint@8.54.0)(typescript@5.2.2):
+    resolution: {integrity: sha512-pQac5h+XwsquDzaasK/xs9tjdQ/f9eLq8e5An9eXJGHWy4KcrMmQ1XrpaMMMg503LF3rRG/dHKBskGsYgSN9oQ==, tarball: https://registry.npmmirror.com/@angular-eslint/eslint-plugin/-/eslint-plugin-17.1.0.tgz}
+    id: registry.npmmirror.com/@angular-eslint/eslint-plugin/17.1.0
     name: '@angular-eslint/eslint-plugin'
-    version: 17.0.1
+    version: 17.1.0
     peerDependencies:
       eslint: ^7.20.0 || ^8.0.0
       typescript: '*'
     dependencies:
-      '@angular-eslint/utils': registry.npmmirror.com/@angular-eslint/utils@17.0.1(eslint@8.53.0)(typescript@5.2.2)
-      '@typescript-eslint/utils': registry.npmmirror.com/@typescript-eslint/utils@6.10.0(eslint@8.53.0)(typescript@5.2.2)
-      eslint: registry.npmmirror.com/eslint@8.53.0
+      '@angular-eslint/utils': registry.npmmirror.com/@angular-eslint/utils@17.1.0(eslint@8.54.0)(typescript@5.2.2)
+      '@typescript-eslint/utils': registry.npmmirror.com/@typescript-eslint/utils@6.11.0(eslint@8.54.0)(typescript@5.2.2)
+      eslint: registry.npmmirror.com/eslint@8.54.0
       typescript: registry.npmmirror.com/typescript@5.2.2
     transitivePeerDependencies:
       - supports-color
     dev: true
 
-  registry.npmmirror.com/@angular-eslint/schematics@17.0.1(@angular/cli@17.0.0)(eslint@8.53.0)(typescript@5.2.2):
-    resolution: {integrity: sha512-CnQpYJDkGM6NJUOOeHPwfzJbZG90oRGvHVDkDlB2mZ63rQCKNzE1hFnlwBWkzyRH4GkV/84WW0++fXt3cU9ItA==, tarball: https://registry.npmmirror.com/@angular-eslint/schematics/-/schematics-17.0.1.tgz}
-    id: registry.npmmirror.com/@angular-eslint/schematics/17.0.1
+  registry.npmmirror.com/@angular-eslint/schematics@17.1.0(@angular/cli@17.0.1)(eslint@8.54.0)(typescript@5.2.2):
+    resolution: {integrity: sha512-74gW1E5P4z3PvxNXOTXGaF6li/MLcSeJO8z7XtcP7wcXWu0fihOKlMJGgqB3rIcBa8lRcTDLekQERF+kRZ15aQ==, tarball: https://registry.npmmirror.com/@angular-eslint/schematics/-/schematics-17.1.0.tgz}
+    id: registry.npmmirror.com/@angular-eslint/schematics/17.1.0
     name: '@angular-eslint/schematics'
-    version: 17.0.1
+    version: 17.1.0
     peerDependencies:
       '@angular/cli': '>= 17.0.0 < 18.0.0'
     dependencies:
-      '@angular-eslint/eslint-plugin': registry.npmmirror.com/@angular-eslint/eslint-plugin@17.0.1(eslint@8.53.0)(typescript@5.2.2)
-      '@angular-eslint/eslint-plugin-template': registry.npmmirror.com/@angular-eslint/eslint-plugin-template@17.0.1(eslint@8.53.0)(typescript@5.2.2)
-      '@angular/cli': registry.npmmirror.com/@angular/cli@17.0.0
-      '@nx/devkit': registry.npmmirror.com/@nx/devkit@17.0.3(nx@17.0.3)
+      '@angular-eslint/eslint-plugin': registry.npmmirror.com/@angular-eslint/eslint-plugin@17.1.0(eslint@8.54.0)(typescript@5.2.2)
+      '@angular-eslint/eslint-plugin-template': registry.npmmirror.com/@angular-eslint/eslint-plugin-template@17.1.0(eslint@8.54.0)(typescript@5.2.2)
+      '@angular/cli': registry.npmmirror.com/@angular/cli@17.0.1
+      '@nx/devkit': registry.npmmirror.com/@nx/devkit@17.1.2(nx@17.1.2)
       ignore: registry.npmmirror.com/ignore@5.2.4
-      nx: registry.npmmirror.com/nx@17.0.3
+      nx: registry.npmmirror.com/nx@17.1.2
       strip-json-comments: registry.npmmirror.com/strip-json-comments@3.1.1
       tmp: registry.npmmirror.com/tmp@0.2.1
     transitivePeerDependencies:
@@ -467,62 +467,62 @@ packages:
       - typescript
     dev: true
 
-  registry.npmmirror.com/@angular-eslint/template-parser@17.0.1(eslint@8.53.0)(typescript@5.2.2):
-    resolution: {integrity: sha512-EBN5c0/HuaikvPMqQJ6z2U2qSHof6xgwzNH48F4+Mnn2oMzz0eqtvjNrbTCka/vSCjELczao9px879ywDjVB5g==, tarball: https://registry.npmmirror.com/@angular-eslint/template-parser/-/template-parser-17.0.1.tgz}
-    id: registry.npmmirror.com/@angular-eslint/template-parser/17.0.1
+  registry.npmmirror.com/@angular-eslint/template-parser@17.1.0(eslint@8.54.0)(typescript@5.2.2):
+    resolution: {integrity: sha512-CTxzB3stjynngTabdO8xTkiPc6Jvo15C2fxb1pYIlDIH2LgPJJxxCHi+IAt9oJpJOPa8QjLVF9VAXE3fLKAcpg==, tarball: https://registry.npmmirror.com/@angular-eslint/template-parser/-/template-parser-17.1.0.tgz}
+    id: registry.npmmirror.com/@angular-eslint/template-parser/17.1.0
     name: '@angular-eslint/template-parser'
-    version: 17.0.1
+    version: 17.1.0
     peerDependencies:
       eslint: ^7.20.0 || ^8.0.0
       typescript: '*'
     dependencies:
-      '@angular-eslint/bundled-angular-compiler': registry.npmmirror.com/@angular-eslint/bundled-angular-compiler@17.0.1
-      eslint: registry.npmmirror.com/eslint@8.53.0
+      '@angular-eslint/bundled-angular-compiler': registry.npmmirror.com/@angular-eslint/bundled-angular-compiler@17.1.0
+      eslint: registry.npmmirror.com/eslint@8.54.0
       eslint-scope: registry.npmmirror.com/eslint-scope@7.2.2
       typescript: registry.npmmirror.com/typescript@5.2.2
     dev: true
 
-  registry.npmmirror.com/@angular-eslint/utils@17.0.1(eslint@8.53.0)(typescript@5.2.2):
-    resolution: {integrity: sha512-yao+cuWmtDKwe/zW/4+e53pgwlk/rz7fjZFYvaYIuoIpqUQhqYYcBW8NeUoo8BscM57IfPqn0l6UkcXJhS1bRA==, tarball: https://registry.npmmirror.com/@angular-eslint/utils/-/utils-17.0.1.tgz}
-    id: registry.npmmirror.com/@angular-eslint/utils/17.0.1
+  registry.npmmirror.com/@angular-eslint/utils@17.1.0(eslint@8.54.0)(typescript@5.2.2):
+    resolution: {integrity: sha512-AmG0xpRtnBQwrbHObonSilmD3hiFEtZHwFY3LT28VWxznB6WIAHFE7SrKWrRsRsXlib8LaRo4uobR5+MO8aLpw==, tarball: https://registry.npmmirror.com/@angular-eslint/utils/-/utils-17.1.0.tgz}
+    id: registry.npmmirror.com/@angular-eslint/utils/17.1.0
     name: '@angular-eslint/utils'
-    version: 17.0.1
+    version: 17.1.0
     peerDependencies:
       eslint: ^7.20.0 || ^8.0.0
       typescript: '*'
     dependencies:
-      '@angular-eslint/bundled-angular-compiler': registry.npmmirror.com/@angular-eslint/bundled-angular-compiler@17.0.1
-      '@typescript-eslint/utils': registry.npmmirror.com/@typescript-eslint/utils@6.10.0(eslint@8.53.0)(typescript@5.2.2)
-      eslint: registry.npmmirror.com/eslint@8.53.0
+      '@angular-eslint/bundled-angular-compiler': registry.npmmirror.com/@angular-eslint/bundled-angular-compiler@17.1.0
+      '@typescript-eslint/utils': registry.npmmirror.com/@typescript-eslint/utils@6.11.0(eslint@8.54.0)(typescript@5.2.2)
+      eslint: registry.npmmirror.com/eslint@8.54.0
       typescript: registry.npmmirror.com/typescript@5.2.2
     transitivePeerDependencies:
       - supports-color
     dev: true
 
-  registry.npmmirror.com/@angular/animations@17.0.2(@angular/core@17.0.2):
-    resolution: {integrity: sha512-32RHWhTgFLMonI3kRdstACay/nvetfxXjdwcTtABjcvBoND7nD9GMhkISQdgS+hcR/IhgXxaPidq8f2UAY5DBw==, tarball: https://registry.npmmirror.com/@angular/animations/-/animations-17.0.2.tgz}
-    id: registry.npmmirror.com/@angular/animations/17.0.2
+  registry.npmmirror.com/@angular/animations@17.0.3(@angular/core@17.0.3):
+    resolution: {integrity: sha512-aBLVJ0HHYdIZCAXymQDP6UGuz/5oM/3uLCFVHx32vhibLByjw0jNCvy2lzmPLU5gUU6wEWX2b3ZtnzFqhmo4+A==, tarball: https://registry.npmmirror.com/@angular/animations/-/animations-17.0.3.tgz}
+    id: registry.npmmirror.com/@angular/animations/17.0.3
     name: '@angular/animations'
-    version: 17.0.2
+    version: 17.0.3
     engines: {node: ^18.13.0 || >=20.9.0}
     peerDependencies:
-      '@angular/core': 17.0.2
+      '@angular/core': 17.0.3
     dependencies:
-      '@angular/core': registry.npmmirror.com/@angular/core@17.0.2(rxjs@7.8.1)(zone.js@0.14.2)
+      '@angular/core': registry.npmmirror.com/@angular/core@17.0.3(rxjs@7.8.1)(zone.js@0.14.2)
       tslib: registry.npmmirror.com/tslib@2.6.2
     dev: false
 
-  registry.npmmirror.com/@angular/cli@17.0.0:
-    resolution: {integrity: sha512-VzKYmN+1wSE2wLBEFu/NHSrRQbeaKkEDO9aZxd7nAnxC5T1Zcva7dfqZIXMHXH2HESYAZCvOS8ikBE/7DCtWWw==, tarball: https://registry.npmmirror.com/@angular/cli/-/cli-17.0.0.tgz}
+  registry.npmmirror.com/@angular/cli@17.0.1:
+    resolution: {integrity: sha512-3iJWw+bpr/8y1ZY1m0wGfukffQVmD6DJUNubB297NCq1bJyUj+uwBuDnpIH+vidJvPBEEY+9XPJr0Jnd6+i7rg==, tarball: https://registry.npmmirror.com/@angular/cli/-/cli-17.0.1.tgz}
     name: '@angular/cli'
-    version: 17.0.0
+    version: 17.0.1
     engines: {node: ^18.13.0 || >=20.9.0, npm: ^6.11.0 || ^7.5.6 || >=8.0.0, yarn: '>= 1.13.0'}
     hasBin: true
     dependencies:
-      '@angular-devkit/architect': registry.npmmirror.com/@angular-devkit/architect@0.1700.0(chokidar@3.5.3)
-      '@angular-devkit/core': registry.npmmirror.com/@angular-devkit/core@17.0.0(chokidar@3.5.3)
-      '@angular-devkit/schematics': registry.npmmirror.com/@angular-devkit/schematics@17.0.0
-      '@schematics/angular': registry.npmmirror.com/@schematics/angular@17.0.0
+      '@angular-devkit/architect': registry.npmmirror.com/@angular-devkit/architect@0.1700.1(chokidar@3.5.3)
+      '@angular-devkit/core': registry.npmmirror.com/@angular-devkit/core@17.0.1(chokidar@3.5.3)
+      '@angular-devkit/schematics': registry.npmmirror.com/@angular-devkit/schematics@17.0.1
+      '@schematics/angular': registry.npmmirror.com/@schematics/angular@17.0.1
       '@yarnpkg/lockfile': registry.npmmirror.com/@yarnpkg/lockfile@1.1.0
       ansi-colors: registry.npmmirror.com/ansi-colors@4.1.3
       ini: registry.npmmirror.com/ini@4.1.1
@@ -543,33 +543,33 @@ packages:
       - supports-color
     dev: true
 
-  registry.npmmirror.com/@angular/common@17.0.2(@angular/core@17.0.2)(rxjs@7.8.1):
-    resolution: {integrity: sha512-hCW0njHgrcwTWNoKZDwf02DnhYLVWNXM2FMw66MKpfxTp7McSyaXjGBU9/hchW3dZJ0xTwyxoyoqJFoHYvg0yg==, tarball: https://registry.npmmirror.com/@angular/common/-/common-17.0.2.tgz}
-    id: registry.npmmirror.com/@angular/common/17.0.2
+  registry.npmmirror.com/@angular/common@17.0.3(@angular/core@17.0.3)(rxjs@7.8.1):
+    resolution: {integrity: sha512-AD/d1n0hNisHDhIeBsW2ERZI9ChjiOuZ3IiGwcYKmlcOHTrZTJPAh/ZMgahv24rArlNVax7bT+Ik8+sJedGcEQ==, tarball: https://registry.npmmirror.com/@angular/common/-/common-17.0.3.tgz}
+    id: registry.npmmirror.com/@angular/common/17.0.3
     name: '@angular/common'
-    version: 17.0.2
+    version: 17.0.3
     engines: {node: ^18.13.0 || >=20.9.0}
     peerDependencies:
-      '@angular/core': 17.0.2
+      '@angular/core': 17.0.3
       rxjs: ^6.5.3 || ^7.4.0
     dependencies:
-      '@angular/core': registry.npmmirror.com/@angular/core@17.0.2(rxjs@7.8.1)(zone.js@0.14.2)
+      '@angular/core': registry.npmmirror.com/@angular/core@17.0.3(rxjs@7.8.1)(zone.js@0.14.2)
       rxjs: registry.npmmirror.com/rxjs@7.8.1
       tslib: registry.npmmirror.com/tslib@2.6.2
     dev: false
 
-  registry.npmmirror.com/@angular/compiler-cli@17.0.2(@angular/compiler@17.0.2)(typescript@5.2.2):
-    resolution: {integrity: sha512-IUYL3Yz5RbR0Z0/x7it4GK3sMb2qVihxu0tlgfUW53P1Vi6nU/Zda0bCJTu6Z64qEtS8zwCwF1Ekomuq6UaiKg==, tarball: https://registry.npmmirror.com/@angular/compiler-cli/-/compiler-cli-17.0.2.tgz}
-    id: registry.npmmirror.com/@angular/compiler-cli/17.0.2
+  registry.npmmirror.com/@angular/compiler-cli@17.0.3(@angular/compiler@17.0.3)(typescript@5.2.2):
+    resolution: {integrity: sha512-oj7KJBFgs6ulT1/A/xkkDHBOB0c7o9HV2Mn5pUosXBo2VgcGYeuJeXffC+mFr5FyiRO1sUanw4vSWnLzK1U0pQ==, tarball: https://registry.npmmirror.com/@angular/compiler-cli/-/compiler-cli-17.0.3.tgz}
+    id: registry.npmmirror.com/@angular/compiler-cli/17.0.3
     name: '@angular/compiler-cli'
-    version: 17.0.2
+    version: 17.0.3
     engines: {node: ^18.13.0 || >=20.9.0}
     hasBin: true
     peerDependencies:
-      '@angular/compiler': 17.0.2
+      '@angular/compiler': 17.0.3
       typescript: '>=5.2 <5.3'
     dependencies:
-      '@angular/compiler': registry.npmmirror.com/@angular/compiler@17.0.2(@angular/core@17.0.2)
+      '@angular/compiler': registry.npmmirror.com/@angular/compiler@17.0.3(@angular/core@17.0.3)
       '@babel/core': registry.npmmirror.com/@babel/core@7.23.2
       '@jridgewell/sourcemap-codec': registry.npmmirror.com/@jridgewell/sourcemap-codec@1.4.15
       chokidar: registry.npmmirror.com/chokidar@3.5.3
@@ -583,26 +583,26 @@ packages:
       - supports-color
     dev: true
 
-  registry.npmmirror.com/@angular/compiler@17.0.2(@angular/core@17.0.2):
-    resolution: {integrity: sha512-ewUFbKhMEhAmw2dGfk0ImhTlyrO2y4pJSKIZdFrkR1d0HiJX8bCHUdTiiR/2jeP7w2eamjXj15Rptb+iZZes2Q==, tarball: https://registry.npmmirror.com/@angular/compiler/-/compiler-17.0.2.tgz}
-    id: registry.npmmirror.com/@angular/compiler/17.0.2
+  registry.npmmirror.com/@angular/compiler@17.0.3(@angular/core@17.0.3):
+    resolution: {integrity: sha512-ryUcj8Vc+Q4jMrjrmsEIsGLXeWSmNE/KoTyURPCH+NWq9GBMbjv4oe0/oFSBMN2ZtRMVCvqv2Nq+Z2KRDRGB0A==, tarball: https://registry.npmmirror.com/@angular/compiler/-/compiler-17.0.3.tgz}
+    id: registry.npmmirror.com/@angular/compiler/17.0.3
     name: '@angular/compiler'
-    version: 17.0.2
+    version: 17.0.3
     engines: {node: ^18.13.0 || >=20.9.0}
     peerDependencies:
-      '@angular/core': 17.0.2
+      '@angular/core': 17.0.3
     peerDependenciesMeta:
       '@angular/core':
         optional: true
     dependencies:
-      '@angular/core': registry.npmmirror.com/@angular/core@17.0.2(rxjs@7.8.1)(zone.js@0.14.2)
+      '@angular/core': registry.npmmirror.com/@angular/core@17.0.3(rxjs@7.8.1)(zone.js@0.14.2)
       tslib: registry.npmmirror.com/tslib@2.6.2
 
-  registry.npmmirror.com/@angular/core@17.0.2(rxjs@7.8.1)(zone.js@0.14.2):
-    resolution: {integrity: sha512-MjDxWeyn3Txi0qo/V/I+B/gndh0uptQ0XWgBRwOx6Wcr5zRGeZIFlXBxPpyXnGTlJkeyErsTN7FfFCZ4C3kCPA==, tarball: https://registry.npmmirror.com/@angular/core/-/core-17.0.2.tgz}
-    id: registry.npmmirror.com/@angular/core/17.0.2
+  registry.npmmirror.com/@angular/core@17.0.3(rxjs@7.8.1)(zone.js@0.14.2):
+    resolution: {integrity: sha512-zY4yhPiphuktrodaM+GiP8G07qnUlmwKElLjYazeIR8A+kF51RQRpSf/pWe5M0uJIn5Oja+RdO9kzhDI9QvOcA==, tarball: https://registry.npmmirror.com/@angular/core/-/core-17.0.3.tgz}
+    id: registry.npmmirror.com/@angular/core/17.0.3
     name: '@angular/core'
-    version: 17.0.2
+    version: 17.0.3
     engines: {node: ^18.13.0 || >=20.9.0}
     peerDependencies:
       rxjs: ^6.5.3 || ^7.4.0
@@ -612,79 +612,79 @@ packages:
       tslib: registry.npmmirror.com/tslib@2.6.2
       zone.js: registry.npmmirror.com/zone.js@0.14.2
 
-  registry.npmmirror.com/@angular/forms@17.0.2(@angular/common@17.0.2)(@angular/core@17.0.2)(@angular/platform-browser@17.0.2)(rxjs@7.8.1):
-    resolution: {integrity: sha512-w1QKifaVG4daxUktcBNZqBtOH1vn8t0YiwDR3woEdUYt0XYKMipfDzQfyIK+6fIVPOJUd42pRns1nbWJQHOInA==, tarball: https://registry.npmmirror.com/@angular/forms/-/forms-17.0.2.tgz}
-    id: registry.npmmirror.com/@angular/forms/17.0.2
+  registry.npmmirror.com/@angular/forms@17.0.3(@angular/common@17.0.3)(@angular/core@17.0.3)(@angular/platform-browser@17.0.3)(rxjs@7.8.1):
+    resolution: {integrity: sha512-slCUGe5nVOrA0Su9pkmgPXBVzkgh4stvVFBb6ic9/+GlmtRi8h1v5jAFhR4B0R4iaaIoF+TTpRKhZShwtFSqSg==, tarball: https://registry.npmmirror.com/@angular/forms/-/forms-17.0.3.tgz}
+    id: registry.npmmirror.com/@angular/forms/17.0.3
     name: '@angular/forms'
-    version: 17.0.2
+    version: 17.0.3
     engines: {node: ^18.13.0 || >=20.9.0}
     peerDependencies:
-      '@angular/common': 17.0.2
-      '@angular/core': 17.0.2
-      '@angular/platform-browser': 17.0.2
+      '@angular/common': 17.0.3
+      '@angular/core': 17.0.3
+      '@angular/platform-browser': 17.0.3
       rxjs: ^6.5.3 || ^7.4.0
     dependencies:
-      '@angular/common': registry.npmmirror.com/@angular/common@17.0.2(@angular/core@17.0.2)(rxjs@7.8.1)
-      '@angular/core': registry.npmmirror.com/@angular/core@17.0.2(rxjs@7.8.1)(zone.js@0.14.2)
-      '@angular/platform-browser': registry.npmmirror.com/@angular/platform-browser@17.0.2(@angular/animations@17.0.2)(@angular/common@17.0.2)(@angular/core@17.0.2)
+      '@angular/common': registry.npmmirror.com/@angular/common@17.0.3(@angular/core@17.0.3)(rxjs@7.8.1)
+      '@angular/core': registry.npmmirror.com/@angular/core@17.0.3(rxjs@7.8.1)(zone.js@0.14.2)
+      '@angular/platform-browser': registry.npmmirror.com/@angular/platform-browser@17.0.3(@angular/animations@17.0.3)(@angular/common@17.0.3)(@angular/core@17.0.3)
       rxjs: registry.npmmirror.com/rxjs@7.8.1
       tslib: registry.npmmirror.com/tslib@2.6.2
     dev: false
 
-  registry.npmmirror.com/@angular/platform-browser-dynamic@17.0.2(@angular/common@17.0.2)(@angular/compiler@17.0.2)(@angular/core@17.0.2)(@angular/platform-browser@17.0.2):
-    resolution: {integrity: sha512-clcHqHcfD00/TlTixDbJ3q4EQxpm0t2ZFG76rRFmGrmE5tKYUPfaofIa3hQCxy3q269MAYuF16wALhUtrEWyUA==, tarball: https://registry.npmmirror.com/@angular/platform-browser-dynamic/-/platform-browser-dynamic-17.0.2.tgz}
-    id: registry.npmmirror.com/@angular/platform-browser-dynamic/17.0.2
+  registry.npmmirror.com/@angular/platform-browser-dynamic@17.0.3(@angular/common@17.0.3)(@angular/compiler@17.0.3)(@angular/core@17.0.3)(@angular/platform-browser@17.0.3):
+    resolution: {integrity: sha512-Ab6ZeGG63z9Ilv8r4lHcmSirVaw8quRrPjDbT8cgIteHbj0SbwgDzxX0ve+fjjubFUluNSNtc6OYglWMHJ/g7Q==, tarball: https://registry.npmmirror.com/@angular/platform-browser-dynamic/-/platform-browser-dynamic-17.0.3.tgz}
+    id: registry.npmmirror.com/@angular/platform-browser-dynamic/17.0.3
     name: '@angular/platform-browser-dynamic'
-    version: 17.0.2
+    version: 17.0.3
     engines: {node: ^18.13.0 || >=20.9.0}
     peerDependencies:
-      '@angular/common': 17.0.2
-      '@angular/compiler': 17.0.2
-      '@angular/core': 17.0.2
-      '@angular/platform-browser': 17.0.2
+      '@angular/common': 17.0.3
+      '@angular/compiler': 17.0.3
+      '@angular/core': 17.0.3
+      '@angular/platform-browser': 17.0.3
     dependencies:
-      '@angular/common': registry.npmmirror.com/@angular/common@17.0.2(@angular/core@17.0.2)(rxjs@7.8.1)
-      '@angular/compiler': registry.npmmirror.com/@angular/compiler@17.0.2(@angular/core@17.0.2)
-      '@angular/core': registry.npmmirror.com/@angular/core@17.0.2(rxjs@7.8.1)(zone.js@0.14.2)
-      '@angular/platform-browser': registry.npmmirror.com/@angular/platform-browser@17.0.2(@angular/animations@17.0.2)(@angular/common@17.0.2)(@angular/core@17.0.2)
+      '@angular/common': registry.npmmirror.com/@angular/common@17.0.3(@angular/core@17.0.3)(rxjs@7.8.1)
+      '@angular/compiler': registry.npmmirror.com/@angular/compiler@17.0.3(@angular/core@17.0.3)
+      '@angular/core': registry.npmmirror.com/@angular/core@17.0.3(rxjs@7.8.1)(zone.js@0.14.2)
+      '@angular/platform-browser': registry.npmmirror.com/@angular/platform-browser@17.0.3(@angular/animations@17.0.3)(@angular/common@17.0.3)(@angular/core@17.0.3)
       tslib: registry.npmmirror.com/tslib@2.6.2
     dev: false
 
-  registry.npmmirror.com/@angular/platform-browser@17.0.2(@angular/animations@17.0.2)(@angular/common@17.0.2)(@angular/core@17.0.2):
-    resolution: {integrity: sha512-eTnPILEA/eAMkVUR/+g6fWhhMTmnmOzcZSGX/bBgQcvOhayZrDDxA6/Qf+jIB4RwC0wd3KA9zT5BCMmNojoUsg==, tarball: https://registry.npmmirror.com/@angular/platform-browser/-/platform-browser-17.0.2.tgz}
-    id: registry.npmmirror.com/@angular/platform-browser/17.0.2
+  registry.npmmirror.com/@angular/platform-browser@17.0.3(@angular/animations@17.0.3)(@angular/common@17.0.3)(@angular/core@17.0.3):
+    resolution: {integrity: sha512-4SoW0yeAxgfcLIekKsvZVg/WgI5aQZyz9HGOoyBcVQ8coYoZmM9bAYQi+9zvyweqoWc+jgw72X1E8wtmMXt7Aw==, tarball: https://registry.npmmirror.com/@angular/platform-browser/-/platform-browser-17.0.3.tgz}
+    id: registry.npmmirror.com/@angular/platform-browser/17.0.3
     name: '@angular/platform-browser'
-    version: 17.0.2
+    version: 17.0.3
     engines: {node: ^18.13.0 || >=20.9.0}
     peerDependencies:
-      '@angular/animations': 17.0.2
-      '@angular/common': 17.0.2
-      '@angular/core': 17.0.2
+      '@angular/animations': 17.0.3
+      '@angular/common': 17.0.3
+      '@angular/core': 17.0.3
     peerDependenciesMeta:
       '@angular/animations':
         optional: true
     dependencies:
-      '@angular/animations': registry.npmmirror.com/@angular/animations@17.0.2(@angular/core@17.0.2)
-      '@angular/common': registry.npmmirror.com/@angular/common@17.0.2(@angular/core@17.0.2)(rxjs@7.8.1)
-      '@angular/core': registry.npmmirror.com/@angular/core@17.0.2(rxjs@7.8.1)(zone.js@0.14.2)
+      '@angular/animations': registry.npmmirror.com/@angular/animations@17.0.3(@angular/core@17.0.3)
+      '@angular/common': registry.npmmirror.com/@angular/common@17.0.3(@angular/core@17.0.3)(rxjs@7.8.1)
+      '@angular/core': registry.npmmirror.com/@angular/core@17.0.3(rxjs@7.8.1)(zone.js@0.14.2)
       tslib: registry.npmmirror.com/tslib@2.6.2
     dev: false
 
-  registry.npmmirror.com/@angular/router@17.0.2(@angular/common@17.0.2)(@angular/core@17.0.2)(@angular/platform-browser@17.0.2)(rxjs@7.8.1):
-    resolution: {integrity: sha512-A1Ulv4qBAtJyK5g1yBlK1qZHe+KaaL5vMPAaPWUxICH8lHEodDkJlbYAUI2e4VL2BN7zBmdOep6tlBKPmHY3mw==, tarball: https://registry.npmmirror.com/@angular/router/-/router-17.0.2.tgz}
-    id: registry.npmmirror.com/@angular/router/17.0.2
+  registry.npmmirror.com/@angular/router@17.0.3(@angular/common@17.0.3)(@angular/core@17.0.3)(@angular/platform-browser@17.0.3)(rxjs@7.8.1):
+    resolution: {integrity: sha512-zw31XXMqLJ1CcHxDtEl2/FTJXeRbbnLM8oHtCPzbbxTkhAlnXxSYxjds0+1IMmpzz/v9qGBhYvUt8ZfZhqDBHQ==, tarball: https://registry.npmmirror.com/@angular/router/-/router-17.0.3.tgz}
+    id: registry.npmmirror.com/@angular/router/17.0.3
     name: '@angular/router'
-    version: 17.0.2
+    version: 17.0.3
     engines: {node: ^18.13.0 || >=20.9.0}
     peerDependencies:
-      '@angular/common': 17.0.2
-      '@angular/core': 17.0.2
-      '@angular/platform-browser': 17.0.2
+      '@angular/common': 17.0.3
+      '@angular/core': 17.0.3
+      '@angular/platform-browser': 17.0.3
       rxjs: ^6.5.3 || ^7.4.0
     dependencies:
-      '@angular/common': registry.npmmirror.com/@angular/common@17.0.2(@angular/core@17.0.2)(rxjs@7.8.1)
-      '@angular/core': registry.npmmirror.com/@angular/core@17.0.2(rxjs@7.8.1)(zone.js@0.14.2)
-      '@angular/platform-browser': registry.npmmirror.com/@angular/platform-browser@17.0.2(@angular/animations@17.0.2)(@angular/common@17.0.2)(@angular/core@17.0.2)
+      '@angular/common': registry.npmmirror.com/@angular/common@17.0.3(@angular/core@17.0.3)(rxjs@7.8.1)
+      '@angular/core': registry.npmmirror.com/@angular/core@17.0.3(rxjs@7.8.1)(zone.js@0.14.2)
+      '@angular/platform-browser': registry.npmmirror.com/@angular/platform-browser@17.0.3(@angular/animations@17.0.3)(@angular/common@17.0.3)(@angular/core@17.0.3)
       rxjs: registry.npmmirror.com/rxjs@7.8.1
       tslib: registry.npmmirror.com/tslib@2.6.2
     dev: false
@@ -2674,10 +2674,10 @@ packages:
     engines: {node: '>=0.1.90'}
     dev: true
 
-  registry.npmmirror.com/@directus/sdk@13.0.1:
-    resolution: {integrity: sha512-zKus2H2AC6NkYwYH1OTfTePHrCt4HxWC41JvQYiAT8j227bmE1adMQ/aAPqLwTIDeaDpR+BDJNNOFfq+3btVSg==, tarball: https://registry.npmmirror.com/@directus/sdk/-/sdk-13.0.1.tgz}
+  registry.npmmirror.com/@directus/sdk@13.0.2:
+    resolution: {integrity: sha512-KECQM0w8xlgr5EklX+Jb9+dIzXyvJFjRfhiIAI7l/b0WEtVaCfvRMIrJXR3XsLeVW9u2nu+b/TffOyTMSLjm2w==, tarball: https://registry.npmmirror.com/@directus/sdk/-/sdk-13.0.2.tgz}
     name: '@directus/sdk'
-    version: 13.0.1
+    version: 13.0.2
     engines: {node: '>=18.0.0'}
     dev: false
 
@@ -3172,7 +3172,7 @@ packages:
     dev: true
     optional: true
 
-  registry.npmmirror.com/@eslint-community/eslint-utils@4.4.0(eslint@8.53.0):
+  registry.npmmirror.com/@eslint-community/eslint-utils@4.4.0(eslint@8.54.0):
     resolution: {integrity: sha512-1/sA4dwrzBAyeUoQ6oxahHKmrZvsnLCg4RfxW3ZFGGmQkSNQPFNLV9CUEFQP1x9EYXHTo5p6xdhZM1Ne9p/AfA==, tarball: https://registry.npmmirror.com/@eslint-community/eslint-utils/-/eslint-utils-4.4.0.tgz}
     id: registry.npmmirror.com/@eslint-community/eslint-utils/4.4.0
     name: '@eslint-community/eslint-utils'
@@ -3181,7 +3181,7 @@ packages:
     peerDependencies:
       eslint: ^6.0.0 || ^7.0.0 || >=8.0.0
     dependencies:
-      eslint: registry.npmmirror.com/eslint@8.53.0
+      eslint: registry.npmmirror.com/eslint@8.54.0
       eslint-visitor-keys: registry.npmmirror.com/eslint-visitor-keys@3.4.3
     dev: true
 
@@ -3202,7 +3202,7 @@ packages:
       debug: registry.npmmirror.com/debug@4.3.4
       espree: registry.npmmirror.com/espree@9.6.1
       globals: registry.npmmirror.com/globals@13.23.0
-      ignore: registry.npmmirror.com/ignore@5.2.4
+      ignore: registry.npmmirror.com/ignore@5.3.0
       import-fresh: registry.npmmirror.com/import-fresh@3.3.0
       js-yaml: registry.npmmirror.com/js-yaml@4.1.0
       minimatch: registry.npmmirror.com/minimatch@3.1.2
@@ -3211,10 +3211,10 @@ packages:
       - supports-color
     dev: true
 
-  registry.npmmirror.com/@eslint/js@8.53.0:
-    resolution: {integrity: sha512-Kn7K8dx/5U6+cT1yEhpX1w4PCSg0M+XyRILPgvwcEBjerFWCwQj5sbr3/VmxqV0JGHCBCzyd6LxypEuehypY1w==, tarball: https://registry.npmmirror.com/@eslint/js/-/js-8.53.0.tgz}
+  registry.npmmirror.com/@eslint/js@8.54.0:
+    resolution: {integrity: sha512-ut5V+D+fOoWPgGGNj83GGjnntO39xDy6DWxO0wb7Jp3DcMX0TfIqdzHF85VTQkerdyGmuuMD9AKAo5KiNlf/AQ==, tarball: https://registry.npmmirror.com/@eslint/js/-/js-8.54.0.tgz}
     name: '@eslint/js'
-    version: 8.53.0
+    version: 8.54.0
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     dev: true
 
@@ -4061,18 +4061,18 @@ packages:
       call-bind: registry.npmmirror.com/call-bind@1.0.5
     dev: true
 
-  registry.npmmirror.com/@ngtools/webpack@17.0.0(@angular/compiler-cli@17.0.2)(typescript@5.2.2)(webpack@5.89.0):
-    resolution: {integrity: sha512-/Bb5MXlphNp3UDsQDa4EB4AwpF4D/plrCPd5YGfVvD43j5g5Rpen+cqz5jai1zfAkF1dPl2qq0nRp/jwmJO3uA==, tarball: https://registry.npmmirror.com/@ngtools/webpack/-/webpack-17.0.0.tgz}
-    id: registry.npmmirror.com/@ngtools/webpack/17.0.0
+  registry.npmmirror.com/@ngtools/webpack@17.0.1(@angular/compiler-cli@17.0.3)(typescript@5.2.2)(webpack@5.89.0):
+    resolution: {integrity: sha512-IfiWIBY1GntfJFV/U1CSOHZ7zF5p0zFMFzux7/iGXUXit299LTdJ5mZTe9++lFcH6dPHgEPWlinuYAfzorY4ng==, tarball: https://registry.npmmirror.com/@ngtools/webpack/-/webpack-17.0.1.tgz}
+    id: registry.npmmirror.com/@ngtools/webpack/17.0.1
     name: '@ngtools/webpack'
-    version: 17.0.0
+    version: 17.0.1
     engines: {node: ^18.13.0 || >=20.9.0, npm: ^6.11.0 || ^7.5.6 || >=8.0.0, yarn: '>= 1.13.0'}
     peerDependencies:
       '@angular/compiler-cli': ^17.0.0
       typescript: '>=5.2 <5.3'
       webpack: ^5.54.0
     dependencies:
-      '@angular/compiler-cli': registry.npmmirror.com/@angular/compiler-cli@17.0.2(@angular/compiler@17.0.2)(typescript@5.2.2)
+      '@angular/compiler-cli': registry.npmmirror.com/@angular/compiler-cli@17.0.3(@angular/compiler@17.0.3)(typescript@5.2.2)
       typescript: registry.npmmirror.com/typescript@5.2.2
       webpack: registry.npmmirror.com/webpack@5.89.0(esbuild@0.19.5)
     dev: true
@@ -4110,7 +4110,7 @@ packages:
       agent-base: registry.npmmirror.com/agent-base@7.1.0
       http-proxy-agent: registry.npmmirror.com/http-proxy-agent@7.0.0
       https-proxy-agent: registry.npmmirror.com/https-proxy-agent@7.0.2
-      lru-cache: registry.npmmirror.com/lru-cache@10.0.2
+      lru-cache: registry.npmmirror.com/lru-cache@10.0.3
       socks-proxy-agent: registry.npmmirror.com/socks-proxy-agent@8.0.2
     transitivePeerDependencies:
       - supports-color
@@ -4132,7 +4132,7 @@ packages:
     engines: {node: ^16.14.0 || >=18.0.0}
     dependencies:
       '@npmcli/promise-spawn': registry.npmmirror.com/@npmcli/promise-spawn@7.0.0
-      lru-cache: registry.npmmirror.com/lru-cache@10.0.2
+      lru-cache: registry.npmmirror.com/lru-cache@10.0.3
       npm-pick-manifest: registry.npmmirror.com/npm-pick-manifest@9.0.0
       proc-log: registry.npmmirror.com/proc-log@3.0.0
       promise-inflight: registry.npmmirror.com/promise-inflight@1.0.1
@@ -4185,24 +4185,24 @@ packages:
       - supports-color
     dev: true
 
-  registry.npmmirror.com/@nrwl/devkit@17.0.3(nx@17.0.3):
-    resolution: {integrity: sha512-k1o0tvmGcg2/Kw2d56ULixqngCj5zTfp3mn6yS0ytIJrTQnJVkI8GcFCtpnqbzQjD8nKHhvTIcOMsj2BzLos9A==, tarball: https://registry.npmmirror.com/@nrwl/devkit/-/devkit-17.0.3.tgz}
-    id: registry.npmmirror.com/@nrwl/devkit/17.0.3
+  registry.npmmirror.com/@nrwl/devkit@17.1.2(nx@17.1.2):
+    resolution: {integrity: sha512-INPZk4qts3xNJt8E9fttuVTufXdigPUOvUiAiPJmR2oUGDF8SeOlIYNForbz+XMRvxyIVtf45O32azUsgeZe3Q==, tarball: https://registry.npmmirror.com/@nrwl/devkit/-/devkit-17.1.2.tgz}
+    id: registry.npmmirror.com/@nrwl/devkit/17.1.2
     name: '@nrwl/devkit'
-    version: 17.0.3
+    version: 17.1.2
     dependencies:
-      '@nx/devkit': registry.npmmirror.com/@nx/devkit@17.0.3(nx@17.0.3)
+      '@nx/devkit': registry.npmmirror.com/@nx/devkit@17.1.2(nx@17.1.2)
     transitivePeerDependencies:
       - nx
     dev: true
 
-  registry.npmmirror.com/@nrwl/tao@17.0.3:
-    resolution: {integrity: sha512-X6zcwf6c3z7TuztRJWM/OCfzm7+LI4Uw4coc9+PWr44ohHkgId2wEJTzXrDT3+lvv8DgwPpgWPwqntw+YcgRYg==, tarball: https://registry.npmmirror.com/@nrwl/tao/-/tao-17.0.3.tgz}
+  registry.npmmirror.com/@nrwl/tao@17.1.2:
+    resolution: {integrity: sha512-tL+dlygeor/kLG5fuK5qaiVFJ4hEtvJ/E+xY9epp20UKCNQSEkrSFiesiXtX6E/PPf4YbOQ4B4itWR2EYCm03Q==, tarball: https://registry.npmmirror.com/@nrwl/tao/-/tao-17.1.2.tgz}
     name: '@nrwl/tao'
-    version: 17.0.3
+    version: 17.1.2
     hasBin: true
     dependencies:
-      nx: registry.npmmirror.com/nx@17.0.3
+      nx: registry.npmmirror.com/nx@17.1.2
       tslib: registry.npmmirror.com/tslib@2.6.2
     transitivePeerDependencies:
       - '@swc-node/register'
@@ -4210,28 +4210,28 @@ packages:
       - debug
     dev: true
 
-  registry.npmmirror.com/@nx/devkit@17.0.3(nx@17.0.3):
-    resolution: {integrity: sha512-gW9aVc2BJBQ6PME07lsiaHg2Tjm9FN/qFjzxeSQYe2cR/s4hXqCBUfgKEqjgzMq+ykDR2Japkd8Vg8BN0uWnpA==, tarball: https://registry.npmmirror.com/@nx/devkit/-/devkit-17.0.3.tgz}
-    id: registry.npmmirror.com/@nx/devkit/17.0.3
+  registry.npmmirror.com/@nx/devkit@17.1.2(nx@17.1.2):
+    resolution: {integrity: sha512-9Izd9jsa++AaZSSlhi0zkv58k4clzE0kICurx9DjfWN6zXnD08HqJoUYCVVaeYS/SrWlQUbMig8e49BO8ZV5mw==, tarball: https://registry.npmmirror.com/@nx/devkit/-/devkit-17.1.2.tgz}
+    id: registry.npmmirror.com/@nx/devkit/17.1.2
     name: '@nx/devkit'
-    version: 17.0.3
+    version: 17.1.2
     peerDependencies:
       nx: '>= 16 <= 18'
     dependencies:
-      '@nrwl/devkit': registry.npmmirror.com/@nrwl/devkit@17.0.3(nx@17.0.3)
+      '@nrwl/devkit': registry.npmmirror.com/@nrwl/devkit@17.1.2(nx@17.1.2)
       ejs: registry.npmmirror.com/ejs@3.1.9
       enquirer: registry.npmmirror.com/enquirer@2.3.6
-      ignore: registry.npmmirror.com/ignore@5.2.4
-      nx: registry.npmmirror.com/nx@17.0.3
+      ignore: registry.npmmirror.com/ignore@5.3.0
+      nx: registry.npmmirror.com/nx@17.1.2
       semver: registry.npmmirror.com/semver@7.5.3
       tmp: registry.npmmirror.com/tmp@0.2.1
       tslib: registry.npmmirror.com/tslib@2.6.2
     dev: true
 
-  registry.npmmirror.com/@nx/nx-darwin-arm64@17.0.3:
-    resolution: {integrity: sha512-KA75JC/hgkt9qwK4dnN1tlaTXWdYItkNMjji6YjkyAYabbLKQKVcQoPocYP/RB/Gng+vNslXwuug2atgxDf43g==, tarball: https://registry.npmmirror.com/@nx/nx-darwin-arm64/-/nx-darwin-arm64-17.0.3.tgz}
+  registry.npmmirror.com/@nx/nx-darwin-arm64@17.1.2:
+    resolution: {integrity: sha512-U8fwkuw0vmDfeRQX9LSMt1XiAXM57fxOiuHlrIBn8hUBvMAugAgSAYd7K9YQjrFf9UFUtQeSHDU9N/c/n63hdg==, tarball: https://registry.npmmirror.com/@nx/nx-darwin-arm64/-/nx-darwin-arm64-17.1.2.tgz}
     name: '@nx/nx-darwin-arm64'
-    version: 17.0.3
+    version: 17.1.2
     engines: {node: '>= 10'}
     cpu: [arm64]
     os: [darwin]
@@ -4239,10 +4239,10 @@ packages:
     dev: true
     optional: true
 
-  registry.npmmirror.com/@nx/nx-darwin-x64@17.0.3:
-    resolution: {integrity: sha512-YVWk9jNibD7fzn8oNBl/UNu8NEfcVwFo5wiNyfOql495yP0tyGdZNHD4i/7aS2Y654G1JYDRf7TutJ7wWFU8bg==, tarball: https://registry.npmmirror.com/@nx/nx-darwin-x64/-/nx-darwin-x64-17.0.3.tgz}
+  registry.npmmirror.com/@nx/nx-darwin-x64@17.1.2:
+    resolution: {integrity: sha512-QR9Jrm32UK2nLdDRtjFabfCvF5SOQJ2IuYkw6Sxe16xGZU2DS9nQku0TQO3Uy2HV1xSR7vzj7ys5z4eI2k+/mA==, tarball: https://registry.npmmirror.com/@nx/nx-darwin-x64/-/nx-darwin-x64-17.1.2.tgz}
     name: '@nx/nx-darwin-x64'
-    version: 17.0.3
+    version: 17.1.2
     engines: {node: '>= 10'}
     cpu: [x64]
     os: [darwin]
@@ -4250,10 +4250,10 @@ packages:
     dev: true
     optional: true
 
-  registry.npmmirror.com/@nx/nx-freebsd-x64@17.0.3:
-    resolution: {integrity: sha512-yiYkfY+3IrlBrlaXN6SO4Fnb0a+Ti+FPwAqRPpH6q3uTCh0NmNgE99ydtT31ZbgCF1ZwRK8NdCbuNO3w9uznwA==, tarball: https://registry.npmmirror.com/@nx/nx-freebsd-x64/-/nx-freebsd-x64-17.0.3.tgz}
+  registry.npmmirror.com/@nx/nx-freebsd-x64@17.1.2:
+    resolution: {integrity: sha512-6rDuFHJREVg5XpcM5RlE8pHP4bgcbns8sSemF/g75SV4iEkBqxRvSe88oBtF44b7IpX2zdONRDV4qQcRf3DxRg==, tarball: https://registry.npmmirror.com/@nx/nx-freebsd-x64/-/nx-freebsd-x64-17.1.2.tgz}
     name: '@nx/nx-freebsd-x64'
-    version: 17.0.3
+    version: 17.1.2
     engines: {node: '>= 10'}
     cpu: [x64]
     os: [freebsd]
@@ -4261,10 +4261,10 @@ packages:
     dev: true
     optional: true
 
-  registry.npmmirror.com/@nx/nx-linux-arm-gnueabihf@17.0.3:
-    resolution: {integrity: sha512-x4h6QJlESJZ0bigUlxNEVyi7F/VWQQx+1IBptofXhK5eTOPjJ5qgINdM38AZg+kBJDz5XOVMDejg6RzHlhs0Tg==, tarball: https://registry.npmmirror.com/@nx/nx-linux-arm-gnueabihf/-/nx-linux-arm-gnueabihf-17.0.3.tgz}
+  registry.npmmirror.com/@nx/nx-linux-arm-gnueabihf@17.1.2:
+    resolution: {integrity: sha512-4FwqUX7NxVfJ0v7frBKNbjENz6pvp3slDfoG2/WmnAj5a6TCu7magwlg1qLQaHYJ1m/i8u7RrG0Uz4SYHWzkVw==, tarball: https://registry.npmmirror.com/@nx/nx-linux-arm-gnueabihf/-/nx-linux-arm-gnueabihf-17.1.2.tgz}
     name: '@nx/nx-linux-arm-gnueabihf'
-    version: 17.0.3
+    version: 17.1.2
     engines: {node: '>= 10'}
     cpu: [arm]
     os: [linux]
@@ -4272,10 +4272,10 @@ packages:
     dev: true
     optional: true
 
-  registry.npmmirror.com/@nx/nx-linux-arm64-gnu@17.0.3:
-    resolution: {integrity: sha512-1lysnsZv9FS+9fciK0qh5PhsQ8U+vyFoR/jiJl+3vqYNUwEmNLD0VEAZzpZL2SJXQqD5E0bjuQpYxiD7YRXImQ==, tarball: https://registry.npmmirror.com/@nx/nx-linux-arm64-gnu/-/nx-linux-arm64-gnu-17.0.3.tgz}
+  registry.npmmirror.com/@nx/nx-linux-arm64-gnu@17.1.2:
+    resolution: {integrity: sha512-r6UATY0dVdxwpVJPf/f/KfRkFpMP06wC6HcfNMGbTBTKiKtsdYF42bWoSkDgtgP2bOx9FDH+Hwu3U/Rtj44FIA==, tarball: https://registry.npmmirror.com/@nx/nx-linux-arm64-gnu/-/nx-linux-arm64-gnu-17.1.2.tgz}
     name: '@nx/nx-linux-arm64-gnu'
-    version: 17.0.3
+    version: 17.1.2
     engines: {node: '>= 10'}
     cpu: [arm64]
     os: [linux]
@@ -4284,10 +4284,10 @@ packages:
     dev: true
     optional: true
 
-  registry.npmmirror.com/@nx/nx-linux-arm64-musl@17.0.3:
-    resolution: {integrity: sha512-0/bvSpbc4vOy9E24fu0ajDGe3SO8lmLtlxjXwGRcnzlt/MWM8sazoO0lX163/X2wF6tuL6+HXHOr6AeqsdeRXQ==, tarball: https://registry.npmmirror.com/@nx/nx-linux-arm64-musl/-/nx-linux-arm64-musl-17.0.3.tgz}
+  registry.npmmirror.com/@nx/nx-linux-arm64-musl@17.1.2:
+    resolution: {integrity: sha512-MXGYY/KCzQhbj5UKwnRO2/GhByOkRlI+EeH1Mazam8wZ1BiBfcVWZoOUybIlxxes1o4cAnkZwB527tCmwrHvGw==, tarball: https://registry.npmmirror.com/@nx/nx-linux-arm64-musl/-/nx-linux-arm64-musl-17.1.2.tgz}
     name: '@nx/nx-linux-arm64-musl'
-    version: 17.0.3
+    version: 17.1.2
     engines: {node: '>= 10'}
     cpu: [arm64]
     os: [linux]
@@ -4296,10 +4296,10 @@ packages:
     dev: true
     optional: true
 
-  registry.npmmirror.com/@nx/nx-linux-x64-gnu@17.0.3:
-    resolution: {integrity: sha512-tKO6MYUxpUsHMuZrYy8hG20RIOdBY3kyEK8wxH8JZZaXKeYUK+5vv5DavWpY5wuu2jffNIJNsbUzcrqOlcbDOg==, tarball: https://registry.npmmirror.com/@nx/nx-linux-x64-gnu/-/nx-linux-x64-gnu-17.0.3.tgz}
+  registry.npmmirror.com/@nx/nx-linux-x64-gnu@17.1.2:
+    resolution: {integrity: sha512-3cC131hJ3VhuxjzzBlwIdVp46onykOo78EmnURNdLxcWOpmcKgYXn7OnVwjrglYi+JL7D0vABGKKUpt1cs6/rA==, tarball: https://registry.npmmirror.com/@nx/nx-linux-x64-gnu/-/nx-linux-x64-gnu-17.1.2.tgz}
     name: '@nx/nx-linux-x64-gnu'
-    version: 17.0.3
+    version: 17.1.2
     engines: {node: '>= 10'}
     cpu: [x64]
     os: [linux]
@@ -4308,10 +4308,10 @@ packages:
     dev: true
     optional: true
 
-  registry.npmmirror.com/@nx/nx-linux-x64-musl@17.0.3:
-    resolution: {integrity: sha512-H88yBLrI51m6NGoCkpBYhacRyTBfDuf7x00SnxSfD1yLlxCazPUG7CGkMedpzXo10YHxCFvg7B/Fa23DRRleUg==, tarball: https://registry.npmmirror.com/@nx/nx-linux-x64-musl/-/nx-linux-x64-musl-17.0.3.tgz}
+  registry.npmmirror.com/@nx/nx-linux-x64-musl@17.1.2:
+    resolution: {integrity: sha512-1UrR87ByhE0zSXt0C+RNT5ZiAsctOSWZwPYQAGolz8K70BxomDeRVtIaRog5KK5SHlEd1ILvgsmrhovjLjrJNw==, tarball: https://registry.npmmirror.com/@nx/nx-linux-x64-musl/-/nx-linux-x64-musl-17.1.2.tgz}
     name: '@nx/nx-linux-x64-musl'
-    version: 17.0.3
+    version: 17.1.2
     engines: {node: '>= 10'}
     cpu: [x64]
     os: [linux]
@@ -4320,10 +4320,10 @@ packages:
     dev: true
     optional: true
 
-  registry.npmmirror.com/@nx/nx-win32-arm64-msvc@17.0.3:
-    resolution: {integrity: sha512-bKzmzjvgLB4IzLWTySqXgBgXawfw0ZSjUkscFQ3ZHrK9loMba1Ue8Ugy2DktlkUrCyPmGSot+YZViTzWP75C3w==, tarball: https://registry.npmmirror.com/@nx/nx-win32-arm64-msvc/-/nx-win32-arm64-msvc-17.0.3.tgz}
+  registry.npmmirror.com/@nx/nx-win32-arm64-msvc@17.1.2:
+    resolution: {integrity: sha512-2M7FfzfPGAN7tCUWZilPGNk/RbbGcA00MKOA4MDqMwJtLobW8KqfMedilRNTEuyNibejOHwvGzA9T/Ac/ahHgA==, tarball: https://registry.npmmirror.com/@nx/nx-win32-arm64-msvc/-/nx-win32-arm64-msvc-17.1.2.tgz}
     name: '@nx/nx-win32-arm64-msvc'
-    version: 17.0.3
+    version: 17.1.2
     engines: {node: '>= 10'}
     cpu: [arm64]
     os: [win32]
@@ -4331,10 +4331,10 @@ packages:
     dev: true
     optional: true
 
-  registry.npmmirror.com/@nx/nx-win32-x64-msvc@17.0.3:
-    resolution: {integrity: sha512-SJssAOyUM1IW9t84/Uzau9JHo14hnG5mxvcrborNGlLq+WnP0jzISVs7gvV2xWZ9j1JemxA5KLbkMuIkJyR6qQ==, tarball: https://registry.npmmirror.com/@nx/nx-win32-x64-msvc/-/nx-win32-x64-msvc-17.0.3.tgz}
+  registry.npmmirror.com/@nx/nx-win32-x64-msvc@17.1.2:
+    resolution: {integrity: sha512-oxKCKunuo4wRusMlNu7PlhBijhtNy7eBZPAWyqUsdfnb+CjY2QncjCguW3fnsG9gHQFCa+y0b1WkSkvJ5G1DiQ==, tarball: https://registry.npmmirror.com/@nx/nx-win32-x64-msvc/-/nx-win32-x64-msvc-17.1.2.tgz}
     name: '@nx/nx-win32-x64-msvc'
-    version: 17.0.3
+    version: 17.1.2
     engines: {node: '>= 10'}
     cpu: [x64]
     os: [win32]
@@ -4403,14 +4403,14 @@ packages:
     version: 3.0.5
     dev: true
 
-  registry.npmmirror.com/@schematics/angular@17.0.0:
-    resolution: {integrity: sha512-9jKU5x/WzaBsfSkUowK1X74FqtMXa6+A60XgW4ACO8i6fwKfPeS+tIrAieeYOX80/njBh7I5CvcpHmWA2SbcXQ==, tarball: https://registry.npmmirror.com/@schematics/angular/-/angular-17.0.0.tgz}
+  registry.npmmirror.com/@schematics/angular@17.0.1:
+    resolution: {integrity: sha512-BacI1fQsEXNYkfJzDJn3CsUSc9A4M7nhXtvt3XjceUhOqUp2AR4uIeUwDOrpLnkRwv5+rZLafUnRN3k01WUJOw==, tarball: https://registry.npmmirror.com/@schematics/angular/-/angular-17.0.1.tgz}
     name: '@schematics/angular'
-    version: 17.0.0
+    version: 17.0.1
     engines: {node: ^18.13.0 || >=20.9.0, npm: ^6.11.0 || ^7.5.6 || >=8.0.0, yarn: '>= 1.13.0'}
     dependencies:
-      '@angular-devkit/core': registry.npmmirror.com/@angular-devkit/core@17.0.0(chokidar@3.5.3)
-      '@angular-devkit/schematics': registry.npmmirror.com/@angular-devkit/schematics@17.0.0
+      '@angular-devkit/core': registry.npmmirror.com/@angular-devkit/core@17.0.1(chokidar@3.5.3)
+      '@angular-devkit/schematics': registry.npmmirror.com/@angular-devkit/schematics@17.0.1
       jsonc-parser: registry.npmmirror.com/jsonc-parser@3.2.0
     transitivePeerDependencies:
       - chokidar
@@ -4492,7 +4492,7 @@ packages:
     version: 1.19.5
     dependencies:
       '@types/connect': registry.npmmirror.com/@types/connect@3.4.38
-      '@types/node': registry.npmmirror.com/@types/node@20.9.0
+      '@types/node': registry.npmmirror.com/@types/node@20.9.2
     dev: true
 
   registry.npmmirror.com/@types/bonjour@3.5.13:
@@ -4500,7 +4500,7 @@ packages:
     name: '@types/bonjour'
     version: 3.5.13
     dependencies:
-      '@types/node': registry.npmmirror.com/@types/node@20.9.0
+      '@types/node': registry.npmmirror.com/@types/node@20.9.2
     dev: true
 
   registry.npmmirror.com/@types/connect-history-api-fallback@1.5.3:
@@ -4509,7 +4509,7 @@ packages:
     version: 1.5.3
     dependencies:
       '@types/express-serve-static-core': registry.npmmirror.com/@types/express-serve-static-core@4.17.41
-      '@types/node': registry.npmmirror.com/@types/node@20.9.0
+      '@types/node': registry.npmmirror.com/@types/node@20.9.2
     dev: true
 
   registry.npmmirror.com/@types/connect@3.4.38:
@@ -4517,7 +4517,7 @@ packages:
     name: '@types/connect'
     version: 3.4.38
     dependencies:
-      '@types/node': registry.npmmirror.com/@types/node@20.9.0
+      '@types/node': registry.npmmirror.com/@types/node@20.9.2
     dev: true
 
   registry.npmmirror.com/@types/cookie@0.4.1:
@@ -4531,7 +4531,7 @@ packages:
     name: '@types/cors'
     version: 2.8.16
     dependencies:
-      '@types/node': registry.npmmirror.com/@types/node@20.9.0
+      '@types/node': registry.npmmirror.com/@types/node@20.9.2
     dev: true
 
   registry.npmmirror.com/@types/eslint-scope@3.7.7:
@@ -4563,7 +4563,7 @@ packages:
     name: '@types/express-serve-static-core'
     version: 4.17.41
     dependencies:
-      '@types/node': registry.npmmirror.com/@types/node@20.9.0
+      '@types/node': registry.npmmirror.com/@types/node@20.9.2
       '@types/qs': registry.npmmirror.com/@types/qs@6.9.10
       '@types/range-parser': registry.npmmirror.com/@types/range-parser@1.2.7
       '@types/send': registry.npmmirror.com/@types/send@0.17.4
@@ -4591,7 +4591,7 @@ packages:
     name: '@types/http-proxy'
     version: 1.17.14
     dependencies:
-      '@types/node': registry.npmmirror.com/@types/node@20.9.0
+      '@types/node': registry.npmmirror.com/@types/node@20.9.2
     dev: true
 
   registry.npmmirror.com/@types/jasmine@5.1.2:
@@ -4635,13 +4635,13 @@ packages:
     name: '@types/node-forge'
     version: 1.3.9
     dependencies:
-      '@types/node': registry.npmmirror.com/@types/node@20.9.0
+      '@types/node': registry.npmmirror.com/@types/node@20.9.2
     dev: true
 
-  registry.npmmirror.com/@types/node@20.9.0:
-    resolution: {integrity: sha512-nekiGu2NDb1BcVofVcEKMIwzlx4NjHlcjhoxxKBNLtz15Y1z7MYf549DFvkHSId02Ax6kGwWntIBPC3l/JZcmw==, tarball: https://registry.npmmirror.com/@types/node/-/node-20.9.0.tgz}
+  registry.npmmirror.com/@types/node@20.9.2:
+    resolution: {integrity: sha512-WHZXKFCEyIUJzAwh3NyyTHYSR35SevJ6mZ1nWwJafKtiQbqRTIKSRcw3Ma3acqgsent3RRDqeVwpHntMk+9irg==, tarball: https://registry.npmmirror.com/@types/node/-/node-20.9.2.tgz}
     name: '@types/node'
-    version: 20.9.0
+    version: 20.9.2
     dependencies:
       undici-types: registry.npmmirror.com/undici-types@5.26.5
     dev: true
@@ -4676,7 +4676,7 @@ packages:
     version: 0.17.4
     dependencies:
       '@types/mime': registry.npmmirror.com/@types/mime@1.3.5
-      '@types/node': registry.npmmirror.com/@types/node@20.9.0
+      '@types/node': registry.npmmirror.com/@types/node@20.9.2
     dev: true
 
   registry.npmmirror.com/@types/serve-index@1.9.4:
@@ -4694,7 +4694,7 @@ packages:
     dependencies:
       '@types/http-errors': registry.npmmirror.com/@types/http-errors@2.0.4
       '@types/mime': registry.npmmirror.com/@types/mime@3.0.4
-      '@types/node': registry.npmmirror.com/@types/node@20.9.0
+      '@types/node': registry.npmmirror.com/@types/node@20.9.2
     dev: true
 
   registry.npmmirror.com/@types/sockjs@0.3.36:
@@ -4702,7 +4702,7 @@ packages:
     name: '@types/sockjs'
     version: 0.3.36
     dependencies:
-      '@types/node': registry.npmmirror.com/@types/node@20.9.0
+      '@types/node': registry.npmmirror.com/@types/node@20.9.2
     dev: true
 
   registry.npmmirror.com/@types/ws@8.5.9:
@@ -4710,10 +4710,10 @@ packages:
     name: '@types/ws'
     version: 8.5.9
     dependencies:
-      '@types/node': registry.npmmirror.com/@types/node@20.9.0
+      '@types/node': registry.npmmirror.com/@types/node@20.9.2
     dev: true
 
-  registry.npmmirror.com/@typescript-eslint/eslint-plugin@6.11.0(@typescript-eslint/parser@6.11.0)(eslint@8.53.0)(typescript@5.2.2):
+  registry.npmmirror.com/@typescript-eslint/eslint-plugin@6.11.0(@typescript-eslint/parser@6.11.0)(eslint@8.54.0)(typescript@5.2.2):
     resolution: {integrity: sha512-uXnpZDc4VRjY4iuypDBKzW1rz9T5YBBK0snMn8MaTSNd2kMlj50LnLBABELjJiOL5YHk7ZD8hbSpI9ubzqYI0w==, tarball: https://registry.npmmirror.com/@typescript-eslint/eslint-plugin/-/eslint-plugin-6.11.0.tgz}
     id: registry.npmmirror.com/@typescript-eslint/eslint-plugin/6.11.0
     name: '@typescript-eslint/eslint-plugin'
@@ -4728,15 +4728,15 @@ packages:
         optional: true
     dependencies:
       '@eslint-community/regexpp': registry.npmmirror.com/@eslint-community/regexpp@4.10.0
-      '@typescript-eslint/parser': registry.npmmirror.com/@typescript-eslint/parser@6.11.0(eslint@8.53.0)(typescript@5.2.2)
+      '@typescript-eslint/parser': registry.npmmirror.com/@typescript-eslint/parser@6.11.0(eslint@8.54.0)(typescript@5.2.2)
       '@typescript-eslint/scope-manager': registry.npmmirror.com/@typescript-eslint/scope-manager@6.11.0
-      '@typescript-eslint/type-utils': registry.npmmirror.com/@typescript-eslint/type-utils@6.11.0(eslint@8.53.0)(typescript@5.2.2)
-      '@typescript-eslint/utils': registry.npmmirror.com/@typescript-eslint/utils@6.11.0(eslint@8.53.0)(typescript@5.2.2)
+      '@typescript-eslint/type-utils': registry.npmmirror.com/@typescript-eslint/type-utils@6.11.0(eslint@8.54.0)(typescript@5.2.2)
+      '@typescript-eslint/utils': registry.npmmirror.com/@typescript-eslint/utils@6.11.0(eslint@8.54.0)(typescript@5.2.2)
       '@typescript-eslint/visitor-keys': registry.npmmirror.com/@typescript-eslint/visitor-keys@6.11.0
       debug: registry.npmmirror.com/debug@4.3.4
-      eslint: registry.npmmirror.com/eslint@8.53.0
+      eslint: registry.npmmirror.com/eslint@8.54.0
       graphemer: registry.npmmirror.com/graphemer@1.4.0
-      ignore: registry.npmmirror.com/ignore@5.2.4
+      ignore: registry.npmmirror.com/ignore@5.3.0
       natural-compare: registry.npmmirror.com/natural-compare@1.4.0
       semver: registry.npmmirror.com/semver@7.5.4
       ts-api-utils: registry.npmmirror.com/ts-api-utils@1.0.3(typescript@5.2.2)
@@ -4745,7 +4745,7 @@ packages:
       - supports-color
     dev: true
 
-  registry.npmmirror.com/@typescript-eslint/parser@6.11.0(eslint@8.53.0)(typescript@5.2.2):
+  registry.npmmirror.com/@typescript-eslint/parser@6.11.0(eslint@8.54.0)(typescript@5.2.2):
     resolution: {integrity: sha512-+whEdjk+d5do5nxfxx73oanLL9ghKO3EwM9kBCkUtWMRwWuPaFv9ScuqlYfQ6pAD6ZiJhky7TZ2ZYhrMsfMxVQ==, tarball: https://registry.npmmirror.com/@typescript-eslint/parser/-/parser-6.11.0.tgz}
     id: registry.npmmirror.com/@typescript-eslint/parser/6.11.0
     name: '@typescript-eslint/parser'
@@ -4763,20 +4763,10 @@ packages:
       '@typescript-eslint/typescript-estree': registry.npmmirror.com/@typescript-eslint/typescript-estree@6.11.0(typescript@5.2.2)
       '@typescript-eslint/visitor-keys': registry.npmmirror.com/@typescript-eslint/visitor-keys@6.11.0
       debug: registry.npmmirror.com/debug@4.3.4
-      eslint: registry.npmmirror.com/eslint@8.53.0
+      eslint: registry.npmmirror.com/eslint@8.54.0
       typescript: registry.npmmirror.com/typescript@5.2.2
     transitivePeerDependencies:
       - supports-color
-    dev: true
-
-  registry.npmmirror.com/@typescript-eslint/scope-manager@6.10.0:
-    resolution: {integrity: sha512-TN/plV7dzqqC2iPNf1KrxozDgZs53Gfgg5ZHyw8erd6jd5Ta/JIEcdCheXFt9b1NYb93a1wmIIVW/2gLkombDg==, tarball: https://registry.npmmirror.com/@typescript-eslint/scope-manager/-/scope-manager-6.10.0.tgz}
-    name: '@typescript-eslint/scope-manager'
-    version: 6.10.0
-    engines: {node: ^16.0.0 || >=18.0.0}
-    dependencies:
-      '@typescript-eslint/types': registry.npmmirror.com/@typescript-eslint/types@6.10.0
-      '@typescript-eslint/visitor-keys': registry.npmmirror.com/@typescript-eslint/visitor-keys@6.10.0
     dev: true
 
   registry.npmmirror.com/@typescript-eslint/scope-manager@6.11.0:
@@ -4789,30 +4779,7 @@ packages:
       '@typescript-eslint/visitor-keys': registry.npmmirror.com/@typescript-eslint/visitor-keys@6.11.0
     dev: true
 
-  registry.npmmirror.com/@typescript-eslint/type-utils@6.10.0(eslint@8.53.0)(typescript@5.2.2):
-    resolution: {integrity: sha512-wYpPs3hgTFblMYwbYWPT3eZtaDOjbLyIYuqpwuLBBqhLiuvJ+9sEp2gNRJEtR5N/c9G1uTtQQL5AhV0fEPJYcg==, tarball: https://registry.npmmirror.com/@typescript-eslint/type-utils/-/type-utils-6.10.0.tgz}
-    id: registry.npmmirror.com/@typescript-eslint/type-utils/6.10.0
-    name: '@typescript-eslint/type-utils'
-    version: 6.10.0
-    engines: {node: ^16.0.0 || >=18.0.0}
-    peerDependencies:
-      eslint: ^7.0.0 || ^8.0.0
-      typescript: '*'
-    peerDependenciesMeta:
-      typescript:
-        optional: true
-    dependencies:
-      '@typescript-eslint/typescript-estree': registry.npmmirror.com/@typescript-eslint/typescript-estree@6.10.0(typescript@5.2.2)
-      '@typescript-eslint/utils': registry.npmmirror.com/@typescript-eslint/utils@6.10.0(eslint@8.53.0)(typescript@5.2.2)
-      debug: registry.npmmirror.com/debug@4.3.4
-      eslint: registry.npmmirror.com/eslint@8.53.0
-      ts-api-utils: registry.npmmirror.com/ts-api-utils@1.0.3(typescript@5.2.2)
-      typescript: registry.npmmirror.com/typescript@5.2.2
-    transitivePeerDependencies:
-      - supports-color
-    dev: true
-
-  registry.npmmirror.com/@typescript-eslint/type-utils@6.11.0(eslint@8.53.0)(typescript@5.2.2):
+  registry.npmmirror.com/@typescript-eslint/type-utils@6.11.0(eslint@8.54.0)(typescript@5.2.2):
     resolution: {integrity: sha512-nA4IOXwZtqBjIoYrJcYxLRO+F9ri+leVGoJcMW1uqr4r1Hq7vW5cyWrA43lFbpRvQ9XgNrnfLpIkO3i1emDBIA==, tarball: https://registry.npmmirror.com/@typescript-eslint/type-utils/-/type-utils-6.11.0.tgz}
     id: registry.npmmirror.com/@typescript-eslint/type-utils/6.11.0
     name: '@typescript-eslint/type-utils'
@@ -4826,20 +4793,13 @@ packages:
         optional: true
     dependencies:
       '@typescript-eslint/typescript-estree': registry.npmmirror.com/@typescript-eslint/typescript-estree@6.11.0(typescript@5.2.2)
-      '@typescript-eslint/utils': registry.npmmirror.com/@typescript-eslint/utils@6.11.0(eslint@8.53.0)(typescript@5.2.2)
+      '@typescript-eslint/utils': registry.npmmirror.com/@typescript-eslint/utils@6.11.0(eslint@8.54.0)(typescript@5.2.2)
       debug: registry.npmmirror.com/debug@4.3.4
-      eslint: registry.npmmirror.com/eslint@8.53.0
+      eslint: registry.npmmirror.com/eslint@8.54.0
       ts-api-utils: registry.npmmirror.com/ts-api-utils@1.0.3(typescript@5.2.2)
       typescript: registry.npmmirror.com/typescript@5.2.2
     transitivePeerDependencies:
       - supports-color
-    dev: true
-
-  registry.npmmirror.com/@typescript-eslint/types@6.10.0:
-    resolution: {integrity: sha512-36Fq1PWh9dusgo3vH7qmQAj5/AZqARky1Wi6WpINxB6SkQdY5vQoT2/7rW7uBIsPDcvvGCLi4r10p0OJ7ITAeg==, tarball: https://registry.npmmirror.com/@typescript-eslint/types/-/types-6.10.0.tgz}
-    name: '@typescript-eslint/types'
-    version: 6.10.0
-    engines: {node: ^16.0.0 || >=18.0.0}
     dev: true
 
   registry.npmmirror.com/@typescript-eslint/types@6.11.0:
@@ -4847,30 +4807,6 @@ packages:
     name: '@typescript-eslint/types'
     version: 6.11.0
     engines: {node: ^16.0.0 || >=18.0.0}
-    dev: true
-
-  registry.npmmirror.com/@typescript-eslint/typescript-estree@6.10.0(typescript@5.2.2):
-    resolution: {integrity: sha512-ek0Eyuy6P15LJVeghbWhSrBCj/vJpPXXR+EpaRZqou7achUWL8IdYnMSC5WHAeTWswYQuP2hAZgij/bC9fanBg==, tarball: https://registry.npmmirror.com/@typescript-eslint/typescript-estree/-/typescript-estree-6.10.0.tgz}
-    id: registry.npmmirror.com/@typescript-eslint/typescript-estree/6.10.0
-    name: '@typescript-eslint/typescript-estree'
-    version: 6.10.0
-    engines: {node: ^16.0.0 || >=18.0.0}
-    peerDependencies:
-      typescript: '*'
-    peerDependenciesMeta:
-      typescript:
-        optional: true
-    dependencies:
-      '@typescript-eslint/types': registry.npmmirror.com/@typescript-eslint/types@6.10.0
-      '@typescript-eslint/visitor-keys': registry.npmmirror.com/@typescript-eslint/visitor-keys@6.10.0
-      debug: registry.npmmirror.com/debug@4.3.4
-      globby: registry.npmmirror.com/globby@11.1.0
-      is-glob: registry.npmmirror.com/is-glob@4.0.3
-      semver: registry.npmmirror.com/semver@7.5.4
-      ts-api-utils: registry.npmmirror.com/ts-api-utils@1.0.3(typescript@5.2.2)
-      typescript: registry.npmmirror.com/typescript@5.2.2
-    transitivePeerDependencies:
-      - supports-color
     dev: true
 
   registry.npmmirror.com/@typescript-eslint/typescript-estree@6.11.0(typescript@5.2.2):
@@ -4897,29 +4833,7 @@ packages:
       - supports-color
     dev: true
 
-  registry.npmmirror.com/@typescript-eslint/utils@6.10.0(eslint@8.53.0)(typescript@5.2.2):
-    resolution: {integrity: sha512-v+pJ1/RcVyRc0o4wAGux9x42RHmAjIGzPRo538Z8M1tVx6HOnoQBCX/NoadHQlZeC+QO2yr4nNSFWOoraZCAyg==, tarball: https://registry.npmmirror.com/@typescript-eslint/utils/-/utils-6.10.0.tgz}
-    id: registry.npmmirror.com/@typescript-eslint/utils/6.10.0
-    name: '@typescript-eslint/utils'
-    version: 6.10.0
-    engines: {node: ^16.0.0 || >=18.0.0}
-    peerDependencies:
-      eslint: ^7.0.0 || ^8.0.0
-    dependencies:
-      '@eslint-community/eslint-utils': registry.npmmirror.com/@eslint-community/eslint-utils@4.4.0(eslint@8.53.0)
-      '@types/json-schema': registry.npmmirror.com/@types/json-schema@7.0.15
-      '@types/semver': registry.npmmirror.com/@types/semver@7.5.5
-      '@typescript-eslint/scope-manager': registry.npmmirror.com/@typescript-eslint/scope-manager@6.10.0
-      '@typescript-eslint/types': registry.npmmirror.com/@typescript-eslint/types@6.10.0
-      '@typescript-eslint/typescript-estree': registry.npmmirror.com/@typescript-eslint/typescript-estree@6.10.0(typescript@5.2.2)
-      eslint: registry.npmmirror.com/eslint@8.53.0
-      semver: registry.npmmirror.com/semver@7.5.4
-    transitivePeerDependencies:
-      - supports-color
-      - typescript
-    dev: true
-
-  registry.npmmirror.com/@typescript-eslint/utils@6.11.0(eslint@8.53.0)(typescript@5.2.2):
+  registry.npmmirror.com/@typescript-eslint/utils@6.11.0(eslint@8.54.0)(typescript@5.2.2):
     resolution: {integrity: sha512-p23ibf68fxoZy605dc0dQAEoUsoiNoP3MD9WQGiHLDuTSOuqoTsa4oAy+h3KDkTcxbbfOtUjb9h3Ta0gT4ug2g==, tarball: https://registry.npmmirror.com/@typescript-eslint/utils/-/utils-6.11.0.tgz}
     id: registry.npmmirror.com/@typescript-eslint/utils/6.11.0
     name: '@typescript-eslint/utils'
@@ -4928,27 +4842,17 @@ packages:
     peerDependencies:
       eslint: ^7.0.0 || ^8.0.0
     dependencies:
-      '@eslint-community/eslint-utils': registry.npmmirror.com/@eslint-community/eslint-utils@4.4.0(eslint@8.53.0)
+      '@eslint-community/eslint-utils': registry.npmmirror.com/@eslint-community/eslint-utils@4.4.0(eslint@8.54.0)
       '@types/json-schema': registry.npmmirror.com/@types/json-schema@7.0.15
       '@types/semver': registry.npmmirror.com/@types/semver@7.5.5
       '@typescript-eslint/scope-manager': registry.npmmirror.com/@typescript-eslint/scope-manager@6.11.0
       '@typescript-eslint/types': registry.npmmirror.com/@typescript-eslint/types@6.11.0
       '@typescript-eslint/typescript-estree': registry.npmmirror.com/@typescript-eslint/typescript-estree@6.11.0(typescript@5.2.2)
-      eslint: registry.npmmirror.com/eslint@8.53.0
+      eslint: registry.npmmirror.com/eslint@8.54.0
       semver: registry.npmmirror.com/semver@7.5.4
     transitivePeerDependencies:
       - supports-color
       - typescript
-    dev: true
-
-  registry.npmmirror.com/@typescript-eslint/visitor-keys@6.10.0:
-    resolution: {integrity: sha512-xMGluxQIEtOM7bqFCo+rCMh5fqI+ZxV5RUUOa29iVPz1OgCZrtc7rFnz5cLUazlkPKYqX+75iuDq7m0HQ48nCg==, tarball: https://registry.npmmirror.com/@typescript-eslint/visitor-keys/-/visitor-keys-6.10.0.tgz}
-    name: '@typescript-eslint/visitor-keys'
-    version: 6.10.0
-    engines: {node: ^16.0.0 || >=18.0.0}
-    dependencies:
-      '@typescript-eslint/types': registry.npmmirror.com/@typescript-eslint/types@6.10.0
-      eslint-visitor-keys: registry.npmmirror.com/eslint-visitor-keys@3.4.3
     dev: true
 
   registry.npmmirror.com/@typescript-eslint/visitor-keys@6.11.0:
@@ -5605,7 +5509,7 @@ packages:
       postcss: ^8.1.0
     dependencies:
       browserslist: registry.npmmirror.com/browserslist@4.22.1
-      caniuse-lite: registry.npmmirror.com/caniuse-lite@1.0.30001562
+      caniuse-lite: registry.npmmirror.com/caniuse-lite@1.0.30001563
       fraction.js: registry.npmmirror.com/fraction.js@4.3.7
       normalize-range: registry.npmmirror.com/normalize-range@0.1.2
       picocolors: registry.npmmirror.com/picocolors@1.0.0
@@ -5990,8 +5894,8 @@ packages:
     engines: {node: ^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || >=13.7}
     hasBin: true
     dependencies:
-      caniuse-lite: registry.npmmirror.com/caniuse-lite@1.0.30001562
-      electron-to-chromium: registry.npmmirror.com/electron-to-chromium@1.4.583
+      caniuse-lite: registry.npmmirror.com/caniuse-lite@1.0.30001563
+      electron-to-chromium: registry.npmmirror.com/electron-to-chromium@1.4.588
       node-releases: registry.npmmirror.com/node-releases@2.0.13
       update-browserslist-db: registry.npmmirror.com/update-browserslist-db@1.0.13(browserslist@4.22.1)
     dev: true
@@ -6074,7 +5978,7 @@ packages:
       '@npmcli/fs': registry.npmmirror.com/@npmcli/fs@3.1.0
       fs-minipass: registry.npmmirror.com/fs-minipass@3.0.3
       glob: registry.npmmirror.com/glob@10.3.10
-      lru-cache: registry.npmmirror.com/lru-cache@10.0.2
+      lru-cache: registry.npmmirror.com/lru-cache@10.0.3
       minipass: registry.npmmirror.com/minipass@7.0.4
       minipass-collect: registry.npmmirror.com/minipass-collect@1.0.2
       minipass-flush: registry.npmmirror.com/minipass-flush@1.0.5
@@ -6124,10 +6028,10 @@ packages:
     engines: {node: '>=6'}
     dev: true
 
-  registry.npmmirror.com/caniuse-lite@1.0.30001562:
-    resolution: {integrity: sha512-kfte3Hym//51EdX4239i+Rmp20EsLIYGdPkERegTgU19hQWCRhsRFGKHTliUlsry53tv17K7n077Kqa0WJU4ng==, tarball: https://registry.npmmirror.com/caniuse-lite/-/caniuse-lite-1.0.30001562.tgz}
+  registry.npmmirror.com/caniuse-lite@1.0.30001563:
+    resolution: {integrity: sha512-na2WUmOxnwIZtwnFI2CZ/3er0wdNzU7hN+cPYz/z2ajHThnkWjNBOpEPP4n+4r2WPM847JaMotaJE3bnfzjyKw==, tarball: https://registry.npmmirror.com/caniuse-lite/-/caniuse-lite-1.0.30001563.tgz}
     name: caniuse-lite
-    version: 1.0.30001562
+    version: 1.0.30001563
     dev: true
 
   registry.npmmirror.com/capital-case@1.0.4:
@@ -7120,10 +7024,10 @@ packages:
       jake: registry.npmmirror.com/jake@10.8.7
     dev: true
 
-  registry.npmmirror.com/electron-to-chromium@1.4.583:
-    resolution: {integrity: sha512-93y1gcONABZ7uqYe/JWDVQP/Pj/sQSunF0HVAPdlg/pfBnOyBMLlQUxWvkqcljJg1+W6cjvPuYD+r1Th9Tn8mA==, tarball: https://registry.npmmirror.com/electron-to-chromium/-/electron-to-chromium-1.4.583.tgz}
+  registry.npmmirror.com/electron-to-chromium@1.4.588:
+    resolution: {integrity: sha512-soytjxwbgcCu7nh5Pf4S2/4wa6UIu+A3p03U2yVr53qGxi1/VTR3ENI+p50v+UxqqZAfl48j3z55ud7VHIOr9w==, tarball: https://registry.npmmirror.com/electron-to-chromium/-/electron-to-chromium-1.4.588.tgz}
     name: electron-to-chromium
-    version: 1.4.583
+    version: 1.4.588
     dev: true
 
   registry.npmmirror.com/emoji-regex@8.0.0:
@@ -7201,7 +7105,7 @@ packages:
     dependencies:
       '@types/cookie': registry.npmmirror.com/@types/cookie@0.4.1
       '@types/cors': registry.npmmirror.com/@types/cors@2.8.16
-      '@types/node': registry.npmmirror.com/@types/node@20.9.0
+      '@types/node': registry.npmmirror.com/@types/node@20.9.2
       accepts: registry.npmmirror.com/accepts@1.3.8
       base64id: registry.npmmirror.com/base64id@2.0.0
       cookie: registry.npmmirror.com/cookie@0.4.2
@@ -7391,7 +7295,7 @@ packages:
     engines: {node: '>=12'}
     dev: true
 
-  registry.npmmirror.com/eslint-config-prettier@9.0.0(eslint@8.53.0):
+  registry.npmmirror.com/eslint-config-prettier@9.0.0(eslint@8.54.0):
     resolution: {integrity: sha512-IcJsTkJae2S35pRsRAwoCE+925rJJStOdkKnLVgtE+tEpqU0EVVM7OqrwxqgptKdX29NUwC82I5pXsGFIgSevw==, tarball: https://registry.npmmirror.com/eslint-config-prettier/-/eslint-config-prettier-9.0.0.tgz}
     id: registry.npmmirror.com/eslint-config-prettier/9.0.0
     name: eslint-config-prettier
@@ -7400,10 +7304,10 @@ packages:
     peerDependencies:
       eslint: '>=7.0.0'
     dependencies:
-      eslint: registry.npmmirror.com/eslint@8.53.0
+      eslint: registry.npmmirror.com/eslint@8.54.0
     dev: true
 
-  registry.npmmirror.com/eslint-plugin-prettier@5.0.1(eslint-config-prettier@9.0.0)(eslint@8.53.0)(prettier@3.1.0):
+  registry.npmmirror.com/eslint-plugin-prettier@5.0.1(eslint-config-prettier@9.0.0)(eslint@8.54.0)(prettier@3.1.0):
     resolution: {integrity: sha512-m3u5RnR56asrwV/lDC4GHorlW75DsFfmUcjfCYylTUs85dBRnB7VM6xG8eCMJdeDRnppzmxZVf1GEPJvl1JmNg==, tarball: https://registry.npmmirror.com/eslint-plugin-prettier/-/eslint-plugin-prettier-5.0.1.tgz}
     id: registry.npmmirror.com/eslint-plugin-prettier/5.0.1
     name: eslint-plugin-prettier
@@ -7420,8 +7324,8 @@ packages:
       eslint-config-prettier:
         optional: true
     dependencies:
-      eslint: registry.npmmirror.com/eslint@8.53.0
-      eslint-config-prettier: registry.npmmirror.com/eslint-config-prettier@9.0.0(eslint@8.53.0)
+      eslint: registry.npmmirror.com/eslint@8.54.0
+      eslint-config-prettier: registry.npmmirror.com/eslint-config-prettier@9.0.0(eslint@8.54.0)
       prettier: registry.npmmirror.com/prettier@3.1.0
       prettier-linter-helpers: registry.npmmirror.com/prettier-linter-helpers@1.0.0
       synckit: registry.npmmirror.com/synckit@0.8.5
@@ -7454,17 +7358,17 @@ packages:
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     dev: true
 
-  registry.npmmirror.com/eslint@8.53.0:
-    resolution: {integrity: sha512-N4VuiPjXDUa4xVeV/GC/RV3hQW9Nw+Y463lkWaKKXKYMvmRiRDAtfpuPFLN+E1/6ZhyR8J2ig+eVREnYgUsiag==, tarball: https://registry.npmmirror.com/eslint/-/eslint-8.53.0.tgz}
+  registry.npmmirror.com/eslint@8.54.0:
+    resolution: {integrity: sha512-NY0DfAkM8BIZDVl6PgSa1ttZbx3xHgJzSNJKYcQglem6CppHyMhRIQkBVSSMaSRnLhig3jsDbEzOjwCVt4AmmA==, tarball: https://registry.npmmirror.com/eslint/-/eslint-8.54.0.tgz}
     name: eslint
-    version: 8.53.0
+    version: 8.54.0
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     hasBin: true
     dependencies:
-      '@eslint-community/eslint-utils': registry.npmmirror.com/@eslint-community/eslint-utils@4.4.0(eslint@8.53.0)
+      '@eslint-community/eslint-utils': registry.npmmirror.com/@eslint-community/eslint-utils@4.4.0(eslint@8.54.0)
       '@eslint-community/regexpp': registry.npmmirror.com/@eslint-community/regexpp@4.10.0
       '@eslint/eslintrc': registry.npmmirror.com/@eslint/eslintrc@2.1.3
-      '@eslint/js': registry.npmmirror.com/@eslint/js@8.53.0
+      '@eslint/js': registry.npmmirror.com/@eslint/js@8.54.0
       '@humanwhocodes/config-array': registry.npmmirror.com/@humanwhocodes/config-array@0.11.13
       '@humanwhocodes/module-importer': registry.npmmirror.com/@humanwhocodes/module-importer@1.0.1
       '@nodelib/fs.walk': registry.npmmirror.com/@nodelib/fs.walk@1.2.8
@@ -7486,7 +7390,7 @@ packages:
       glob-parent: registry.npmmirror.com/glob-parent@6.0.2
       globals: registry.npmmirror.com/globals@13.23.0
       graphemer: registry.npmmirror.com/graphemer@1.4.0
-      ignore: registry.npmmirror.com/ignore@5.2.4
+      ignore: registry.npmmirror.com/ignore@5.3.0
       imurmurhash: registry.npmmirror.com/imurmurhash@0.1.4
       is-glob: registry.npmmirror.com/is-glob@4.0.3
       is-path-inside: registry.npmmirror.com/is-path-inside@3.0.3
@@ -8243,7 +8147,7 @@ packages:
       array-union: registry.npmmirror.com/array-union@2.1.0
       dir-glob: registry.npmmirror.com/dir-glob@3.0.1
       fast-glob: registry.npmmirror.com/fast-glob@3.3.2
-      ignore: registry.npmmirror.com/ignore@5.2.4
+      ignore: registry.npmmirror.com/ignore@5.3.0
       merge2: registry.npmmirror.com/merge2@1.4.1
       slash: registry.npmmirror.com/slash@3.0.0
     dev: true
@@ -8256,7 +8160,7 @@ packages:
     dependencies:
       dir-glob: registry.npmmirror.com/dir-glob@3.0.1
       fast-glob: registry.npmmirror.com/fast-glob@3.3.1
-      ignore: registry.npmmirror.com/ignore@5.2.4
+      ignore: registry.npmmirror.com/ignore@5.3.0
       merge2: registry.npmmirror.com/merge2@1.4.1
       slash: registry.npmmirror.com/slash@4.0.0
     dev: true
@@ -8450,7 +8354,7 @@ packages:
     version: 7.0.1
     engines: {node: ^16.14.0 || >=18.0.0}
     dependencies:
-      lru-cache: registry.npmmirror.com/lru-cache@10.0.2
+      lru-cache: registry.npmmirror.com/lru-cache@10.0.3
     dev: true
 
   registry.npmmirror.com/hpack.js@2.1.6:
@@ -8660,6 +8564,13 @@ packages:
     resolution: {integrity: sha512-MAb38BcSbH0eHNBxn7ql2NH/kX33OkB3lZ1BNdh7ENeRChHTYsTvWrMubiIAMNS2llXEEgZ1MUOBtXChP3kaFQ==, tarball: https://registry.npmmirror.com/ignore/-/ignore-5.2.4.tgz}
     name: ignore
     version: 5.2.4
+    engines: {node: '>= 4'}
+    dev: true
+
+  registry.npmmirror.com/ignore@5.3.0:
+    resolution: {integrity: sha512-g7dmpshy+gD7mh88OC9NwSGTKoc3kyLAZQRU1mt53Aw/vnvfXnbC+F/7F7QoYVKbV+KNvJx8wArewKy1vXMtlg==, tarball: https://registry.npmmirror.com/ignore/-/ignore-5.3.0.tgz}
+    name: ignore
+    version: 5.3.0
     engines: {node: '>= 4'}
     dev: true
 
@@ -9210,7 +9121,7 @@ packages:
     version: 27.5.1
     engines: {node: '>= 10.13.0'}
     dependencies:
-      '@types/node': registry.npmmirror.com/@types/node@20.9.0
+      '@types/node': registry.npmmirror.com/@types/node@20.9.2
       merge-stream: registry.npmmirror.com/merge-stream@2.0.0
       supports-color: registry.npmmirror.com/supports-color@8.1.1
     dev: true
@@ -9792,13 +9703,11 @@ packages:
       tslib: registry.npmmirror.com/tslib@2.6.2
     dev: true
 
-  registry.npmmirror.com/lru-cache@10.0.2:
-    resolution: {integrity: sha512-Yj9mA8fPiVgOUpByoTZO5pNrcl5Yk37FcSHsUINpAsaBIEZIuqcCclDZJCVxqQShDsmYX8QG63svJiTbOATZwg==, tarball: https://registry.npmmirror.com/lru-cache/-/lru-cache-10.0.2.tgz}
+  registry.npmmirror.com/lru-cache@10.0.3:
+    resolution: {integrity: sha512-B7gr+F6MkqB3uzINHXNctGieGsRTMwIBgxkp0yq/5BwcuDzD4A8wQpHQW6vDAm1uKSLQghmRdD9sKqf2vJ1cEg==, tarball: https://registry.npmmirror.com/lru-cache/-/lru-cache-10.0.3.tgz}
     name: lru-cache
-    version: 10.0.2
+    version: 10.0.3
     engines: {node: 14 || >=16.14}
-    dependencies:
-      semver: registry.npmmirror.com/semver@7.5.4
     dev: true
 
   registry.npmmirror.com/lru-cache@5.1.1:
@@ -10279,7 +10188,7 @@ packages:
     requiresBuild: true
     dependencies:
       node-addon-api: registry.npmmirror.com/node-addon-api@3.2.1
-      node-gyp-build: registry.npmmirror.com/node-gyp-build@4.6.1
+      node-gyp-build: registry.npmmirror.com/node-gyp-build@4.7.0
     dev: true
     optional: true
 
@@ -10321,10 +10230,10 @@ packages:
     engines: {node: '>= 6.13.0'}
     dev: true
 
-  registry.npmmirror.com/node-gyp-build@4.6.1:
-    resolution: {integrity: sha512-24vnklJmyRS8ViBNI8KbtK/r/DmXQMRiOMXTNz2nrTnAYUwjmEEbnnpB/+kt+yWRv73bPsSPRFddrcIbAxSiMQ==, tarball: https://registry.npmmirror.com/node-gyp-build/-/node-gyp-build-4.6.1.tgz}
+  registry.npmmirror.com/node-gyp-build@4.7.0:
+    resolution: {integrity: sha512-PbZERfeFdrHQOOXiAKOY0VPbykZy90ndPKk0d+CFDegTKmWp1VgOTz2xACVbr1BjCWxrQp68CXtvNsveFhqDJg==, tarball: https://registry.npmmirror.com/node-gyp-build/-/node-gyp-build-4.7.0.tgz}
     name: node-gyp-build
-    version: 4.6.1
+    version: 4.7.0
     hasBin: true
     requiresBuild: true
     dev: true
@@ -10520,10 +10429,10 @@ packages:
     version: 1.1.1
     dev: true
 
-  registry.npmmirror.com/nx@17.0.3:
-    resolution: {integrity: sha512-VShJISKCYt3iVJoMUPZiv67+0tiItxWMnfVmTmPZPio2Fu+wGc9U4ijjPxcmp2RJmLRaxkB9cn5rlrAvkIrNMA==, tarball: https://registry.npmmirror.com/nx/-/nx-17.0.3.tgz}
+  registry.npmmirror.com/nx@17.1.2:
+    resolution: {integrity: sha512-pf94ri36cAiSzbYcPTJwQzttgAsHSjCLEni0Ilw6aVdjpoV2l6cggYxwddX7pgtCWuokVp/6KhAxVkbzvH65wg==, tarball: https://registry.npmmirror.com/nx/-/nx-17.1.2.tgz}
     name: nx
-    version: 17.0.3
+    version: 17.1.2
     hasBin: true
     requiresBuild: true
     peerDependencies:
@@ -10535,7 +10444,7 @@ packages:
       '@swc/core':
         optional: true
     dependencies:
-      '@nrwl/tao': registry.npmmirror.com/@nrwl/tao@17.0.3
+      '@nrwl/tao': registry.npmmirror.com/@nrwl/tao@17.1.2
       '@yarnpkg/lockfile': registry.npmmirror.com/@yarnpkg/lockfile@1.1.0
       '@yarnpkg/parsers': registry.npmmirror.com/@yarnpkg/parsers@3.0.0-rc.46
       '@zkochan/js-yaml': registry.npmmirror.com/@zkochan/js-yaml@0.0.6
@@ -10551,7 +10460,7 @@ packages:
       flat: registry.npmmirror.com/flat@5.0.2
       fs-extra: registry.npmmirror.com/fs-extra@11.1.1
       glob: registry.npmmirror.com/glob@7.1.4
-      ignore: registry.npmmirror.com/ignore@5.2.4
+      ignore: registry.npmmirror.com/ignore@5.3.0
       jest-diff: registry.npmmirror.com/jest-diff@29.7.0
       js-yaml: registry.npmmirror.com/js-yaml@4.1.0
       jsonc-parser: registry.npmmirror.com/jsonc-parser@3.2.0
@@ -10571,16 +10480,16 @@ packages:
       yargs: registry.npmmirror.com/yargs@17.7.2
       yargs-parser: registry.npmmirror.com/yargs-parser@21.1.1
     optionalDependencies:
-      '@nx/nx-darwin-arm64': registry.npmmirror.com/@nx/nx-darwin-arm64@17.0.3
-      '@nx/nx-darwin-x64': registry.npmmirror.com/@nx/nx-darwin-x64@17.0.3
-      '@nx/nx-freebsd-x64': registry.npmmirror.com/@nx/nx-freebsd-x64@17.0.3
-      '@nx/nx-linux-arm-gnueabihf': registry.npmmirror.com/@nx/nx-linux-arm-gnueabihf@17.0.3
-      '@nx/nx-linux-arm64-gnu': registry.npmmirror.com/@nx/nx-linux-arm64-gnu@17.0.3
-      '@nx/nx-linux-arm64-musl': registry.npmmirror.com/@nx/nx-linux-arm64-musl@17.0.3
-      '@nx/nx-linux-x64-gnu': registry.npmmirror.com/@nx/nx-linux-x64-gnu@17.0.3
-      '@nx/nx-linux-x64-musl': registry.npmmirror.com/@nx/nx-linux-x64-musl@17.0.3
-      '@nx/nx-win32-arm64-msvc': registry.npmmirror.com/@nx/nx-win32-arm64-msvc@17.0.3
-      '@nx/nx-win32-x64-msvc': registry.npmmirror.com/@nx/nx-win32-x64-msvc@17.0.3
+      '@nx/nx-darwin-arm64': registry.npmmirror.com/@nx/nx-darwin-arm64@17.1.2
+      '@nx/nx-darwin-x64': registry.npmmirror.com/@nx/nx-darwin-x64@17.1.2
+      '@nx/nx-freebsd-x64': registry.npmmirror.com/@nx/nx-freebsd-x64@17.1.2
+      '@nx/nx-linux-arm-gnueabihf': registry.npmmirror.com/@nx/nx-linux-arm-gnueabihf@17.1.2
+      '@nx/nx-linux-arm64-gnu': registry.npmmirror.com/@nx/nx-linux-arm64-gnu@17.1.2
+      '@nx/nx-linux-arm64-musl': registry.npmmirror.com/@nx/nx-linux-arm64-musl@17.1.2
+      '@nx/nx-linux-x64-gnu': registry.npmmirror.com/@nx/nx-linux-x64-gnu@17.1.2
+      '@nx/nx-linux-x64-musl': registry.npmmirror.com/@nx/nx-linux-x64-musl@17.1.2
+      '@nx/nx-win32-arm64-msvc': registry.npmmirror.com/@nx/nx-win32-arm64-msvc@17.1.2
+      '@nx/nx-win32-x64-msvc': registry.npmmirror.com/@nx/nx-win32-x64-msvc@17.1.2
     transitivePeerDependencies:
       - debug
     dev: true
@@ -11018,7 +10927,7 @@ packages:
     version: 1.10.1
     engines: {node: '>=16 || 14 >=14.17'}
     dependencies:
-      lru-cache: registry.npmmirror.com/lru-cache@10.0.2
+      lru-cache: registry.npmmirror.com/lru-cache@10.0.3
       minipass: registry.npmmirror.com/minipass@7.0.4
     dev: true
 
@@ -11271,10 +11180,10 @@ packages:
     version: 16.1.2
     engines: {node: '>=16.10.0'}
     dependencies:
-      '@typescript-eslint/parser': registry.npmmirror.com/@typescript-eslint/parser@6.11.0(eslint@8.53.0)(typescript@5.2.2)
+      '@typescript-eslint/parser': registry.npmmirror.com/@typescript-eslint/parser@6.11.0(eslint@8.54.0)(typescript@5.2.2)
       common-tags: registry.npmmirror.com/common-tags@1.8.2
       dlv: registry.npmmirror.com/dlv@1.1.3
-      eslint: registry.npmmirror.com/eslint@8.53.0
+      eslint: registry.npmmirror.com/eslint@8.54.0
       indent-string: registry.npmmirror.com/indent-string@4.0.0
       lodash.merge: registry.npmmirror.com/lodash.merge@4.6.2
       loglevel-colored-level-prefix: registry.npmmirror.com/loglevel-colored-level-prefix@1.0.0
@@ -11282,7 +11191,7 @@ packages:
       pretty-format: registry.npmmirror.com/pretty-format@29.7.0
       require-relative: registry.npmmirror.com/require-relative@0.8.7
       typescript: registry.npmmirror.com/typescript@5.2.2
-      vue-eslint-parser: registry.npmmirror.com/vue-eslint-parser@9.3.2(eslint@8.53.0)
+      vue-eslint-parser: registry.npmmirror.com/vue-eslint-parser@9.3.2(eslint@8.54.0)
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -13319,7 +13228,7 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: true
 
-  registry.npmmirror.com/vue-eslint-parser@9.3.2(eslint@8.53.0):
+  registry.npmmirror.com/vue-eslint-parser@9.3.2(eslint@8.54.0):
     resolution: {integrity: sha512-q7tWyCVaV9f8iQyIA5Mkj/S6AoJ9KBN8IeUSf3XEmBrOtxOZnfTg5s4KClbZBCK3GtnT/+RyCLZyDHuZwTuBjg==, tarball: https://registry.npmmirror.com/vue-eslint-parser/-/vue-eslint-parser-9.3.2.tgz}
     id: registry.npmmirror.com/vue-eslint-parser/9.3.2
     name: vue-eslint-parser
@@ -13329,7 +13238,7 @@ packages:
       eslint: '>=6.0.0'
     dependencies:
       debug: registry.npmmirror.com/debug@4.3.4
-      eslint: registry.npmmirror.com/eslint@8.53.0
+      eslint: registry.npmmirror.com/eslint@8.54.0
       eslint-scope: registry.npmmirror.com/eslint-scope@7.2.2
       eslint-visitor-keys: registry.npmmirror.com/eslint-visitor-keys@3.4.3
       espree: registry.npmmirror.com/espree@9.6.1
