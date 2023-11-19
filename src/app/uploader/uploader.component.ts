@@ -152,9 +152,9 @@ export class UploaderComponent implements AfterViewInit {
           : idListOfUploadedFiles[0],
       );
       this.showLoader = false;
-      this.successInfo = `Files successfully uploaded`;
-    } catch (error: Error) {
-      this.errorInfo = error.message;
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    } catch (error: any) {
+      this.errorInfo = error.toString();
     }
   }
 

@@ -1,30 +1,32 @@
 import { Injectable } from '@angular/core';
-import { Client, fetchExchange, Exchange } from '@urql/core';
+import { Client, fetchExchange, Exchange, Operation } from '@urql/core';
 import { authExchange } from '@urql/exchange-auth';
 
 import { environment } from 'src/environments/environment';
 import { StorageService } from '../core/storage.service';
 import { RefreshTokenDocument } from 'src/gql/graphql';
 
+// can't be defined through construct injector.
+const storageService = new StorageService();
+
 @Injectable({ providedIn: 'root' })
 export class UrqlExchange {
   authExchange: Exchange;
-  constructor(private _storageService: StorageService) {
+  constructor() {
     const refreshTokenFn = this._refreshToken;
-    const storageService = this._storageService;
     this.authExchange = authExchange(async (utils) => {
       return {
-        addAuthToOperation(operation) {
+        addAuthToOperation(operation): Operation {
           return utils.appendHeaders(operation, {
             Authorization: `Bearer ${storageService.tokenForAccess}`,
           });
         },
-        didAuthError(error) {
+        didAuthError(error): boolean {
           return error.graphQLErrors.some(
             (e) => e.extensions?.['code'] === 'TOKEN_EXPIRED',
           );
         },
-        async refreshAuth() {
+        async refreshAuth(): Promise<void> {
           await refreshTokenFn();
         },
       };
@@ -37,12 +39,12 @@ export class UrqlExchange {
       exchanges: [fetchExchange],
     });
     const result = await client.mutation(RefreshTokenDocument, {
-      tokenForRefresh: this._storageService.tokenForRefresh,
+      tokenForRefresh: storageService.tokenForRefresh,
     });
     if (result.data?.refreshedToken) {
-      this._storageService.saveAuthToken(result.data?.refreshedToken);
+      storageService.saveAuthToken(result.data?.refreshedToken);
     } else {
-      this._storageService.clearAccountData();
+      storageService.clearAccountData();
     }
   }
 }
