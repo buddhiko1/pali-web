@@ -1,35 +1,18 @@
-<div class="c-container">
-  <app-overlay [opacity]="0.3" />
-  <dialog
-    open
-    appFadeIn
-    class="c-dialog gd-box absolute mt-[17vh] sm:mt-[20vh] w-[17rem] sm:w-[20rem] lg:w-[25rem]"
+<div
+  class="c-container fixed grid items-center justify-items-center inset-0 bg-overlay opacity-95"
+  [class.items-center]="isCentral"
+  [class.-mt-[5rem]]="isCentral"
+  [class.lg:-mt-[15rem]]="isCentral"
+  [class.items-start]="!isCentral"
+>
+  <div
+    appSlideIn
+    [slideInDelay]="200"
+    class="gd-box"
+    [class.my-[20vh]]="!isCentral"
+    [class.sm:my-[20vh]]="!isCentral"
+    [class.lg:my-[20vh]]="!isCentral"
   >
-    <h2
-      class="c-title gd-title"
-      [class.text-ok]="successInfo"
-      [class.text-error]="errorInfo"
-    >
-      {{ errorInfo ? "Failed" : successInfo ? "Successful" : title }}
-    </h2>
-    @if (errorInfo || successInfo) {
-      <p appFadeIn [class]="['c-text', 'gc-text', 'text-center', 'mx-4']">
-        {{ errorInfo || successInfo }}
-      </p>
-      <button
-        class="gd-button w-full mt-3"
-        [class.gd-error-button]="errorInfo"
-        (click)="onSubmit()"
-      >
-        OK
-      </button>
-    } @else {
-      <app-wheel-svg [size]="'4rem'" delay="500ms" class="c-wheel md:hidden" />
-      <app-wheel-svg
-        [size]="'6rem'"
-        delay="500ms"
-        class="c-wheel hidden md:block"
-      />
-    }
-  </dialog>
+    <ng-content />
+  </div>
 </div>

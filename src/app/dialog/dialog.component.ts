@@ -1,23 +1,23 @@
-import { Component, Input, EventEmitter, Output } from '@angular/core';
+import { Component, Input, OnInit, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
 import { FadeInDirective } from '../core/fade-in.directive';
-import { OverlayComponent } from '../overlay/overlay.component';
+import { SlideInDirective } from '../core/slide-in.directive';
 
 @Component({
-  selector: 'app-loader',
+  selector: 'app-dialog',
   standalone: true,
-  imports: [CommonModule, FadeInDirective, OverlayComponent],
+  imports: [CommonModule, FadeInDirective, SlideInDirective],
   templateUrl: './dialog.component.html',
   styleUrl: './dialog.component.css',
 })
-export class LoaderComponent {
-  @Input() title = '';
-  @Input() errorInfo = '';
-  @Input() successInfo = '';
-  @Output() done = new EventEmitter<void>();
+export class DialogComponent implements OnInit, OnDestroy {
+  @Input() isCentral = false;
 
-  onSubmit() {
-    this.done.emit();
+  ngOnInit(): void {
+    document.documentElement.classList.add('gu-disable-scroll');
+  }
+
+  ngOnDestroy(): void {
+    document.documentElement.classList.remove('gu-disable-scroll');
   }
 }

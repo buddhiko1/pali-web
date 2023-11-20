@@ -21,6 +21,7 @@ module.exports = {
         appBg: "var(--colors-app-bg)",
         phraseBg: "var(--colors-phrase-bg)",
         cardBg: "var(--colors-card-bg)",
+        overlay: "var(--colors-overlay)",
         bannerTitle: "var(--colors-banner-title)",
         bannerSubTitle: "var(--colors-banner-subtitle)",
         inputBg: "var(--colors-input-bg)",

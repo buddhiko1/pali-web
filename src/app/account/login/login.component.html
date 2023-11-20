@@ -8,13 +8,8 @@
       class="c-loader mt-12 sm:mt-24"
     />
   } @else {
-    <app-overlay />
-    <div
-      appSlideIn
-      [slideInDelay]="200"
-      class="c-container py-20 sm:py-36 lg:py-[17vh]"
-    >
-      <div class="c-dialog gd-box">
+    <app-dialog>
+      <div class="c-content w-[60vw] sm:w-[45vw] lg:w-[25rem]">
         <h2 class="c-title gd-title">Sign In</h2>
         <form [formGroup]="form" (ngSubmit)="onSubmit()" class="c-form">
           <div class="c-email">
@@ -81,6 +76,6 @@
           </button>
         </p>
       </div>
-    </div>
+    </app-dialog>
   }
 </div>

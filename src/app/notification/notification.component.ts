@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { interval } from 'rxjs';
+import { timer } from 'rxjs';
 
 import { BoxComponent } from './box/box.component';
 import { NotificationService } from './notification.service';
@@ -29,8 +29,8 @@ export class NotificationComponent implements OnInit {
   }
 
   test(): void {
-    const intervalSubject = interval(2000);
-    intervalSubject.subscribe((n) => {
+    const timerSubject = timer(2000);
+    timerSubject.subscribe((n) => {
       this._notificationService.notificationsSubject.next({
         timestamp: Date.now(),
         title: 'test title',

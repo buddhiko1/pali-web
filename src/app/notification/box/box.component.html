@@ -1,56 +1,61 @@
-<div
-  [class]="[
-    'c-container',
-    'w-[18rem]',
-    'sm:bottom-20',
-    'lg:bottom-24',
-    'sm:right-2',
-    'sm:w-[17rem]',
-    'lg:w-[18rem]',
-    'p-3',
-    'border',
-    'border-hover',
-    'rounded-lg',
-    'bg-footerBg',
-    shouldSlideOut ? 'c-slide-out' : 'c-slide-in'
-  ]"
->
-  <div class="c-bar">
-    <div class="c-icon">
-      @switch (notification.type) {
-        @case (notifcationEnum.INFO) {
-          <app-info-svg [class]="['gc-svg']" />
-        }
-        @case (notifcationEnum.SUCCESS) {
-          <app-check-svg [class]="['fill-ok']" />
-        }
-        @case (notifcationEnum.ERROR) {
-          <app-error-svg [class]="['fill-error']" />
-        }
-        @default {}
-      }
-    </div>
-    <div class="c-title border-l-1">
-      <p [class]="textClass">{{ notification.title }}</p>
-    </div>
-    <div class="c-action">
-      @if (isContentFolded) {
-        <button (click)="showContent()">
-          <app-unfold-svg [class]="['gc-svg', 'gu-hover']" />
-        </button>
-      } @else {
-        <button appFadeIn [fadeInDuration]="300" (click)="close()">
-          <app-close-svg [class]="['gc-svg', 'gu-hover', 'w-5']" />
-        </button>
-      }
-    </div>
-  </div>
+<div>
   <div
-    appFadeIn
-    [fadeInDuration]="300"
-    class="c-content px-3 text-center"
-    [class.hidden]="isContentFolded"
+    [class]="[
+      'c-container',
+      'w-[18rem]',
+      'sm:bottom-20',
+      'lg:bottom-24',
+      'sm:right-2',
+      'sm:w-[17rem]',
+      'lg:w-[18rem]',
+      'p-3',
+      'border',
+      'border-hover',
+      'rounded-lg',
+      'bg-footerBg',
+      shouldSlideOut ? 'c-slide-out' : 'c-slide-in'
+    ]"
   >
-    <p [class]="textClass">{{ notification.content }}</p>
+    <div class="c-bar">
+      <div class="c-icon">
+        @switch (notification.type) {
+          @case (notifcationEnum.INFO) {
+            <app-info-svg [class]="['gc-svg']" />
+          }
+          @case (notifcationEnum.SUCCESS) {
+            <app-check-svg [class]="['fill-ok']" />
+          }
+          @case (notifcationEnum.ERROR) {
+            <app-error-svg [class]="['fill-error']" />
+          }
+          @default {}
+        }
+      </div>
+      <div class="c-title border-l-1">
+        <p [class]="textClass">{{ notification.title }}</p>
+      </div>
+      <div class="c-action">
+        @if (isContentFolded) {
+          <button (click)="showContent()">
+            <app-unfold-svg [class]="['gc-svg', 'gu-hover']" />
+          </button>
+        } @else {
+          <button appFadeIn [fadeInDuration]="300" (click)="close()">
+            <app-close-svg [class]="['gc-svg', 'gu-hover', 'w-5']" />
+          </button>
+        }
+      </div>
+    </div>
+    <div
+      appFadeIn
+      [fadeInDuration]="300"
+      class="c-content px-3 text-center"
+      [class.hidden]="isContentFolded"
+    >
+      <p [class]="textClass">{{ notification.content }}</p>
+    </div>
   </div>
+  @if (showDialog) {
+    <app-dialog [isCentral]="true"> content </app-dialog>
+  }
 </div>

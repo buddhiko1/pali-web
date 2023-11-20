@@ -10,6 +10,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { LoaderComponent } from 'src/app/loader/loader.component';
 import { SlideInDirective } from 'src/app/core/slide-in.directive';
 import { OverlayComponent } from 'src/app/overlay/overlay.component';
+import { DialogComponent } from 'src/app/dialog/dialog.component';
 import { UrlEnum } from '../account-routing.module';
 import { AccountService } from '../account.service';
 import { UnRegisteredEmailValidator } from '../email.validator';
@@ -25,6 +26,7 @@ import { LoginMutationVariables } from 'src/gql/graphql';
     OverlayComponent,
     SlideInDirective,
     LoaderComponent,
+    DialogComponent,
   ],
 })
 export class LoginComponent implements OnInit {
