@@ -2,7 +2,6 @@ import type { Config } from 'tailwindcss'
 
 export default {
   important: true,
-  darkMode: ["class", '[data-mode="night"]'],
   content: ["./src/**/*.{html,ts,svg}"],
   theme: {
     screens: {

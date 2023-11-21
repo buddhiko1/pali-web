@@ -1,19 +1,30 @@
-import { ThemeConfig } from 'tailwindcss/types/config';
+import * as tailwindConfig from '../../../tailwind.config';
 import { Injectable } from '@angular/core';
 
 @Injectable({
   providedIn: 'root',
 })
-export class StorageService {
+export class ScreenService {
   get isPhone(): boolean {
-    return window.innerWidth < ThemeConfig.screens.tablat;
-  }
-  get isTablat(): boolean {
     return (
-      ThemeConfig.screens.tablat <= window.innerWidth < ThemeConfig.screens.pc
+      window.screen.availWidth <
+      parseInt(tailwindConfig.default.theme.screens.tablat, 100)
     );
   }
+
+  get isTablat(): boolean {
+    return (
+      window.screen.availWidth >=
+        parseInt(tailwindConfig.default.theme.screens.tablat, 100) &&
+      window.screen.availWidth <
+        parseInt(tailwindConfig.default.theme.screens.pc, 100)
+    );
+  }
+
   get isPc(): boolean {
-    return window.innerWidth > ThemeConfig.screens.pc;
+    return (
+      window.screen.availWidth >
+      parseInt(tailwindConfig.default.theme.screens.pc, 100)
+    );
   }
 }
