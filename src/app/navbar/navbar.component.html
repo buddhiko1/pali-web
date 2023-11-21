@@ -3,16 +3,16 @@
     <app-overlay [opacity]="0.8" (click)="toggleMenu()" class="c-overlay" />
   }
   <nav
-    class="relative c-container lg:px-lgXspan transition-transform duration-[400ms] ease-in-out bg-appBg"
+    class="relative c-container pc:px-lgXspan transition-transform duration-[400ms] ease-in-out bg-appBg"
     [class.c-container-hidden]="isCollapsed"
   >
     <div
       appFadeIn
-      class="c-banner px-smXspan sm:px-mdXspan lg:px-0 pt-1 lg:pt-4 shadow-sm sm:shadow-none"
+      class="c-banner px-smXspan tablat:px-mdXspan pc:px-0 pt-1 pc:pt-4 shadow-sm tablat:shadow-none"
     >
       <button
         (click)="routeTo('')"
-        class="c-logo -ml-3 p-3 text-2xl lg:text-3xl uppercase tracking-widest font-bold text-logo"
+        class="c-logo -ml-3 p-3 text-2xl pc:text-3xl uppercase tracking-widest font-bold text-logo"
       >
         <p class="gu-hover" [class.text-focus]="isActiveUrl('')">Pali</p>
       </button>
@@ -21,7 +21,7 @@
         (click)="toggleMenu()"
         type="button"
         aria-label="toggle menu"
-        class="c-toggle lg:hidden py-3 focus:outline-none"
+        class="c-toggle pc:hidden py-3 focus:outline-none"
       >
         <app-plus-svg
           [class]="[
@@ -39,23 +39,23 @@
       [class]="[
         'c-menu',
         'w-full',
-        'lg:w-full',
+        'pc:w-full',
         'px-smXspan',
-        'sm:px-mdXspan',
-        'lg:px-0',
+        'tablat:px-mdXspan',
+        'pc:px-0',
         'pb-3',
-        'lg:pb-0',
+        'pc:pb-0',
         'bg-appBg',
-        'lg:bg-transparent',
+        'pc:bg-transparent',
         animationClass
       ]"
     >
-      <ul class="c-routes ml-2 sm:ml-3 ld:ml-0">
+      <ul class="c-routes ml-2 tablat:ml-3 ld:ml-0">
         @for (item of routes; track item.name) {
-          <li class="c-route-item mt-2 lg:mt-0 lg:mx-[0.7vw]">
+          <li class="c-route-item mt-2 pc:mt-0 pc:mx-[0.7vw]">
             <button
               (click)="routeTo(item.route)"
-              class="gc-text gu-hover lg:px-1 lg:py-3"
+              class="gc-text gu-hover pc:px-1 pc:py-3"
               [class.text-focus]="isActiveUrl(item.route)"
             >
               {{ item.name | titlecase }}
@@ -64,7 +64,7 @@
         }
       </ul>
 
-      <div class="c-divider lg:hidden mb-5 h-6 border-b gc-border"></div>
+      <div class="c-divider pc:hidden mb-5 h-6 border-b gc-border"></div>
 
       <button (click)="switchTheme()" class="c-theme p-1">
         @switch (theme) {
@@ -77,7 +77,7 @@
         }
       </button>
 
-      <button (click)="routeTo('email')" class="c-email p-1 lg:mx-6">
+      <button (click)="routeTo('email')" class="c-email p-1 pc:mx-6">
         <app-email-svg
           [class]="[
             'gc-svg',

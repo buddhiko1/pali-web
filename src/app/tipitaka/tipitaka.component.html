@@ -1,32 +1,32 @@
 <div appFadeIn class="c-container">
   <div
-    class="c-banner gu-rm-page-span h-[45rem] lg:h-[50rem] bg-cover bg-center lg:mt-12"
+    class="c-banner gu-rm-page-span h-[45rem] pc:h-[50rem] bg-cover bg-center pc:mt-12"
   >
     <p
       appSlideIn
       [slideInDelay]="200"
-      class="text-center mt-60 text-base lg:text-2xl tracking-wide text-bannerTitle"
+      class="text-center mt-60 text-base pc:text-2xl tracking-wide text-bannerTitle"
     >
       Hear the Buddha’s voice from
     </p>
     <p
       appSlideIn
       [slideInDelay]="1000"
-      class="text-center mt-8 lg:mt-10 text-3xl lg:text-6xl capitalize font-light tracking-wide text-bannerSubTitle"
+      class="text-center mt-8 pc:mt-10 text-3xl pc:text-6xl capitalize font-light tracking-wide text-bannerSubTitle"
     >
       the ancient sutras
     </p>
   </div>
-  <div class="c-books py-16 lg:py-32">
-    <div class="c-title pb-4 lg:pb-10 border-b gc-border">
+  <div class="c-books py-16 pc:py-32">
+    <div class="c-title pb-4 pc:pb-10 border-b gc-border">
       <p
-        class="text-center text-xl lg:text-3xl uppercase tracking-widest lg:tracking-[.25em] gc-hl-title"
+        class="text-center text-xl pc:text-3xl uppercase tracking-widest pc:tracking-[.25em] gc-hl-title"
       >
         Tipiṭaka Epub
       </p>
     </div>
     @for (book of tipitaka; track book.index) {
-      <div class="c-book pt-14 lg:pt-28">
+      <div class="c-book pt-14 pc:pt-28">
         <app-book [config]="bookConfigFor(book)" />
         <div class="c-action w-full mt-10 pb-4 border-b gc-border">
           <a [href]="book.info_url" target="_blank" class="gc-button">
@@ -44,27 +44,27 @@
       </div>
     }
   </div>
-  <div class="c-cites gu-rm-page-span py-16 lg:py-32 bg-appBg night">
+  <div class="c-cites gu-rm-page-span py-16 pc:py-32 bg-appBg night">
     <div class="c-content gu-add-page-span">
-      <div class="c-title pb-4 lg:pb-10 border-b gc-border">
+      <div class="c-title pb-4 pc:pb-10 border-b gc-border">
         <p
-          class="text-center text-xl lg:text-3xl uppercase tracking-widest lg:tracking-[.25em] gc-hl-title"
+          class="text-center text-xl pc:text-3xl uppercase tracking-widest pc:tracking-[.25em] gc-hl-title"
         >
           bante said
         </p>
       </div>
       @for (cite of cites; track cite.index) {
-        <div class="c-cite pt-8 lg:pt-12">
+        <div class="c-cite pt-8 pc:pt-12">
           <app-quote-svg [class]="['gc-svg']" [size]="'3rem'" />
-          <p class="mt-2 lg:mt-4 text-center gc-text">
+          <p class="mt-2 pc:mt-4 text-center gc-text">
             {{ cite.text }}
           </p>
-          <div class="w-28 my-6 lg:my-8 border-b gc-border"></div>
+          <div class="w-28 my-6 pc:my-8 border-b gc-border"></div>
           <!-- TODO rm text-focus -->
           <a
             target="_blank"
             [href]="cite.author_url"
-            class="text-base lg:text-lg text-focus"
+            class="text-base pc:text-lg text-focus"
             >{{ cite.author }}</a
           >
         </div>

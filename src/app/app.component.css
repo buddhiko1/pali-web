@@ -21,7 +21,7 @@
 }
 
 
-@media screen and (min-width: theme("screens.sm")) {
+@media screen and (min-width: theme("screens.tablat")) {
   .c-container {
     grid-template-columns: theme("spacing.mdPageXspan") 1fr theme(
         "spacing.mdPageXspan"
@@ -29,7 +29,7 @@
   }
 }
 
-@media screen and (min-width: theme("screens.lg")) {
+@media screen and (min-width: theme("screens.pc")) {
   .c-container {
     grid-template-columns: theme("spacing.lgPageXspan") 1fr theme(
         "spacing.lgPageXspan"

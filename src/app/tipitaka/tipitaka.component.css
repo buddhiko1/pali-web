@@ -53,13 +53,13 @@
   align-items: start;
 }
 
-@media screen and (min-width: theme("screens.sm")) {
+@media screen and (min-width: theme("screens.tablat")) {
   .c-cites .c-content {
     grid-row-gap: theme(spacing.6);
   }
 }
 
-@media screen and (min-width: theme("screens.lg")) {
+@media screen and (min-width: theme("screens.pc")) {
   .c-books {
     grid-template-rows: auto auto;
     grid-template-columns: 1fr 1fr 1fr;

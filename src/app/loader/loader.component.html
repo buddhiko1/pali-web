@@ -3,7 +3,7 @@
   <dialog
     open
     appFadeIn
-    class="c-dialog gd-box absolute mt-[17vh] sm:mt-[20vh] w-[17rem] sm:w-[20rem] lg:w-[25rem]"
+    class="c-dialog gd-box absolute mt-[17vh] tablat:mt-[20vh] w-[17rem] tablat:w-[20rem] pc:w-[25rem]"
   >
     <h2
       class="c-title gd-title"
@@ -24,11 +24,15 @@
         OK
       </button>
     } @else {
-      <app-wheel-svg [size]="'4rem'" delay="500ms" class="c-wheel md:hidden" />
+      <app-wheel-svg
+        [size]="'4rem'"
+        delay="500ms"
+        class="c-wheel tablat:hidden"
+      />
       <app-wheel-svg
         [size]="'6rem'"
         delay="500ms"
-        class="c-wheel hidden md:block"
+        class="c-wheel hidden tablat:block"
       />
     }
   </dialog>

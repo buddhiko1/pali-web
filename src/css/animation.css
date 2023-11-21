@@ -9,7 +9,7 @@
   }
 }
 
-@media screen and (min-width: theme("screens.lg")) {
+@media screen and (min-width: theme("screens.pc")) {
   @keyframes ga-slide-in-from-bottom {
     from {
       transform: translateY(55px);
@@ -33,7 +33,7 @@
   }
 }
 
-@media screen and (min-width: theme("screens.lg")) {
+@media screen and (min-width: theme("screens.pc")) {
   @keyframes ga-slide-out-to-top {
     from {
       transform: translateY(0);

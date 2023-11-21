@@ -1,8 +1,8 @@
 <div
-  class="c-container fixed grid items-center justify-items-center inset-0 bg-overlay opacity-95"
+  class="c-container fixed inset-0 bg-overlay opacity-95"
   [class.items-center]="isCentral"
   [class.-mt-[5rem]]="isCentral"
-  [class.lg:-mt-[15rem]]="isCentral"
+  [class.pc:-mt-[15rem]]="isCentral"
   [class.items-start]="!isCentral"
 >
   <div
@@ -10,8 +10,8 @@
     [slideInDelay]="200"
     class="gd-box"
     [class.my-[20vh]]="!isCentral"
-    [class.sm:my-[20vh]]="!isCentral"
-    [class.lg:my-[20vh]]="!isCentral"
+    [class.tablat:my-[20vh]]="!isCentral"
+    [class.pc:my-[20vh]]="!isCentral"
   >
     <ng-content />
   </div>

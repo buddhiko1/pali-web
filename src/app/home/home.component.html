@@ -1,18 +1,18 @@
 <div appFaderIn class="c-container">
   <div
-    class="c-banner gu-rm-page-span lg:mt-12 h-[47rem] lg:h-[50rem] bg-cover bg-center"
+    class="c-banner gu-rm-page-span pc:mt-12 h-[47rem] pc:h-[50rem] bg-cover bg-center"
   >
     <p
       appSlideIn
       [slideInDelay]="200"
-      class="text-center mt-48 lg:mt-56 mx-14 font-light text-2xl lg:text-6xl tracking-wide text-bannerTitle"
+      class="text-center mt-48 pc:mt-56 mx-14 font-light text-2xl pc:text-6xl tracking-wide text-bannerTitle"
     >
       Learning Pali language
     </p>
     <p
       appSlideIn
       [slideInDelay]="800"
-      class="text-center mx-14 mt-8 lg:mt-10 lg:text-xl tracking-wide font-light text-bannerSubTitle"
+      class="text-center mx-14 mt-8 pc:mt-10 pc:text-xl tracking-wide font-light text-bannerSubTitle"
     >
       Explore the most authentic and ancient Buddhist sutra on your own
     </p>
@@ -21,19 +21,19 @@
       [fadeInDelay]="1600"
       class="mt-24 gc-hl-button grid grid-flow-col"
     >
-      <span class="self-center lg:text-xl"> Tutorial </span>
+      <span class="self-center pc:text-xl"> Tutorial </span>
       <app-rarrow-svg
         [class]="['w-8', 'h-8', 'ml-2', 'fill-gray-50', 'inline-block']"
       />
     </button>
   </div>
   <div class="c-content">
-    <div class="mt-16 lg:mt-44">
+    <div class="mt-16 pc:mt-44">
       <app-phrase />
     </div>
-    <div class="c-modules my-16 lg:my-44">
+    <div class="c-modules my-16 pc:my-44">
       @for (module of modules; track module.index) {
-        <div class="c-section gc-card p-5 lg:p-7">
+        <div class="c-section gc-card p-5 pc:p-7">
           <div>
             <p class="gc-hl-title">{{ module.name | titlecase }}</p>
             <p class="mt-3 gc-text">{{ module.description }}</p>

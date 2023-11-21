@@ -80,10 +80,10 @@
   align-self: center;
 }
 
-@media screen and (min-width: theme("screens.sm")) {
+@media screen and (min-width: theme("screens.tablat")) {
 }
 
-@media screen and (min-width: theme("screens.lg")) {
+@media screen and (min-width: theme("screens.pc")) {
   .c-container {
     grid-template-rows: 1fr;
     grid-template-columns: auto 1fr 14fr;

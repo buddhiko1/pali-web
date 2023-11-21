@@ -48,7 +48,7 @@
   grid-area: dialog;
 }
 
-@media screen and (min-width: theme("screens.sm")) {
+@media screen and (min-width: theme("screens.tablat")) {
   .c-container {
     grid-template-columns: 60vw;
     justify-content: center;
@@ -58,7 +58,7 @@
   }
 }
 
-@media screen and (min-width: theme("screens.lg")) {
+@media screen and (min-width: theme("screens.pc")) {
   .c-container {
     grid-template-columns: 25vw;
   }

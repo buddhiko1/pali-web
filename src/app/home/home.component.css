@@ -37,13 +37,13 @@
   justify-content: end;
 }
 
-@media screen and (min-width: theme("screens.sm")) {
+@media screen and (min-width: theme("screens.tablat")) {
   .c-modules {
     grid-row-gap: 3.5rem;
   }
 }
 
-@media screen and (min-width: theme("screens.lg")) {
+@media screen and (min-width: theme("screens.pc")) {
   .c-modules {
     grid-template-rows: auto auto;
     grid-template-columns: 1fr 1fr 1fr;

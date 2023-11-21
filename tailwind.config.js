@@ -6,6 +6,10 @@ module.exports = {
   darkMode: ["class", '[data-mode="night"]'],
   content: ["./src/**/*.{html,ts,svg}"],
   theme: {
+    screens: {
+      tablat: "640px",
+      pc: "768px",
+    },
     extend: {
       spacing: {
         smXspan: "1.75rem",

@@ -1,5 +1,5 @@
 .gd-box {
-  @apply p-8 sm:p-10 lg:p-12 rounded-lg bg-appBg;
+  @apply p-8 tablat:p-10 pc:p-12 rounded-lg bg-appBg;
 }
 
 .gd-title {

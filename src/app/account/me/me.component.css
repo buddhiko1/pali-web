@@ -28,7 +28,7 @@
   min-width: 100%;
 }
 
-@media screen and (min-width: theme("screens.sm")) {
+@media screen and (min-width: theme("screens.tablat")) {
   .c-container {
     grid-template-columns: 1fr;
   }
@@ -37,7 +37,7 @@
   }
 }
 
-@media screen and (min-width: theme("screens.lg")) {
+@media screen and (min-width: theme("screens.pc")) {
   .c-container {
     grid-template-columns: 1fr;
   }

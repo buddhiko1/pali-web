@@ -63,13 +63,13 @@
   grid-area: dialog;
 }
 
-@media screen and (min-width: theme("screens.sm")) {
+@media screen and (min-width: theme("screens.tablat")) {
   .c-form {
     row-gap: theme(spacing.7);
   }
 }
 
-@media screen and (min-width: theme("screens.lg")) {
+@media screen and (min-width: theme("screens.pc")) {
   .c-content {
     row-gap: theme(spacing.10);
   }

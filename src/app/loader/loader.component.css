@@ -18,7 +18,7 @@
   justify-self: center;
 }
 
-@media screen and (min-width: theme("screens.lg")) {
+@media screen and (min-width: theme("screens.pc")) {
   .c-dialog {
     row-gap: theme(spacing.10);
   }
