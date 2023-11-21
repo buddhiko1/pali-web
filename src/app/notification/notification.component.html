@@ -1,14 +1,25 @@
 @if (!isEmpty) {
-  <div
-    class="c-container fixed bottom-16 tablat:bottom-20 pc:bottom-24 tablat:right-2"
-  >
-    <div class="c-boxes">
-      @for (notification of notifications; track notification.timestamp) {
-        <app-notification-box
-          [notification]="notification"
-          (closed)="remove(notification)"
-        />
-      }
+  @if (isPc) {
+    <div class="c-container fixed bottom-24 right-2">
+      <div class="c-boxes">
+        @for (notification of notifications; track notification.timestamp) {
+          <app-notification-box
+            [notification]="notification"
+            (closed)="remove(notification)"
+          />
+        }
+      </div>
     </div>
-  </div>
+  } @else {
+    <div class="c-container fixed top-28 left-10 right-10">
+      <div class="c-boxes">
+        @for (notification of notifications; track notification.timestamp) {
+          <app-notification-box
+            [notification]="notification"
+            (closed)="remove(notification)"
+          />
+        }
+      </div>
+    </div>
+  }
 }

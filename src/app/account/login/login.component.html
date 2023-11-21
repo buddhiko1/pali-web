@@ -1,12 +1,19 @@
 <div>
-  @if (showLoader) {
-    <app-loader
-      title="Logging..."
-      [errorInfo]="errorInfo"
-      [successInfo]="successInfo"
-      (done)="onActionDone()"
-      class="c-loader mt-12 tablat:mt-24"
-    />
+  @if (isLoading) {
+    <app-loading />
+  } @else if (error) {
+    <app-dialog [isCentral]="true">
+      <div class="c-error w-[60vw] tablat:w-[45vw] pc:w-[25rem]">
+        <h2 class="gd-title text-error">Error</h2>
+        <p class="text-error px-4 tablat:px-8">{{ error }}</p>
+        <button
+          class="gd-button gd-error-button w-full mt-3"
+          (click)="onErrorDialogSubmit()"
+        >
+          OK
+        </button>
+      </div>
+    </app-dialog>
   } @else {
     <app-dialog>
       <div class="c-content w-[60vw] tablat:w-[45vw] pc:w-[25rem]">

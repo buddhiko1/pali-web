@@ -19,3 +19,4 @@
 - rgignore is read by telescope.
 - [Prettier and Eslint](https://blog.bitsrc.io/how-ive-set-up-eslint-and-prettier-in-angular-16-and-why-i-did-that-4bfc304284a6)
 - Batch converts jpg to webp with bash command: `for i in *.jpg; do cwebp -q 90 "$i" -o "${i%.jpg}.webp"; done`.
+- Init tailwindcss: `npx tailwindcss init --ts`.

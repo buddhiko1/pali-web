@@ -7,10 +7,10 @@ import {
 } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 
-import { LoaderComponent } from 'src/app/loader/loader.component';
 import { SlideInDirective } from 'src/app/core/slide-in.directive';
 import { OverlayComponent } from 'src/app/overlay/overlay.component';
 import { DialogComponent } from 'src/app/dialog/dialog.component';
+import { LoadingComponent } from 'src/app/loading/loading.component';
 import { UrlEnum } from '../account-routing.module';
 import { AccountService } from '../account.service';
 import { UnRegisteredEmailValidator } from '../email.validator';
@@ -25,7 +25,7 @@ import { LoginMutationVariables } from 'src/gql/graphql';
     ReactiveFormsModule,
     OverlayComponent,
     SlideInDirective,
-    LoaderComponent,
+    LoadingComponent,
     DialogComponent,
   ],
 })
@@ -33,9 +33,8 @@ export class LoginComponent implements OnInit {
   form!: FormGroup;
   UrlEnum = UrlEnum;
 
-  showLoader = false;
-  errorInfo = '';
-  successInfo = '';
+  isLoading = false;
+  error = '';
 
   constructor(
     private _router: Router,
@@ -82,16 +81,17 @@ export class LoginComponent implements OnInit {
       password: this.form.getRawValue().password,
     };
 
-    this.showLoader = true;
+    this.isLoading = true;
 
     this._accountService
       .login(args)
       .then(() => {
-        this.showLoader = false;
+        this.isLoading = false;
         this.routeToMe();
       })
       .catch((error) => {
-        this.errorInfo = error.toString();
+        this.isLoading = false;
+        this.error = error.toString();
       });
   }
 
@@ -101,10 +101,9 @@ export class LoginComponent implements OnInit {
     });
   }
 
-  onActionDone(): void {
-    this.showLoader = false;
-    this.errorInfo = '';
-    this.successInfo = '';
+  onErrorDialogSubmit(): void {
+    this.isLoading = false;
+    this.error = '';
   }
 
   onRequestReset(): void {

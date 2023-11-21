@@ -25,14 +25,9 @@
       </button>
     } @else {
       <app-wheel-svg
-        [size]="'4rem'"
+        [size]="isPhone ? '4rem' : '6rem'"
         delay="500ms"
-        class="c-wheel tablat:hidden"
-      />
-      <app-wheel-svg
-        [size]="'6rem'"
-        delay="500ms"
-        class="c-wheel hidden tablat:block"
+        class="c-wheel"
       />
     }
   </dialog>

@@ -1,6 +1,9 @@
 <div>
+  <!-- TODO enable click event on overlay. -->
   @if (showOverlay) {
-    <app-overlay [opacity]="0.8" (click)="toggleMenu()" class="c-overlay" />
+    <div
+      class="c-overlay fixed inset-0 bg-overlay h-screen w-screen opacity-80 touch-none"
+    ></div>
   }
   <nav
     class="relative c-container pc:px-pcXspan transition-transform duration-[400ms] ease-in-out bg-appBg"

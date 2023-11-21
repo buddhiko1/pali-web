@@ -33,8 +33,9 @@ export class ErrorHandlerService implements ErrorHandler {
     } else {
       this._notificationService.push({
         timestamp: Date.now(),
+        title: 'Server Error',
         type: NotificationEnum.ERROR,
-        message: error.toString(),
+        content: error.networkError?.message ?? error.graphQLErrors[0].message,
       });
     }
   }
@@ -43,8 +44,9 @@ export class ErrorHandlerService implements ErrorHandler {
   private _handlerClientError(error: any) {
     this._notificationService.push({
       timestamp: Date.now(),
+      title: 'Client Error',
       type: NotificationEnum.ERROR,
-      message: error.toString(),
+      content: error.toString(),
     });
   }
 }

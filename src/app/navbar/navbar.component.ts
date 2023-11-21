@@ -4,7 +4,6 @@ import { Router, NavigationEnd, RouterLink } from '@angular/router';
 import { fromEvent, throttleTime } from 'rxjs';
 
 import { FadeInDirective } from '../core/fade-in.directive';
-import { OverlayComponent } from '../overlay/overlay.component';
 import { PlusSvgComponent } from '../svg/plus/plus.component';
 import { MoonSvgComponent } from '../svg/moon/moon.component';
 import { SunSvgComponent } from '../svg/sun/sun.component';
@@ -27,7 +26,6 @@ import { RoutesFragment } from 'src/gql/graphql';
     SunSvgComponent,
     EmailSvgComponent,
     PersonSvgComponent,
-    OverlayComponent,
   ],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.css',

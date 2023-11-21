@@ -59,8 +59,9 @@
   grid-area: button;
 }
 
-.c-loader {
-  grid-area: dialog;
+.c-error {
+  display: grid;
+  grid-row-gap: theme(spacing.5);
 }
 
 @media screen and (min-width: theme("screens.tablat")) {
@@ -76,5 +77,8 @@
 
   .c-form {
     row-gap: theme(spacing.8);
+  }
+  .c-error {
+    grid-row-gap: theme(spacing.8);
   }
 }

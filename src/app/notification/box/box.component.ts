@@ -13,10 +13,11 @@ import { timer, Subscription } from 'rxjs';
 import { ErrorSvgComponent } from 'src/app/svg/error/error.component';
 import { CheckSvgComponent } from 'src/app/svg/check/check.component';
 import { InfoSvgComponent } from 'src/app/svg/info/info.component';
-import { UnfoldSvgComponent } from 'src/app/svg/unfold/unfold.component';
+import { UpSvgComponent } from 'src/app/svg/up/up.component';
+import { DownSvgComponent } from 'src/app/svg/down/down.component';
 import { CloseSvgComponent } from 'src/app/svg/close/close.component';
 import { FadeInDirective } from 'src/app/core/fade-in.directive';
-import { DialogComponent } from 'src/app/dialog/dialog.component';
+import { ScreenService } from 'src/app/core/screen.service';
 import { Notification, NotificationEnum } from '../notification.model';
 
 @Component({
@@ -27,9 +28,9 @@ import { Notification, NotificationEnum } from '../notification.model';
     ErrorSvgComponent,
     CheckSvgComponent,
     InfoSvgComponent,
-    UnfoldSvgComponent,
+    UpSvgComponent,
+    DownSvgComponent,
     CloseSvgComponent,
-    DialogComponent,
     FadeInDirective,
   ],
   templateUrl: './box.component.html',
@@ -37,7 +38,7 @@ import { Notification, NotificationEnum } from '../notification.model';
 })
 export class BoxComponent implements OnInit, OnDestroy {
   @Input() notification!: Notification;
-  @Input() duration = 500000;
+  @Input() duration = 10000;
   @Output() closed = new EventEmitter<void>();
   notifcationEnum = NotificationEnum;
   isContentFolded = true;
@@ -45,6 +46,8 @@ export class BoxComponent implements OnInit, OnDestroy {
   showDialog = false;
   private _isMouseEntered = false;
   private _intervalSuscription!: Subscription;
+
+  constructor(private _screenService: ScreenService) {}
 
   ngOnInit(): void {
     const intervalSubject = timer(this.duration, this.duration);
@@ -57,6 +60,10 @@ export class BoxComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     this._intervalSuscription.unsubscribe();
+  }
+
+  get isPc(): boolean {
+    return this._screenService.isPc;
   }
 
   get textClass(): string {
@@ -73,6 +80,7 @@ export class BoxComponent implements OnInit, OnDestroy {
   }
 
   close(): void {
+    this.isContentFolded = true;
     this.shouldSlideOut = true;
     timer(1000).subscribe(() => {
       this.closed.emit();
@@ -80,8 +88,7 @@ export class BoxComponent implements OnInit, OnDestroy {
   }
 
   showContent(): void {
-    this.showDialog = true;
-    // this.isContentFolded = false;
+    this.isContentFolded = false;
   }
 
   @HostListener('mouseenter')

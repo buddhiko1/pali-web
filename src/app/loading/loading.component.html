@@ -1,8 +1,7 @@
-<app-dialog>
-  <app-wheel-svg [size]="'4rem'" delay="500ms" class="c-wheel tablat:hidden" />
+<div class="c-container appFadeIn fixed inset-0 bg-overlay opacity-100">
   <app-wheel-svg
-    [size]="'6rem'"
+    [size]="isPhone ? '4rem' : '7rem'"
     delay="500ms"
-    class="c-wheel hidden tablat:block"
+    class="c-wheel"
   />
-</app-dialog>
+</div>

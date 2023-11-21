@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { timer } from 'rxjs';
 
 import { BoxComponent } from './box/box.component';
+import { ScreenService } from '../core/screen.service';
 import { NotificationService } from './notification.service';
 import { Notification, NotificationEnum } from './notification.model';
 
@@ -15,13 +16,20 @@ import { Notification, NotificationEnum } from './notification.model';
 })
 export class NotificationComponent implements OnInit {
   notifications: Notification[] = [];
-  constructor(private _notificationService: NotificationService) {}
+  constructor(
+    private _screenService: ScreenService,
+    private _notificationService: NotificationService,
+  ) {}
 
   ngOnInit(): void {
     this._notificationService.notificationsSubject.subscribe((notification) => {
       this.notifications.push(notification);
     });
     this.test();
+  }
+
+  get isPc(): boolean {
+    return this._screenService.isPc;
   }
 
   get isEmpty(): boolean {
