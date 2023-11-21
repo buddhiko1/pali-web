@@ -1,23 +1,22 @@
-/** @type {import('tailwindcss').Config} */
-const colors = require("tailwindcss/colors");
+import type { Config } from 'tailwindcss'
 
-module.exports = {
+export default {
   important: true,
   darkMode: ["class", '[data-mode="night"]'],
   content: ["./src/**/*.{html,ts,svg}"],
   theme: {
     screens: {
       tablat: "640px",
-      pc: "768px",
+      pc: "1024px",
     },
     extend: {
       spacing: {
-        smXspan: "1.75rem",
-        smPageXspan: "3rem",
-        mdXspan: "3rem",
-        mdPageXspan: "4.5rem",
-        lgXspan: "21.5vw",
-        lgPageXspan: "23.5vw",
+        phoneXspan: "1.75rem",
+        phonePageXspan: "3rem",
+        tablatXspan: "3rem",
+        tablatPageXspan: "4.5rem",
+        pcXspan: "21.5vw",
+        pcPageXspan: "23.5vw",
       },
       colors: {
         // elements
@@ -45,4 +44,4 @@ module.exports = {
       },
     },
   },
-};
+} satisfies Config

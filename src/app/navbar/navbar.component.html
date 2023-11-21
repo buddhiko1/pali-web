@@ -3,16 +3,16 @@
     <app-overlay [opacity]="0.8" (click)="toggleMenu()" class="c-overlay" />
   }
   <nav
-    class="relative c-container pc:px-lgXspan transition-transform duration-[400ms] ease-in-out bg-appBg"
+    class="relative c-container pc:px-pcXspan transition-transform duration-[400ms] ease-in-out bg-appBg"
     [class.c-container-hidden]="isCollapsed"
   >
     <div
       appFadeIn
-      class="c-banner px-smXspan tablat:px-mdXspan pc:px-0 pt-1 pc:pt-4 shadow-sm tablat:shadow-none"
+      class="c-banner px-phoneXspan tablat:px-tablatXspan pc:px-0 pt-1 pc:pt-6 shadow-sm tablat:shadow-none"
     >
       <button
         (click)="routeTo('')"
-        class="c-logo -ml-3 p-3 text-2xl pc:text-3xl uppercase tracking-widest font-bold text-logo"
+        class="c-logo -ml-3 p-3 pc:py-1 text-2xl pc:text-3xl uppercase tracking-widest font-bold text-logo"
       >
         <p class="gu-hover" [class.text-focus]="isActiveUrl('')">Pali</p>
       </button>
@@ -40,8 +40,8 @@
         'c-menu',
         'w-full',
         'pc:w-full',
-        'px-smXspan',
-        'tablat:px-mdXspan',
+        'px-phoneXspan',
+        'tablat:px-tablatXspan',
         'pc:px-0',
         'pb-3',
         'pc:pb-0',
@@ -55,7 +55,7 @@
           <li class="c-route-item mt-2 pc:mt-0 pc:mx-[0.7vw]">
             <button
               (click)="routeTo(item.route)"
-              class="gc-text gu-hover pc:px-1 pc:py-3"
+              class="gc-text gu-hover pc:px-1 pc:py-1"
               [class.text-focus]="isActiveUrl(item.route)"
             >
               {{ item.name | titlecase }}
