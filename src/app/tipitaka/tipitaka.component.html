@@ -56,15 +56,14 @@
       @for (cite of cites; track cite.index) {
         <div class="c-cite pt-8 pc:pt-12">
           <app-quote-svg [class]="['gc-svg']" [size]="'3rem'" />
-          <p class="mt-2 pc:mt-4 text-center gc-text">
-            {{ cite.text }}
-          </p>
+          <div class="grid pc:h-[18rem] items-center">
+            <p class="mt-2 pc:mt-4 text-center gc-text">{{ cite.text }}</p>
+          </div>
           <div class="w-28 my-6 pc:my-8 border-b gc-border"></div>
-          <!-- TODO rm text-focus -->
           <a
             target="_blank"
             [href]="cite.author_url"
-            class="text-base pc:text-lg text-focus"
+            class="text-base pc:text-lg gc-link-button"
             >{{ cite.author }}</a
           >
         </div>

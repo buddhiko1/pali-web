@@ -1,11 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { timer } from 'rxjs';
 
 import { BoxComponent } from './box/box.component';
 import { ScreenService } from '../core/screen.service';
 import { NotificationService } from './notification.service';
-import { Notification, NotificationEnum } from './notification.model';
+import { Notification } from './notification.model';
 
 @Component({
   selector: 'app-notification',
@@ -25,7 +24,6 @@ export class NotificationComponent implements OnInit {
     this._notificationService.notificationsSubject.subscribe((notification) => {
       this.notifications.push(notification);
     });
-    this.test();
   }
 
   get isPc(): boolean {
@@ -34,18 +32,6 @@ export class NotificationComponent implements OnInit {
 
   get isEmpty(): boolean {
     return this.notifications.length === 0;
-  }
-
-  test(): void {
-    const timerSubject = timer(2000);
-    timerSubject.subscribe((n) => {
-      this._notificationService.notificationsSubject.next({
-        timestamp: Date.now(),
-        title: 'test title',
-        type: n % 2 ? NotificationEnum.ERROR : NotificationEnum.INFO,
-        content: n % 2 ? 'the world is dangerous, keep safe!' : 'what?',
-      });
-    });
   }
 
   remove(notification: Notification): void {

@@ -3,11 +3,14 @@
     <app-loading />
   } @else if (error) {
     <app-dialog [isCentral]="true">
-      <div class="c-error w-[60vw] tablat:w-[45vw] pc:w-[25rem]">
-        <h2 class="gd-title text-error">Error</h2>
-        <p class="text-error px-4 tablat:px-8">{{ error }}</p>
+      <div class="c-error w-[60vw] tablat:w-[45vw] pc:w-[20rem]">
+        <div>
+          <app-error-svg [class]="['fill-error', 'w-10', 'h-10', 'inline']" />
+          <span class="text-error ml-4 gd-title">Error</span>
+        </div>
+        <p class="gc-text text-center">{{ error }}</p>
         <button
-          class="gd-button gd-error-button w-full mt-3"
+          class="gd-button gd-error-button w-[6rem] mt-3"
           (click)="onErrorDialogSubmit()"
         >
           OK

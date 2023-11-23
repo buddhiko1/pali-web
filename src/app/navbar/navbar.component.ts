@@ -56,9 +56,13 @@ export class NavbarComponent {
       .pipe(throttleTime(100))
       .subscribe(() => {
         const currentScrollPosition = window.scrollY;
-        currentScrollPosition < this._previousScrollPosition
-          ? (this.isCollapsed = false)
-          : (this.isCollapsed = true);
+        if (
+          Math.abs(currentScrollPosition - this._previousScrollPosition) > 10
+        ) {
+          currentScrollPosition < this._previousScrollPosition
+            ? (this.isCollapsed = false)
+            : (this.isCollapsed = true);
+        }
         this._previousScrollPosition = currentScrollPosition;
       });
   }

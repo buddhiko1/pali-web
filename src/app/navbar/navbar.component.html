@@ -1,8 +1,9 @@
 <div>
-  <!-- TODO enable click event on overlay. -->
   @if (showOverlay) {
-    <div
+    <!-- eslint-disable-next-line -->
+  <div
       class="c-overlay fixed inset-0 bg-overlay h-screen w-screen opacity-80 touch-none"
+      (click)="toggleMenu()"
     ></div>
   }
   <nav
@@ -15,7 +16,7 @@
     >
       <button
         (click)="routeTo('')"
-        class="c-logo -ml-3 p-3 pc:py-1 text-2xl pc:text-3xl uppercase tracking-widest font-bold text-logo"
+        class="c-logo -ml-3 p-3 pc:py-3 text-2xl pc:text-3xl uppercase tracking-widest font-bold text-logo"
       >
         <p class="gu-hover" [class.text-focus]="isActiveUrl('')">Pali</p>
       </button>
@@ -47,7 +48,6 @@
         'tablat:px-tablatXspan',
         'pc:px-0',
         'pb-3',
-        'pc:pb-0',
         'bg-appBg',
         'pc:bg-transparent',
         animationClass

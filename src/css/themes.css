@@ -16,7 +16,6 @@
   --colors-text: theme("colors.gray.500");
   --colors-border: theme("colors.gray.300");
 
-
   /* status */
   --colors-hover: theme("colors.blue.200");
   --colors-focus: theme("colors.blue.400");

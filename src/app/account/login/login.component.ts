@@ -6,11 +6,13 @@ import {
   ReactiveFormsModule,
 } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { CombinedError } from '@urql/core';
 
 import { SlideInDirective } from 'src/app/core/slide-in.directive';
 import { OverlayComponent } from 'src/app/overlay/overlay.component';
 import { DialogComponent } from 'src/app/dialog/dialog.component';
 import { LoadingComponent } from 'src/app/loading/loading.component';
+import { ErrorSvgComponent } from 'src/app/svg/error/error.component';
 import { UrlEnum } from '../account-routing.module';
 import { AccountService } from '../account.service';
 import { UnRegisteredEmailValidator } from '../email.validator';
@@ -27,6 +29,7 @@ import { LoginMutationVariables } from 'src/gql/graphql';
     SlideInDirective,
     LoadingComponent,
     DialogComponent,
+    ErrorSvgComponent,
   ],
 })
 export class LoginComponent implements OnInit {
@@ -89,9 +92,10 @@ export class LoginComponent implements OnInit {
         this.isLoading = false;
         this.routeToMe();
       })
-      .catch((error) => {
+      .catch((error: CombinedError) => {
         this.isLoading = false;
-        this.error = error.toString();
+        this.error =
+          error.networkError?.message ?? error.graphQLErrors[0].message;
       });
   }
 
@@ -102,7 +106,6 @@ export class LoginComponent implements OnInit {
   }
 
   onErrorDialogSubmit(): void {
-    this.isLoading = false;
     this.error = '';
   }
 

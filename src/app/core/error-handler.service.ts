@@ -19,7 +19,6 @@ export class ErrorHandlerService implements ErrorHandler {
     error instanceof CombinedError
       ? this._handlerServerError(error)
       : this._handlerClientError(error);
-    console.error(error);
   }
 
   private _handlerServerError(error: CombinedError) {
