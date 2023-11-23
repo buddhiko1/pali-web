@@ -2,8 +2,8 @@ import { ErrorHandler, Injectable } from '@angular/core';
 import { CombinedError } from '@urql/core';
 
 import { StorageService } from './storage.service';
+import { InfoEnum } from './public.value';
 import { NotificationService } from '../notification/notification.service';
-import { NotificationEnum } from '../notification/notification.model';
 
 @Injectable({
   providedIn: 'root',
@@ -16,6 +16,7 @@ export class ErrorHandlerService implements ErrorHandler {
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   handleError(error: any): void {
+    console.error(error);
     error instanceof CombinedError
       ? this._handlerServerError(error)
       : this._handlerClientError(error);
@@ -33,7 +34,7 @@ export class ErrorHandlerService implements ErrorHandler {
       this._notificationService.push({
         timestamp: Date.now(),
         title: 'Server Error',
-        type: NotificationEnum.ERROR,
+        type: InfoEnum.ERROR,
         content: error.networkError?.message ?? error.graphQLErrors[0].message,
       });
     }
@@ -44,7 +45,7 @@ export class ErrorHandlerService implements ErrorHandler {
     this._notificationService.push({
       timestamp: Date.now(),
       title: 'Client Error',
-      type: NotificationEnum.ERROR,
+      type: InfoEnum.ERROR,
       content: error.toString(),
     });
   }

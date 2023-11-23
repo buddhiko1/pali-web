@@ -1,0 +1,10 @@
+.c-container {
+  display: grid;
+  grid-row-gap: theme(spacing.5);
+}
+
+@media screen and (min-width: theme("screens.pc")) {
+  .c-error {
+    grid-row-gap: theme(spacing.8);
+  }
+}

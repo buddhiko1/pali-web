@@ -10,9 +10,10 @@ import { CombinedError } from '@urql/core';
 
 import { SlideInDirective } from 'src/app/core/slide-in.directive';
 import { OverlayComponent } from 'src/app/overlay/overlay.component';
-import { DialogComponent } from 'src/app/dialog/dialog.component';
+import { InfoEnum } from 'src/app/core/public.value';
 import { LoadingComponent } from 'src/app/loading/loading.component';
-import { ErrorSvgComponent } from 'src/app/svg/error/error.component';
+import { FormDialogComponent } from 'src/app/dialog/form/form.component';
+import { InfoDialogComponent } from 'src/app/dialog/info/info.component';
 import { UrlEnum } from '../account-routing.module';
 import { AccountService } from '../account.service';
 import { UnRegisteredEmailValidator } from '../email.validator';
@@ -28,13 +29,14 @@ import { LoginMutationVariables } from 'src/gql/graphql';
     OverlayComponent,
     SlideInDirective,
     LoadingComponent,
-    DialogComponent,
-    ErrorSvgComponent,
+    FormDialogComponent,
+    InfoDialogComponent,
   ],
 })
 export class LoginComponent implements OnInit {
   form!: FormGroup;
   UrlEnum = UrlEnum;
+  InfoEnum = InfoEnum;
 
   isLoading = false;
   error = '';

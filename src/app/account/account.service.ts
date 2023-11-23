@@ -58,7 +58,6 @@ export class AccountService {
   }
 
   async login(args: LoginMutationVariables): Promise<void> {
-    throw 'dthsaf asfdasd asdfasdf asdf asd f asd f asdfasdfa fasdfasdfa sdfasdfasf dsafasdfas';
     const result = await this._urqlService.mutation(LoginDocument, args);
     this._storageService.saveAuthToken(result.data.authToken);
     await this.fetchMe();

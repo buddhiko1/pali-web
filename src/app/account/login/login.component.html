@@ -2,24 +2,15 @@
   @if (isLoading) {
     <app-loading />
   } @else if (error) {
-    <app-dialog [isCentral]="true">
-      <div class="c-error w-[60vw] tablat:w-[45vw] pc:w-[20rem]">
-        <div>
-          <app-error-svg [class]="['fill-error', 'w-10', 'h-10', 'inline']" />
-          <span class="text-error ml-4 gd-title">Error</span>
-        </div>
-        <p class="gc-text text-center">{{ error }}</p>
-        <button
-          class="gd-button gd-error-button w-[6rem] mt-3"
-          (click)="onErrorDialogSubmit()"
-        >
-          OK
-        </button>
-      </div>
-    </app-dialog>
+    <app-info-dialog
+      [type]="InfoEnum.ERROR"
+      title="Error"
+      [content]="error"
+      (infoDialogClosed)="onErrorDialogSubmit()"
+    />
   } @else {
-    <app-dialog>
-      <div class="c-content w-[60vw] tablat:w-[45vw] pc:w-[25rem]">
+    <app-form-dialog>
+      <div class="c-content">
         <h2 class="c-title gd-title">Sign In</h2>
         <form [formGroup]="form" (ngSubmit)="onSubmit()" class="c-form">
           <div class="c-email">
@@ -86,6 +77,6 @@
           </button>
         </p>
       </div>
-    </app-dialog>
+    </app-form-dialog>
   }
 </div>

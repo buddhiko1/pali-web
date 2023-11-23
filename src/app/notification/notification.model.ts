@@ -1,11 +1,8 @@
-export enum NotificationEnum {
-  INFO = 'info',
-  SUCCESS = 'success',
-  ERROR = 'error',
-}
+import { InfoEnum } from '../core/public.value';
+
 export interface Notification {
   timestamp: number;
-  type: NotificationEnum;
+  type: InfoEnum;
   title: string;
   content: string;
 }

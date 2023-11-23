@@ -18,7 +18,8 @@ import { DownSvgComponent } from 'src/app/svg/down/down.component';
 import { CloseSvgComponent } from 'src/app/svg/close/close.component';
 import { FadeInDirective } from 'src/app/core/fade-in.directive';
 import { ScreenService } from 'src/app/core/screen.service';
-import { Notification, NotificationEnum } from '../notification.model';
+import { InfoEnum } from 'src/app/core/public.value';
+import { Notification } from '../notification.model';
 
 @Component({
   selector: 'app-notification-box',
@@ -40,7 +41,7 @@ export class BoxComponent implements OnInit, OnDestroy {
   @Input() notification!: Notification;
   @Input() duration = 10000;
   @Output() closed = new EventEmitter<void>();
-  notifcationEnum = NotificationEnum;
+  notifcationEnum = InfoEnum;
   isContentFolded = true;
   shouldSlideOut = false;
   showDialog = false;
@@ -68,11 +69,11 @@ export class BoxComponent implements OnInit, OnDestroy {
 
   get textClass(): string {
     switch (this.notification.type) {
-      case NotificationEnum.INFO:
+      case InfoEnum.INFO:
         return 'gc-text';
-      case NotificationEnum.SUCCESS:
+      case InfoEnum.SUCCESS:
         return 'gc-text text-ok';
-      case NotificationEnum.ERROR:
+      case InfoEnum.ERROR:
         return 'gc-text text-error';
       default:
         return '';
