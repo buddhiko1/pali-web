@@ -6,11 +6,13 @@ import {
   Validators,
   ReactiveFormsModule,
 } from '@angular/forms';
+import { CombinedError } from '@urql/core';
 
-import { LoaderComponent } from 'src/app/loader/loader.component';
+import { InfoEnum } from 'src/app/core/public.value';
+import { LoadingComponent } from 'src/app/loading/loading.component';
+import { FormDialogComponent } from 'src/app/dialog/form/form.component';
+import { InfoDialogComponent } from 'src/app/dialog/info/info.component';
 import { NavigationService } from 'src/app/core/navigation.service';
-import { SlideInDirective } from 'src/app/core/slide-in.directive';
-import { OverlayComponent } from 'src/app/overlay/overlay.component';
 import { UrlEnum } from '../account-routing.module';
 import { AccountService } from '../account.service';
 import {
@@ -25,9 +27,9 @@ import {
   standalone: true,
   imports: [
     ReactiveFormsModule,
-    OverlayComponent,
-    SlideInDirective,
-    LoaderComponent,
+    LoadingComponent,
+    FormDialogComponent,
+    InfoDialogComponent,
   ],
 })
 export class AccountInitComponent implements OnInit {
@@ -37,9 +39,9 @@ export class AccountInitComponent implements OnInit {
   private _token = '';
   private _email = '';
 
-  showLoader = false;
-  errorInfo = '';
-  successInfo = '';
+  InfoEnum = InfoEnum;
+  isLoading = false;
+  error = '';
 
   constructor(
     private _router: Router,
@@ -71,7 +73,7 @@ export class AccountInitComponent implements OnInit {
   }
 
   onSubmit(): void {
-    this.showLoader = true;
+    this.isLoading = true;
     const args: InitAccountMutationVariables = {
       token: this._token,
       password: this.form.getRawValue().password,
@@ -79,11 +81,14 @@ export class AccountInitComponent implements OnInit {
     this._accountService
       .initAccount(args)
       .then(() => {
-        this.showLoader = false;
         this.login();
       })
-      .catch((error) => {
-        this.errorInfo = error.toString();
+      .catch((error: CombinedError) => {
+        this.error =
+          error.networkError?.message ?? error.graphQLErrors[0].message;
+      })
+      .finally(() => {
+        this.isLoading = false;
       });
   }
 
@@ -99,7 +104,7 @@ export class AccountInitComponent implements OnInit {
     });
   }
 
-  onActionDone(): void {
+  onErrorDialogSubmit(): void {
     this._navigationService.goBack();
   }
 }

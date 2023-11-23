@@ -5,13 +5,14 @@ import {
   Validators,
   ReactiveFormsModule,
 } from '@angular/forms';
+import { CombinedError } from '@urql/core';
 
+import { InfoEnum } from 'src/app/core/public.value';
+import { LoadingComponent } from 'src/app/loading/loading.component';
+import { FormDialogComponent } from 'src/app/dialog/form/form.component';
+import { InfoDialogComponent } from 'src/app/dialog/info/info.component';
 import { NavigationService } from 'src/app/core/navigation.service';
 import { PromptEnum } from 'src/app/core/prompts.interaction';
-import { LoaderComponent } from 'src/app/loader/loader.component';
-import { SlideInDirective } from 'src/app/core/slide-in.directive';
-import { OverlayComponent } from 'src/app/overlay/overlay.component';
-
 import { UrlEnum } from '../account-routing.module';
 import { AccountService } from '../account.service';
 import { UnRegisteredEmailValidator } from '../email.validator';
@@ -24,16 +25,17 @@ import { RequestResetMutationVariables } from 'src/gql/graphql';
   standalone: true,
   imports: [
     ReactiveFormsModule,
-    OverlayComponent,
-    SlideInDirective,
-    LoaderComponent,
+    LoadingComponent,
+    FormDialogComponent,
+    InfoDialogComponent,
   ],
 })
 export class ResetRequestComponent implements OnInit {
   form!: FormGroup;
 
-  showLoader = false;
-  errorInfo = '';
+  InfoEnum = InfoEnum;
+  isLoading = false;
+  error = '';
   successInfo = '';
 
   constructor(
@@ -67,19 +69,26 @@ export class ResetRequestComponent implements OnInit {
       urlForReset: `${location.origin}/account/${UrlEnum.PasswordReset}`, // confiured in the config.json of pali-cms.
     };
 
-    this.showLoader = true;
-
+    this.isLoading = true;
     this._accountService
       .requestReset(args)
       .then(() => {
         this.successInfo = PromptEnum.RequestReset;
       })
-      .catch((error) => {
-        this.errorInfo = error.toString();
+      .catch((error: CombinedError) => {
+        this.error =
+          error.networkError?.message ?? error.graphQLErrors[0].message;
+      })
+      .finally(() => {
+        this.isLoading = false;
       });
   }
 
-  onActionDone(): void {
+  onErrorDialogSubmit(): void {
+    this._navigationService.goBack();
+  }
+
+  onSuccessDialogSubmit(): void {
     this._navigationService.goBack();
   }
 }

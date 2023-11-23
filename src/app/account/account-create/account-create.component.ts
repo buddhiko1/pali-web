@@ -7,14 +7,16 @@ import {
   ReactiveFormsModule,
 } from '@angular/forms';
 import { timer } from 'rxjs';
+import { CombinedError } from '@urql/core';
 
+import { InfoEnum } from 'src/app/core/public.value';
+import { LoadingComponent } from 'src/app/loading/loading.component';
+import { FormDialogComponent } from 'src/app/dialog/form/form.component';
+import { InfoDialogComponent } from 'src/app/dialog/info/info.component';
 import { CreateAccountMutationVariables } from 'src/gql/graphql';
 import { NavigationService } from 'src/app/core/navigation.service';
 import { RoleEnum } from 'src/app/core/value.cms';
 import { PromptEnum } from 'src/app/core/prompts.interaction';
-import { LoaderComponent } from 'src/app/loader/loader.component';
-import { SlideInDirective } from 'src/app/core/slide-in.directive';
-import { OverlayComponent } from 'src/app/overlay/overlay.component';
 import { UrlEnum } from '../account-routing.module';
 import { AccountService } from '../account.service';
 import { RegisteredEmailValidator } from '../email.validator';
@@ -27,23 +29,25 @@ import { RoleFragment } from 'src/gql/graphql';
   standalone: true,
   imports: [
     ReactiveFormsModule,
-    OverlayComponent,
-    SlideInDirective,
-    LoaderComponent,
+    LoadingComponent,
+    FormDialogComponent,
+    InfoDialogComponent,
   ],
 })
 export class AccountCreateComponent implements OnInit {
   form!: FormGroup;
   UrlEnum = UrlEnum;
+  InfoEnum = InfoEnum;
 
-  showLoader = false;
-  errorInfo = '';
+  isLoading = false;
+  error = '';
   successInfo = '';
 
   constructor(
     private _router: Router,
     private _activeRoute: ActivatedRoute,
     private _accountService: AccountService,
+
     private _registeredEmailValidator: RegisteredEmailValidator,
     private _navigationService: NavigationService,
   ) {}
@@ -83,7 +87,7 @@ export class AccountCreateComponent implements OnInit {
       urlForInit: `${location.origin}/account/${UrlEnum.AccountInit}`, // confiured in the config.json of pali-cms.
     };
 
-    this.showLoader = true;
+    this.isLoading = true;
 
     this._accountService
       .createAccount(args)
@@ -93,8 +97,12 @@ export class AccountCreateComponent implements OnInit {
           this.successInfo = PromptEnum.SignUp;
         });
       })
-      .catch((error) => {
-        this.errorInfo = error.toString();
+      .catch((error: CombinedError) => {
+        this.error =
+          error.networkError?.message ?? error.graphQLErrors[0].message;
+      })
+      .finally(() => {
+        this.isLoading = false;
       });
   }
 
@@ -104,11 +112,11 @@ export class AccountCreateComponent implements OnInit {
     });
   }
 
-  onActionDone(): void {
-    if (this.successInfo) {
-      this.routeToLogin();
-    } else {
-      this._navigationService.goBack();
-    }
+  onErrorDialogSubmit(): void {
+    this._navigationService.goBack();
+  }
+
+  onSuccessDialogSubmit(): void {
+    this.routeToLogin();
   }
 }

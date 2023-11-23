@@ -6,13 +6,14 @@ import {
   Validators,
   ReactiveFormsModule,
 } from '@angular/forms';
+import { CombinedError } from '@urql/core';
 
+import { InfoEnum } from 'src/app/core/public.value';
+import { LoadingComponent } from 'src/app/loading/loading.component';
+import { FormDialogComponent } from 'src/app/dialog/form/form.component';
+import { InfoDialogComponent } from 'src/app/dialog/info/info.component';
 import { NavigationService } from 'src/app/core/navigation.service';
 import { PromptEnum } from 'src/app/core/prompts.interaction';
-import { LoaderComponent } from 'src/app/loader/loader.component';
-import { SlideInDirective } from 'src/app/core/slide-in.directive';
-import { OverlayComponent } from 'src/app/overlay/overlay.component';
-
 import { UrlEnum } from '../account-routing.module';
 import { AccountService } from '../account.service';
 import { ResetPasswordMutationVariables } from 'src/gql/graphql';
@@ -24,9 +25,9 @@ import { ResetPasswordMutationVariables } from 'src/gql/graphql';
   standalone: true,
   imports: [
     ReactiveFormsModule,
-    OverlayComponent,
-    SlideInDirective,
-    LoaderComponent,
+    LoadingComponent,
+    FormDialogComponent,
+    InfoDialogComponent,
   ],
 })
 export class PasswordResetComponent implements OnInit {
@@ -36,8 +37,9 @@ export class PasswordResetComponent implements OnInit {
   private _token = '';
   private _email = '';
 
-  showLoader = false;
-  errorInfo = '';
+  InfoEnum = InfoEnum;
+  isLoading = false;
+  error = '';
   successInfo = '';
 
   constructor(
@@ -79,26 +81,29 @@ export class PasswordResetComponent implements OnInit {
       password: this.form.getRawValue().password,
     };
 
-    this.showLoader = true;
-
+    this.isLoading = true;
     this._accountService
       .resetPassword(args)
       .then(() => {
         this.successInfo = PromptEnum.Reset;
       })
-      .catch((error) => {
-        this.errorInfo = error.toString();
+      .catch((error: CombinedError) => {
+        this.error =
+          error.networkError?.message ?? error.graphQLErrors[0].message;
+      })
+      .finally(() => {
+        this.isLoading = false;
       });
   }
 
-  async onActionDone(): Promise<void> {
-    if (this.successInfo) {
-      await this._accountService.logout();
-      this._router.navigate([`../${UrlEnum.Login}`], {
-        relativeTo: this._activeRoute,
-      });
-    } else {
-      this._navigationService.goBack();
-    }
+  onErrorDialogSubmit(): void {
+    this._navigationService.goBack();
+  }
+
+  async onSuccessDialogSubmit(): Promise<void> {
+    await this._accountService.logout();
+    this._router.navigate([`../${UrlEnum.Login}`], {
+      relativeTo: this._activeRoute,
+    });
   }
 }

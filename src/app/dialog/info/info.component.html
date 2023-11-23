@@ -19,7 +19,8 @@
         >{{ title }}</span
       >
     </div>
-    <p class="gc-text text-center">{{ content }}</p>
+    <!-- TODO bug:break-words not working if delete overflow-hidden. -->
+    <p class="gc-text break-words overflow-hidden text-center">{{ content }}</p>
     <button
       class="gd-button w-[6rem] mt-3"
       [class.gd-error-button]="type === InfoEnum.ERROR"

@@ -16,20 +16,26 @@
     <div class="c-bar">
       <div class="c-icon">
         @switch (notification.type) {
-          @case (notifcationEnum.INFO) {
+          @case (InfoEnum.INFO) {
             <app-info-svg [class]="['gc-svg']" />
           }
-          @case (notifcationEnum.SUCCESS) {
+          @case (InfoEnum.SUCCESS) {
             <app-check-svg [class]="['fill-ok']" />
           }
-          @case (notifcationEnum.ERROR) {
+          @case (InfoEnum.ERROR) {
             <app-error-svg [class]="['fill-error']" />
           }
           @default {}
         }
       </div>
       <div class="c-title border-l-1">
-        <p [class]="textClass">{{ notification.title }}</p>
+        <p
+          class="gc-text text-center overflow-hidden"
+          [class.text-error]="notification.type === InfoEnum.ERROR"
+          [class.text-ok]="notification.type === InfoEnum.SUCCESS"
+        >
+          {{ notification.title }}
+        </p>
       </div>
       <div class="c-action">
         @if (isContentFolded) {
@@ -49,13 +55,21 @@
         }
       </div>
     </div>
+
+    <!-- TODO bug:break-words not working if delete overflow-hidden. -->
     <div
       appFadeIn
       [fadeInDuration]="300"
-      class="c-content px-3 text-center"
+      class="c-content px-3 text-center break-words overflow-hidden"
       [class.hidden]="isContentFolded"
     >
-      <p [class]="textClass">{{ notification.content }}</p>
+      <p
+        class="gc-text text-center"
+        [class.text-error]="notification.type === InfoEnum.ERROR"
+        [class.text-ok]="notification.type === InfoEnum.SUCCESS"
+      >
+        {{ notification.content }}
+      </p>
     </div>
   </div>
 </div>

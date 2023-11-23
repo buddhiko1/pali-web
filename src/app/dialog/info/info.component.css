@@ -4,7 +4,7 @@
 }
 
 @media screen and (min-width: theme("screens.pc")) {
-  .c-error {
+  .c-container {
     grid-row-gap: theme(spacing.8);
   }
 }

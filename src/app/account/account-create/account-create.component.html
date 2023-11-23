@@ -1,59 +1,60 @@
-<div>
-  @if (showLoader) {
-    <app-loader
-      title="SignUp..."
-      [errorInfo]="errorInfo"
-      [successInfo]="successInfo"
-      (done)="onActionDone()"
-      class="c-loader mt-12 tablat:mt-24"
-    />
-  } @else {
-    <app-overlay />
-    <div
-      appSlideIn
-      [slideInDelay]="200"
-      class="c-container py-20 tablat:py-36 pc:py-[17vh]"
-    >
-      <div class="c-dialog gd-box">
-        <h2 class="c-title gd-title">Sign Up</h2>
-        <form [formGroup]="form" (ngSubmit)="onSubmit()" class="c-form">
-          <div class="c-email">
-            <label for="email" class="gd-text">Email</label>
-            <input
-              type="email"
-              name="email"
-              id="email"
-              formControlName="email"
-              required
-              class="inline-block w-full gd-input"
-            />
-            @if (email.invalid && (email.dirty || email.touched)) {
-              <div class="mt-1 gd-error-text">
-                @if (email.errors?.["required"]) {
-                  <div>Email is required.</div>
-                } @else if (email.errors?.["email"]) {
-                  <div>Invalid address format.</div>
-                } @else if (email.errors?.["registered"]) {
-                  <div>Email has been registered.</div>
-                }
-              </div>
-            }
-          </div>
-          <button
-            type="submit"
-            [disabled]="!form.valid"
-            class="gd-button bg-focus w-full mt-3"
-          >
-            Sign Up
-          </button>
-        </form>
-        <p class="c-tips gd-text">
-          <span>Have an account ?</span
-          ><button (click)="routeToLogin()" class="gc-link-button text-sm ml-4">
-            Sign In
-          </button>
-        </p>
-      </div>
+@if (isLoading) {
+  <app-loading />
+} @else if (error) {
+  <app-info-dialog
+    [type]="InfoEnum.ERROR"
+    title="Error"
+    [content]="error"
+    (infoDialogClosed)="onErrorDialogSubmit()"
+  />
+} @else if (successInfo) {
+  <app-info-dialog
+    [type]="InfoEnum.SUCCESS"
+    title="Success"
+    [content]="successInfo"
+    (infoDialogClosed)="onSuccessDialogSubmit()"
+  />
+} @else {
+  <app-form-dialog>
+    <div class="c-content">
+      <h2 class="c-title gd-title">Sign Up</h2>
+      <form [formGroup]="form" (ngSubmit)="onSubmit()" class="c-form">
+        <div class="c-email">
+          <label for="email" class="gd-text">Email</label>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            formControlName="email"
+            required
+            class="inline-block w-full gd-input"
+          />
+          @if (email.invalid && (email.dirty || email.touched)) {
+            <div class="mt-1 gd-error-text">
+              @if (email.errors?.["required"]) {
+                <div>Email is required.</div>
+              } @else if (email.errors?.["email"]) {
+                <div>Invalid address format.</div>
+              } @else if (email.errors?.["registered"]) {
+                <div>Email has been registered.</div>
+              }
+            </div>
+          }
+        </div>
+        <button
+          type="submit"
+          [disabled]="!form.valid"
+          class="gd-button bg-focus w-full mt-3"
+        >
+          Sign Up
+        </button>
+      </form>
+      <p class="c-tips gd-text">
+        <span>Have an account ?</span
+        ><button (click)="routeToLogin()" class="gc-link-button text-sm ml-4">
+          Sign In
+        </button>
+      </p>
     </div>
-  }
-</div>
+  </app-form-dialog>
+}

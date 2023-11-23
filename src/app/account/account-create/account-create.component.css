@@ -1,12 +1,4 @@
-.c-container {
-  display: grid;
-  grid-template-rows: auto;
-  grid-template-columns: 1fr;
-  grid-template-areas: "dialog";
-}
-
-.c-dialog {
-  grid-area: dialog;
+.c-content {
   display: grid;
   grid-template-rows: auto auto auto;
   grid-template-columns: 1fr;
@@ -50,26 +42,14 @@
   justify-self: end;
 }
 
-.c-loader {
-  grid-area: dialog;
-}
-
 @media screen and (min-width: theme("screens.tablat")) {
-  .c-container {
-    grid-template-columns: 60vw;
-    justify-content: center;
-  }
   .c-form {
     row-gap: theme(spacing.7);
   }
 }
 
 @media screen and (min-width: theme("screens.pc")) {
-  .c-container {
-    grid-template-columns: 25vw;
-  }
-
-  .c-dialog {
+  .c-content {
     row-gap: theme(spacing.10);
   }
 

@@ -8,8 +8,6 @@ import {
 import { ActivatedRoute, Router } from '@angular/router';
 import { CombinedError } from '@urql/core';
 
-import { SlideInDirective } from 'src/app/core/slide-in.directive';
-import { OverlayComponent } from 'src/app/overlay/overlay.component';
 import { InfoEnum } from 'src/app/core/public.value';
 import { LoadingComponent } from 'src/app/loading/loading.component';
 import { FormDialogComponent } from 'src/app/dialog/form/form.component';
@@ -26,8 +24,6 @@ import { LoginMutationVariables } from 'src/gql/graphql';
   standalone: true,
   imports: [
     ReactiveFormsModule,
-    OverlayComponent,
-    SlideInDirective,
     LoadingComponent,
     FormDialogComponent,
     InfoDialogComponent,

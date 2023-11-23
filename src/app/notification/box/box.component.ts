@@ -41,7 +41,7 @@ export class BoxComponent implements OnInit, OnDestroy {
   @Input() notification!: Notification;
   @Input() duration = 10000;
   @Output() closed = new EventEmitter<void>();
-  notifcationEnum = InfoEnum;
+  InfoEnum = InfoEnum;
   isContentFolded = true;
   shouldSlideOut = false;
   showDialog = false;
@@ -65,19 +65,6 @@ export class BoxComponent implements OnInit, OnDestroy {
 
   get isPc(): boolean {
     return this._screenService.isPc;
-  }
-
-  get textClass(): string {
-    switch (this.notification.type) {
-      case InfoEnum.INFO:
-        return 'gc-text';
-      case InfoEnum.SUCCESS:
-        return 'gc-text text-ok';
-      case InfoEnum.ERROR:
-        return 'gc-text text-error';
-      default:
-        return '';
-    }
   }
 
   close(): void {
