@@ -9,14 +9,15 @@ import {
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { LoaderComponent } from '../loader/loader.component';
-import { OverlayComponent } from '../overlay/overlay.component';
+import { InfoEnum } from '../core/public.value';
+import { LoadingComponent } from 'src/app/loading/loading.component';
+import { InfoDialogComponent } from 'src/app/dialog/info/info.component';
 import { UploaderService } from './uploader.service';
 
 @Component({
   selector: 'app-uploader',
   standalone: true,
-  imports: [CommonModule, LoaderComponent, OverlayComponent],
+  imports: [CommonModule, LoadingComponent, InfoDialogComponent],
   templateUrl: './uploader.component.html',
   styleUrl: './uploader.component.css',
 })
@@ -30,9 +31,10 @@ export class UploaderComponent implements AfterViewInit {
   @Output() successful = new EventEmitter<string>();
   @Output() failed = new EventEmitter<void>();
   @ViewChild('fileInput') fileInput!: ElementRef;
-  showLoader = false;
-  errorInfo = '';
-  successInfo = '';
+
+  InfoEnum = InfoEnum;
+  isLoading = false;
+  error = '';
 
   constructor(private _uploaderService: UploaderService) {}
 
@@ -139,7 +141,7 @@ export class UploaderComponent implements AfterViewInit {
   async onChanged(event: Event): Promise<void> {
     const fileInput = event.target as HTMLInputElement;
     try {
-      this.showLoader = true;
+      this.isLoading = true;
       const files = await this._extractInputFiles(fileInput);
       const idListOfUploadedFiles = [];
       for (const file of files) {
@@ -151,14 +153,15 @@ export class UploaderComponent implements AfterViewInit {
           ? idListOfUploadedFiles.join(',')
           : idListOfUploadedFiles[0],
       );
-      this.showLoader = false;
+      this.isLoading = false;
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } catch (error: any) {
-      this.errorInfo = error.toString();
+      this.isLoading = false;
+      this.error = error.toString();
     }
   }
 
-  onActionDone(): void {
+  onErrorDialogSubmit(): void {
     this.failed.emit();
   }
 
