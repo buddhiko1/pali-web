@@ -3,6 +3,7 @@ import {
   PreloadAllModules,
   provideRouter,
   withPreloading,
+  withInMemoryScrolling,
 } from '@angular/router';
 
 import { ErrorHandlerService } from './core/error-handler.service';
@@ -10,7 +11,14 @@ import { APP_ROUTES } from './app.routes';
 
 export const appConfig: ApplicationConfig = {
   providers: [
-    provideRouter(APP_ROUTES, withPreloading(PreloadAllModules)),
+    provideRouter(
+      APP_ROUTES,
+      withPreloading(PreloadAllModules),
+      withInMemoryScrolling({
+        anchorScrolling: 'enabled',
+        scrollPositionRestoration: 'enabled',
+      }),
+    ),
     {
       provide: ErrorHandler,
       useClass: ErrorHandlerService,
