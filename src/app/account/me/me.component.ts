@@ -7,7 +7,7 @@ import { NavigationService } from 'src/app/core/navigation.service';
 import { UploaderComponent } from 'src/app/uploader/uploader.component';
 import { FadeInDirective } from 'src/app/core/fade-in.directive';
 import { AccountService } from '../account.service';
-import { UrlEnum } from '../account-routing.module';
+import { UrlEnum } from '../account.routes';
 import { MeFragment } from 'src/gql/graphql';
 
 @Component({
@@ -42,7 +42,7 @@ export class MeComponent {
   get avatarUrl(): string {
     return this._storageService.me?.avatar
       ? `${environment.fileServer}/${this._storageService.me.avatar.filename_disk}`
-      : 'assets/images/deafult_avatar.webp';
+      : 'assets/images/default.webp';
   }
 
   async onAvatarClick(): Promise<void> {

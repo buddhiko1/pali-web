@@ -1,8 +1,7 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
+import { Routes } from '@angular/router';
 import { PlaceholderPageComponent } from './placeholder-page/placeholder-page.component';
 
-const routes: Routes = [
+export const APP_ROUTES: Routes = [
   {
     path: '',
     loadComponent: () =>
@@ -33,7 +32,7 @@ const routes: Routes = [
   {
     path: 'account',
     loadChildren: () =>
-      import('./account/account.module').then((m) => m.AccountModule),
+      import('./account/account.routes').then((m) => m.ACCOUNT_ROUTES),
   },
   {
     path: 'reading',
@@ -51,15 +50,3 @@ const routes: Routes = [
     data: { text: '404 Page not found' },
   },
 ];
-
-@NgModule({
-  imports: [
-    RouterModule.forRoot(routes, {
-      // useHash: true,
-      scrollPositionRestoration: 'enabled',
-      preloadingStrategy: PreloadAllModules,
-    }),
-  ],
-  exports: [RouterModule],
-})
-export class AppRoutingModule {}

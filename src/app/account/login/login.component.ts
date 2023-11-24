@@ -12,7 +12,7 @@ import { InfoEnum } from 'src/app/core/public.value';
 import { LoadingComponent } from 'src/app/loading/loading.component';
 import { FormDialogComponent } from 'src/app/dialog/form/form.component';
 import { InfoDialogComponent } from 'src/app/dialog/info/info.component';
-import { UrlEnum } from '../account-routing.module';
+import { UrlEnum } from '../account.routes';
 import { AccountService } from '../account.service';
 import { UnRegisteredEmailValidator } from '../email.validator';
 import { LoginMutationVariables } from 'src/gql/graphql';

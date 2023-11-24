@@ -13,7 +13,7 @@ import { LoadingComponent } from 'src/app/loading/loading.component';
 import { FormDialogComponent } from 'src/app/dialog/form/form.component';
 import { InfoDialogComponent } from 'src/app/dialog/info/info.component';
 import { NavigationService } from 'src/app/core/navigation.service';
-import { UrlEnum } from '../account-routing.module';
+import { UrlEnum } from '../account.routes';
 import { AccountService } from '../account.service';
 import {
   InitAccountMutationVariables,

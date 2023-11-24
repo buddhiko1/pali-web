@@ -17,7 +17,7 @@ import { CreateAccountMutationVariables } from 'src/gql/graphql';
 import { NavigationService } from 'src/app/core/navigation.service';
 import { RoleEnum } from 'src/app/core/value.cms';
 import { PromptEnum } from 'src/app/core/prompts.interaction';
-import { UrlEnum } from '../account-routing.module';
+import { UrlEnum } from '../account.routes';
 import { AccountService } from '../account.service';
 import { RegisteredEmailValidator } from '../email.validator';
 import { RoleFragment } from 'src/gql/graphql';
