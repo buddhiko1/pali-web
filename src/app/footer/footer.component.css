@@ -12,9 +12,3 @@ footer {
   place-items: center;
   grid-auto-flow: column;
 }
-
-@media screen and (min-width: theme("screens.tablat")) {
-}
-
-@media screen and (min-width: theme("screens.pc")) {
-}

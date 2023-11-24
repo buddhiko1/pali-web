@@ -22,16 +22,17 @@ export class NotificationComponent implements OnInit {
 
   ngOnInit(): void {
     this._notificationService.notificationsSubject.subscribe((notification) => {
+      console.error(
+        'push notification in component.',
+        notification,
+        Date.now(),
+      );
       this.notifications.push(notification);
     });
   }
 
   get isPc(): boolean {
     return this._screenService.isPc;
-  }
-
-  get isEmpty(): boolean {
-    return this.notifications.length === 0;
   }
 
   remove(notification: Notification): void {

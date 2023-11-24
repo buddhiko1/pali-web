@@ -1,17 +1,9 @@
 <div>
   <div
-    [class]="[
-      'c-container',
-      'w-[18rem]',
-      'p-3',
-      'border',
-      'pc:border-hover',
-      'shadow-sm',
-      'rounded-3xl',
-      'pc:rounded-lg',
-      'bg-footerBg',
-      shouldSlideOut ? 'c-slide-out' : 'c-slide-in'
-    ]"
+    class="c-container w-[18rem] p-3 border pc:border-hover shadow-sm rounded-3xl bg-footerBg"
+    [class.rounded-lg]="isPc || !isContentFolded"
+    [class.c-slide-out]="shouldSlideOut"
+    [class.c-slide-in]="!shouldSlideOut"
   >
     <div class="c-bar">
       <div class="c-icon">

@@ -46,13 +46,13 @@ export class BoxComponent implements OnInit, OnDestroy {
   shouldSlideOut = false;
   showDialog = false;
   private _isMouseEntered = false;
-  private _intervalSuscription!: Subscription;
+  private _timerSubscription!: Subscription;
 
   constructor(private _screenService: ScreenService) {}
 
   ngOnInit(): void {
-    const intervalSubject = timer(this.duration, this.duration);
-    this._intervalSuscription = intervalSubject.subscribe(() => {
+    const timerSubject = timer(this.duration);
+    this._timerSubscription = timerSubject.subscribe(() => {
       if (!this._isMouseEntered && this.isContentFolded) {
         this.close();
       }
@@ -60,7 +60,7 @@ export class BoxComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    this._intervalSuscription.unsubscribe();
+    this._timerSubscription.unsubscribe();
   }
 
   get isPc(): boolean {
@@ -70,6 +70,7 @@ export class BoxComponent implements OnInit, OnDestroy {
   close(): void {
     this.isContentFolded = true;
     this.shouldSlideOut = true;
+    // waiting for slide out animation.
     timer(1000).subscribe(() => {
       this.closed.emit();
     });

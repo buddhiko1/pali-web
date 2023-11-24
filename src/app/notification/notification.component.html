@@ -1,25 +1,18 @@
-@if (!isEmpty) {
-  @if (isPc) {
-    <div class="c-container fixed bottom-24 right-2">
-      <div class="c-boxes">
-        @for (notification of notifications; track notification.timestamp) {
-          <app-notification-box
-            [notification]="notification"
-            (closed)="remove(notification)"
-          />
-        }
-      </div>
-    </div>
-  } @else {
-    <div class="c-container fixed top-28 left-10 right-10">
-      <div class="c-boxes">
-        @for (notification of notifications; track notification.timestamp) {
-          <app-notification-box
-            [notification]="notification"
-            (closed)="remove(notification)"
-          />
-        }
-      </div>
-    </div>
-  }
-}
+<div
+  class="c-container fixed"
+  [class.bottom-24]="isPc"
+  [class.right-2]="isPc"
+  [class.top-28]="!isPc"
+  [class.left-10]="!isPc"
+  [class.right-10]="!isPc"
+>
+  <div class="c-boxes">
+    <!-- TODO fix the bug of can't render the first notification -->
+    @for (notification of notifications; track notification.timestamp) {
+      <app-notification-box
+        [notification]="notification"
+        (closed)="remove(notification)"
+      />
+    }
+  </div>
+</div>

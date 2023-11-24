@@ -12,10 +12,3 @@
   grid-auto-flow: row;
   grid-row-gap: theme("spacing.5");
 }
-
-@media screen and (min-width: theme("screens.tablat")) {
-  .c-container {
-    grid-template-columns: 1fr;
-    grid-template-areas: "boxes";
-  }
-}
