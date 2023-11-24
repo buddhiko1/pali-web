@@ -16,6 +16,7 @@ export class ErrorHandlerService implements ErrorHandler {
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   handleError(error: any): void {
+    console.error(error);
     error instanceof CombinedError
       ? this._handlerServerError(error)
       : this._handlerClientError(error);
@@ -32,8 +33,7 @@ export class ErrorHandlerService implements ErrorHandler {
     } else {
       this._notificationService.push({
         timestamp: Date.now(),
-        // title: 'Server Error',
-        title: Date.now().toString(),
+        title: 'Server Error',
         type: InfoEnum.ERROR,
         content: error.networkError?.message ?? error.graphQLErrors[0].message,
       });
