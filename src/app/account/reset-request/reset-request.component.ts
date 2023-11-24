@@ -73,14 +73,13 @@ export class ResetRequestComponent implements OnInit {
     this._accountService
       .requestReset(args)
       .then(() => {
+        this.isLoading = false;
         this.successInfo = PromptEnum.RequestReset;
       })
       .catch((error: CombinedError) => {
+        this.isLoading = false;
         this.error =
           error.networkError?.message ?? error.graphQLErrors[0].message;
-      })
-      .finally(() => {
-        this.isLoading = false;
       });
   }
 

@@ -81,14 +81,13 @@ export class AccountInitComponent implements OnInit {
     this._accountService
       .initAccount(args)
       .then(() => {
+        this.isLoading = false;
         this.login();
       })
       .catch((error: CombinedError) => {
+        this.isLoading = false;
         this.error =
           error.networkError?.message ?? error.graphQLErrors[0].message;
-      })
-      .finally(() => {
-        this.isLoading = false;
       });
   }
 

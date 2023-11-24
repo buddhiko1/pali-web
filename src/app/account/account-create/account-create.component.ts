@@ -94,15 +94,14 @@ export class AccountCreateComponent implements OnInit {
       .then(() => {
         // wait for 3 seconds for user to receive the email.
         timer(3000).subscribe(() => {
+          this.isLoading = false;
           this.successInfo = PromptEnum.SignUp;
         });
       })
       .catch((error: CombinedError) => {
+        this.isLoading = false;
         this.error =
           error.networkError?.message ?? error.graphQLErrors[0].message;
-      })
-      .finally(() => {
-        this.isLoading = false;
       });
   }
 

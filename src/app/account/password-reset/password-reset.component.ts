@@ -85,14 +85,13 @@ export class PasswordResetComponent implements OnInit {
     this._accountService
       .resetPassword(args)
       .then(() => {
+        this.isLoading = false;
         this.successInfo = PromptEnum.Reset;
       })
       .catch((error: CombinedError) => {
+        this.isLoading = false;
         this.error =
           error.networkError?.message ?? error.graphQLErrors[0].message;
-      })
-      .finally(() => {
-        this.isLoading = false;
       });
   }
 
