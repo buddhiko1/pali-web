@@ -3,7 +3,7 @@
     <app-loading />
   } @else if (error) {
     <app-info-dialog
-      [type]="InfoEnum.ERROR"
+      [isErrorInfo]="true"
       title="Error"
       [content]="error"
       (infoDialogClosed)="onErrorDialogSubmit()"

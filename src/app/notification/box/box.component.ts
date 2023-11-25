@@ -16,10 +16,10 @@ import { InfoSvgComponent } from 'src/app/svg/info/info.component';
 import { UpSvgComponent } from 'src/app/svg/up/up.component';
 import { DownSvgComponent } from 'src/app/svg/down/down.component';
 import { CloseSvgComponent } from 'src/app/svg/close/close.component';
-import { FadeInDirective } from 'src/app/core/fade-in.directive';
-import { ScreenService } from 'src/app/core/screen.service';
-import { InfoEnum } from 'src/app/core/public.value';
+import { FadeInDirective } from 'src/app/shared/directives/fade-in.directive';
+import { ScreenService } from 'src/app/shared/services/screen.service';
 import { Notification } from '../notification.model';
+import { NotificationService } from '../notification.service';
 
 @Component({
   selector: 'app-notification-box',
@@ -41,14 +41,16 @@ export class BoxComponent implements OnInit, OnDestroy {
   @Input() notification!: Notification;
   @Input() duration = 10000;
   @Output() closed = new EventEmitter<void>();
-  InfoEnum = InfoEnum;
   isContentFolded = true;
   shouldSlideOut = false;
   showDialog = false;
   private _isMouseEntered = false;
   private _timerSubscription!: Subscription;
 
-  constructor(private _screenService: ScreenService) {}
+  constructor(
+    private _screenService: ScreenService,
+    private _notificationService: NotificationService,
+  ) {}
 
   ngOnInit(): void {
     const timerSubject = timer(this.duration);
@@ -88,5 +90,13 @@ export class BoxComponent implements OnInit, OnDestroy {
   @HostListener('mouseleave')
   onMouseLeave() {
     this._isMouseEntered = false;
+  }
+
+  isErrorNotification(notification: Notification): boolean {
+    return this._notificationService.isErrorNotification(notification);
+  }
+
+  isSuccessNotification(notification: Notification): boolean {
+    return this._notificationService.isSuccessNotification(notification);
   }
 }

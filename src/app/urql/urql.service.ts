@@ -11,7 +11,7 @@ import {
 import { devtoolsExchange } from '@urql/devtools';
 
 import { environment } from 'src/environments/environment';
-import { StorageService } from '../core/storage.service';
+import { StorageService } from '../shared/services/storage.service';
 import { UrqlExchange } from './urql.exchange';
 
 abstract class UrqlService {
@@ -45,6 +45,7 @@ abstract class UrqlService {
 
   private _validateResult(result: OperationResult): OperationResult {
     if (result.error) {
+      // the error with be handed by ErrorhanderService.
       throw result.error;
     }
     return result;

@@ -6,7 +6,7 @@ import {
   withInMemoryScrolling,
 } from '@angular/router';
 
-import { ErrorHandlerService } from './core/error-handler.service';
+import { ErrorHandlerService } from './shared/services/error-handler.service';
 import { APP_ROUTES } from './app.routes';
 
 export const appConfig: ApplicationConfig = {

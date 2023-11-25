@@ -2,9 +2,9 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute, Params } from '@angular/router';
 
-import { SlideInDirective } from '../core/slide-in.directive';
-import { FadeInDirective } from '../core/fade-in.directive';
-import { BackButtonDirective } from '../core/back-button.directive';
+import { SlideInDirective } from '../shared/directives/slide-in.directive';
+import { FadeInDirective } from '../shared/directives/fade-in.directive';
+import { BackButtonDirective } from '../shared/directives/back-button.directive';
 import { LarrowSvgComponent } from '../svg/larrow/larrow.component';
 import { SnowBgComponent } from '../snow-bg/snow-bg.component';
 

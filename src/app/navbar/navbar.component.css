@@ -38,7 +38,7 @@
   grid-template-areas:
     "routes routes routes"
     "divider divider divider"
-    "theme email account";
+    "theme email user";
   transform: translateX(-100%);
 }
 
@@ -74,8 +74,8 @@
   align-self: center;
 }
 
-.c-account {
-  grid-area: account;
+.c-user {
+  grid-area: user;
   justify-self: start;
   align-self: center;
 }
@@ -103,7 +103,7 @@
   .c-menu {
     grid-template-rows: 1fr;
     grid-template-columns: 6fr 1fr auto auto auto;
-    grid-template-areas: "routes span theme email account";
+    grid-template-areas: "routes span theme email user";
     transform: translateX(0);
     justify-self: end;
     align-self: end;

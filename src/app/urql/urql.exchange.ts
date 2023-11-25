@@ -3,7 +3,7 @@ import { Client, fetchExchange, Exchange, Operation } from '@urql/core';
 import { authExchange } from '@urql/exchange-auth';
 
 import { environment } from 'src/environments/environment';
-import { StorageService } from '../core/storage.service';
+import { StorageService } from '../shared/services/storage.service';
 import { RefreshTokenDocument } from 'src/gql/graphql';
 
 // can't be defined through construct injector.
@@ -44,7 +44,7 @@ export class UrqlExchange {
     if (result.data?.refreshedToken) {
       storageService.saveAuthToken(result.data?.refreshedToken);
     } else {
-      storageService.clearAccountData();
+      storageService.clearLoginedUserData();
     }
   }
 }

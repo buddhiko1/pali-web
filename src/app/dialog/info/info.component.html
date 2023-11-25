@@ -1,21 +1,17 @@
 <app-dialog-box [isCentral]="true">
   <div class="c-container w-[60vw] tablat:w-[45vw] pc:w-[20rem]">
     <div>
-      @switch (type) {
-        @case (InfoEnum.INFO) {
-          <app-info-svg [class]="['gc-svg', 'w-10', 'h-10', 'inline']" />
-        }
-        @case (InfoEnum.SUCCESS) {
-          <app-check-svg [class]="['fill-ok', 'w-10', 'h-10', 'inline']" />
-        }
-        @case (InfoEnum.ERROR) {
-          <app-error-svg [class]="['fill-error', 'w-10', 'h-10', 'inline']" />
-        }
+      @if (isSuccessInfo) {
+        <app-check-svg [class]="['fill-ok', 'w-10', 'h-10', 'inline']" />
+      } @else if (isErrorInfo) {
+        <app-error-svg [class]="['fill-error', 'w-10', 'h-10', 'inline']" />
+      } @else {
+        <app-info-svg [class]="['gc-svg', 'w-10', 'h-10', 'inline']" />
       }
       <span
         class="gd-title ml-4"
-        [class.text-error]="type === InfoEnum.ERROR"
-        [class.text-ok]="type === InfoEnum.SUCCESS"
+        [class.text-error]="isErrorInfo"
+        [class.text-ok]="isSuccessInfo"
         >{{ title }}</span
       >
     </div>
@@ -23,7 +19,7 @@
     <p class="gc-text break-words overflow-hidden text-center">{{ content }}</p>
     <button
       class="gd-button w-[6rem] mt-3"
-      [class.gd-error-button]="type === InfoEnum.ERROR"
+      [class.gd-error-button]="isErrorInfo"
       (click)="onSubmit()"
     >
       OK

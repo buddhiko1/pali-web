@@ -7,24 +7,19 @@
   >
     <div class="c-bar">
       <div class="c-icon">
-        @switch (notification.type) {
-          @case (InfoEnum.INFO) {
-            <app-info-svg [class]="['gc-svg']" />
-          }
-          @case (InfoEnum.SUCCESS) {
-            <app-check-svg [class]="['fill-ok']" />
-          }
-          @case (InfoEnum.ERROR) {
-            <app-error-svg [class]="['fill-error']" />
-          }
-          @default {}
+        @if (isSuccessNotification(notification)) {
+          <app-check-svg [class]="['fill-ok']" />
+        } @else if (isErrorNotification(notification)) {
+          <app-error-svg [class]="['fill-error']" />
+        } @else {
+          <app-info-svg [class]="['gc-svg']" />
         }
       </div>
       <div class="c-title border-l-1">
         <p
           class="gc-text text-center overflow-hidden"
-          [class.text-error]="notification.type === InfoEnum.ERROR"
-          [class.text-ok]="notification.type === InfoEnum.SUCCESS"
+          [class.text-error]="isErrorNotification(notification)"
+          [class.text-ok]="isSuccessNotification(notification)"
         >
           {{ notification.title }}
         </p>
@@ -57,8 +52,8 @@
     >
       <p
         class="gc-text text-center"
-        [class.text-error]="notification.type === InfoEnum.ERROR"
-        [class.text-ok]="notification.type === InfoEnum.SUCCESS"
+        [class.text-error]="isErrorNotification(notification)"
+        [class.text-ok]="isSuccessNotification(notification)"
       >
         {{ notification.content }}
       </p>

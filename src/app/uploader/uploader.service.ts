@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { createDirectus, staticToken, rest, uploadFiles } from '@directus/sdk';
 
 import { environment } from 'src/environments/environment';
-import { StorageService } from '../core/storage.service';
+import { StorageService } from '../shared/services/storage.service';
 import { FileFieldsFragment } from 'src/gql/graphql';
 
 @Injectable({ providedIn: 'root' })

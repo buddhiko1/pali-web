@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+import { ScreenService } from '../shared/services/screen.service';
 import { BoxComponent } from './box/box.component';
-import { ScreenService } from '../core/screen.service';
 import { NotificationService } from './notification.service';
 import { Notification } from './notification.model';
 

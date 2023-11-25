@@ -3,7 +3,7 @@ import { CommonModule, TitleCasePipe } from '@angular/common';
 import { Router, NavigationEnd, RouterLink } from '@angular/router';
 import { fromEvent, throttleTime } from 'rxjs';
 
-import { FadeInDirective } from '../core/fade-in.directive';
+import { FadeInDirective } from '../shared/directives/fade-in.directive';
 import { PlusSvgComponent } from '../svg/plus/plus.component';
 import { MoonSvgComponent } from '../svg/moon/moon.component';
 import { SunSvgComponent } from '../svg/sun/sun.component';

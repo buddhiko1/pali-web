@@ -2,9 +2,9 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 
-import { SlideInDirective } from '../core/slide-in.directive';
+import { SlideInDirective } from '../shared/directives/slide-in.directive';
 import { RarrowSvgComponent } from '../svg/rarrow/rarrow.component';
-import { FadeInDirective } from '../core/fade-in.directive';
+import { FadeInDirective } from '../shared/directives/fade-in.directive';
 import { PhraseComponent } from '../phrase/phrase.component';
 
 import { HomeService } from './home.service';

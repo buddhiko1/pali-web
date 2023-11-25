@@ -1,8 +1,8 @@
 import { Component, Input, OnInit, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { FadeInDirective } from 'src/app/core/fade-in.directive';
-import { SlideInDirective } from 'src/app/core/slide-in.directive';
+import { FadeInDirective } from 'src/app/shared/directives/fade-in.directive';
+import { SlideInDirective } from 'src/app/shared/directives/slide-in.directive';
 
 @Component({
   selector: 'app-dialog-box',

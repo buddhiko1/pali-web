@@ -1,7 +1,7 @@
 import { graphql } from 'src/gql';
 
 graphql(`
-  query Modules {
+  query HomePageModules {
     modules(sort: ["index"]) {
       index
       name

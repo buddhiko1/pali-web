@@ -30,9 +30,13 @@ export const APP_ROUTES: Routes = [
       import('./tipitaka/tipitaka.component').then((m) => m.TipitakaComponent),
   },
   {
-    path: 'account',
+    path: 'auth',
+    loadChildren: () => import('./auth/auth.routes').then((m) => m.AUTH_ROUTES),
+  },
+  {
+    path: 'users',
     loadChildren: () =>
-      import('./account/account.routes').then((m) => m.ACCOUNT_ROUTES),
+      import('./users/users.routes').then((m) => m.USERS_ROUTES),
   },
   {
     path: 'reading',

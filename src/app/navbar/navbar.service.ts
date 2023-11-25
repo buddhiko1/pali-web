@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 
 import { DataUrqlService } from '../urql/urql.service';
-import { RoutesDocument, RoutesFragment } from 'src/gql/graphql';
+import { NavbarRoutesDocument, RoutesFragment } from 'src/gql/graphql';
 import { ThemeEnum } from './navbar.model';
 
 @Injectable({
@@ -12,7 +12,7 @@ export class NavbarService {
   constructor(private _urqlService: DataUrqlService) {}
 
   async fetchRoutes(): Promise<RoutesFragment[]> {
-    const result = await this._urqlService.query(RoutesDocument, {});
+    const result = await this._urqlService.query(NavbarRoutesDocument, {});
     return result.data.routes;
   }
 

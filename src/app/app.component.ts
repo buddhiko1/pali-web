@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
-import { FadeInDirective } from './core/fade-in.directive';
+import { FadeInDirective } from './shared/directives/fade-in.directive';
 import { NavbarComponent } from './navbar/navbar.component';
 import { NavbarService } from './navbar/navbar.service';
 import { FooterComponent } from './footer/footer.component';

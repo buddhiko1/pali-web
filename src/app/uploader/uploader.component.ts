@@ -9,7 +9,6 @@ import {
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { InfoEnum } from '../core/public.value';
 import { LoadingComponent } from 'src/app/loading/loading.component';
 import { InfoDialogComponent } from 'src/app/dialog/info/info.component';
 import { UploaderService } from './uploader.service';
@@ -32,7 +31,6 @@ export class UploaderComponent implements AfterViewInit {
   @Output() failed = new EventEmitter<void>();
   @ViewChild('fileInput') fileInput!: ElementRef;
 
-  InfoEnum = InfoEnum;
   isLoading = false;
   error = '';
 
