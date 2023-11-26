@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import {
   FormGroup,
   FormControl,
@@ -42,7 +42,6 @@ export class UserCreationComponent implements OnInit {
 
   constructor(
     private _router: Router,
-    private _activeRoute: ActivatedRoute,
     private _usersService: UsersService,
     private _registeredEmailValidator: RegisteredEmailValidator,
     private _urlService: UrlService,
@@ -103,9 +102,7 @@ export class UserCreationComponent implements OnInit {
   }
 
   routeToLogin(): void {
-    this._router.navigate([`auth/login`], {
-      relativeTo: this._activeRoute,
-    });
+    this._router.navigateByUrl(this._urlService.urlForLogin);
   }
 
   onErrorDialogSubmit(): void {
