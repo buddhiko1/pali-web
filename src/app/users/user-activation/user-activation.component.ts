@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import {
   FormGroup,
   FormControl,
@@ -12,6 +12,7 @@ import { LoadingComponent } from 'src/app/loading/loading.component';
 import { FormDialogComponent } from 'src/app/dialog/form/form.component';
 import { InfoDialogComponent } from 'src/app/dialog/info/info.component';
 import { NavigationService } from 'src/app/shared/services/navigation.service';
+import { UrlService } from 'src/app/shared/services/url.service';
 import { UsersService } from '../users.service';
 import { ActiveUserMutationVariables } from 'src/gql/graphql';
 
@@ -37,8 +38,10 @@ export class UserActivationComponent implements OnInit {
   error = '';
 
   constructor(
+    private _router: Router,
     private _activeRoute: ActivatedRoute,
     private _usersService: UsersService,
+    private _urlService: UrlService,
     private _navigationService: NavigationService,
   ) {
     this._activeRoute.queryParams.subscribe((params) => {
@@ -74,6 +77,7 @@ export class UserActivationComponent implements OnInit {
       .activeUser(args)
       .then(() => {
         this.isLoading = false;
+        this._router.navigateByUrl(this._urlService.urlForLogin);
       })
       .catch((error: CombinedError) => {
         this.isLoading = false;
