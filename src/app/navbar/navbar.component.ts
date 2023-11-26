@@ -4,6 +4,7 @@ import { Router, NavigationEnd, RouterLink } from '@angular/router';
 import { fromEvent, throttleTime } from 'rxjs';
 
 import { FadeInDirective } from '../shared/directives/fade-in.directive';
+import { UrlService } from '../shared/services/url.service';
 import { PlusSvgComponent } from '../svg/plus/plus.component';
 import { MoonSvgComponent } from '../svg/moon/moon.component';
 import { SunSvgComponent } from '../svg/sun/sun.component';
@@ -43,6 +44,7 @@ export class NavbarComponent {
   constructor(
     private _router: Router,
     private _navbarService: NavbarService,
+    private _urlService: UrlService,
   ) {
     this._navbarService.fetchRoutes().then((routes) => {
       this.routes = routes;
@@ -84,6 +86,10 @@ export class NavbarComponent {
         this._navbarService.theme = ThemeEnum.DEFAULT;
         break;
     }
+  }
+
+  get urlForMe(): string {
+    return this._urlService.urlForMe;
   }
 
   get theme(): ThemeEnum {

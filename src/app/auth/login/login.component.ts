@@ -86,11 +86,9 @@ export class LoginComponent implements OnInit {
     this._authService
       .login(args)
       .then(() => {
-        this._usersService.fetchMe();
-      })
-      .then(() => {
-        this.isLoading = false;
-        this._router.navigateByUrl(this._urlService.urlForMe);
+        this._usersService.fetchMe().then(() => {
+          this._router.navigateByUrl('users/me');
+        });
       })
       .catch((error: CombinedError) => {
         this.isLoading = false;

@@ -8,12 +8,12 @@ const canActiveMe = (
   router = inject(Router),
   urlService = inject(UrlService),
 ) => {
-  return roleService.isUser ? true : router.parseUrl(urlService.urlForLogin);
+  return roleService.isPublic ? router.parseUrl(urlService.urlForLogin) : true;
 };
 
 export const USERS_ROUTES: Routes = [
   {
-    path: '',
+    path: 'me',
     canActivate: [() => canActiveMe()],
     loadComponent: () => import('./me/me.component').then((m) => m.MeComponent),
   },

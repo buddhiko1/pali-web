@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { environment } from 'src/environments/environment';
 import { StorageService } from 'src/app/shared/services/storage.service';
-import { NavigationService } from 'src/app/shared/services/navigation.service';
 import { UploaderComponent } from 'src/app/uploader/uploader.component';
 import { FadeInDirective } from 'src/app/shared/directives/fade-in.directive';
 import { UsersService } from '../users.service';
@@ -21,10 +21,10 @@ export class MeComponent {
   avatarFolderId = '';
 
   constructor(
+    private _router: Router,
     private _usersService: UsersService,
     private _authService: AuthService,
     private _storageService: StorageService,
-    private _navigationService: NavigationService,
   ) {}
 
   get me(): UserMeFragment | null {
@@ -69,6 +69,6 @@ export class MeComponent {
 
   async onLogout(): Promise<void> {
     await this._authService.logout();
-    this._navigationService.goBack();
+    this._router.navigateByUrl('');
   }
 }

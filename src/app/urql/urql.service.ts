@@ -45,7 +45,7 @@ abstract class UrqlService {
 
   private _validateResult(result: OperationResult): OperationResult {
     if (result.error) {
-      // the error with be handed by ErrorhanderService.
+      // the error with be catched by ErrorhandlerService.
       throw result.error;
     }
     return result;

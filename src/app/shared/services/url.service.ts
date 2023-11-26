@@ -13,18 +13,18 @@ export class UrlService {
   }
 
   get urlForRequestPasswordReset(): string {
-    return '/auth/reset-request';
+    return 'auth/reset-request';
   }
 
   get urlForLogin(): string {
-    return '/auth/login';
+    return 'auth/login';
   }
 
   get urlForMe(): string {
-    return '/users';
+    return 'users/me';
   }
 
   get urlForCreateUser(): string {
-    return '/users/creatation';
+    return 'users/creation';
   }
 }

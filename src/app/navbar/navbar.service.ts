@@ -13,6 +13,7 @@ export class NavbarService {
 
   async fetchRoutes(): Promise<RoutesFragment[]> {
     const result = await this._urqlService.query(NavbarRoutesDocument, {});
+    console.log(result.data.routes);
     return result.data.routes;
   }
 

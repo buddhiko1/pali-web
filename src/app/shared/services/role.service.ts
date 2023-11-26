@@ -14,9 +14,7 @@ export class RoleService {
   }
 
   get isUser(): boolean {
-    return (
-      this._storageService.me?.role?.name === RoleEnum.User || this.isAdmin
-    );
+    return this._storageService.me?.role?.name === RoleEnum.User;
   }
 
   get isPublic(): boolean {
