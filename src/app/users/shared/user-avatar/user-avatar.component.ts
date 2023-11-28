@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { environment } from 'src/environments/environment';
@@ -13,7 +13,7 @@ import { AvatarFragment } from 'src/gql/graphql';
   templateUrl: './user-avatar.component.html',
   styleUrl: './user-avatar.component.css',
 })
-export class UserAvatarComponent implements OnInit {
+export class UserAvatarComponent {
   @Input() size = '4rem';
   @Input()
   set avatarId(value: string | undefined) {
@@ -26,10 +26,6 @@ export class UserAvatarComponent implements OnInit {
 
   constructor(private _usersService: UsersService) {}
 
-  ngOnInit(): void {
-    this.fetchUserAvatar();
-  }
-
   get avatarUrl(): string {
     return this.avatar
       ? `${environment.fileServer}/${this.avatar.filename_disk}`
@@ -37,11 +33,12 @@ export class UserAvatarComponent implements OnInit {
   }
 
   async fetchUserAvatar(): Promise<void> {
-    this.avatar = null;
     if (this._avatarId) {
       this.avatar = await this._usersService.fetchUserAvatar({
         avatarId: this._avatarId,
       });
+    } else {
+      this.avatar = null;
     }
   }
 
