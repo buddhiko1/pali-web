@@ -9,10 +9,11 @@ import { PlusSvgComponent } from '../svg/plus/plus.component';
 import { MoonSvgComponent } from '../svg/moon/moon.component';
 import { SunSvgComponent } from '../svg/sun/sun.component';
 import { EmailSvgComponent } from '../svg/email/email.component';
-import { PersonSvgComponent } from '../svg/person/person.component';
+import { UserAvatarComponent } from '../users/shared/user-avatar/user-avatar.component';
+import { StorageService } from '../shared/services/storage.service';
 import { ThemeEnum } from './navbar.model';
 import { NavbarService } from './navbar.service';
-import { RoutesFragment } from 'src/gql/graphql';
+import { RoutesFragment, UserFragment } from 'src/gql/graphql';
 
 @Component({
   selector: 'app-navbar',
@@ -26,7 +27,7 @@ import { RoutesFragment } from 'src/gql/graphql';
     MoonSvgComponent,
     SunSvgComponent,
     EmailSvgComponent,
-    PersonSvgComponent,
+    UserAvatarComponent,
   ],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.css',
@@ -43,6 +44,7 @@ export class NavbarComponent {
 
   constructor(
     private _router: Router,
+    private _storageService: StorageService,
     private _navbarService: NavbarService,
     private _urlService: UrlService,
   ) {
@@ -86,6 +88,10 @@ export class NavbarComponent {
         this._navbarService.theme = ThemeEnum.DEFAULT;
         break;
     }
+  }
+
+  get me(): UserFragment | null {
+    return this._storageService.me;
   }
 
   get urlForMe(): string {

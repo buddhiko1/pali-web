@@ -1,16 +1,19 @@
 import { graphql } from 'src/gql';
 
 graphql(`
-  fragment UserMe on directus_users {
+  fragment Avatar on directus_files {
+    id
+    filename_disk
+    folder {
+      id
+    }
+  }
+  fragment User on directus_users {
+    id
     first_name
     last_name
     avatar {
       id
-      filename_disk
-      folder {
-        id
-        name
-      }
     }
     email
     role {
@@ -29,7 +32,7 @@ graphql(`
   }
   mutation UpdateMe($data: update_directus_users_input!) {
     updatedMe: update_users_me(data: $data) {
-      ...UserMe
+      ...User
     }
   }
   mutation DeleteUserOldAvatar($avatarId: ID!) {
@@ -42,9 +45,14 @@ graphql(`
       id
     }
   }
+  query UserAvatar($avatarId: ID!) {
+    userAvatar: files_by_id(id: $avatarId) {
+      ...Avatar
+    }
+  }
   query UserMe {
     me: users_me {
-      ...UserMe
+      ...User
     }
   }
   query UserRoles {

@@ -9,7 +9,7 @@ import {
   ActiveUserDocument,
   ActiveUserMutationVariables,
   UserWithEmailDocument,
-  UserMeFragment,
+  UserFragment,
   UserMeDocument,
   UserRoleFragment,
   UserRolesDocument,
@@ -18,6 +18,9 @@ import {
   DeleteUserOldAvatarDocument,
   DeleteUserOldAvatarMutationVariables,
   FolderWithNameDocument,
+  AvatarFragment,
+  UserAvatarDocument,
+  UserAvatarQueryVariables,
 } from 'src/gql/graphql';
 
 @Injectable({ providedIn: 'root' })
@@ -49,12 +52,19 @@ export class UsersService {
     }
   }
 
+  async fetchUserAvatar(
+    args: UserAvatarQueryVariables,
+  ): Promise<AvatarFragment> {
+    const result = await this._urqlService.query(UserAvatarDocument, args);
+    return result.data.userAvatar;
+  }
+
   async fetchRoles(): Promise<UserRoleFragment[]> {
     const result = await this._urqlService.query(UserRolesDocument, {});
     return result.data.roles;
   }
 
-  async updateMe(args: Update_Directus_Users_Input): Promise<UserMeFragment> {
+  async updateMe(args: Update_Directus_Users_Input): Promise<UserFragment> {
     const result = await this._urqlService.mutation(UpdateMeDocument, {
       data: args,
     });

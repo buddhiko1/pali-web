@@ -1,20 +1,20 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { environment } from 'src/environments/environment';
 import { StorageService } from 'src/app/shared/services/storage.service';
 import { UploaderComponent } from 'src/app/uploader/uploader.component';
 import { FadeInDirective } from 'src/app/shared/directives/fade-in.directive';
-import { UsersService } from '../users.service';
 import { AuthService } from 'src/app/auth/auth.service';
-import { UserMeFragment } from 'src/gql/graphql';
+import { UserFragment } from 'src/gql/graphql';
+import { UsersService } from '../users.service';
+import { UserAvatarComponent } from '../shared/user-avatar/user-avatar.component';
 
 @Component({
   selector: 'app-me',
   templateUrl: './me.component.html',
   styleUrl: './me.component.css',
   standalone: true,
-  imports: [FadeInDirective, UploaderComponent],
+  imports: [FadeInDirective, UploaderComponent, UserAvatarComponent],
 })
 export class MeComponent {
   showUploader = false;
@@ -27,7 +27,7 @@ export class MeComponent {
     private _storageService: StorageService,
   ) {}
 
-  get me(): UserMeFragment | null {
+  get me(): UserFragment | null {
     return this._storageService.me;
   }
 
@@ -36,12 +36,6 @@ export class MeComponent {
       this.avatarFolderId =
         await this._usersService.fetchFolderIdOfUserAvatar();
     }
-  }
-
-  get avatarUrl(): string {
-    return this._storageService.me?.avatar
-      ? `${environment.fileServer}/${this._storageService.me.avatar.filename_disk}`
-      : 'assets/images/default.webp';
   }
 
   async onAvatarClick(): Promise<void> {
@@ -59,7 +53,6 @@ export class MeComponent {
       },
     });
     this._storageService.saveMe(updatedMe);
-
     if (oldAavatarId) {
       await this._usersService.deleteOldUserAvatar({
         avatarId: oldAavatarId,

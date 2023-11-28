@@ -92,15 +92,12 @@
         />
       </button>
 
-      <button (click)="routeTo(urlForMe)" class="c-user p-1">
-        <app-person-svg
-          [class]="[
-            'gc-svg',
-            'gu-hover',
-            isActiveUrl('users') ? 'text-focus' : ''
-          ]"
-        />
-      </button>
+      <app-user-avatar
+        class="c-user px-1"
+        [avatarId]="me?.avatar?.id"
+        [size]="'1.5rem'"
+        (avatarClick)="routeTo(urlForMe)"
+      />
     </div>
   </nav>
 </div>

@@ -13,13 +13,11 @@
       class="c-container mt-24 tablat:mt-48 pc:mt-[20vh]"
     >
       <div class="c-content">
-        <button (click)="onAvatarClick()">
-          <img
-            class="c-avatar rounded-full w-24 h-24"
-            [src]="avatarUrl"
-            alt="avatar"
-          />
-        </button>
+        <app-user-avatar
+          [size]="'6rem'"
+          [avatarId]="me?.avatar?.id"
+          (avatarClick)="onAvatarClick()"
+        />
         <p class="text-text">{{ me?.email }}</p>
         <button (click)="onLogout()" class="gd-button mt-12">Logout</button>
       </div>

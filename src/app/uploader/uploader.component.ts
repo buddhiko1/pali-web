@@ -23,7 +23,7 @@ import { UploaderService } from './uploader.service';
 export class UploaderComponent implements AfterViewInit {
   @Input() folderId = '';
   @Input() allowedExtensions!: string[];
-  @Input() maxSize = 1; // 1MB
+  @Input() maxSize = 4; // 1MB
   @Input() enableMultiFiles = false;
   @Input() enableImageConversion = true;
   @Input() webpQuality = 0.8;

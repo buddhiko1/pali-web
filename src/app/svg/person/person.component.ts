@@ -8,5 +8,6 @@ import { CommonModule } from '@angular/common';
   templateUrl: './person.component.svg',
 })
 export class PersonSvgComponent {
+  @Input() size = '1.5rem';
   @Input() class = [''];
 }
