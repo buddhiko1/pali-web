@@ -13,10 +13,10 @@ export const APP_ROUTES: Routes = [
     data: { text: 'Under development' },
   },
   {
-    path: 'dictionary',
+    path: 'dictionaries',
     loadComponent: () =>
-      import('./dictionary/dictionary.component').then(
-        (m) => m.DictionaryComponent,
+      import('./dictionaries/dictionaries.component').then(
+        (m) => m.DictionariesComponent,
       ),
   },
   {

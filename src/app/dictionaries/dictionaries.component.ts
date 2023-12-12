@@ -8,7 +8,7 @@ import { DownloadSvgComponent } from '../svg/download/download.component';
 import { SafeHtmlPipe } from '../shared/pipes/safe-html.pipe';
 import { BookComponent, DirectionEnum } from '../book/book.component';
 import { Config as BookConfig } from '../book/book.model';
-import { DictionaryService } from './dictionary.service';
+import { DictionariesService } from './dictionaries.service';
 import { Dictionaries, Dict_Introduction } from 'src/gql/graphql';
 
 @Component({
@@ -22,15 +22,15 @@ import { Dictionaries, Dict_Introduction } from 'src/gql/graphql';
     SafeHtmlPipe,
     BookComponent,
   ],
-  templateUrl: './dictionary.component.html',
-  styleUrl: './dictionary.component.css',
+  templateUrl: './dictionaries.component.html',
+  styleUrl: './dictionaries.component.css',
 })
-export class DictionaryComponent {
+export class DictionariesComponent {
   fileServer = environment.fileServer;
   introduction!: Dict_Introduction;
   dictionaries: Dictionaries[] = [];
 
-  constructor(private _dictionaryService: DictionaryService) {
+  constructor(private _dictionaryService: DictionariesService) {
     this._dictionaryService.fetchIntroduction().then((introduction) => {
       this.introduction = introduction;
     });

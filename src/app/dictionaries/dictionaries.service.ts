@@ -11,7 +11,7 @@ import {
 @Injectable({
   providedIn: 'root',
 })
-export class DictionaryService {
+export class DictionariesService {
   constructor(private _urqlService: DataUrqlService) {}
 
   async fetchIntroduction(): Promise<Dict_Introduction> {
