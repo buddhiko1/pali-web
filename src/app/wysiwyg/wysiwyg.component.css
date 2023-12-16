@@ -1,0 +1,14 @@
+footer {
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: 1fr;
+  grid-template-areas: "content";
+}
+
+.c-content {
+  grid-area: content;
+  display: grid;
+  justify-content: center;
+  place-items: center;
+  grid-auto-flow: column;
+}

@@ -32,6 +32,9 @@ dependencies:
   '@directus/sdk':
     specifier: ^13.0.2
     version: registry.npmmirror.com/@directus/sdk@13.0.2
+  '@tinymce/tinymce-angular':
+    specifier: ^7.0.0
+    version: registry.npmmirror.com/@tinymce/tinymce-angular@7.0.0(@angular/common@17.0.4)(@angular/core@17.0.4)(@angular/forms@17.0.4)
   '@urql/core':
     specifier: ^4.2.0
     version: registry.npmmirror.com/@urql/core@4.2.0(graphql@16.8.1)
@@ -44,6 +47,9 @@ dependencies:
   rxjs:
     specifier: ~7.8.1
     version: registry.npmmirror.com/rxjs@7.8.1
+  tinymce:
+    specifier: ^6.8.2
+    version: registry.npmmirror.com/tinymce@6.8.2
   tslib:
     specifier: ^2.6.2
     version: registry.npmmirror.com/tslib@2.6.2
@@ -4483,6 +4489,23 @@ packages:
     name: '@socket.io/component-emitter'
     version: 3.1.0
     dev: true
+
+  registry.npmmirror.com/@tinymce/tinymce-angular@7.0.0(@angular/common@17.0.4)(@angular/core@17.0.4)(@angular/forms@17.0.4):
+    resolution: {integrity: sha512-IKNaG/ihlxE1XCfq6lzULbnsqZO9KNJtlpu5jo6JDJDL9zcFzj/N2A16Kk7rTj1yfmDoB1IXAk/BpMOvgDY8cg==, tarball: https://registry.npmmirror.com/@tinymce/tinymce-angular/-/tinymce-angular-7.0.0.tgz}
+    id: registry.npmmirror.com/@tinymce/tinymce-angular/7.0.0
+    name: '@tinymce/tinymce-angular'
+    version: 7.0.0
+    peerDependencies:
+      '@angular/common': '>=14.0.0'
+      '@angular/core': '>=14.0.0'
+      '@angular/forms': '>=14.0.0'
+    dependencies:
+      '@angular/common': registry.npmmirror.com/@angular/common@17.0.4(@angular/core@17.0.4)(rxjs@7.8.1)
+      '@angular/core': registry.npmmirror.com/@angular/core@17.0.4(rxjs@7.8.1)(zone.js@0.14.2)
+      '@angular/forms': registry.npmmirror.com/@angular/forms@17.0.4(@angular/common@17.0.4)(@angular/core@17.0.4)(@angular/platform-browser@17.0.4)(rxjs@7.8.1)
+      tinymce: registry.npmmirror.com/tinymce@6.8.2
+      tslib: registry.npmmirror.com/tslib@2.6.2
+    dev: false
 
   registry.npmmirror.com/@tufjs/canonical-json@2.0.0:
     resolution: {integrity: sha512-yVtV8zsdo8qFHe+/3kw81dSLyF7D576A5cCFCi4X7B39tWT7SekaEFUnvnWJHz+9qO7qJTah1JbrDjWKqFtdWA==, tarball: https://registry.npmmirror.com/@tufjs/canonical-json/-/canonical-json-2.0.0.tgz}
@@ -12953,6 +12976,12 @@ packages:
     name: thunky
     version: 1.1.0
     dev: true
+
+  registry.npmmirror.com/tinymce@6.8.2:
+    resolution: {integrity: sha512-Lho79o2Y1Yn+XdlTEkHTEkEmzwYWTXz7IUsvPwxJF3VTtgHUIAAuBab29kik+f2KED3rZvQavr9D7sHVMJ9x4A==, tarball: https://registry.npmmirror.com/tinymce/-/tinymce-6.8.2.tgz}
+    name: tinymce
+    version: 6.8.2
+    dev: false
 
   registry.npmmirror.com/title-case@3.0.3:
     resolution: {integrity: sha512-e1zGYRvbffpcHIrnuqT0Dh+gEJtDaxDSoG4JAIpq4oDFyooziLBIiYQv0GBT4FUAnUop5uZ1hiIAj7oAF6sOCA==, tarball: https://registry.npmmirror.com/title-case/-/title-case-3.0.3.tgz}

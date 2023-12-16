@@ -25,10 +25,12 @@
     "@angular/platform-browser-dynamic": "^17.0.4",
     "@angular/router": "^17.0.4",
     "@directus/sdk": "^13.0.2",
+    "@tinymce/tinymce-angular": "^7.0.0",
     "@urql/core": "^4.2.0",
     "@urql/exchange-auth": "^2.1.6",
     "graphql": "^16.8.1",
     "rxjs": "~7.8.1",
+    "tinymce": "^6.8.2",
     "tslib": "^2.6.2",
     "zone.js": "~0.14.2"
   },

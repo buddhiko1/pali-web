@@ -44,9 +44,9 @@ export const APP_ROUTES: Routes = [
     data: { text: 'Under development' },
   },
   {
-    path: 'blog',
-    component: PlaceholderPageComponent,
-    data: { text: 'Under development' },
+    path: 'blogs',
+    loadComponent: () =>
+      import('./blogs/blogs.component').then((m) => m.BlogsComponent),
   },
   {
     path: '**',
