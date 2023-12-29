@@ -29,27 +29,48 @@ dependencies:
   '@angular/router':
     specifier: ^17.0.4
     version: registry.npmmirror.com/@angular/router@17.0.4(@angular/common@17.0.4)(@angular/core@17.0.4)(@angular/platform-browser@17.0.4)(rxjs@7.8.1)
+  '@ckeditor/ckeditor5-angular':
+    specifier: ^7.0.1
+    version: registry.npmmirror.com/@ckeditor/ckeditor5-angular@7.0.1(@angular/common@17.0.4)(@angular/core@17.0.4)(@angular/forms@17.0.4)(@ckeditor/ckeditor5-core@40.2.0)(@ckeditor/ckeditor5-engine@40.2.0)(@ckeditor/ckeditor5-utils@40.2.0)(@ckeditor/ckeditor5-watchdog@40.2.0)(rxjs@7.8.1)
+  '@ckeditor/ckeditor5-build-classic':
+    specifier: ^40.2.0
+    version: registry.npmmirror.com/@ckeditor/ckeditor5-build-classic@40.2.0
+  '@ckeditor/ckeditor5-core':
+    specifier: ^40.2.0
+    version: registry.npmmirror.com/@ckeditor/ckeditor5-core@40.2.0
+  '@ckeditor/ckeditor5-engine':
+    specifier: ^40.2.0
+    version: registry.npmmirror.com/@ckeditor/ckeditor5-engine@40.2.0
+  '@ckeditor/ckeditor5-upload':
+    specifier: ^40.2.0
+    version: registry.npmmirror.com/@ckeditor/ckeditor5-upload@40.2.0
+  '@ckeditor/ckeditor5-utils':
+    specifier: ^40.2.0
+    version: registry.npmmirror.com/@ckeditor/ckeditor5-utils@40.2.0
+  '@ckeditor/ckeditor5-watchdog':
+    specifier: ^40.2.0
+    version: registry.npmmirror.com/@ckeditor/ckeditor5-watchdog@40.2.0
   '@directus/sdk':
     specifier: ^13.0.2
     version: registry.npmmirror.com/@directus/sdk@13.0.2
-  '@tinymce/tinymce-angular':
-    specifier: ^7.0.0
-    version: registry.npmmirror.com/@tinymce/tinymce-angular@7.0.0(@angular/common@17.0.4)(@angular/core@17.0.4)(@angular/forms@17.0.4)
   '@urql/core':
     specifier: ^4.2.0
     version: registry.npmmirror.com/@urql/core@4.2.0(graphql@16.8.1)
   '@urql/exchange-auth':
     specifier: ^2.1.6
     version: registry.npmmirror.com/@urql/exchange-auth@2.1.6(graphql@16.8.1)
+  ckeditor5-custom-build:
+    specifier: link:ckeditor5
+    version: link:ckeditor5
   graphql:
     specifier: ^16.8.1
     version: registry.npmmirror.com/graphql@16.8.1
+  ngx-quill:
+    specifier: ^24.0.4
+    version: registry.npmmirror.com/ngx-quill@24.0.4(@angular/core@17.0.4)(quill@1.3.7)(rxjs@7.8.1)
   rxjs:
     specifier: ~7.8.1
     version: registry.npmmirror.com/rxjs@7.8.1
-  tinymce:
-    specifier: ^6.8.2
-    version: registry.npmmirror.com/tinymce@6.8.2
   tslib:
     specifier: ^2.6.2
     version: registry.npmmirror.com/tslib@2.6.2
@@ -2680,6 +2701,348 @@ packages:
       to-fast-properties: registry.npmmirror.com/to-fast-properties@2.0.0
     dev: true
 
+  registry.npmmirror.com/@ckeditor/ckeditor5-adapter-ckfinder@40.2.0:
+    resolution: {integrity: sha512-YKdydg4DzaMk91saOL55KBNQE3St2NEj1E9hlk9CzHKQaHc79dYzHDNBolSE7ZmzkNJ4ToVbY7kRW5CDGfG5Rg==, tarball: https://registry.npmmirror.com/@ckeditor/ckeditor5-adapter-ckfinder/-/ckeditor5-adapter-ckfinder-40.2.0.tgz}
+    name: '@ckeditor/ckeditor5-adapter-ckfinder'
+    version: 40.2.0
+    dependencies:
+      ckeditor5: registry.npmmirror.com/ckeditor5@40.2.0
+    dev: false
+
+  registry.npmmirror.com/@ckeditor/ckeditor5-angular@7.0.1(@angular/common@17.0.4)(@angular/core@17.0.4)(@angular/forms@17.0.4)(@ckeditor/ckeditor5-core@40.2.0)(@ckeditor/ckeditor5-engine@40.2.0)(@ckeditor/ckeditor5-utils@40.2.0)(@ckeditor/ckeditor5-watchdog@40.2.0)(rxjs@7.8.1):
+    resolution: {integrity: sha512-bHBmBMa9PAXk1MMjeq+9nV/HVWdwv36kRjpOr4JUiYYxRFdtPBXWj+3Jb9TUymyWchhxMA440iYJVoYgVw3lOA==, tarball: https://registry.npmmirror.com/@ckeditor/ckeditor5-angular/-/ckeditor5-angular-7.0.1.tgz}
+    id: registry.npmmirror.com/@ckeditor/ckeditor5-angular/7.0.1
+    name: '@ckeditor/ckeditor5-angular'
+    version: 7.0.1
+    peerDependencies:
+      '@angular/common': '>=13.0.0'
+      '@angular/core': '>=13.0.0'
+      '@angular/forms': '>=13.0.0'
+      '@ckeditor/ckeditor5-core': '>=37.0.0'
+      '@ckeditor/ckeditor5-engine': '>=37.0.0'
+      '@ckeditor/ckeditor5-utils': '>=37.0.0'
+      '@ckeditor/ckeditor5-watchdog': '>=37.0.0'
+      rxjs: '>=6.0.0'
+    dependencies:
+      '@angular/common': registry.npmmirror.com/@angular/common@17.0.4(@angular/core@17.0.4)(rxjs@7.8.1)
+      '@angular/core': registry.npmmirror.com/@angular/core@17.0.4(rxjs@7.8.1)(zone.js@0.14.2)
+      '@angular/forms': registry.npmmirror.com/@angular/forms@17.0.4(@angular/common@17.0.4)(@angular/core@17.0.4)(@angular/platform-browser@17.0.4)(rxjs@7.8.1)
+      '@ckeditor/ckeditor5-core': registry.npmmirror.com/@ckeditor/ckeditor5-core@40.2.0
+      '@ckeditor/ckeditor5-engine': registry.npmmirror.com/@ckeditor/ckeditor5-engine@40.2.0
+      '@ckeditor/ckeditor5-utils': registry.npmmirror.com/@ckeditor/ckeditor5-utils@40.2.0
+      '@ckeditor/ckeditor5-watchdog': registry.npmmirror.com/@ckeditor/ckeditor5-watchdog@40.2.0
+      rxjs: registry.npmmirror.com/rxjs@7.8.1
+      tslib: registry.npmmirror.com/tslib@2.6.2
+    dev: false
+
+  registry.npmmirror.com/@ckeditor/ckeditor5-autoformat@40.2.0:
+    resolution: {integrity: sha512-F3w5k7ti5l6V8U07eSQ3gup3ivltRZQXdtvstBXMmTzDb2ceazNcUDLb6TKSHp5y30ETN0dRGgbhx9xiDL0TXg==, tarball: https://registry.npmmirror.com/@ckeditor/ckeditor5-autoformat/-/ckeditor5-autoformat-40.2.0.tgz}
+    name: '@ckeditor/ckeditor5-autoformat'
+    version: 40.2.0
+    dependencies:
+      ckeditor5: registry.npmmirror.com/ckeditor5@40.2.0
+    dev: false
+
+  registry.npmmirror.com/@ckeditor/ckeditor5-basic-styles@40.2.0:
+    resolution: {integrity: sha512-P7jYddLnRpaR4zVCqDa8InsZ6YNRHdF0RrX6+Uz81+A1IfyfmSd+5IaiLxxdnFWQ4JlEhJutjy9vMwSmOhZocQ==, tarball: https://registry.npmmirror.com/@ckeditor/ckeditor5-basic-styles/-/ckeditor5-basic-styles-40.2.0.tgz}
+    name: '@ckeditor/ckeditor5-basic-styles'
+    version: 40.2.0
+    dependencies:
+      ckeditor5: registry.npmmirror.com/ckeditor5@40.2.0
+    dev: false
+
+  registry.npmmirror.com/@ckeditor/ckeditor5-block-quote@40.2.0:
+    resolution: {integrity: sha512-t03Yp+MeAyQhwdGZqUlkJEx25VSiigpzkIGGOhccSaTIIZ9XcWDkrTevDhwA4Pq4Q9IRQ8Loj3KCVSBuAqkBgw==, tarball: https://registry.npmmirror.com/@ckeditor/ckeditor5-block-quote/-/ckeditor5-block-quote-40.2.0.tgz}
+    name: '@ckeditor/ckeditor5-block-quote'
+    version: 40.2.0
+    dependencies:
+      ckeditor5: registry.npmmirror.com/ckeditor5@40.2.0
+    dev: false
+
+  registry.npmmirror.com/@ckeditor/ckeditor5-build-classic@40.2.0:
+    resolution: {integrity: sha512-b9zt1kU0S2Azco8mXraxj56pctHRs9y/XfdVrpFzxiRbbzyBZ42WgX1ThJNTqH6WkXCxDPYSbqPhNIvPHpuEyg==, tarball: https://registry.npmmirror.com/@ckeditor/ckeditor5-build-classic/-/ckeditor5-build-classic-40.2.0.tgz}
+    name: '@ckeditor/ckeditor5-build-classic'
+    version: 40.2.0
+    dependencies:
+      '@ckeditor/ckeditor5-adapter-ckfinder': registry.npmmirror.com/@ckeditor/ckeditor5-adapter-ckfinder@40.2.0
+      '@ckeditor/ckeditor5-autoformat': registry.npmmirror.com/@ckeditor/ckeditor5-autoformat@40.2.0
+      '@ckeditor/ckeditor5-basic-styles': registry.npmmirror.com/@ckeditor/ckeditor5-basic-styles@40.2.0
+      '@ckeditor/ckeditor5-block-quote': registry.npmmirror.com/@ckeditor/ckeditor5-block-quote@40.2.0
+      '@ckeditor/ckeditor5-ckbox': registry.npmmirror.com/@ckeditor/ckeditor5-ckbox@40.2.0
+      '@ckeditor/ckeditor5-ckfinder': registry.npmmirror.com/@ckeditor/ckeditor5-ckfinder@40.2.0
+      '@ckeditor/ckeditor5-cloud-services': registry.npmmirror.com/@ckeditor/ckeditor5-cloud-services@40.2.0
+      '@ckeditor/ckeditor5-easy-image': registry.npmmirror.com/@ckeditor/ckeditor5-easy-image@40.2.0
+      '@ckeditor/ckeditor5-editor-classic': registry.npmmirror.com/@ckeditor/ckeditor5-editor-classic@40.2.0
+      '@ckeditor/ckeditor5-essentials': registry.npmmirror.com/@ckeditor/ckeditor5-essentials@40.2.0
+      '@ckeditor/ckeditor5-heading': registry.npmmirror.com/@ckeditor/ckeditor5-heading@40.2.0
+      '@ckeditor/ckeditor5-image': registry.npmmirror.com/@ckeditor/ckeditor5-image@40.2.0
+      '@ckeditor/ckeditor5-indent': registry.npmmirror.com/@ckeditor/ckeditor5-indent@40.2.0
+      '@ckeditor/ckeditor5-link': registry.npmmirror.com/@ckeditor/ckeditor5-link@40.2.0
+      '@ckeditor/ckeditor5-list': registry.npmmirror.com/@ckeditor/ckeditor5-list@40.2.0
+      '@ckeditor/ckeditor5-media-embed': registry.npmmirror.com/@ckeditor/ckeditor5-media-embed@40.2.0
+      '@ckeditor/ckeditor5-paragraph': registry.npmmirror.com/@ckeditor/ckeditor5-paragraph@40.2.0
+      '@ckeditor/ckeditor5-paste-from-office': registry.npmmirror.com/@ckeditor/ckeditor5-paste-from-office@40.2.0
+      '@ckeditor/ckeditor5-table': registry.npmmirror.com/@ckeditor/ckeditor5-table@40.2.0
+      '@ckeditor/ckeditor5-typing': registry.npmmirror.com/@ckeditor/ckeditor5-typing@40.2.0
+    dev: false
+
+  registry.npmmirror.com/@ckeditor/ckeditor5-ckbox@40.2.0:
+    resolution: {integrity: sha512-w/A3RA7qpR7Scl4hgUTt8j+oV7oD9IFPNGTpp0xoyfWEV8Ymm2NrMAvV0PAJiavYS3+FT4GO4RBOM6BvLHuV3w==, tarball: https://registry.npmmirror.com/@ckeditor/ckeditor5-ckbox/-/ckeditor5-ckbox-40.2.0.tgz}
+    name: '@ckeditor/ckeditor5-ckbox'
+    version: 40.2.0
+    dependencies:
+      blurhash: registry.npmmirror.com/blurhash@2.0.5
+      ckeditor5: registry.npmmirror.com/ckeditor5@40.2.0
+      lodash-es: registry.npmmirror.com/lodash-es@4.17.21
+    dev: false
+
+  registry.npmmirror.com/@ckeditor/ckeditor5-ckfinder@40.2.0:
+    resolution: {integrity: sha512-kiW5TZOLHYd6hhWeDIrep8FXLo0q14b0e0Jit0XSi3z4PQfdDSRk9UuMJPkkf4EdF3PUSdMJ9bccJG76DYXzFQ==, tarball: https://registry.npmmirror.com/@ckeditor/ckeditor5-ckfinder/-/ckeditor5-ckfinder-40.2.0.tgz}
+    name: '@ckeditor/ckeditor5-ckfinder'
+    version: 40.2.0
+    dependencies:
+      ckeditor5: registry.npmmirror.com/ckeditor5@40.2.0
+    dev: false
+
+  registry.npmmirror.com/@ckeditor/ckeditor5-clipboard@40.2.0:
+    resolution: {integrity: sha512-8/xPH9/i86ukcEiHdmTgNuPVJeYTrivbx5ZYqycPO4Eem7VM99gIbOe7pIYpuV+klr9ymVxIHbGyTJDJ3oUO8A==, tarball: https://registry.npmmirror.com/@ckeditor/ckeditor5-clipboard/-/ckeditor5-clipboard-40.2.0.tgz}
+    name: '@ckeditor/ckeditor5-clipboard'
+    version: 40.2.0
+    dependencies:
+      '@ckeditor/ckeditor5-core': registry.npmmirror.com/@ckeditor/ckeditor5-core@40.2.0
+      '@ckeditor/ckeditor5-engine': registry.npmmirror.com/@ckeditor/ckeditor5-engine@40.2.0
+      '@ckeditor/ckeditor5-ui': registry.npmmirror.com/@ckeditor/ckeditor5-ui@40.2.0
+      '@ckeditor/ckeditor5-utils': registry.npmmirror.com/@ckeditor/ckeditor5-utils@40.2.0
+      '@ckeditor/ckeditor5-widget': registry.npmmirror.com/@ckeditor/ckeditor5-widget@40.2.0
+      lodash-es: registry.npmmirror.com/lodash-es@4.17.21
+    dev: false
+
+  registry.npmmirror.com/@ckeditor/ckeditor5-cloud-services@40.2.0:
+    resolution: {integrity: sha512-xrPQjFGGy1ZfXyKIMw0uzn7OIriSv13YMw0M2ZTh+V1jRN1HW9KzzNb2DlQc+6wQfRk0bq69XGLp3M296/cVTQ==, tarball: https://registry.npmmirror.com/@ckeditor/ckeditor5-cloud-services/-/ckeditor5-cloud-services-40.2.0.tgz}
+    name: '@ckeditor/ckeditor5-cloud-services'
+    version: 40.2.0
+    dependencies:
+      ckeditor5: registry.npmmirror.com/ckeditor5@40.2.0
+    dev: false
+
+  registry.npmmirror.com/@ckeditor/ckeditor5-core@40.2.0:
+    resolution: {integrity: sha512-0fqIaN+ZhkXXA3mpBN+alycBzPMc8ruO8VrP0OnvCjowqZVS2HXC2AaXNBdxc75xGI3ScXIor7FsgFHxVJIYYQ==, tarball: https://registry.npmmirror.com/@ckeditor/ckeditor5-core/-/ckeditor5-core-40.2.0.tgz}
+    name: '@ckeditor/ckeditor5-core'
+    version: 40.2.0
+    dependencies:
+      '@ckeditor/ckeditor5-engine': registry.npmmirror.com/@ckeditor/ckeditor5-engine@40.2.0
+      '@ckeditor/ckeditor5-utils': registry.npmmirror.com/@ckeditor/ckeditor5-utils@40.2.0
+      lodash-es: registry.npmmirror.com/lodash-es@4.17.21
+    dev: false
+
+  registry.npmmirror.com/@ckeditor/ckeditor5-easy-image@40.2.0:
+    resolution: {integrity: sha512-bE9YHGYEY1ql5mIqZSI2fkoBA4th28M0GDaJutwJYKM3t+Bost3Zh1UfmYKE2kvYgmeLY1L3hjQpN9w7NYyLpw==, tarball: https://registry.npmmirror.com/@ckeditor/ckeditor5-easy-image/-/ckeditor5-easy-image-40.2.0.tgz}
+    name: '@ckeditor/ckeditor5-easy-image'
+    version: 40.2.0
+    dependencies:
+      ckeditor5: registry.npmmirror.com/ckeditor5@40.2.0
+    dev: false
+
+  registry.npmmirror.com/@ckeditor/ckeditor5-editor-classic@40.2.0:
+    resolution: {integrity: sha512-dftfDBxANOgqgQZ4SB3YTsEV/XX1u0g9jopbOBwqIABnVVa8zoGcktgFdGnLUFk51sL65baSx2z8Z1NNYdZcFQ==, tarball: https://registry.npmmirror.com/@ckeditor/ckeditor5-editor-classic/-/ckeditor5-editor-classic-40.2.0.tgz}
+    name: '@ckeditor/ckeditor5-editor-classic'
+    version: 40.2.0
+    dependencies:
+      ckeditor5: registry.npmmirror.com/ckeditor5@40.2.0
+      lodash-es: registry.npmmirror.com/lodash-es@4.17.21
+    dev: false
+
+  registry.npmmirror.com/@ckeditor/ckeditor5-engine@40.2.0:
+    resolution: {integrity: sha512-sgboUX8Ps+LcEgywyT3BeK1nzLHjNVIiZU1qvRxR3ixzIw4w2xRNXCGfESWLW5Y5rv9+ypUCrX61oLnZU64PQQ==, tarball: https://registry.npmmirror.com/@ckeditor/ckeditor5-engine/-/ckeditor5-engine-40.2.0.tgz}
+    name: '@ckeditor/ckeditor5-engine'
+    version: 40.2.0
+    dependencies:
+      '@ckeditor/ckeditor5-utils': registry.npmmirror.com/@ckeditor/ckeditor5-utils@40.2.0
+      lodash-es: registry.npmmirror.com/lodash-es@4.17.21
+    dev: false
+
+  registry.npmmirror.com/@ckeditor/ckeditor5-enter@40.2.0:
+    resolution: {integrity: sha512-GjTRaKNX8QEDJ3YYKG3GfPZfGHrcigGBxbo+1WDT7NaOsR2DA/CIZfHlAPfgJDAMV17bhWsT3gy3+oQZsExtnQ==, tarball: https://registry.npmmirror.com/@ckeditor/ckeditor5-enter/-/ckeditor5-enter-40.2.0.tgz}
+    name: '@ckeditor/ckeditor5-enter'
+    version: 40.2.0
+    dependencies:
+      '@ckeditor/ckeditor5-core': registry.npmmirror.com/@ckeditor/ckeditor5-core@40.2.0
+      '@ckeditor/ckeditor5-engine': registry.npmmirror.com/@ckeditor/ckeditor5-engine@40.2.0
+      '@ckeditor/ckeditor5-utils': registry.npmmirror.com/@ckeditor/ckeditor5-utils@40.2.0
+    dev: false
+
+  registry.npmmirror.com/@ckeditor/ckeditor5-essentials@40.2.0:
+    resolution: {integrity: sha512-7iUUy0Uwiei4yLrn145SOcyzriMeVFVc5ontQkxQE5b9alFdAc/6ZoDPZqwD7V0zi5RQ/2YsoVMRLFa4hbPfNA==, tarball: https://registry.npmmirror.com/@ckeditor/ckeditor5-essentials/-/ckeditor5-essentials-40.2.0.tgz}
+    name: '@ckeditor/ckeditor5-essentials'
+    version: 40.2.0
+    dependencies:
+      ckeditor5: registry.npmmirror.com/ckeditor5@40.2.0
+    dev: false
+
+  registry.npmmirror.com/@ckeditor/ckeditor5-heading@40.2.0:
+    resolution: {integrity: sha512-uDT1sttMy+KrKi90jnqEI43886o1wfKrROWqaMbmKOerTbIi58GNH9LvX04sf1RyHV3+3566RRmB248fsLkYjA==, tarball: https://registry.npmmirror.com/@ckeditor/ckeditor5-heading/-/ckeditor5-heading-40.2.0.tgz}
+    name: '@ckeditor/ckeditor5-heading'
+    version: 40.2.0
+    dependencies:
+      ckeditor5: registry.npmmirror.com/ckeditor5@40.2.0
+    dev: false
+
+  registry.npmmirror.com/@ckeditor/ckeditor5-image@40.2.0:
+    resolution: {integrity: sha512-0Dunw1o5k2+5Q5XiWLDG1r8k9awosfIFuDZwqKJGWtDaNE4QQbJ9+iJSwiiRw2QjcGr7D3JdH7xwJZFra7kYmA==, tarball: https://registry.npmmirror.com/@ckeditor/ckeditor5-image/-/ckeditor5-image-40.2.0.tgz}
+    name: '@ckeditor/ckeditor5-image'
+    version: 40.2.0
+    dependencies:
+      '@ckeditor/ckeditor5-ui': registry.npmmirror.com/@ckeditor/ckeditor5-ui@40.2.0
+      ckeditor5: registry.npmmirror.com/ckeditor5@40.2.0
+      lodash-es: registry.npmmirror.com/lodash-es@4.17.21
+    dev: false
+
+  registry.npmmirror.com/@ckeditor/ckeditor5-indent@40.2.0:
+    resolution: {integrity: sha512-gSlRGoyAslB2OpqghimIY6Oiflf3Z2/MdLBzvFipU5N4X66cL29HuWZc/bOkcFzWwNeDK5LgzfLdvXNzkdv5Xw==, tarball: https://registry.npmmirror.com/@ckeditor/ckeditor5-indent/-/ckeditor5-indent-40.2.0.tgz}
+    name: '@ckeditor/ckeditor5-indent'
+    version: 40.2.0
+    dependencies:
+      ckeditor5: registry.npmmirror.com/ckeditor5@40.2.0
+    dev: false
+
+  registry.npmmirror.com/@ckeditor/ckeditor5-link@40.2.0:
+    resolution: {integrity: sha512-/r4Ti9USdrURBX+qutvyDGOb75sNuSgtXdI8xK503EVfx5yBIi6qsYIYWoFvnGJKkLYkVo+940ilduhwzq0M7g==, tarball: https://registry.npmmirror.com/@ckeditor/ckeditor5-link/-/ckeditor5-link-40.2.0.tgz}
+    name: '@ckeditor/ckeditor5-link'
+    version: 40.2.0
+    dependencies:
+      '@ckeditor/ckeditor5-ui': registry.npmmirror.com/@ckeditor/ckeditor5-ui@40.2.0
+      ckeditor5: registry.npmmirror.com/ckeditor5@40.2.0
+      lodash-es: registry.npmmirror.com/lodash-es@4.17.21
+    dev: false
+
+  registry.npmmirror.com/@ckeditor/ckeditor5-list@40.2.0:
+    resolution: {integrity: sha512-lsQWSLSFRHRQ2AxA6vgTib9YELjF2J5jpR6H4RDW1gM//dL3FjvLxKPPN/V7rMcp15rrpSiOya+qB99l24DEpQ==, tarball: https://registry.npmmirror.com/@ckeditor/ckeditor5-list/-/ckeditor5-list-40.2.0.tgz}
+    name: '@ckeditor/ckeditor5-list'
+    version: 40.2.0
+    dependencies:
+      ckeditor5: registry.npmmirror.com/ckeditor5@40.2.0
+    dev: false
+
+  registry.npmmirror.com/@ckeditor/ckeditor5-media-embed@40.2.0:
+    resolution: {integrity: sha512-ORY7VebL7UTuBG/4++UxzqEKjnlZZKAFqUrIom7xXpQNfo6oJFtZLnKYwESZ6iNk7NBOAeiHEecP2tKWyFQd1g==, tarball: https://registry.npmmirror.com/@ckeditor/ckeditor5-media-embed/-/ckeditor5-media-embed-40.2.0.tgz}
+    name: '@ckeditor/ckeditor5-media-embed'
+    version: 40.2.0
+    dependencies:
+      '@ckeditor/ckeditor5-ui': registry.npmmirror.com/@ckeditor/ckeditor5-ui@40.2.0
+      ckeditor5: registry.npmmirror.com/ckeditor5@40.2.0
+    dev: false
+
+  registry.npmmirror.com/@ckeditor/ckeditor5-paragraph@40.2.0:
+    resolution: {integrity: sha512-NotxWP1cKvbJSY1UwdTe/Oy1NnAj9Etsi4Z7XA908EvCsNSnFtzdMhYzLhFZJ18avrQFDa7PpSKSyN3M64CbSA==, tarball: https://registry.npmmirror.com/@ckeditor/ckeditor5-paragraph/-/ckeditor5-paragraph-40.2.0.tgz}
+    name: '@ckeditor/ckeditor5-paragraph'
+    version: 40.2.0
+    dependencies:
+      '@ckeditor/ckeditor5-core': registry.npmmirror.com/@ckeditor/ckeditor5-core@40.2.0
+      '@ckeditor/ckeditor5-ui': registry.npmmirror.com/@ckeditor/ckeditor5-ui@40.2.0
+      '@ckeditor/ckeditor5-utils': registry.npmmirror.com/@ckeditor/ckeditor5-utils@40.2.0
+    dev: false
+
+  registry.npmmirror.com/@ckeditor/ckeditor5-paste-from-office@40.2.0:
+    resolution: {integrity: sha512-kdk7uJlSa9mvyuNAwmIfV6Kc1tfWI6DbCs19jyseA/F0vySKibb0DsBVSZ7xa5ihcjphfJvwpypWYL0BYdYKLQ==, tarball: https://registry.npmmirror.com/@ckeditor/ckeditor5-paste-from-office/-/ckeditor5-paste-from-office-40.2.0.tgz}
+    name: '@ckeditor/ckeditor5-paste-from-office'
+    version: 40.2.0
+    dependencies:
+      ckeditor5: registry.npmmirror.com/ckeditor5@40.2.0
+    dev: false
+
+  registry.npmmirror.com/@ckeditor/ckeditor5-select-all@40.2.0:
+    resolution: {integrity: sha512-yaYCqhdMcoEH3BsilhweNdbOfuO/cexQ1r1/mYoBoW4CypIuAeq8J/3qLpvFaThmCRPzJBn1J7v2Yjs/0UnamA==, tarball: https://registry.npmmirror.com/@ckeditor/ckeditor5-select-all/-/ckeditor5-select-all-40.2.0.tgz}
+    name: '@ckeditor/ckeditor5-select-all'
+    version: 40.2.0
+    dependencies:
+      '@ckeditor/ckeditor5-core': registry.npmmirror.com/@ckeditor/ckeditor5-core@40.2.0
+      '@ckeditor/ckeditor5-ui': registry.npmmirror.com/@ckeditor/ckeditor5-ui@40.2.0
+      '@ckeditor/ckeditor5-utils': registry.npmmirror.com/@ckeditor/ckeditor5-utils@40.2.0
+    dev: false
+
+  registry.npmmirror.com/@ckeditor/ckeditor5-table@40.2.0:
+    resolution: {integrity: sha512-yODne7az/aJ9lsuI7w476pgGV2QBoH2tOKp3JFh/e2DdHC20637LCVd0cx8sUe3zk61X/eYPY+wOiRJx/mIUqg==, tarball: https://registry.npmmirror.com/@ckeditor/ckeditor5-table/-/ckeditor5-table-40.2.0.tgz}
+    name: '@ckeditor/ckeditor5-table'
+    version: 40.2.0
+    dependencies:
+      ckeditor5: registry.npmmirror.com/ckeditor5@40.2.0
+      lodash-es: registry.npmmirror.com/lodash-es@4.17.21
+    dev: false
+
+  registry.npmmirror.com/@ckeditor/ckeditor5-typing@40.2.0:
+    resolution: {integrity: sha512-2E7LkmC4RHdenMUwow0EZDKxlbX00c5UHysUVT51EBGrXiJcN++0cqxQaeJzQ262oTDpk94qE5IZdGXt3ntzrw==, tarball: https://registry.npmmirror.com/@ckeditor/ckeditor5-typing/-/ckeditor5-typing-40.2.0.tgz}
+    name: '@ckeditor/ckeditor5-typing'
+    version: 40.2.0
+    dependencies:
+      '@ckeditor/ckeditor5-core': registry.npmmirror.com/@ckeditor/ckeditor5-core@40.2.0
+      '@ckeditor/ckeditor5-engine': registry.npmmirror.com/@ckeditor/ckeditor5-engine@40.2.0
+      '@ckeditor/ckeditor5-utils': registry.npmmirror.com/@ckeditor/ckeditor5-utils@40.2.0
+      lodash-es: registry.npmmirror.com/lodash-es@4.17.21
+    dev: false
+
+  registry.npmmirror.com/@ckeditor/ckeditor5-ui@40.2.0:
+    resolution: {integrity: sha512-K8oC9zrJokZD5Nl4uQjJMo8Couds0eHmfNI/go6iU4A4OAdDzph+W50QnyMed4etKnMdhvUSbnuZnPtQjnsvFA==, tarball: https://registry.npmmirror.com/@ckeditor/ckeditor5-ui/-/ckeditor5-ui-40.2.0.tgz}
+    name: '@ckeditor/ckeditor5-ui'
+    version: 40.2.0
+    dependencies:
+      '@ckeditor/ckeditor5-core': registry.npmmirror.com/@ckeditor/ckeditor5-core@40.2.0
+      '@ckeditor/ckeditor5-utils': registry.npmmirror.com/@ckeditor/ckeditor5-utils@40.2.0
+      color-convert: registry.npmmirror.com/color-convert@2.0.1
+      color-parse: registry.npmmirror.com/color-parse@1.4.2
+      lodash-es: registry.npmmirror.com/lodash-es@4.17.21
+      vanilla-colorful: registry.npmmirror.com/vanilla-colorful@0.7.2
+    dev: false
+
+  registry.npmmirror.com/@ckeditor/ckeditor5-undo@40.2.0:
+    resolution: {integrity: sha512-k2VZS5x4SJtYk3zhdwHYg+D00DgD0iWR0H4qQgcWmQMFRipYvXJRixP3hSLZGJciQanPFeYcjZgxNQ+rU1s8ug==, tarball: https://registry.npmmirror.com/@ckeditor/ckeditor5-undo/-/ckeditor5-undo-40.2.0.tgz}
+    name: '@ckeditor/ckeditor5-undo'
+    version: 40.2.0
+    dependencies:
+      '@ckeditor/ckeditor5-core': registry.npmmirror.com/@ckeditor/ckeditor5-core@40.2.0
+      '@ckeditor/ckeditor5-engine': registry.npmmirror.com/@ckeditor/ckeditor5-engine@40.2.0
+      '@ckeditor/ckeditor5-ui': registry.npmmirror.com/@ckeditor/ckeditor5-ui@40.2.0
+    dev: false
+
+  registry.npmmirror.com/@ckeditor/ckeditor5-upload@40.2.0:
+    resolution: {integrity: sha512-AdJSKvWEQbSSyA/DfxbCHRhFN6S4ew4kuYETO57e6AS3aOuYGLBRdu9Mub7IAQcOyy1LL6ktr9u5WEOoWS2h0w==, tarball: https://registry.npmmirror.com/@ckeditor/ckeditor5-upload/-/ckeditor5-upload-40.2.0.tgz}
+    name: '@ckeditor/ckeditor5-upload'
+    version: 40.2.0
+    dependencies:
+      '@ckeditor/ckeditor5-core': registry.npmmirror.com/@ckeditor/ckeditor5-core@40.2.0
+      '@ckeditor/ckeditor5-ui': registry.npmmirror.com/@ckeditor/ckeditor5-ui@40.2.0
+      '@ckeditor/ckeditor5-utils': registry.npmmirror.com/@ckeditor/ckeditor5-utils@40.2.0
+    dev: false
+
+  registry.npmmirror.com/@ckeditor/ckeditor5-utils@40.2.0:
+    resolution: {integrity: sha512-f+kTJBwwk7Y/LXm8pEPxBTXVlJwQrH7Levzye9zxEDB0Jtj7+brGr87o666fPmL/ATQc5M+VPhbvnk2sOv7WKg==, tarball: https://registry.npmmirror.com/@ckeditor/ckeditor5-utils/-/ckeditor5-utils-40.2.0.tgz}
+    name: '@ckeditor/ckeditor5-utils'
+    version: 40.2.0
+    dependencies:
+      lodash-es: registry.npmmirror.com/lodash-es@4.17.21
+    dev: false
+
+  registry.npmmirror.com/@ckeditor/ckeditor5-watchdog@40.2.0:
+    resolution: {integrity: sha512-ets7o2dUR7l23G9o/RAbu+gJzUkc2Ul269E3TEhZnbQXFjshvEGK2kzuay7I+/waL3ADuYe4zuoBqsqdPoAhfg==, tarball: https://registry.npmmirror.com/@ckeditor/ckeditor5-watchdog/-/ckeditor5-watchdog-40.2.0.tgz}
+    name: '@ckeditor/ckeditor5-watchdog'
+    version: 40.2.0
+    dependencies:
+      lodash-es: registry.npmmirror.com/lodash-es@4.17.21
+    dev: false
+
+  registry.npmmirror.com/@ckeditor/ckeditor5-widget@40.2.0:
+    resolution: {integrity: sha512-okeUSwbnu6TUKvwBOl0YdED6Me0/vvs1ybfKZPNEJNwGl989iG0LQO4oYUye8BTCZvzCZ2cBTb1Cvnwr8KRcbg==, tarball: https://registry.npmmirror.com/@ckeditor/ckeditor5-widget/-/ckeditor5-widget-40.2.0.tgz}
+    name: '@ckeditor/ckeditor5-widget'
+    version: 40.2.0
+    dependencies:
+      '@ckeditor/ckeditor5-core': registry.npmmirror.com/@ckeditor/ckeditor5-core@40.2.0
+      '@ckeditor/ckeditor5-engine': registry.npmmirror.com/@ckeditor/ckeditor5-engine@40.2.0
+      '@ckeditor/ckeditor5-enter': registry.npmmirror.com/@ckeditor/ckeditor5-enter@40.2.0
+      '@ckeditor/ckeditor5-typing': registry.npmmirror.com/@ckeditor/ckeditor5-typing@40.2.0
+      '@ckeditor/ckeditor5-ui': registry.npmmirror.com/@ckeditor/ckeditor5-ui@40.2.0
+      '@ckeditor/ckeditor5-utils': registry.npmmirror.com/@ckeditor/ckeditor5-utils@40.2.0
+      lodash-es: registry.npmmirror.com/lodash-es@4.17.21
+    dev: false
+
   registry.npmmirror.com/@colors/colors@1.5.0:
     resolution: {integrity: sha512-ooWCrlZP11i8GImSjTHYHLkvFDP48nS4+204nGb1RiX/WXYHmJA2III9/e2DWVabCESdW7hBAEzHRqUn9OUVvQ==, tarball: https://registry.npmmirror.com/@colors/colors/-/colors-1.5.0.tgz}
     name: '@colors/colors'
@@ -4490,23 +4853,6 @@ packages:
     version: 3.1.0
     dev: true
 
-  registry.npmmirror.com/@tinymce/tinymce-angular@7.0.0(@angular/common@17.0.4)(@angular/core@17.0.4)(@angular/forms@17.0.4):
-    resolution: {integrity: sha512-IKNaG/ihlxE1XCfq6lzULbnsqZO9KNJtlpu5jo6JDJDL9zcFzj/N2A16Kk7rTj1yfmDoB1IXAk/BpMOvgDY8cg==, tarball: https://registry.npmmirror.com/@tinymce/tinymce-angular/-/tinymce-angular-7.0.0.tgz}
-    id: registry.npmmirror.com/@tinymce/tinymce-angular/7.0.0
-    name: '@tinymce/tinymce-angular'
-    version: 7.0.0
-    peerDependencies:
-      '@angular/common': '>=14.0.0'
-      '@angular/core': '>=14.0.0'
-      '@angular/forms': '>=14.0.0'
-    dependencies:
-      '@angular/common': registry.npmmirror.com/@angular/common@17.0.4(@angular/core@17.0.4)(rxjs@7.8.1)
-      '@angular/core': registry.npmmirror.com/@angular/core@17.0.4(rxjs@7.8.1)(zone.js@0.14.2)
-      '@angular/forms': registry.npmmirror.com/@angular/forms@17.0.4(@angular/common@17.0.4)(@angular/core@17.0.4)(@angular/platform-browser@17.0.4)(rxjs@7.8.1)
-      tinymce: registry.npmmirror.com/tinymce@6.8.2
-      tslib: registry.npmmirror.com/tslib@2.6.2
-    dev: false
-
   registry.npmmirror.com/@tufjs/canonical-json@2.0.0:
     resolution: {integrity: sha512-yVtV8zsdo8qFHe+/3kw81dSLyF7D576A5cCFCi4X7B39tWT7SekaEFUnvnWJHz+9qO7qJTah1JbrDjWKqFtdWA==, tarball: https://registry.npmmirror.com/@tufjs/canonical-json/-/canonical-json-2.0.0.tgz}
     name: '@tufjs/canonical-json'
@@ -5860,6 +6206,12 @@ packages:
       readable-stream: registry.npmmirror.com/readable-stream@3.6.2
     dev: true
 
+  registry.npmmirror.com/blurhash@2.0.5:
+    resolution: {integrity: sha512-cRygWd7kGBQO3VEhPiTgq4Wc43ctsM+o46urrmPOiuAe+07fzlSB9OJVdpgDL0jPqXUVQ9ht7aq7kxOeJHRK+w==, tarball: https://registry.npmmirror.com/blurhash/-/blurhash-2.0.5.tgz}
+    name: blurhash
+    version: 2.0.5
+    dev: false
+
   registry.npmmirror.com/body-parser@1.20.1:
     resolution: {integrity: sha512-jWi7abTbYwajOytWCQc37VulmWiRae5RyTpaCyDcS5/lMdtwSz5lOpDE67srw/HYe35f1z3fDQw+3txg7gNtWw==, tarball: https://registry.npmmirror.com/body-parser/-/body-parser-1.20.1.tgz}
     name: body-parser
@@ -6138,7 +6490,6 @@ packages:
       function-bind: registry.npmmirror.com/function-bind@1.1.2
       get-intrinsic: registry.npmmirror.com/get-intrinsic@1.2.2
       set-function-length: registry.npmmirror.com/set-function-length@1.1.1
-    dev: true
 
   registry.npmmirror.com/callsites@3.1.0:
     resolution: {integrity: sha512-P8BjAsXvZS+VIDUI11hHCQEv74YT67YUi5JJFNWIqL235sBmjX4+qx9Muvls5ivyNENctx46xQLQ3aTuE7ssaQ==, tarball: https://registry.npmmirror.com/callsites/-/callsites-3.1.0.tgz}
@@ -6300,6 +6651,26 @@ packages:
     engines: {node: '>=6.0'}
     dev: true
 
+  registry.npmmirror.com/ckeditor5@40.2.0:
+    resolution: {integrity: sha512-JaFuY/6DX1wbA6yRB2xQVMr+9W1C3HvSX4AT10ccoKBKe9OctIatekDt2ztV+cMaVHLF1wocskS/Ql9XFRy2Eg==, tarball: https://registry.npmmirror.com/ckeditor5/-/ckeditor5-40.2.0.tgz}
+    name: ckeditor5
+    version: 40.2.0
+    dependencies:
+      '@ckeditor/ckeditor5-clipboard': registry.npmmirror.com/@ckeditor/ckeditor5-clipboard@40.2.0
+      '@ckeditor/ckeditor5-core': registry.npmmirror.com/@ckeditor/ckeditor5-core@40.2.0
+      '@ckeditor/ckeditor5-engine': registry.npmmirror.com/@ckeditor/ckeditor5-engine@40.2.0
+      '@ckeditor/ckeditor5-enter': registry.npmmirror.com/@ckeditor/ckeditor5-enter@40.2.0
+      '@ckeditor/ckeditor5-paragraph': registry.npmmirror.com/@ckeditor/ckeditor5-paragraph@40.2.0
+      '@ckeditor/ckeditor5-select-all': registry.npmmirror.com/@ckeditor/ckeditor5-select-all@40.2.0
+      '@ckeditor/ckeditor5-typing': registry.npmmirror.com/@ckeditor/ckeditor5-typing@40.2.0
+      '@ckeditor/ckeditor5-ui': registry.npmmirror.com/@ckeditor/ckeditor5-ui@40.2.0
+      '@ckeditor/ckeditor5-undo': registry.npmmirror.com/@ckeditor/ckeditor5-undo@40.2.0
+      '@ckeditor/ckeditor5-upload': registry.npmmirror.com/@ckeditor/ckeditor5-upload@40.2.0
+      '@ckeditor/ckeditor5-utils': registry.npmmirror.com/@ckeditor/ckeditor5-utils@40.2.0
+      '@ckeditor/ckeditor5-watchdog': registry.npmmirror.com/@ckeditor/ckeditor5-watchdog@40.2.0
+      '@ckeditor/ckeditor5-widget': registry.npmmirror.com/@ckeditor/ckeditor5-widget@40.2.0
+    dev: false
+
   registry.npmmirror.com/clean-stack@2.2.0:
     resolution: {integrity: sha512-4diC9HaTE+KRAMWhDhrGOECgWZxoevMc5TlkObMqNSsVU62PYzXZ/SMTjzyGAFF1YusgxGcSWTEXBhp0CPwQ1A==, tarball: https://registry.npmmirror.com/clean-stack/-/clean-stack-2.2.0.tgz}
     name: clean-stack
@@ -6403,6 +6774,13 @@ packages:
     engines: {node: '>=0.8'}
     dev: true
 
+  registry.npmmirror.com/clone@2.1.2:
+    resolution: {integrity: sha512-3Pe/CF1Nn94hyhIYpjtiLhdCoEoz0DqQ+988E9gmeEdQZlojxnOb74wctFyuwWQHzqyf9X7C7MG8juUpqBJT8w==, tarball: https://registry.npmmirror.com/clone/-/clone-2.1.2.tgz}
+    name: clone
+    version: 2.1.2
+    engines: {node: '>=0.8'}
+    dev: false
+
   registry.npmmirror.com/color-convert@1.9.3:
     resolution: {integrity: sha512-QfAUtd+vFdAtFQcC8CCyYt1fYWxSqAiK2cSD6zDB8N3cpsEBAvRxp9zOGg6G/SHHJYAT88/az/IuDGALsNVbGg==, tarball: https://registry.npmmirror.com/color-convert/-/color-convert-1.9.3.tgz}
     name: color-convert
@@ -6418,7 +6796,6 @@ packages:
     engines: {node: '>=7.0.0'}
     dependencies:
       color-name: registry.npmmirror.com/color-name@1.1.4
-    dev: true
 
   registry.npmmirror.com/color-name@1.1.3:
     resolution: {integrity: sha512-72fSenhMw2HZMTVHeCA9KCmpEIbzWiQsjN+BHcBbS9vr1mtt+vJjPdksIBNUmKAW8TFUDPJK5SUU3QhE9NEXDw==, tarball: https://registry.npmmirror.com/color-name/-/color-name-1.1.3.tgz}
@@ -6430,7 +6807,14 @@ packages:
     resolution: {integrity: sha512-dOy+3AuW3a2wNbZHIuMZpTcgjGuLU/uBL/ubcZF9OXbDo8ff4O8yVp5Bf0efS8uEoYo5q4Fx7dY9OgQGXgAsQA==, tarball: https://registry.npmmirror.com/color-name/-/color-name-1.1.4.tgz}
     name: color-name
     version: 1.1.4
-    dev: true
+
+  registry.npmmirror.com/color-parse@1.4.2:
+    resolution: {integrity: sha512-RI7s49/8yqDj3fECFZjUI1Yi0z/Gq1py43oNJivAIIDSyJiOZLfYCRQEgn8HEVAj++PcRe8AnL2XF0fRJ3BTnA==, tarball: https://registry.npmmirror.com/color-parse/-/color-parse-1.4.2.tgz}
+    name: color-parse
+    version: 1.4.2
+    dependencies:
+      color-name: registry.npmmirror.com/color-name@1.1.4
+    dev: false
 
   registry.npmmirror.com/colorette@2.0.20:
     resolution: {integrity: sha512-IfEDxwoWIjkeXL1eXcDiow4UbKjhLdq6/EuSVR9GMN7KVH3r9gQ83e73hsz1Nd1T3ijd5xv1wcWRYO+D6kCI2w==, tarball: https://registry.npmmirror.com/colorette/-/colorette-2.0.20.tgz}
@@ -6853,6 +7237,20 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: true
 
+  registry.npmmirror.com/deep-equal@1.1.2:
+    resolution: {integrity: sha512-5tdhKF6DbU7iIzrIOa1AOUt39ZRm13cmL1cGEh//aqR8x9+tNfbywRf0n5FD/18OKMdo7DNEtrX2t22ZAkI+eg==, tarball: https://registry.npmmirror.com/deep-equal/-/deep-equal-1.1.2.tgz}
+    name: deep-equal
+    version: 1.1.2
+    engines: {node: '>= 0.4'}
+    dependencies:
+      is-arguments: registry.npmmirror.com/is-arguments@1.1.1
+      is-date-object: registry.npmmirror.com/is-date-object@1.0.5
+      is-regex: registry.npmmirror.com/is-regex@1.1.4
+      object-is: registry.npmmirror.com/object-is@1.1.5
+      object-keys: registry.npmmirror.com/object-keys@1.1.1
+      regexp.prototype.flags: registry.npmmirror.com/regexp.prototype.flags@1.5.1
+    dev: false
+
   registry.npmmirror.com/deep-is@0.1.4:
     resolution: {integrity: sha512-oIPzksmTg4/MriiaYGO+okXDT7ztn/w3Eptv/+gSIdMdKsJo0u4CfYNFJPy+4SKMuCqGw2wxnA+URMg3t8a/bQ==, tarball: https://registry.npmmirror.com/deep-is/-/deep-is-0.1.4.tgz}
     name: deep-is
@@ -6907,7 +7305,6 @@ packages:
       get-intrinsic: registry.npmmirror.com/get-intrinsic@1.2.2
       gopd: registry.npmmirror.com/gopd@1.0.1
       has-property-descriptors: registry.npmmirror.com/has-property-descriptors@1.0.1
-    dev: true
 
   registry.npmmirror.com/define-lazy-prop@2.0.0:
     resolution: {integrity: sha512-Ds09qNh8yw3khSjiJjiUInaGX9xlqZDY7JVryGxdxV7NPeuqQfplOpQ66yJFZut3jLa5zOwkXw1g9EI2uKh4Og==, tarball: https://registry.npmmirror.com/define-lazy-prop/-/define-lazy-prop-2.0.0.tgz}
@@ -6922,6 +7319,17 @@ packages:
     version: 3.0.0
     engines: {node: '>=12'}
     dev: true
+
+  registry.npmmirror.com/define-properties@1.2.1:
+    resolution: {integrity: sha512-8QmQKqEASLd5nx0U1B1okLElbUuuttJ/AnYmRXbbbGDWh6uS208EjD4Xqq/I9wK7u0v6O08XhTWnt5XtEbR6Dg==, tarball: https://registry.npmmirror.com/define-properties/-/define-properties-1.2.1.tgz}
+    name: define-properties
+    version: 1.2.1
+    engines: {node: '>= 0.4'}
+    dependencies:
+      define-data-property: registry.npmmirror.com/define-data-property@1.1.1
+      has-property-descriptors: registry.npmmirror.com/has-property-descriptors@1.0.1
+      object-keys: registry.npmmirror.com/object-keys@1.1.1
+    dev: false
 
   registry.npmmirror.com/delayed-stream@1.0.0:
     resolution: {integrity: sha512-ZySD7Nf91aLB0RxL4KGrKHBXl7Eds1DAmEdcoVawXnLD7SDhpNgtuII2aAkg7a7QS41jxPSZ17p4VdGnMHk3MQ==, tarball: https://registry.npmmirror.com/delayed-stream/-/delayed-stream-1.0.0.tgz}
@@ -7626,6 +8034,12 @@ packages:
     version: 1.0.0
     dev: true
 
+  registry.npmmirror.com/eventemitter3@2.0.3:
+    resolution: {integrity: sha512-jLN68Dx5kyFHaePoXWPsCGW5qdyZQtLYHkxkg02/Mz6g0kYpDx4FyP6XfArhQdlOC4b8Mv+EMxPo/8La7Tzghg==, tarball: https://registry.npmmirror.com/eventemitter3/-/eventemitter3-2.0.3.tgz}
+    name: eventemitter3
+    version: 2.0.3
+    dev: false
+
   registry.npmmirror.com/eventemitter3@4.0.7:
     resolution: {integrity: sha512-8guHBZCwKnFhYdHr2ysuRWErTwhoN2X8XELRlrRwpmfeY2jjuUN4taQMsULKUVo1K4DvZl+0pgfyoysHxvmvEw==, tarball: https://registry.npmmirror.com/eventemitter3/-/eventemitter3-4.0.7.tgz}
     name: eventemitter3
@@ -7724,7 +8138,6 @@ packages:
     resolution: {integrity: sha512-fjquC59cD7CyW6urNXK0FBufkZcoiGG80wTuPujX590cB5Ttln20E2UB4S/WARVqhXffZl2LNgS+gQdPIIim/g==, tarball: https://registry.npmmirror.com/extend/-/extend-3.0.2.tgz}
     name: extend
     version: 3.0.2
-    dev: true
 
   registry.npmmirror.com/external-editor@3.1.0:
     resolution: {integrity: sha512-hMQ4CX1p1izmuLYyZqLMO/qGNw10wSv9QDCPfzXfyFrOaCSSoRfqE1Kf1s5an66J5JZC62NewG+mK49jOCtQew==, tarball: https://registry.npmmirror.com/external-editor/-/external-editor-3.1.0.tgz}
@@ -7755,6 +8168,12 @@ packages:
     name: fast-deep-equal
     version: 3.1.3
     dev: true
+
+  registry.npmmirror.com/fast-diff@1.1.2:
+    resolution: {integrity: sha512-KaJUt+M9t1qaIteSvjc6P3RbMdXsNhK61GRftR6SNxqmhthcd9MGIi4T+o0jD8LUSpSnSKXE20nLtJ3fOHxQig==, tarball: https://registry.npmmirror.com/fast-diff/-/fast-diff-1.1.2.tgz}
+    name: fast-diff
+    version: 1.1.2
+    dev: false
 
   registry.npmmirror.com/fast-diff@1.3.0:
     resolution: {integrity: sha512-VxPP4NqbUjj6MaAOafWeUn2cXWLcCtljklUtZf0Ind4XQ+QPtmA0b18zZy0jIQx+ExRVCR/ZQpBmik5lXshNsw==, tarball: https://registry.npmmirror.com/fast-diff/-/fast-diff-1.3.0.tgz}
@@ -8161,7 +8580,12 @@ packages:
     resolution: {integrity: sha512-7XHNxH7qX9xG5mIwxkhumTox/MIRNcOgDrxWsMt2pAr23WHp6MrRlN7FBSFpCpr+oVO0F744iUgR82nJMfG2SA==, tarball: https://registry.npmmirror.com/function-bind/-/function-bind-1.1.2.tgz}
     name: function-bind
     version: 1.1.2
-    dev: true
+
+  registry.npmmirror.com/functions-have-names@1.2.3:
+    resolution: {integrity: sha512-xckBUXyTIqT97tq2x2AMb+g163b5JFysYk0x4qxNFwbfQkmNZoiRHb6sPzI9/QV33WeuvVYBUIiD4NzNIyqaRQ==, tarball: https://registry.npmmirror.com/functions-have-names/-/functions-have-names-1.2.3.tgz}
+    name: functions-have-names
+    version: 1.2.3
+    dev: false
 
   registry.npmmirror.com/gensync@1.0.0-beta.2:
     resolution: {integrity: sha512-3hN7NaskYvMDLQY55gnW3NQ+mesEAepTqlg+VEbj7zzqEMBVNhzcGYYeqFo/TlYz6eQiFcp1HcsCZO+nGgS8zg==, tarball: https://registry.npmmirror.com/gensync/-/gensync-1.0.0-beta.2.tgz}
@@ -8186,7 +8610,6 @@ packages:
       has-proto: registry.npmmirror.com/has-proto@1.0.1
       has-symbols: registry.npmmirror.com/has-symbols@1.0.3
       hasown: registry.npmmirror.com/hasown@2.0.0
-    dev: true
 
   registry.npmmirror.com/get-package-type@0.1.0:
     resolution: {integrity: sha512-pjzuKtY64GYfWizNAJ0fr9VqttZkNiK2iS430LtIHzjBEr6bX8Am2zm4sW4Ro5wjWW5cAlRL1qAMTcXbjNAO2Q==, tarball: https://registry.npmmirror.com/get-package-type/-/get-package-type-0.1.0.tgz}
@@ -8328,7 +8751,6 @@ packages:
     version: 1.0.1
     dependencies:
       get-intrinsic: registry.npmmirror.com/get-intrinsic@1.2.2
-    dev: true
 
   registry.npmmirror.com/graceful-fs@4.2.11:
     resolution: {integrity: sha512-RbJ5/jmFcNNCcDV5o9eTnBLJ/HszWV0P73bc+Ff4nS/rJj+YaS6IGyiOL0VoBYX+l1Wrl3k63h/KrH+nhJ0XvQ==, tarball: https://registry.npmmirror.com/graceful-fs/-/graceful-fs-4.2.11.tgz}
@@ -8456,21 +8878,27 @@ packages:
     version: 1.0.1
     dependencies:
       get-intrinsic: registry.npmmirror.com/get-intrinsic@1.2.2
-    dev: true
 
   registry.npmmirror.com/has-proto@1.0.1:
     resolution: {integrity: sha512-7qE+iP+O+bgF9clE5+UoBFzE65mlBiVj3tKCrlNQ0Ogwm0BjpT/gK4SlLYDMybDh5I3TCTKnPPa0oMG7JDYrhg==, tarball: https://registry.npmmirror.com/has-proto/-/has-proto-1.0.1.tgz}
     name: has-proto
     version: 1.0.1
     engines: {node: '>= 0.4'}
-    dev: true
 
   registry.npmmirror.com/has-symbols@1.0.3:
     resolution: {integrity: sha512-l3LCuF6MgDNwTDKkdYGEihYjt5pRPbEg46rtlmnSPlUbgmB8LOIrKJbYYFBSbnPaJexMKtiPO8hmeRjRz2Td+A==, tarball: https://registry.npmmirror.com/has-symbols/-/has-symbols-1.0.3.tgz}
     name: has-symbols
     version: 1.0.3
     engines: {node: '>= 0.4'}
-    dev: true
+
+  registry.npmmirror.com/has-tostringtag@1.0.0:
+    resolution: {integrity: sha512-kFjcSNhnlGV1kyoGk7OXKSawH5JOb/LzUc5w9B02hOTO0dfFRjbHQKvg1d6cf3HbeUmtU9VbbV3qzZ2Teh97WQ==, tarball: https://registry.npmmirror.com/has-tostringtag/-/has-tostringtag-1.0.0.tgz}
+    name: has-tostringtag
+    version: 1.0.0
+    engines: {node: '>= 0.4'}
+    dependencies:
+      has-symbols: registry.npmmirror.com/has-symbols@1.0.3
+    dev: false
 
   registry.npmmirror.com/hasown@2.0.0:
     resolution: {integrity: sha512-vUptKVTpIJhcczKBbgnS+RtcuYMB8+oNzPK2/Hp3hanz8JmpATdmmgLgSaadVREkDm+e2giHwY3ZRkyjSIDDFA==, tarball: https://registry.npmmirror.com/hasown/-/hasown-2.0.0.tgz}
@@ -8479,7 +8907,6 @@ packages:
     engines: {node: '>= 0.4'}
     dependencies:
       function-bind: registry.npmmirror.com/function-bind@1.1.2
-    dev: true
 
   registry.npmmirror.com/hdr-histogram-js@2.0.3:
     resolution: {integrity: sha512-Hkn78wwzWHNCp2uarhzQ2SGFLU3JY8SBDDd3TAABK4fc30wm+MuPOrg5QVFVfkKOQd6Bfz3ukJEI+q9sXEkK1g==, tarball: https://registry.npmmirror.com/hdr-histogram-js/-/hdr-histogram-js-2.0.3.tgz}
@@ -8905,6 +9332,16 @@ packages:
       is-windows: registry.npmmirror.com/is-windows@1.0.2
     dev: true
 
+  registry.npmmirror.com/is-arguments@1.1.1:
+    resolution: {integrity: sha512-8Q7EARjzEnKpt/PCD7e1cgUS0a6X8u5tdSiMqXhojOdoV9TsMsiO+9VLC5vAmO8N7/GmXn7yjR8qnA6bVAEzfA==, tarball: https://registry.npmmirror.com/is-arguments/-/is-arguments-1.1.1.tgz}
+    name: is-arguments
+    version: 1.1.1
+    engines: {node: '>= 0.4'}
+    dependencies:
+      call-bind: registry.npmmirror.com/call-bind@1.0.5
+      has-tostringtag: registry.npmmirror.com/has-tostringtag@1.0.0
+    dev: false
+
   registry.npmmirror.com/is-arrayish@0.2.1:
     resolution: {integrity: sha512-zz06S8t0ozoDXMG+ube26zeCTNXcKIPJZJi8hBrF4idCLms4CG9QtK7qBl1boi5ODzFpjswb5JPmHCbMpjaYzg==, tarball: https://registry.npmmirror.com/is-arrayish/-/is-arrayish-0.2.1.tgz}
     name: is-arrayish
@@ -8927,6 +9364,15 @@ packages:
     dependencies:
       hasown: registry.npmmirror.com/hasown@2.0.0
     dev: true
+
+  registry.npmmirror.com/is-date-object@1.0.5:
+    resolution: {integrity: sha512-9YQaSxsAiSwcvS33MBk3wTCVnWK+HhF8VZR2jRxehM16QcVOdHqPn4VPHmRK4lSr38n9JriurInLcP90xsYNfQ==, tarball: https://registry.npmmirror.com/is-date-object/-/is-date-object-1.0.5.tgz}
+    name: is-date-object
+    version: 1.0.5
+    engines: {node: '>= 0.4'}
+    dependencies:
+      has-tostringtag: registry.npmmirror.com/has-tostringtag@1.0.0
+    dev: false
 
   registry.npmmirror.com/is-docker@2.2.1:
     resolution: {integrity: sha512-F+i2BKsFrH66iaUFc0woD8sLy8getkwTwtOBjvs56Cx4CgJDeKQeqfz8wAYiSb8JOprWhHH5p77PbmYCvvUuXQ==, tarball: https://registry.npmmirror.com/is-docker/-/is-docker-2.2.1.tgz}
@@ -9035,6 +9481,16 @@ packages:
     dependencies:
       isobject: registry.npmmirror.com/isobject@3.0.1
     dev: true
+
+  registry.npmmirror.com/is-regex@1.1.4:
+    resolution: {integrity: sha512-kvRdxDsxZjhzUX07ZnLydzS1TU/TJlTUHHY4YLL87e37oUA49DfkLqgy+VjFocowy29cKvcSiu+kIv728jTTVg==, tarball: https://registry.npmmirror.com/is-regex/-/is-regex-1.1.4.tgz}
+    name: is-regex
+    version: 1.1.4
+    engines: {node: '>= 0.4'}
+    dependencies:
+      call-bind: registry.npmmirror.com/call-bind@1.0.5
+      has-tostringtag: registry.npmmirror.com/has-tostringtag@1.0.0
+    dev: false
 
   registry.npmmirror.com/is-relative@1.0.0:
     resolution: {integrity: sha512-Kw/ReK0iqwKeu0MITLFuj0jbPAmEiOsIwyIXvvbfa6QfmN9pkD1M+8pdk7Rl/dTKbH34/XBFMbgD4iMJhLQbGA==, tarball: https://registry.npmmirror.com/is-relative/-/is-relative-1.0.0.tgz}
@@ -9770,6 +10226,12 @@ packages:
       p-locate: registry.npmmirror.com/p-locate@6.0.0
     dev: true
 
+  registry.npmmirror.com/lodash-es@4.17.21:
+    resolution: {integrity: sha512-mKnC+QJ9pWVzv+C4/U3rRsHapFfHvQFoFB92e52xeyGMcX6/OlIl78je1u8vePzYZSkkogMPJ2yjxxsb89cxyw==, tarball: https://registry.npmmirror.com/lodash-es/-/lodash-es-4.17.21.tgz}
+    name: lodash-es
+    version: 4.17.21
+    dev: false
+
   registry.npmmirror.com/lodash.debounce@4.0.8:
     resolution: {integrity: sha512-FT1yDzDYEoYWhnSGnpE/4Kj1fLZkDFyqRb7fNt6FdYOSxlUWAtp42Eh6Wb0rGIv/m9Bgo7x4GhQbm5Ys4SG5ow==, tarball: https://registry.npmmirror.com/lodash.debounce/-/lodash.debounce-4.0.8.tgz}
     name: lodash.debounce
@@ -10360,6 +10822,23 @@ packages:
     version: 2.6.2
     dev: true
 
+  registry.npmmirror.com/ngx-quill@24.0.4(@angular/core@17.0.4)(quill@1.3.7)(rxjs@7.8.1):
+    resolution: {integrity: sha512-/kQUjsNMU3K74Wq+OkAEMBam/ttNpQ7cKA1QAoPAyeFeHf1eBD1AR+xr+bHP6mdNGUHznWhvLs/ZqEdTJjW/eA==, tarball: https://registry.npmmirror.com/ngx-quill/-/ngx-quill-24.0.4.tgz}
+    id: registry.npmmirror.com/ngx-quill/24.0.4
+    name: ngx-quill
+    version: 24.0.4
+    engines: {node: '>=18'}
+    peerDependencies:
+      '@angular/core': ^17.0.0
+      quill: ^1.3.7
+      rxjs: ^7.0.0
+    dependencies:
+      '@angular/core': registry.npmmirror.com/@angular/core@17.0.4(rxjs@7.8.1)(zone.js@0.14.2)
+      quill: registry.npmmirror.com/quill@1.3.7
+      rxjs: registry.npmmirror.com/rxjs@7.8.1
+      tslib: registry.npmmirror.com/tslib@2.6.2
+    dev: false
+
   registry.npmmirror.com/nice-napi@1.0.2:
     resolution: {integrity: sha512-px/KnJAJZf5RuBGcfD+Sp2pAKq0ytz8j+1NehvgIGFkvtvFrDM3T8E4x/JJODXK9WZow8RRGrbA9QQ3hs+pDhA==, tarball: https://registry.npmmirror.com/nice-napi/-/nice-napi-1.0.2.tgz}
     name: nice-napi
@@ -10695,12 +11174,21 @@ packages:
     version: 1.13.1
     dev: true
 
+  registry.npmmirror.com/object-is@1.1.5:
+    resolution: {integrity: sha512-3cyDsyHgtmi7I7DfSSI2LDp6SK2lwvtbg0p0R1e0RvTqF5ceGx+K2dfSjm1bKDMVCFEDAQvy+o8c6a7VujOddw==, tarball: https://registry.npmmirror.com/object-is/-/object-is-1.1.5.tgz}
+    name: object-is
+    version: 1.1.5
+    engines: {node: '>= 0.4'}
+    dependencies:
+      call-bind: registry.npmmirror.com/call-bind@1.0.5
+      define-properties: registry.npmmirror.com/define-properties@1.2.1
+    dev: false
+
   registry.npmmirror.com/object-keys@1.1.1:
     resolution: {integrity: sha512-NuAESUOUMrlIXOfHKzD6bpPu3tYt3xvjNdRIQ+FeT0lNb4K8WR70CaDxhuNguS2XG+GjkyMwOzsN5ZktImfhLA==, tarball: https://registry.npmmirror.com/object-keys/-/object-keys-1.1.1.tgz}
     name: object-keys
     version: 1.1.1
     engines: {node: '>= 0.4'}
-    dev: true
 
   registry.npmmirror.com/obuf@1.1.2:
     resolution: {integrity: sha512-PX1wu0AmAdPqOL1mWhqmlOd8kOIZQwGZw6rh7uby9fTc5lhaOWFLX3I6R1hrF9k3zUY40e6igsLGkDXK92LJNg==, tarball: https://registry.npmmirror.com/obuf/-/obuf-1.1.2.tgz}
@@ -10959,6 +11447,12 @@ packages:
       dot-case: registry.npmmirror.com/dot-case@3.0.4
       tslib: registry.npmmirror.com/tslib@2.6.2
     dev: true
+
+  registry.npmmirror.com/parchment@1.1.4:
+    resolution: {integrity: sha512-J5FBQt/pM2inLzg4hEWmzQx/8h8D0CiDxaG3vyp9rKrQRSDgBlhjdP5jQGgosEajXPSQouXGHOmVdgo7QmJuOg==, tarball: https://registry.npmmirror.com/parchment/-/parchment-1.1.4.tgz}
+    name: parchment
+    version: 1.1.4
+    dev: false
 
   registry.npmmirror.com/parent-module@1.0.1:
     resolution: {integrity: sha512-GQ2EWRpQV8/o+Aw8YqtfZZPfNRWZYkbidE9k5rpl/hC3vtHHBfGm2Ifi6qWV+coDGkrUKZAxE3Lot5kcsRlh+g==, tarball: https://registry.npmmirror.com/parent-module/-/parent-module-1.0.1.tgz}
@@ -11544,6 +12038,30 @@ packages:
     version: 1.2.3
     dev: true
 
+  registry.npmmirror.com/quill-delta@3.6.3:
+    resolution: {integrity: sha512-wdIGBlcX13tCHOXGMVnnTVFtGRLoP0imqxM696fIPwIf5ODIYUHIvHbZcyvGlZFiFhK5XzDC2lpjbxRhnM05Tg==, tarball: https://registry.npmmirror.com/quill-delta/-/quill-delta-3.6.3.tgz}
+    name: quill-delta
+    version: 3.6.3
+    engines: {node: '>=0.10'}
+    dependencies:
+      deep-equal: registry.npmmirror.com/deep-equal@1.1.2
+      extend: registry.npmmirror.com/extend@3.0.2
+      fast-diff: registry.npmmirror.com/fast-diff@1.1.2
+    dev: false
+
+  registry.npmmirror.com/quill@1.3.7:
+    resolution: {integrity: sha512-hG/DVzh/TiknWtE6QmWAF/pxoZKYxfe3J/d/+ShUWkDvvkZQVTPeVmUJVu1uE6DDooC4fWTiCLh84ul89oNz5g==, tarball: https://registry.npmmirror.com/quill/-/quill-1.3.7.tgz}
+    name: quill
+    version: 1.3.7
+    dependencies:
+      clone: registry.npmmirror.com/clone@2.1.2
+      deep-equal: registry.npmmirror.com/deep-equal@1.1.2
+      eventemitter3: registry.npmmirror.com/eventemitter3@2.0.3
+      extend: registry.npmmirror.com/extend@3.0.2
+      parchment: registry.npmmirror.com/parchment@1.1.4
+      quill-delta: registry.npmmirror.com/quill-delta@3.6.3
+    dev: false
+
   registry.npmmirror.com/randombytes@2.1.0:
     resolution: {integrity: sha512-vYl3iOX+4CKUWuxGi9Ukhie6fsqXqS9FE2Zaic4tNFD2N2QQaXOMFbuKK4QmDHC0JO6B1Zp41J0LpT0oR68amQ==, tarball: https://registry.npmmirror.com/randombytes/-/randombytes-2.1.0.tgz}
     name: randombytes
@@ -11693,6 +12211,17 @@ packages:
     name: regex-parser
     version: 2.2.11
     dev: true
+
+  registry.npmmirror.com/regexp.prototype.flags@1.5.1:
+    resolution: {integrity: sha512-sy6TXMN+hnP/wMy+ISxg3krXx7BAtWVO4UouuCN/ziM9UEne0euamVNafDfvC83bRNr95y0V5iijeDQFUNpvrg==, tarball: https://registry.npmmirror.com/regexp.prototype.flags/-/regexp.prototype.flags-1.5.1.tgz}
+    name: regexp.prototype.flags
+    version: 1.5.1
+    engines: {node: '>= 0.4'}
+    dependencies:
+      call-bind: registry.npmmirror.com/call-bind@1.0.5
+      define-properties: registry.npmmirror.com/define-properties@1.2.1
+      set-function-name: registry.npmmirror.com/set-function-name@2.0.1
+    dev: false
 
   registry.npmmirror.com/regexpu-core@5.3.2:
     resolution: {integrity: sha512-RAM5FlZz+Lhmo7db9L298p2vHP5ZywrVXmVXpmAD9GuL5MPH6t9ROw1iA/wfHkQ76Qe7AaPF0nGuim96/IrQMQ==, tarball: https://registry.npmmirror.com/regexpu-core/-/regexpu-core-5.3.2.tgz}
@@ -12206,7 +12735,17 @@ packages:
       get-intrinsic: registry.npmmirror.com/get-intrinsic@1.2.2
       gopd: registry.npmmirror.com/gopd@1.0.1
       has-property-descriptors: registry.npmmirror.com/has-property-descriptors@1.0.1
-    dev: true
+
+  registry.npmmirror.com/set-function-name@2.0.1:
+    resolution: {integrity: sha512-tMNCiqYVkXIZgc2Hnoy2IvC/f8ezc5koaRFkCjrpWzGpCd3qbZXPzVy9MAZzK1ch/X0jvSkojys3oqJN0qCmdA==, tarball: https://registry.npmmirror.com/set-function-name/-/set-function-name-2.0.1.tgz}
+    name: set-function-name
+    version: 2.0.1
+    engines: {node: '>= 0.4'}
+    dependencies:
+      define-data-property: registry.npmmirror.com/define-data-property@1.1.1
+      functions-have-names: registry.npmmirror.com/functions-have-names@1.2.3
+      has-property-descriptors: registry.npmmirror.com/has-property-descriptors@1.0.1
+    dev: false
 
   registry.npmmirror.com/setimmediate@1.0.5:
     resolution: {integrity: sha512-MATJdZp8sLqDl/68LfQmbP8zKPLQNV6BIZoIgrscFDQ+RsvK/BxeDQOgyxKKoh0y/8h3BqVFnCqQ/gd+reiIXA==, tarball: https://registry.npmmirror.com/setimmediate/-/setimmediate-1.0.5.tgz}
@@ -12977,12 +13516,6 @@ packages:
     version: 1.1.0
     dev: true
 
-  registry.npmmirror.com/tinymce@6.8.2:
-    resolution: {integrity: sha512-Lho79o2Y1Yn+XdlTEkHTEkEmzwYWTXz7IUsvPwxJF3VTtgHUIAAuBab29kik+f2KED3rZvQavr9D7sHVMJ9x4A==, tarball: https://registry.npmmirror.com/tinymce/-/tinymce-6.8.2.tgz}
-    name: tinymce
-    version: 6.8.2
-    dev: false
-
   registry.npmmirror.com/title-case@3.0.3:
     resolution: {integrity: sha512-e1zGYRvbffpcHIrnuqT0Dh+gEJtDaxDSoG4JAIpq4oDFyooziLBIiYQv0GBT4FUAnUop5uZ1hiIAj7oAF6sOCA==, tarball: https://registry.npmmirror.com/title-case/-/title-case-3.0.3.tgz}
     name: title-case
@@ -13378,6 +13911,12 @@ packages:
     version: 1.0.12
     engines: {node: '>=12'}
     dev: true
+
+  registry.npmmirror.com/vanilla-colorful@0.7.2:
+    resolution: {integrity: sha512-z2YZusTFC6KnLERx1cgoIRX2CjPRP0W75N+3CC6gbvdX5Ch47rZkEMGO2Xnf+IEmi3RiFLxS18gayMA27iU7Kg==, tarball: https://registry.npmmirror.com/vanilla-colorful/-/vanilla-colorful-0.7.2.tgz}
+    name: vanilla-colorful
+    version: 0.7.2
+    dev: false
 
   registry.npmmirror.com/vary@1.1.2:
     resolution: {integrity: sha512-BNGbWLfd0eUPabhkXUVm0j8uuvREyTh5ovRa/dyow/BqAbZJyC+5fU+IzQOzmAKzYqYRAISoRhdQr3eIZ/PXqg==, tarball: https://registry.npmmirror.com/vary/-/vary-1.1.2.tgz}

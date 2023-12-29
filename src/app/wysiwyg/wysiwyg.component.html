@@ -1,14 +1,1 @@
-<editor
-  [(ngModel)]="content"
-  [init]="{
-    plugins: 'lists link autolink image preview fullscreen',
-    toolbar:
-      'undo redo | blocks | bold italic | alignleft aligncenter alignright indent outdent | numlist bullist link image | fullscreen preview',
-    promotion: false,
-    elementpath: false,
-    branding: false,
-    menubar: '',
-    statusbar: false,
-    icons: 'bootstrap'
-  }"
-></editor>
+<ckeditor #editor [editor]="Editor" [config]="config" class="gc-text" />

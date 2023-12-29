@@ -1,18 +1,28 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { EditorModule, TINYMCE_SCRIPT_SRC } from '@tinymce/tinymce-angular';
+import { CKEditorModule, CKEditorComponent } from '@ckeditor/ckeditor5-angular';
+import Editor from 'ckeditor5-custom-build/build/ckeditor';
+
+import { UploadAdapterPlugin } from './ckeditor.uploadAdapter';
 
 @Component({
   selector: 'app-wysiwyg',
   standalone: true,
-  imports: [CommonModule, FormsModule, EditorModule],
+  imports: [CommonModule, FormsModule, CKEditorModule],
   templateUrl: './wysiwyg.component.html',
   styleUrl: './wysiwyg.component.css',
-  providers: [
-    { provide: TINYMCE_SCRIPT_SRC, useValue: 'tinymce/tinymce.min.js' },
-  ],
 })
 export class WysiwygComponent {
+  @ViewChild('editor') editorComponent!: CKEditorComponent;
+  Editor = Editor;
   content = '';
+
+  constructor() {}
+
+  get config() {
+    return {
+      extraPlugins: [UploadAdapterPlugin],
+    };
+  }
 }
