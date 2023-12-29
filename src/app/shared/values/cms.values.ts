@@ -8,6 +8,7 @@ export enum RoleEnum {
 
 export enum FolderEnum {
   Avatar = 'avatar',
+  Wysiwyg = 'wysiwyg',
 }
 
 export enum PathEnum {

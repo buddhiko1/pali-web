@@ -18,7 +18,6 @@ import { UserAvatarComponent } from '../shared/user-avatar/user-avatar.component
 })
 export class MeComponent {
   showUploader = false;
-  avatarFolderId = '';
 
   constructor(
     private _router: Router,
@@ -31,15 +30,11 @@ export class MeComponent {
     return this._storageService.me;
   }
 
-  async initAvatarFolderId(): Promise<void> {
-    if (!this.avatarFolderId) {
-      this.avatarFolderId =
-        await this._usersService.fetchFolderIdOfUserAvatar();
-    }
+  get avatarFolderId(): string {
+    return this._storageService.avatarFolderId;
   }
 
   async onAvatarClick(): Promise<void> {
-    await this.initAvatarFolderId();
     this.showUploader = true;
   }
 

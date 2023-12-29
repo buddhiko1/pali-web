@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { environment } from 'src/environments/environment';
 import { Config as BookConfig } from '../book/book.model';
 import { BookComponent, DirectionEnum } from '../book/book.component';
 import { SlideInDirective } from '../shared/directives/slide-in.directive';
 import { FadeInDirective } from '../shared/directives/fade-in.directive';
+import { UrlService } from '../shared/services/url.service';
 import { GithubSvgComponent } from '../svg/github/github.component';
 import { DownloadSvgComponent } from '../svg/download/download.component';
 import { QuoteSvgComponent } from '../svg/quote/quote.component';
@@ -28,11 +28,13 @@ import { Tipitaka, Cites } from 'src/gql/graphql';
   styleUrl: './tipitaka.component.css',
 })
 export class TipitakaComponent {
-  fileServer = environment.fileServer;
   tipitaka: Tipitaka[] = [];
   cites: Cites[] = [];
 
-  constructor(private _tipitakaService: TipitakaService) {
+  constructor(
+    private _tipitakaService: TipitakaService,
+    private _urlService: UrlService,
+  ) {
     this._tipitakaService.fetchTipitaka().then((tipitaka) => {
       this.tipitaka = tipitaka;
     });
@@ -41,15 +43,17 @@ export class TipitakaComponent {
     });
   }
 
-  bookConfigFor(tipitaka: Tipitaka): BookConfig {
+  bookConfigFor(book: Tipitaka): BookConfig {
     return {
       height: '16rem',
       width: '12rem',
-      image: tipitaka.cover?.id
-        ? `${environment.fileServer}/${tipitaka.cover?.filename_disk}`
-        : '',
+      image: this._urlService.fileUrlFor(book.cover?.filename_disk),
       color: '#477999',
       direction: DirectionEnum.FrontView,
     };
+  }
+
+  downloadUrlFor(book: Tipitaka): string {
+    return this._urlService.downloadUrlFor(book.zip?.filename_disk);
   }
 }

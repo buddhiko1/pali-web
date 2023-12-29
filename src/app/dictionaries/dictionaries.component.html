@@ -47,7 +47,7 @@
             <app-github-svg [class]="['gc-svg']" />
           </a>
           <a
-            [href]="fileServer + '/' + dictionary.zip?.id + '?download'"
+            [href]="downloadUrlFor(dictionary)"
             [download]="dictionary.name + '.zip'"
             target="_blank"
             class="c-link gc-button"

@@ -11,6 +11,7 @@ import { CommonModule } from '@angular/common';
 
 import { LoadingComponent } from 'src/app/loading/loading.component';
 import { InfoDialogComponent } from 'src/app/dialog/info/info.component';
+import { UtilitiesService } from '../shared/services/utilities.service';
 import { UploaderService } from './uploader.service';
 
 @Component({
@@ -34,51 +35,13 @@ export class UploaderComponent implements AfterViewInit {
   isLoading = false;
   error = '';
 
-  constructor(private _uploaderService: UploaderService) {}
+  constructor(
+    private _uploaderService: UploaderService,
+    private _utilitiesService: UtilitiesService,
+  ) {}
 
   ngAfterViewInit(): void {
     this.fileInput.nativeElement.click();
-  }
-
-  private _convertImageToWebp(file: File, quality: number): Promise<Blob> {
-    return new Promise((resolve) => {
-      const reader = new FileReader();
-
-      reader.onload = function () {
-        const img = new Image();
-        img.onload = () => {
-          const canvas = document.createElement('canvas');
-          canvas.width = img.width;
-          canvas.height = img.height;
-          const ctx = canvas.getContext('2d');
-          if (ctx) {
-            ctx.drawImage(img, 0, 0);
-            canvas.toBlob(
-              (blob) => {
-                if (blob) {
-                  resolve(blob);
-                } else {
-                  throw Error('Failed to create blob.');
-                }
-              },
-              'image/webp',
-              quality,
-            );
-          } else {
-            throw Error('Failed to create canvas.');
-          }
-        };
-        img.onerror = () => {
-          throw Error('Failed to load image.');
-        };
-        if (reader.result) {
-          img.src = reader.result.toString();
-        } else {
-          throw Error('Failed to load image.');
-        }
-      };
-      reader.readAsDataURL(file);
-    });
   }
 
   private async _extractInputFiles(
@@ -93,9 +56,8 @@ export class UploaderComponent implements AfterViewInit {
       let error = '';
       for (let i = 0; i < fileInput.files.length; i++) {
         const file = fileInput.files[i];
-        const fileName = this.fileInput.nativeElement.value;
-        const fileExtension = fileName
-          .substring(fileName.lastIndexOf('.'))
+        const fileExtension = file.name
+          .substring(file.name.lastIndexOf('.'))
           .toLowerCase();
         if (!this.allowedExtensions.includes(fileExtension)) {
           error = `Invalid file type, allowed file extensions: ${this.allowedExtensions.join(
@@ -113,7 +75,7 @@ export class UploaderComponent implements AfterViewInit {
           this.enableImageConversion &&
           ['.jpg', '.jpeg', '.png'].includes(fileExtension)
         ) {
-          const convertedFile = await this._convertImageToWebp(
+          const convertedFile = await this._utilitiesService.convertImageToWebp(
             file,
             this.webpQuality,
           );

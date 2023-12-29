@@ -8,6 +8,8 @@ export class StorageService {
   private _keyOfAuthToken = 'authToken';
   private _keyOfRefreshToken = 'refreshToken';
   private _keyOfMe = 'me';
+  private _keyOfAvatarFolderId = 'avatarFolderId';
+  private _keyOfWysiwygFolderId = 'wysiwygFolderId';
 
   saveAuthToken(authToken: Auth_Tokens) {
     localStorage.setItem(this._keyOfAuthToken, authToken.access_token ?? '');
@@ -36,6 +38,22 @@ export class StorageService {
   get me(): UserFragment | null {
     const data = localStorage.getItem(this._keyOfMe);
     return data ? JSON.parse(data) : null;
+  }
+
+  get avatarFolderId(): string {
+    return localStorage.getItem(this._keyOfAvatarFolderId) ?? '';
+  }
+
+  set avatarFolderId(value: string) {
+    localStorage.setItem(this._keyOfAvatarFolderId, value);
+  }
+
+  get wysiwygFolderId(): string {
+    return localStorage.getItem(this._keyOfWysiwygFolderId) ?? '';
+  }
+
+  set wysiwygFolderId(value: string) {
+    localStorage.setItem(this._keyOfWysiwygFolderId, value);
   }
 
   clearLoginedUserData() {

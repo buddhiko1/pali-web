@@ -33,7 +33,7 @@
             <app-github-svg [class]="['gc-svg']" />
           </a>
           <a
-            [href]="fileServer + '/' + book.zip?.filename_disk + '?download'"
+            [href]="downloadUrlFor(book)"
             [download]="book.name + '.zip'"
             target="_blank"
             class="gc-button"

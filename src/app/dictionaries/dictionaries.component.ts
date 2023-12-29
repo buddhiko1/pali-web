@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { environment } from 'src/environments/environment';
 import { SlideInDirective } from '../shared/directives/slide-in.directive';
 import { GithubSvgComponent } from '../svg/github/github.component';
 import { DownloadSvgComponent } from '../svg/download/download.component';
 import { SafeHtmlPipe } from '../shared/pipes/safe-html.pipe';
+import { UrlService } from '../shared/services/url.service';
 import { BookComponent, DirectionEnum } from '../book/book.component';
 import { Config as BookConfig } from '../book/book.model';
 import { DictionariesService } from './dictionaries.service';
@@ -26,11 +26,13 @@ import { Dictionaries, Dict_Introduction } from 'src/gql/graphql';
   styleUrl: './dictionaries.component.css',
 })
 export class DictionariesComponent {
-  fileServer = environment.fileServer;
   introduction!: Dict_Introduction;
   dictionaries: Dictionaries[] = [];
 
-  constructor(private _dictionaryService: DictionariesService) {
+  constructor(
+    private _dictionaryService: DictionariesService,
+    private _urlService: UrlService,
+  ) {
     this._dictionaryService.fetchIntroduction().then((introduction) => {
       this.introduction = introduction;
     });
@@ -43,12 +45,14 @@ export class DictionariesComponent {
     return {
       height: '16rem',
       width: '12rem',
-      image: dictionary.cover?.id
-        ? `${environment.fileServer}/${dictionary.cover?.id}.webp`
-        : '',
+      image: this._urlService.fileUrlFor(dictionary.cover?.filename_disk),
       color: '#477999',
       direction:
         dictionary.index % 2 ? DirectionEnum.RightView : DirectionEnum.LeftView,
     };
+  }
+
+  downloadUrlFor(dictionary: Dictionaries): string {
+    return this._urlService.downloadUrlFor(dictionary.zip?.filename_disk);
   }
 }
