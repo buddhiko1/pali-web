@@ -14,3 +14,8 @@ export enum FolderEnum {
 export enum PathEnum {
   Login = '/auth/login',
 }
+
+export enum BlogStatusNameEnum {
+  Draft = 'draft',
+  Published = 'published',
+}

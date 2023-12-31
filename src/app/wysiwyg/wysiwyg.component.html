@@ -1,1 +1,8 @@
-<ckeditor #editor [editor]="Editor" [config]="config" class="gc-text" />
+<ckeditor
+  #editor
+  tagName="textarea"
+  [editor]="Editor"
+  [config]="config"
+  [data]="initialContent"
+  class="gc-text"
+/>

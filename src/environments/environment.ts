@@ -6,7 +6,7 @@ export const environment = {
   production: false,
   cms: 'https://cms.buddhiko.com',
   fileServer: 'https://file.buddhiko.com',
-  gqlToken: 'SwZVWhOBmlaVZZ1P3rNmd1BnfKirayNg',
+  gqlToken: 'FX9XajBibuBX3lKUUAWfCA_knl9tycOv',
 };
 
 /*

@@ -1,3 +1,6 @@
 <div class="mt-20">
-  <app-wysiwyg />
+  <button class="gc-button" (click)="saveDraft()">
+    <p class="gc-text">Save</p>
+  </button>
+  <app-wysiwyg #wysiwyg [initialContent]="initialContent" />
 </div>

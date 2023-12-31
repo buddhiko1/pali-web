@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, ViewChild, Input } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { CKEditorModule, CKEditorComponent } from '@ckeditor/ckeditor5-angular';
@@ -16,13 +16,25 @@ import { UploadAdapterPlugin } from './ckeditor.uploadAdapter';
 export class WysiwygComponent {
   @ViewChild('editor') editorComponent!: CKEditorComponent;
   Editor = Editor;
-  content = '';
+  @Input()
+  initialContent = '';
 
   constructor() {}
 
-  get config() {
+  get config(): object {
     return {
       extraPlugins: [UploadAdapterPlugin],
     };
+  }
+
+  get editor() {
+    return this.editorComponent.editorInstance;
+  }
+
+  get content(): string {
+    if (this.editor) {
+      return this.editor.data.get();
+    }
+    return '';
   }
 }

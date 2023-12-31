@@ -17,7 +17,7 @@ import {
   Update_Directus_Users_Input,
   DeleteUserOldAvatarDocument,
   DeleteUserOldAvatarMutationVariables,
-  FolderWithNameDocument,
+  FolderIdDocument,
   AvatarFragment,
   UserAvatarDocument,
   UserAvatarQueryVariables,
@@ -72,7 +72,7 @@ export class UsersService {
   }
 
   async fetchFolderIdOfUserAvatar(): Promise<string> {
-    const result = await this._urqlService.query(FolderWithNameDocument, {
+    const result = await this._urqlService.query(FolderIdDocument, {
       name: FolderEnum.Avatar,
     });
     return result.data.folders[0].id;

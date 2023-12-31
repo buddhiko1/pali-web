@@ -32,6 +32,10 @@ export class NotificationService {
     this.notificationsSubject.next(notification);
   }
 
+  isErrorNotification(notification: Notification): boolean {
+    return notification.type === NotificationEnum.ERROR;
+  }
+
   pushSuccessInfo(notificationPayload: NotificationPayload): void {
     const notification: Notification = {
       timestamp: Date.now(),
@@ -40,10 +44,6 @@ export class NotificationService {
       content: notificationPayload.content,
     };
     this.notificationsSubject.next(notification);
-  }
-
-  isErrorNotification(notification: Notification): boolean {
-    return notification.type === NotificationEnum.ERROR;
   }
 
   isSuccessNotification(notification: Notification): boolean {
