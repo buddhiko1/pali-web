@@ -29,6 +29,10 @@ export class UrlService {
     return 'users/creation';
   }
 
+  get urlForBlogEditor(): string {
+    return 'blogs/editor';
+  }
+
   fileUrlFor(filename: string | null | undefined): string {
     return filename ? `${environment.fileServer}/${filename}` : '';
   }

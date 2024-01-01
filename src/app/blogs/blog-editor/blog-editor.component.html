@@ -1,0 +1,17 @@
+<div>
+  <input
+    type="text"
+    placeholder="Title"
+    [(ngModel)]="title"
+    class="d-block w-full"
+  />
+  @if (isCreation) {
+    <button class="gc-button" (click)="saveDraft()">
+      <p class="gc-text">Save</p>
+    </button>
+  }
+  <button class="gc-button" (click)="publish()">
+    <p class="gc-text">Publish</p>
+  </button>
+  <app-wysiwyg #wysiwyg [initialContent]="initialContent" />
+</div>

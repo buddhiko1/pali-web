@@ -1,21 +1,10 @@
-import { inject } from '@angular/core';
-import { Routes, Router } from '@angular/router';
-import { RoleService } from '../shared/services/role.service';
-import { UrlService } from '../shared/services/url.service';
-
-// https://itnext.io/everything-you-need-to-know-about-route-guard-in-angular-697a062d3198
-const canActiveLogin = (
-  roleService = inject(RoleService),
-  router = inject(Router),
-  urlService = inject(UrlService),
-) => {
-  return roleService.isPublic ? true : router.parseUrl(urlService.urlForMe);
-};
+import { Routes } from '@angular/router';
+import { isPublicGuardFn } from '../shared/services/guard.fn';
 
 export const AUTH_ROUTES: Routes = [
   {
     path: 'login',
-    canActivate: [() => canActiveLogin()],
+    canActivate: [isPublicGuardFn],
     loadComponent: () =>
       import('./login/login.component').then((m) => m.LoginComponent),
   },

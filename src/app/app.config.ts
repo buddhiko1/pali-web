@@ -2,6 +2,7 @@ import { ApplicationConfig, ErrorHandler } from '@angular/core';
 import {
   PreloadAllModules,
   provideRouter,
+  withComponentInputBinding,
   withPreloading,
   withInMemoryScrolling,
 } from '@angular/router';
@@ -13,6 +14,7 @@ export const appConfig: ApplicationConfig = {
   providers: [
     provideRouter(
       APP_ROUTES,
+      withComponentInputBinding(),
       withPreloading(PreloadAllModules),
       withInMemoryScrolling({
         anchorScrolling: 'enabled',

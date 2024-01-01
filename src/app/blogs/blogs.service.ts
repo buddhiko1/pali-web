@@ -7,6 +7,8 @@ import {
   BlogFragment,
   BlogsDocument,
   BlogsQueryVariables,
+  BlogDocument,
+  BlogQueryVariables,
   BlogStatusDocument,
   BlogStatusQueryVariables,
   Blog_Status,
@@ -39,6 +41,14 @@ export class BlogsService {
     return result.data.statusList[0];
   }
 
+  async fetchBlogById(id: string): Promise<BlogFragment> {
+    const args: BlogQueryVariables = {
+      id: id,
+    };
+    const result = await this._urqlService.query(BlogDocument, args);
+    return result.data.blog;
+  }
+
   async fetchBlogs(
     statusName: BlogStatusNameEnum,
     sortFields: string[],
@@ -57,11 +67,13 @@ export class BlogsService {
 
   async updateBlog(
     id: string,
+    title: string,
     content: string,
     statusName?: BlogStatusNameEnum,
   ): Promise<BlogFragment> {
     const data: Update_Blogs_Input = {
-      content: content,
+      title,
+      content,
     };
     if (statusName) {
       const statusForInput = await this.fetchBlogStatusInputFor(statusName);
@@ -75,13 +87,15 @@ export class BlogsService {
   }
 
   async createBlog(
+    title: string,
     content: string,
     statusName: BlogStatusNameEnum,
   ): Promise<BlogFragment> {
     const statusForInput = await this.fetchBlogStatusInputFor(statusName);
     const data: Create_Blogs_Input = {
+      title,
+      content,
       status: { id: statusForInput.id, name: statusName },
-      content: content,
     };
     const result = await this._urqlService.mutation(CreateBlogDocument, {
       data: data,
@@ -102,7 +116,7 @@ export class BlogsService {
     ]);
   }
 
-  async fetchDraft(): Promise<BlogFragment | null> {
+  async fetchLatestDraft(): Promise<BlogFragment | null> {
     const args: UserBlogsQueryVariables = {
       userId: this._storageService.me!.id,
       statusName: BlogStatusNameEnum.Draft,
@@ -114,9 +128,13 @@ export class BlogsService {
     return result.data.blogs.length > 0 ? result.data.blogs[0] : null;
   }
 
-  async saveDraft(draftId: string, content: string): Promise<BlogFragment> {
-    return draftId
-      ? await this.updateBlog(draftId, content)
-      : await this.createBlog(content, BlogStatusNameEnum.Draft);
+  async saveDraft(
+    blogId: string,
+    title: string,
+    content: string,
+  ): Promise<BlogFragment> {
+    return blogId
+      ? await this.updateBlog(blogId, title, content)
+      : await this.createBlog(content, title, BlogStatusNameEnum.Draft);
   }
 }

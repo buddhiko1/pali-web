@@ -45,8 +45,8 @@ export const APP_ROUTES: Routes = [
   },
   {
     path: 'blogs',
-    loadComponent: () =>
-      import('./blogs/blogs.component').then((m) => m.BlogsComponent),
+    loadChildren: () =>
+      import('./blogs/blogs.routes').then((m) => m.BLOGS_ROUTES),
   },
   {
     path: '**',

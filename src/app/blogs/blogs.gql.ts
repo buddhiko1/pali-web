@@ -3,6 +3,7 @@ import { graphql } from 'src/gql';
 graphql(`
   fragment Blog on blogs {
     id
+    title
     status {
       name
     }
@@ -57,6 +58,12 @@ graphql(`
       offset: $offset
       limit: $limit
     ) {
+      ...Blog
+    }
+  }
+
+  query Blog($id: ID!) {
+    blog: blogs_by_id(id: $id) {
       ...Blog
     }
   }
