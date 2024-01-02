@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 
-import { ScreenService } from '../../shared/services/screen.service';
-import { FadeInDirective } from '../../shared/directives/fade-in.directive';
-import { WheelSvgComponent } from '../../svg/wheel/wheel.component';
+import { ScreenService } from 'src/app/shared/services/screen.service';
+import { FadeInDirective } from 'src/app/shared/directives/fade-in.directive';
+import { WheelSvgComponent } from 'src/app/svg/wheel/wheel.component';
 
 @Component({
   selector: 'app-loading',

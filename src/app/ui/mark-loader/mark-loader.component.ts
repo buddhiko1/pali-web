@@ -1,6 +1,6 @@
 import { Component, Input, HostBinding } from '@angular/core';
-import { CheckSvgComponent } from '../svg/check/check.component';
-import { CloseSvgComponent } from '../svg/close/close.component';
+import { CheckSvgComponent } from 'src/app/svg/check/check.component';
+import { CloseSvgComponent } from 'src/app/svg/close/close.component';
 
 @Component({
   selector: 'app-mark-loader',
