@@ -7,7 +7,6 @@ import {
   ViewChild,
   AfterViewInit,
 } from '@angular/core';
-import { CommonModule } from '@angular/common';
 
 import { LoadingComponent } from 'src/app/ui/loading/loading.component';
 import { InfoDialogComponent } from 'src/app/ui/info-dialog/info-dialog.component';
@@ -17,7 +16,7 @@ import { UploaderService } from './uploader.service';
 @Component({
   selector: 'app-uploader',
   standalone: true,
-  imports: [CommonModule, LoadingComponent, InfoDialogComponent],
+  imports: [LoadingComponent, InfoDialogComponent],
   templateUrl: './uploader.component.html',
   styleUrl: './uploader.component.css',
 })

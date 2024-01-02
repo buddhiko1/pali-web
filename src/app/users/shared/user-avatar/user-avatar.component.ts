@@ -1,5 +1,4 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { CommonModule } from '@angular/common';
 
 import { PersonSvgComponent } from 'src/app/svg/person/person.component';
 import { UrlService } from 'src/app/shared/services/url.service';
@@ -9,7 +8,7 @@ import { AvatarFragment } from 'src/gql/graphql';
 @Component({
   selector: 'app-user-avatar',
   standalone: true,
-  imports: [CommonModule, PersonSvgComponent],
+  imports: [PersonSvgComponent],
   templateUrl: './user-avatar.component.html',
   styleUrl: './user-avatar.component.css',
 })

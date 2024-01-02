@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
 
 import { SlideInDirective } from '../shared/directives/slide-in.directive';
 import { GithubSvgComponent } from '../svg/github/github.component';
@@ -15,7 +14,6 @@ import { Dictionaries, Dict_Introduction } from 'src/gql/graphql';
   selector: 'app-dictionary',
   standalone: true,
   imports: [
-    CommonModule,
     GithubSvgComponent,
     DownloadSvgComponent,
     SlideInDirective,

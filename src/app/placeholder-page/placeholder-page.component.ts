@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { ActivatedRoute, Params } from '@angular/router';
 
 import { SlideInDirective } from '../shared/directives/slide-in.directive';
@@ -12,7 +11,6 @@ import { SnowBgComponent } from '../snow-bg/snow-bg.component';
   selector: 'app-placeholder-page',
   standalone: true,
   imports: [
-    CommonModule,
     LarrowSvgComponent,
     BackButtonDirective,
     SnowBgComponent,

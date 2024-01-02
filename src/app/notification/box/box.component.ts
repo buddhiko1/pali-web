@@ -7,7 +7,6 @@ import {
   EventEmitter,
   HostListener,
 } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { timer, Subscription } from 'rxjs';
 
 import { ErrorSvgComponent } from 'src/app/svg/error/error.component';
@@ -25,7 +24,6 @@ import { NotificationService } from '../notification.service';
   selector: 'app-notification-box',
   standalone: true,
   imports: [
-    CommonModule,
     ErrorSvgComponent,
     CheckSvgComponent,
     InfoSvgComponent,

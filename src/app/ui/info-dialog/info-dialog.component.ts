@@ -1,5 +1,4 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { CommonModule } from '@angular/common';
 
 import { ErrorSvgComponent } from 'src/app/svg/error/error.component';
 import { InfoSvgComponent } from 'src/app/svg/info/info.component';
@@ -10,7 +9,6 @@ import { DialogBoxComponent } from '../dialog-box/dialog-box.component';
   selector: 'app-info-dialog',
   standalone: true,
   imports: [
-    CommonModule,
     DialogBoxComponent,
     ErrorSvgComponent,
     InfoSvgComponent,

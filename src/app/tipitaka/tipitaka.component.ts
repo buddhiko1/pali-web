@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
 
 import { Config as BookConfig } from '../book/book.model';
 import { BookComponent, DirectionEnum } from '../book/book.component';
@@ -16,7 +15,6 @@ import { Tipitaka, Cites } from 'src/gql/graphql';
   selector: 'app-tipitaka',
   standalone: true,
   imports: [
-    CommonModule,
     BookComponent,
     GithubSvgComponent,
     DownloadSvgComponent,

@@ -1,10 +1,9 @@
 import { Component, Input } from '@angular/core';
-import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-person-svg',
   standalone: true,
-  imports: [CommonModule],
+  imports: [],
   templateUrl: './person.component.svg',
 })
 export class PersonSvgComponent {

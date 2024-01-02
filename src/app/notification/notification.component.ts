@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
 
 import { ScreenService } from '../shared/services/screen.service';
 import { BoxComponent } from './box/box.component';
@@ -9,7 +8,7 @@ import { Notification } from './notification.model';
 @Component({
   selector: 'app-notification',
   standalone: true,
-  imports: [CommonModule, BoxComponent],
+  imports: [BoxComponent],
   templateUrl: './notification.component.html',
   styleUrl: './notification.component.css',
 })

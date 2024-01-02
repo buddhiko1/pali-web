@@ -1,10 +1,9 @@
 import { Component, Input, HostBinding } from '@angular/core';
-import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-wheel-svg',
   standalone: true,
-  imports: [CommonModule],
+  imports: [],
   templateUrl: './wheel.component.svg',
   styleUrl: './wheel.component.css',
 })

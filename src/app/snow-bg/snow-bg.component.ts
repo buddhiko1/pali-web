@@ -8,7 +8,6 @@ import {
   HostBinding,
   Input,
 } from '@angular/core';
-import { CommonModule } from '@angular/common';
 
 class Particle {
   x = 0;
@@ -83,7 +82,7 @@ class Particles {
 @Component({
   selector: 'app-snow-bg',
   standalone: true,
-  imports: [CommonModule],
+  imports: [],
   templateUrl: './snow-bg.component.html',
   styleUrl: './snow-bg.component.css',
 })

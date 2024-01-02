@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { CommonModule, TitleCasePipe } from '@angular/common';
+import { TitleCasePipe } from '@angular/common';
 import { Router, NavigationEnd, RouterLink } from '@angular/router';
 import { fromEvent, throttleTime } from 'rxjs';
 
@@ -19,7 +19,6 @@ import { RoutesFragment, UserFragment } from 'src/gql/graphql';
   selector: 'app-navbar',
   standalone: true,
   imports: [
-    CommonModule,
     TitleCasePipe,
     RouterLink,
     FadeInDirective,
