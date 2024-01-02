@@ -1,0 +1,7 @@
+<div>
+  <p>{{ blog.title }}</p>
+  <p
+    class="inline-block capitalize pc:text-xl gc-hl-title"
+    [innerHtml]="blog.content | safeHtml"
+  ></p>
+</div>

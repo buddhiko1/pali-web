@@ -40,14 +40,13 @@ export class BlogEditorComponent implements OnInit {
     if (blogId) {
       this._blogsService.fetchBlogById(blogId).then((blog) => {
         this.title = blog.title;
-        this.initialContent = blog.content;
+        this.initialContent = blog.content!;
         this._blogId = blog.id;
         this._operationType = OperationTypeEnum.Edit;
       });
     } else {
       this.fetchLatestDraft();
       interval(30000).subscribe(() => {
-        console.error('start save draft');
         // this.saveDraft();
       });
     }
@@ -69,7 +68,7 @@ export class BlogEditorComponent implements OnInit {
     if (draft) {
       this._blogId = draft.id;
       this.title = draft.title;
-      this.wysiwyg.initialContent = draft.content;
+      this.initialContent = draft.content!;
     }
   }
 

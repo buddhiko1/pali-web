@@ -7,8 +7,8 @@ import {
   BlogFragment,
   BlogsDocument,
   BlogsQueryVariables,
-  BlogDocument,
-  BlogQueryVariables,
+  BlogByIdDocument,
+  BlogByIdQueryVariables,
   BlogStatusDocument,
   BlogStatusQueryVariables,
   Blog_Status,
@@ -42,10 +42,10 @@ export class BlogsService {
   }
 
   async fetchBlogById(id: string): Promise<BlogFragment> {
-    const args: BlogQueryVariables = {
+    const args: BlogByIdQueryVariables = {
       id: id,
     };
-    const result = await this._urqlService.query(BlogDocument, args);
+    const result = await this._urqlService.query(BlogByIdDocument, args);
     return result.data.blog;
   }
 

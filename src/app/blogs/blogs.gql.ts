@@ -16,7 +16,13 @@ graphql(`
     }
     date_created
     date_updated
-    content
+    content @include(if: $withContent)
+  }
+
+  query BlogById($id: ID!, $withContent: Boolean = true) {
+    blog: blogs_by_id(id: $id) {
+      ...Blog
+    }
   }
 
   query Blogs(
@@ -24,9 +30,31 @@ graphql(`
     $sortFields: [String!]!
     $offset: Int!
     $limit: Int!
+    $withContent: Boolean = false
   ) {
     blogs(
       filter: { status: { name: { _eq: $statusName } } }
+      sort: $sortFields
+      offset: $offset
+      limit: $limit
+    ) {
+      ...Blog
+    }
+  }
+
+  query UserBlogs(
+    $userId: String!
+    $statusName: String!
+    $sortFields: [String!]!
+    $offset: Int!
+    $limit: Int!
+    $withContent: Boolean = false
+  ) {
+    blogs(
+      filter: {
+        user_created: { id: { _eq: $userId } }
+        status: { name: { _eq: $statusName } }
+      }
       sort: $sortFields
       offset: $offset
       limit: $limit
@@ -42,33 +70,10 @@ graphql(`
     }
   }
 
-  query UserBlogs(
-    $userId: String!
-    $statusName: String!
-    $sortFields: [String!]!
-    $offset: Int!
-    $limit: Int!
+  mutation CreateBlog(
+    $data: create_blogs_input!
+    $withContent: Boolean = false
   ) {
-    blogs(
-      filter: {
-        user_created: { id: { _eq: $userId } }
-        status: { name: { _eq: $statusName } }
-      }
-      sort: $sortFields
-      offset: $offset
-      limit: $limit
-    ) {
-      ...Blog
-    }
-  }
-
-  query Blog($id: ID!) {
-    blog: blogs_by_id(id: $id) {
-      ...Blog
-    }
-  }
-
-  mutation CreateBlog($data: create_blogs_input!) {
     blog: create_blogs_item(data: $data) {
       ...Blog
     }
@@ -80,7 +85,11 @@ graphql(`
     }
   }
 
-  mutation UpdateBlog($id: ID!, $data: update_blogs_input!) {
+  mutation UpdateBlog(
+    $id: ID!
+    $data: update_blogs_input!
+    $withContent: Boolean = false
+  ) {
     blog: update_blogs_item(id: $id, data: $data) {
       ...Blog
     }
