@@ -3,7 +3,7 @@ import { FormsModule } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 
 import { interval } from 'rxjs';
-import { WysiwygComponent } from 'src/app/wysiwyg/wysiwyg.component';
+import { WysiwygComponent } from 'src/app/ui/wysiwyg/wysiwyg.component';
 import { BlogStatusNameEnum } from 'src/app/shared/values/cms.values';
 import { BlogsService } from '../blogs.service';
 

@@ -7,9 +7,9 @@ import {
 } from '@ckeditor/ckeditor5-upload';
 
 import { environment } from 'src/environments/environment';
-import { StorageService } from '../shared/services/storage.service';
-import { UtilitiesService } from '../shared/services/utilities.service';
-import { UrlService } from '../shared/services/url.service';
+import { StorageService } from '../../shared/services/storage.service';
+import { UtilitiesService } from '../../shared/services/utilities.service';
+import { UrlService } from '../../shared/services/url.service';
 
 class CustomUploadAdapter implements UploadAdapter {
   loader: FileLoader;

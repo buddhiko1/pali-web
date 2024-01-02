@@ -5,8 +5,8 @@ import { GithubSvgComponent } from '../svg/github/github.component';
 import { DownloadSvgComponent } from '../svg/download/download.component';
 import { SafeHtmlPipe } from '../shared/pipes/safe-html.pipe';
 import { UrlService } from '../shared/services/url.service';
-import { BookComponent, DirectionEnum } from '../book/book.component';
-import { Config as BookConfig } from '../book/book.model';
+import { BookComponent, DirectionEnum } from '../ui/book/book.component';
+import { Config as BookConfig } from '../ui/book/book.model';
 import { DictionariesService } from './dictionaries.service';
 import { Dictionaries, Dict_Introduction } from 'src/gql/graphql';
 

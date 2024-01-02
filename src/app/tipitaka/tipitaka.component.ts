@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
-import { Config as BookConfig } from '../book/book.model';
-import { BookComponent, DirectionEnum } from '../book/book.component';
+import { Config as BookConfig } from '../ui/book/book.model';
+import { BookComponent, DirectionEnum } from '../ui/book/book.component';
 import { SlideInDirective } from '../shared/directives/slide-in.directive';
 import { FadeInDirective } from '../shared/directives/fade-in.directive';
 import { UrlService } from '../shared/services/url.service';
