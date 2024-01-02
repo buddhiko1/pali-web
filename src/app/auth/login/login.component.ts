@@ -8,9 +8,9 @@ import {
 import { Router } from '@angular/router';
 import { CombinedError } from '@urql/core';
 
-import { LoadingComponent } from 'src/app/loading/loading.component';
-import { FormDialogComponent } from 'src/app/dialog/form/form.component';
-import { InfoDialogComponent } from 'src/app/dialog/info/info.component';
+import { LoadingComponent } from 'src/app/ui/loading/loading.component';
+import { FormDialogComponent } from 'src/app/ui/form-dialog/form-dialog.component';
+import { InfoDialogComponent } from 'src/app/ui/info-dialog/info-dialog.component';
 import { UnRegisteredEmailValidator } from 'src/app/users/shared/email.validator';
 import { UrlService } from 'src/app/shared/services/url.service';
 import { AuthService } from '../auth.service';

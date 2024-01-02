@@ -9,8 +9,8 @@ import {
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { LoadingComponent } from 'src/app/loading/loading.component';
-import { InfoDialogComponent } from 'src/app/dialog/info/info.component';
+import { LoadingComponent } from 'src/app/ui/loading/loading.component';
+import { InfoDialogComponent } from 'src/app/ui/info-dialog/info-dialog.component';
 import { UtilitiesService } from '../shared/services/utilities.service';
 import { UploaderService } from './uploader.service';
 

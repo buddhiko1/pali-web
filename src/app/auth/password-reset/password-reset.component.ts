@@ -8,9 +8,9 @@ import {
 } from '@angular/forms';
 import { CombinedError } from '@urql/core';
 
-import { LoadingComponent } from 'src/app/loading/loading.component';
-import { FormDialogComponent } from 'src/app/dialog/form/form.component';
-import { InfoDialogComponent } from 'src/app/dialog/info/info.component';
+import { LoadingComponent } from 'src/app/ui/loading/loading.component';
+import { FormDialogComponent } from 'src/app/ui/form-dialog/form-dialog.component';
+import { InfoDialogComponent } from 'src/app/ui/info-dialog/info-dialog.component';
 import { NavigationService } from 'src/app/shared/services/navigation.service';
 import { PromptEnum } from 'src/app/shared/values/prompts.values';
 import { UrlService } from 'src/app/shared/services/url.service';
