@@ -25,7 +25,7 @@
         Tipiṭaka Epub
       </p>
     </div>
-    @for (book of tipitaka; track book.index) {
+    @for (book of books; track book.index) {
       <div class="c-book pt-14 pc:pt-28">
         <app-book [config]="bookConfigFor(book)" />
         <div class="c-action w-full mt-10 pb-4 border-b gc-border">

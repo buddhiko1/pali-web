@@ -1,8 +1,8 @@
 import { graphql } from 'src/gql';
 
 graphql(`
-  query Tipitaka {
-    tipitaka(sort: ["index"]) {
+  query Books {
+    books(sort: ["index"]) {
       name
       index
       info_url

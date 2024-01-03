@@ -25,9 +25,9 @@ export const APP_ROUTES: Routes = [
     data: { text: 'Under development' },
   },
   {
-    path: 'tipitaka',
+    path: 'books',
     loadComponent: () =>
-      import('./tipitaka/tipitaka.component').then((m) => m.TipitakaComponent),
+      import('./books/books.component').then((m) => m.BooksComponent),
   },
   {
     path: 'auth',

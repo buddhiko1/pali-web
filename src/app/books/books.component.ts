@@ -8,11 +8,11 @@ import { UrlService } from '../shared/services/url.service';
 import { GithubSvgComponent } from '../svg/github/github.component';
 import { DownloadSvgComponent } from '../svg/download/download.component';
 import { QuoteSvgComponent } from '../svg/quote/quote.component';
-import { TipitakaService } from './tipitaka.service';
-import { Tipitaka, Cites } from 'src/gql/graphql';
+import { BooksService } from './books.service';
+import { Books, Cites } from 'src/gql/graphql';
 
 @Component({
-  selector: 'app-tipitaka',
+  selector: 'app-books',
   standalone: true,
   imports: [
     BookComponent,
@@ -22,26 +22,26 @@ import { Tipitaka, Cites } from 'src/gql/graphql';
     SlideInDirective,
     FadeInDirective,
   ],
-  templateUrl: './tipitaka.component.html',
-  styleUrl: './tipitaka.component.css',
+  templateUrl: './books.component.html',
+  styleUrl: './books.component.css',
 })
-export class TipitakaComponent {
-  tipitaka: Tipitaka[] = [];
+export class BooksComponent {
+  books: Books[] = [];
   cites: Cites[] = [];
 
   constructor(
-    private _tipitakaService: TipitakaService,
+    private _booksService: BooksService,
     private _urlService: UrlService,
   ) {
-    this._tipitakaService.fetchTipitaka().then((tipitaka) => {
-      this.tipitaka = tipitaka;
+    this._booksService.fetchBooks().then((books) => {
+      this.books = books;
     });
-    this._tipitakaService.fetchCites().then((cites) => {
+    this._booksService.fetchCites().then((cites) => {
       this.cites = cites;
     });
   }
 
-  bookConfigFor(book: Tipitaka): BookConfig {
+  bookConfigFor(book: Books): BookConfig {
     return {
       height: '16rem',
       width: '12rem',
@@ -51,7 +51,7 @@ export class TipitakaComponent {
     };
   }
 
-  downloadUrlFor(book: Tipitaka): string {
+  downloadUrlFor(book: Books): string {
     return this._urlService.downloadUrlFor(book.zip?.filename_disk);
   }
 }
