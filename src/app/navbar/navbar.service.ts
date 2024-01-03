@@ -9,6 +9,7 @@ import { ThemeEnum } from './navbar.model';
 })
 export class NavbarService {
   private _theme: ThemeEnum = ThemeEnum.DEFAULT;
+
   constructor(private _urqlService: DataUrqlService) {}
 
   async fetchRoutes(): Promise<RoutesFragment[]> {

@@ -1,1 +1,14 @@
-<p>user-detail works!</p>
+<div>
+  @if (user) {
+    <section
+      appFadeIn
+      [fadeInDelay]="300"
+      class="c-container mt-24 tablat:mt-48 pc:mt-[20vh]"
+    >
+      <div class="c-content">
+        <app-user-avatar [size]="'6rem'" [avatarId]="user.avatar?.id" />
+        <p class="text-text">{{ user.email }}</p>
+      </div>
+    </section>
+  }
+</div>

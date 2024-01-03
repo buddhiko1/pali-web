@@ -4,12 +4,12 @@ import {
   Notification,
   NotificationPayload,
   NotificationEnum,
-} from './notification.model';
+} from './notifications.model';
 
 @Injectable({
   providedIn: 'root',
 })
-export class NotificationService {
+export class NotificationsService {
   notificationsSubject = new Subject<Notification>();
 
   pushInfo(notificationPayload: NotificationPayload): void {

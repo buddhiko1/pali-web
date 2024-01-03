@@ -17,11 +17,11 @@ import { DownSvgComponent } from 'src/app/svg/down/down.component';
 import { CloseSvgComponent } from 'src/app/svg/close/close.component';
 import { FadeInDirective } from 'src/app/shared/directives/fade-in.directive';
 import { ScreenService } from 'src/app/shared/services/screen.service';
-import { Notification } from '../notification.model';
-import { NotificationService } from '../notification.service';
+import { Notification } from '../notifications.model';
+import { NotificationsService } from '../notifications.service';
 
 @Component({
-  selector: 'app-notification-box',
+  selector: 'app-notification',
   standalone: true,
   imports: [
     ErrorSvgComponent,
@@ -32,22 +32,21 @@ import { NotificationService } from '../notification.service';
     CloseSvgComponent,
     FadeInDirective,
   ],
-  templateUrl: './box.component.html',
-  styleUrl: './box.component.css',
+  templateUrl: './notification.component.html',
+  styleUrl: './notification.component.css',
 })
-export class BoxComponent implements OnInit, OnDestroy {
+export class NotificationComponent implements OnInit, OnDestroy {
   @Input() notification!: Notification;
   @Input() duration = 10000;
   @Output() closed = new EventEmitter<void>();
   isContentFolded = true;
   shouldSlideOut = false;
-  showDialog = false;
   private _isMouseEntered = false;
   private _timerSubscription!: Subscription;
 
   constructor(
     private _screenService: ScreenService,
-    private _notificationService: NotificationService,
+    private _notificationsService: NotificationsService,
   ) {}
 
   ngOnInit(): void {
@@ -91,10 +90,10 @@ export class BoxComponent implements OnInit, OnDestroy {
   }
 
   isErrorNotification(notification: Notification): boolean {
-    return this._notificationService.isErrorNotification(notification);
+    return this._notificationsService.isErrorNotification(notification);
   }
 
   isSuccessNotification(notification: Notification): boolean {
-    return this._notificationService.isSuccessNotification(notification);
+    return this._notificationsService.isSuccessNotification(notification);
   }
 }

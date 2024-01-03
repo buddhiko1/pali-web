@@ -1,7 +1,7 @@
 import { ErrorHandler, Injectable } from '@angular/core';
 import { CombinedError } from '@urql/core';
 
-import { NotificationService } from 'src/app/notification/notification.service';
+import { NotificationsService } from 'src/app/notifications/notifications.service';
 import { StorageService } from './storage.service';
 
 @Injectable({
@@ -10,7 +10,7 @@ import { StorageService } from './storage.service';
 export class ErrorHandlerService implements ErrorHandler {
   constructor(
     private _storageService: StorageService,
-    private _notificationService: NotificationService,
+    private _notificationsService: NotificationsService,
   ) {}
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -30,7 +30,7 @@ export class ErrorHandlerService implements ErrorHandler {
     ) {
       this._storageService.clearLoginedUserData();
     } else {
-      this._notificationService.pushErrorInfo({
+      this._notificationsService.pushErrorInfo({
         title: 'Server Error',
         content: error.networkError?.message ?? error.graphQLErrors[0].message,
       });
@@ -39,7 +39,7 @@ export class ErrorHandlerService implements ErrorHandler {
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   private _handlerClientError(error: any) {
-    this._notificationService.pushErrorInfo({
+    this._notificationsService.pushErrorInfo({
       title: 'Client Error',
       content: error.toString(),
     });

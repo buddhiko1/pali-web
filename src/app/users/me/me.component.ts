@@ -52,7 +52,7 @@ export class MeComponent {
     this._storageService.saveMe(updatedMe);
     if (oldAavatarId) {
       await this._usersService.deleteOldUserAvatar({
-        avatarId: oldAavatarId,
+        id: oldAavatarId,
       });
     }
   }

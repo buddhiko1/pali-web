@@ -16,8 +16,8 @@ import {
   UserRolesDocument,
   UpdateMeDocument,
   UpdateMeMutationVariables,
-  DeleteUserOldAvatarDocument,
-  DeleteUserOldAvatarMutationVariables,
+  DeleteFileByIdDocument,
+  DeleteFileByIdMutationVariables,
   AvatarFragment,
   UserAvatarDocument,
   UserAvatarQueryVariables,
@@ -73,8 +73,8 @@ export class UsersService {
   }
 
   async deleteOldUserAvatar(
-    args: DeleteUserOldAvatarMutationVariables,
+    args: DeleteFileByIdMutationVariables,
   ): Promise<void> {
-    await this._urqlService.mutation(DeleteUserOldAvatarDocument, args);
+    await this._urqlService.mutation(DeleteFileByIdDocument, args);
   }
 }

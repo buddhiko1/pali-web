@@ -7,9 +7,8 @@
   [class.right-10]="!isPc"
 >
   <div class="c-boxes">
-    <!-- TODO fix the bug of can't render the first notification -->
     @for (notification of notifications; track notification.timestamp) {
-      <app-notification-box
+      <app-notification
         [notification]="notification"
         (closed)="remove(notification)"
       />

@@ -70,10 +70,4 @@ graphql(`
       ...User
     }
   }
-
-  mutation DeleteUserOldAvatar($avatarId: ID!) {
-    delete_files_item(id: $avatarId) {
-      id
-    }
-  }
 `);

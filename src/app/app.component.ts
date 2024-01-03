@@ -7,7 +7,7 @@ import { FolderEnum } from './shared/values/cms.values';
 import { NavbarComponent } from './navbar/navbar.component';
 import { NavbarService } from './navbar/navbar.service';
 import { FooterComponent } from './footer/footer.component';
-import { NotificationComponent } from './notification/notification.component';
+import { NotificationsComponent } from './notifications/notifications.component';
 import { AppService } from './app.service';
 
 @Component({
@@ -20,7 +20,7 @@ import { AppService } from './app.service';
     RouterOutlet,
     FadeInDirective,
     FooterComponent,
-    NotificationComponent,
+    NotificationsComponent,
   ],
 })
 export class AppComponent {
