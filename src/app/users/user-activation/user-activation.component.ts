@@ -14,7 +14,6 @@ import { InfoDialogComponent } from 'src/app/ui/info-dialog/info-dialog.componen
 import { NavigationService } from 'src/app/shared/services/navigation.service';
 import { UrlService } from 'src/app/shared/services/url.service';
 import { UsersService } from '../users.service';
-import { ActiveUserMutationVariables } from 'src/gql/graphql';
 
 @Component({
   selector: 'app-user-activation',
@@ -69,12 +68,11 @@ export class UserActivationComponent implements OnInit {
 
   onSubmit(): void {
     this.isLoading = true;
-    const args: ActiveUserMutationVariables = {
-      token: this._token,
-      password: this.form.getRawValue().password,
-    };
     this._usersService
-      .activeUser(args)
+      .activeUser({
+        token: this._token,
+        password: this.form.getRawValue().password,
+      })
       .then(() => {
         this.isLoading = false;
         this._router.navigateByUrl(this._urlService.urlForLogin);

@@ -37,6 +37,7 @@ export default {
 
         // status
         hover: "var(--colors-hover)",
+        hoverBg: "var(--colors-hover-bg)",
         focus: "var(--colors-focus)",
         error: "var(--colors-error)",
         ok: "var(--colors-ok)",

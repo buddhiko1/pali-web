@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 import { BlogsService } from '../blogs.service';
-import { BlogWithContentFragment } from 'src/gql/graphql';
+import { BlogFragment } from 'src/gql/graphql';
 import { SafeHtmlPipe } from 'src/app/shared/pipes/safe-html.pipe';
 
 @Component({
@@ -13,7 +13,7 @@ import { SafeHtmlPipe } from 'src/app/shared/pipes/safe-html.pipe';
   styleUrl: './blog-viewer.component.css',
 })
 export class BlogViewerComponent implements OnInit {
-  blog!: BlogWithContentFragment;
+  blog!: BlogFragment;
 
   constructor(
     private _route: ActivatedRoute,
@@ -22,8 +22,10 @@ export class BlogViewerComponent implements OnInit {
 
   ngOnInit(): void {
     const blogId = this._route.snapshot.paramMap.get('id')!;
-    this._blogsService.fetchBlogById(blogId).then((blog) => {
-      this.blog = blog;
-    });
+    this._blogsService
+      .fetchBlogById({ id: blogId, returnContent: true })
+      .then((blog) => {
+        this.blog = blog;
+      });
   }
 }

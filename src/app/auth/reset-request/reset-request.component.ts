@@ -15,7 +15,6 @@ import { PromptEnum } from 'src/app/shared/values/prompts.values';
 import { UrlService } from 'src/app/shared/services/url.service';
 import { UnRegisteredEmailValidator } from 'src/app/users/shared/email.validator';
 import { AuthService } from '../auth.service';
-import { RequestPasswordResetMutationVariables } from 'src/gql/graphql';
 
 @Component({
   selector: 'app-reset-request',
@@ -63,14 +62,12 @@ export class ResetRequestComponent implements OnInit {
   }
 
   onSubmit(): void {
-    const args: RequestPasswordResetMutationVariables = {
-      email: this.form.getRawValue().email,
-      urlForReset: this._urlService.urlForPasswordReset,
-    };
-
     this.isLoading = true;
     this._authService
-      .requestPasswordReset(args)
+      .requestPasswordReset({
+        email: this.form.getRawValue().email,
+        urlForReset: this._urlService.urlForPasswordReset,
+      })
       .then(() => {
         this.isLoading = false;
         this.successInfo = PromptEnum.RequestReset;

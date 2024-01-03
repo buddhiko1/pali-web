@@ -5,6 +5,7 @@ graphql(`
     name
     route
   }
+
   query NavbarRoutes {
     routes: modules(sort: ["index"]) {
       ...Routes

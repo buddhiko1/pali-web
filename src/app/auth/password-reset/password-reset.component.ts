@@ -15,7 +15,6 @@ import { NavigationService } from 'src/app/shared/services/navigation.service';
 import { PromptEnum } from 'src/app/shared/values/prompts.values';
 import { UrlService } from 'src/app/shared/services/url.service';
 import { AuthService } from '../auth.service';
-import { ResetPasswordMutationVariables } from 'src/gql/graphql';
 
 @Component({
   selector: 'app-password-reset',
@@ -74,14 +73,12 @@ export class PasswordResetComponent implements OnInit {
       return;
     }
 
-    const args: ResetPasswordMutationVariables = {
-      token: this._token,
-      password: this.form.getRawValue().password,
-    };
-
     this.isLoading = true;
     this._authService
-      .resetPassword(args)
+      .resetPassword({
+        token: this._token,
+        password: this.form.getRawValue().password,
+      })
       .then(() => {
         this.isLoading = false;
         this.successInfo = PromptEnum.Reset;

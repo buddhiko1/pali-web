@@ -15,4 +15,11 @@ export const BLOGS_ROUTES: Routes = [
         (m) => m.BlogEditorComponent,
       ),
   },
+  {
+    path: 'viewer/:id',
+    loadComponent: () =>
+      import('./blog-viewer/blog-viewer.component').then(
+        (m) => m.BlogViewerComponent,
+      ),
+  },
 ];

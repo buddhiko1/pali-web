@@ -1,5 +1,5 @@
 .gu-hover {
-  @apply hover:text-focus;
+  @apply hover:text-focus hover:cursor-pointer;
 }
 
 .gu-rm-page-span {

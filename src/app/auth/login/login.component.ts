@@ -15,7 +15,6 @@ import { UnRegisteredEmailValidator } from 'src/app/users/shared/email.validator
 import { UrlService } from 'src/app/shared/services/url.service';
 import { AuthService } from '../auth.service';
 import { UsersService } from 'src/app/users/users.service';
-import { LoginMutationVariables } from 'src/gql/graphql';
 
 @Component({
   selector: 'app-login',
@@ -75,16 +74,12 @@ export class LoginComponent implements OnInit {
     if (this.form.invalid) {
       return;
     }
-
-    const args: LoginMutationVariables = {
-      email: this.form.getRawValue().email,
-      password: this.form.getRawValue().password,
-    };
-
     this.isLoading = true;
-
     this._authService
-      .login(args)
+      .login({
+        email: this.form.getRawValue().email,
+        password: this.form.getRawValue().password,
+      })
       .then(() => {
         this._usersService.fetchMe().then(() => {
           this._router.navigateByUrl('users/me');

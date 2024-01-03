@@ -2,22 +2,22 @@ import { Injectable } from '@angular/core';
 
 import { StorageService } from '../shared/services/storage.service';
 import { SystemUrqlService } from '../urql/urql.service';
-import { FolderEnum } from '../shared/values/cms.values';
 import {
   CreateUserDocument,
   CreateUserMutationVariables,
   ActiveUserDocument,
   ActiveUserMutationVariables,
-  UserWithEmailDocument,
+  UserByEmailDocument,
+  UserByIdDocument,
+  UserByIdQueryVariables,
   UserFragment,
   UserMeDocument,
   UserRoleFragment,
   UserRolesDocument,
   UpdateMeDocument,
-  Update_Directus_Users_Input,
+  UpdateMeMutationVariables,
   DeleteUserOldAvatarDocument,
   DeleteUserOldAvatarMutationVariables,
-  FolderIdDocument,
   AvatarFragment,
   UserAvatarDocument,
   UserAvatarQueryVariables,
@@ -31,25 +31,20 @@ export class UsersService {
   ) {}
 
   async isRegisteredEmail(email: string): Promise<boolean> {
-    const result = await this._urqlService.query(UserWithEmailDocument, {
+    const result = await this._urqlService.query(UserByEmailDocument, {
       email,
     });
     return !!result?.data?.users?.length;
   }
 
-  async createUser(args: CreateUserMutationVariables): Promise<void> {
-    await this._urqlService.mutation(CreateUserDocument, args);
-  }
-
-  async activeUser(args: ActiveUserMutationVariables): Promise<void> {
-    await this._urqlService.mutation(ActiveUserDocument, args);
-  }
-
   async fetchMe(): Promise<void> {
     const result = await this._urqlService.query(UserMeDocument, {});
-    if (result.data?.me) {
-      this._storageService.saveMe(result.data.me);
-    }
+    this._storageService.saveMe(result.data.me);
+  }
+
+  async fetchUserById(args: UserByIdQueryVariables): Promise<UserFragment> {
+    const result = await this._urqlService.query(UserByIdDocument, args);
+    return result.data.user;
   }
 
   async fetchUserAvatar(
@@ -64,18 +59,17 @@ export class UsersService {
     return result.data.roles;
   }
 
-  async updateMe(args: Update_Directus_Users_Input): Promise<UserFragment> {
-    const result = await this._urqlService.mutation(UpdateMeDocument, {
-      data: args,
-    });
-    return result.data.updatedMe;
+  async createUser(args: CreateUserMutationVariables): Promise<void> {
+    await this._urqlService.mutation(CreateUserDocument, args);
   }
 
-  async fetchFolderIdOfUserAvatar(): Promise<string> {
-    const result = await this._urqlService.query(FolderIdDocument, {
-      name: FolderEnum.Avatar,
-    });
-    return result.data.folders[0].id;
+  async activeUser(args: ActiveUserMutationVariables): Promise<void> {
+    await this._urqlService.mutation(ActiveUserDocument, args);
+  }
+
+  async updateMe(args: UpdateMeMutationVariables): Promise<UserFragment> {
+    const result = await this._urqlService.mutation(UpdateMeDocument, args);
+    return result.data.updatedMe;
   }
 
   async deleteOldUserAvatar(

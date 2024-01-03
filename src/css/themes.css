@@ -18,6 +18,7 @@
 
   /* status */
   --colors-hover: theme("colors.blue.200");
+  --colors-hover-bg: theme("colors.gray.100");
   --colors-focus: theme("colors.blue.400");
   --colors-error: theme("colors.red.500");
   --colors-ok: theme("colors.blue.500");
@@ -43,6 +44,7 @@
 
   /* status */
   --colors-hover: theme("colors.gray.500");
+  --colors-hover-bg: theme("colors.gray.800");
   --colors-focus: theme("colors.blue.400");
   --colors-error: theme("colors.red.500");
   --colors-ok: theme("colors.blue.500");

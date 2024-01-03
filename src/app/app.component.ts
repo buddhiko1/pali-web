@@ -3,6 +3,7 @@ import { RouterOutlet } from '@angular/router';
 
 import { StorageService } from './shared/services/storage.service';
 import { FadeInDirective } from './shared/directives/fade-in.directive';
+import { FolderEnum } from './shared/values/cms.values';
 import { NavbarComponent } from './navbar/navbar.component';
 import { NavbarService } from './navbar/navbar.service';
 import { FooterComponent } from './footer/footer.component';
@@ -39,10 +40,14 @@ export class AppComponent {
 
   initialize(): void {
     this._appService
-      .fetchFolderIdOfUserAvatar()
+      .fetchFolderIdByName({
+        name: FolderEnum.Avatar,
+      })
       .then((folderId) => (this._storageService.avatarFolderId = folderId));
     this._appService
-      .fetchFolderIdOfWysiwyg()
+      .fetchFolderIdByName({
+        name: FolderEnum.Wysiwyg,
+      })
       .then((folderId) => (this._storageService.wysiwygFolderId = folderId));
   }
 }

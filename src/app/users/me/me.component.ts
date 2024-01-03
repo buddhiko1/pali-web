@@ -43,8 +43,10 @@ export class MeComponent {
     const oldAavatarId = this.me?.avatar?.id;
 
     const updatedMe = await this._usersService.updateMe({
-      avatar: {
-        id: newAvatarId,
+      data: {
+        avatar: {
+          id: newAvatarId,
+        },
       },
     });
     this._storageService.saveMe(updatedMe);

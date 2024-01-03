@@ -1,7 +1,5 @@
 import { Injectable } from '@angular/core';
 
-import { BlogStatusNameEnum } from '../shared/values/cms.values';
-import { StorageService } from '../shared/services/storage.service';
 import { DataUrqlService } from '../urql/urql.service';
 import {
   BlogFragment,
@@ -15,126 +13,52 @@ import {
   UserBlogsDocument,
   UserBlogsQueryVariables,
   CreateBlogDocument,
-  Create_Blogs_Input,
+  CreateBlogMutationVariables,
   DeleteBlogDocument,
   DeleteBlogMutationVariables,
   UpdateBlogDocument,
-  Update_Blogs_Input,
+  UpdateBlogMutationVariables,
 } from 'src/gql/graphql';
 
 @Injectable({
   providedIn: 'root',
 })
 export class BlogsService {
-  constructor(
-    private _urqlService: DataUrqlService,
-    private _storageService: StorageService,
-  ) {}
+  constructor(private _urqlService: DataUrqlService) {}
 
   async fetchBlogStatusInputFor(
-    statusName: BlogStatusNameEnum,
+    args: BlogStatusQueryVariables,
   ): Promise<Blog_Status> {
-    const args: BlogStatusQueryVariables = {
-      name: statusName,
-    };
     const result = await this._urqlService.query(BlogStatusDocument, args);
     return result.data.statusList[0];
   }
 
-  async fetchBlogById(id: string): Promise<BlogFragment> {
-    const args: BlogByIdQueryVariables = {
-      id: id,
-    };
+  async fetchBlogById(args: BlogByIdQueryVariables): Promise<BlogFragment> {
     const result = await this._urqlService.query(BlogByIdDocument, args);
     return result.data.blog;
   }
 
-  async fetchBlogs(
-    statusName: BlogStatusNameEnum,
-    sortFields: string[],
-    offset = 0,
-    limit = -1,
-  ): Promise<BlogFragment[]> {
-    const args: BlogsQueryVariables = {
-      statusName: statusName,
-      sortFields,
-      offset,
-      limit,
-    };
+  async fetchBlogs(args: BlogsQueryVariables): Promise<BlogFragment[]> {
     const result = await this._urqlService.query(BlogsDocument, args);
     return result.data.blogs;
   }
 
-  async updateBlog(
-    id: string,
-    title: string,
-    content: string,
-    statusName?: BlogStatusNameEnum,
-  ): Promise<BlogFragment> {
-    const data: Update_Blogs_Input = {
-      title,
-      content,
-    };
-    if (statusName) {
-      const statusForInput = await this.fetchBlogStatusInputFor(statusName);
-      data.status = { id: statusForInput.id, name: statusName };
-    }
-    const result = await this._urqlService.mutation(UpdateBlogDocument, {
-      id: id,
-      data: data,
-    });
-    return result.data.blog;
-  }
-
-  async createBlog(
-    title: string,
-    content: string,
-    statusName: BlogStatusNameEnum,
-  ): Promise<BlogFragment> {
-    const statusForInput = await this.fetchBlogStatusInputFor(statusName);
-    const data: Create_Blogs_Input = {
-      title,
-      content,
-      status: { id: statusForInput.id, name: statusName },
-    };
-    const result = await this._urqlService.mutation(CreateBlogDocument, {
-      data: data,
-    });
-    return result.data.blog;
-  }
-
-  async deleteBlog(id: string): Promise<void> {
-    const args: DeleteBlogMutationVariables = {
-      id: id,
-    };
-    await this._urqlService.mutation(DeleteBlogDocument, args);
-  }
-
-  async fetchPublishedBlogs(): Promise<BlogFragment[]> {
-    return await this.fetchBlogs(BlogStatusNameEnum.Published, [
-      '-date_created',
-    ]);
-  }
-
-  async fetchLatestDraft(): Promise<BlogFragment | null> {
-    const args: UserBlogsQueryVariables = {
-      userId: this._storageService.me!.id,
-      statusName: BlogStatusNameEnum.Draft,
-      sortFields: ['-date_created'],
-      offset: 0,
-      limit: 1,
-    };
+  async fetchUserBlogs(args: UserBlogsQueryVariables): Promise<BlogFragment[]> {
     const result = await this._urqlService.query(UserBlogsDocument, args);
-    return result.data.blogs.length > 0 ? result.data.blogs[0] : null;
+    return result.data.blogs;
   }
 
-  async saveDraft(
-    blogId: string,
-    title: string,
-    content: string,
-  ): Promise<BlogFragment> {
-    return blogId
-      ? await this.updateBlog(blogId, title, content)
-      : await this.createBlog(content, title, BlogStatusNameEnum.Draft);
+  async updateBlog(args: UpdateBlogMutationVariables): Promise<BlogFragment> {
+    const result = await this._urqlService.mutation(UpdateBlogDocument, args);
+    return result.data.blog;
+  }
+
+  async createBlog(args: CreateBlogMutationVariables): Promise<BlogFragment> {
+    const result = await this._urqlService.mutation(CreateBlogDocument, args);
+    return result.data.blog;
+  }
+
+  async deleteBlog(args: DeleteBlogMutationVariables): Promise<void> {
+    await this._urqlService.mutation(DeleteBlogDocument, args);
   }
 }

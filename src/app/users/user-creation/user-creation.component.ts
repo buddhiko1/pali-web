@@ -12,7 +12,6 @@ import { CombinedError } from '@urql/core';
 import { LoadingComponent } from 'src/app/ui/loading/loading.component';
 import { FormDialogComponent } from 'src/app/ui/form-dialog/form-dialog.component';
 import { InfoDialogComponent } from 'src/app/ui/info-dialog/info-dialog.component';
-import { CreateUserMutationVariables } from 'src/gql/graphql';
 import { NavigationService } from 'src/app/shared/services/navigation.service';
 import { RoleEnum } from 'src/app/shared/values/cms.values';
 import { PromptEnum } from 'src/app/shared/values/prompts.values';
@@ -71,22 +70,18 @@ export class UserCreationComponent implements OnInit {
     if (this.form.invalid) {
       return;
     }
-
     const roles: UserRoleFragment[] = await this._usersService.fetchRoles();
     const role = roles.find((role) => role.name === RoleEnum.User);
     if (!role) {
       throw new Error('user role not founded');
     }
-    const args: CreateUserMutationVariables = {
-      email: this.form.getRawValue().email,
-      role: role.id,
-      urlForActive: this._urlService.urlForActiveUser,
-    };
-
     this.isLoading = true;
-
     this._usersService
-      .createUser(args)
+      .createUser({
+        email: this.form.getRawValue().email,
+        role: role.id,
+        urlForActive: this._urlService.urlForActiveUser,
+      })
       .then(() => {
         // wait for 3 seconds for user to receive the email.
         timer(3000).subscribe(() => {

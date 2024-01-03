@@ -7,6 +7,7 @@ graphql(`
       text
     }
   }
+
   query Dictionaries {
     dictionaries(sort: ["index"]) {
       index

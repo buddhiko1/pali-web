@@ -11,15 +11,15 @@ graphql(`
       id
       email
       avatar {
-        filename_disk
+        id
       }
     }
     date_created
     date_updated
-    content @include(if: $withContent)
+    content @include(if: $returnContent)
   }
 
-  query BlogById($id: ID!, $withContent: Boolean = true) {
+  query BlogById($id: ID!, $returnContent: Boolean!) {
     blog: blogs_by_id(id: $id) {
       ...Blog
     }
@@ -30,7 +30,7 @@ graphql(`
     $sortFields: [String!]!
     $offset: Int!
     $limit: Int!
-    $withContent: Boolean = false
+    $returnContent: Boolean!
   ) {
     blogs(
       filter: { status: { name: { _eq: $statusName } } }
@@ -48,7 +48,7 @@ graphql(`
     $sortFields: [String!]!
     $offset: Int!
     $limit: Int!
-    $withContent: Boolean = false
+    $returnContent: Boolean!
   ) {
     blogs(
       filter: {
@@ -70,10 +70,7 @@ graphql(`
     }
   }
 
-  mutation CreateBlog(
-    $data: create_blogs_input!
-    $withContent: Boolean = false
-  ) {
+  mutation CreateBlog($data: create_blogs_input!, $returnContent: Boolean!) {
     blog: create_blogs_item(data: $data) {
       ...Blog
     }
@@ -88,7 +85,7 @@ graphql(`
   mutation UpdateBlog(
     $id: ID!
     $data: update_blogs_input!
-    $withContent: Boolean = false
+    $returnContent: Boolean!
   ) {
     blog: update_blogs_item(id: $id, data: $data) {
       ...Blog
