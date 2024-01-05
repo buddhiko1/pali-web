@@ -1,10 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { TitleCasePipe } from '@angular/common';
 import { Router, NavigationEnd, RouterLink } from '@angular/router';
 import { fromEvent, throttleTime } from 'rxjs';
 
 import { FadeInDirective } from '../shared/directives/fade-in.directive';
-import { UrlService } from '../shared/services/url.service';
 import { PlusSvgComponent } from '../svg/plus/plus.component';
 import { MoonSvgComponent } from '../svg/moon/moon.component';
 import { SunSvgComponent } from '../svg/sun/sun.component';
@@ -13,7 +12,7 @@ import { UserAvatarComponent } from '../users/shared/user-avatar/user-avatar.com
 import { StorageService } from '../shared/services/storage.service';
 import { ThemeEnum } from './navbar.model';
 import { NavbarService } from './navbar.service';
-import { RoutesFragment, UserFragment } from 'src/gql/graphql';
+import { UserFragment } from 'src/gql/graphql';
 
 @Component({
   selector: 'app-navbar',
@@ -31,30 +30,46 @@ import { RoutesFragment, UserFragment } from 'src/gql/graphql';
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.css',
 })
-export class NavbarComponent {
-  private _activeUrl = '';
+export class NavbarComponent implements OnInit {
+  activedUrl = '';
   private _previousScrollPosition = 0;
   private _isMenuHaveBeenToggled = false;
   ThemeEnum: typeof ThemeEnum = ThemeEnum;
   showOverlay = false;
   isCollapsed = false;
   isMenuOpened = false;
-  routes: RoutesFragment[] = [];
+  routes = [
+    {
+      name: 'dictionaries',
+      path: '/dictionaries',
+    },
+    {
+      name: 'books',
+      path: '/books',
+    },
+    {
+      name: 'grammar',
+      path: '/grammar',
+    },
+    {
+      name: 'vocabulary',
+      path: '/vocabulary',
+    },
+    {
+      name: 'reading',
+      path: '/reading',
+    },
+    {
+      name: 'blogs',
+      path: '/blogs',
+    },
+  ];
 
   constructor(
     private _router: Router,
     private _storageService: StorageService,
     private _navbarService: NavbarService,
-    private _urlService: UrlService,
   ) {
-    this._navbarService.fetchRoutes().then((routes) => {
-      this.routes = routes;
-    });
-    this._router.events.subscribe((event) => {
-      if (event instanceof NavigationEnd) {
-        this._activeUrl = event.url.split('/')[1];
-      }
-    });
     fromEvent(document, 'scroll')
       .pipe(throttleTime(100))
       .subscribe(() => {
@@ -68,6 +83,14 @@ export class NavbarComponent {
         }
         this._previousScrollPosition = currentScrollPosition;
       });
+  }
+
+  ngOnInit(): void {
+    this._router.events.subscribe((event) => {
+      if (event instanceof NavigationEnd) {
+        this.activedUrl = event.url;
+      }
+    });
   }
 
   toggleMenu(): void {
@@ -93,10 +116,6 @@ export class NavbarComponent {
     return this._storageService.me;
   }
 
-  get urlForMe(): string {
-    return this._urlService.urlForMe;
-  }
-
   get theme(): ThemeEnum {
     return this._navbarService.theme;
   }
@@ -108,16 +127,11 @@ export class NavbarComponent {
     return '';
   }
 
-  routeTo(url: string): void {
-    if (this._activeUrl !== url) {
-      if (this.isMenuOpened) {
-        this.toggleMenu();
-      }
-      this._router.navigateByUrl(url);
+  routeToUserDetail(): void {
+    if (this.me?.id) {
+      this._router.navigate(['/users/detail', this.me?.id]);
+    } else {
+      this._router.navigate(['/auth/login']);
     }
-  }
-
-  isActiveUrl(url: string): boolean {
-    return url === this._activeUrl;
   }
 }

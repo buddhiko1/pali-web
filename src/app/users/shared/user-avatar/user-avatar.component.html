@@ -1,15 +1,31 @@
 <div class="c-container">
-  <button (click)="onAvatarClick()">
-    @if (avatar) {
-      <img
-        class="rounded-full"
-        [src]="avatarUrl"
-        [style.height]="size"
-        [style.width]="size"
-        alt="avatar"
-      />
-    } @else {
-      <app-person-svg [class]="['gc-svg', 'gu-hover']" [size]="size" />
-    }
-  </button>
+  @if (clickable) {
+    <button (click)="onAvatarClick($event)">
+      @if (avatar) {
+        <img
+          class="rounded-full"
+          [src]="avatarUrl"
+          [style.height]="size"
+          [style.width]="size"
+          alt="avatar"
+        />
+      } @else {
+        <app-person-svg [class]="['gc-svg', 'gu-hover']" [size]="size" />
+      }
+    </button>
+  } @else {
+    <div>
+      @if (avatar) {
+        <img
+          class="rounded-full"
+          [src]="avatarUrl"
+          [style.height]="size"
+          [style.width]="size"
+          alt="avatar"
+        />
+      } @else {
+        <app-person-svg [class]="['gc-svg']" [size]="size" />
+      }
+    </div>
+  }
 </div>

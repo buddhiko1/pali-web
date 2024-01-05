@@ -83,7 +83,7 @@ export class BlogEditorComponent implements OnInit {
         data: {
           title: this.title,
           content: this.wysiwyg.content,
-          status: { id: blogStatusInput.id, name: blogStatusInput.name },
+          status: { id: blogStatusInput.id },
         },
         returnContent: true,
       });
@@ -111,7 +111,7 @@ export class BlogEditorComponent implements OnInit {
         data: {
           title: this.title,
           content: this.wysiwyg.content,
-          status: { id: blogStatusInput.id, name: blogStatusInput.name },
+          status: { id: blogStatusInput.id },
         },
         returnContent: true,
       });
@@ -122,7 +122,7 @@ export class BlogEditorComponent implements OnInit {
           data: {
             title: this.title,
             content: this.wysiwyg.content,
-            status: { id: blogStatusInput.id, name: blogStatusInput.name },
+            status: { id: blogStatusInput.id },
           },
           returnContent: true,
         });

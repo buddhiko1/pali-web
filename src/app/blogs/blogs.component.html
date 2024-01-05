@@ -1,5 +1,5 @@
 <div>
-  <button class="gc-button" (click)="routeToBlogEditor()">
+  <button [routerLink]="['/blogs/editor']" class="gc-button">
     <p class="gc-text">Create</p>
   </button>
   <app-blog-list [blogs]="blogs" />

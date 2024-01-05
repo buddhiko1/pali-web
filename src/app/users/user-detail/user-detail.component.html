@@ -6,7 +6,11 @@
       class="c-container mt-24 tablat:mt-48 pc:mt-[20vh]"
     >
       <div class="c-content">
-        <app-user-avatar [size]="'6rem'" [avatarId]="user.avatar?.id" />
+        <app-user-avatar
+          [clickable]="false"
+          [size]="'6rem'"
+          [avatarId]="user.avatar?.id"
+        />
         <p class="text-text">{{ user.email }}</p>
       </div>
     </section>

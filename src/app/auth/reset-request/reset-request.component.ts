@@ -12,7 +12,6 @@ import { FormDialogComponent } from 'src/app/ui/form-dialog/form-dialog.componen
 import { InfoDialogComponent } from 'src/app/ui/info-dialog/info-dialog.component';
 import { NavigationService } from 'src/app/shared/services/navigation.service';
 import { PromptEnum } from 'src/app/shared/values/prompts.values';
-import { UrlService } from 'src/app/shared/services/url.service';
 import { UnRegisteredEmailValidator } from 'src/app/users/shared/email.validator';
 import { AuthService } from '../auth.service';
 
@@ -36,7 +35,6 @@ export class ResetRequestComponent implements OnInit {
   successInfo = '';
 
   constructor(
-    private _urlService: UrlService,
     private _authService: AuthService,
     private _unregisteredEmailValidator: UnRegisteredEmailValidator,
     private _navigationService: NavigationService,
@@ -66,7 +64,7 @@ export class ResetRequestComponent implements OnInit {
     this._authService
       .requestPasswordReset({
         email: this.form.getRawValue().email,
-        urlForReset: this._urlService.urlForPasswordReset,
+        urlForReset: `${location.origin}/auth/password-reset`,
       })
       .then(() => {
         this.isLoading = false;

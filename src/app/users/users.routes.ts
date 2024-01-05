@@ -15,7 +15,7 @@ export const USERS_ROUTES: Routes = [
       ),
   },
   {
-    path: 'creation',
+    path: 'signup',
     loadComponent: () =>
       import('./user-creation/user-creation.component').then(
         (m) => m.UserCreationComponent,

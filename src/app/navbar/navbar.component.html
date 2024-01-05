@@ -15,10 +15,10 @@
       class="c-banner px-phoneXspan tablat:px-tablatXspan pc:px-0 pt-1 pc:pt-6 shadow-sm tablat:shadow-none"
     >
       <button
-        (click)="routeTo('')"
+        [routerLink]="['/home']"
         class="c-logo -ml-3 p-3 pc:py-3 text-2xl pc:text-3xl uppercase tracking-widest font-bold text-logo"
       >
-        <p class="gu-hover" [class.text-focus]="isActiveUrl('')">Pali</p>
+        <p class="gu-hover" [class.text-focus]="activedUrl === '/home'">Pali</p>
       </button>
 
       <button
@@ -57,9 +57,9 @@
         @for (item of routes; track item.name) {
           <li class="c-route-item mt-2 pc:mt-0 pc:mx-[0.7vw]">
             <button
-              (click)="routeTo(item.route)"
+              [routerLink]="[item.path]"
               class="gc-text gu-hover pc:px-1 pc:py-1"
-              [class.text-focus]="isActiveUrl(item.route)"
+              [class.text-focus]="activedUrl === item.path"
             >
               {{ item.name | titlecase }}
             </button>
@@ -80,14 +80,14 @@
         }
       </button>
 
-      <button (click)="routeTo('email')" class="c-email p-1 pc:mx-6">
+      <button [routerLink]="['/email']" class="c-email p-1 pc:mx-6">
         <app-email-svg
           [class]="[
             'gc-svg',
             'gu-hover',
             'w-5',
             'h-5',
-            isActiveUrl('email') ? 'text-focus' : ''
+            activedUrl === 'email' ? 'text-focus' : ''
           ]"
         />
       </button>
@@ -96,7 +96,7 @@
         class="c-user px-1"
         [avatarId]="me?.avatar?.id"
         [size]="'1.5rem'"
-        (avatarClick)="routeTo(urlForMe)"
+        (avatarClick)="routeToUserDetail()"
       />
     </div>
   </nav>

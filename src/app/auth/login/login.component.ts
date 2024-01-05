@@ -5,14 +5,14 @@ import {
   Validators,
   ReactiveFormsModule,
 } from '@angular/forms';
-import { Router } from '@angular/router';
+import { RouterLink, Router } from '@angular/router';
 import { CombinedError } from '@urql/core';
 
 import { LoadingComponent } from 'src/app/ui/loading/loading.component';
 import { FormDialogComponent } from 'src/app/ui/form-dialog/form-dialog.component';
 import { InfoDialogComponent } from 'src/app/ui/info-dialog/info-dialog.component';
 import { UnRegisteredEmailValidator } from 'src/app/users/shared/email.validator';
-import { UrlService } from 'src/app/shared/services/url.service';
+import { StorageService } from 'src/app/shared/services/storage.service';
 import { AuthService } from '../auth.service';
 import { UsersService } from 'src/app/users/users.service';
 
@@ -22,6 +22,7 @@ import { UsersService } from 'src/app/users/users.service';
   styleUrl: './login.component.css',
   standalone: true,
   imports: [
+    RouterLink,
     ReactiveFormsModule,
     LoadingComponent,
     FormDialogComponent,
@@ -36,7 +37,7 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private _router: Router,
-    private _urlService: UrlService,
+    private _storageService: StorageService,
     private _authService: AuthService,
     private _usersService: UsersService,
     private _unRegisteredEmailValidator: UnRegisteredEmailValidator,
@@ -82,7 +83,7 @@ export class LoginComponent implements OnInit {
       })
       .then(() => {
         this._usersService.fetchMe().then(() => {
-          this._router.navigateByUrl('users/me');
+          this._router.navigate(['/users/detail', this._storageService.me!.id]);
         });
       })
       .catch((error: CombinedError) => {
@@ -94,13 +95,5 @@ export class LoginComponent implements OnInit {
 
   onErrorDialogSubmit(): void {
     this.error = '';
-  }
-
-  onPasswordRequestReset(): void {
-    this._router.navigateByUrl(this._urlService.urlForRequestPasswordReset);
-  }
-
-  onCreateUser(): void {
-    this._router.navigateByUrl(this._urlService.urlForCreateUser);
   }
 }

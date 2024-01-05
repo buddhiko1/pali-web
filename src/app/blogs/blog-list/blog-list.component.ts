@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { RouterLink, Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
 import { UserAvatarComponent } from 'src/app/users/shared/user-avatar/user-avatar.component';
@@ -16,5 +16,8 @@ export class BlogListComponent {
   @Input()
   blogs: BlogFragment[] = [];
 
-  constructor() {}
+  constructor(private _router: Router) {}
+  onAvatarClick(userId: string) {
+    this._router.navigate(['../users/detail', userId]);
+  }
 }

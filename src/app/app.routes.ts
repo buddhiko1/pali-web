@@ -2,8 +2,9 @@ import { Routes } from '@angular/router';
 import { PlaceholderPageComponent } from './placeholder-page/placeholder-page.component';
 
 export const APP_ROUTES: Routes = [
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
   {
-    path: '',
+    path: 'home',
     loadComponent: () =>
       import('./home/home.component').then((m) => m.HomeComponent),
   },

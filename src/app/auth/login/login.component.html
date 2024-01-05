@@ -39,7 +39,7 @@
             <div class="c-password-label">
               <label for="password" class="gd-text">Password</label>
               <button
-                (click)="onPasswordRequestReset()"
+                [routerLink]="['/auth/reset-request']"
                 class="gc-link-button text-sm"
               >
                 Forgot?
@@ -72,7 +72,10 @@
         </form>
         <p class="c-tips gd-text">
           <span>Don't have an account?</span
-          ><button (click)="onCreateUser()" class="gc-link-button text-sm ml-4">
+          ><button
+            [routerLink]="['/users/signup']"
+            class="gc-link-button text-sm ml-4"
+          >
             Sign Up
           </button>
         </p>

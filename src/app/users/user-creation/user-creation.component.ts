@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import {
   FormGroup,
   FormControl,
@@ -15,7 +15,6 @@ import { InfoDialogComponent } from 'src/app/ui/info-dialog/info-dialog.componen
 import { NavigationService } from 'src/app/shared/services/navigation.service';
 import { RoleEnum } from 'src/app/shared/values/cms.values';
 import { PromptEnum } from 'src/app/shared/values/prompts.values';
-import { UrlService } from 'src/app/shared/services/url.service';
 import { RegisteredEmailValidator } from '../shared/email.validator';
 import { UsersService } from '../users.service';
 import { UserRoleFragment } from 'src/gql/graphql';
@@ -26,6 +25,7 @@ import { UserRoleFragment } from 'src/gql/graphql';
   styleUrl: './user-creation.component.css',
   standalone: true,
   imports: [
+    RouterLink,
     ReactiveFormsModule,
     LoadingComponent,
     FormDialogComponent,
@@ -43,7 +43,6 @@ export class UserCreationComponent implements OnInit {
     private _router: Router,
     private _usersService: UsersService,
     private _registeredEmailValidator: RegisteredEmailValidator,
-    private _urlService: UrlService,
     private _navigationService: NavigationService,
   ) {}
 
@@ -73,14 +72,14 @@ export class UserCreationComponent implements OnInit {
     const roles: UserRoleFragment[] = await this._usersService.fetchRoles();
     const role = roles.find((role) => role.name === RoleEnum.User);
     if (!role) {
-      throw new Error('user role not founded');
+      throw new Error('user role is not exsits');
     }
     this.isLoading = true;
     this._usersService
       .createUser({
         email: this.form.getRawValue().email,
         role: role.id,
-        urlForActive: this._urlService.urlForActiveUser,
+        urlForActive: `${location.origin}/users/activation`,
       })
       .then(() => {
         // wait for 3 seconds for user to receive the email.
@@ -96,15 +95,11 @@ export class UserCreationComponent implements OnInit {
       });
   }
 
-  routeToLogin(): void {
-    this._router.navigateByUrl(this._urlService.urlForLogin);
-  }
-
   onErrorDialogSubmit(): void {
     this._navigationService.goBack();
   }
 
   onSuccessDialogSubmit(): void {
-    this.routeToLogin();
+    this._router.navigate(['/auth/login']);
   }
 }

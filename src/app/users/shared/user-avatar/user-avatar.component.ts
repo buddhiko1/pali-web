@@ -13,6 +13,7 @@ import { AvatarFragment } from 'src/gql/graphql';
   styleUrl: './user-avatar.component.css',
 })
 export class UserAvatarComponent {
+  @Input() clickable = true;
   @Input() size = '4rem';
   @Input()
   set avatarId(value: string | undefined) {
@@ -44,7 +45,8 @@ export class UserAvatarComponent {
     }
   }
 
-  async onAvatarClick(): Promise<void> {
+  async onAvatarClick(e: Event): Promise<void> {
+    e.preventDefault();
     this.avatarClick.emit();
   }
 }

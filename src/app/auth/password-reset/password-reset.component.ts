@@ -13,7 +13,6 @@ import { FormDialogComponent } from 'src/app/ui/form-dialog/form-dialog.componen
 import { InfoDialogComponent } from 'src/app/ui/info-dialog/info-dialog.component';
 import { NavigationService } from 'src/app/shared/services/navigation.service';
 import { PromptEnum } from 'src/app/shared/values/prompts.values';
-import { UrlService } from 'src/app/shared/services/url.service';
 import { AuthService } from '../auth.service';
 
 @Component({
@@ -40,12 +39,11 @@ export class PasswordResetComponent implements OnInit {
 
   constructor(
     private _router: Router,
-    private _activeRoute: ActivatedRoute,
+    private _activedRoute: ActivatedRoute,
     private _navigationService: NavigationService,
-    private _urlService: UrlService,
     private _authService: AuthService,
   ) {
-    this._activeRoute.queryParams.subscribe((params) => {
+    this._activedRoute.queryParams.subscribe((params) => {
       this._token = params['token'];
       this._email = JSON.parse(
         window.atob(params['token'].split('.')[1]),
@@ -96,6 +94,6 @@ export class PasswordResetComponent implements OnInit {
 
   async onSuccessDialogSubmit(): Promise<void> {
     await this._authService.logout();
-    this._router.navigateByUrl(this._urlService.urlForLogin);
+    this._router.navigate(['/auth/login']);
   }
 }

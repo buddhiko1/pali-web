@@ -12,7 +12,6 @@ import { LoadingComponent } from 'src/app/ui/loading/loading.component';
 import { FormDialogComponent } from 'src/app/ui/form-dialog/form-dialog.component';
 import { InfoDialogComponent } from 'src/app/ui/info-dialog/info-dialog.component';
 import { NavigationService } from 'src/app/shared/services/navigation.service';
-import { UrlService } from 'src/app/shared/services/url.service';
 import { UsersService } from '../users.service';
 
 @Component({
@@ -40,7 +39,6 @@ export class UserActivationComponent implements OnInit {
     private _router: Router,
     private _activeRoute: ActivatedRoute,
     private _usersService: UsersService,
-    private _urlService: UrlService,
     private _navigationService: NavigationService,
   ) {
     this._activeRoute.queryParams.subscribe((params) => {
@@ -75,7 +73,7 @@ export class UserActivationComponent implements OnInit {
       })
       .then(() => {
         this.isLoading = false;
-        this._router.navigateByUrl(this._urlService.urlForLogin);
+        this._router.navigate(['/auth/login']);
       })
       .catch((error: CombinedError) => {
         this.isLoading = false;
