@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, RouterLink } from '@angular/router';
 
 import { FadeInDirective } from 'src/app/shared/directives/fade-in.directive';
+import { StorageService } from 'src/app/shared/services/storage.service';
 import { UsersService } from '../users.service';
 import { UserAvatarComponent } from '../shared/user-avatar/user-avatar.component';
+import { UserSettingComponent } from '../user-setting/user-setting.component';
 import { UserFragment } from 'src/gql/graphql';
 
 @Component({
@@ -11,7 +13,12 @@ import { UserFragment } from 'src/gql/graphql';
   templateUrl: './user-detail.component.html',
   styleUrl: './user-detail.component.css',
   standalone: true,
-  imports: [FadeInDirective, UserAvatarComponent],
+  imports: [
+    FadeInDirective,
+    RouterLink,
+    UserSettingComponent,
+    UserAvatarComponent,
+  ],
 })
 export class UserDetailComponent implements OnInit {
   user!: UserFragment;
@@ -19,6 +26,7 @@ export class UserDetailComponent implements OnInit {
   constructor(
     private _route: ActivatedRoute,
     private _usersService: UsersService,
+    private _storageService: StorageService,
   ) {}
 
   ngOnInit(): void {
@@ -30,5 +38,9 @@ export class UserDetailComponent implements OnInit {
       .then((user) => {
         this.user = user;
       });
+  }
+
+  get isMyself(): boolean {
+    return this.user?.id === this._storageService.me?.id;
   }
 }

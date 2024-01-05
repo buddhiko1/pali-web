@@ -3,9 +3,12 @@ import { isLoggedGuardFn } from '../shared/services/guard.fn';
 
 export const USERS_ROUTES: Routes = [
   {
-    path: 'me',
+    path: 'setting',
     canActivate: [isLoggedGuardFn],
-    loadComponent: () => import('./me/me.component').then((m) => m.MeComponent),
+    loadComponent: () =>
+      import('./user-setting/user-setting.component').then(
+        (m) => m.UserSettingComponent,
+      ),
   },
   {
     path: 'detail/:id',

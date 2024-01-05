@@ -5,18 +5,18 @@ import { StorageService } from 'src/app/shared/services/storage.service';
 import { UploaderComponent } from 'src/app/uploader/uploader.component';
 import { FadeInDirective } from 'src/app/shared/directives/fade-in.directive';
 import { AuthService } from 'src/app/auth/auth.service';
-import { UserFragment } from 'src/gql/graphql';
 import { UsersService } from '../users.service';
 import { UserAvatarComponent } from '../shared/user-avatar/user-avatar.component';
+import { UserFragment } from 'src/gql/graphql';
 
 @Component({
-  selector: 'app-me',
-  templateUrl: './me.component.html',
-  styleUrl: './me.component.css',
+  selector: 'app-user-setting',
+  templateUrl: './user-setting.component.html',
+  styleUrl: './user-setting.component.css',
   standalone: true,
   imports: [FadeInDirective, UploaderComponent, UserAvatarComponent],
 })
-export class MeComponent {
+export class UserSettingComponent {
   showUploader = false;
 
   constructor(
@@ -59,6 +59,6 @@ export class MeComponent {
 
   async onLogout(): Promise<void> {
     await this._authService.logout();
-    this._router.navigateByUrl('');
+    this._router.navigate(['/']);
   }
 }

@@ -15,4 +15,7 @@
       </div>
     </section>
   }
+  @if (isMyself) {
+    <button class="gc-button" [routerLink]="['/users/setting']">Setting</button>
+  }
 </div>
