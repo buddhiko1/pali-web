@@ -59,6 +59,6 @@ export class UserSettingComponent {
 
   async onLogout(): Promise<void> {
     await this._authService.logout();
-    this._router.navigate(['/']);
+    this._router.navigate(['/home']);
   }
 }

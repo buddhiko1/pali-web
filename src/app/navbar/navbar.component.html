@@ -18,7 +18,12 @@
         [routerLink]="['/home']"
         class="c-logo -ml-3 p-3 pc:py-3 text-2xl pc:text-3xl uppercase tracking-widest font-bold text-logo"
       >
-        <p class="gu-hover" [class.text-focus]="activedUrl === '/home'">Pali</p>
+        <p
+          class="gu-hover"
+          [class.text-focus]="activedUrl === '/home' || activedUrl === '/'"
+        >
+          Pali
+        </p>
       </button>
 
       <button
