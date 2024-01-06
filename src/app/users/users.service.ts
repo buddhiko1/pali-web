@@ -77,9 +77,8 @@ export class UsersService {
     return result.data.users.length ? result.data.users[0] : null;
   }
 
-  async createUser(args: CreateUserMutationVariables): Promise<UserFragment> {
-    const result = await this._urqlService.mutation(CreateUserDocument, args);
-    return result.data.user;
+  async createUser(args: CreateUserMutationVariables): Promise<void> {
+    await this._urqlService.mutation(CreateUserDocument, args);
   }
 
   async activeUser(args: ActiveUserMutationVariables): Promise<void> {
