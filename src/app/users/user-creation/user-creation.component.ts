@@ -7,7 +7,6 @@ import {
   ReactiveFormsModule,
 } from '@angular/forms';
 import { timer } from 'rxjs';
-import { CombinedError } from '@urql/core';
 
 import { LoadingComponent } from 'src/app/ui/loading/loading.component';
 import { FormDialogComponent } from 'src/app/ui/form-dialog/form-dialog.component';
@@ -71,38 +70,33 @@ export class UserCreationComponent implements OnInit {
     }
     const roles: UserRoleFragment[] = await this._usersService.fetchRoles();
     const role = roles.find((role) => role.name === RoleEnum.User);
-    if (!role) {
-      throw new Error('user role is not exsits');
-    }
     this.isLoading = true;
-    this._usersService
-      .createUser({
-        email: this.form.getRawValue().email,
-        role: role.id,
+    const email = this.form.getRawValue().email;
+    try {
+      await this._usersService.createUser({
+        email: email,
+        role: role!.id,
         urlForActive: `${location.origin}/users/activation`,
-      })
-      .then((user) => {
-        // create default alais with user id
-        this._usersService
-          .createUserProfile({
-            data: {
-              alais: user.id,
-              user: { id: user.id },
-            },
-          })
-          .then(() => {
-            // wait for 3 seconds for user to receive the email.
-            timer(3000).subscribe(() => {
-              this.isLoading = false;
-              this.successInfo = PromptEnum.SignUp;
-            });
-          });
-      })
-      .catch((error: CombinedError) => {
-        this.isLoading = false;
-        this.error =
-          error.networkError?.message ?? error.graphQLErrors[0].message;
       });
+      const createdUser = await this._usersService.fetchUserByEmail({
+        email: email,
+      });
+      await this._usersService.createUserProfile({
+        data: {
+          alais: createdUser!.id,
+          user: { id: createdUser!.id },
+        },
+      });
+      timer(3000).subscribe(() => {
+        this.isLoading = false;
+        this.successInfo = PromptEnum.SignUp;
+      });
+      /* eslint-disable */
+    } catch (error: any) {
+      this.isLoading = false;
+      this.error =
+        error.networkError?.message ?? error.graphQLErrors[0].message;
+    }
   }
 
   onErrorDialogSubmit(): void {

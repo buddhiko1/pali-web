@@ -64,7 +64,7 @@ graphql(`
 
   query UserByEmail($email: String!) {
     users(filter: { email: { _eq: $email } }) {
-      id
+      ...User
     }
   }
 

@@ -4,6 +4,7 @@ import { StorageService } from '../shared/services/storage.service';
 import { SystemUrqlService } from '../urql/urql.service';
 import {
   UserByEmailDocument,
+  UserByEmailQueryVariables,
   UserRoleFragment,
   UserRolesDocument,
   UserFragment,
@@ -38,13 +39,6 @@ export class UsersService {
     private _urqlService: SystemUrqlService,
   ) {}
 
-  async isRegisteredEmail(email: string): Promise<boolean> {
-    const result = await this._urqlService.query(UserByEmailDocument, {
-      email,
-    });
-    return !!result?.data?.users?.length;
-  }
-
   async fetchRoles(): Promise<UserRoleFragment[]> {
     const result = await this._urqlService.query(UserRolesDocument, {});
     return result.data.roles;
@@ -74,6 +68,13 @@ export class UsersService {
   async fetchUserById(args: UserByIdQueryVariables): Promise<UserFragment> {
     const result = await this._urqlService.query(UserByIdDocument, args);
     return result.data.user;
+  }
+
+  async fetchUserByEmail(
+    args: UserByEmailQueryVariables,
+  ): Promise<UserFragment | null> {
+    const result = await this._urqlService.query(UserByEmailDocument, args);
+    return result.data.users.length ? result.data.users[0] : null;
   }
 
   async createUser(args: CreateUserMutationVariables): Promise<UserFragment> {
