@@ -13,7 +13,7 @@ export class UnRegisteredEmailValidator implements AsyncValidator {
 
   async validate(control: AbstractControl): Promise<ValidationErrors | null> {
     return this._usersService
-      .fetchUserByEmail(control.value)
+      .fetchUserByEmail({ email: control.value })
       .then((user) => {
         return user ? null : { unRegistered: true };
       })
@@ -27,7 +27,7 @@ export class RegisteredEmailValidator implements AsyncValidator {
 
   async validate(control: AbstractControl): Promise<ValidationErrors | null> {
     return this._usersService
-      .fetchUserByEmail(control.value)
+      .fetchUserByEmail({ email: control.value })
       .then((user) => {
         return user ? { registered: true } : null;
       })
