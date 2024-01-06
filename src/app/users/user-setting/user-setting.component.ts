@@ -26,8 +26,8 @@ export class UserSettingComponent {
     private _storageService: StorageService,
   ) {}
 
-  get me(): UserFragment | null {
-    return this._storageService.me;
+  get account(): UserFragment | null {
+    return this._storageService.account;
   }
 
   get avatarFolderId(): string {
@@ -40,16 +40,16 @@ export class UserSettingComponent {
 
   async onAvatarUploaded(newAvatarId: string): Promise<void> {
     this.showUploader = false;
-    const oldAavatarId = this.me?.avatar?.id;
+    const oldAavatarId = this.account?.avatar?.id;
 
-    const updatedMe = await this._usersService.updateMe({
+    const updatedMe = await this._usersService.updateAccount({
       data: {
         avatar: {
           id: newAvatarId,
         },
       },
     });
-    this._storageService.saveMe(updatedMe);
+    this._storageService.saveAccount(updatedMe);
     if (oldAavatarId) {
       await this._usersService.deleteOldUserAvatar({
         id: oldAavatarId,

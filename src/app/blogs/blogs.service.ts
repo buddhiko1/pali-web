@@ -7,17 +7,17 @@ import {
   BlogsQueryVariables,
   BlogByIdDocument,
   BlogByIdQueryVariables,
-  BlogStatusDocument,
-  BlogStatusQueryVariables,
-  Blog_Status,
-  UserBlogsDocument,
-  UserBlogsQueryVariables,
   CreateBlogDocument,
   CreateBlogMutationVariables,
   DeleteBlogDocument,
   DeleteBlogMutationVariables,
   UpdateBlogDocument,
   UpdateBlogMutationVariables,
+  Blog_Status,
+  BlogStatusDocument,
+  BlogStatusQueryVariables,
+  UserBlogsDocument,
+  UserBlogsQueryVariables,
 } from 'src/gql/graphql';
 
 @Injectable({
@@ -30,7 +30,7 @@ export class BlogsService {
     args: BlogStatusQueryVariables,
   ): Promise<Blog_Status> {
     const result = await this._urqlService.query(BlogStatusDocument, args);
-    return result.data.statusList[0];
+    return result.data.status[0];
   }
 
   async fetchBlogById(args: BlogByIdQueryVariables): Promise<BlogFragment> {

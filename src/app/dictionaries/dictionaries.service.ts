@@ -2,10 +2,10 @@ import { Injectable } from '@angular/core';
 
 import { DataUrqlService } from '../urql/urql.service';
 import {
-  DictionariesDocument,
   Dictionaries,
-  DictIntroductionDocument,
+  DictionariesDocument,
   Dict_Introduction,
+  DictIntroductionDocument,
 } from 'src/gql/graphql';
 
 @Injectable({

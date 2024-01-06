@@ -15,10 +15,10 @@
       <div class="c-content">
         <app-user-avatar
           [size]="'6rem'"
-          [avatarId]="me?.avatar?.id"
+          [avatarId]="account?.avatar?.id"
           (avatarClick)="onAvatarClick()"
         />
-        <p class="text-text">{{ me?.email }}</p>
+        <p class="text-text">{{ account?.email }}</p>
         <button (click)="onLogout()" class="gd-button mt-12">Logout</button>
       </div>
     </section>

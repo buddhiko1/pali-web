@@ -41,6 +41,6 @@ export class UserDetailComponent implements OnInit {
   }
 
   get isMyself(): boolean {
-    return this.user?.id === this._storageService.me?.id;
+    return this.user?.id === this._storageService.account?.id;
   }
 }

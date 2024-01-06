@@ -112,8 +112,8 @@ export class NavbarComponent implements OnInit {
     }
   }
 
-  get me(): UserFragment | null {
-    return this._storageService.me;
+  get account(): UserFragment | null {
+    return this._storageService.account;
   }
 
   get theme(): ThemeEnum {
@@ -128,8 +128,8 @@ export class NavbarComponent implements OnInit {
   }
 
   routeToUserDetail(): void {
-    if (this.me?.id) {
-      this._router.navigate(['/users/detail', this.me?.id]);
+    if (this.account?.id) {
+      this._router.navigate(['/users/detail', this.account?.id]);
     } else {
       this._router.navigate(['/auth/login']);
     }

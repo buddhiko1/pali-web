@@ -9,6 +9,46 @@ graphql(`
     }
   }
 
+  query UserAvatar($avatarId: ID!) {
+    avatar: files_by_id(id: $avatarId) {
+      ...Avatar
+    }
+  }
+
+  fragment UserRole on directus_roles {
+    id
+    name
+  }
+
+  query UserRoles {
+    roles {
+      ...UserRole
+    }
+  }
+
+  fragment UserProfile on user_profile {
+    id
+    alais
+  }
+
+  query UserProfile($userId: String!) {
+    profile: user_profile(filter: { user: { id: { _eq: $userId } } }) {
+      ...UserProfile
+    }
+  }
+
+  mutation CreateUserProfile($data: create_user_profile_input!) {
+    profile: create_user_profile_item(data: $data) {
+      ...UserProfile
+    }
+  }
+
+  mutation UpdateUserProfile($id: ID!, $data: update_user_profile_input!) {
+    profile: update_user_profile_item(id: $id, data: $data) {
+      ...UserProfile
+    }
+  }
+
   fragment User on directus_users {
     id
     first_name
@@ -20,11 +60,6 @@ graphql(`
     role {
       name
     }
-  }
-
-  fragment UserRole on directus_roles {
-    id
-    name
   }
 
   query UserByEmail($email: String!) {
@@ -39,21 +74,9 @@ graphql(`
     }
   }
 
-  query UserAvatar($avatarId: ID!) {
-    userAvatar: files_by_id(id: $avatarId) {
-      ...Avatar
-    }
-  }
-
-  query UserMe {
-    me: users_me {
+  query Account {
+    account: users_me {
       ...User
-    }
-  }
-
-  query UserRoles {
-    roles {
-      ...UserRole
     }
   }
 
@@ -65,9 +88,15 @@ graphql(`
     users_invite_accept(token: $token, password: $password)
   }
 
-  mutation UpdateMe($data: update_directus_users_input!) {
-    updatedMe: update_users_me(data: $data) {
+  mutation UpdateAccount($data: update_directus_users_input!) {
+    account: update_users_me(data: $data) {
       ...User
+    }
+  }
+
+  mutation DeleteUser($id: ID!) {
+    user: delete_users_item(id: $id) {
+      id
     }
   }
 `);

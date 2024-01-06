@@ -3,24 +3,32 @@ import { Injectable } from '@angular/core';
 import { StorageService } from '../shared/services/storage.service';
 import { SystemUrqlService } from '../urql/urql.service';
 import {
-  CreateUserDocument,
-  CreateUserMutationVariables,
-  ActiveUserDocument,
-  ActiveUserMutationVariables,
   UserByEmailDocument,
-  UserByIdDocument,
-  UserByIdQueryVariables,
-  UserFragment,
-  UserMeDocument,
   UserRoleFragment,
   UserRolesDocument,
-  UpdateMeDocument,
-  UpdateMeMutationVariables,
-  DeleteFileByIdDocument,
-  DeleteFileByIdMutationVariables,
+  UserFragment,
+  UserByIdDocument,
+  UserByIdQueryVariables,
   AvatarFragment,
   UserAvatarDocument,
   UserAvatarQueryVariables,
+  DeleteFileByIdDocument,
+  DeleteFileByIdMutationVariables,
+  UserProfileFragment,
+  UserProfileDocument,
+  UserProfileQueryVariables,
+  CreateUserProfileDocument,
+  CreateUserProfileMutationVariables,
+  UpdateUserProfileDocument,
+  UpdateUserProfileMutationVariables,
+  CreateUserDocument,
+  CreateUserMutationVariables,
+  DeleteUserDocument,
+  ActiveUserDocument,
+  ActiveUserMutationVariables,
+  AccountDocument,
+  UpdateAccountDocument,
+  UpdateAccountMutationVariables,
 } from 'src/gql/graphql';
 
 @Injectable({ providedIn: 'root' })
@@ -37,26 +45,35 @@ export class UsersService {
     return !!result?.data?.users?.length;
   }
 
-  async fetchMe(): Promise<void> {
-    const result = await this._urqlService.query(UserMeDocument, {});
-    this._storageService.saveMe(result.data.me);
+  async fetchRoles(): Promise<UserRoleFragment[]> {
+    const result = await this._urqlService.query(UserRolesDocument, {});
+    return result.data.roles;
+  }
+
+  async fetchAccount(): Promise<void> {
+    const result = await this._urqlService.query(AccountDocument, {});
+    this._storageService.saveAccount(result.data.account);
+  }
+
+  async updateAccount(
+    args: UpdateAccountMutationVariables,
+  ): Promise<UserFragment> {
+    const result = await this._urqlService.mutation(
+      UpdateAccountDocument,
+      args,
+    );
+    return result.data.account;
+  }
+
+  async deleteAccount(): Promise<void> {
+    await this._urqlService.mutation(DeleteUserDocument, {
+      id: this._storageService.account?.id,
+    });
   }
 
   async fetchUserById(args: UserByIdQueryVariables): Promise<UserFragment> {
     const result = await this._urqlService.query(UserByIdDocument, args);
     return result.data.user;
-  }
-
-  async fetchUserAvatar(
-    args: UserAvatarQueryVariables,
-  ): Promise<AvatarFragment> {
-    const result = await this._urqlService.query(UserAvatarDocument, args);
-    return result.data.userAvatar;
-  }
-
-  async fetchRoles(): Promise<UserRoleFragment[]> {
-    const result = await this._urqlService.query(UserRolesDocument, {});
-    return result.data.roles;
   }
 
   async createUser(args: CreateUserMutationVariables): Promise<void> {
@@ -67,14 +84,43 @@ export class UsersService {
     await this._urqlService.mutation(ActiveUserDocument, args);
   }
 
-  async updateMe(args: UpdateMeMutationVariables): Promise<UserFragment> {
-    const result = await this._urqlService.mutation(UpdateMeDocument, args);
-    return result.data.updatedMe;
+  async fetchUserAvatar(
+    args: UserAvatarQueryVariables,
+  ): Promise<AvatarFragment> {
+    const result = await this._urqlService.query(UserAvatarDocument, args);
+    return result.data.avatar;
   }
 
   async deleteOldUserAvatar(
     args: DeleteFileByIdMutationVariables,
   ): Promise<void> {
     await this._urqlService.mutation(DeleteFileByIdDocument, args);
+  }
+
+  async fetchUserProfile(
+    args: UserProfileQueryVariables,
+  ): Promise<UserProfileFragment> {
+    const result = await this._urqlService.query(UserProfileDocument, args);
+    return result.data.profile[0];
+  }
+
+  async createUserProfile(
+    args: CreateUserProfileMutationVariables,
+  ): Promise<UserProfileFragment> {
+    const result = await this._urqlService.mutation(
+      CreateUserProfileDocument,
+      args,
+    );
+    return result.data.profile;
+  }
+
+  async updateUserProfile(
+    args: UpdateUserProfileMutationVariables,
+  ): Promise<UserProfileFragment> {
+    const result = await this._urqlService.mutation(
+      UpdateUserProfileDocument,
+      args,
+    );
+    return result.data.profile;
   }
 }

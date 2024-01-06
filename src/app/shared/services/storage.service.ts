@@ -7,7 +7,7 @@ import { Auth_Tokens, UserFragment } from 'src/gql/graphql';
 export class StorageService {
   private _keyOfAuthToken = 'authToken';
   private _keyOfRefreshToken = 'refreshToken';
-  private _keyOfMe = 'me';
+  private _keyOfAccount = 'account';
   private _keyOfAvatarFolderId = 'avatarFolderId';
   private _keyOfWysiwygFolderId = 'wysiwygFolderId';
 
@@ -31,12 +31,12 @@ export class StorageService {
     return !!this.tokenForAccess;
   }
 
-  saveMe(me: UserFragment): void {
-    localStorage.setItem(this._keyOfMe, JSON.stringify(me));
+  saveAccount(user: UserFragment): void {
+    localStorage.setItem(this._keyOfAccount, JSON.stringify(user));
   }
 
-  get me(): UserFragment | null {
-    const data = localStorage.getItem(this._keyOfMe);
+  get account(): UserFragment | null {
+    const data = localStorage.getItem(this._keyOfAccount);
     return data ? JSON.parse(data) : null;
   }
 
@@ -59,6 +59,6 @@ export class StorageService {
   clearLoginedUserData() {
     localStorage.removeItem(this._keyOfAuthToken);
     localStorage.removeItem(this._keyOfRefreshToken);
-    localStorage.removeItem(this._keyOfMe);
+    localStorage.removeItem(this._keyOfAccount);
   }
 }

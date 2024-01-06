@@ -12,7 +12,7 @@ export const isLoggedGuardFn: CanActivateFn = () => {
 };
 
 export const isPublicGuardFn: CanActivateFn = () => {
-  const userId = inject(StorageService).me?.id;
+  const userId = inject(StorageService).account?.id;
   return inject(RoleService).isPublic
     ? true
     : inject(Router).parseUrl(`users/detail/${userId}`);

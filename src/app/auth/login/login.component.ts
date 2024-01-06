@@ -82,8 +82,11 @@ export class LoginComponent implements OnInit {
         password: this.form.getRawValue().password,
       })
       .then(() => {
-        this._usersService.fetchMe().then(() => {
-          this._router.navigate(['/users/detail', this._storageService.me!.id]);
+        this._usersService.fetchAccount().then(() => {
+          this._router.navigate([
+            '/users/detail',
+            this._storageService.account!.id,
+          ]);
         });
       })
       .catch((error: CombinedError) => {

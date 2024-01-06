@@ -1,6 +1,13 @@
 import { graphql } from 'src/gql';
 
 graphql(`
+  query BlogStatus($name: String!) {
+    status: blog_status(filter: { name: { _eq: $name } }) {
+      id
+      name
+    }
+  }
+
   fragment Blog on blogs {
     id
     title
@@ -63,22 +70,9 @@ graphql(`
     }
   }
 
-  query BlogStatus($name: String!) {
-    statusList: blog_status(filter: { name: { _eq: $name } }) {
-      id
-      name
-    }
-  }
-
   mutation CreateBlog($data: create_blogs_input!, $returnContent: Boolean!) {
     blog: create_blogs_item(data: $data) {
       ...Blog
-    }
-  }
-
-  mutation DeleteBlog($id: ID!) {
-    delete_blogs_item(id: $id) {
-      id
     }
   }
 
@@ -89,6 +83,12 @@ graphql(`
   ) {
     blog: update_blogs_item(id: $id, data: $data) {
       ...Blog
+    }
+  }
+
+  mutation DeleteBlog($id: ID!) {
+    delete_blogs_item(id: $id) {
+      id
     }
   }
 `);

@@ -58,7 +58,7 @@ export class BlogEditorComponent implements OnInit {
 
   private async _fetchLatestDraft(): Promise<void> {
     const result = await this._blogsService.fetchUserBlogs({
-      userId: this._storageService.me!.id,
+      userId: this._storageService.account!.id,
       statusName: BlogStatusNameEnum.Draft,
       sortFields: ['-date_created'],
       offset: 0,
