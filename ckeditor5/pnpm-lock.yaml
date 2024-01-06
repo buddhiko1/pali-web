@@ -53,9 +53,6 @@ dependencies:
   '@ckeditor/ckeditor5-paste-from-office':
     specifier: 40.2.0
     version: registry.npmmirror.com/@ckeditor/ckeditor5-paste-from-office@40.2.0
-  '@ckeditor/ckeditor5-style':
-    specifier: 40.2.0
-    version: registry.npmmirror.com/@ckeditor/ckeditor5-style@40.2.0
   '@ckeditor/ckeditor5-table':
     specifier: 40.2.0
     version: registry.npmmirror.com/@ckeditor/ckeditor5-table@40.2.0
@@ -111,6 +108,12 @@ devDependencies:
     version: registry.npmmirror.com/webpack-cli@4.10.0(webpack@5.89.0)
 
 packages:
+
+  /graceful-fs@4.2.11:
+    resolution: {integrity: sha512-RbJ5/jmFcNNCcDV5o9eTnBLJ/HszWV0P73bc+Ff4nS/rJj+YaS6IGyiOL0VoBYX+l1Wrl3k63h/KrH+nhJ0XvQ==, tarball: https://registry.npmmirror.com/graceful-fs/-/graceful-fs-4.2.11.tgz}
+    requiresBuild: true
+    dev: true
+    optional: true
 
   registry.npmmirror.com/@babel/code-frame@7.23.5:
     resolution: {integrity: sha512-CgH3s1a96LipHCmSUmYFPwY7MNx8C3avkq7i4Wl3cfa662ldtUe4VM1TPXX70pfmrlWTb6jLqTYrZyT2ZTJBgA==, tarball: https://registry.npmmirror.com/@babel/code-frame/-/code-frame-7.23.5.tgz}
@@ -482,15 +485,6 @@ packages:
       '@ckeditor/ckeditor5-core': registry.npmmirror.com/@ckeditor/ckeditor5-core@40.2.0
       '@ckeditor/ckeditor5-ui': registry.npmmirror.com/@ckeditor/ckeditor5-ui@40.2.0
       '@ckeditor/ckeditor5-utils': registry.npmmirror.com/@ckeditor/ckeditor5-utils@40.2.0
-    dev: false
-
-  registry.npmmirror.com/@ckeditor/ckeditor5-style@40.2.0:
-    resolution: {integrity: sha512-a4NmUKJM/svRhDI5n/+Vlp5jfeULNerEOo1kaSfhG2jx2hihmZuF2Ke7vP20bzt8SnP0Qq72WNjSpMK9CZlzjw==, tarball: https://registry.npmmirror.com/@ckeditor/ckeditor5-style/-/ckeditor5-style-40.2.0.tgz}
-    name: '@ckeditor/ckeditor5-style'
-    version: 40.2.0
-    dependencies:
-      ckeditor5: registry.npmmirror.com/ckeditor5@40.2.0
-      lodash-es: registry.npmmirror.com/lodash-es@4.17.21
     dev: false
 
   registry.npmmirror.com/@ckeditor/ckeditor5-table@40.2.0:
@@ -2093,7 +2087,7 @@ packages:
     name: jsonfile
     version: 4.0.0
     optionalDependencies:
-      graceful-fs: registry.npmmirror.com/graceful-fs@4.2.11
+      graceful-fs: 4.2.11
     dev: true
 
   registry.npmmirror.com/kind-of@6.0.3:
