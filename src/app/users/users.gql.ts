@@ -81,11 +81,11 @@ graphql(`
   }
 
   mutation CreateUser($email: String!, $role: String!, $urlForActive: String!) {
-    users_invite(email: $email, role: $role, invite_url: $urlForActive)
+    user: users_invite(email: $email, role: $role, invite_url: $urlForActive)
   }
 
   mutation ActiveUser($token: String!, $password: String!) {
-    users_invite_accept(token: $token, password: $password)
+    user: users_invite_accept(token: $token, password: $password)
   }
 
   mutation UpdateAccount($data: update_directus_users_input!) {

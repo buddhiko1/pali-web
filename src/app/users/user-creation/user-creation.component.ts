@@ -81,12 +81,22 @@ export class UserCreationComponent implements OnInit {
         role: role.id,
         urlForActive: `${location.origin}/users/activation`,
       })
-      .then(() => {
-        // wait for 3 seconds for user to receive the email.
-        timer(3000).subscribe(() => {
-          this.isLoading = false;
-          this.successInfo = PromptEnum.SignUp;
-        });
+      .then((user) => {
+        // create default alais with user id
+        this._usersService
+          .createUserProfile({
+            data: {
+              alais: user.id,
+              user: { id: user.id },
+            },
+          })
+          .then(() => {
+            // wait for 3 seconds for user to receive the email.
+            timer(3000).subscribe(() => {
+              this.isLoading = false;
+              this.successInfo = PromptEnum.SignUp;
+            });
+          });
       })
       .catch((error: CombinedError) => {
         this.isLoading = false;
