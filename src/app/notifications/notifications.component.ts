@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-// import { ChangeDetectorRef } from '@angular/core';
 
 import { ScreenService } from '../shared/services/screen.service';
 import { NotificationComponent } from './notification/notification.component';
@@ -16,7 +15,6 @@ import { Notification } from './notifications.model';
 export class NotificationsComponent implements OnInit {
   notifications: Notification[] = [];
   constructor(
-    // private _changeDetectorRef: ChangeDetectorRef,
     private _screenService: ScreenService,
     private _notificationsService: NotificationsService,
   ) {}
@@ -25,7 +23,8 @@ export class NotificationsComponent implements OnInit {
     this._notificationsService.notificationsSubject.subscribe(
       (notification) => {
         this.notifications = [...this.notifications, notification];
-        // this._changeDetectorRef.detectChanges(); // for rending the first notification immediately
+        // for rending the first notification immediately in development mode
+        // this._changeDetectorRef.detectChanges();
       },
     );
   }
