@@ -7,7 +7,7 @@ import { FadeInDirective } from 'src/app/shared/directives/fade-in.directive';
 import { AuthService } from 'src/app/auth/auth.service';
 import { UsersService } from '../users.service';
 import { UserAvatarComponent } from '../shared/user-avatar/user-avatar.component';
-import { UserFragment } from 'src/gql/graphql';
+import { UserFragment, UserProfileFragment } from 'src/gql/graphql';
 
 @Component({
   selector: 'app-user-setting',
@@ -30,6 +30,10 @@ export class UserSettingComponent {
     return this._storageService.account;
   }
 
+  get profile(): UserProfileFragment | null {
+    return this._storageService.profile;
+  }
+
   get avatarFolderId(): string {
     return this._storageService.avatarFolderId;
   }
@@ -49,7 +53,7 @@ export class UserSettingComponent {
         },
       },
     });
-    this._storageService.saveAccount(updatedMe);
+    this._storageService.account = updatedMe;
     if (oldAavatarId) {
       await this._usersService.deleteOldUserAvatar({
         id: oldAavatarId,

@@ -1,5 +1,9 @@
 import { Injectable } from '@angular/core';
-import { Auth_Tokens, UserFragment } from 'src/gql/graphql';
+import {
+  Auth_Tokens,
+  UserFragment,
+  UserProfileFragment,
+} from 'src/gql/graphql';
 
 @Injectable({
   providedIn: 'root',
@@ -8,6 +12,7 @@ export class StorageService {
   private _keyOfAuthToken = 'authToken';
   private _keyOfRefreshToken = 'refreshToken';
   private _keyOfAccount = 'account';
+  private _keyOfProfile = 'profile';
   private _keyOfAvatarFolderId = 'avatarFolderId';
   private _keyOfWysiwygFolderId = 'wysiwygFolderId';
 
@@ -31,13 +36,22 @@ export class StorageService {
     return !!this.tokenForAccess;
   }
 
-  saveAccount(user: UserFragment): void {
-    localStorage.setItem(this._keyOfAccount, JSON.stringify(user));
-  }
-
   get account(): UserFragment | null {
     const data = localStorage.getItem(this._keyOfAccount);
     return data ? JSON.parse(data) : null;
+  }
+
+  set account(user: UserFragment) {
+    localStorage.setItem(this._keyOfAccount, JSON.stringify(user));
+  }
+
+  get profile(): UserProfileFragment | null {
+    const data = localStorage.getItem(this._keyOfProfile);
+    return data ? JSON.parse(data) : null;
+  }
+
+  set profile(profile: UserProfileFragment) {
+    localStorage.setItem(this._keyOfProfile, JSON.stringify(profile));
   }
 
   get avatarFolderId(): string {
@@ -60,5 +74,6 @@ export class StorageService {
     localStorage.removeItem(this._keyOfAuthToken);
     localStorage.removeItem(this._keyOfRefreshToken);
     localStorage.removeItem(this._keyOfAccount);
+    localStorage.removeItem(this._keyOfProfile);
   }
 }

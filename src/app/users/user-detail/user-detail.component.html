@@ -1,5 +1,5 @@
 <div>
-  @if (user) {
+  @if (user && profile) {
     <section
       appFadeIn
       [fadeInDelay]="300"
@@ -11,7 +11,7 @@
           [size]="'6rem'"
           [avatarId]="user.avatar?.id"
         />
-        <p class="text-text">{{ user.email }}</p>
+        <p class="text-text">{{ profile.alais }}</p>
       </div>
     </section>
   }

@@ -22,7 +22,8 @@ import { UserFragment, UserProfileFragment } from 'src/gql/graphql';
 })
 export class UserDetailComponent implements OnInit {
   user!: UserFragment;
-  userProfile!: UserProfileFragment;
+  profile!: UserProfileFragment;
+  userId: string = '';
 
   constructor(
     private _route: ActivatedRoute,
@@ -31,20 +32,27 @@ export class UserDetailComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    const userId = this._route.snapshot.paramMap.get('id')!;
-    this._usersService
-      .fetchUserById({
-        id: userId,
-      })
-      .then((user) => {
-        this.user = user;
-      });
-    this._usersService.fetchUserProfile({ userId: userId }).then((profile) => {
-      this.userProfile = profile;
-    });
+    this.userId = this._route.snapshot.paramMap.get('id')!;
+    if (this.isMyself) {
+      this.user = this._storageService.account!;
+      this.profile = this._storageService.profile!;
+    } else {
+      this._usersService
+        .fetchUserById({
+          id: this.userId,
+        })
+        .then((user) => {
+          this.user = user;
+        });
+      this._usersService
+        .fetchUserProfile({ userId: this.userId })
+        .then((profile) => {
+          this.profile = profile;
+        });
+    }
   }
 
   get isMyself(): boolean {
-    return this.user?.id === this._storageService.account?.id;
+    return this.userId === this._storageService.account?.id;
   }
 }

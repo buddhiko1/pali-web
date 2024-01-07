@@ -12,15 +12,18 @@ import {
   providedIn: 'root',
 })
 export class DictionariesService {
-  constructor(private _urqlService: DataUrqlService) {}
+  constructor(private _dataUrqlService: DataUrqlService) {}
 
   async fetchIntroduction(): Promise<Dict_Introduction> {
-    const result = await this._urqlService.query(DictIntroductionDocument, {});
+    const result = await this._dataUrqlService.query(
+      DictIntroductionDocument,
+      {},
+    );
     return result.data.dict_introduction;
   }
 
   async fetchDictionaries(): Promise<Dictionaries[]> {
-    const result = await this._urqlService.query(DictionariesDocument, {});
+    const result = await this._dataUrqlService.query(DictionariesDocument, {});
     return result.data.dictionaries;
   }
 }

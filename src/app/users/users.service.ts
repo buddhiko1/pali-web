@@ -1,7 +1,5 @@
 import { Injectable } from '@angular/core';
-
-import { StorageService } from '../shared/services/storage.service';
-import { SystemUrqlService } from '../urql/urql.service';
+import { SystemUrqlService, DataUrqlService } from '../urql/urql.service';
 import {
   UserByEmailDocument,
   UserByEmailQueryVariables,
@@ -24,7 +22,8 @@ import {
   UpdateUserProfileMutationVariables,
   InviteUserDocument,
   InviteUserMutationVariables,
-  DeleteUserDocument,
+  DeleteAccountDocument,
+  DeleteAccountMutationVariables,
   ActiveUserDocument,
   ActiveUserMutationVariables,
   AccountDocument,
@@ -35,80 +34,84 @@ import {
 @Injectable({ providedIn: 'root' })
 export class UsersService {
   constructor(
-    private _storageService: StorageService,
-    private _urqlService: SystemUrqlService,
+    private _systemUrqlService: SystemUrqlService,
+    private _dataUrqlService: DataUrqlService,
   ) {}
 
   async fetchRoles(): Promise<UserRoleFragment[]> {
-    const result = await this._urqlService.query(UserRolesDocument, {});
+    const result = await this._systemUrqlService.query(UserRolesDocument, {});
     return result.data.roles;
   }
 
-  async fetchAccount(): Promise<void> {
-    const result = await this._urqlService.query(AccountDocument, {});
-    this._storageService.saveAccount(result.data.account);
+  async fetchAccount(): Promise<UserFragment> {
+    const result = await this._systemUrqlService.query(AccountDocument, {});
+    return result.data.account;
   }
 
   async updateAccount(
     args: UpdateAccountMutationVariables,
   ): Promise<UserFragment> {
-    const result = await this._urqlService.mutation(
+    const result = await this._systemUrqlService.mutation(
       UpdateAccountDocument,
       args,
     );
     return result.data.account;
   }
 
-  async deleteAccount(): Promise<void> {
-    await this._urqlService.mutation(DeleteUserDocument, {
-      id: this._storageService.account?.id,
-    });
+  async deleteAccount(args: DeleteAccountMutationVariables): Promise<void> {
+    await this._systemUrqlService.mutation(DeleteAccountDocument, args);
   }
 
   async fetchUserById(args: UserByIdQueryVariables): Promise<UserFragment> {
-    const result = await this._urqlService.query(UserByIdDocument, args);
+    const result = await this._systemUrqlService.query(UserByIdDocument, args);
     return result.data.user;
   }
 
   async fetchUserByEmail(
     args: UserByEmailQueryVariables,
   ): Promise<UserFragment | null> {
-    const result = await this._urqlService.query(UserByEmailDocument, args);
+    const result = await this._systemUrqlService.query(
+      UserByEmailDocument,
+      args,
+    );
     return result.data.users.length ? result.data.users[0] : null;
   }
 
   async inviteUser(args: InviteUserMutationVariables): Promise<void> {
-    await this._urqlService.mutation(InviteUserDocument, args);
+    await this._systemUrqlService.mutation(InviteUserDocument, args);
   }
 
   async activeUser(args: ActiveUserMutationVariables): Promise<void> {
-    await this._urqlService.mutation(ActiveUserDocument, args);
+    await this._systemUrqlService.mutation(ActiveUserDocument, args);
   }
 
   async fetchUserAvatar(
     args: UserAvatarQueryVariables,
   ): Promise<AvatarFragment> {
-    const result = await this._urqlService.query(UserAvatarDocument, args);
+    const result = await this._systemUrqlService.query(
+      UserAvatarDocument,
+      args,
+    );
     return result.data.avatar;
   }
 
   async deleteOldUserAvatar(
     args: DeleteFileByIdMutationVariables,
   ): Promise<void> {
-    await this._urqlService.mutation(DeleteFileByIdDocument, args);
+    await this._systemUrqlService.mutation(DeleteFileByIdDocument, args);
   }
 
   async fetchUserProfile(
     args: UserProfileQueryVariables,
   ): Promise<UserProfileFragment> {
-    const result = await this._urqlService.query(UserProfileDocument, args);
-    return result.data.profile[0];
+    const result = await this._dataUrqlService.query(UserProfileDocument, args);
+    return result.data.profiles[0];
   }
 
   async createUserProfile(
     args: CreateUserProfileMutationVariables,
   ): Promise<UserProfileFragment> {
-    const result = await this._urqlService.mutation(
+    const result = await this._systemUrqlService.mutation(
       CreateUserProfileDocument,
       args,
     );
@@ -118,7 +121,7 @@ export class UsersService {
   async updateUserProfile(
     args: UpdateUserProfileMutationVariables,
   ): Promise<UserProfileFragment> {
-    const result = await this._urqlService.mutation(
+    const result = await this._systemUrqlService.mutation(
       UpdateUserProfileDocument,
       args,
     );

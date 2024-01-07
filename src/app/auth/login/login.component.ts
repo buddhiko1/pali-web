@@ -6,7 +6,6 @@ import {
   ReactiveFormsModule,
 } from '@angular/forms';
 import { RouterLink, Router } from '@angular/router';
-import { CombinedError } from '@urql/core';
 
 import { LoadingComponent } from 'src/app/ui/loading/loading.component';
 import { FormDialogComponent } from 'src/app/ui/form-dialog/form-dialog.component';
@@ -71,29 +70,29 @@ export class LoginComponent implements OnInit {
     return this.form.get('password')!;
   }
 
-  onSubmit(): void {
+  async onSubmit(): Promise<void> {
     if (this.form.invalid) {
       return;
     }
     this.isLoading = true;
-    this._authService
-      .login({
+    try {
+      await this._authService.login({
         email: this.form.getRawValue().email,
         password: this.form.getRawValue().password,
-      })
-      .then(() => {
-        this._usersService.fetchAccount().then(() => {
-          this._router.navigate([
-            '/users/detail',
-            this._storageService.account!.id,
-          ]);
-        });
-      })
-      .catch((error: CombinedError) => {
-        this.isLoading = false;
-        this.error =
-          error.networkError?.message ?? error.graphQLErrors[0].message;
       });
+      const account = await this._usersService.fetchAccount();
+      this._storageService.account = account;
+      const profile = await this._usersService.fetchUserProfile({
+        userId: account.id,
+      });
+      this._storageService.profile = profile;
+      this._router.navigate(['/users/detail', account.id]);
+      /* eslint-disable */
+    } catch (error: any) {
+      this.isLoading = false;
+      this.error =
+        error.networkError?.message ?? error.graphQLErrors[0].message;
+    }
   }
 
   onErrorDialogSubmit(): void {

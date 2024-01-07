@@ -32,7 +32,7 @@ graphql(`
   }
 
   query UserProfile($userId: String!) {
-    profile: user_profile(filter: { user: { id: { _eq: $userId } } }) {
+    profiles: user_profile(filter: { user: { id: { _eq: $userId } } }) {
       ...UserProfile
     }
   }
@@ -94,7 +94,7 @@ graphql(`
     }
   }
 
-  mutation DeleteUser($id: ID!) {
+  mutation DeleteAccount($id: ID!) {
     user: delete_users_item(id: $id) {
       id
     }

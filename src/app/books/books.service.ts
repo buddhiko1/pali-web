@@ -7,15 +7,15 @@ import { Books, BooksDocument, Cites, CitesDocument } from 'src/gql/graphql';
   providedIn: 'root',
 })
 export class BooksService {
-  constructor(private _urqlService: DataUrqlService) {}
+  constructor(private _dataUrqlService: DataUrqlService) {}
 
   async fetchBooks(): Promise<Books[]> {
-    const result = await this._urqlService.query(BooksDocument, {});
+    const result = await this._dataUrqlService.query(BooksDocument, {});
     return result.data.books;
   }
 
   async fetchCites(): Promise<Cites[]> {
-    const result = await this._urqlService.query(CitesDocument, {});
+    const result = await this._dataUrqlService.query(CitesDocument, {});
     return result.data.cites;
   }
 }
