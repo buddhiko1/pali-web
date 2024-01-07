@@ -15,10 +15,13 @@
       <div class="c-content">
         <app-user-avatar
           [size]="'6rem'"
-          [avatarId]="account?.avatar?.id"
+          [avatarId]="account.avatar?.id"
           (avatarClick)="onAvatarClick()"
         />
-        <p class="text-text">{{ profile?.alais }}</p>
+        <input
+          [(ngModel)]="alais"
+          class="inline-block mt-12 w-32 bg-inputBg border-b border-border outline-none leading-relaxed text-text text-center"
+        />
         <button (click)="onLogout()" class="gd-button mt-12">Logout</button>
       </div>
     </section>

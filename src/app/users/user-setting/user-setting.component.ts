@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 import { StorageService } from 'src/app/shared/services/storage.service';
 import { UploaderComponent } from 'src/app/uploader/uploader.component';
@@ -14,23 +15,31 @@ import { UserFragment, UserProfileFragment } from 'src/gql/graphql';
   templateUrl: './user-setting.component.html',
   styleUrl: './user-setting.component.css',
   standalone: true,
-  imports: [FadeInDirective, UploaderComponent, UserAvatarComponent],
+  imports: [
+    FormsModule,
+    FadeInDirective,
+    UploaderComponent,
+    UserAvatarComponent,
+  ],
 })
 export class UserSettingComponent {
   showUploader = false;
+  alais = '';
 
   constructor(
     private _router: Router,
     private _usersService: UsersService,
     private _authService: AuthService,
     private _storageService: StorageService,
-  ) {}
+  ) {
+    this.alais = this.profile!.alais;
+  }
 
-  get account(): UserFragment | null {
+  get account(): UserFragment {
     return this._storageService.account;
   }
 
-  get profile(): UserProfileFragment | null {
+  get profile(): UserProfileFragment {
     return this._storageService.profile;
   }
 
@@ -44,7 +53,7 @@ export class UserSettingComponent {
 
   async onAvatarUploaded(newAvatarId: string): Promise<void> {
     this.showUploader = false;
-    const oldAavatarId = this.account?.avatar?.id;
+    const oldAavatarId = this.account.avatar?.id;
 
     const updatedMe = await this._usersService.updateAccount({
       data: {

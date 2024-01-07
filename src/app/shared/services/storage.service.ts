@@ -36,18 +36,18 @@ export class StorageService {
     return !!this.tokenForAccess;
   }
 
-  get account(): UserFragment | null {
-    const data = localStorage.getItem(this._keyOfAccount);
-    return data ? JSON.parse(data) : null;
+  get account(): UserFragment {
+    const data = localStorage.getItem(this._keyOfAccount)!;
+    return JSON.parse(data);
   }
 
   set account(user: UserFragment) {
     localStorage.setItem(this._keyOfAccount, JSON.stringify(user));
   }
 
-  get profile(): UserProfileFragment | null {
-    const data = localStorage.getItem(this._keyOfProfile);
-    return data ? JSON.parse(data) : null;
+  get profile(): UserProfileFragment {
+    const data = localStorage.getItem(this._keyOfProfile)!;
+    return JSON.parse(data);
   }
 
   set profile(profile: UserProfileFragment) {
@@ -70,7 +70,7 @@ export class StorageService {
     localStorage.setItem(this._keyOfWysiwygFolderId, value);
   }
 
-  clearLoginedUserData() {
+  clearLoginedUserData(): void {
     localStorage.removeItem(this._keyOfAuthToken);
     localStorage.removeItem(this._keyOfRefreshToken);
     localStorage.removeItem(this._keyOfAccount);

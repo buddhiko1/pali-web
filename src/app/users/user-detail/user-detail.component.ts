@@ -34,8 +34,8 @@ export class UserDetailComponent implements OnInit {
   ngOnInit(): void {
     this.userId = this._route.snapshot.paramMap.get('id')!;
     if (this.isMyself) {
-      this.user = this._storageService.account!;
-      this.profile = this._storageService.profile!;
+      this.user = this._storageService.account;
+      this.profile = this._storageService.profile;
     } else {
       this._usersService
         .fetchUserById({
@@ -53,6 +53,6 @@ export class UserDetailComponent implements OnInit {
   }
 
   get isMyself(): boolean {
-    return this.userId === this._storageService.account?.id;
+    return this.userId === this._storageService.account.id;
   }
 }

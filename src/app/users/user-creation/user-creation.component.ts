@@ -81,10 +81,13 @@ export class UserCreationComponent implements OnInit {
       const createdUser = await this._usersService.fetchUserByEmail({
         email: email,
       });
+      const defaultAlais = `user-${createdUser!.id
+        .replace(/-/g, '')
+        .substring(0, 10)}`;
       await this._usersService.createUserProfile({
         data: {
           alais: createdUser!.id,
-          user: { id: createdUser!.id },
+          user: { id: defaultAlais },
         },
       });
       timer(3000).subscribe(() => {

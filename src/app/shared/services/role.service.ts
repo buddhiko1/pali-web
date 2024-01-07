@@ -10,14 +10,18 @@ export class RoleService {
   constructor(private _storageService: StorageService) {}
 
   get isAdmin(): boolean {
-    return this._storageService.account?.role?.name === RoleEnum.Admin;
+    return this._storageService.isLoggedIn
+      ? this._storageService.account.role?.name === RoleEnum.Admin
+      : false;
   }
 
   get isUser(): boolean {
-    return this._storageService.account?.role?.name === RoleEnum.User;
+    return this._storageService.isLoggedIn
+      ? this._storageService.account.role?.name === RoleEnum.User
+      : false;
   }
 
   get isPublic(): boolean {
-    return !this.isAdmin && !this.isUser;
+    return !this._storageService.isLoggedIn;
   }
 }
