@@ -73,10 +73,10 @@ export class UserCreationComponent implements OnInit {
     this.isLoading = true;
     const email = this.form.getRawValue().email;
     try {
-      await this._usersService.createUser({
+      await this._usersService.inviteUser({
         email: email,
         role: role!.id,
-        urlForActive: `${location.origin}/users/activation`,
+        invite_url: `${location.origin}/users/activation`,
       });
       const createdUser = await this._usersService.fetchUserByEmail({
         email: email,

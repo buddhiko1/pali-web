@@ -80,8 +80,8 @@ graphql(`
     }
   }
 
-  mutation InviteUser($email: String!, $role: String!, $urlForActive: String!) {
-    users_invite(email: $email, role: $role, invite_url: $urlForActive)
+  mutation InviteUser($email: String!, $role: String!, $invite_url: String!) {
+    users_invite(email: $email, role: $role, invite_url: $invite_url)
   }
 
   mutation ActiveUser($token: String!, $password: String!) {

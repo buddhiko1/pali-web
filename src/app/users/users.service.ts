@@ -77,7 +77,7 @@ export class UsersService {
     return result.data.users.length ? result.data.users[0] : null;
   }
 
-  async createUser(args: InviteUserMutationVariables): Promise<void> {
+  async inviteUser(args: InviteUserMutationVariables): Promise<void> {
     await this._urqlService.mutation(InviteUserDocument, args);
   }
 
