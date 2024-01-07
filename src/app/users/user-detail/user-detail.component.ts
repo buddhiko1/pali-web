@@ -6,7 +6,7 @@ import { StorageService } from 'src/app/shared/services/storage.service';
 import { UsersService } from '../users.service';
 import { UserAvatarComponent } from '../shared/user-avatar/user-avatar.component';
 import { UserSettingComponent } from '../user-setting/user-setting.component';
-import { UserFragment } from 'src/gql/graphql';
+import { UserFragment, UserProfileFragment } from 'src/gql/graphql';
 
 @Component({
   selector: 'app-user-detail',
@@ -22,6 +22,7 @@ import { UserFragment } from 'src/gql/graphql';
 })
 export class UserDetailComponent implements OnInit {
   user!: UserFragment;
+  userProfile!: UserProfileFragment;
 
   constructor(
     private _route: ActivatedRoute,
@@ -38,6 +39,9 @@ export class UserDetailComponent implements OnInit {
       .then((user) => {
         this.user = user;
       });
+    this._usersService.fetchUserProfile({ userId: userId }).then((profile) => {
+      this.userProfile = profile;
+    });
   }
 
   get isMyself(): boolean {

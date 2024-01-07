@@ -76,7 +76,10 @@ export class NotificationComponent implements OnInit, OnDestroy {
   }
 
   showContent(): void {
-    this.isContentFolded = false;
+    setTimeout(() => {
+      this.isContentFolded = false;
+      console.error('showContent:', this.isContentFolded);
+    });
   }
 
   @HostListener('mouseenter')
