@@ -22,8 +22,8 @@ import {
   CreateUserProfileMutationVariables,
   UpdateUserProfileDocument,
   UpdateUserProfileMutationVariables,
-  CreateUserDocument,
-  CreateUserMutationVariables,
+  InviteUserDocument,
+  InviteUserMutationVariables,
   DeleteUserDocument,
   ActiveUserDocument,
   ActiveUserMutationVariables,
@@ -77,8 +77,8 @@ export class UsersService {
     return result.data.users.length ? result.data.users[0] : null;
   }
 
-  async createUser(args: CreateUserMutationVariables): Promise<void> {
-    await this._urqlService.mutation(CreateUserDocument, args);
+  async createUser(args: InviteUserMutationVariables): Promise<void> {
+    await this._urqlService.mutation(InviteUserDocument, args);
   }
 
   async activeUser(args: ActiveUserMutationVariables): Promise<void> {

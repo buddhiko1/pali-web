@@ -78,15 +78,15 @@ export class UserCreationComponent implements OnInit {
         role: role!.id,
         urlForActive: `${location.origin}/users/activation`,
       });
-      // const createdUser = await this._usersService.fetchUserByEmail({
-      //   email: email,
-      // });
-      // await this._usersService.createUserProfile({
-      //   data: {
-      //     alais: createdUser!.id,
-      //     user: { id: createdUser!.id },
-      //   },
-      // });
+      const createdUser = await this._usersService.fetchUserByEmail({
+        email: email,
+      });
+      await this._usersService.createUserProfile({
+        data: {
+          alais: createdUser!.id,
+          user: { id: createdUser!.id },
+        },
+      });
       timer(3000).subscribe(() => {
         this.isLoading = false;
         this.successInfo = PromptEnum.SignUp;
