@@ -16,12 +16,21 @@
         <app-user-avatar
           [size]="'6rem'"
           [avatarId]="account.avatar?.id"
-          (avatarClick)="onAvatarClick()"
+          (click)="onAvatarClick()"
         />
-        <input
-          [(ngModel)]="alais"
-          class="inline-block mt-12 w-32 bg-inputBg border-b border-border outline-none leading-relaxed text-text text-center"
-        />
+        <div class="text-center">
+          <input
+            [(ngModel)]="alais"
+            class="mt-12 pl-3 pr-6 w-32 bg-inputBg border-b border-border outline-none leading-relaxed text-text text-left text-base"
+          />
+          <app-action-icon class="-ml-6" [isLoading]="isChangingAlais">
+            <app-save-svg
+              (click)="saveAlais()"
+              [size]="'1.4rem'"
+              [class]="'gc-svg gu-hover'"
+            />
+          </app-action-icon>
+        </div>
         <button (click)="onLogout()" class="gd-button mt-12">Logout</button>
       </div>
     </section>

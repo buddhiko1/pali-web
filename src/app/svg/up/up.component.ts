@@ -7,5 +7,6 @@ import { Component, Input } from '@angular/core';
   templateUrl: './up.component.svg',
 })
 export class UpSvgComponent {
-  @Input() class = [''];
+  @Input() class: string[] | string = [''];
+  @Input() size = '';
 }

@@ -1,12 +1,12 @@
 import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-person-svg',
+  selector: 'app-save-svg',
   standalone: true,
   imports: [],
-  templateUrl: './person.component.svg',
+  templateUrl: './save.component.svg',
 })
-export class PersonSvgComponent {
+export class SaveSvgComponent {
   @Input() class: string[] | string = [''];
-  @Input() size = '1.5rem';
+  @Input() size = '';
 }

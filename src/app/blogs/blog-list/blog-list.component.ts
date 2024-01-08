@@ -17,7 +17,8 @@ export class BlogListComponent {
   blogs: BlogFragment[] = [];
 
   constructor(private _router: Router) {}
-  onAvatarClick(userId: string) {
+  onAvatarClick(event: Event, userId: string) {
+    event.preventDefault();
     this._router.navigate(['../users/detail', userId]);
   }
 }

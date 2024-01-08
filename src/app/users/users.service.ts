@@ -111,7 +111,7 @@ export class UsersService {
   async createUserProfile(
     args: CreateUserProfileMutationVariables,
   ): Promise<UserProfileFragment> {
-    const result = await this._systemUrqlService.mutation(
+    const result = await this._dataUrqlService.mutation(
       CreateUserProfileDocument,
       args,
     );
@@ -121,7 +121,7 @@ export class UsersService {
   async updateUserProfile(
     args: UpdateUserProfileMutationVariables,
   ): Promise<UserProfileFragment> {
-    const result = await this._systemUrqlService.mutation(
+    const result = await this._dataUrqlService.mutation(
       UpdateUserProfileDocument,
       args,
     );

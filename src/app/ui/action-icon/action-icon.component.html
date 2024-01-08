@@ -1,0 +1,9 @@
+<div class="inline-block">
+  @if (isLoading) {
+    <div class="c-loader"></div>
+  } @else {
+    <button>
+      <ng-content />
+    </button>
+  }
+</div>

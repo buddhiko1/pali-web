@@ -7,5 +7,6 @@ import { Component, Input } from '@angular/core';
   templateUrl: './close.component.svg',
 })
 export class CloseSvgComponent {
-  @Input() class = [''];
+  @Input() class: string[] | string = [''];
+  @Input() size = '';
 }

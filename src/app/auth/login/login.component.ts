@@ -7,7 +7,7 @@ import {
 } from '@angular/forms';
 import { RouterLink, Router } from '@angular/router';
 
-import { LoadingComponent } from 'src/app/ui/loading/loading.component';
+import { LoaderComponent } from 'src/app/ui/loader/loader.component';
 import { FormDialogComponent } from 'src/app/ui/form-dialog/form-dialog.component';
 import { InfoDialogComponent } from 'src/app/ui/info-dialog/info-dialog.component';
 import { UnRegisteredEmailValidator } from 'src/app/users/shared/email.validator';
@@ -23,7 +23,7 @@ import { UsersService } from 'src/app/users/users.service';
   imports: [
     RouterLink,
     ReactiveFormsModule,
-    LoadingComponent,
+    LoaderComponent,
     FormDialogComponent,
     InfoDialogComponent,
   ],

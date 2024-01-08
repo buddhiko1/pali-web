@@ -7,5 +7,6 @@ import { Component, Input } from '@angular/core';
   templateUrl: './email.component.svg',
 })
 export class EmailSvgComponent {
-  @Input() class = [''];
+  @Input() class: string[] | string = [''];
+  @Input() size = '';
 }

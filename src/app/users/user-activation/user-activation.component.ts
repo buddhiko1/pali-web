@@ -8,7 +8,7 @@ import {
 } from '@angular/forms';
 import { CombinedError } from '@urql/core';
 
-import { LoadingComponent } from 'src/app/ui/loading/loading.component';
+import { LoaderComponent } from 'src/app/ui/loader/loader.component';
 import { FormDialogComponent } from 'src/app/ui/form-dialog/form-dialog.component';
 import { InfoDialogComponent } from 'src/app/ui/info-dialog/info-dialog.component';
 import { NavigationService } from 'src/app/shared/services/navigation.service';
@@ -21,7 +21,7 @@ import { UsersService } from '../users.service';
   standalone: true,
   imports: [
     ReactiveFormsModule,
-    LoadingComponent,
+    LoaderComponent,
     FormDialogComponent,
     InfoDialogComponent,
   ],

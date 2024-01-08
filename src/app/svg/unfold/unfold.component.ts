@@ -7,5 +7,6 @@ import { Component, Input } from '@angular/core';
   templateUrl: './unfold.component.svg',
 })
 export class UnfoldSvgComponent {
-  @Input() class = [''];
+  @Input() class: string[] | string = [''];
+  @Input() size = '';
 }

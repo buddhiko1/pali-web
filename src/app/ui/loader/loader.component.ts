@@ -5,13 +5,13 @@ import { FadeInDirective } from 'src/app/shared/directives/fade-in.directive';
 import { WheelSvgComponent } from 'src/app/svg/wheel/wheel.component';
 
 @Component({
-  selector: 'app-loading',
+  selector: 'app-loader',
   standalone: true,
   imports: [FadeInDirective, WheelSvgComponent],
-  templateUrl: './loading.component.html',
-  styleUrl: './loading.component.css',
+  templateUrl: './loader.component.html',
+  styleUrl: './loader.component.css',
 })
-export class LoadingComponent {
+export class LoaderComponent {
   constructor(private _screen: ScreenService) {}
 
   get isPhone(): boolean {

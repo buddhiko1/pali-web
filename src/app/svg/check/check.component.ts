@@ -7,5 +7,6 @@ import { Component, Input } from '@angular/core';
   templateUrl: './check.component.svg',
 })
 export class CheckSvgComponent {
-  @Input() class = [''];
+  @Input() class: string[] | string = [''];
+  @Input() size = '';
 }

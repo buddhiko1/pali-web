@@ -4,8 +4,11 @@ import { FormsModule } from '@angular/forms';
 
 import { StorageService } from 'src/app/shared/services/storage.service';
 import { UploaderComponent } from 'src/app/uploader/uploader.component';
+import { CheckSvgComponent } from 'src/app/svg/check/check.component';
+import { SaveSvgComponent } from 'src/app/svg/save/save.component';
 import { FadeInDirective } from 'src/app/shared/directives/fade-in.directive';
 import { AuthService } from 'src/app/auth/auth.service';
+import { ActionIconComponent } from 'src/app/ui/action-icon/action-icon.component';
 import { UsersService } from '../users.service';
 import { UserAvatarComponent } from '../shared/user-avatar/user-avatar.component';
 import { UserFragment, UserProfileFragment } from 'src/gql/graphql';
@@ -18,13 +21,17 @@ import { UserFragment, UserProfileFragment } from 'src/gql/graphql';
   imports: [
     FormsModule,
     FadeInDirective,
+    ActionIconComponent,
     UploaderComponent,
+    CheckSvgComponent,
+    SaveSvgComponent,
     UserAvatarComponent,
   ],
 })
 export class UserSettingComponent {
   showUploader = false;
   alais = '';
+  isChangingAlais = false;
 
   constructor(
     private _router: Router,
@@ -68,6 +75,17 @@ export class UserSettingComponent {
         id: oldAavatarId,
       });
     }
+  }
+
+  async saveAlais(): Promise<void> {
+    this.isChangingAlais = true;
+    await this._usersService.updateUserProfile({
+      id: this.profile.id,
+      data: {
+        alais: this.alais,
+      },
+    });
+    this.isChangingAlais = false;
   }
 
   async onLogout(): Promise<void> {

@@ -7,5 +7,6 @@ import { Component, Input } from '@angular/core';
   templateUrl: './plus.component.svg',
 })
 export class PlusSvgComponent {
-  @Input() class = [''];
+  @Input() class: string[] | string = [''];
+  @Input() size = '';
 }

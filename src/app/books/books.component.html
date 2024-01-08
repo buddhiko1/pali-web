@@ -30,7 +30,7 @@
         <app-book [config]="bookConfigFor(book)" />
         <div class="c-action w-full mt-10 pb-4 border-b gc-border">
           <a [href]="book.info_url" target="_blank" class="gc-button">
-            <app-github-svg [class]="['gc-svg']" />
+            <app-github-svg [class]="'gc-svg'" />
           </a>
           <a
             [href]="downloadUrlFor(book)"
@@ -38,7 +38,7 @@
             target="_blank"
             class="gc-button"
           >
-            <app-download-svg [class]="['gc-svg']" />
+            <app-download-svg [class]="'gc-svg'" />
           </a>
         </div>
       </div>
@@ -55,7 +55,7 @@
       </div>
       @for (cite of cites; track cite.index) {
         <div class="c-cite pt-8 pc:pt-12">
-          <app-quote-svg [class]="['gc-svg']" [size]="'3rem'" />
+          <app-quote-svg [class]="'gc-svg'" [size]="'3rem'" />
           <div class="grid pc:h-[18rem] items-center">
             <p class="mt-2 pc:mt-4 text-center gc-text">{{ cite.text }}</p>
           </div>

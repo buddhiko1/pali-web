@@ -1,0 +1,11 @@
+.c-loader {
+  box-sizing: border-box;
+  width: var(--size);
+  height: var(--size);
+  border-radius: var(--size);
+  border-right: var(--borderWidth) solid theme("colors.focus");
+  border-left: var(--borderWidth) solid theme("colors.focus");
+  border-top: var(--borderWidth) solid rgba(0, 0, 0, 0);
+  border-bottom: var(--borderWidth) solid rgba(0, 0, 0, 0);
+  animation: ga-rotate 1.5s ease-in-out infinite;
+}

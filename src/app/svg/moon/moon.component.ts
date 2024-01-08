@@ -7,5 +7,6 @@ import { Component, Input } from '@angular/core';
   templateUrl: './moon.component.svg',
 })
 export class MoonSvgComponent {
-  @Input() class = [''];
+  @Input() class: string[] | string = [''];
+  @Input() size = '';
 }

@@ -7,5 +7,6 @@ import { Component, Input } from '@angular/core';
   templateUrl: './rarrow.component.svg',
 })
 export class RarrowSvgComponent {
-  @Input() class = [''];
+  @Input() class: string[] | string = [''];
+  @Input() size = '';
 }

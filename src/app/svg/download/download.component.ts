@@ -7,5 +7,6 @@ import { Component, Input } from '@angular/core';
   templateUrl: './download.component.svg',
 })
 export class DownloadSvgComponent {
-  @Input() class = [''];
+  @Input() class: string[] | string = [''];
+  @Input() size = '';
 }

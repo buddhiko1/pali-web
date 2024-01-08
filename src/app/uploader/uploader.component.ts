@@ -8,7 +8,7 @@ import {
   AfterViewInit,
 } from '@angular/core';
 
-import { LoadingComponent } from 'src/app/ui/loading/loading.component';
+import { LoaderComponent } from 'src/app/ui/loader/loader.component';
 import { InfoDialogComponent } from 'src/app/ui/info-dialog/info-dialog.component';
 import { UtilitiesService } from '../shared/services/utilities.service';
 import { UploaderService } from './uploader.service';
@@ -16,7 +16,7 @@ import { UploaderService } from './uploader.service';
 @Component({
   selector: 'app-uploader',
   standalone: true,
-  imports: [LoadingComponent, InfoDialogComponent],
+  imports: [LoaderComponent, InfoDialogComponent],
   templateUrl: './uploader.component.html',
   styleUrl: './uploader.component.css',
 })

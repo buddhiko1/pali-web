@@ -2,11 +2,11 @@
   <div class="c-container w-[60vw] tablat:w-[45vw] pc:w-[20rem]">
     <div>
       @if (isSuccessInfo) {
-        <app-check-svg [class]="['fill-ok', 'w-10', 'h-10', 'inline']" />
+        <app-check-svg [class]="'fill-ok w-10 h-10 inline'" />
       } @else if (isErrorInfo) {
-        <app-error-svg [class]="['fill-error', 'w-10', 'h-10', 'inline']" />
+        <app-error-svg [class]="'fill-error w-10 h-10 inline'" />
       } @else {
-        <app-info-svg [class]="['gc-svg', 'w-10', 'h-10', 'inline']" />
+        <app-info-svg [class]="'gc-svg w-10 h-10 inline'" />
       }
       <span
         class="gd-title ml-4"

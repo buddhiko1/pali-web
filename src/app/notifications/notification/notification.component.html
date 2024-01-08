@@ -8,11 +8,11 @@
     <div class="c-bar">
       <div class="c-icon">
         @if (isSuccessNotification(notification)) {
-          <app-check-svg [class]="['fill-ok']" />
+          <app-check-svg [class]="'fill-ok'" />
         } @else if (isErrorNotification(notification)) {
-          <app-error-svg [class]="['fill-error']" />
+          <app-error-svg [class]="'fill-error'" />
         } @else {
-          <app-info-svg [class]="['gc-svg']" />
+          <app-info-svg [class]="'gc-svg'" />
         }
       </div>
       <div class="c-title border-l-1">
@@ -28,16 +28,16 @@
         @if (isContentFolded) {
           @if (isPc) {
             <button (click)="showContent()">
-              <app-up-svg [class]="['gc-svg', 'gu-hover']" />
+              <app-up-svg [class]="'gc-svg gu-hover'" />
             </button>
           } @else {
             <button (click)="showContent()">
-              <app-down-svg [class]="['gc-svg', 'gu-hover']" />
+              <app-down-svg [class]="'gc-svg gu-hover'" />
             </button>
           }
         } @else {
           <button appFadeIn [fadeInDuration]="300" (click)="close()">
-            <app-close-svg [class]="['gc-svg', 'gu-hover', 'w-5']" />
+            <app-close-svg [class]="'gc-svg gu-hover w-5'" />
           </button>
         }
       </div>

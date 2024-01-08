@@ -77,10 +77,10 @@
       <button (click)="switchTheme()" class="c-theme p-1">
         @switch (theme) {
           @case (ThemeEnum.DEFAULT) {
-            <app-sun-svg [class]="['gc-svg', 'gu-hover']" />
+            <app-sun-svg [class]="'gc-svg gu-hover'" />
           }
           @case (ThemeEnum.NIGHT) {
-            <app-moon-svg [class]="['gc-svg', 'gu-hover']" />
+            <app-moon-svg [class]="'gc-svg gu-hover'" />
           }
         }
       </button>
@@ -101,7 +101,7 @@
         class="c-user px-1"
         [avatarId]="account?.avatar?.id"
         [size]="'1.5rem'"
-        (avatarClick)="routeToUserDetail()"
+        (click)="routeToUserDetail()"
       />
     </div>
   </nav>

@@ -7,5 +7,6 @@ import { Component, Input } from '@angular/core';
   templateUrl: './error.component.svg',
 })
 export class ErrorSvgComponent {
-  @Input() class = [''];
+  @Input() class: string[] | string = [''];
+  @Input() size = '';
 }

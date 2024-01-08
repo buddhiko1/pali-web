@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 import { UrlService } from 'src/app/shared/services/url.service';
 import { UsersService } from '../../users.service';
@@ -12,14 +12,13 @@ import { AvatarFragment } from 'src/gql/graphql';
   styleUrl: './user-avatar.component.css',
 })
 export class UserAvatarComponent {
-  @Input() clickable = true;
+  @Input() isButtonStyle = true;
   @Input() size = '4rem';
   @Input()
   set avatarId(value: string | undefined) {
     this._avatarId = value;
     this.fetchUserAvatar();
   }
-  @Output() avatarClick = new EventEmitter();
   private _avatarId: string | undefined = undefined;
   avatar: AvatarFragment | null = null;
 
@@ -42,10 +41,5 @@ export class UserAvatarComponent {
     } else {
       this.avatar = null;
     }
-  }
-
-  async onAvatarClick(e: Event): Promise<void> {
-    e.preventDefault();
-    this.avatarClick.emit();
   }
 }

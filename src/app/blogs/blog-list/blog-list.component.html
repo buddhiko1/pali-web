@@ -10,7 +10,7 @@
         class="c-avatar"
         [avatarId]="blog.user_created?.avatar?.id"
         [size]="'2rem'"
-        (avatarClick)="onAvatarClick(blog.user_created!.id)"
+        (click)="onAvatarClick($event, blog.user_created!.id)"
       />
     </a>
   }

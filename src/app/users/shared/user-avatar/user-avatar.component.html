@@ -1,6 +1,6 @@
 <div class="c-container">
-  @if (clickable) {
-    <button (click)="onAvatarClick($event)">
+  @if (isButtonStyle) {
+    <button>
       <img
         class="rounded-full"
         [src]="avatarUrl"

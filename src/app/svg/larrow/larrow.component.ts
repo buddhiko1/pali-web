@@ -7,5 +7,6 @@ import { Component, Input } from '@angular/core';
   templateUrl: './larrow.component.svg',
 })
 export class LarrowSvgComponent {
-  @Input() class = [''];
+  @Input() class: string[] | string = [''];
+  @Input() size = '';
 }

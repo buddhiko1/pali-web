@@ -8,5 +8,6 @@ import { CommonModule } from '@angular/common';
   templateUrl: './github.component.svg',
 })
 export class GithubSvgComponent {
-  @Input() class = [''];
+  @Input() class: string[] | string = [''];
+  @Input() size = '';
 }
