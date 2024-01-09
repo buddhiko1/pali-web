@@ -38,6 +38,6 @@ export class AuthService {
     await this._systemUrqlService.mutation(LogoutDocument, {
       tokenForRefresh: this._storageService.tokenForRefresh,
     });
-    this._storageService.clearLoginedUserData();
+    this._storageService.clearAccountData();
   }
 }

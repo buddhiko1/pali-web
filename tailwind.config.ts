@@ -21,8 +21,8 @@ export default {
         // elements
         logo: "var(--colors-logo)",
         appBg: "var(--colors-app-bg)",
+        secondaryBg: "var(--colors-secondary-bg)",
         phraseBg: "var(--colors-phrase-bg)",
-        cardBg: "var(--colors-card-bg)",
         overlay: "var(--colors-overlay)",
         bannerTitle: "var(--colors-banner-title)",
         bannerSubTitle: "var(--colors-banner-subtitle)",

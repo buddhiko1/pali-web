@@ -2,8 +2,8 @@
   @if (isLoading) {
     <div class="c-loader"></div>
   } @else {
-    <button>
+    <app-tooltip [tip]="tip" [position]="tipPosition">
       <ng-content />
-    </button>
+    </app-tooltip>
   }
 </div>

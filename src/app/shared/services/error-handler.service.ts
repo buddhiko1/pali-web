@@ -25,10 +25,10 @@ export class ErrorHandlerService implements ErrorHandler {
     if (
       error.graphQLErrors.some((e) => {
         const code = e.extensions?.['code'];
-        return code === 'TOKEN_EXPIRED' || code === 'INVALID_TOKEN';
+        return code === 'INVALID_TOKEN';
       })
     ) {
-      this._storageService.clearLoginedUserData();
+      this._storageService.clearAccountData();
     } else {
       this._notificationsService.pushErrorInfo({
         title: 'Server Error',

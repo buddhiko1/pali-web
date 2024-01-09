@@ -70,7 +70,8 @@ export class StorageService {
     localStorage.setItem(this._keyOfWysiwygFolderId, value);
   }
 
-  clearLoginedUserData(): void {
+  clearAccountData(): void {
+    console.error('clear account data');
     localStorage.removeItem(this._keyOfAuthToken);
     localStorage.removeItem(this._keyOfRefreshToken);
     localStorage.removeItem(this._keyOfAccount);

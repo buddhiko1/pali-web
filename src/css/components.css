@@ -7,7 +7,7 @@
 }
 
 .gc-card {
-  @apply bg-cardBg rounded-lg;
+  @apply bg-secondaryBg rounded-lg;
 }
 
 .gc-svg {

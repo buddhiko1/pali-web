@@ -23,7 +23,12 @@
             [(ngModel)]="alais"
             class="mt-12 pl-3 pr-6 w-32 bg-inputBg border-b border-border outline-none leading-relaxed text-text text-left text-base"
           />
-          <app-action-icon class="-ml-6" [isLoading]="isChangingAlais">
+          <app-action-icon
+            class="-ml-6"
+            [isLoading]="isChangingAlais"
+            [tip]="'Save'"
+            [tipPosition]="'right'"
+          >
             <app-save-svg
               (click)="saveAlais()"
               [size]="'1.4rem'"

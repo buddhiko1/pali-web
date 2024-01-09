@@ -2,8 +2,8 @@
   /* elements */
   --colors-logo: theme("colors.gray.700");
   --colors-app-bg: theme("colors.white");
+  --colors-secondary-bg: theme("colors.gray.100");
   --colors-phrase-bg: theme("colors.rose.100");
-  --colors-card-bg: theme("colors.gray.100");
   --colors-overlay: theme("colors.gray.600");
   --colors-banner-title: theme("colors.gray.50");
   --colors-banner-subtitle: theme("colors.gray.200");
@@ -28,8 +28,8 @@
   /* elements */
   --colors-logo: theme("colors.gray.100");
   --colors-app-bg: theme("colors.gray.900");
+  --colors-secondary-bg: theme("colors.gray.700");
   --colors-phrase-bg: theme("colors.gray.700");
-  --colors-card-bg: theme("colors.gray.700");
   --colors-overlay: theme("colors.gray.600");
   --colors-banner-title: theme("colors.gray.50");
   --colors-banner-subtitle: theme("colors.gray.200");

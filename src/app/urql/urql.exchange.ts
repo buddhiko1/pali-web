@@ -34,6 +34,7 @@ export class UrqlExchange {
   }
 
   private async _refreshToken(): Promise<void> {
+    console.error('begin refresh token');
     const client = new Client({
       url: `${environment.cms}/graphql/system`,
       exchanges: [fetchExchange],
@@ -41,10 +42,12 @@ export class UrqlExchange {
     const result = await client.mutation(RefreshTokenDocument, {
       tokenForRefresh: storageService.tokenForRefresh,
     });
+    console.error('get refresh token:', result.data);
     if (result.data?.refreshedToken) {
+      console.error('refresh token successful!');
       storageService.saveAuthToken(result.data?.refreshedToken);
     } else {
-      storageService.clearLoginedUserData();
+      storageService.clearAccountData();
     }
   }
 }
