@@ -79,12 +79,13 @@ export class UserSettingComponent {
 
   async saveAlais(): Promise<void> {
     this.isChangingAlais = true;
-    await this._usersService.updateUserProfile({
+    const updatedProfile = await this._usersService.updateUserProfile({
       id: this.profile.id,
       data: {
         alais: this.alais,
       },
     });
+    this._storageService.profile = updatedProfile;
     this.isChangingAlais = false;
   }
 

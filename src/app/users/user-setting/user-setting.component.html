@@ -7,7 +7,7 @@
       (failed)="showUploader = false"
     />
   } @else {
-    <section
+    <div
       appFadeIn
       [fadeInDelay]="300"
       class="c-container mt-24 tablat:mt-48 pc:mt-[20vh]"
@@ -18,14 +18,15 @@
           [avatarId]="account.avatar?.id"
           (click)="onAvatarClick()"
         />
-        <div class="text-center">
+        <div>
           <input
             [(ngModel)]="alais"
-            class="mt-12 pl-3 pr-6 w-32 bg-inputBg border-b border-border outline-none leading-relaxed text-text text-left text-base"
+            class="w-auto bg-inputBg border-b border-border outline-none leading-relaxed text-text text-center text-base"
+            (keydown.enter)="saveAlais()"
           />
           <app-action-icon
-            class="-ml-6"
             [isLoading]="isChangingAlais"
+            [size]="'1.4rem'"
             [tip]="'Save'"
             [tipPosition]="'right'"
           >
@@ -36,8 +37,8 @@
             />
           </app-action-icon>
         </div>
-        <button (click)="onLogout()" class="gd-button mt-12">Logout</button>
+        <button (click)="onLogout()" class="gd-button">Logout</button>
       </div>
-    </section>
+    </div>
   }
 </div>

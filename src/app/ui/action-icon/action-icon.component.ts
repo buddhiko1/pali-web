@@ -13,6 +13,7 @@ export class ActionIconComponent {
   borderWidth = '0.15rem';
 
   @HostBinding('style.--size')
+  @Input()
   size = '1.1rem';
 
   @Input()

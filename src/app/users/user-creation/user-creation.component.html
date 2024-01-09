@@ -15,7 +15,7 @@
     (infoDialogClosed)="onSuccessDialogSubmit()"
   />
 } @else {
-  <app-form-dialog>
+  <app-form-dialog (keydown.enter)="onSubmit()">
     <div class="c-content">
       <h2 class="c-title gd-title">Sign Up</h2>
       <form [formGroup]="form" (ngSubmit)="onSubmit()" class="c-form">
