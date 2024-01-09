@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
-import { Client, fetchExchange, Exchange, Operation } from '@urql/core';
+import { Exchange, Operation } from '@urql/core';
 import { authExchange } from '@urql/exchange-auth';
 
-import { environment } from 'src/environments/environment';
 import { StorageService } from '../shared/services/storage.service';
 import { RefreshTokenDocument } from 'src/gql/graphql';
 
@@ -13,7 +12,6 @@ const storageService = new StorageService();
 export class UrqlExchange {
   authExchange: Exchange;
   constructor() {
-    const refreshTokenFn = this._refreshToken;
     this.authExchange = authExchange(async (utils) => {
       return {
         addAuthToOperation(operation): Operation {
@@ -26,28 +24,23 @@ export class UrqlExchange {
             (e) => e.extensions?.['code'] === 'TOKEN_EXPIRED',
           );
         },
+        // willAuthError(_operation) {
+        // TODO check if the token is expired.
+        // return false;
+        // },
         async refreshAuth(): Promise<void> {
-          await refreshTokenFn();
+          const result = await utils.mutate(RefreshTokenDocument, {
+            tokenForRefresh: storageService.tokenForRefresh,
+          });
+          if (result.data?.authTokens) {
+            console.error('refresh token successful:', result.data);
+            storageService.saveAuthToken(result.data?.authTokens);
+          } else {
+            console.error('refresh token failed:', result);
+            storageService.clearAccountData();
+          }
         },
       };
     });
-  }
-
-  private async _refreshToken(): Promise<void> {
-    console.error('begin refresh token');
-    const client = new Client({
-      url: `${environment.cms}/graphql/system`,
-      exchanges: [fetchExchange],
-    });
-    const result = await client.mutation(RefreshTokenDocument, {
-      tokenForRefresh: storageService.tokenForRefresh,
-    });
-    console.error('get refresh token:', result.data);
-    if (result.data?.refreshedToken) {
-      console.error('refresh token successful!');
-      storageService.saveAuthToken(result.data?.refreshedToken);
-    } else {
-      storageService.clearAccountData();
-    }
   }
 }

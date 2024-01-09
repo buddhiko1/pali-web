@@ -1,10 +1,21 @@
 import { graphql } from 'src/gql';
 
 graphql(`
+  fragment AuthTokens on auth_tokens {
+    refresh_token
+    access_token
+    expires
+  }
+
   mutation Login($email: String!, $password: String!) {
-    authToken: auth_login(email: $email, password: $password) {
-      access_token
-      refresh_token
+    authTokens: auth_login(email: $email, password: $password) {
+      ...AuthTokens
+    }
+  }
+
+  mutation RefreshToken($tokenForRefresh: String!) {
+    authTokens: auth_refresh(refresh_token: $tokenForRefresh, mode: json) {
+      ...AuthTokens
     }
   }
 

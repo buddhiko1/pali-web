@@ -1,23 +1,42 @@
 import { Injectable } from '@angular/core';
 
-import { StorageService } from '../shared/services/storage.service';
 import { SystemUrqlService } from '../urql/urql.service';
 import {
   LoginDocument,
   LoginMutationVariables,
   LogoutDocument,
+  LogoutMutationVariables,
   RequestPasswordResetDocument,
   RequestPasswordResetMutationVariables,
   ResetPasswordDocument,
   ResetPasswordMutationVariables,
+  AuthTokensFragment,
+  RefreshTokenDocument,
+  RefreshTokenMutationVariables,
 } from 'src/gql/graphql';
 
 @Injectable({ providedIn: 'root' })
 export class AuthService {
-  constructor(
-    private _storageService: StorageService,
-    private _systemUrqlService: SystemUrqlService,
-  ) {}
+  constructor(private _systemUrqlService: SystemUrqlService) {}
+
+  async login(args: LoginMutationVariables): Promise<AuthTokensFragment> {
+    const result = await this._systemUrqlService.mutation(LoginDocument, args);
+    return result.data.authTokens;
+  }
+
+  async logout(args: LogoutMutationVariables): Promise<void> {
+    await this._systemUrqlService.mutation(LogoutDocument, args);
+  }
+
+  async refreshToken(
+    args: RefreshTokenMutationVariables,
+  ): Promise<AuthTokensFragment> {
+    const result = await this._systemUrqlService.mutation(
+      RefreshTokenDocument,
+      args,
+    );
+    return result.data.authTokens;
+  }
 
   async requestPasswordReset(
     args: RequestPasswordResetMutationVariables,
@@ -27,17 +46,5 @@ export class AuthService {
 
   async resetPassword(args: ResetPasswordMutationVariables): Promise<void> {
     await this._systemUrqlService.mutation(ResetPasswordDocument, args);
-  }
-
-  async login(args: LoginMutationVariables): Promise<void> {
-    const result = await this._systemUrqlService.mutation(LoginDocument, args);
-    this._storageService.saveAuthToken(result.data.authToken);
-  }
-
-  async logout(): Promise<void> {
-    await this._systemUrqlService.mutation(LogoutDocument, {
-      tokenForRefresh: this._storageService.tokenForRefresh,
-    });
-    this._storageService.clearAccountData();
   }
 }

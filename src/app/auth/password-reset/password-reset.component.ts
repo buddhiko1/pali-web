@@ -12,6 +12,7 @@ import { LoaderComponent } from 'src/app/ui/loader/loader.component';
 import { FormDialogComponent } from 'src/app/ui/form-dialog/form-dialog.component';
 import { InfoDialogComponent } from 'src/app/ui/info-dialog/info-dialog.component';
 import { NavigationService } from 'src/app/shared/services/navigation.service';
+import { StorageService } from 'src/app/shared/services/storage.service';
 import { PromptEnum } from 'src/app/shared/values/prompts.values';
 import { AuthService } from '../auth.service';
 
@@ -41,6 +42,7 @@ export class PasswordResetComponent implements OnInit {
     private _router: Router,
     private _activedRoute: ActivatedRoute,
     private _navigationService: NavigationService,
+    private _storageService: StorageService,
     private _authService: AuthService,
   ) {
     this._activedRoute.queryParams.subscribe((params) => {
@@ -93,7 +95,10 @@ export class PasswordResetComponent implements OnInit {
   }
 
   async onSuccessDialogSubmit(): Promise<void> {
-    await this._authService.logout();
+    await this._authService.logout({
+      tokenForRefresh: this._storageService.tokenForRefresh,
+    });
+    this._storageService.clearAccountData();
     this._router.navigate(['/auth/login']);
   }
 }

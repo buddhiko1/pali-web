@@ -90,7 +90,10 @@ export class UserSettingComponent {
   }
 
   async onLogout(): Promise<void> {
-    await this._authService.logout();
+    await this._authService.logout({
+      tokenForRefresh: this._storageService.tokenForRefresh,
+    });
+    this._storageService.clearAccountData();
     this._router.navigate(['/home']);
   }
 }

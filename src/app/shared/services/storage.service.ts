@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {
-  Auth_Tokens,
+  AuthTokensFragment,
   UserFragment,
   UserProfileFragment,
 } from 'src/gql/graphql';
@@ -9,27 +9,24 @@ import {
   providedIn: 'root',
 })
 export class StorageService {
-  private _keyOfAuthToken = 'authToken';
-  private _keyOfRefreshToken = 'refreshToken';
+  private _keyOfTokens = 'tokens';
   private _keyOfAccount = 'account';
   private _keyOfProfile = 'profile';
   private _keyOfAvatarFolderId = 'avatarFolderId';
   private _keyOfWysiwygFolderId = 'wysiwygFolderId';
 
-  saveAuthToken(authToken: Auth_Tokens) {
-    localStorage.setItem(this._keyOfAuthToken, authToken.access_token ?? '');
-    localStorage.setItem(
-      this._keyOfRefreshToken,
-      authToken.refresh_token ?? '',
-    );
+  saveAuthToken(tokens: AuthTokensFragment) {
+    localStorage.setItem(this._keyOfTokens, JSON.stringify(tokens));
   }
 
   get tokenForAccess(): string {
-    return localStorage.getItem(this._keyOfAuthToken) ?? '';
+    const data = localStorage.getItem(this._keyOfTokens);
+    return data ? JSON.parse(data).access_token ?? '' : '';
   }
 
   get tokenForRefresh(): string {
-    return localStorage.getItem(this._keyOfRefreshToken) ?? '';
+    const data = localStorage.getItem(this._keyOfTokens);
+    return data ? JSON.parse(data).refresh_token ?? '' : '';
   }
 
   get isLoggedIn(): boolean {
@@ -71,9 +68,7 @@ export class StorageService {
   }
 
   clearAccountData(): void {
-    console.error('clear account data');
-    localStorage.removeItem(this._keyOfAuthToken);
-    localStorage.removeItem(this._keyOfRefreshToken);
+    localStorage.removeItem(this._keyOfTokens);
     localStorage.removeItem(this._keyOfAccount);
     localStorage.removeItem(this._keyOfProfile);
   }

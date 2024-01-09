@@ -76,10 +76,11 @@ export class LoginComponent implements OnInit {
     }
     this.isLoading = true;
     try {
-      await this._authService.login({
+      const authTokens = await this._authService.login({
         email: this.form.getRawValue().email,
         password: this.form.getRawValue().password,
       });
+      this._storageService.saveAuthToken(authTokens);
       const account = await this._usersService.fetchAccount();
       this._storageService.account = account;
       const profile = await this._usersService.fetchUserProfile({
