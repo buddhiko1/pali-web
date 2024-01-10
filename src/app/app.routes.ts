@@ -1,5 +1,5 @@
 import { Routes } from '@angular/router';
-import { PlaceholderPageComponent } from './placeholder-page/placeholder-page.component';
+import { PlaceholderComponent } from './placeholder/placeholder.component';
 
 export const APP_ROUTES: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -10,7 +10,7 @@ export const APP_ROUTES: Routes = [
   },
   {
     path: 'grammar',
-    component: PlaceholderPageComponent,
+    component: PlaceholderComponent,
     data: { text: 'Under development' },
   },
   {
@@ -22,7 +22,7 @@ export const APP_ROUTES: Routes = [
   },
   {
     path: 'vocabulary',
-    component: PlaceholderPageComponent,
+    component: PlaceholderComponent,
     data: { text: 'Under development' },
   },
   {
@@ -41,7 +41,7 @@ export const APP_ROUTES: Routes = [
   },
   {
     path: 'reading',
-    component: PlaceholderPageComponent,
+    component: PlaceholderComponent,
     data: { text: 'Under development' },
   },
   {
@@ -51,7 +51,7 @@ export const APP_ROUTES: Routes = [
   },
   {
     path: '**',
-    component: PlaceholderPageComponent,
+    component: PlaceholderComponent,
     data: { text: '404 Page not found' },
   },
 ];

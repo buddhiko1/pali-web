@@ -48,6 +48,10 @@ export class NavbarComponent implements OnInit {
       path: '/books',
     },
     {
+      name: 'blogs',
+      path: '/blogs',
+    },
+    {
       name: 'grammar',
       path: '/grammar',
     },
@@ -58,10 +62,6 @@ export class NavbarComponent implements OnInit {
     {
       name: 'reading',
       path: '/reading',
-    },
-    {
-      name: 'blogs',
-      path: '/blogs',
     },
   ];
 

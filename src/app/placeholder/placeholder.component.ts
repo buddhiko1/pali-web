@@ -17,10 +17,10 @@ import { SnowBgComponent } from '../ui/snow-bg/snow-bg.component';
     SlideInDirective,
     FadeInDirective,
   ],
-  templateUrl: './placeholder-page.component.html',
-  styleUrl: './placeholder-page.component.css',
+  templateUrl: './placeholder.component.html',
+  styleUrl: './placeholder.component.css',
 })
-export class PlaceholderPageComponent {
+export class PlaceholderComponent {
   text = '';
 
   constructor(private _activeRoute: ActivatedRoute) {
