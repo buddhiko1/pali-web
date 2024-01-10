@@ -31,14 +31,14 @@ export class AppComponent {
     private _appService: AppService,
     private _storageService: StorageService,
   ) {
-    this.initialize();
+    this._initFolderId();
   }
 
   get theme(): string {
     return this._navbarService.theme;
   }
 
-  initialize(): void {
+  private _initFolderId(): void {
     this._appService
       .fetchFolderIdByName({
         name: FolderEnum.Avatar,

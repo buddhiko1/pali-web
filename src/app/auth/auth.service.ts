@@ -1,8 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Subscription, interval } from 'rxjs';
 
 import { SystemUrqlService } from '../shared/services/urql.service';
-import { StorageService } from '../shared/services/storage.service';
 import {
   LoginDocument,
   LoginMutationVariables,
@@ -19,30 +17,14 @@ import {
 
 @Injectable({ providedIn: 'root' })
 export class AuthService {
-  private _subscriptionForTokenRefresh!: Subscription;
-
-  constructor(
-    private _systemUrqlService: SystemUrqlService,
-    private _storageService: StorageService,
-  ) {}
+  constructor(private _systemUrqlService: SystemUrqlService) {}
 
   async login(args: LoginMutationVariables): Promise<AuthTokensFragment> {
     const result = await this._systemUrqlService.mutation(LoginDocument, args);
-    const authTokens = result.data.authTokens;
-    this._subscriptionForTokenRefresh = interval(
-      authTokens.expires - 1000 * 60,
-    ).subscribe(() => {
-      this.refreshToken({
-        tokenForRefresh: this._storageService.tokenForRefresh,
-      }).then((newTokens) => {
-        this._storageService.saveAuthToken(newTokens);
-      });
-    });
-    return authTokens;
+    return result.data.authTokens;
   }
 
   async logout(args: LogoutMutationVariables): Promise<void> {
-    this._subscriptionForTokenRefresh.unsubscribe();
     await this._systemUrqlService.mutation(LogoutDocument, args);
   }
 

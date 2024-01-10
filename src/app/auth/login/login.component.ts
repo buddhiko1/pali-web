@@ -80,7 +80,7 @@ export class LoginComponent implements OnInit {
         email: this.form.getRawValue().email,
         password: this.form.getRawValue().password,
       });
-      this._storageService.saveAuthToken(authTokens);
+      this._storageService.saveAuthTokens(authTokens);
       const account = await this._usersService.fetchAccount();
       this._storageService.account = account;
       const profile = await this._usersService.fetchUserProfile({

@@ -15,22 +15,37 @@ export class StorageService {
   private _keyOfAvatarFolderId = 'avatarFolderId';
   private _keyOfWysiwygFolderId = 'wysiwygFolderId';
 
-  saveAuthToken(tokens: AuthTokensFragment) {
-    localStorage.setItem(this._keyOfTokens, JSON.stringify(tokens));
+  saveAuthTokens(tokens: AuthTokensFragment) {
+    const data = {
+      ...tokens,
+      updateTime: new Date().getTime(),
+    };
+    localStorage.setItem(this._keyOfTokens, JSON.stringify(data));
   }
 
   get tokenForAccess(): string {
-    const data = localStorage.getItem(this._keyOfTokens);
-    return data ? JSON.parse(data).access_token ?? '' : '';
+    const data = localStorage.getItem(this._keyOfTokens)!;
+    return JSON.parse(data).access_token;
   }
 
   get tokenForRefresh(): string {
-    const data = localStorage.getItem(this._keyOfTokens);
-    return data ? JSON.parse(data).refresh_token ?? '' : '';
+    const data = localStorage.getItem(this._keyOfTokens)!;
+    return JSON.parse(data).refresh_token;
+  }
+
+  get upateTimeOfTokens(): number {
+    const data = localStorage.getItem(this._keyOfTokens)!;
+    return JSON.parse(data).updateTime;
+  }
+
+  get expirationOfTokens(): number {
+    const data = localStorage.getItem(this._keyOfTokens)!;
+    return JSON.parse(data).expires;
   }
 
   get isLoggedIn(): boolean {
-    return !!this.tokenForAccess;
+    const data = localStorage.getItem(this._keyOfTokens);
+    return data ? true : false;
   }
 
   get account(): UserFragment {
