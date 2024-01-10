@@ -20,11 +20,7 @@ abstract class UrqlService {
     this._exchanges = defaultExchanges.concat([cacheExchange, fetchExchange]);
   }
 
-  protected abstract get client(): Client;
-
-  private get _client(): Client {
-    return this.client;
-  }
+  abstract get client(): Client;
 
   private _validateResult(result: OperationResult): OperationResult {
     if (result.error) {
@@ -38,7 +34,7 @@ abstract class UrqlService {
     doc: DocumentInput,
     variables?: AnyVariables,
   ): Promise<OperationResult> {
-    const result = await this._client.query(doc, variables);
+    const result = await this.client.query(doc, variables);
     return this._validateResult(result);
   }
 
@@ -46,7 +42,7 @@ abstract class UrqlService {
     doc: DocumentInput,
     variables?: AnyVariables,
   ): Promise<OperationResult> {
-    const result = await this._client.mutation(doc, variables);
+    const result = await this.client.mutation(doc, variables);
     return this._validateResult(result);
   }
 }
@@ -55,7 +51,6 @@ abstract class UrqlService {
   providedIn: 'root',
 })
 export class DataUrqlService extends UrqlService {
-  private _url = `${environment.cms}/graphql`;
   constructor(private _storageService: StorageService) {
     super();
   }
@@ -68,7 +63,7 @@ export class DataUrqlService extends UrqlService {
         }
       : {};
     return new Client({
-      url: this._url,
+      url: `${environment.cms}/graphql`,
       exchanges: this._exchanges,
       fetchOptions,
     });
@@ -79,7 +74,6 @@ export class DataUrqlService extends UrqlService {
   providedIn: 'root',
 })
 export class SystemUrqlService extends UrqlService {
-  private _url = `${environment.cms}/graphql/system`;
   constructor(private _storageService: StorageService) {
     super();
   }
@@ -92,7 +86,7 @@ export class SystemUrqlService extends UrqlService {
         }
       : {};
     return new Client({
-      url: this._url,
+      url: `${environment.cms}/graphql/system`,
       exchanges: this._exchanges,
       fetchOptions,
     });
