@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import { SystemUrqlService } from './urql/urql.service';
+import { SystemUrqlService } from './shared/services/urql.service';
 import { FolderIdDocument } from 'src/gql/graphql';
 import { FolderIdQueryVariables } from 'src/gql/graphql';
 

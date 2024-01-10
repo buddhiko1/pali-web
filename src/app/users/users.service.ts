@@ -1,5 +1,8 @@
 import { Injectable } from '@angular/core';
-import { SystemUrqlService, DataUrqlService } from '../urql/urql.service';
+import {
+  SystemUrqlService,
+  DataUrqlService,
+} from '../shared/services/urql.service';
 import {
   UserByEmailDocument,
   UserByEmailQueryVariables,

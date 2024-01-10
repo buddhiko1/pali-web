@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import { DataUrqlService } from '../urql/urql.service';
+import { DataUrqlService } from '../shared/services/urql.service';
 import {
   Dictionaries,
   DictionariesDocument,
