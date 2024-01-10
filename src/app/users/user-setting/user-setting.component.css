@@ -1,44 +1,25 @@
-.c-container {
-  display: grid;
-  grid-template-rows: auto;
-  justify-items: center;
-  grid-template-columns: 1fr;
-  grid-template-areas: "content";
-}
-
 .c-content {
-  grid-area: content;
   display: grid;
   grid-auto-flow: row;
   place-items: center;
-  grid-row-gap: theme("spacing.5");
+  grid-row-gap: theme("spacing.20");
 }
 
-.c-label {
-  display: inline-block;
-  cursor: pointer;
+.c-avatar {
+  display: grid;
+  grid-auto-flow: row;
+  place-items: center;
 }
 
-.c-label input {
-  display: none;
-}
-
-.c-loader {
-  grid-area: content;
-  min-width: 100%;
+.c-badge {
+  place-self: end;
 }
 
 @media screen and (min-width: theme("screens.tablat")) {
-  .c-container {
-    grid-template-columns: 1fr;
-  }
-  .c-loader {
-    min-width: 50%;
-  }
 }
 
 @media screen and (min-width: theme("screens.pc")) {
-  .c-container {
-    grid-template-columns: 1fr;
+  .c-content {
+    grid-row-gap: theme("spacing.24");
   }
 }

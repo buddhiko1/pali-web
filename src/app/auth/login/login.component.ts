@@ -12,8 +12,8 @@ import { FormDialogComponent } from 'src/app/ui/form-dialog/form-dialog.componen
 import { InfoDialogComponent } from 'src/app/ui/info-dialog/info-dialog.component';
 import { UnRegisteredEmailValidator } from 'src/app/users/shared/email.validator';
 import { StorageService } from 'src/app/shared/services/storage.service';
-import { AuthService } from '../auth.service';
 import { UsersService } from 'src/app/users/users.service';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-login',

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TitleCasePipe } from '@angular/common';
-import { Router, NavigationEnd, RouterLink } from '@angular/router';
+import { Router, NavigationEnd } from '@angular/router';
 import { fromEvent, throttleTime } from 'rxjs';
 
 import { FadeInDirective } from '../shared/directives/fade-in.directive';
@@ -19,7 +19,6 @@ import { UserFragment } from 'src/gql/graphql';
   standalone: true,
   imports: [
     TitleCasePipe,
-    RouterLink,
     FadeInDirective,
     PlusSvgComponent,
     MoonSvgComponent,
@@ -129,11 +128,18 @@ export class NavbarComponent implements OnInit {
     return '';
   }
 
-  routeToUserDetail(): void {
-    if (this.account?.id) {
-      this._router.navigate(['/users/detail', this.account.id]);
+  routeTo(path: string): void {
+    if (this.isMenuOpened) {
+      this.toggleMenu();
+    }
+    if (path === '/users/detail') {
+      if (this.account?.id) {
+        this._router.navigate([path, this.account?.id]);
+      } else {
+        this._router.navigate(['/auth/login']);
+      }
     } else {
-      this._router.navigate(['/auth/login']);
+      this._router.navigate([path]);
     }
   }
 }

@@ -6,6 +6,7 @@ import { StorageService } from 'src/app/shared/services/storage.service';
 import { UploaderComponent } from 'src/app/uploader/uploader.component';
 import { CheckSvgComponent } from 'src/app/svg/check/check.component';
 import { SaveSvgComponent } from 'src/app/svg/save/save.component';
+import { CameraSvgComponent } from 'src/app/svg/camera/camera.component';
 import { FadeInDirective } from 'src/app/shared/directives/fade-in.directive';
 import { AuthService } from 'src/app/auth/auth.service';
 import { ActionIconComponent } from 'src/app/ui/action-icon/action-icon.component';
@@ -25,6 +26,7 @@ import { UserFragment, UserProfileFragment } from 'src/gql/graphql';
     UploaderComponent,
     CheckSvgComponent,
     SaveSvgComponent,
+    CameraSvgComponent,
     UserAvatarComponent,
   ],
 })

@@ -6,39 +6,43 @@
       (successful)="onAvatarUploaded($event)"
       (failed)="showUploader = false"
     />
-  } @else {
-    <div
-      appFadeIn
-      [fadeInDelay]="300"
-      class="c-container mt-24 tablat:mt-48 pc:mt-[20vh]"
-    >
-      <div class="c-content">
-        <app-user-avatar
-          [size]="'6rem'"
-          [avatarId]="account.avatar?.id"
-          (click)="onAvatarClick()"
-        />
-        <div>
-          <input
-            [(ngModel)]="alais"
-            class="w-auto bg-inputBg border-b border-border outline-none leading-relaxed text-text text-center text-base"
-            (keydown.enter)="saveAlais()"
-          />
-          <app-action-icon
-            [isLoading]="isChangingAlais"
-            [size]="'1.4rem'"
-            [tip]="'Save'"
-            [tipPosition]="'right'"
-          >
-            <app-save-svg
-              (click)="saveAlais()"
-              [size]="'1.4rem'"
-              [class]="'gc-svg gu-hover'"
-            />
-          </app-action-icon>
-        </div>
-        <button (click)="onLogout()" class="gd-button">Logout</button>
+  }
+  <div
+    appFadeIn
+    [fadeInDelay]="300"
+    class="c-content mt-24 tablat:mt-48 pc:mt-[20vh]"
+  >
+    <div class="c-avatar">
+      <app-user-avatar
+        [size]="'6rem'"
+        [avatarId]="account.avatar?.id"
+        (click)="onAvatarClick()"
+        class="-mb-2"
+      />
+      <div class="c-badge w-fit p-1 -mt-14 mr-2 rounded-full bg-secondaryBg">
+        <app-camera-svg class="gc-svg" [size]="'1.1rem'" />
       </div>
     </div>
-  }
+    <div class="flex">
+      <input
+        [(ngModel)]="alais"
+        class="w-32 tablat:w-40 pl-2 pr-8 bg-inputBg border-b border-border outline-none leading-relaxed text-text text-left text-base"
+        (keydown.enter)="saveAlais()"
+      />
+      <app-action-icon
+        [isLoading]="isChangingAlais"
+        [size]="'1.6rem'"
+        [tip]="'Save'"
+        [tipPosition]="'right'"
+        class="-ml-8"
+      >
+        <app-save-svg
+          (click)="saveAlais()"
+          [size]="'1.6rem'"
+          [class]="'gc-svg text-focus text-center'"
+        />
+      </app-action-icon>
+    </div>
+    <button (click)="onLogout()" class="gd-button">Logout</button>
+  </div>
 </div>
