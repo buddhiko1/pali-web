@@ -84,10 +84,13 @@
 }
 
 @media screen and (min-width: theme("screens.tablat")) {
-
 }
 
 @media screen and (min-width: theme("screens.pc")) {
+  [tooltip=""]:hover::after {
+    display: none;
+    padding: 0;
+  }
   [tooltip]:hover::after {
     display: block;
   }
