@@ -6,6 +6,9 @@
       [class.border-b]="!isLastItem"
     >
       <p class="c-title">{{ blog.title }}</p>
+      <app-badge [number]="999">
+        <app-chat-svg class="gc-svg inline-block" />
+      </app-badge>
       <app-user-avatar
         class="c-avatar"
         [avatarId]="blog.user_created?.avatar?.id"

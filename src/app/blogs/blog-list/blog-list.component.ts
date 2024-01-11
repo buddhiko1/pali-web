@@ -4,11 +4,19 @@ import { CommonModule } from '@angular/common';
 
 import { UserAvatarComponent } from 'src/app/users/shared/user-avatar/user-avatar.component';
 import { BlogFragment } from 'src/gql/graphql';
+import { ChatSvgComponent } from 'src/app/svg/chat/chat.component';
+import { BadgeComponent } from 'src/app/ui/badge/badge.component';
 
 @Component({
   selector: 'app-blog-list',
   standalone: true,
-  imports: [CommonModule, RouterLink, UserAvatarComponent],
+  imports: [
+    CommonModule,
+    RouterLink,
+    UserAvatarComponent,
+    ChatSvgComponent,
+    BadgeComponent,
+  ],
   templateUrl: './blog-list.component.html',
   styleUrl: './blog-list.component.css',
 })

@@ -1,11 +1,12 @@
-.c-container::after {
+[number]::after {
+  content: attr(number);
   position: absolute;
-  top: 50%;
+  z-index: 2;
+  bottom: 60%;
+  left: 50%;
   box-sizing: border-box;
-  height: var(--size);
-  width: var(--size);
-  content: attr(tooltip);
-  padding: 0.3rem;
+  padding: 0.07rem;
+  min-width: 1.2rem;
   border-radius: 50%;
   background: theme("colors.secondaryBg");
   color: theme("colors.text");

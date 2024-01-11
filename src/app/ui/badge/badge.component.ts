@@ -1,4 +1,4 @@
-import { Component, Input, HostBinding } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-badge',
@@ -8,7 +8,10 @@ import { Component, Input, HostBinding } from '@angular/core';
   styleUrl: './badge.component.css',
 })
 export class BadgeComponent {
-  @HostBinding('style.--width')
   @Input()
-  size = '1.5rem';
+  number = 0;
+
+  get numberForShow(): number {
+    return this.number > 99 ? 99 : this.number;
+  }
 }

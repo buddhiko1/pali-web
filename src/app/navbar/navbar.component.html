@@ -85,11 +85,10 @@
         }
       </button>
 
-      <button (click)="routeTo('/email')" class="c-email p-1 pc:mx-6">
+      <button disabled (click)="routeTo('/email')" class="c-email p-1 pc:mx-6">
         <app-email-svg
           [class]="[
             'gc-svg',
-            'gu-hover',
             'w-5',
             'h-5',
             activedUrl === 'email' ? 'text-focus' : ''
