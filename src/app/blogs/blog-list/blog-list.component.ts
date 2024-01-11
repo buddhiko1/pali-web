@@ -6,6 +6,8 @@ import { UserAvatarComponent } from 'src/app/users/shared/user-avatar/user-avata
 import { BlogFragment } from 'src/gql/graphql';
 import { ChatSvgComponent } from 'src/app/svg/chat/chat.component';
 import { BadgeComponent } from 'src/app/ui/badge/badge.component';
+import { DeleteSvgComponent } from 'src/app/svg/delete/delete.component';
+import { EditSvgComponent } from 'src/app/svg/edit/edit.component';
 
 @Component({
   selector: 'app-blog-list',
@@ -16,6 +18,8 @@ import { BadgeComponent } from 'src/app/ui/badge/badge.component';
     UserAvatarComponent,
     ChatSvgComponent,
     BadgeComponent,
+    DeleteSvgComponent,
+    EditSvgComponent,
   ],
   templateUrl: './blog-list.component.html',
   styleUrl: './blog-list.component.css',

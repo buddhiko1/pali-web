@@ -2,13 +2,15 @@
   @for (blog of blogs; track blog.id; let isLastItem = $last) {
     <a
       [routerLink]="['./viewer', blog.id]"
-      class="c-blog pt-4 pc:pt-10 pb-4 pc:pb-10 border-b gc-border gu-hover hover:bg-gradient-to-r hover:from-appBg hover:via-hoverBg hover:to-appBg"
+      class="c-blog pt-4 pc:pt-10 pb-4 pc:pb-10 border-b gc-border gu-hover hover:bg-gradient-to-r hover:from-primaryBg hover:via-hoverBg hover:to-appBg"
       [class.border-b]="!isLastItem"
     >
       <p class="c-title">{{ blog.title }}</p>
       <app-badge [number]="999">
         <app-chat-svg class="gc-svg inline-block" />
       </app-badge>
+      <app-delete-svg class="gc-svg" />
+      <app-edit-svg class="gc-svg" />
       <app-user-avatar
         class="c-avatar"
         [avatarId]="blog.user_created?.avatar?.id"

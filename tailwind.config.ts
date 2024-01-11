@@ -20,7 +20,7 @@ export default {
       colors: {
         // elements
         logo: "var(--colors-logo)",
-        appBg: "var(--colors-app-bg)",
+        primaryBg: "var(--colors-primary-bg)",
         secondaryBg: "var(--colors-secondary-bg)",
         phraseBg: "var(--colors-phrase-bg)",
         overlay: "var(--colors-overlay)",
@@ -29,6 +29,7 @@ export default {
         inputBg: "var(--colors-input-bg)",
         footerBg: "var(--colors-footer-bg)",
         buttonBg: "var(--colors-button-bg)",
+        dButtonBg: "var(--colors-d-button-bg)",
         buttonText: "var(--colors-button-text)",
         title: "var(--colors-title)",
         hlTitle: "var(--colors-hl-title)",

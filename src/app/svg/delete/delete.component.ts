@@ -1,12 +1,12 @@
 import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-edit-svg',
+  selector: 'app-delete-svg',
   standalone: true,
   imports: [],
-  templateUrl: './edit.component.svg',
+  templateUrl: './delete.component.svg',
 })
-export class EditSvgComponent {
+export class DeleteSvgComponent {
   @Input() class: string[] | string = [''];
   @Input() size = '';
 }

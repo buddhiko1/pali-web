@@ -15,7 +15,7 @@
 }
 
 .gc-button {
-  @apply p-1 m-auto rounded-md bg-buttonBg hover:bg-hover tracking-wide font-light text-buttonText;
+  @apply p-1 m-auto rounded-md bg-buttonBg hover:bg-hover tracking-wide font-light text-text;
 }
 
 .gc-link-button {
@@ -23,7 +23,7 @@
 }
 
 .gc-hl-button {
-  @apply py-1 px-4 m-auto rounded-md bg-focus tracking-wide font-light text-buttonText;
+  @apply py-1 px-4 m-auto rounded-md bg-dButtonBg tracking-wide font-light text-buttonText;
 }
 
 .gc-border {
