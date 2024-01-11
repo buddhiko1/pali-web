@@ -29,7 +29,7 @@ export default {
         inputBg: "var(--colors-input-bg)",
         footerBg: "var(--colors-footer-bg)",
         buttonBg: "var(--colors-button-bg)",
-        dButtonBg: "var(--colors-d-button-bg)",
+        hlButtonBg: "var(--colors-hl-button-bg)",
         buttonText: "var(--colors-button-text)",
         title: "var(--colors-title)",
         hlTitle: "var(--colors-hl-title)",

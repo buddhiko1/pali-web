@@ -10,8 +10,8 @@
   --colors-input-bg: theme("colors.white");
   --colors-footer-bg: theme("colors.gray.100");
   --colors-button-bg: theme("colors.blue.50");
-  --colors-d-button-bg: theme("colors.blue.400");
   --colors-button-text: theme("colors.gray.50");
+  --colors-hl-button-bg: theme("colors.blue.400");
   --colors-title: theme("colors.gray.700");
   --colors-hl-title: theme("colors.red.400");
   --colors-text: theme("colors.gray.500");
@@ -37,7 +37,7 @@
   --colors-input-bg: theme("colors.gray.800");
   --colors-footer-bg: theme("colors.gray.800");
   --colors-button-bg: theme("colors.gray.700");
-  --colors-d-button-bg: theme("colors.blue.400");
+  --colors-hl-button-bg: theme("colors.blue.400");
   --colors-button-text: theme("colors.gray.50");
   --colors-title: theme("colors.gray.100");
   --colors-hl-title: theme("colors.red.400");

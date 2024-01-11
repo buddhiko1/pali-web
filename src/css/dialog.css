@@ -17,12 +17,3 @@
 .gd-input {
   @apply py-1 px-3 bg-inputBg rounded border border-border focus:border-focus outline-none focus:ring-1 focus:ring-hover leading-relaxed text-text;
 }
-
-/* 'bg-dButtonBg' is invalid when 'type=subimt' */
-.gd-button {
-  @apply py-2 px-3 m-auto rounded-md bg-dButtonBg opacity-90 hover:opacity-100 focus:opacity-100 disabled:opacity-40 tracking-wide font-light text-buttonText;
-}
-
-.gd-error-button {
-  @apply py-2 px-3 m-auto rounded-md bg-error opacity-90 hover:opacity-100 focus:opacity-100 disabled:opacity-40 tracking-wide font-light text-buttonText;
-}
