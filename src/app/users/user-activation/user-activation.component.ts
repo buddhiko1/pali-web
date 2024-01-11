@@ -60,7 +60,6 @@ export class UserActivationComponent implements OnInit {
   }
 
   get password() {
-    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
     return this.form.get('password')!;
   }
 

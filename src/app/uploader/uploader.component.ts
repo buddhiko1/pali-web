@@ -113,7 +113,6 @@ export class UploaderComponent implements AfterViewInit {
           : idListOfUploadedFiles[0],
       );
       this.isLoading = false;
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } catch (error: any) {
       this.isLoading = false;
       this.error = error.toString();

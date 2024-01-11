@@ -61,12 +61,10 @@ export class LoginComponent implements OnInit {
   }
 
   get email() {
-    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
     return this.form.get('email')!;
   }
 
   get password() {
-    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
     return this.form.get('password')!;
   }
 
@@ -88,7 +86,6 @@ export class LoginComponent implements OnInit {
       });
       this._storageService.profile = profile;
       this._router.navigate(['/users/detail', account.id]);
-      /* eslint-disable */
     } catch (error: any) {
       this.isLoading = false;
       this.error =

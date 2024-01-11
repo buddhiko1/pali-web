@@ -60,7 +60,6 @@ export class UserCreationComponent implements OnInit {
   }
 
   get email() {
-    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
     return this.form.get('email')!;
   }
 
@@ -94,7 +93,6 @@ export class UserCreationComponent implements OnInit {
         this.isLoading = false;
         this.successInfo = PromptEnum.SignUp;
       });
-      /* eslint-disable */
     } catch (error: any) {
       this.isLoading = false;
       this.error =

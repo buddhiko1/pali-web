@@ -13,7 +13,6 @@ export class ErrorHandlerService implements ErrorHandler {
     private _notificationsService: NotificationsService,
   ) {}
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   handleError(error: any): void {
     console.error(error);
     error instanceof CombinedError
@@ -37,7 +36,6 @@ export class ErrorHandlerService implements ErrorHandler {
     }
   }
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   private _handlerClientError(error: any) {
     this._notificationsService.pushErrorInfo({
       title: 'Client Error',
