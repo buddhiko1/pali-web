@@ -5,7 +5,7 @@ import {
   ValidationErrors,
 } from '@angular/forms';
 
-import { UsersService } from '../users.service';
+import { UsersService } from './users.service';
 
 @Injectable({ providedIn: 'root' })
 export class UnRegisteredEmailValidator implements AsyncValidator {

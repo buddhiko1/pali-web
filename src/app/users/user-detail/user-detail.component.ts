@@ -4,7 +4,7 @@ import { ActivatedRoute, RouterLink } from '@angular/router';
 import { FadeInDirective } from 'src/app/shared/directives/fade-in.directive';
 import { StorageService } from 'src/app/shared/services/storage.service';
 import { UsersService } from '../users.service';
-import { UserAvatarComponent } from '../shared/user-avatar/user-avatar.component';
+import { UserAvatarComponent } from '../user-avatar/user-avatar.component';
 import { UserSettingComponent } from '../user-setting/user-setting.component';
 import { UserFragment, UserProfileFragment } from 'src/gql/graphql';
 

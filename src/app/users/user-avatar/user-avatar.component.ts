@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 
 import { UrlService } from 'src/app/shared/services/url.service';
-import { UsersService } from '../../users.service';
+import { UsersService } from '../users.service';
 import { AvatarFragment } from 'src/gql/graphql';
 
 @Component({

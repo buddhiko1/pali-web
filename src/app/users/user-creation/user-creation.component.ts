@@ -14,7 +14,7 @@ import { InfoDialogComponent } from 'src/app/ui/info-dialog/info-dialog.componen
 import { NavigationService } from 'src/app/shared/services/navigation.service';
 import { RoleEnum } from 'src/app/shared/values/cms.values';
 import { PromptEnum } from 'src/app/shared/values/prompts.values';
-import { RegisteredEmailValidator } from '../shared/email.validator';
+import { RegisteredEmailValidator } from '../email.validator';
 import { UsersService } from '../users.service';
 import { UserRoleFragment } from 'src/gql/graphql';
 

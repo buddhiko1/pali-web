@@ -2,7 +2,7 @@
   @for (blog of blogs; track blog.id; let isLastItem = $last) {
     <a
       [routerLink]="['./viewer', blog.id]"
-      class="c-blog pt-4 pc:pt-10 pb-4 pc:pb-10 border-b gc-border gu-hover hover:bg-gradient-to-r hover:from-primaryBg hover:via-hoverBg hover:to-appBg"
+      class="c-blog pt-4 pc:pt-10 pb-4 pc:pb-10 border-b gc-border gu-hover pc:hover:bg-gradient-to-r pc:hover:from-primaryBg pc:hover:via-hoverBg pc:hover:to-primaryBg"
       [class.border-b]="!isLastItem"
     >
       <p class="c-title">{{ blog.title }}</p>

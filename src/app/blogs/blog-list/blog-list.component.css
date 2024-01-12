@@ -8,5 +8,5 @@
 .c-blog {
   display: grid;
   grid-template-rows: auto;
-  grid-template-columns: 1fr auto;
+  grid-template-columns: 1fr auto auto auto auto;
 }

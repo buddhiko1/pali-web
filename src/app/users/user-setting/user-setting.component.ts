@@ -11,7 +11,7 @@ import { FadeInDirective } from 'src/app/shared/directives/fade-in.directive';
 import { AuthService } from 'src/app/auth/auth.service';
 import { ActionIconComponent } from 'src/app/ui/action-icon/action-icon.component';
 import { UsersService } from '../users.service';
-import { UserAvatarComponent } from '../shared/user-avatar/user-avatar.component';
+import { UserAvatarComponent } from '../user-avatar/user-avatar.component';
 import { UserFragment, UserProfileFragment } from 'src/gql/graphql';
 
 @Component({
