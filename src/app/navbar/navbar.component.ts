@@ -8,7 +8,7 @@ import { PlusSvgComponent } from '../svg/plus/plus.component';
 import { MoonSvgComponent } from '../svg/moon/moon.component';
 import { SunSvgComponent } from '../svg/sun/sun.component';
 import { EmailSvgComponent } from '../svg/email/email.component';
-import { UserAvatarComponent } from '../users/shared/user-avatar/user-avatar.component';
+import { UserAvatarComponent } from '../users/user-avatar/user-avatar.component';
 import { StorageService } from '../shared/services/storage.service';
 import { ThemeEnum } from './navbar.model';
 import { NavbarService } from './navbar.service';

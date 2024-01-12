@@ -52,7 +52,7 @@
   justify-items: center;
 }
 
-@media screen and (min-width: theme("screens.tablat")) {
+@media screen and (min-width: theme("screens.tablet")) {
   .c-cites .c-content {
     grid-row-gap: theme(spacing.6);
   }

@@ -5,15 +5,15 @@ export default {
   content: ["./src/**/*.{html,ts,svg}"],
   theme: {
     screens: {
-      tablat: "640px",
+      tablet: "640px",
       pc: "1024px",
     },
     extend: {
       spacing: {
         phoneXspan: "1.75rem",
         phonePageXspan: "3rem",
-        tablatXspan: "3rem",
-        tablatPageXspan: "4.5rem",
+        tabletXspan: "3rem",
+        tabletPageXspan: "4.5rem",
         pcXspan: "21.5vw",
         pcPageXspan: "23.5vw",
       },

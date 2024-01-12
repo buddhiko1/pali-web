@@ -12,7 +12,7 @@
   >
     <div
       appFadeIn
-      class="c-banner px-phoneXspan tablat:px-tablatXspan pc:px-0 pt-1 pc:pt-6 shadow-sm tablat:shadow-none"
+      class="c-banner px-phoneXspan tablet:px-tabletXspan pc:px-0 pt-1 pc:pt-6 shadow-sm tablat:shadow-none"
     >
       <button
         (click)="routeTo('/home')"
@@ -50,7 +50,7 @@
         'w-full',
         'pc:w-full',
         'px-phoneXspan',
-        'tablat:px-tablatXspan',
+        'tablet:px-tabletXspan',
         'pc:px-0',
         'pb-3',
         'bg-primaryBg',
@@ -58,7 +58,7 @@
         animationClass
       ]"
     >
-      <ul class="c-routes ml-2 tablat:ml-3 ld:ml-0">
+      <ul class="c-routes ml-2 tablet:ml-3 ld:ml-0">
         @for (item of routes; track item.name) {
           <li class="c-route-item mt-2 pc:mt-0 pc:mx-[0.7vw]">
             <button

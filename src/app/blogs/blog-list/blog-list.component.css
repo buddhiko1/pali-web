@@ -1,12 +1,50 @@
 .c-container {
   display: grid;
-  grid-area: content;
   grid-auto-flow: row;
-  grid-template-columns: 1fr;
 }
 
 .c-blog {
   display: grid;
-  grid-template-rows: auto;
-  grid-template-columns: 1fr auto auto auto auto;
+  grid-template-rows: auto, auto;
+  grid-template-columns: 2fr 10fr 2fr;
+  grid-template-areas:
+    "author title comments"
+    "author title comments";
+  align-items: center;
+}
+
+.c-author {
+  grid-area: author;
+  justify-self: start;
+}
+
+.c-title {
+  grid-area: title;
+  justify-self: start;
+}
+
+.c-comments {
+  grid-area: comments;
+  justify-self: end;
+}
+
+@media screen and (min-width: theme("screens.tablet")) {
+  .c-blog {
+    grid-template-rows: auto;
+    grid-template-columns: 2fr 10fr 2fr 2fr;
+    grid-template-areas: "author title comments activeTime";
+  }
+
+  .c-comments {
+    grid-area: comments;
+    justify-self: center;
+  }
+
+  .c-activeTime {
+    grid-area: activeTime;
+    justify-self: end;
+  }
+}
+
+@media screen and (min-width: theme("screens.pc")) {
 }

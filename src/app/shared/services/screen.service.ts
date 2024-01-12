@@ -8,14 +8,14 @@ export class ScreenService {
   get isPhone(): boolean {
     return (
       window.innerWidth <
-      parseInt(tailwindConfig.default.theme.screens.tablat, 10)
+      parseInt(tailwindConfig.default.theme.screens.tablet, 10)
     );
   }
 
-  get isTablat(): boolean {
+  get isTablet(): boolean {
     return (
       window.innerWidth >=
-        parseInt(tailwindConfig.default.theme.screens.tablat, 10) &&
+        parseInt(tailwindConfig.default.theme.screens.tablet, 10) &&
       window.innerWidth < parseInt(tailwindConfig.default.theme.screens.pc, 10)
     );
   }

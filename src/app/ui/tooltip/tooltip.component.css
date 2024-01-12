@@ -83,7 +83,7 @@
   animation: right 300ms ease-out forwards;
 }
 
-@media screen and (min-width: theme("screens.tablat")) {
+@media screen and (min-width: theme("screens.tablet")) {
 }
 
 @media screen and (min-width: theme("screens.pc")) {

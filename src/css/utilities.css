@@ -3,11 +3,11 @@
 }
 
 .gu-rm-page-span {
-  @apply -mx-phonePageXspan tablat:-mx-tablatPageXspan pc:-mx-pcPageXspan;
+  @apply -mx-phonePageXspan tablet:-mx-tabletPageXspan pc:-mx-pcPageXspan;
 }
 
 .gu-add-page-span {
-  @apply mx-phonePageXspan tablat:mx-tablatPageXspan pc:mx-pcPageXspan;
+  @apply mx-phonePageXspan tablet:mx-tabletPageXspan pc:mx-pcPageXspan;
 }
 
 .gu-disable-scroll {

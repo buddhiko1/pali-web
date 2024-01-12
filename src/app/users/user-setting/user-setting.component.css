@@ -15,7 +15,7 @@
   place-self: end;
 }
 
-@media screen and (min-width: theme("screens.tablat")) {
+@media screen and (min-width: theme("screens.tablet")) {
 }
 
 @media screen and (min-width: theme("screens.pc")) {

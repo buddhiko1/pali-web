@@ -53,7 +53,7 @@
   color: theme("colors.error");
 }
 
-@media screen and (min-width: theme("screens.tablat")) {
+@media screen and (min-width: theme("screens.tablet")) {
   .c-form {
     row-gap: theme(spacing.7);
   }

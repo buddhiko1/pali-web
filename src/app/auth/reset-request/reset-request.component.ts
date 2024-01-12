@@ -12,7 +12,7 @@ import { FormDialogComponent } from 'src/app/ui/form-dialog/form-dialog.componen
 import { InfoDialogComponent } from 'src/app/ui/info-dialog/info-dialog.component';
 import { NavigationService } from 'src/app/shared/services/navigation.service';
 import { PromptEnum } from 'src/app/shared/values/prompts.values';
-import { UnRegisteredEmailValidator } from 'src/app/users/shared/email.validator';
+import { UnRegisteredEmailValidator } from 'src/app/users/email.validator';
 import { AuthService } from '../auth.service';
 
 @Component({

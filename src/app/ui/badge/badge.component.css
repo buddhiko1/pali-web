@@ -11,3 +11,12 @@
   background: theme("colors.secondaryBg");
   color: theme("colors.text");
 }
+
+@media screen and (min-width: theme("screens.tablet")) {
+  [number]::after {
+    padding: 0.07rem;
+  }
+}
+
+@media screen and (min-width: theme("screens.pc")) {
+}

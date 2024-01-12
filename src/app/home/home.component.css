@@ -37,7 +37,7 @@
   justify-content: end;
 }
 
-@media screen and (min-width: theme("screens.tablat")) {
+@media screen and (min-width: theme("screens.tablet")) {
   .c-modules {
     grid-row-gap: 3.5rem;
   }

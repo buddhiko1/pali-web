@@ -10,7 +10,7 @@
   <div
     appFadeIn
     [fadeInDelay]="300"
-    class="c-content mt-24 tablat:mt-48 pc:mt-[20vh]"
+    class="c-content mt-24 tablet:mt-48 pc:mt-[20vh]"
   >
     <div class="c-avatar">
       <app-user-avatar
@@ -26,7 +26,7 @@
     <div class="flex">
       <input
         [(ngModel)]="alais"
-        class="w-32 tablat:w-40 pl-2 pr-8 bg-inputBg border-b border-border outline-none leading-relaxed text-text text-left text-base"
+        class="w-32 tablet:w-40 pl-2 pr-8 bg-inputBg border-b border-border outline-none leading-relaxed text-text text-left text-base"
         (keydown.enter)="saveAlais()"
       />
       <app-action-icon

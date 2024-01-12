@@ -1,21 +1,23 @@
-@if (isButtonStyle) {
-  <button>
-    <img
-      class="rounded-full"
-      [src]="avatarUrl"
-      [style.height]="size"
-      [style.width]="size"
-      alt="avatar"
-    />
-  </button>
-} @else {
-  <div>
-    <img
-      class="rounded-full"
-      [src]="avatarUrl"
-      [style.height]="size"
-      [style.width]="size"
-      alt="avatar"
-    />
-  </div>
-}
+<div class="c-container">
+  @if (isButtonStyle) {
+    <button>
+      <img
+        class="rounded-full"
+        [src]="avatarUrl"
+        [style.height]="size"
+        [style.width]="size"
+        alt="avatar"
+      />
+    </button>
+  } @else {
+    <div>
+      <img
+        class="rounded-full"
+        [src]="avatarUrl"
+        [style.height]="size"
+        [style.width]="size"
+        alt="avatar"
+      />
+    </div>
+  }
+</div>
