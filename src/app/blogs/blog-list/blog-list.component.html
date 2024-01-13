@@ -8,7 +8,7 @@
       <app-user-avatar
         class="c-author -ml-1"
         [avatarId]="blog.user_created?.avatar?.id"
-        [size]="isPhone ? '1.5rem' : '2rem'"
+        [size]="isPhone ? '1.5rem' : '2.2rem'"
         (click)="onAvatarClick($event, blog.user_created!.id)"
       />
       <p class="c-title gc-text text-sm pc:text-base">
@@ -17,7 +17,7 @@
       <app-badge [number]="999" class="c-comments">
         <app-chat-svg class="gc-svg inline-block size-5" />
       </app-badge>
-      <p class="c-activeTime gc-text hidden tablet:block">
+      <p class="c-activeTime gc-text text-sm hidden tablet:block">
         {{
           blog.date_updated || blog.date_created
             | date: "M/d hh:mm a"
