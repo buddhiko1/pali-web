@@ -32,6 +32,8 @@ import { ActiveDatePipe } from './active-date.pipe';
 export class BlogListComponent {
   @Input()
   blogs: BlogFragment[] = [];
+  @Input()
+  showAvatar: boolean = true;
 
   constructor(
     private _router: Router,
@@ -48,6 +50,10 @@ export class BlogListComponent {
 
   onAvatarClick(event: Event, userId: string) {
     event.preventDefault();
-    this._router.navigate(['../users/detail', userId]);
+    this._router.navigate(['/users/detail', userId]);
+  }
+
+  onBlogClick(blogId: string) {
+    this._router.navigate(['/blogs/viewer', blogId]);
   }
 }

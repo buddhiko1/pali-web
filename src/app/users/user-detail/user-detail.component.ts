@@ -3,10 +3,17 @@ import { ActivatedRoute, RouterLink } from '@angular/router';
 
 import { FadeInDirective } from 'src/app/shared/directives/fade-in.directive';
 import { StorageService } from 'src/app/shared/services/storage.service';
+import { BlogsService } from 'src/app/blogs/blogs.service';
+import { BlogStatusNameEnum } from 'src/app/shared/values/cms.values';
+import { BlogListComponent } from 'src/app/blogs/blog-list/blog-list.component';
 import { UsersService } from '../users.service';
 import { UserAvatarComponent } from '../user-avatar/user-avatar.component';
 import { UserSettingComponent } from '../user-setting/user-setting.component';
-import { UserFragment, UserProfileFragment } from 'src/gql/graphql';
+import {
+  UserFragment,
+  UserProfileFragment,
+  BlogFragment,
+} from 'src/gql/graphql';
 
 @Component({
   selector: 'app-user-detail',
@@ -18,16 +25,19 @@ import { UserFragment, UserProfileFragment } from 'src/gql/graphql';
     RouterLink,
     UserSettingComponent,
     UserAvatarComponent,
+    BlogListComponent,
   ],
 })
 export class UserDetailComponent implements OnInit {
   user!: UserFragment;
   profile!: UserProfileFragment;
   userId: string = '';
+  userBlogs: BlogFragment[] = [];
 
   constructor(
     private _route: ActivatedRoute,
     private _usersService: UsersService,
+    private _blogsService: BlogsService,
     private _storageService: StorageService,
   ) {}
 
@@ -50,9 +60,27 @@ export class UserDetailComponent implements OnInit {
           this.profile = profile;
         });
     }
+    this._fetchUserBlogs();
   }
 
   get isMyself(): boolean {
-    return this.userId === this._storageService.account?.id;
+    return this._storageService.isLoggedIn
+      ? this.userId === this._storageService.account?.id
+      : false;
+  }
+
+  private async _fetchUserBlogs(): Promise<void> {
+    const statusNameList = [BlogStatusNameEnum.Published];
+    if (this.isMyself) {
+      statusNameList.push(BlogStatusNameEnum.Draft);
+    }
+    this.userBlogs = await this._blogsService.fetchUserBlogs({
+      userId: this.userId,
+      statusNameList: statusNameList,
+      sortFields: ['-date_created'],
+      offset: 0,
+      limit: -1,
+      returnContent: false,
+    });
   }
 }

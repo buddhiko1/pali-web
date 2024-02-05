@@ -51,7 +51,7 @@ graphql(`
 
   query UserBlogs(
     $userId: String!
-    $statusName: String!
+    $statusNameList: [String!]!
     $sortFields: [String!]!
     $offset: Int!
     $limit: Int!
@@ -60,7 +60,7 @@ graphql(`
     blogs(
       filter: {
         user_created: { id: { _eq: $userId } }
-        status: { name: { _eq: $statusName } }
+        status: { name: { _in: $statusNameList } }
       }
       sort: $sortFields
       offset: $offset

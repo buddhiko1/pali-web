@@ -1,0 +1,29 @@
+.c-container {
+  display: grid;
+  grid-template-rows: auto, auto, auto;
+  grid-template-columns: 1fr 2fr;
+  grid-template-areas:
+    "avatar alais"
+    "avatar setting"
+    "blogs blogs";
+  align-items: center;
+}
+
+.c-avatar {
+  grid-area: avatar;
+  justify-self: start;
+}
+
+.c-alais {
+  grid-area: alais;
+  justify-self: start;
+}
+
+.c-setting {
+  grid-area: setting;
+  justify-self: start;
+}
+
+.c-blogs {
+  grid-area: blogs;
+}

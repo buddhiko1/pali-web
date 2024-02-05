@@ -13,6 +13,12 @@
   align-items: center;
 }
 
+.c-without-avatar {
+  grid-template-areas:
+    "title title comments"
+    "title title comments";
+}
+
 .c-author {
   grid-area: author;
   justify-self: start;
@@ -20,7 +26,6 @@
 
 .c-title {
   grid-area: title;
-  justify-self: start;
 }
 
 .c-comments {
@@ -46,5 +51,9 @@
   }
 }
 
-@media screen and (min-width: theme("screens.pc")) {
+@media screen and (min-width: theme("screens.tablet")) {
+  .c-title {
+    grid-area: title;
+    justify-self: start;
+  }
 }

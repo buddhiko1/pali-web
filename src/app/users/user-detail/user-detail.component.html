@@ -1,21 +1,17 @@
-<div class="c-container">
-  @if (user && profile) {
-    <section
-      appFadeIn
-      [fadeInDelay]="300"
-      class="c-container mt-24 tablet:mt-48 pc:mt-[20vh]"
-    >
-      <div class="c-content">
-        <app-user-avatar
-          [isButtonStyle]="false"
-          [size]="'6rem'"
-          [avatarId]="user.avatar?.id"
-        />
-        <p class="text-text">{{ profile.alais }}</p>
-      </div>
-    </section>
-  }
-  @if (isMyself) {
-    <button class="gc-button" [routerLink]="['/users/setting']">Setting</button>
-  }
-</div>
+@if (user && profile) {
+  <div appFadeIn class="c-container mt-24 tablet:mt-48 pc:mt-[20vh]">
+    <app-user-avatar
+      class="c-avatar"
+      [isButtonStyle]="false"
+      [size]="'6rem'"
+      [avatarId]="user.avatar?.id"
+    />
+    <p class="c-alais gc-text">{{ profile.alais }}</p>
+    @if (isMyself) {
+      <button [routerLink]="['/users/setting']" class="c-setting gc-button">
+        Setting
+      </button>
+    }
+    <app-blog-list class="c-blogs" [blogs]="userBlogs" [showAvatar]="false" />
+  </div>
+}
