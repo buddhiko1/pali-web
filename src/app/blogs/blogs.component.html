@@ -1,6 +1,9 @@
 <div>
-  <!-- <button [routerLink]="['/blogs/editor']" class="gc-button"> -->
-  <!--   <p class="gc-text">Create</p> -->
-  <!-- </button> -->
-  <app-blog-list [blogs]="blogs" />
+  <app-blog-add-button
+    [size]="isPhone ? '2.5rem' : '3rem'"
+    class="fixed bottom-16 right-8 pc:bottom-32 pc:right-20"
+  />
+  <div class="mt-8 pc:mt-12">
+    <app-blog-list [blogs]="blogs" />
+  </div>
 </div>

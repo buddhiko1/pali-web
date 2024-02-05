@@ -1,7 +1,7 @@
 <div class="c-container">
   @for (blog of blogs; track blog.id; let isLastItem = $last) {
     <button
-      class="c-blog pt-4 pc:pt-10 pb-4 pc:pb-10 border-b gc-border gu-hover pc:hover:bg-gradient-to-r pc:hover:from-primaryBg pc:hover:via-hoverBg pc:hover:to-primaryBg"
+      class="c-blog py-4 tablet:py-8 pc:px-3 border-b gc-border gu-hover pc:hover:bg-gradient-to-r pc:hover:from-primaryBg pc:hover:via-hoverBg pc:hover:to-primaryBg"
       [class.border-b]="!isLastItem"
       [class.c-without-avatar]="!showAvatar"
       (click)="onBlogClick(blog.id)"
@@ -10,7 +10,7 @@
         <app-user-avatar
           class="c-author"
           [avatarId]="blog.user_created?.avatar?.id"
-          [size]="isPhone ? '1.5rem' : '2.2rem'"
+          [size]="isPhone ? '2.1rem' : '2.5rem'"
           (click)="onAvatarClick($event, blog.user_created!.id)"
         />
       }

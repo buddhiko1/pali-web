@@ -70,7 +70,7 @@ export class NavbarComponent implements OnInit {
     private _navbarService: NavbarService,
   ) {
     fromEvent(document, 'scroll')
-      .pipe(throttleTime(100))
+      .pipe(throttleTime(20))
       .subscribe(() => {
         const currentScrollPosition = window.scrollY;
         if (

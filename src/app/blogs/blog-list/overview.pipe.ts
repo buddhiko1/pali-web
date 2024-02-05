@@ -8,6 +8,7 @@ import { ScreenService } from 'src/app/shared/services/screen.service';
 export class OverViewPipe implements PipeTransform {
   lengthForPhone: number = 45;
   lengthForPc: number = 80;
+
   constructor(private _screenService: ScreenService) {}
 
   transform(value: string): string {
