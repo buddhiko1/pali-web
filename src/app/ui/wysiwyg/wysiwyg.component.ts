@@ -1,4 +1,4 @@
-import { Component, ViewChild, Input } from '@angular/core';
+import { Component, ViewChild, Input, HostBinding } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CKEditorModule, CKEditorComponent } from '@ckeditor/ckeditor5-angular';
 import Editor from 'ckeditor5-custom-build/build/ckeditor';
@@ -17,6 +17,10 @@ export class WysiwygComponent {
   Editor = Editor;
   @Input()
   initialContent = '';
+
+  @Input()
+  @HostBinding('style.--height')
+  height = '50vh';
 
   constructor() {}
 

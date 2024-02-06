@@ -52,8 +52,4 @@
 }
 
 @media screen and (min-width: theme("screens.tablet")) {
-  .c-title {
-    grid-area: title;
-    justify-self: start;
-  }
 }

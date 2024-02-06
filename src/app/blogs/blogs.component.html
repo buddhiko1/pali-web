@@ -1,8 +1,7 @@
 <div>
-  <app-blog-add-button
-    [size]="isPhone ? '2.5rem' : '3rem'"
-    class="fixed bottom-16 right-8 pc:bottom-32 pc:right-20"
-  />
+  @if (isPc) {
+    <app-blog-add-button [size]="'3rem'" class="fixed bottom-32 right-20" />
+  }
   <div class="mt-8 pc:mt-12">
     <app-blog-list [blogs]="blogs" />
   </div>

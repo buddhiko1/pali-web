@@ -37,7 +37,7 @@ export class BlogsComponent {
     });
   }
 
-  get isPhone(): boolean {
-    return this._screenService.isPhone;
+  get isPc(): boolean {
+    return this._screenService.isPc;
   }
 }

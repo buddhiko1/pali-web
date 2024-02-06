@@ -11,8 +11,8 @@
   color: theme("colors.text");
 }
 
-/* up */
-@keyframes up {
+/* top */
+@keyframes top {
   from {
     opacity: 0;
     transform: translate(-50%);
@@ -23,14 +23,14 @@
   }
 }
 
-[position="up"]::after {
+[position="top"]::after {
   bottom: calc(100% + var(--distance));
   left: 50%;
-  animation: up 300ms ease-out forwards;
+  animation: top 300ms ease-out forwards;
 }
 
-/* down */
-@keyframes down {
+/* bottom */
+@keyframes bottom {
   from {
     opacity: 0;
     transform: translate(-50%);
@@ -41,10 +41,10 @@
   }
 }
 
-[position="down"]::after {
+[position="bottom"]::after {
   top: calc(100% + var(--distance));
   left: 50%;
-  animation: down 300ms ease-out forwards;
+  animation: bottom 300ms ease-out forwards;
 }
 
 /* left */

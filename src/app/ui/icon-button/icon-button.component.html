@@ -1,4 +1,4 @@
-<button>
+<button [class]="isButtonStyle ? 'gc-button' : ''">
   @if (isLoading) {
     <div class="c-loader"></div>
   } @else {

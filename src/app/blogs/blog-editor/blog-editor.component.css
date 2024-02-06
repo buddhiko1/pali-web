@@ -1,0 +1,25 @@
+.c-container {
+  display: grid;
+  grid-template-rows: auto, auto;
+  grid-template-columns: 16fr 2fr 2fr 10fr;
+  grid-template-areas:
+    "title save-button publish-button space"
+    "wysiwyg wysiwyg wysiwyg wysiwyg";
+  row-gap: 3.5rem;
+}
+
+.c-title {
+  grid-area: title;
+}
+
+.c-save-button {
+  grid-area: save-button;
+}
+
+.c-publish-button {
+  grid-area: publish-button;
+}
+
+.c-wysiwyg {
+  grid-area: wysiwyg;
+}

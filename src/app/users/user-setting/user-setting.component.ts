@@ -9,7 +9,7 @@ import { SaveSvgComponent } from 'src/app/svg/save/save.component';
 import { CameraSvgComponent } from 'src/app/svg/camera/camera.component';
 import { FadeInDirective } from 'src/app/shared/directives/fade-in.directive';
 import { AuthService } from 'src/app/auth/auth.service';
-import { ActionIconComponent } from 'src/app/ui/action-icon/action-icon.component';
+import { IconButtonComponent } from 'src/app/ui/icon-button/icon-button.component';
 import { UsersService } from '../users.service';
 import { UserAvatarComponent } from '../user-avatar/user-avatar.component';
 import { UserFragment, UserProfileFragment } from 'src/gql/graphql';
@@ -22,7 +22,7 @@ import { UserFragment, UserProfileFragment } from 'src/gql/graphql';
   imports: [
     FormsModule,
     FadeInDirective,
-    ActionIconComponent,
+    IconButtonComponent,
     UploaderComponent,
     CheckSvgComponent,
     SaveSvgComponent,

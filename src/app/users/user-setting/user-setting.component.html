@@ -29,7 +29,7 @@
         class="w-32 tablet:w-40 pl-2 pr-8 bg-inputBg border-b border-border outline-none leading-relaxed text-text text-left text-base"
         (keydown.enter)="saveAlais()"
       />
-      <app-action-icon
+      <app-icon-button
         [isLoading]="isChangingAlais"
         [size]="'1.6rem'"
         [tip]="'Save'"
@@ -41,7 +41,7 @@
           [size]="'1.6rem'"
           [class]="'gc-svg text-focus text-center'"
         />
-      </app-action-icon>
+      </app-icon-button>
     </div>
     <button (click)="onLogout()" class="gc-hl-button">Logout</button>
   </div>

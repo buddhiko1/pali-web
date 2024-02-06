@@ -1,17 +1,42 @@
-<div>
+<div class="c-container mt-16">
   <input
     type="text"
     placeholder="Title"
     [(ngModel)]="title"
-    class="d-block w-full"
+    class="c-title gc-text text-lg py-1 px-3 mr-16 bg-inputBg border-b border-border outline-none d-block"
   />
   @if (isCreation) {
-    <button class="gc-button" (click)="saveDraft()">
-      <p class="gc-text">Save</p>
-    </button>
+    <app-icon-button
+      [isLoading]="isSavingDraft"
+      [size]="'1.6rem'"
+      [tip]="'Save draft'"
+      [isButtonStyle]="true"
+      [tipPosition]="'top'"
+    >
+      <app-save-svg
+        (click)="saveDraft()"
+        [size]="'1.6rem'"
+        [class]="'c-save-button gc-svg text-focus text-center'"
+      />
+    </app-icon-button>
   }
-  <button class="gc-button" (click)="publish()">
-    <p class="gc-text">Publish</p>
-  </button>
-  <app-wysiwyg #wysiwyg [initialContent]="initialContent" />
+  <app-icon-button
+    [isLoading]="isPublishing"
+    [size]="'1.6rem'"
+    [tip]="'Publish'"
+    [isButtonStyle]="true"
+    [tipPosition]="'top'"
+  >
+    <app-upload-svg
+      (click)="publish()"
+      [size]="'1.6rem'"
+      [class]="'c-publish-button gc-svg text-focus text-center'"
+    />
+  </app-icon-button>
+  <app-wysiwyg
+    #wysiwyg
+    [initialContent]="initialContent"
+    [height]="'60vh'"
+    class="c-wysiwyg"
+  />
 </div>

@@ -1,4 +1,5 @@
 /* editor height */
-/* :host ::ng-deep .ck-editor__editable_inline { */
-/*   min-height: 500px; */
-/* } */
+:host ::ng-deep .ck-editor__editable_inline {
+  height: var(--height);
+  padding: 0 2rem;
+}

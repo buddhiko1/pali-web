@@ -12,7 +12,7 @@ export class TooltipComponent {
   tip!: string;
 
   @Input()
-  position = 'up'; // up, down, left, right
+  position = 'top'; // top, bottom, left, right
 
   @HostBinding('style.--distance')
   distance = '1.1rem';

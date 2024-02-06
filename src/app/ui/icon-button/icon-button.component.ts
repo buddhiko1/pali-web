@@ -2,13 +2,13 @@ import { Component, Input, HostBinding } from '@angular/core';
 import { TooltipComponent } from 'src/app/ui/tooltip/tooltip.component';
 
 @Component({
-  selector: 'app-action-icon',
+  selector: 'app-icon-button',
   standalone: true,
   imports: [TooltipComponent],
-  templateUrl: './action-icon.component.html',
-  styleUrl: './action-icon.component.css',
+  templateUrl: './icon-button.component.html',
+  styleUrl: './icon-button.component.css',
 })
-export class ActionIconComponent {
+export class IconButtonComponent {
   @HostBinding('style.--borderWidth')
   borderWidth = '0.15rem';
 
@@ -17,11 +17,14 @@ export class ActionIconComponent {
   size = '1.1rem';
 
   @Input()
+  isButtonStyle = false;
+
+  @Input()
   isLoading = false;
 
   @Input()
   tip = '';
 
   @Input()
-  tipPosition = 'up';
+  tipPosition = 'top';
 }
