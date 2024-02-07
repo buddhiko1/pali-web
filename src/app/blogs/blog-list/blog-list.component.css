@@ -26,6 +26,7 @@
 
 .c-title {
   grid-area: title;
+  justify-self: start;
 }
 
 .c-comments {
@@ -38,6 +39,11 @@
     grid-template-rows: auto;
     grid-template-columns: 2fr 10fr 2fr 2fr;
     grid-template-areas: "author title comments activeTime";
+  }
+
+  .c-without-avatar {
+    grid-template-columns: 10fr 1fr 2fr;
+    grid-template-areas: "title comments activeTime";
   }
 
   .c-comments {
