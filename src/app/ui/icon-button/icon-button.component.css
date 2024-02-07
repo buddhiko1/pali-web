@@ -9,3 +9,7 @@
   border-bottom: var(--borderWidth) solid rgba(0, 0, 0, 0);
   animation: ga-rotate 1.5s ease-in-out infinite;
 }
+
+.c-button {
+  @apply p-1 m-auto rounded-md !bg-buttonBg hover:bg-hover;
+}

@@ -1,31 +1,29 @@
 @if (user && profile) {
-  <div appFadeIn class="c-container mt-16 tablet:mt-48 pc:mt-[20vh]">
+  <div appFadeIn class="c-container mt-12 tablet:mt-16">
     <div class="c-user">
-      <app-user-avatar
-        [isButtonStyle]="false"
-        [size]="'3rem'"
-        [avatarId]="user.avatar?.id"
-      />
-      <p class="gc-text text-sm mt-1">{{ profile.alais }}</p>
-    </div>
-    @if (isMyself) {
-      <div class="c-setting">
-        <app-icon-button
-          [size]="'1.6rem'"
-          [tip]="'Setting'"
-          [isButtonStyle]="true"
-          [tipPosition]="'top'"
+      @if (isMyself) {
+        <div
+          class="c-badge w-fit p-1 -mb-8 ml-12 z-10 rounded-full bg-secondaryBg"
         >
-          <app-setting-svg
-            (click)="routeToSetting()"
-            [size]="'1.6rem'"
-            [class]="'gc-svg gu-hover'"
-          />
-        </app-icon-button>
-      </div>
-    }
+          <app-setting-svg class="gc-svg" [size]="'1.1rem'" />
+        </div>
+        <app-user-avatar
+          [size]="isPhone ? '4rem' : '6rem'"
+          [avatarId]="user.avatar?.id"
+          (click)="routeToSetting()"
+        />
+        <p class="gc-text text-sm mt-1">{{ profile.alais }}</p>
+      } @else {
+        <app-user-avatar
+          [isButtonStyle]="false"
+          [size]="'4rem'"
+          [avatarId]="user.avatar?.id"
+        />
+        <p class="gc-text text-sm mt-1">{{ profile.alais }}</p>
+      }
+    </div>
     <app-blog-list
-      class="c-blogs py-14"
+      class="c-blogs py-10 tablet:py-16"
       [blogs]="userBlogs"
       [showAvatar]="false"
     />

@@ -1,23 +1,21 @@
 .c-container {
   display: grid;
   grid-template-rows: auto, auto;
-  grid-template-columns: 3fr 3fr;
+  grid-template-columns: 1fr;
   grid-template-areas:
-    "user setting"
-    "blogs blogs";
+    "user"
+    "blogs";
 }
 
 .c-user {
   grid-area: user;
-  justify-self: start;
+  place-self: center;
   display: grid;
   justify-items: center;
 }
 
-.c-setting {
-  grid-area: setting;
-  justify-self: end;
-  align-self: center;
+.c-badge {
+  place-self: end;
 }
 
 .c-blogs {

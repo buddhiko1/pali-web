@@ -17,7 +17,10 @@ export class IconButtonComponent {
   size = '1.1rem';
 
   @Input()
-  isButtonStyle = false;
+  isButtonStyle = true;
+
+  @Input()
+  isDisabled = false;
 
   @Input()
   isLoading = false;

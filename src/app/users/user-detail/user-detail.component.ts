@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 
 import { FadeInDirective } from 'src/app/shared/directives/fade-in.directive';
 import { StorageService } from 'src/app/shared/services/storage.service';
+import { ScreenService } from 'src/app/shared/services/screen.service';
 import { SettingSvgComponent } from 'src/app/svg/setting/setting.component';
 import { IconButtonComponent } from 'src/app/ui/icon-button/icon-button.component';
 import { BlogsService } from 'src/app/blogs/blogs.service';
@@ -38,6 +39,7 @@ export class UserDetailComponent implements OnInit {
   userBlogs: BlogFragment[] = [];
 
   constructor(
+    private _screenService: ScreenService,
     private _router: Router,
     private _activatedRoute: ActivatedRoute,
     private _usersService: UsersService,
@@ -71,6 +73,10 @@ export class UserDetailComponent implements OnInit {
     return this._storageService.isLoggedIn
       ? this.userId === this._storageService.account?.id
       : false;
+  }
+
+  get isPhone(): boolean {
+    return this._screenService.isPhone;
   }
 
   routeToSetting(): void {
