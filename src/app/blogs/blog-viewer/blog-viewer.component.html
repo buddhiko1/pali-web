@@ -1,6 +1,9 @@
-<div>
+<div class="c-container my-20">
   @if (blog) {
-    <p class="pc:text-xl gc-hl-title">{{ blog.title }}</p>
-    <div class="gc-text gc-inner-html" [innerHTML]="blog.content"></div>
+    <p class="c-title pc:text-xl gc-hl-title">{{ blog.title }}</p>
+    <div
+      class="c-content mt-16 gc-text text-base gc-inner-html"
+      [innerHTML]="blog.content"
+    ></div>
   }
 </div>
