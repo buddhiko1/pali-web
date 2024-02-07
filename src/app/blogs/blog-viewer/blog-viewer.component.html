@@ -1,9 +1,6 @@
 <div>
   @if (blog) {
     <p class="pc:text-xl gc-hl-title">{{ blog.title }}</p>
-    <div
-      class="gc-text px-10 list-disc list-inside"
-      [innerHtml]="blog.content"
-    ></div>
+    <div class="gc-text gc-inner-html" [innerHTML]="blog.content"></div>
   }
 </div>

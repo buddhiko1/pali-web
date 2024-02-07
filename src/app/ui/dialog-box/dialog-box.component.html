@@ -1,17 +1,19 @@
 <div
   class="c-container fixed inset-0 bg-overlay opacity-100"
-  [class.items-center]="isCentral"
-  [class.-mt-[5rem]]="isCentral"
-  [class.pc:-mt-[15rem]]="isCentral"
-  [class.items-start]="!isCentral"
+  [class.items-center]="isCentered"
+  [class.-mt-[25rem]]="isCentered"
+  [class.pc:-mt-[45rem]]="isCentered"
+  [class.items-start]="!isCentered"
 >
   <div
     appSlideIn
     [slideInDelay]="200"
-    class="gd-box"
-    [class.my-[20vh]]="!isCentral"
-    [class.tablet:my-[20vh]]="!isCentral"
-    [class.pc:my-[20vh]]="!isCentral"
+    [class]="[
+      'gd-box',
+      'my-[20vh]',
+      isCentered ? '' : 'tablet:my-[20vh]',
+      isCentered ? '' : 'pc:my-[25vh]'
+    ]"
   >
     <ng-content />
   </div>

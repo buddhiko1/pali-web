@@ -16,12 +16,12 @@ export class BlogViewerComponent implements OnInit {
   blog!: BlogFragment;
 
   constructor(
-    private _route: ActivatedRoute,
+    private _activatedRoute: ActivatedRoute,
     private _blogsService: BlogsService,
   ) {}
 
   ngOnInit(): void {
-    const blogId = this._route.snapshot.paramMap.get('id')!;
+    const blogId = this._activatedRoute.snapshot.paramMap.get('id')!;
     this._blogsService
       .fetchBlogById({ id: blogId, returnContent: true })
       .then((blog) => {

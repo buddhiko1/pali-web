@@ -37,11 +37,11 @@ export class UserActivationComponent implements OnInit {
 
   constructor(
     private _router: Router,
-    private _activeRoute: ActivatedRoute,
+    private _activatedRoute: ActivatedRoute,
     private _usersService: UsersService,
     private _navigationService: NavigationService,
   ) {
-    this._activeRoute.queryParams.subscribe((params) => {
+    this._activatedRoute.queryParams.subscribe((params) => {
       this._token = params['token'];
       this._email = JSON.parse(
         window.atob(params['token'].split('.')[1]),

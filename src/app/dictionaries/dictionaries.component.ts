@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { SlideInDirective } from '../shared/directives/slide-in.directive';
 import { GithubSvgComponent } from '../svg/github/github.component';
 import { DownloadSvgComponent } from '../svg/download/download.component';
+import { IconButtonComponent } from '../ui/icon-button/icon-button.component';
 import { SafeHtmlPipe } from '../shared/pipes/safe-html.pipe';
 import { UrlService } from '../shared/services/url.service';
 import { BookComponent, DirectionEnum } from '../ui/book/book.component';
@@ -16,6 +17,7 @@ import { Dictionaries, Dict_Introduction } from 'src/gql/graphql';
   imports: [
     GithubSvgComponent,
     DownloadSvgComponent,
+    IconButtonComponent,
     SlideInDirective,
     SafeHtmlPipe,
     BookComponent,

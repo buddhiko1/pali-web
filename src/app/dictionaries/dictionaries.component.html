@@ -39,21 +39,34 @@
           {{ dictionary.description }}
         </p>
         <div class="c-action mt-6 pc:mt-16">
-          <a
-            [href]="dictionary.info_url"
-            target="_blank"
-            class="c-link gc-button"
+          <app-icon-button
+            [size]="'1.6rem'"
+            [tip]="'Github'"
+            [isButtonStyle]="true"
+            [tipPosition]="'top'"
           >
-            <app-github-svg [class]="'gc-svg'" />
-          </a>
-          <a
-            [href]="downloadUrlFor(dictionary)"
-            [download]="dictionary.name + '.zip'"
-            target="_blank"
-            class="c-link gc-button"
+            <a [href]="dictionary.info_url" target="_blank" class="c-link">
+              <app-github-svg [size]="'1.6rem'" [class]="'gc-svg gu-hover'" />
+            </a>
+          </app-icon-button>
+          <app-icon-button
+            [size]="'1.55rem'"
+            [tip]="'Download'"
+            [isButtonStyle]="true"
+            [tipPosition]="'top'"
           >
-            <app-download-svg [class]="'gc-svg'" />
-          </a>
+            <a
+              [href]="downloadUrlFor(dictionary)"
+              [download]="dictionary.name + '.zip'"
+              target="_blank"
+              class="c-link"
+            >
+              <app-download-svg
+                [size]="'1.55rem'"
+                [class]="'gc-svg gu-hover'"
+              />
+            </a>
+          </app-icon-button>
         </div>
       </div>
       @if (!(dictionary.index % 2)) {

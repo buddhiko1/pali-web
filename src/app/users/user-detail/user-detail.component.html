@@ -1,17 +1,33 @@
 @if (user && profile) {
-  <div appFadeIn class="c-container mt-24 tablet:mt-48 pc:mt-[20vh]">
-    <app-user-avatar
-      class="c-avatar"
-      [isButtonStyle]="false"
-      [size]="'6rem'"
-      [avatarId]="user.avatar?.id"
-    />
-    <p class="c-alais gc-text">{{ profile.alais }}</p>
+  <div appFadeIn class="c-container mt-16 tablet:mt-48 pc:mt-[20vh]">
+    <div class="c-user">
+      <app-user-avatar
+        [isButtonStyle]="false"
+        [size]="'3rem'"
+        [avatarId]="user.avatar?.id"
+      />
+      <p class="gc-text text-sm mt-1">{{ profile.alais }}</p>
+    </div>
     @if (isMyself) {
-      <button [routerLink]="['/users/setting']" class="c-setting gc-button">
-        Setting
-      </button>
+      <div class="c-setting">
+        <app-icon-button
+          [size]="'1.6rem'"
+          [tip]="'Setting'"
+          [isButtonStyle]="true"
+          [tipPosition]="'top'"
+        >
+          <app-setting-svg
+            (click)="routeToSetting()"
+            [size]="'1.6rem'"
+            [class]="'gc-svg gu-hover'"
+          />
+        </app-icon-button>
+      </div>
     }
-    <app-blog-list class="c-blogs" [blogs]="userBlogs" [showAvatar]="false" />
+    <app-blog-list
+      class="c-blogs py-14"
+      [blogs]="userBlogs"
+      [showAvatar]="false"
+    />
   </div>
 }

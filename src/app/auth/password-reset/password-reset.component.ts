@@ -40,12 +40,12 @@ export class PasswordResetComponent implements OnInit {
 
   constructor(
     private _router: Router,
-    private _activedRoute: ActivatedRoute,
+    private _activatedRoute: ActivatedRoute,
     private _navigationService: NavigationService,
     private _storageService: StorageService,
     private _authService: AuthService,
   ) {
-    this._activedRoute.queryParams.subscribe((params) => {
+    this._activatedRoute.queryParams.subscribe((params) => {
       this._token = params['token'];
       this._email = JSON.parse(
         window.atob(params['token'].split('.')[1]),

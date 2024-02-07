@@ -23,11 +23,11 @@ import { SnowBgComponent } from '../ui/snow-bg/snow-bg.component';
 export class PlaceholderComponent {
   text = '';
 
-  constructor(private _activeRoute: ActivatedRoute) {
-    this._activeRoute.params.subscribe((params: Params) => {
+  constructor(private _activatedRoute: ActivatedRoute) {
+    this._activatedRoute.params.subscribe((params: Params) => {
       this.text = params['text'];
     });
-    this._activeRoute.data.subscribe((data) => {
+    this._activatedRoute.data.subscribe((data) => {
       this.text = data['text'];
     });
   }

@@ -11,7 +11,7 @@ import { SlideInDirective } from 'src/app/shared/directives/slide-in.directive';
   styleUrl: './dialog-box.component.css',
 })
 export class DialogBoxComponent implements OnInit, OnDestroy {
-  @Input() isCentral = false;
+  @Input() isCentered = false;
 
   ngOnInit(): void {
     document.documentElement.classList.add('gu-disable-scroll');

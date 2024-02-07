@@ -7,6 +7,7 @@ import { FadeInDirective } from '../shared/directives/fade-in.directive';
 import { UrlService } from '../shared/services/url.service';
 import { GithubSvgComponent } from '../svg/github/github.component';
 import { DownloadSvgComponent } from '../svg/download/download.component';
+import { IconButtonComponent } from '../ui/icon-button/icon-button.component';
 import { QuoteSvgComponent } from '../svg/quote/quote.component';
 import { BooksService } from './books.service';
 import { Books, Cites } from 'src/gql/graphql';
@@ -19,6 +20,7 @@ import { Books, Cites } from 'src/gql/graphql';
     GithubSvgComponent,
     DownloadSvgComponent,
     QuoteSvgComponent,
+    IconButtonComponent,
     SlideInDirective,
     FadeInDirective,
   ],

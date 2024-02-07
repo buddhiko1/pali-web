@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, RouterLink } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 import { FadeInDirective } from 'src/app/shared/directives/fade-in.directive';
 import { StorageService } from 'src/app/shared/services/storage.service';
+import { SettingSvgComponent } from 'src/app/svg/setting/setting.component';
+import { IconButtonComponent } from 'src/app/ui/icon-button/icon-button.component';
 import { BlogsService } from 'src/app/blogs/blogs.service';
 import { BlogStatusNameEnum } from 'src/app/shared/values/cms.values';
 import { BlogListComponent } from 'src/app/blogs/blog-list/blog-list.component';
@@ -22,7 +24,8 @@ import {
   standalone: true,
   imports: [
     FadeInDirective,
-    RouterLink,
+    SettingSvgComponent,
+    IconButtonComponent,
     UserSettingComponent,
     UserAvatarComponent,
     BlogListComponent,
@@ -35,14 +38,15 @@ export class UserDetailComponent implements OnInit {
   userBlogs: BlogFragment[] = [];
 
   constructor(
-    private _route: ActivatedRoute,
+    private _router: Router,
+    private _activatedRoute: ActivatedRoute,
     private _usersService: UsersService,
     private _blogsService: BlogsService,
     private _storageService: StorageService,
   ) {}
 
   ngOnInit(): void {
-    this.userId = this._route.snapshot.paramMap.get('id')!;
+    this.userId = this._activatedRoute.snapshot.paramMap.get('id')!;
     if (this.isMyself) {
       this.user = this._storageService.account;
       this.profile = this._storageService.profile;
@@ -67,6 +71,10 @@ export class UserDetailComponent implements OnInit {
     return this._storageService.isLoggedIn
       ? this.userId === this._storageService.account?.id
       : false;
+  }
+
+  routeToSetting(): void {
+    this._router.navigate([`/users/setting`]);
   }
 
   private async _fetchUserBlogs(): Promise<void> {
