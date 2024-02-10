@@ -5,18 +5,6 @@
     [(ngModel)]="title"
     class="c-title gc-text text-lg py-1 px-3 mr-16 bg-inputBg border-b border-border outline-none d-block"
   />
-  <app-icon-button
-    (click)="deleteBlog()"
-    [isLoading]="isDeleting"
-    [size]="'1.6rem'"
-    [tip]="isSavedBlog ? 'Delete' : ''"
-    [class.hidden]="!isSavedBlog"
-  >
-    <app-delete-svg
-      [size]="'1.6rem'"
-      [class]="['c-delete-button', 'gc-svg', isSavedBlog ? 'gu-hover' : '']"
-    />
-  </app-icon-button>
   @if (isCreation) {
     <app-icon-button
       (click)="saveDraft()"

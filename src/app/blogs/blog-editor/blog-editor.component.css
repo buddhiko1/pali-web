@@ -1,19 +1,15 @@
 .c-container {
   display: grid;
   grid-template-rows: auto, auto;
-  grid-template-columns: 16fr 2fr 2fr 2fr 8fr;
+  grid-template-columns: 16fr 2fr 2fr 10fr;
   grid-template-areas:
-    "title delete-button save-button publish-button space"
-    "wysiwyg wysiwyg wysiwyg wysiwyg wysiwyg";
+    "title save-button publish-button space"
+    "wysiwyg wysiwyg wysiwyg wysiwyg";
   row-gap: 3.5rem;
 }
 
 .c-title {
   grid-area: title;
-}
-
-.c-delete-button {
-  grid-area: delete-button;
 }
 
 .c-save-button {
