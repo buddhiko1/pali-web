@@ -31,7 +31,7 @@ import { UserFragment, UserProfileFragment } from 'src/gql/graphql';
   ],
 })
 export class UserSettingComponent {
-  showUploader = false;
+  isUploaderShow = false;
   alais = '';
   isChangingAlais = false;
 
@@ -56,12 +56,12 @@ export class UserSettingComponent {
     return this._storageService.avatarFolderId;
   }
 
-  async onAvatarClick(): Promise<void> {
-    this.showUploader = true;
+  async showUploader(): Promise<void> {
+    this.isUploaderShow = true;
   }
 
-  async onAvatarUploaded(newAvatarId: string): Promise<void> {
-    this.showUploader = false;
+  async updateAvatar(newAvatarId: string): Promise<void> {
+    this.isUploaderShow = false;
     const oldAavatarId = this.account.avatar?.id;
 
     const updatedMe = await this._usersService.updateAccount({
@@ -91,7 +91,7 @@ export class UserSettingComponent {
     this.isChangingAlais = false;
   }
 
-  async onLogout(): Promise<void> {
+  async logout(): Promise<void> {
     // await this._authService.logout({
     //   tokenForRefresh: this._storageService.tokenForRefresh,
     // });

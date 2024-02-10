@@ -47,21 +47,21 @@ export class BlogListComponent {
     return this._screenService.isPhone;
   }
 
-  onAvatarClick(event: Event, userId: string) {
+  routeToUserDetail(event: Event, userId: string) {
     event.stopPropagation();
     this._router.navigate(['/users/detail', userId]);
   }
 
-  onBlogClick(blogId: string) {
+  viewBlog(blogId: string) {
     this._router.navigate(['/blogs/viewer', blogId]);
   }
 
-  onEditBtnClick(event: Event, blogId: string) {
+  editBlog(event: Event, blogId: string) {
     event.stopPropagation();
-    this._router.navigate(['/blogs/editor', { id: blogId }]);
+    this._router.navigate(['/blogs/editor', blogId]);
   }
 
-  onDeleteBtnClick(event: Event, blogId: string) {
+  deleteBlog(event: Event, blogId: string) {
     event.stopPropagation();
     console.error('delete pre');
     this._router.navigate(['/blogs/edit', blogId]);

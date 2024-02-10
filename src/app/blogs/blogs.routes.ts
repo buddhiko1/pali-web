@@ -11,6 +11,14 @@ export const BLOGS_ROUTES: Routes = [
     path: 'editor',
     canActivate: [isLoggedGuardFn],
     loadComponent: () =>
+      import('./blog-creator/blog-creator.component').then(
+        (m) => m.BlogCreatorComponent,
+      ),
+  },
+  {
+    path: 'editor/:id',
+    canActivate: [isLoggedGuardFn],
+    loadComponent: () =>
       import('./blog-editor/blog-editor.component').then(
         (m) => m.BlogEditorComponent,
       ),

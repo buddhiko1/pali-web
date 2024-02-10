@@ -1,10 +1,10 @@
 <div>
-  @if (showUploader) {
+  @if (isUploaderShow) {
     <app-uploader
       [folderId]="avatarFolderId"
       [allowedExtensions]="['.png', '.jpg', '.jpeg', '.webp']"
-      (successful)="onAvatarUploaded($event)"
-      (failed)="showUploader = false"
+      (successful)="updateAvatar($event)"
+      (failed)="isUploaderShow = false"
     />
   }
   <div
@@ -16,7 +16,7 @@
       <app-user-avatar
         [size]="'6rem'"
         [avatarId]="account.avatar?.id"
-        (click)="onAvatarClick()"
+        (click)="showUploader()"
         class="-mb-2"
       />
       <div class="c-badge w-fit p-1 -mt-14 mr-2 rounded-full bg-secondaryBg">
@@ -44,6 +44,6 @@
         />
       </app-icon-button>
     </div>
-    <button (click)="onLogout()" class="gc-hl-button">Logout</button>
+    <button (click)="logout()" class="gc-hl-button">Logout</button>
   </div>
 </div>
