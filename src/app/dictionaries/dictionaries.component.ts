@@ -6,6 +6,7 @@ import { DownloadSvgComponent } from '../svg/download/download.component';
 import { IconButtonComponent } from '../ui/icon-button/icon-button.component';
 import { SafeHtmlPipe } from '../shared/pipes/safe-html.pipe';
 import { UrlService } from '../shared/services/url.service';
+import { UtilitiesService } from '../shared/services/utilities.service';
 import { BookComponent, DirectionEnum } from '../ui/book/book.component';
 import { Config as BookConfig } from '../ui/book/book.model';
 import { DictionariesService } from './dictionaries.service';
@@ -32,6 +33,7 @@ export class DictionariesComponent {
   constructor(
     private _dictionaryService: DictionariesService,
     private _urlService: UrlService,
+    private _utilitiesService: UtilitiesService,
   ) {
     this._dictionaryService.fetchIntroduction().then((introduction) => {
       this.introduction = introduction;
@@ -52,7 +54,15 @@ export class DictionariesComponent {
     };
   }
 
-  downloadUrlFor(dictionary: Dictionaries): string {
-    return this._urlService.downloadUrlFor(dictionary.zip?.filename_disk);
+  openDictionaryUrl(dictionary: Dictionaries) {
+    this._utilitiesService.openNewTab(dictionary.info_url);
+  }
+
+  downloadDictionary(dictionary: Dictionaries) {
+    const downloadUrl = this._urlService.fileUrlFor(
+      dictionary.zip?.filename_disk,
+    );
+    const downloadFilename = dictionary.name + '.zip';
+    this._utilitiesService.downloadFile(downloadUrl, downloadFilename);
   }
 }

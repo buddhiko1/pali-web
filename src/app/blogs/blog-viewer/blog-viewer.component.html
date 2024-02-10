@@ -5,5 +5,13 @@
       class="c-content mt-16 gc-text text-base gc-inner-html"
       [innerHTML]="blog.content"
     ></div>
+    @if (isMyBlog) {
+      <button
+        (click)="routeToEditor()"
+        class="gc-button gu-hover size-[2.7rem] fixed bottom-32 right-20 rounded-full"
+      >
+        <app-pen-svg [size]="'100%'" [class]="'gc-svg gu-hover'" />
+      </button>
+    }
   }
 </div>

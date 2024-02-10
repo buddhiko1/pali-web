@@ -5,30 +5,38 @@
     [(ngModel)]="title"
     class="c-title gc-text text-lg py-1 px-3 mr-16 bg-inputBg border-b border-border outline-none d-block"
   />
+  <app-icon-button
+    (click)="deleteBlog()"
+    [isDisabled]="!isSavedBlog"
+    [isLoading]="isDeleting"
+    [size]="'1.6rem'"
+    [tip]="isSavedBlog ? 'Delete' : ''"
+  >
+    <app-delete-svg
+      [size]="'1.6rem'"
+      [class]="['c-delete-button', 'gc-svg', isSavedBlog ? 'gu-hover' : '']"
+    />
+  </app-icon-button>
   @if (isCreation) {
     <app-icon-button
+      (click)="saveDraft()"
       [isLoading]="isSavingDraft"
       [size]="'1.6rem'"
       [tip]="'Save draft'"
-      [isButtonStyle]="true"
-      [tipPosition]="'top'"
     >
       <app-save-svg
-        (click)="saveDraft()"
         [size]="'1.6rem'"
         [class]="'c-save-button gc-svg gu-hover'"
       />
     </app-icon-button>
   }
   <app-icon-button
+    (click)="publish()"
     [isLoading]="isPublishing"
     [size]="'1.6rem'"
     [tip]="'Publish'"
-    [isButtonStyle]="true"
-    [tipPosition]="'top'"
   >
     <app-upload-svg
-      (click)="publish()"
       [size]="'1.6rem'"
       [class]="'c-publish-button gc-svg gu-hover'"
     />

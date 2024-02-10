@@ -25,4 +25,8 @@ export class NavigationService {
       this.router.navigateByUrl('/');
     }
   }
+
+  historyGo(relativePosition?: number): void {
+    this.location.historyGo(relativePosition);
+  }
 }

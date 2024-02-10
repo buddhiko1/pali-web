@@ -45,4 +45,20 @@ export class UtilitiesService {
       reader.readAsDataURL(file);
     });
   }
+
+  downloadFile(url: string, filename: string): void {
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = filename;
+    link.setAttribute('download', filename);
+    link.click();
+    document.body.removeChild(link);
+  }
+
+  openNewTab(url: string): void {
+    const newTab = window.open(url, '_blank');
+    if (newTab) {
+      newTab.focus();
+    }
+  }
 }

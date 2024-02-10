@@ -30,29 +30,20 @@
         <app-book [config]="bookConfigFor(book)" />
         <div class="c-action w-full mt-10 pb-4 border-b gc-border">
           <app-icon-button
+            (click)="openBookUrl(book)"
             [size]="'1.6rem'"
             [tip]="'Github'"
             [tipPosition]="'top'"
           >
-            <a [href]="book.info_url" target="_blank">
-              <app-github-svg [size]="'1.6rem'" [class]="'gc-svg gu-hover'" />
-            </a>
+            <app-github-svg [size]="'1.6rem'" [class]="'gc-svg gu-hover'" />
           </app-icon-button>
           <app-icon-button
+            (click)="downloadBook(book)"
             [size]="'1.55rem'"
             [tip]="'Download'"
             [tipPosition]="'top'"
           >
-            <a
-              [href]="downloadUrlFor(book)"
-              [download]="book.name + '.zip'"
-              target="_blank"
-            >
-              <app-download-svg
-                [size]="'1.55rem'"
-                [class]="'gc-svg gu-hover'"
-              />
-            </a>
+            <app-download-svg [size]="'1.55rem'" [class]="'gc-svg gu-hover'" />
           </app-icon-button>
         </div>
       </div>

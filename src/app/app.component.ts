@@ -6,6 +6,7 @@ import { FadeInDirective } from './shared/directives/fade-in.directive';
 import { FolderEnum } from './shared/values/cms.values';
 import { NavbarComponent } from './navbar/navbar.component';
 import { NavbarService } from './navbar/navbar.service';
+import { NavigationService } from './shared/services/navigation.service';
 import { FooterComponent } from './footer/footer.component';
 import { NotificationsComponent } from './notifications/notifications.component';
 import { AppService } from './app.service';
@@ -30,6 +31,7 @@ export class AppComponent {
     private _navbarService: NavbarService,
     private _appService: AppService,
     private _storageService: StorageService,
+    private _navigationService: NavigationService, // Must instantiate it here for recording history
   ) {
     this._initFolderId();
   }

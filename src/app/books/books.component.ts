@@ -5,6 +5,7 @@ import { BookComponent, DirectionEnum } from '../ui/book/book.component';
 import { SlideInDirective } from '../shared/directives/slide-in.directive';
 import { FadeInDirective } from '../shared/directives/fade-in.directive';
 import { UrlService } from '../shared/services/url.service';
+import { UtilitiesService } from '../shared/services/utilities.service';
 import { GithubSvgComponent } from '../svg/github/github.component';
 import { DownloadSvgComponent } from '../svg/download/download.component';
 import { IconButtonComponent } from '../ui/icon-button/icon-button.component';
@@ -34,6 +35,7 @@ export class BooksComponent {
   constructor(
     private _booksService: BooksService,
     private _urlService: UrlService,
+    private _utilitiesService: UtilitiesService,
   ) {
     this._booksService.fetchBooks().then((books) => {
       this.books = books;
@@ -53,7 +55,14 @@ export class BooksComponent {
     };
   }
 
-  downloadUrlFor(book: Books): string {
-    return this._urlService.downloadUrlFor(book.zip?.filename_disk);
+  openBookUrl(book: Books) {
+    this._utilitiesService.openNewTab(book.info_url);
+  }
+
+  downloadBook(book: Books) {
+    const downloadUrl = this._urlService.fileUrlFor(book.zip?.filename_disk);
+    const downloadFilename = book.name + '.zip';
+    console.error('download book:', book);
+    this._utilitiesService.downloadFile(downloadUrl, downloadFilename);
   }
 }

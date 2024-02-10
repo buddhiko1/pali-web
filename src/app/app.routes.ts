@@ -2,7 +2,7 @@ import { Routes } from '@angular/router';
 import { PlaceholderComponent } from './placeholder/placeholder.component';
 
 export const APP_ROUTES: Routes = [
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: '', redirectTo: 'home', title: 'Home', pathMatch: 'full' },
   {
     path: 'home',
     loadComponent: () =>

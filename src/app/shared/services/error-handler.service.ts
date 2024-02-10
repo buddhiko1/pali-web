@@ -24,7 +24,8 @@ export class ErrorHandlerService implements ErrorHandler {
     if (
       error.graphQLErrors.some((e) => {
         const code = e.extensions?.['code'];
-        return code === 'INVALID_TOKEN';
+        //TODO Waiting direcuts fix their bug for refreshing token.
+        return code === 'INVALID_TOKEN' || code === 'TOKEN_EXPIRED';
       })
     ) {
       this._storageService.clearAccountData();

@@ -6,6 +6,7 @@ import { interval } from 'rxjs';
 import { WysiwygComponent } from 'src/app/ui/wysiwyg/wysiwyg.component';
 import { BlogStatusNameEnum } from 'src/app/shared/values/cms.values';
 import { StorageService } from 'src/app/shared/services/storage.service';
+import { NavigationService } from 'src/app/shared/services/navigation.service';
 import { IconButtonComponent } from 'src/app/ui/icon-button/icon-button.component';
 import { SaveSvgComponent } from 'src/app/svg/save/save.component';
 import { UploadSvgComponent } from 'src/app/svg/upload/upload.component';
@@ -37,18 +38,24 @@ export class BlogEditorComponent implements OnInit {
   initialContent = '';
   isSavingDraft = false;
   isPublishing = false;
-  private _blogId = '';
+  isDeleting = false;
+  blogId = '';
   private _operationType = OperationTypeEnum.Create;
 
   constructor(
     private _router: Router,
     private _activatedRoute: ActivatedRoute,
     private _storageService: StorageService,
+    private _navigationService: NavigationService,
     private _blogsService: BlogsService,
   ) {}
 
   get isCreation(): boolean {
     return this._operationType === OperationTypeEnum.Create;
+  }
+
+  get isSavedBlog(): boolean {
+    return !!this.blogId;
   }
 
   ngOnInit(): void {
@@ -59,7 +66,7 @@ export class BlogEditorComponent implements OnInit {
         .then((blog) => {
           this.title = blog.title;
           this.initialContent = blog.content!;
-          this._blogId = blog.id;
+          this.blogId = blog.id;
           this._operationType = OperationTypeEnum.Edit;
         });
     } else {
@@ -81,7 +88,7 @@ export class BlogEditorComponent implements OnInit {
     });
     if (result.length) {
       const draft = result[0];
-      this._blogId = draft.id;
+      this.blogId = draft.id;
       this.title = draft.title;
       this.initialContent = draft.content!;
     }
@@ -92,9 +99,9 @@ export class BlogEditorComponent implements OnInit {
     const blogStatusInput = await this._blogsService.fetchBlogStatusInputFor({
       name: BlogStatusNameEnum.Draft,
     });
-    if (this._blogId) {
+    if (this.blogId) {
       const savedDraft = await this._blogsService.updateBlog({
-        id: this._blogId,
+        id: this.blogId,
         data: {
           title: this.title,
           content: this.wysiwyg.content,
@@ -102,7 +109,7 @@ export class BlogEditorComponent implements OnInit {
         },
         returnContent: true,
       });
-      this._blogId = savedDraft.id;
+      this.blogId = savedDraft.id;
     } else {
       const savedDraft = await this._blogsService.createBlog({
         data: {
@@ -112,7 +119,7 @@ export class BlogEditorComponent implements OnInit {
         },
         returnContent: true,
       });
-      this._blogId = savedDraft.id;
+      this.blogId = savedDraft.id;
     }
     this.isSavingDraft = false;
   }
@@ -124,7 +131,7 @@ export class BlogEditorComponent implements OnInit {
     });
     if (this._operationType === OperationTypeEnum.Edit) {
       await this._blogsService.updateBlog({
-        id: this._blogId,
+        id: this.blogId,
         data: {
           title: this.title,
           content: this.wysiwyg.content,
@@ -133,9 +140,9 @@ export class BlogEditorComponent implements OnInit {
         returnContent: true,
       });
     } else {
-      if (this._blogId) {
+      if (this.blogId) {
         await this._blogsService.updateBlog({
-          id: this._blogId,
+          id: this.blogId,
           data: {
             title: this.title,
             content: this.wysiwyg.content,
@@ -152,10 +159,19 @@ export class BlogEditorComponent implements OnInit {
           },
           returnContent: true,
         });
-        this._blogId = publishedBlog.id;
+        this.blogId = publishedBlog.id;
       }
     }
     this.isPublishing = false;
-    this._router.navigate(['/blogs/viewer', this._blogId]);
+    this._router.navigate(['/blogs/viewer', this.blogId]);
+  }
+
+  async deleteBlog(): Promise<void> {
+    this.isDeleting = true;
+    await this._blogsService.deleteBlog({ id: this.blogId });
+    this.isDeleting = false;
+    return this.isCreation
+      ? this._navigationService.goBack()
+      : this._navigationService.historyGo(-2);
   }
 }
