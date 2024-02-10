@@ -11,7 +11,8 @@ import { DownloadSvgComponent } from '../svg/download/download.component';
 import { IconButtonComponent } from '../ui/icon-button/icon-button.component';
 import { QuoteSvgComponent } from '../svg/quote/quote.component';
 import { BooksService } from './books.service';
-import { Books, Cites } from 'src/gql/graphql';
+import { Books as Book } from 'src/gql/graphql';
+import { Cites as Cite } from 'src/gql/graphql';
 
 @Component({
   selector: 'app-books',
@@ -29,8 +30,8 @@ import { Books, Cites } from 'src/gql/graphql';
   styleUrl: './books.component.css',
 })
 export class BooksComponent {
-  books: Books[] = [];
-  cites: Cites[] = [];
+  books: Book[] = [];
+  cites: Cite[] = [];
 
   constructor(
     private _booksService: BooksService,
@@ -45,7 +46,7 @@ export class BooksComponent {
     });
   }
 
-  bookConfigFor(book: Books): BookConfig {
+  bookConfigFor(book: Book): BookConfig {
     return {
       height: '16rem',
       width: '12rem',
@@ -55,11 +56,11 @@ export class BooksComponent {
     };
   }
 
-  openBookUrl(book: Books) {
+  openBookUrl(book: Book) {
     this._utilitiesService.openNewTab(book.info_url);
   }
 
-  downloadBook(book: Books) {
+  downloadBook(book: Book) {
     const downloadUrl = this._urlService.fileUrlFor(book.zip?.filename_disk);
     const downloadFilename = book.name + '.zip';
     console.error('download book:', book);

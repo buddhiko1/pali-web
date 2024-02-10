@@ -6,7 +6,8 @@ import { ScreenService } from 'src/app/shared/services/screen.service';
   name: 'overView',
 })
 export class OverViewPipe implements PipeTransform {
-  lengthForPhone: number = 45;
+  lengthForPhone: number = 30;
+  lengthForTablet: number = 40;
   lengthForPc: number = 80;
 
   constructor(private _screenService: ScreenService) {}
@@ -15,6 +16,10 @@ export class OverViewPipe implements PipeTransform {
     if (this._screenService.isPhone) {
       if (value.length > this.lengthForPhone) {
         return value.slice(0, this.lengthForPhone) + '...';
+      }
+    } else if (this._screenService.isTablet) {
+      if (value.length > this.lengthForTablet) {
+        return value.slice(0, this.lengthForTablet) + '...';
       }
     } else {
       if (value.length > this.lengthForPc) {

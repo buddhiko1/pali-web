@@ -3,24 +3,49 @@
     <button
       class="c-blog py-4 tablet:py-8 pc:px-3 border-b gc-border gu-hover pc:hover:bg-gradient-to-r pc:hover:from-primaryBg pc:hover:via-hoverBg pc:hover:to-primaryBg"
       [class.border-b]="!isLastItem"
-      [class.c-without-avatar]="!showAvatar"
       (click)="onBlogClick(blog.id)"
     >
-      @if (showAvatar) {
+      @if (!isPhone) {
         <app-user-avatar
-          class="c-author"
+          [class]="['c-author']"
           [avatarId]="blog.user_created?.avatar?.id"
-          [size]="isPhone ? '2.1rem' : '2.5rem'"
+          [size]="'2.5rem'"
           (click)="onAvatarClick($event, blog.user_created!.id)"
         />
       }
+
       <p class="c-title gc-text text-sm pc:text-base text-left">
         {{ blog.title | overView }}
       </p>
-      <app-badge [number]="999" class="c-comments mr-1">
+
+      @if (showActions && !isPhone) {
+        <app-icon-button
+          (click)="onEditBtnClick($event, blog.id)"
+          [isButtonStyle]="false"
+          [size]="'1.2rem'"
+          [tip]="''"
+        >
+          <app-edit-svg
+            [size]="'1.6rem'"
+            [class]="'c-edit-button gc-svg gu-hover'"
+          />
+        </app-icon-button>
+        <app-icon-button
+          (click)="onDeleteBtnClick($event, blog.id)"
+          [isButtonStyle]="false"
+          [size]="'1.2rem'"
+          [tip]="''"
+        >
+          <app-delete-svg
+            [size]="'1.6rem'"
+            [class]="'c-delete-button gc-svg gu-hover'"
+          />
+        </app-icon-button>
+      }
+      <app-badge [number]="999" class="c-comments">
         <app-chat-svg class="gc-svg inline-block size-5" />
       </app-badge>
-      <p class="c-activeTime gc-text text-sm hidden tablet:block">
+      <p class="c-active-time gc-text text-sm hidden italic tablet:block">
         {{
           blog.date_updated || blog.date_created
             | date: "M/d hh:mm a"

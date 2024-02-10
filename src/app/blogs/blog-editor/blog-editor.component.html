@@ -7,10 +7,10 @@
   />
   <app-icon-button
     (click)="deleteBlog()"
-    [isDisabled]="!isSavedBlog"
     [isLoading]="isDeleting"
     [size]="'1.6rem'"
     [tip]="isSavedBlog ? 'Delete' : ''"
+    [class.hidden]="!isSavedBlog"
   >
     <app-delete-svg
       [size]="'1.6rem'"

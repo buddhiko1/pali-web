@@ -1,19 +1,8 @@
-<div
-  class="c-container fixed inset-0 bg-overlay opacity-100"
-  [class.items-center]="isCentered"
-  [class.-mt-[25rem]]="isCentered"
-  [class.pc:-mt-[45rem]]="isCentered"
-  [class.items-start]="!isCentered"
->
+<div class="c-container fixed items-start inset-0 bg-overlay opacity-100">
   <div
     appSlideIn
     [slideInDelay]="200"
-    [class]="[
-      'gd-box',
-      'my-[20vh]',
-      isCentered ? '' : 'tablet:my-[20vh]',
-      isCentered ? '' : 'pc:my-[25vh]'
-    ]"
+    [class]="['gd-box', 'my-[20vh]', 'tablet:my-[25vh]', 'pc:my-[25vh]']"
   >
     <ng-content />
   </div>

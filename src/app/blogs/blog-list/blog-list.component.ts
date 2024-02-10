@@ -8,6 +8,7 @@ import { ChatSvgComponent } from 'src/app/svg/chat/chat.component';
 import { BadgeComponent } from 'src/app/ui/badge/badge.component';
 import { DeleteSvgComponent } from 'src/app/svg/delete/delete.component';
 import { EditSvgComponent } from 'src/app/svg/edit/edit.component';
+import { IconButtonComponent } from 'src/app/ui/icon-button/icon-button.component';
 import { ScreenService } from 'src/app/shared/services/screen.service';
 import { OverViewPipe } from './overview.pipe';
 import { ActiveDatePipe } from './active-date.pipe';
@@ -23,6 +24,7 @@ import { ActiveDatePipe } from './active-date.pipe';
     BadgeComponent,
     DeleteSvgComponent,
     EditSvgComponent,
+    IconButtonComponent,
     OverViewPipe,
     ActiveDatePipe,
   ],
@@ -32,28 +34,36 @@ import { ActiveDatePipe } from './active-date.pipe';
 export class BlogListComponent {
   @Input()
   blogs: BlogFragment[] = [];
+
   @Input()
-  showAvatar: boolean = true;
+  showActions: boolean = true;
 
   constructor(
     private _router: Router,
     private _screenService: ScreenService,
   ) {}
 
-  get isTablet(): boolean {
-    return this._screenService.isTablet;
-  }
-
   get isPhone(): boolean {
     return this._screenService.isPhone;
   }
 
   onAvatarClick(event: Event, userId: string) {
-    event.preventDefault();
+    event.stopPropagation();
     this._router.navigate(['/users/detail', userId]);
   }
 
   onBlogClick(blogId: string) {
     this._router.navigate(['/blogs/viewer', blogId]);
+  }
+
+  onEditBtnClick(event: Event, blogId: string) {
+    event.stopPropagation();
+    this._router.navigate(['/blogs/editor', { id: blogId }]);
+  }
+
+  onDeleteBtnClick(event: Event, blogId: string) {
+    event.stopPropagation();
+    console.error('delete pre');
+    this._router.navigate(['/blogs/edit', blogId]);
   }
 }

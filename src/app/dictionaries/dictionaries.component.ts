@@ -10,7 +10,8 @@ import { UtilitiesService } from '../shared/services/utilities.service';
 import { BookComponent, DirectionEnum } from '../ui/book/book.component';
 import { Config as BookConfig } from '../ui/book/book.model';
 import { DictionariesService } from './dictionaries.service';
-import { Dictionaries, Dict_Introduction } from 'src/gql/graphql';
+import { Dict_Introduction } from 'src/gql/graphql';
+import { Dictionaries as Dictionary } from 'src/gql/graphql';
 
 @Component({
   selector: 'app-dictionary',
@@ -28,7 +29,7 @@ import { Dictionaries, Dict_Introduction } from 'src/gql/graphql';
 })
 export class DictionariesComponent {
   introduction!: Dict_Introduction;
-  dictionaries: Dictionaries[] = [];
+  dictionaries: Dictionary[] = [];
 
   constructor(
     private _dictionaryService: DictionariesService,
@@ -43,7 +44,7 @@ export class DictionariesComponent {
     });
   }
 
-  bookConfigFor(dictionary: Dictionaries): BookConfig {
+  bookConfigFor(dictionary: Dictionary): BookConfig {
     return {
       height: '16rem',
       width: '12rem',
@@ -54,11 +55,11 @@ export class DictionariesComponent {
     };
   }
 
-  openDictionaryUrl(dictionary: Dictionaries) {
+  openDictionaryUrl(dictionary: Dictionary) {
     this._utilitiesService.openNewTab(dictionary.info_url);
   }
 
-  downloadDictionary(dictionary: Dictionaries) {
+  downloadDictionary(dictionary: Dictionary) {
     const downloadUrl = this._urlService.fileUrlFor(
       dictionary.zip?.filename_disk,
     );

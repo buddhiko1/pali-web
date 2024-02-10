@@ -21,7 +21,7 @@ export class ActiveDatePipe implements PipeTransform {
       inputMonth === month.toString() &&
       inputDay === (day - 1).toString()
     ) {
-      return 'Yesterday';
+      return 'Yday';
     } else {
       return `${inputMonth}/${inputDay}`;
     }

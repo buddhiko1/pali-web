@@ -5,23 +5,10 @@
 
 .c-blog {
   display: grid;
-  grid-template-rows: auto, auto;
-  grid-template-columns: 2fr 10fr 2fr;
-  grid-template-areas:
-    "author title comments"
-    "author title comments";
+  grid-template-rows: auto;
+  grid-template-columns: 12fr 2fr;
+  grid-template-areas: "title comments";
   align-items: center;
-}
-
-.c-without-avatar {
-  grid-template-areas:
-    "title title comments"
-    "title title comments";
-}
-
-.c-author {
-  grid-area: author;
-  justify-self: start;
 }
 
 .c-title {
@@ -31,31 +18,40 @@
 
 .c-comments {
   grid-area: comments;
-  justify-self: end;
 }
 
 @media screen and (min-width: theme("screens.tablet")) {
   .c-blog {
-    grid-template-rows: auto;
-    grid-template-columns: 2fr 10fr 2fr 2fr;
-    grid-template-areas: "author title comments activeTime";
+    grid-template-columns: 2fr 10fr 2fr 2fr 2fr 2fr;
+    grid-template-areas: "author title edit-button delete-button comments active-time";
   }
 
-  .c-without-avatar {
-    grid-template-columns: 10fr 1fr 2fr;
-    grid-template-areas: "title comments activeTime";
+  .c-author {
+    grid-area: author;
+    justify-self: start;
   }
 
-  .c-comments {
-    grid-area: comments;
-    justify-self: center;
+  .c-edit-button {
+    grid-area: edit-button;
   }
 
-  .c-activeTime {
-    grid-area: activeTime;
+  .c-delete-button {
+    grid-area: delete-button;
+  }
+
+  .c-active-time {
+    grid-area: active-time;
     justify-self: end;
+    align-self: center;
   }
 }
 
-@media screen and (min-width: theme("screens.tablet")) {
+@media screen and (min-width: theme("screens.pc")) {
+  .c-blog {
+    grid-template-columns: 1fr 10fr 1fr 1fr 1fr 1fr;
+  }
+
+  .c-active-time {
+    align-self: start;
+  }
 }
