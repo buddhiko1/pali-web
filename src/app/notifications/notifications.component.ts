@@ -22,7 +22,9 @@ export class NotificationsComponent implements OnInit {
   ngOnInit(): void {
     this._notificationsService.notificationsSubject.subscribe(
       (notification) => {
+        console.error('new notification:', notification);
         this.notifications = [...this.notifications, notification];
+        console.error('notifications:', this.notifications);
         // for rending the first notification immediately in development mode
         // this._changeDetectorRef.detectChanges();
       },
