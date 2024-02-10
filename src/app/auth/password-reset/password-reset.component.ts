@@ -10,7 +10,7 @@ import { CombinedError } from '@urql/core';
 
 import { LoaderComponent } from 'src/app/ui/loader/loader.component';
 import { FormDialogComponent } from 'src/app/ui/form-dialog/form-dialog.component';
-import { InfoDialogComponent } from 'src/app/ui/info-dialog/info-dialog.component';
+import { ResultDialogComponent } from 'src/app/ui/result-dialog/result-dialog.component';
 import { NavigationService } from 'src/app/shared/services/navigation.service';
 import { StorageService } from 'src/app/shared/services/storage.service';
 import { PromptEnum } from 'src/app/shared/values/prompts.values';
@@ -25,7 +25,7 @@ import { AuthService } from '../auth.service';
     ReactiveFormsModule,
     LoaderComponent,
     FormDialogComponent,
-    InfoDialogComponent,
+    ResultDialogComponent,
   ],
 })
 export class PasswordResetComponent implements OnInit {
@@ -36,7 +36,7 @@ export class PasswordResetComponent implements OnInit {
 
   isLoading = false;
   error = '';
-  successInfo = '';
+  prompt = '';
 
   constructor(
     private _router: Router,
@@ -80,7 +80,7 @@ export class PasswordResetComponent implements OnInit {
       })
       .then(() => {
         this.isLoading = false;
-        this.successInfo = PromptEnum.Reset;
+        this.prompt = PromptEnum.Reset;
       })
       .catch((error: CombinedError) => {
         this.isLoading = false;
@@ -89,15 +89,15 @@ export class PasswordResetComponent implements OnInit {
       });
   }
 
-  onErrorDialogSubmit(): void {
-    this._navigationService.goBack();
-  }
-
-  async onSuccessDialogSubmit(): Promise<void> {
-    await this._authService.logout({
-      tokenForRefresh: this._storageService.tokenForRefresh,
-    });
-    this._storageService.clearAccountData();
-    this._router.navigate(['/auth/login']);
+  async onResultDialogClick(): Promise<void> {
+    if (this.error) {
+      this._navigationService.goBack();
+    } else {
+      await this._authService.logout({
+        tokenForRefresh: this._storageService.tokenForRefresh,
+      });
+      this._storageService.clearAccountData();
+      this._router.navigate(['/auth/login']);
+    }
   }
 }

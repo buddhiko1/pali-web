@@ -9,7 +9,7 @@ import { RouterLink, Router } from '@angular/router';
 
 import { LoaderComponent } from 'src/app/ui/loader/loader.component';
 import { FormDialogComponent } from 'src/app/ui/form-dialog/form-dialog.component';
-import { InfoDialogComponent } from 'src/app/ui/info-dialog/info-dialog.component';
+import { ResultDialogComponent } from 'src/app/ui/result-dialog/result-dialog.component';
 import { UnRegisteredEmailValidator } from 'src/app/users/email.validator';
 import { StorageService } from 'src/app/shared/services/storage.service';
 import { UsersService } from 'src/app/users/users.service';
@@ -25,7 +25,7 @@ import { AuthService } from '../auth.service';
     ReactiveFormsModule,
     LoaderComponent,
     FormDialogComponent,
-    InfoDialogComponent,
+    ResultDialogComponent,
   ],
 })
 export class LoginComponent implements OnInit {
@@ -93,7 +93,7 @@ export class LoginComponent implements OnInit {
     }
   }
 
-  onErrorDialogSubmit(): void {
+  onResultDialogClick(): void {
     this.error = '';
   }
 }

@@ -42,16 +42,12 @@
   .c-active-time {
     grid-area: active-time;
     justify-self: end;
-    align-self: center;
+    align-self: start;
   }
 }
 
 @media screen and (min-width: theme("screens.pc")) {
   .c-blog {
     grid-template-columns: 1fr 10fr 1fr 1fr 1fr 1fr;
-  }
-
-  .c-active-time {
-    align-self: start;
   }
 }

@@ -2,12 +2,15 @@
   @if (isLoading) {
     <app-loader />
   } @else if (error) {
-    <app-info-dialog
-      [isErrorInfo]="true"
-      title="Error"
-      [content]="error"
-      (infoDialogClosed)="onErrorDialogSubmit()"
-    />
+    <app-result-dialog [error]="error">
+      <button
+        actions
+        [class.gc-error-button]="error"
+        (click)="onResultDialogClick()"
+      >
+        OK
+      </button>
+    </app-result-dialog>
   } @else {
     <input
       #fileInput

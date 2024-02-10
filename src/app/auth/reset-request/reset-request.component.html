@@ -1,19 +1,15 @@
 @if (isLoading) {
   <app-loader />
-} @else if (error) {
-  <app-info-dialog
-    title="Error"
-    [isErrorInfo]="true"
-    [content]="error"
-    (infoDialogClosed)="onErrorDialogSubmit()"
-  />
-} @else if (successInfo) {
-  <app-info-dialog
-    title="Success"
-    [isSuccessInfo]="true"
-    [content]="successInfo"
-    (infoDialogClosed)="onSuccessDialogSubmit()"
-  />
+} @else if (error || prompt) {
+  <app-result-dialog [error]="error" [prompt]="prompt">
+    <button
+      actions
+      [class.gc-error-button]="error"
+      (click)="onResultDialogClick()"
+    >
+      OK
+    </button>
+  </app-result-dialog>
 } @else {
   <app-form-dialog (keydown.enter)="onSubmit()">
     <div class="c-content">

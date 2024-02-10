@@ -1,0 +1,20 @@
+<app-dialog-box>
+  <div class="c-container w-[60vw] tablet:w-[45vw] pc:w-[20rem]">
+    <div class="flex items-center">
+      @if (error) {
+        <app-error-svg [class]="'fill-error size-9 inline'" />
+      } @else {
+        <app-check-svg [class]="'fill-ok size-9 inline'" />
+      }
+      <span [class]="['text-lg', 'ml-4', error ? 'text-error' : 'text-ok']">{{
+        error ? "Error" : "Success"
+      }}</span>
+    </div>
+    <div class="c-body gc-text text-center break-words overflow-hidden">
+      {{ error || prompt }}
+    </div>
+    <div class="c-actions mt-4">
+      <ng-content select="[actions]"></ng-content>
+    </div>
+  </div>
+</app-dialog-box>

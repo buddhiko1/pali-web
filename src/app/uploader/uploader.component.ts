@@ -9,14 +9,14 @@ import {
 } from '@angular/core';
 
 import { LoaderComponent } from 'src/app/ui/loader/loader.component';
-import { InfoDialogComponent } from 'src/app/ui/info-dialog/info-dialog.component';
+import { ResultDialogComponent } from '../ui/result-dialog/result-dialog.component';
 import { UtilitiesService } from '../shared/services/utilities.service';
 import { UploaderService } from './uploader.service';
 
 @Component({
   selector: 'app-uploader',
   standalone: true,
-  imports: [LoaderComponent, InfoDialogComponent],
+  imports: [LoaderComponent, ResultDialogComponent],
   templateUrl: './uploader.component.html',
   styleUrl: './uploader.component.css',
 })
@@ -119,11 +119,11 @@ export class UploaderComponent implements AfterViewInit {
     }
   }
 
-  onErrorDialogSubmit(): void {
+  onCanceled(): void {
     this.failed.emit();
   }
 
-  onCanceled(): void {
+  onResultDialogClick(): void {
     this.failed.emit();
   }
 }

@@ -1,6 +1,17 @@
 .c-container {
   display: grid;
   grid-row-gap: theme(spacing.5);
+  align-items: center;
+}
+
+.c-actions {
+  justify-self: center;
+}
+
+@media screen and (min-width: theme("screens.tablet")) {
+  .c-container {
+    grid-row-gap: theme(spacing.7);
+  }
 }
 
 @media screen and (min-width: theme("screens.pc")) {

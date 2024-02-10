@@ -10,7 +10,7 @@ import { timer } from 'rxjs';
 
 import { LoaderComponent } from 'src/app/ui/loader/loader.component';
 import { FormDialogComponent } from 'src/app/ui/form-dialog/form-dialog.component';
-import { InfoDialogComponent } from 'src/app/ui/info-dialog/info-dialog.component';
+import { ResultDialogComponent } from 'src/app/ui/result-dialog/result-dialog.component';
 import { NavigationService } from 'src/app/shared/services/navigation.service';
 import { RoleEnum } from 'src/app/shared/values/cms.values';
 import { PromptEnum } from 'src/app/shared/values/prompts.values';
@@ -28,7 +28,7 @@ import { UserRoleFragment } from 'src/gql/graphql';
     ReactiveFormsModule,
     LoaderComponent,
     FormDialogComponent,
-    InfoDialogComponent,
+    ResultDialogComponent,
   ],
 })
 export class UserCreationComponent implements OnInit {
@@ -36,7 +36,7 @@ export class UserCreationComponent implements OnInit {
 
   isLoading = false;
   error = '';
-  successInfo = '';
+  prompt = '';
 
   constructor(
     private _router: Router,
@@ -91,7 +91,7 @@ export class UserCreationComponent implements OnInit {
       });
       timer(3000).subscribe(() => {
         this.isLoading = false;
-        this.successInfo = PromptEnum.SignUp;
+        this.prompt = PromptEnum.SignUp;
       });
     } catch (error: any) {
       this.isLoading = false;
@@ -100,11 +100,9 @@ export class UserCreationComponent implements OnInit {
     }
   }
 
-  onErrorDialogSubmit(): void {
-    this._navigationService.goBack();
-  }
-
-  onSuccessDialogSubmit(): void {
-    this._router.navigate(['/auth/login']);
+  onResultDialogClick(): void {
+    this.error
+      ? this._navigationService.goBack()
+      : this._router.navigate(['/auth/login']);
   }
 }

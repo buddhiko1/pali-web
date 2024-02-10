@@ -10,7 +10,7 @@ import { CombinedError } from '@urql/core';
 
 import { LoaderComponent } from 'src/app/ui/loader/loader.component';
 import { FormDialogComponent } from 'src/app/ui/form-dialog/form-dialog.component';
-import { InfoDialogComponent } from 'src/app/ui/info-dialog/info-dialog.component';
+import { ResultDialogComponent } from 'src/app/ui/result-dialog/result-dialog.component';
 import { NavigationService } from 'src/app/shared/services/navigation.service';
 import { UsersService } from '../users.service';
 
@@ -23,7 +23,7 @@ import { UsersService } from '../users.service';
     ReactiveFormsModule,
     LoaderComponent,
     FormDialogComponent,
-    InfoDialogComponent,
+    ResultDialogComponent,
   ],
 })
 export class UserActivationComponent implements OnInit {
@@ -81,7 +81,7 @@ export class UserActivationComponent implements OnInit {
       });
   }
 
-  onErrorDialogSubmit(): void {
+  onResultDialogClick(): void {
     this._navigationService.goBack();
   }
 }

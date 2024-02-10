@@ -9,7 +9,7 @@ import { CombinedError } from '@urql/core';
 
 import { LoaderComponent } from 'src/app/ui/loader/loader.component';
 import { FormDialogComponent } from 'src/app/ui/form-dialog/form-dialog.component';
-import { InfoDialogComponent } from 'src/app/ui/info-dialog/info-dialog.component';
+import { ResultDialogComponent } from 'src/app/ui/result-dialog/result-dialog.component';
 import { NavigationService } from 'src/app/shared/services/navigation.service';
 import { PromptEnum } from 'src/app/shared/values/prompts.values';
 import { UnRegisteredEmailValidator } from 'src/app/users/email.validator';
@@ -24,7 +24,7 @@ import { AuthService } from '../auth.service';
     ReactiveFormsModule,
     LoaderComponent,
     FormDialogComponent,
-    InfoDialogComponent,
+    ResultDialogComponent,
   ],
 })
 export class ResetRequestComponent implements OnInit {
@@ -32,7 +32,7 @@ export class ResetRequestComponent implements OnInit {
 
   isLoading = false;
   error = '';
-  successInfo = '';
+  prompt = '';
 
   constructor(
     private _authService: AuthService,
@@ -67,7 +67,7 @@ export class ResetRequestComponent implements OnInit {
       })
       .then(() => {
         this.isLoading = false;
-        this.successInfo = PromptEnum.RequestReset;
+        this.prompt = PromptEnum.RequestReset;
       })
       .catch((error: CombinedError) => {
         this.isLoading = false;
@@ -76,11 +76,7 @@ export class ResetRequestComponent implements OnInit {
       });
   }
 
-  onErrorDialogSubmit(): void {
-    this._navigationService.goBack();
-  }
-
-  onSuccessDialogSubmit(): void {
+  onResultDialogClick(): void {
     this._navigationService.goBack();
   }
 }
