@@ -30,7 +30,7 @@ export default {
         footerBg: "var(--colors-footer-bg)",
         buttonBg: "var(--colors-button-bg)",
         hlButtonBg: "var(--colors-hl-button-bg)",
-        buttonText: "var(--colors-button-text)",
+        hlButtonText: "var(--colors-hl-button-text)",
         title: "var(--colors-title)",
         hlTitle: "var(--colors-hl-title)",
         text: "var(--colors-text)",
@@ -39,6 +39,7 @@ export default {
         // status
         hover: "var(--colors-hover)",
         hoverBg: "var(--colors-hover-bg)",
+        warning: "var(--colors-warning)",
         focus: "var(--colors-focus)",
         error: "var(--colors-error)",
         ok: "var(--colors-ok)",

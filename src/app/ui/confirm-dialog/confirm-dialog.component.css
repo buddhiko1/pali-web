@@ -1,0 +1,40 @@
+.c-container {
+  display: grid;
+  grid-row-gap: theme(spacing.5);
+  align-items: center;
+}
+
+.c-actions {
+  display: grid;
+  grid-auto-flow: column;
+  grid-column-gap: theme(spacing.3);
+  justify-items: center;
+}
+
+.c-cancel-button {
+  justify-self: end;
+}
+
+.c-confirm-button {
+  justify-self: start;
+}
+
+@media screen and (min-width: theme("screens.tablet")) {
+  .c-container {
+    grid-row-gap: theme(spacing.7);
+  }
+
+  .c-actions {
+    grid-column-gap: theme(spacing.5);
+  }
+}
+
+@media screen and (min-width: theme("screens.pc")) {
+  .c-actions {
+    grid-column-gap: theme(spacing.7);
+  }
+
+  .c-container {
+    grid-row-gap: theme(spacing.8);
+  }
+}

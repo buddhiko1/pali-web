@@ -1,0 +1,21 @@
+<app-dialog-box>
+  <div class="c-container w-[60vw] tablet:w-[45vw] pc:w-[20rem]">
+    <div class="flex items-center">
+      <app-warning-svg [class]="'fill-warning size-9 inline'" />
+      <span class="text-lg ml-4 text-warning">
+        {{ title }}
+      </span>
+    </div>
+    <div class="c-body gc-text text-center break-words overflow-hidden">
+      {{ prompt }}
+    </div>
+    <div class="c-actions mt-4">
+      <div class="c-cancel-button">
+        <ng-content select="[cancel-button]"></ng-content>
+      </div>
+      <div class="c-confirm-button">
+        <ng-content select="[confirm-button]"></ng-content>
+      </div>
+    </div>
+  </div>
+</app-dialog-box>

@@ -9,7 +9,9 @@ import { BadgeComponent } from 'src/app/ui/badge/badge.component';
 import { DeleteSvgComponent } from 'src/app/svg/delete/delete.component';
 import { EditSvgComponent } from 'src/app/svg/edit/edit.component';
 import { IconButtonComponent } from 'src/app/ui/icon-button/icon-button.component';
+import { ConfirmDialogComponent } from 'src/app/ui/confirm-dialog/confirm-dialog.component';
 import { ScreenService } from 'src/app/shared/services/screen.service';
+import { BlogsService } from '../blogs.service';
 import { OverViewPipe } from './overview.pipe';
 import { ActiveDatePipe } from './active-date.pipe';
 
@@ -25,6 +27,7 @@ import { ActiveDatePipe } from './active-date.pipe';
     DeleteSvgComponent,
     EditSvgComponent,
     IconButtonComponent,
+    ConfirmDialogComponent,
     OverViewPipe,
     ActiveDatePipe,
   ],
@@ -38,9 +41,15 @@ export class BlogListComponent {
   @Input()
   showActions: boolean = true;
 
+  showConfirmDialog = false;
+  confirmTitle: string = '';
+  confirmPrompt: string = '';
+  blogIdForDelete = '';
+
   constructor(
     private _router: Router,
     private _screenService: ScreenService,
+    private _blogsService: BlogsService,
   ) {}
 
   get isPhone(): boolean {
@@ -63,7 +72,21 @@ export class BlogListComponent {
 
   deleteBlog(event: Event, blogId: string) {
     event.stopPropagation();
-    console.error('delete pre');
-    this._router.navigate(['/blogs/edit', blogId]);
+    this.showConfirmDialog = true;
+    this.confirmTitle = 'Delete Blog';
+    this.confirmPrompt = 'Are you sure you want to delete this blog?';
+    this.blogIdForDelete = blogId;
+  }
+
+  cancelDeleteBlog(): void {
+    this.showConfirmDialog = false;
+  }
+
+  async confirmDeleteBlog(): Promise<void> {
+    this.showConfirmDialog = false;
+    await this._blogsService.deleteBlog({
+      id: this.blogIdForDelete,
+    });
+    this.blogs = this.blogs.filter((blog) => blog.id !== this.blogIdForDelete);
   }
 }
