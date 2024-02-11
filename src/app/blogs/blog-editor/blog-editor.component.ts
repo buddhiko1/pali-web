@@ -3,11 +3,12 @@ import { FormsModule } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 
 import { WysiwygComponent } from 'src/app/ui/wysiwyg/wysiwyg.component';
-import { BlogStatusNameEnum } from 'src/app/shared/values/cms.values';
 import { IconButtonComponent } from 'src/app/ui/icon-button/icon-button.component';
 import { SaveSvgComponent } from 'src/app/svg/save/save.component';
 import { UploadSvgComponent } from 'src/app/svg/upload/upload.component';
 import { DeleteSvgComponent } from 'src/app/svg/delete/delete.component';
+import { BlogStatusNameEnum } from 'src/app/shared/values/cms.values';
+import { NotificationsService } from 'src/app/notifications/notifications.service';
 import { BlogsService } from '../blogs.service';
 
 @Component({
@@ -36,11 +37,8 @@ export class BlogEditorComponent implements OnInit {
     private _router: Router,
     private _activatedRoute: ActivatedRoute,
     private _blogsService: BlogsService,
+    private _notificationsService: NotificationsService,
   ) {}
-
-  get isSavedBlog(): boolean {
-    return !!this.blogId;
-  }
 
   ngOnInit(): void {
     const blogId = this._activatedRoute.snapshot.paramMap.get('id')!;
@@ -53,21 +51,48 @@ export class BlogEditorComponent implements OnInit {
       });
   }
 
+  get isSavedBlog(): boolean {
+    return !!this.blogId;
+  }
+
+  get isAllowedToSave(): boolean {
+    // if (this.wysiwyg) {
+    //   return this.title !== '' && this.wysiwyg.content !== '';
+    // }
+    return true;
+  }
+
+  get isAllowedToPublish(): boolean {
+    // if (this.wysiwyg) {
+    //   return this.title !== '' && this.wysiwyg.content !== '';
+    // }
+    return true;
+  }
+
   async saveDraft(): Promise<void> {
     this.isSavingDraft = true;
     const blogStatusInput = await this._blogsService.fetchBlogStatusInputFor({
       name: BlogStatusNameEnum.Draft,
     });
-    await this._blogsService.updateBlog({
-      id: this.blogId,
-      data: {
-        title: this.title,
-        content: this.wysiwyg.content,
-        status: { id: blogStatusInput.id },
-      },
-      returnContent: true,
-    });
-    this.isSavingDraft = false;
+    this._blogsService
+      .updateBlog({
+        id: this.blogId,
+        data: {
+          title: this.title,
+          content: this.wysiwyg.content,
+          status: { id: blogStatusInput.id },
+        },
+        returnContent: true,
+      })
+      .catch((error) => {
+        this._notificationsService.pushErrorInfo({
+          title: 'Save Draft Error',
+          content: error.toString(),
+        });
+      })
+      .finally(() => {
+        this.isSavingDraft = false;
+      });
   }
 
   async publish(): Promise<void> {
@@ -75,16 +100,27 @@ export class BlogEditorComponent implements OnInit {
     const blogStatusInput = await this._blogsService.fetchBlogStatusInputFor({
       name: BlogStatusNameEnum.Published,
     });
-    await this._blogsService.updateBlog({
-      id: this.blogId,
-      data: {
-        title: this.title,
-        content: this.wysiwyg.content,
-        status: { id: blogStatusInput.id },
-      },
-      returnContent: true,
-    });
-    this.isPublishing = false;
-    this._router.navigate(['/blogs/viewer', this.blogId]);
+    this._blogsService
+      .updateBlog({
+        id: this.blogId,
+        data: {
+          title: this.title,
+          content: this.wysiwyg.content,
+          status: { id: blogStatusInput.id },
+        },
+        returnContent: true,
+      })
+      .then(() => {
+        this._router.navigate(['/blogs/viewer', this.blogId]);
+      })
+      .catch((error) => {
+        this._notificationsService.pushErrorInfo({
+          title: 'Publish Error',
+          content: error.toString(),
+        });
+      })
+      .finally(() => {
+        this.isPublishing = false;
+      });
   }
 }

@@ -3,17 +3,19 @@ import { RouterLink, Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
 import { UserAvatarComponent } from 'src/app/users/user-avatar/user-avatar.component';
-import { BlogFragment } from 'src/gql/graphql';
 import { ChatSvgComponent } from 'src/app/svg/chat/chat.component';
 import { BadgeComponent } from 'src/app/ui/badge/badge.component';
 import { DeleteSvgComponent } from 'src/app/svg/delete/delete.component';
 import { EditSvgComponent } from 'src/app/svg/edit/edit.component';
+import { DraftSvgComponent } from 'src/app/svg/draft/draft.component';
 import { IconButtonComponent } from 'src/app/ui/icon-button/icon-button.component';
 import { ConfirmDialogComponent } from 'src/app/ui/confirm-dialog/confirm-dialog.component';
 import { ScreenService } from 'src/app/shared/services/screen.service';
+import { BlogStatusNameEnum } from 'src/app/shared/values/cms.values';
 import { BlogsService } from '../blogs.service';
 import { OverViewPipe } from './overview.pipe';
 import { ActiveDatePipe } from './active-date.pipe';
+import { BlogFragment } from 'src/gql/graphql';
 
 @Component({
   selector: 'app-blog-list',
@@ -27,6 +29,7 @@ import { ActiveDatePipe } from './active-date.pipe';
     DeleteSvgComponent,
     EditSvgComponent,
     IconButtonComponent,
+    DraftSvgComponent,
     ConfirmDialogComponent,
     OverViewPipe,
     ActiveDatePipe,
@@ -54,6 +57,10 @@ export class BlogListComponent {
 
   get isPhone(): boolean {
     return this._screenService.isPhone;
+  }
+
+  isDraft(blog: BlogFragment): boolean {
+    return blog.status?.name === BlogStatusNameEnum.Draft;
   }
 
   routeToUserDetail(event: Event, userId: string): void {

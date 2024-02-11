@@ -1,7 +1,7 @@
 .c-container {
   display: grid;
   grid-auto-flow: row;
-  grid-row-gap: theme("spacing.3")
+  grid-row-gap: theme("spacing.3");
 }
 
 .c-bar {
@@ -17,12 +17,14 @@
 
 .c-title {
   grid-area: title;
+  align-self: center;
+  justify-self: center;
 }
 
 .c-action {
   grid-area: action;
-  display:grid;
-  justify-content:right;
+  display: grid;
+  justify-content: right;
 }
 
 .c-slide-out {
@@ -31,6 +33,10 @@
 
 .c-slide-in {
   animation: ga-slide-in-from-bottom 500ms ease-in-out both;
+}
+
+.c-content {
+  word-break: break-word; /* the break-words of tailwindcss is useless */
 }
 
 @keyframes unfold {
@@ -44,4 +50,10 @@
 
 .c-unfold {
   animation: unfold 300ms ease-in-out both;
+}
+
+@media screen and (min-width: theme("screens.pc")) {
+  .c-title {
+    justify-self: start;
+  }
 }

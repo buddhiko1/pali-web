@@ -2,11 +2,12 @@ import { Component, Input, HostBinding } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 import { PlusSvgComponent } from 'src/app/svg/plus/plus.component';
+import { PenSvgComponent } from 'src/app/svg/pen/pen.component';
 
 @Component({
   selector: 'app-blog-add-button',
   standalone: true,
-  imports: [RouterLink, PlusSvgComponent],
+  imports: [RouterLink, PlusSvgComponent, PenSvgComponent],
   templateUrl: './blog-add-button.component.html',
   styleUrl: './blog-add-button.component.css',
 })

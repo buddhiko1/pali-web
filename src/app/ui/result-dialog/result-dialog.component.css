@@ -8,6 +8,10 @@
   justify-self: center;
 }
 
+.c-body {
+  word-break: break-word;
+}
+
 @media screen and (min-width: theme("screens.tablet")) {
   .c-container {
     grid-row-gap: theme(spacing.7);

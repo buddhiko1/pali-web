@@ -6,22 +6,31 @@
     class="c-title gc-text text-lg py-1 px-3 mr-16 bg-inputBg border-b border-border outline-none d-block"
   />
   <app-icon-button
-    (click)="saveDraft()"
+    [isDisabled]="!isAllowedToSave"
     [isLoading]="isSavingDraft"
     [size]="'1.6rem'"
     [tip]="'Save draft'"
+    (click)="saveDraft()"
   >
-    <app-save-svg [size]="'1.6rem'" [class]="'c-save-button gc-svg gu-hover'" />
+    <app-save-svg
+      [size]="'1.6rem'"
+      [class]="['c-save-button', 'gc-svg', isAllowedToSave ? 'gu-hover' : '']"
+    />
   </app-icon-button>
   <app-icon-button
-    (click)="publish()"
+    [isDisabled]="!isAllowedToPublish"
     [isLoading]="isPublishing"
     [size]="'1.6rem'"
     [tip]="'Publish'"
+    (click)="publish()"
   >
     <app-upload-svg
       [size]="'1.6rem'"
-      [class]="'c-publish-button gc-svg gu-hover'"
+      [class]="[
+        'c-publish-button',
+        'gc-svg',
+        isAllowedToPublish ? 'gu-hover' : ''
+      ]"
     />
   </app-icon-button>
   <app-wysiwyg

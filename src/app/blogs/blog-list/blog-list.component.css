@@ -22,13 +22,17 @@
 
 @media screen and (min-width: theme("screens.tablet")) {
   .c-blog {
-    grid-template-columns: 2fr 10fr 2fr 2fr 2fr 2fr;
-    grid-template-areas: "author title edit-button delete-button comments active-time";
+    grid-template-columns: 2fr 10fr 2fr 2fr 2fr 2fr 2fr;
+    grid-template-areas: "author title draft-icon edit-button delete-button comments active-time";
   }
 
   .c-author {
     grid-area: author;
     justify-self: start;
+  }
+
+  .c-draft-icon {
+    grid-area: draft-icon;
   }
 
   .c-edit-button {
@@ -48,6 +52,6 @@
 
 @media screen and (min-width: theme("screens.pc")) {
   .c-blog {
-    grid-template-columns: 1fr 10fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 10fr 1fr 1fr 1fr 1fr 1fr;
   }
 }

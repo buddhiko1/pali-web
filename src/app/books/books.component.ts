@@ -63,7 +63,6 @@ export class BooksComponent {
   downloadBook(book: Book) {
     const downloadUrl = this._urlService.fileUrlFor(book.zip?.filename_disk);
     const downloadFilename = book.name + '.zip';
-    console.error('download book:', book);
     this._utilitiesService.downloadFile(downloadUrl, downloadFilename);
   }
 }

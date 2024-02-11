@@ -1,62 +1,53 @@
-<div>
-  <div
-    class="c-container w-[18rem] p-3 border pc:border-hover shadow-sm rounded-3xl bg-footerBg"
-    [class.rounded-lg]="isPc || !isContentFolded"
-    [class.c-slide-out]="shouldSlideOut"
-    [class.c-slide-in]="!shouldSlideOut"
-  >
-    <div class="c-bar">
-      <div class="c-icon">
-        @if (isSuccessNotification(notification)) {
-          <app-check-svg [class]="'fill-ok'" />
-        } @else if (isErrorNotification(notification)) {
-          <app-error-svg [class]="'fill-error'" />
+<div
+  class="c-container w-[18rem] p-3 border pc:border-hover shadow-sm rounded-3xl bg-footerBg"
+  [class.rounded-lg]="isPc || !isContentFolded"
+  [class.c-slide-out]="shouldSlideOut"
+  [class.c-slide-in]="!shouldSlideOut"
+>
+  <div class="c-bar">
+    <div class="c-icon">
+      @if (isSuccessNotification(notification)) {
+        <app-check-svg [class]="'gc-svg fill-ok'" />
+      } @else if (isErrorNotification(notification)) {
+        <app-error-svg [class]="'gc-svg fill-error'" />
+      } @else {
+        <app-info-svg [class]="'gc-svg'" />
+      }
+    </div>
+    <p
+      class="c-title gc-text text-center overflow-hidden"
+      [class.text-error]="isErrorNotification(notification)"
+      [class.text-ok]="isSuccessNotification(notification)"
+    >
+      {{ notification.title }}
+    </p>
+    <div class="c-action">
+      @if (isContentFolded) {
+        @if (isPc) {
+          <button (click)="showContent()">
+            <app-up-svg [class]="'gc-svg gu-hover'" />
+          </button>
         } @else {
-          <app-info-svg [class]="'gc-svg'" />
-        }
-      </div>
-      <div class="c-title border-l-1">
-        <p
-          class="gc-text text-center overflow-hidden"
-          [class.text-error]="isErrorNotification(notification)"
-          [class.text-ok]="isSuccessNotification(notification)"
-        >
-          {{ notification.title }}
-        </p>
-      </div>
-      <div class="c-action">
-        @if (isContentFolded) {
-          @if (isPc) {
-            <button (click)="showContent()">
-              <app-up-svg [class]="'gc-svg gu-hover'" />
-            </button>
-          } @else {
-            <button (click)="showContent()">
-              <app-down-svg [class]="'gc-svg gu-hover'" />
-            </button>
-          }
-        } @else {
-          <button appFadeIn [fadeInDuration]="300" (click)="close()">
-            <app-close-svg [class]="'gc-svg gu-hover w-5'" />
+          <button (click)="showContent()">
+            <app-down-svg [class]="'gc-svg gu-hover'" />
           </button>
         }
-      </div>
+      } @else {
+        <button appFadeIn [fadeInDuration]="300" (click)="close()">
+          <app-close-svg [class]="'gc-svg gu-hover w-5'" />
+        </button>
+      }
     </div>
+  </div>
 
-    <!-- TODO bug:break-words not working when not using overflow-hidden. -->
-    <div
-      appFadeIn
-      [fadeInDuration]="300"
-      class="c-content px-3 text-center break-words verflow-hidden"
-      [class.hidden]="isContentFolded"
-    >
-      <p
-        class="gc-text text-center"
-        [class.text-error]="isErrorNotification(notification)"
-        [class.text-ok]="isSuccessNotification(notification)"
-      >
-        {{ notification.content }}
-      </p>
-    </div>
+  <div
+    appFadeIn
+    [fadeInDuration]="300"
+    class="c-content pt-3 pb-5 gc-text text-left"
+    [class.hidden]="isContentFolded"
+    [class.text-error]="isErrorNotification(notification)"
+    [class.text-ok]="isSuccessNotification(notification)"
+  >
+    {{ notification.content }}
   </div>
 </div>
