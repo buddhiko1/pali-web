@@ -11,5 +11,5 @@
 }
 
 .c-button {
-  @apply p-1 m-auto rounded-md !bg-buttonBg hover:bg-hover;
+  @apply p-1 m-auto rounded-md bg-buttonBg;
 }

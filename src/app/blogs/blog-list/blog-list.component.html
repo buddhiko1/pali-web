@@ -51,22 +51,22 @@
             (click)="editBlog($event, blog.id)"
             [isButtonStyle]="false"
             [size]="'1.2rem'"
-            [tip]="''"
+            [tip]="'Edit'"
           >
             <app-edit-svg
               [size]="'1.6rem'"
-              [class]="'c-edit-button gc-svg gu-hover'"
+              [class]="'c-edit-button gc-button-svg'"
             />
           </app-icon-button>
           <app-icon-button
             (click)="deleteBlog($event, blog.id)"
             [isButtonStyle]="false"
             [size]="'1.2rem'"
-            [tip]="''"
+            [tip]="'Delete'"
           >
             <app-delete-svg
               [size]="'1.6rem'"
-              [class]="'c-delete-button gc-svg gu-hover'"
+              [class]="'c-delete-button gc-button-svg'"
             />
           </app-icon-button>
         }

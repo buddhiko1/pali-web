@@ -25,16 +25,16 @@
       @if (isContentFolded) {
         @if (isPc) {
           <button (click)="showContent()">
-            <app-up-svg [class]="'gc-svg gu-hover'" />
+            <app-up-svg [class]="'gc-button-svg'" />
           </button>
         } @else {
           <button (click)="showContent()">
-            <app-down-svg [class]="'gc-svg gu-hover'" />
+            <app-down-svg [class]="'gc-button-svg'" />
           </button>
         }
       } @else {
         <button appFadeIn [fadeInDuration]="300" (click)="close()">
-          <app-close-svg [class]="'gc-svg gu-hover w-5'" />
+          <app-close-svg [class]="'gc-button-svg w-5'" />
         </button>
       }
     </div>

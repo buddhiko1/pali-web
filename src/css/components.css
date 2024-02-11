@@ -11,7 +11,12 @@
 }
 
 .gc-svg {
-  @apply w-6 h-6 fill-current border-none focus:ring-0 text-text;
+  @apply w-6 h-6 text-text fill-current border-none focus:ring-0;
+}
+
+
+.gc-button-svg {
+  @apply w-6 h-6 fill-focus border-none focus:ring-0;
 }
 
 .gc-text-button {

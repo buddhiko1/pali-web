@@ -14,7 +14,7 @@
   >
     <app-save-svg
       [size]="'1.6rem'"
-      [class]="['c-save-button', 'gc-svg', isAllowedToSave ? 'gu-hover' : '']"
+      [class]="['c-save-button', isAllowedToSave ? 'gc-button-svg' : 'gc-svg']"
     />
   </app-icon-button>
   <app-icon-button
@@ -28,8 +28,7 @@
       [size]="'1.6rem'"
       [class]="[
         'c-publish-button',
-        'gc-svg',
-        isAllowedToPublish ? 'gu-hover' : ''
+        isAllowedToPublish ? 'gc-button-svg' : 'gc-svg'
       ]"
     />
   </app-icon-button>
