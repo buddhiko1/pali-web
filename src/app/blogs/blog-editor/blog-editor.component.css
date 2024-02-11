@@ -17,6 +17,10 @@
     grid-area: save-button;
   }
 
+  .c-preview-button {
+    grid-area: preview-button;
+  }
+
   .c-publish-button {
     grid-area: publish-button;
   }
@@ -28,6 +32,6 @@
 
 @media screen and (min-width: theme("screens.pc")) {
   .c-container {
-    grid-template-columns: 8fr 1fr 1fr 5fr;
+    grid-template-columns: 8fr 1fr 1fr 4fr;
   }
 }

@@ -20,6 +20,9 @@ export class IconButtonComponent {
   isButtonStyle = true;
 
   @Input()
+  isRounded = false;
+
+  @Input()
   isDisabled = false;
 
   @Input()

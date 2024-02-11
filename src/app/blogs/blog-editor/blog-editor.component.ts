@@ -7,6 +7,7 @@ import { IconButtonComponent } from 'src/app/ui/icon-button/icon-button.componen
 import { SaveSvgComponent } from 'src/app/svg/save/save.component';
 import { UploadSvgComponent } from 'src/app/svg/upload/upload.component';
 import { DeleteSvgComponent } from 'src/app/svg/delete/delete.component';
+import { EyeSvgComponent } from 'src/app/svg/eye/eye.component';
 import { BlogStatusNameEnum } from 'src/app/shared/values/cms.values';
 import { NotificationsService } from 'src/app/notifications/notifications.service';
 import { BlogsService } from '../blogs.service';
@@ -21,6 +22,7 @@ import { BlogsService } from '../blogs.service';
     SaveSvgComponent,
     UploadSvgComponent,
     DeleteSvgComponent,
+    EyeSvgComponent,
   ],
   templateUrl: './blog-editor.component.html',
   styleUrl: './blog-editor.component.css',

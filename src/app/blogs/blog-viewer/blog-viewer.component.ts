@@ -4,6 +4,8 @@ import { CommonModule } from '@angular/common';
 
 import { BlogsService } from '../blogs.service';
 import { UsersService } from 'src/app/users/users.service';
+import { StorageService } from 'src/app/shared/services/storage.service';
+import { ScreenService } from 'src/app/shared/services/screen.service';
 import { SafeHtmlPipe } from 'src/app/shared/pipes/safe-html.pipe';
 import { PenSvgComponent } from 'src/app/svg/pen/pen.component';
 import { IconButtonComponent } from 'src/app/ui/icon-button/icon-button.component';
@@ -32,8 +34,20 @@ export class BlogViewerComponent {
     private _activatedRoute: ActivatedRoute,
     private _blogsService: BlogsService,
     private _usersService: UsersService,
+    private _screenService: ScreenService,
+    private _storageService: StorageService,
   ) {
     this.fetchData();
+  }
+
+  get readTime(): string {
+    if (this.blog) {
+      const wordsPerMinute = 200;
+      const wordCount = this.blog.content!.split(' ').length;
+      const readTime = Math.ceil(wordCount / wordsPerMinute);
+      return `${readTime} min read`;
+    }
+    return '';
   }
 
   async fetchData(): Promise<void> {
@@ -53,17 +67,14 @@ export class BlogViewerComponent {
     this._router.navigate(['/users/detail', userId]);
   }
 
-  get readTime(): string {
-    if (this.blog) {
-      const wordsPerMinute = 200;
-      const wordCount = this.blog.content!.split(' ').length;
-      const readTime = Math.ceil(wordCount / wordsPerMinute);
-      return `${readTime} min read`;
-    }
-    return '';
+  get showEditButton(): boolean {
+    return (
+      !this._screenService.isPhone &&
+      this._storageService.account.id === this.blog.user_created?.id
+    );
   }
 
-  get publishTime(): string {
-    return '';
+  editBlog(): void {
+    this._router.navigate(['/blogs/editor', this.blog.id]);
   }
 }
