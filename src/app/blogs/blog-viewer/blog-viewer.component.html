@@ -1,8 +1,24 @@
-<div class="c-container my-20">
+<div class="c-container my-10 tablet:my-14 pc:my-16">
   @if (blog) {
     <p class="c-title pc:text-xl gc-hl-title">{{ blog.title }}</p>
+    <div class="c-author mt-4 tablet:mt-8 pc:mt-10">
+      @if (authorProfile) {
+        <app-user-avatar
+          [class]="['c-avatar']"
+          [avatarId]="blog.user_created?.avatar?.id"
+          [size]="'2.5rem'"
+          (click)="routeToUserDetail($event, blog.user_created!.id)"
+        />
+        <p class="c-alais gc-text">{{ authorProfile.alais }}</p>
+        <p class="c-read-time gc-text text-sm italic">{{ readTime }}</p>
+        <p class="c-publish-time gc-text text-sm italic">
+          {{ blog.date_updated || blog.date_created | date: "mediumDate" }}
+        </p>
+      }
+    </div>
+    <div class="c-divider mt-2 tablet:mt-3 pc:mt-4 border-b gc-border"></div>
     <div
-      class="c-content mt-16 gc-text text-base gc-inner-html"
+      class="c-content mt-10 tablet:mt-12 pc:mt-14 gc-text text-base gc-inner-html"
       [innerHTML]="blog.content"
     ></div>
   }

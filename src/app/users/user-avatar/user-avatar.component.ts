@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 import { UrlService } from 'src/app/shared/services/url.service';
 import { UsersService } from '../users.service';
@@ -11,21 +11,21 @@ import { AvatarFragment } from 'src/gql/graphql';
   templateUrl: './user-avatar.component.html',
   styleUrl: './user-avatar.component.css',
 })
-export class UserAvatarComponent {
+export class UserAvatarComponent implements OnInit {
   @Input() isButtonStyle = true;
   @Input() size = '4rem';
-  @Input()
-  set avatarId(value: string | undefined) {
-    this._avatarId = value;
-    this.fetchUserAvatar();
-  }
-  private _avatarId: string | undefined = undefined;
+  @Input({ required: true }) avatarId?: string | null;
+
   avatar: AvatarFragment | null = null;
 
   constructor(
     private _usersService: UsersService,
     private _urlService: UrlService,
   ) {}
+
+  ngOnInit(): void {
+    this.fetchUserAvatar();
+  }
 
   get avatarUrl(): string {
     return this.avatar
@@ -34,9 +34,9 @@ export class UserAvatarComponent {
   }
 
   async fetchUserAvatar(): Promise<void> {
-    if (this._avatarId) {
+    if (this.avatarId) {
       this.avatar = await this._usersService.fetchUserAvatar({
-        avatarId: this._avatarId,
+        avatarId: this.avatarId,
       });
     } else {
       this.avatar = null;

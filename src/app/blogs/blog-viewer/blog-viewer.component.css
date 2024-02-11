@@ -1,9 +1,11 @@
 .c-container {
   display: grid;
-  grid-template-rows: auto, auto;
+  grid-template-rows: auto, auto, auto, auto;
   grid-template-columns: 1fr;
   grid-template-areas:
     "title"
+    "author"
+    "divider"
     "content";
 }
 
@@ -11,7 +13,38 @@
   grid-area: title;
 }
 
+.c-author {
+  grid-area: author;
+  display: grid;
+  justify-content: start;
+  grid-template-rows: auto;
+  grid-template-columns: auto auto atuo auto;
+  grid-template-areas:
+    "avatar alais read-time publish-time";
+  grid-column-gap: 0.5rem;
+  align-items: center;
+}
+
+.c-avatar {
+  grid-area: avatar;
+}
+
+.c-alais {
+  grid-area: alais;
+}
+
+.c-read-time {
+  grid-area: read-time;
+}
+
+.c-publish-time {
+  grid-area: publish-time;
+}
+
+.c-divider {
+  grid-area: divider;
+}
+
 .c-content {
   grid-area: content;
 }
-

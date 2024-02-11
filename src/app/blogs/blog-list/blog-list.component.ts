@@ -56,21 +56,21 @@ export class BlogListComponent {
     return this._screenService.isPhone;
   }
 
-  routeToUserDetail(event: Event, userId: string) {
+  routeToUserDetail(event: Event, userId: string): void {
     event.stopPropagation();
     this._router.navigate(['/users/detail', userId]);
   }
 
-  viewBlog(blogId: string) {
+  viewBlog(blogId: string): void {
     this._router.navigate(['/blogs/viewer', blogId]);
   }
 
-  editBlog(event: Event, blogId: string) {
+  editBlog(event: Event, blogId: string): void {
     event.stopPropagation();
     this._router.navigate(['/blogs/editor', blogId]);
   }
 
-  deleteBlog(event: Event, blogId: string) {
+  deleteBlog(event: Event, blogId: string): void {
     event.stopPropagation();
     this.showConfirmDialog = true;
     this.confirmTitle = 'Delete Blog';

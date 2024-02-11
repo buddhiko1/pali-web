@@ -16,7 +16,7 @@
   display: grid;
   grid-template-rows: auto;
   grid-template-columns: auto auto;
-  grid-template-areas: "logo toggle";
+  grid-template-areas: "logo menu-button";
 }
 
 .c-logo {
@@ -24,8 +24,8 @@
   justify-self: start;
 }
 
-.c-toggle {
-  grid-area: toggle;
+.c-menu-button {
+  grid-area: menu-button;
   justify-self: end;
 }
 

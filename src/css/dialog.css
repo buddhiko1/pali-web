@@ -15,5 +15,5 @@
 }
 
 .gd-input {
-  @apply py-1 px-3 bg-inputBg rounded border border-border focus:border-focus outline-none focus:ring-1 focus:ring-hover leading-relaxed text-text;
+  @apply py-1 px-3 bg-inputBg rounded border border-border focus:border-focus outline-none focus:ring-1 focus:ring-focus leading-relaxed text-text;
 }
