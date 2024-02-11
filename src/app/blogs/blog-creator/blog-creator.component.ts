@@ -1,7 +1,7 @@
 import { Component, ViewChild, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
-import { interval } from 'rxjs';
+// import { interval } from 'rxjs';
 
 import { WysiwygComponent } from 'src/app/ui/wysiwyg/wysiwyg.component';
 import { BlogStatusNameEnum } from 'src/app/shared/values/cms.values';
@@ -41,11 +41,12 @@ export class BlogCreatorComponent implements OnInit {
     private _notificationsService: NotificationsService,
     private _blogsService: BlogsService,
   ) {}
+
   ngOnInit(): void {
     this._fetchLatestDraft();
-    interval(1000 * 60 * 5).subscribe(() => {
-      this.saveDraft();
-    });
+    // interval(1000 * 60 * 5).subscribe(() => {
+    //   this.saveDraft();
+    // });
   }
 
   get isSaved(): boolean {

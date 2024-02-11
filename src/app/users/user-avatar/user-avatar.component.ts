@@ -14,7 +14,14 @@ import { AvatarFragment } from 'src/gql/graphql';
 export class UserAvatarComponent implements OnInit {
   @Input() isButtonStyle = true;
   @Input() size = '4rem';
-  @Input({ required: true }) avatarId?: string | null;
+
+  // for update imediately when logout or login.
+  @Input()
+  set avatarId(value: string | undefined) {
+    this._avatarId = value;
+    this.fetchUserAvatar();
+  }
+  private _avatarId: string | undefined = undefined;
 
   avatar: AvatarFragment | null = null;
 
@@ -34,9 +41,9 @@ export class UserAvatarComponent implements OnInit {
   }
 
   async fetchUserAvatar(): Promise<void> {
-    if (this.avatarId) {
+    if (this._avatarId) {
       this.avatar = await this._usersService.fetchUserAvatar({
-        avatarId: this.avatarId,
+        avatarId: this._avatarId,
       });
     } else {
       this.avatar = null;

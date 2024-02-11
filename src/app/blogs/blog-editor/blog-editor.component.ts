@@ -58,17 +58,11 @@ export class BlogEditorComponent implements OnInit {
   }
 
   get isAllowedToSave(): boolean {
-    // if (this.wysiwyg) {
-    //   return this.title !== '' && this.wysiwyg.content !== '';
-    // }
-    return true;
+    return this.title !== '' && this.wysiwyg.content !== '';
   }
 
   get isAllowedToPublish(): boolean {
-    // if (this.wysiwyg) {
-    //   return this.title !== '' && this.wysiwyg.content !== '';
-    // }
-    return true;
+    return this.title !== '' && this.wysiwyg.content !== '';
   }
 
   async saveDraft(): Promise<void> {

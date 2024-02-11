@@ -68,10 +68,12 @@ export class BlogViewerComponent {
   }
 
   get showEditButton(): boolean {
-    return (
-      !this._screenService.isPhone &&
-      this._storageService.account.id === this.blog.user_created?.id
-    );
+    if (!this._screenService.isPhone) {
+      if (this._storageService.isLoggedIn) {
+        return this._storageService.account?.id === this.blog.user_created?.id;
+      }
+    }
+    return false;
   }
 
   editBlog(): void {

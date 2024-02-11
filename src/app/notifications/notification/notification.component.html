@@ -43,7 +43,13 @@
   <div
     appFadeIn
     [fadeInDuration]="300"
-    class="c-content pt-3 pb-5 gc-text text-left"
+    [class]="[
+      'c-content',
+      'pt-3',
+      'pb-5',
+      'gc-text',
+      notification.content.length > 20 ? 'text-left' : 'text-center'
+    ]"
     [class.hidden]="isContentFolded"
     [class.text-error]="isErrorNotification(notification)"
     [class.text-ok]="isSuccessNotification(notification)"
