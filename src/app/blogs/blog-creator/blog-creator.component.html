@@ -8,7 +8,7 @@
   <app-icon-button
     [isDisabled]="!isAllowedToSave"
     [isLoading]="isSavingDraft"
-    [size]="'1.6rem'"
+    [loaderSize]="'1.6rem'"
     [tip]="'Save draft'"
     (click)="saveDraft()"
   >
@@ -20,7 +20,7 @@
   <app-icon-button
     [isDisabled]="!isAllowedToPublish"
     [isLoading]="isPublishing"
-    [size]="'1.6rem'"
+    [loaderSize]="'1.6rem'"
     [tip]="'Publish'"
     (click)="publish()"
   >

@@ -34,11 +34,7 @@
 
         @if (showActions && !isPhone) {
           @if (isDraft(blog)) {
-            <app-icon-button
-              [isButtonStyle]="false"
-              [size]="'1.2rem'"
-              [tip]="'Draft'"
-            >
+            <app-icon-button [isButtonStyle]="false" [tip]="'Draft'">
               <app-draft-svg
                 [size]="'1.6rem'"
                 [class]="'c-draft-icon gc-svg'"
@@ -50,18 +46,16 @@
           <app-icon-button
             (click)="editBlog($event, blog.id)"
             [isButtonStyle]="false"
-            [size]="'1.2rem'"
             [tip]="'Edit'"
           >
             <app-edit-svg
-              [size]="'1.6rem'"
+              [size]="'100%'"
               [class]="'c-edit-button gc-button-svg'"
             />
           </app-icon-button>
           <app-icon-button
             (click)="deleteBlog($event, blog.id)"
-            [isButtonStyle]="false"
-            [size]="'1.2rem'"
+            [isButtonStyle]="true"
             [tip]="'Delete'"
           >
             <app-delete-svg

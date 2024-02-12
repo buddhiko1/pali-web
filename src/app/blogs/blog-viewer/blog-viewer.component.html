@@ -24,12 +24,7 @@
 
     @if (showEditButton) {
       <div class="fixed bottom-32 right-20">
-        <app-icon-button
-          (click)="editBlog()"
-          [isRounded]="true"
-          [size]="'1.6rem'"
-          [tip]="''"
-        >
+        <app-icon-button (click)="editBlog()" [isRounded]="true" [tip]="''">
           <app-pen-svg
             [size]="'1.6rem'"
             [class]="'c-edit-button gc-button-svg'"
