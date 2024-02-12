@@ -12,6 +12,7 @@ import { LoaderComponent } from 'src/app/ui/loader/loader.component';
 import { FormDialogComponent } from 'src/app/ui/form-dialog/form-dialog.component';
 import { ResultDialogComponent } from 'src/app/ui/result-dialog/result-dialog.component';
 import { NavigationService } from 'src/app/shared/services/navigation.service';
+import { UtilitiesService } from 'src/app/shared/services/utilities.service';
 import { RoleEnum } from 'src/app/shared/values/cms.values';
 import { PromptEnum } from 'src/app/shared/values/prompts.values';
 import { RegisteredEmailValidator } from '../email.validator';
@@ -43,6 +44,7 @@ export class UserCreationComponent implements OnInit {
     private _usersService: UsersService,
     private _registeredEmailValidator: RegisteredEmailValidator,
     private _navigationService: NavigationService,
+    private _utilitiesService: UtilitiesService,
   ) {}
 
   ngOnInit(): void {
@@ -80,13 +82,10 @@ export class UserCreationComponent implements OnInit {
       const createdUser = await this._usersService.fetchUserByEmail({
         email: email,
       });
-      const defaultAlais = `user-${createdUser!.id
-        .replace(/-/g, '')
-        .substring(0, 10)}`;
       await this._usersService.createUserProfile({
         data: {
-          alais: createdUser!.id,
-          user: { id: defaultAlais },
+          alais: this._utilitiesService.generateRandomAlais(),
+          user: { id: createdUser!.id },
         },
       });
       timer(3000).subscribe(() => {

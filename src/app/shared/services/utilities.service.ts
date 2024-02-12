@@ -61,4 +61,16 @@ export class UtilitiesService {
       newTab.focus();
     }
   }
+
+  generateRandomAlais() {
+    const characters =
+      'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    const alaisLength = 8;
+    let alais = '';
+    for (let i = 0; i < alaisLength; i++) {
+      const randomIndex = Math.floor(Math.random() * characters.length);
+      alais += characters.charAt(randomIndex);
+    }
+    return alais;
+  }
 }
