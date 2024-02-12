@@ -20,8 +20,8 @@ graphql(`
     name
   }
 
-  query UserRoles {
-    roles {
+  query UserRolesByName($name: String!) {
+    roles(filter: { name: { _eq: $name } }) {
       ...UserRole
     }
   }

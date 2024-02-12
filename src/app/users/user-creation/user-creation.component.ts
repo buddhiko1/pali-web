@@ -6,18 +6,16 @@ import {
   Validators,
   ReactiveFormsModule,
 } from '@angular/forms';
-import { timer } from 'rxjs';
 
 import { LoaderComponent } from 'src/app/ui/loader/loader.component';
 import { FormDialogComponent } from 'src/app/ui/form-dialog/form-dialog.component';
 import { ResultDialogComponent } from 'src/app/ui/result-dialog/result-dialog.component';
-import { NavigationService } from 'src/app/shared/services/navigation.service';
 import { UtilitiesService } from 'src/app/shared/services/utilities.service';
+import { NotificationsService } from 'src/app/notifications/notifications.service';
 import { RoleEnum } from 'src/app/shared/values/cms.values';
 import { PromptEnum } from 'src/app/shared/values/prompts.values';
 import { RegisteredEmailValidator } from '../email.validator';
 import { UsersService } from '../users.service';
-import { UserRoleFragment } from 'src/gql/graphql';
 
 @Component({
   selector: 'app-user-creation',
@@ -43,8 +41,8 @@ export class UserCreationComponent implements OnInit {
     private _router: Router,
     private _usersService: UsersService,
     private _registeredEmailValidator: RegisteredEmailValidator,
-    private _navigationService: NavigationService,
     private _utilitiesService: UtilitiesService,
+    private _notificationsService: NotificationsService,
   ) {}
 
   ngOnInit(): void {
@@ -69,39 +67,48 @@ export class UserCreationComponent implements OnInit {
     if (this.form.invalid) {
       return;
     }
-    const roles: UserRoleFragment[] = await this._usersService.fetchRoles();
-    const role = roles.find((role) => role.name === RoleEnum.User);
-    this.isLoading = true;
     const email = this.form.getRawValue().email;
-    try {
-      await this._usersService.inviteUser({
-        email: email,
-        role: role!.id,
-        invite_url: `${location.origin}/users/activation`,
-      });
-      const createdUser = await this._usersService.fetchUserByEmail({
-        email: email,
-      });
-      await this._usersService.createUserProfile({
-        data: {
-          alais: this._utilitiesService.generateRandomAlais(),
-          user: { id: createdUser!.id },
-        },
-      });
-      timer(3000).subscribe(() => {
+    this.isLoading = true;
+    this._usersService
+      .fetchRolesByName({
+        name: RoleEnum.User,
+      })
+      .then((roles) => {
+        const role = roles[0];
+        return this._usersService.inviteUser({
+          email: email,
+          role: role.id,
+          invite_url: `${location.origin}/users/activation`,
+        });
+      })
+      .then(() => {
+        return this._usersService.fetchUserByEmail({
+          email: email,
+        });
+      })
+      .then((invitedUser) => {
+        this._usersService.createUserProfile({
+          data: {
+            alais: this._utilitiesService.generateRandomAlais(),
+            user: { id: invitedUser!.id },
+          },
+        });
+      })
+      .then(() => {
+        this._notificationsService.pushInfo({
+          title: 'Sign Up Success',
+          content: PromptEnum.SignUp,
+        });
+        this._router.navigate(['/auth/login']);
+      })
+      .catch((error) => {
+        this._notificationsService.pushErrorInfo({
+          title: 'Sign Up Error',
+          content: error.toString(),
+        });
+      })
+      .finally(() => {
         this.isLoading = false;
-        this.prompt = PromptEnum.SignUp;
       });
-    } catch (error: any) {
-      this.isLoading = false;
-      this.error =
-        error.networkError?.message ?? error.graphQLErrors[0].message;
-    }
-  }
-
-  onResultDialogClick(): void {
-    this.error
-      ? this._navigationService.goBack()
-      : this._router.navigate(['/auth/login']);
   }
 }

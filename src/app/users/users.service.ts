@@ -7,7 +7,8 @@ import {
   UserByEmailDocument,
   UserByEmailQueryVariables,
   UserRoleFragment,
-  UserRolesDocument,
+  UserRolesByNameDocument,
+  UserRolesByNameQueryVariables,
   UserFragment,
   UserByIdDocument,
   UserByIdQueryVariables,
@@ -41,8 +42,13 @@ export class UsersService {
     private _dataUrqlService: DataUrqlService,
   ) {}
 
-  async fetchRoles(): Promise<UserRoleFragment[]> {
-    const result = await this._systemUrqlService.query(UserRolesDocument, {});
+  async fetchRolesByName(
+    args: UserRolesByNameQueryVariables,
+  ): Promise<UserRoleFragment[]> {
+    const result = await this._systemUrqlService.query(
+      UserRolesByNameDocument,
+      args,
+    );
     return result.data.roles;
   }
 
