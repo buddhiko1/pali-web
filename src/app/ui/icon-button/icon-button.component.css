@@ -1,8 +1,8 @@
 .c-loader {
   box-sizing: border-box;
-  width: var(--loaderSize);
-  height: var(--loaderSize);
-  border-radius: var(--loaderSize);
+  width: var(--size);
+  height: var(--size);
+  border-radius: var(--size);
   border-right: var(--borderWidth) solid theme("colors.focus");
   border-left: var(--borderWidth) solid theme("colors.focus");
   border-top: var(--borderWidth) solid rgba(0, 0, 0, 0);

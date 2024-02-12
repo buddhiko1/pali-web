@@ -24,6 +24,7 @@
   --colors-error: theme("colors.red.500");
   --colors-warning: theme("colors.yellow.500");
   --colors-ok: theme("colors.blue.500");
+  --colors-disabled: theme("colors.gray.500");
 }
 
 .night {
@@ -52,4 +53,5 @@
   --colors-error: theme("colors.red.500");
   --colors-warning: theme("colors.yellow.500");
   --colors-ok: theme("colors.blue.500");
+  --colors-disabled: theme("colors.gray.200");
 }

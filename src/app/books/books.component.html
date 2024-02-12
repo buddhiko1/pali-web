@@ -32,16 +32,18 @@
           <app-icon-button
             (click)="openBookUrl(book)"
             [tip]="'Github'"
+            [size]="'1.6rem'"
             [tipPosition]="'top'"
           >
-            <app-github-svg [size]="'1.6rem'" [class]="'gc-button-svg'" />
+            <app-github-svg #svg [class]="'gc-button-svg'" />
           </app-icon-button>
           <app-icon-button
             (click)="downloadBook(book)"
             [tip]="'Download'"
+            [size]="'1.55rem'"
             [tipPosition]="'top'"
           >
-            <app-download-svg [size]="'1.55rem'" [class]="'gc-button-svg'" />
+            <app-download-svg #svg [class]="'gc-button-svg'" />
           </app-icon-button>
         </div>
       </div>

@@ -31,17 +31,13 @@
         />
         <app-icon-button
           [isLoading]="isChangingAlais"
-          [loaderSize]="'1.6rem'"
+          [size]="'1.6rem'"
           [isButtonStyle]="false"
           [tip]="'Save'"
           [tipPosition]="'right'"
           class="-ml-8"
         >
-          <app-save-svg
-            (click)="saveAlais()"
-            [size]="'1.6rem'"
-            [class]="'gc-button-svg'"
-          />
+          <app-save-svg #svg (click)="saveAlais()" [class]="'gc-button-svg'" />
         </app-icon-button>
       </div>
       <button (click)="logout()" class="gc-hl-button">Logout</button>

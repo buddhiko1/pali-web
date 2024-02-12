@@ -43,6 +43,7 @@ export default {
         focus: "var(--colors-focus)",
         error: "var(--colors-error)",
         ok: "var(--colors-ok)",
+        disabled: "var(--colors-disabled)",
       },
     },
   },

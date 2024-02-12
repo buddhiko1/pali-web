@@ -34,11 +34,12 @@
 
         @if (showActions && !isPhone) {
           @if (isDraft(blog)) {
-            <app-icon-button [isButtonStyle]="false" [tip]="'Draft'">
-              <app-draft-svg
-                [size]="'1.6rem'"
-                [class]="'c-draft-icon gc-svg'"
-              />
+            <app-icon-button
+              [size]="'1.6rem'"
+              [isButtonStyle]="false"
+              [tip]="'Draft'"
+            >
+              <app-draft-svg #svg [class]="'c-draft-icon gc-svg'" />
             </app-icon-button>
           } @else {
             <div></div>
@@ -46,22 +47,18 @@
           <app-icon-button
             (click)="editBlog($event, blog.id)"
             [isButtonStyle]="false"
+            [size]="'1.6rem'"
             [tip]="'Edit'"
           >
-            <app-edit-svg
-              [size]="'100%'"
-              [class]="'c-edit-button gc-button-svg'"
-            />
+            <app-edit-svg #svg [class]="'c-edit-button gc-button-svg'" />
           </app-icon-button>
           <app-icon-button
             (click)="deleteBlog($event, blog.id)"
-            [isButtonStyle]="true"
+            [isButtonStyle]="false"
+            [size]="'1.6rem'"
             [tip]="'Delete'"
           >
-            <app-delete-svg
-              [size]="'1.6rem'"
-              [class]="'c-delete-button gc-button-svg'"
-            />
+            <app-delete-svg #svg [class]="'c-delete-button gc-button-svg'" />
           </app-icon-button>
         }
         <app-badge [number]="999" class="c-comments">

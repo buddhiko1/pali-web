@@ -8,27 +8,30 @@
   <app-icon-button
     [isDisabled]="!isAllowedToSave"
     [isLoading]="isSavingDraft"
-    [loaderSize]="'1.6rem'"
+    [size]="'1.6rem'"
     [tip]="'Save draft'"
     (click)="saveDraft()"
   >
     <app-save-svg
-      [size]="'1.6rem'"
-      [class]="['c-save-button', isAllowedToSave ? 'gc-button-svg' : 'gc-svg']"
+      #svg
+      [class]="[
+        'c-save-button',
+        isAllowedToSave ? 'gc-button-svg' : 'fill-disabled'
+      ]"
     />
   </app-icon-button>
   <app-icon-button
     [isDisabled]="!isAllowedToPublish"
     [isLoading]="isPublishing"
-    [loaderSize]="'1.6rem'"
+    [size]="'1.6rem'"
     [tip]="'Publish'"
     (click)="publish()"
   >
     <app-upload-svg
-      [size]="'1.6rem'"
+      #svg
       [class]="[
         'c-publish-button',
-        isAllowedToPublish ? 'gc-button-svg' : 'gc-svg'
+        isAllowedToPublish ? 'gc-button-svg' : 'fill-disabled'
       ]"
     />
   </app-icon-button>

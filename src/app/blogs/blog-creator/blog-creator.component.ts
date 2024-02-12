@@ -1,7 +1,6 @@
-import { Component, ViewChild, OnInit } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
-// import { interval } from 'rxjs';
 
 import { WysiwygComponent } from 'src/app/ui/wysiwyg/wysiwyg.component';
 import { BlogStatusNameEnum } from 'src/app/shared/values/cms.values';
@@ -27,7 +26,7 @@ import { BlogsService } from '../blogs.service';
   templateUrl: './blog-creator.component.html',
   styleUrl: './blog-creator.component.css',
 })
-export class BlogCreatorComponent implements OnInit {
+export class BlogCreatorComponent {
   @ViewChild('wysiwyg') wysiwyg!: WysiwygComponent;
   blogId = '';
   title = '';
@@ -42,13 +41,6 @@ export class BlogCreatorComponent implements OnInit {
     private _blogsService: BlogsService,
   ) {}
 
-  ngOnInit(): void {
-    this._fetchLatestDraft();
-    // interval(1000 * 60 * 5).subscribe(() => {
-    //   this.saveDraft();
-    // });
-  }
-
   get isSaved(): boolean {
     return !!this.blogId;
   }
@@ -61,22 +53,22 @@ export class BlogCreatorComponent implements OnInit {
     return this.title !== '' && this.wysiwyg.content !== '';
   }
 
-  private async _fetchLatestDraft(): Promise<void> {
-    const result = await this._blogsService.fetchUserBlogs({
-      userId: this._storageService.account!.id,
-      statusNameList: [BlogStatusNameEnum.Draft],
-      sortFields: ['-date_created'],
-      offset: 0,
-      limit: 1,
-      returnContent: true,
-    });
-    if (result.length) {
-      const draft = result[0];
-      this.blogId = draft.id;
-      this.title = draft.title;
-      this.initialContent = draft.content!;
-    }
-  }
+  // private async _fetchLatestDraft(): Promise<void> {
+  //   const result = await this._blogsService.fetchUserBlogs({
+  //     userId: this._storageService.account!.id,
+  //     statusNameList: [BlogStatusNameEnum.Draft],
+  //     sortFields: ['-date_created'],
+  //     offset: 0,
+  //     limit: 1,
+  //     returnContent: true,
+  //   });
+  //   if (result.length) {
+  //     const draft = result[0];
+  //     this.blogId = draft.id;
+  //     this.title = draft.title;
+  //     this.initialContent = draft.content!;
+  //   }
+  // }
 
   async saveDraft(): Promise<void> {
     this.isSavingDraft = true;
