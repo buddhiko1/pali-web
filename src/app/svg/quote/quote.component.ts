@@ -1,4 +1,5 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
+import { SvgComponent } from '../svg/svg.component';
 
 @Component({
   selector: 'app-quote-svg',
@@ -6,7 +7,4 @@ import { Component, Input } from '@angular/core';
   imports: [],
   templateUrl: './quote.component.svg',
 })
-export class QuoteSvgComponent {
-  @Input() class: string[] | string = [''];
-  @Input() size = '3rem';
-}
+export class QuoteSvgComponent extends SvgComponent {}

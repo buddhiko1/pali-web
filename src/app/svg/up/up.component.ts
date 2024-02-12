@@ -1,4 +1,5 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
+import { SvgComponent } from '../svg/svg.component';
 
 @Component({
   selector: 'app-up-svg',
@@ -6,7 +7,4 @@ import { Component, Input } from '@angular/core';
   imports: [],
   templateUrl: './up.component.svg',
 })
-export class UpSvgComponent {
-  @Input() class: string[] | string = [''];
-  @Input() size = '';
-}
+export class UpSvgComponent extends SvgComponent {}

@@ -1,13 +1,10 @@
-import { Component, Input } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component } from '@angular/core';
+import { SvgComponent } from '../svg/svg.component';
 
 @Component({
   selector: 'app-github-svg',
   standalone: true,
-  imports: [CommonModule],
+  imports: [],
   templateUrl: './github.component.svg',
 })
-export class GithubSvgComponent {
-  @Input() class: string[] | string = [''];
-  @Input() size = '';
-}
+export class GithubSvgComponent extends SvgComponent {}

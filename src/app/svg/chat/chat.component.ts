@@ -1,4 +1,5 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
+import { SvgComponent } from '../svg/svg.component';
 
 @Component({
   selector: 'app-chat-svg',
@@ -6,7 +7,4 @@ import { Component, Input } from '@angular/core';
   imports: [],
   templateUrl: './chat.component.svg',
 })
-export class ChatSvgComponent {
-  @Input() class: string[] | string = [''];
-  @Input() size = '';
-}
+export class ChatSvgComponent extends SvgComponent {}

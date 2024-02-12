@@ -1,4 +1,5 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
+import { SvgComponent } from '../svg/svg.component';
 
 @Component({
   selector: 'app-moon-svg',
@@ -6,7 +7,4 @@ import { Component, Input } from '@angular/core';
   imports: [],
   templateUrl: './moon.component.svg',
 })
-export class MoonSvgComponent {
-  @Input() class: string[] | string = [''];
-  @Input() size = '';
-}
+export class MoonSvgComponent extends SvgComponent {}

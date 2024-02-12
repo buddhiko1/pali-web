@@ -1,4 +1,5 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
+import { SvgComponent } from '../svg/svg.component';
 
 @Component({
   selector: 'app-download-svg',
@@ -6,7 +7,4 @@ import { Component, Input } from '@angular/core';
   imports: [],
   templateUrl: './download.component.svg',
 })
-export class DownloadSvgComponent {
-  @Input() class: string[] | string = [''];
-  @Input() size = '';
-}
+export class DownloadSvgComponent extends SvgComponent {}

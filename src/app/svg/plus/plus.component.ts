@@ -1,4 +1,5 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
+import { SvgComponent } from '../svg/svg.component';
 
 @Component({
   selector: 'app-plus-svg',
@@ -6,7 +7,4 @@ import { Component, Input } from '@angular/core';
   imports: [],
   templateUrl: './plus.component.svg',
 })
-export class PlusSvgComponent {
-  @Input() class: string[] | string = [''];
-  @Input() size = '';
-}
+export class PlusSvgComponent extends SvgComponent {}
