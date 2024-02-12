@@ -34,7 +34,7 @@
         }
       } @else {
         <button appFadeIn [fadeInDuration]="300" (click)="close()">
-          <app-close-svg [class]="'gc-button-svg w-5'" />
+          <app-close-svg [class]="'gc-svg w-5'" />
         </button>
       }
     </div>
@@ -47,6 +47,7 @@
       'c-content',
       'pt-3',
       'pb-5',
+      'pc:px-1',
       'gc-text',
       notification.content.length > 20 ? 'text-left' : 'text-center'
     ]"
