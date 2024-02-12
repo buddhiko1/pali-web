@@ -1,16 +1,6 @@
 <div class="c-container mt-12 tablet:mt-20">
   @if (isLoading) {
     <app-loader />
-  } @else if (error) {
-    <app-result-dialog [error]="error">
-      <button
-        actions
-        [class.gc-error-button]="error"
-        (click)="onResultDialogClick()"
-      >
-        OK
-      </button>
-    </app-result-dialog>
   } @else {
     <input
       #fileInput

@@ -5,12 +5,11 @@ import {
   Validators,
   ReactiveFormsModule,
 } from '@angular/forms';
-import { CombinedError } from '@urql/core';
 
 import { LoaderComponent } from 'src/app/ui/loader/loader.component';
 import { FormDialogComponent } from 'src/app/ui/form-dialog/form-dialog.component';
-import { ResultDialogComponent } from 'src/app/ui/result-dialog/result-dialog.component';
 import { NavigationService } from 'src/app/shared/services/navigation.service';
+import { NotificationsService } from 'src/app/notifications/notifications.service';
 import { PromptEnum } from 'src/app/shared/values/prompts.values';
 import { UnRegisteredEmailValidator } from 'src/app/users/email.validator';
 import { AuthService } from '../auth.service';
@@ -20,24 +19,17 @@ import { AuthService } from '../auth.service';
   templateUrl: './reset-request.component.html',
   styleUrl: './reset-request.component.css',
   standalone: true,
-  imports: [
-    ReactiveFormsModule,
-    LoaderComponent,
-    FormDialogComponent,
-    ResultDialogComponent,
-  ],
+  imports: [ReactiveFormsModule, LoaderComponent, FormDialogComponent],
 })
 export class ResetRequestComponent implements OnInit {
   form!: FormGroup;
-
   isLoading = false;
-  error = '';
-  prompt = '';
 
   constructor(
     private _authService: AuthService,
     private _unregisteredEmailValidator: UnRegisteredEmailValidator,
     private _navigationService: NavigationService,
+    private _notificationService: NotificationsService,
   ) {}
 
   ngOnInit(): void {
@@ -66,17 +58,20 @@ export class ResetRequestComponent implements OnInit {
         urlForReset: `${location.origin}/auth/password-reset`,
       })
       .then(() => {
-        this.isLoading = false;
-        this.prompt = PromptEnum.RequestReset;
+        this._notificationService.pushSuccessInfo({
+          title: 'Request Successful',
+          content: PromptEnum.RequestReset,
+        });
+        this._navigationService.goBack();
       })
-      .catch((error: CombinedError) => {
+      .catch((error) => {
+        this._notificationService.pushErrorInfo({
+          title: 'Request Error',
+          content: error.toString(),
+        });
+      })
+      .finally(() => {
         this.isLoading = false;
-        this.error =
-          error.networkError?.message ?? error.graphQLErrors[0].message;
       });
-  }
-
-  onResultDialogClick(): void {
-    this._navigationService.goBack();
   }
 }

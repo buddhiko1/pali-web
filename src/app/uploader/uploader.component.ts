@@ -9,14 +9,14 @@ import {
 } from '@angular/core';
 
 import { LoaderComponent } from 'src/app/ui/loader/loader.component';
-import { ResultDialogComponent } from '../ui/result-dialog/result-dialog.component';
 import { UtilitiesService } from '../shared/services/utilities.service';
+import { NotificationsService } from '../notifications/notifications.service';
 import { UploaderService } from './uploader.service';
 
 @Component({
   selector: 'app-uploader',
   standalone: true,
-  imports: [LoaderComponent, ResultDialogComponent],
+  imports: [LoaderComponent],
   templateUrl: './uploader.component.html',
   styleUrl: './uploader.component.css',
 })
@@ -37,6 +37,7 @@ export class UploaderComponent implements AfterViewInit {
   constructor(
     private _uploaderService: UploaderService,
     private _utilitiesService: UtilitiesService,
+    private _notificationService: NotificationsService,
   ) {}
 
   ngAfterViewInit(): void {
@@ -115,15 +116,15 @@ export class UploaderComponent implements AfterViewInit {
       this.isLoading = false;
     } catch (error: any) {
       this.isLoading = false;
-      this.error = error.toString();
+      this._notificationService.pushErrorInfo({
+        title: 'Upload Error',
+        content: error.toString(),
+      });
+      this.failed.emit();
     }
   }
 
   onCanceled(): void {
-    this.failed.emit();
-  }
-
-  onResultDialogClick(): void {
     this.failed.emit();
   }
 }

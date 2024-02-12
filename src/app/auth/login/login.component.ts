@@ -9,9 +9,9 @@ import { RouterLink, Router } from '@angular/router';
 
 import { LoaderComponent } from 'src/app/ui/loader/loader.component';
 import { FormDialogComponent } from 'src/app/ui/form-dialog/form-dialog.component';
-import { ResultDialogComponent } from 'src/app/ui/result-dialog/result-dialog.component';
 import { UnRegisteredEmailValidator } from 'src/app/users/email.validator';
 import { StorageService } from 'src/app/shared/services/storage.service';
+import { NotificationsService } from 'src/app/notifications/notifications.service';
 import { UsersService } from 'src/app/users/users.service';
 import { AuthService } from '../auth.service';
 
@@ -25,14 +25,11 @@ import { AuthService } from '../auth.service';
     ReactiveFormsModule,
     LoaderComponent,
     FormDialogComponent,
-    ResultDialogComponent,
   ],
 })
 export class LoginComponent implements OnInit {
   form!: FormGroup;
-
   isLoading = false;
-  error = '';
 
   constructor(
     private _router: Router,
@@ -40,6 +37,7 @@ export class LoginComponent implements OnInit {
     private _authService: AuthService,
     private _usersService: UsersService,
     private _unRegisteredEmailValidator: UnRegisteredEmailValidator,
+    private _notificationService: NotificationsService,
   ) {}
 
   ngOnInit(): void {
@@ -68,32 +66,42 @@ export class LoginComponent implements OnInit {
     return this.form.get('password')!;
   }
 
-  async onSubmit(): Promise<void> {
+  onSubmit(): void {
     if (this.form.invalid) {
       return;
     }
     this.isLoading = true;
-    try {
-      const authTokens = await this._authService.login({
+
+    this._authService
+      .login({
         email: this.form.getRawValue().email,
         password: this.form.getRawValue().password,
+      })
+      .then((authTokens) => {
+        this._storageService.saveAuthTokens(authTokens);
+        return this._usersService.fetchAccount();
+      })
+      .then((account) => {
+        this._storageService.account = account;
+        return this._usersService.fetchUserProfile({
+          userId: account.id,
+        });
+      })
+      .then((profile) => {
+        this._storageService.profile = profile;
+      })
+      .then(() => {
+        this._router.navigate([
+          '/users/detail',
+          this._storageService.account.id,
+        ]);
+      })
+      .catch((error) => {
+        this.isLoading = false;
+        this._notificationService.pushErrorInfo({
+          title: 'Login Error',
+          content: error.toString(),
+        });
       });
-      this._storageService.saveAuthTokens(authTokens);
-      const account = await this._usersService.fetchAccount();
-      this._storageService.account = account;
-      const profile = await this._usersService.fetchUserProfile({
-        userId: account.id,
-      });
-      this._storageService.profile = profile;
-      this._router.navigate(['/users/detail', account.id]);
-    } catch (error: any) {
-      this.isLoading = false;
-      this.error =
-        error.networkError?.message ?? error.graphQLErrors[0].message;
-    }
-  }
-
-  onResultDialogClick(): void {
-    this.error = '';
   }
 }

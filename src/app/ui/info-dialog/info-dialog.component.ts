@@ -5,13 +5,13 @@ import { CheckSvgComponent } from 'src/app/svg/check/check.component';
 import { ErrorSvgComponent } from 'src/app/svg/error/error.component';
 
 @Component({
-  selector: 'app-result-dialog',
+  selector: 'app-info-dialog',
   standalone: true,
   imports: [DialogBoxComponent, CheckSvgComponent, ErrorSvgComponent],
-  templateUrl: './result-dialog.component.html',
-  styleUrl: './result-dialog.component.css',
+  templateUrl: './info-dialog.component.html',
+  styleUrl: './info-dialog.component.css',
 })
-export class ResultDialogComponent {
+export class InfoDialogComponent {
   @Input() error?: string;
   @Input() prompt?: string;
 }

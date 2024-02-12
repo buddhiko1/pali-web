@@ -6,12 +6,11 @@ import {
   Validators,
   ReactiveFormsModule,
 } from '@angular/forms';
-import { CombinedError } from '@urql/core';
 
 import { LoaderComponent } from 'src/app/ui/loader/loader.component';
 import { FormDialogComponent } from 'src/app/ui/form-dialog/form-dialog.component';
-import { ResultDialogComponent } from 'src/app/ui/result-dialog/result-dialog.component';
 import { NavigationService } from 'src/app/shared/services/navigation.service';
+import { NotificationsService } from 'src/app/notifications/notifications.service';
 import { UsersService } from '../users.service';
 
 @Component({
@@ -19,27 +18,21 @@ import { UsersService } from '../users.service';
   templateUrl: './user-activation.component.html',
   styleUrl: './user-activation.component.css',
   standalone: true,
-  imports: [
-    ReactiveFormsModule,
-    LoaderComponent,
-    FormDialogComponent,
-    ResultDialogComponent,
-  ],
+  imports: [ReactiveFormsModule, LoaderComponent, FormDialogComponent],
 })
 export class UserActivationComponent implements OnInit {
   form!: FormGroup;
+  isLoading = false;
 
   private _token = '';
   private _email = '';
-
-  isLoading = false;
-  error = '';
 
   constructor(
     private _router: Router,
     private _activatedRoute: ActivatedRoute,
     private _usersService: UsersService,
     private _navigationService: NavigationService,
+    private _notificationService: NotificationsService,
   ) {
     this._activatedRoute.queryParams.subscribe((params) => {
       this._token = params['token'];
@@ -71,13 +64,20 @@ export class UserActivationComponent implements OnInit {
         password: this.form.getRawValue().password,
       })
       .then(() => {
-        this.isLoading = false;
+        this._notificationService.pushSuccessInfo({
+          title: 'Activiation Successful',
+          content: 'Your account activation is now complete!',
+        });
         this._router.navigate(['/auth/login']);
       })
-      .catch((error: CombinedError) => {
+      .catch((error) => {
+        this._notificationService.pushErrorInfo({
+          title: 'Activiation Error',
+          content: error.toString(),
+        });
+      })
+      .finally(() => {
         this.isLoading = false;
-        this.error =
-          error.networkError?.message ?? error.graphQLErrors[0].message;
       });
   }
 

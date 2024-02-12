@@ -9,7 +9,6 @@ import {
 
 import { LoaderComponent } from 'src/app/ui/loader/loader.component';
 import { FormDialogComponent } from 'src/app/ui/form-dialog/form-dialog.component';
-import { ResultDialogComponent } from 'src/app/ui/result-dialog/result-dialog.component';
 import { UtilitiesService } from 'src/app/shared/services/utilities.service';
 import { NotificationsService } from 'src/app/notifications/notifications.service';
 import { RoleEnum } from 'src/app/shared/values/cms.values';
@@ -27,20 +26,16 @@ import { UsersService } from '../users.service';
     ReactiveFormsModule,
     LoaderComponent,
     FormDialogComponent,
-    ResultDialogComponent,
   ],
 })
 export class UserCreationComponent implements OnInit {
   form!: FormGroup;
-
   isLoading = false;
-  error = '';
-  prompt = '';
 
   constructor(
     private _router: Router,
-    private _usersService: UsersService,
     private _registeredEmailValidator: RegisteredEmailValidator,
+    private _usersService: UsersService,
     private _utilitiesService: UtilitiesService,
     private _notificationsService: NotificationsService,
   ) {}
@@ -63,7 +58,7 @@ export class UserCreationComponent implements OnInit {
     return this.form.get('email')!;
   }
 
-  async onSubmit(): Promise<void> {
+  onSubmit(): void {
     if (this.form.invalid) {
       return;
     }
@@ -95,8 +90,8 @@ export class UserCreationComponent implements OnInit {
         });
       })
       .then(() => {
-        this._notificationsService.pushInfo({
-          title: 'Sign Up Success',
+        this._notificationsService.pushSuccessInfo({
+          title: 'Sign Up Successful',
           content: PromptEnum.SignUp,
         });
         this._router.navigate(['/auth/login']);

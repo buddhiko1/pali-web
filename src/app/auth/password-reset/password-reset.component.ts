@@ -6,12 +6,10 @@ import {
   Validators,
   ReactiveFormsModule,
 } from '@angular/forms';
-import { CombinedError } from '@urql/core';
 
 import { LoaderComponent } from 'src/app/ui/loader/loader.component';
 import { FormDialogComponent } from 'src/app/ui/form-dialog/form-dialog.component';
-import { ResultDialogComponent } from 'src/app/ui/result-dialog/result-dialog.component';
-import { NavigationService } from 'src/app/shared/services/navigation.service';
+import { NotificationsService } from 'src/app/notifications/notifications.service';
 import { StorageService } from 'src/app/shared/services/storage.service';
 import { PromptEnum } from 'src/app/shared/values/prompts.values';
 import { AuthService } from '../auth.service';
@@ -21,27 +19,19 @@ import { AuthService } from '../auth.service';
   templateUrl: './password-reset.component.html',
   styleUrl: './password-reset.component.css',
   standalone: true,
-  imports: [
-    ReactiveFormsModule,
-    LoaderComponent,
-    FormDialogComponent,
-    ResultDialogComponent,
-  ],
+  imports: [ReactiveFormsModule, LoaderComponent, FormDialogComponent],
 })
 export class PasswordResetComponent implements OnInit {
   form!: FormGroup;
+  isLoading = false;
 
   private _token = '';
   private _email = '';
 
-  isLoading = false;
-  error = '';
-  prompt = '';
-
   constructor(
     private _router: Router,
     private _activatedRoute: ActivatedRoute,
-    private _navigationService: NavigationService,
+    private _notificationService: NotificationsService,
     private _storageService: StorageService,
     private _authService: AuthService,
   ) {
@@ -71,7 +61,6 @@ export class PasswordResetComponent implements OnInit {
     if (this.form.invalid) {
       return;
     }
-
     this.isLoading = true;
     this._authService
       .resetPassword({
@@ -79,25 +68,27 @@ export class PasswordResetComponent implements OnInit {
         password: this.form.getRawValue().password,
       })
       .then(() => {
-        this.isLoading = false;
-        this.prompt = PromptEnum.Reset;
+        this._notificationService.pushSuccessInfo({
+          title: 'Reset Successful',
+          content: PromptEnum.Reset,
+        });
       })
-      .catch((error: CombinedError) => {
+      .then(() => {
+        //TODO waiting for directus to fix bug
+        // this._authService.logout({
+        //   tokenForRefresh: this._storageService.tokenForRefresh,
+        // });
+        this._storageService.clearAccountData();
+        this._router.navigate(['/auth/login']);
+      })
+      .catch((error) => {
+        this._notificationService.pushErrorInfo({
+          title: 'Reset Error',
+          content: error.toString(),
+        });
+      })
+      .finally(() => {
         this.isLoading = false;
-        this.error =
-          error.networkError?.message ?? error.graphQLErrors[0].message;
       });
-  }
-
-  async onResultDialogClick(): Promise<void> {
-    if (this.error) {
-      this._navigationService.goBack();
-    } else {
-      await this._authService.logout({
-        tokenForRefresh: this._storageService.tokenForRefresh,
-      });
-      this._storageService.clearAccountData();
-      this._router.navigate(['/auth/login']);
-    }
   }
 }
