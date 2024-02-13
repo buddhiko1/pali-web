@@ -6,8 +6,14 @@
 import { ClassicEditor } from '@ckeditor/ckeditor5-editor-classic';
 
 import { Alignment } from '@ckeditor/ckeditor5-alignment';
-import { Autoformat } from '@ckeditor/ckeditor5-autoformat';
-import { Bold, Italic, Underline } from '@ckeditor/ckeditor5-basic-styles';
+import {
+	Bold,
+	Italic,
+	Strikethrough,
+	Subscript,
+	Superscript,
+	Underline
+} from '@ckeditor/ckeditor5-basic-styles';
 import { BlockQuote } from '@ckeditor/ckeditor5-block-quote';
 import type { EditorConfig } from '@ckeditor/ckeditor5-core';
 import { Essentials } from '@ckeditor/ckeditor5-essentials';
@@ -15,6 +21,7 @@ import { FindAndReplace } from '@ckeditor/ckeditor5-find-and-replace';
 import { FontBackgroundColor, FontColor, FontFamily, FontSize } from '@ckeditor/ckeditor5-font';
 import { Heading } from '@ckeditor/ckeditor5-heading';
 import { HorizontalLine } from '@ckeditor/ckeditor5-horizontal-line';
+import { HtmlEmbed } from '@ckeditor/ckeditor5-html-embed';
 import { DataFilter, DataSchema, GeneralHtmlSupport } from '@ckeditor/ckeditor5-html-support';
 import {
 	Image,
@@ -31,6 +38,7 @@ import { MediaEmbed } from '@ckeditor/ckeditor5-media-embed';
 import { Paragraph } from '@ckeditor/ckeditor5-paragraph';
 import { PasteFromOffice } from '@ckeditor/ckeditor5-paste-from-office';
 import { RemoveFormat } from '@ckeditor/ckeditor5-remove-format';
+import { SelectAll } from '@ckeditor/ckeditor5-select-all';
 import { SourceEditing } from '@ckeditor/ckeditor5-source-editing';
 import {
 	SpecialCharacters,
@@ -42,6 +50,7 @@ import {
 import { Style } from '@ckeditor/ckeditor5-style';
 import {
 	Table,
+	TableCaption,
 	TableCellProperties,
 	TableColumnResize,
 	TableProperties,
@@ -56,7 +65,6 @@ import { Undo } from '@ckeditor/ckeditor5-undo';
 class Editor extends ClassicEditor {
 	public static override builtinPlugins = [
 		Alignment,
-		Autoformat,
 		BlockQuote,
 		Bold,
 		DataFilter,
@@ -70,6 +78,7 @@ class Editor extends ClassicEditor {
 		GeneralHtmlSupport,
 		Heading,
 		HorizontalLine,
+		HtmlEmbed,
 		Image,
 		ImageCaption,
 		ImageResize,
@@ -85,14 +94,19 @@ class Editor extends ClassicEditor {
 		Paragraph,
 		PasteFromOffice,
 		RemoveFormat,
+		SelectAll,
 		SourceEditing,
 		SpecialCharacters,
 		SpecialCharactersArrows,
 		SpecialCharactersEssentials,
 		SpecialCharactersLatin,
 		SpecialCharactersText,
+		Strikethrough,
 		Style,
+		Subscript,
+		Superscript,
 		Table,
+		TableCaption,
 		TableCellProperties,
 		TableColumnResize,
 		TableProperties,
@@ -110,11 +124,14 @@ class Editor extends ClassicEditor {
 				'bold',
 				'italic',
 				'underline',
+				'strikethrough',
+				'superscript',
+				'subscript',
 				'|',
 				'fontColor',
+				'fontSize',
 				'fontBackgroundColor',
 				'fontFamily',
-				'fontSize',
 				'|',
 				'horizontalLine',
 				'bulletedList',
@@ -131,9 +148,12 @@ class Editor extends ClassicEditor {
 				'insertTable',
 				'mediaEmbed',
 				'|',
-				'findAndReplace',
+				'style',
+				'selectAll',
 				'removeFormat',
 				'sourceEditing',
+				'htmlEmbed',
+				'findAndReplace',
 				'|',
 				'undo',
 				'redo'

@@ -9,7 +9,6 @@
   "types": "./build/ckeditor.d.ts",
   "dependencies": {
     "@ckeditor/ckeditor5-alignment": "41.1.0",
-    "@ckeditor/ckeditor5-autoformat": "41.1.0",
     "@ckeditor/ckeditor5-basic-styles": "41.1.0",
     "@ckeditor/ckeditor5-block-quote": "41.1.0",
     "@ckeditor/ckeditor5-editor-classic": "41.1.0",
@@ -18,6 +17,7 @@
     "@ckeditor/ckeditor5-font": "41.1.0",
     "@ckeditor/ckeditor5-heading": "41.1.0",
     "@ckeditor/ckeditor5-horizontal-line": "41.1.0",
+    "@ckeditor/ckeditor5-html-embed": "41.1.0",
     "@ckeditor/ckeditor5-html-support": "41.1.0",
     "@ckeditor/ckeditor5-image": "41.1.0",
     "@ckeditor/ckeditor5-indent": "41.1.0",
@@ -27,6 +27,7 @@
     "@ckeditor/ckeditor5-paragraph": "41.1.0",
     "@ckeditor/ckeditor5-paste-from-office": "41.1.0",
     "@ckeditor/ckeditor5-remove-format": "41.1.0",
+    "@ckeditor/ckeditor5-select-all": "41.1.0",
     "@ckeditor/ckeditor5-source-editing": "41.1.0",
     "@ckeditor/ckeditor5-special-characters": "41.1.0",
     "@ckeditor/ckeditor5-style": "41.1.0",

@@ -8,6 +8,9 @@
     padding: 0 0 0 3rem;
     list-style-type: disc;
     list-style-position: outside;
+    :not(:first-child) {
+      margin-top: 0.6rem;
+    }
   }
 
   & ol {
@@ -15,13 +18,16 @@
     padding: 0 0 0 3rem;
     list-style-type: decimal;
     list-style-position: outside;
+    :not(:first-child) {
+      margin-top: 0.6rem;
+    }
   }
 
-  & blockquote {
-    margin: 1rem;
-    border-left: 0.25rem solid theme("colors.border");
-    padding-left: 1.4rem;
-  }
+  /* & blockquote { */
+  /*   margin: 1rem; */
+  /*   border-left: 0.25rem solid theme("colors.border"); */
+  /*   padding-left: 1.4rem; */
+  /* } */
 
   & figure {
     margin: 1rem;
@@ -66,20 +72,17 @@
 
 /* ckeditor official style for image.
 https://ckeditor.com/docs/ckeditor5/latest/features/images/images-styles.html */
-.gc-wysiwyg-content {
+:root {
   --ck-image-style-spacing: 1.5em;
   --ck-inline-image-style-spacing: calc(var(--ck-image-style-spacing) / 2);
-
-  /* Provides a minimal side margin for the left and right aligned images, so that the user has a visual feedback
-	confirming successful application of the style if image width exceeds the editor's size.
-	See https://github.com/ckeditor/ckeditor5/issues/9342 */
+}
+.gc-wysiwyg-content {
+  /* image */
   & .image-style-block-align-left,
   & .image-style-block-align-right {
     max-width: calc(100% - var(--ck-image-style-spacing));
   }
 
-  /* Allows displaying multiple floating images in the same line.
-	See https://github.com/ckeditor/ckeditor5/issues/9183#issuecomment-804988132 */
   & .image-style-align-left,
   & .image-style-align-right {
     clear: none;
@@ -116,7 +119,6 @@ https://ckeditor.com/docs/ckeditor5/latest/features/images/images-styles.html */
     margin-right: auto;
   }
 
-  /* Simulates margin collapsing with the preceding paragraph, which does not work for the floating elements. */
   & p + .image-style-align-left,
   & p + .image-style-align-right,
   & p + .image-style-side {
@@ -137,5 +139,40 @@ https://ckeditor.com/docs/ckeditor5/latest/features/images/images-styles.html */
     &.image-style-align-right {
       margin-left: var(--ck-inline-image-style-spacing);
     }
+  }
+
+
+  /* blockquote */
+  & blockquote {
+    overflow: hidden;
+    padding-right: 1.5em;
+    padding-left: 1.5em;
+
+    margin-left: 0;
+    margin-right: 0;
+    font-style: italic;
+    border-left: solid 0.2rem theme("colors.border");
+  }
+
+  &[dir="rtl"] blockquote {
+    border-left: 0;
+    border-right: solid 0.2rem theme("colors.border");
+  }
+
+  /* font size */
+  & .text-tiny {
+    font-size: 0.7rem;
+  }
+
+  & .text-small {
+    font-size: 0.85rem;
+  }
+
+  & .text-big {
+    font-size: 1.4rem;
+  }
+
+  & .text-huge {
+    font-size: 1.8rem;
   }
 }
