@@ -1,6 +1,6 @@
 <div
   class="c-container w-[18rem] p-3 border pc:border-hover shadow-sm rounded-3xl bg-footerBg"
-  [class.rounded-lg]="isPc || !isContentFolded"
+  [class.rounded-lg]="!isPhone || !isContentFolded"
   [class.c-slide-out]="shouldSlideOut"
   [class.c-slide-in]="!shouldSlideOut"
 >
@@ -23,7 +23,7 @@
     </p>
     <div class="c-action">
       @if (isContentFolded) {
-        @if (isPc) {
+        @if (!isPhone) {
           <button (click)="showContent()">
             <app-up-svg [class]="'gc-button-svg'" />
           </button>
@@ -47,7 +47,7 @@
       'c-content',
       'pt-3',
       'pb-5',
-      'pc:px-1',
+      'pc:px-4',
       'gc-text',
       notification.content.length > 20 ? 'text-left' : 'text-center'
     ]"

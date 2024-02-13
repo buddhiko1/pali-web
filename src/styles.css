@@ -15,3 +15,55 @@
   @import "css/animation.css";
   @import "css/utilities.css";
 }
+
+/* The wysiwyg content is loaded from a server, so the css property must be set here to avoid tree shaking by tailwindcss. */
+.gc-wysiwyg-content ul {
+  margin: 0.8rem 0;
+  padding: 0 0 0 3rem;
+  list-style-type: disc;
+  list-style-position: outside;
+}
+
+.gc-wysiwyg-content ol {
+  margin: 0.8rem 0;
+  padding: 0 0 0 3rem;
+  list-style-type: decimal;
+  list-style-position: outside;
+}
+
+.gc-wysiwyg-content blockquote {
+  margin: 1rem;
+  border-left: 0.25rem solid theme("colors.border");
+  padding-left: 1.4rem;
+}
+
+.gc-wysiwyg-content table {
+  border-color: theme("colors.border");
+  border-collapse: collapse;
+  border-width: 0.15rem;
+}
+
+.gc-wysiwyg-content table td {
+  border-color: theme("colors.border");
+  border-width: 0.1rem;
+  padding: 0.5rem;
+}
+
+.gc-wysiwyg-content hr {
+  margin: 1rem 0;
+}
+
+.gc-wysiwyg-content h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.gc-wysiwyg-content h3 {
+  font-size: 1.17rem;
+  font-weight: bold;
+}
+
+.gc-wysiwyg-content h4 {
+  font-size: 1rem;
+  font-weight: bold;
+}

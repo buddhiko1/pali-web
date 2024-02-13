@@ -45,14 +45,6 @@ export class BlogCreatorComponent {
     return !!this.blogId;
   }
 
-  get isAllowedToSave(): boolean {
-    return this.title !== '' && this.wysiwyg.content !== '';
-  }
-
-  get isAllowedToPublish(): boolean {
-    return this.title !== '' && this.wysiwyg.content !== '';
-  }
-
   // private async _fetchLatestDraft(): Promise<void> {
   //   const result = await this._blogsService.fetchUserBlogs({
   //     userId: this._storageService.account!.id,
@@ -71,12 +63,20 @@ export class BlogCreatorComponent {
   // }
 
   async saveDraft(): Promise<void> {
+    if (!this.title || !this.wysiwyg.content) {
+      this._notificationsService.pushErrorInfo({
+        title: 'Save Draft Error',
+        content: 'Tile and content must be provided to save as a draft.',
+      });
+      return;
+    }
+
     this.isSavingDraft = true;
     const blogStatusInput = await this._blogsService.fetchBlogStatusInputFor({
       name: BlogStatusNameEnum.Draft,
     });
     if (this.blogId) {
-      await this._blogsService
+      this._blogsService
         .updateBlog({
           id: this.blogId,
           data: {
@@ -85,6 +85,12 @@ export class BlogCreatorComponent {
             status: { id: blogStatusInput.id },
           },
           returnContent: true,
+        })
+        .then(() => {
+          this._notificationsService.pushSuccessInfo({
+            title: 'Save Draft Successful!',
+            content: 'Draft has been saved.',
+          });
         })
         .catch((error) => {
           this._notificationsService.pushErrorInfo({
@@ -121,6 +127,13 @@ export class BlogCreatorComponent {
   }
 
   async publish(): Promise<void> {
+    if (!this.title || !this.wysiwyg.content) {
+      this._notificationsService.pushErrorInfo({
+        title: 'Publish Error',
+        content: 'Tile and content must be provided to publish.',
+      });
+      return;
+    }
     this.isPublishing = true;
     const blogStatusInput = await this._blogsService.fetchBlogStatusInputFor({
       name: BlogStatusNameEnum.Published,

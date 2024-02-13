@@ -6,34 +6,20 @@
     class="c-title gc-text text-lg py-1 px-3 mr-16 bg-inputBg border-b border-border outline-none d-block"
   />
   <app-icon-button
-    [isDisabled]="!isAllowedToSave"
     [isLoading]="isSavingDraft"
     [size]="'1.6rem'"
     [tip]="'Save draft'"
     (click)="saveDraft()"
   >
-    <app-save-svg
-      #svg
-      [class]="[
-        'c-save-button',
-        isAllowedToSave ? 'gc-button-svg' : 'fill-disabled'
-      ]"
-    />
+    <app-save-svg #svg [class]="['c-save-button', 'gc-button-svg']" />
   </app-icon-button>
   <app-icon-button
-    [isDisabled]="!isAllowedToPublish"
     [isLoading]="isPublishing"
     [size]="'1.6rem'"
     [tip]="'Publish'"
     (click)="publish()"
   >
-    <app-upload-svg
-      #svg
-      [class]="[
-        'c-publish-button',
-        isAllowedToPublish ? 'gc-button-svg' : 'fill-disabled'
-      ]"
-    />
+    <app-upload-svg #svg [class]="['c-publish-button', 'gc-button-svg']" />
   </app-icon-button>
   <app-wysiwyg
     #wysiwyg

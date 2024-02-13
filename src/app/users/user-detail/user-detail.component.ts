@@ -9,6 +9,7 @@ import { IconButtonComponent } from 'src/app/ui/icon-button/icon-button.componen
 import { BlogsService } from 'src/app/blogs/blogs.service';
 import { BlogStatusNameEnum } from 'src/app/shared/values/cms.values';
 import { BlogListComponent } from 'src/app/blogs/blog-list/blog-list.component';
+import { BlogCreatorButtonComponent } from 'src/app/blogs/blog-creator-button/blog-creator-button.component';
 import { UsersService } from '../users.service';
 import { UserAvatarComponent } from '../user-avatar/user-avatar.component';
 import { UserSettingComponent } from '../user-setting/user-setting.component';
@@ -27,9 +28,10 @@ import {
     FadeInDirective,
     SettingSvgComponent,
     IconButtonComponent,
+    BlogListComponent,
+    BlogCreatorButtonComponent,
     UserSettingComponent,
     UserAvatarComponent,
-    BlogListComponent,
   ],
 })
 export class UserDetailComponent implements OnInit {

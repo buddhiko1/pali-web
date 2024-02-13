@@ -57,15 +57,15 @@ export class BlogEditorComponent implements OnInit {
     return !!this.blogId;
   }
 
-  get isAllowedToSave(): boolean {
-    return this.title !== '' && this.wysiwyg.content !== '';
-  }
-
-  get isAllowedToPublish(): boolean {
-    return this.title !== '' && this.wysiwyg.content !== '';
-  }
-
   async saveDraft(): Promise<void> {
+    if (!this.title || !this.wysiwyg.content) {
+      this._notificationsService.pushErrorInfo({
+        title: 'Save Draft Error',
+        content: 'Tile and content must be provided to save as a draft.',
+      });
+      return;
+    }
+
     this.isSavingDraft = true;
     const blogStatusInput = await this._blogsService.fetchBlogStatusInputFor({
       name: BlogStatusNameEnum.Draft,
@@ -80,6 +80,12 @@ export class BlogEditorComponent implements OnInit {
         },
         returnContent: true,
       })
+      .then(() => {
+        this._notificationsService.pushSuccessInfo({
+          title: 'Save Draft Successful',
+          content: 'Draft has been saved.',
+        });
+      })
       .catch((error) => {
         this._notificationsService.pushErrorInfo({
           title: 'Save Draft Error',
@@ -92,6 +98,14 @@ export class BlogEditorComponent implements OnInit {
   }
 
   async publish(): Promise<void> {
+    if (!this.title || !this.wysiwyg.content) {
+      this._notificationsService.pushErrorInfo({
+        title: 'Publish Error',
+        content: 'Tile and content must be provided to publish.',
+      });
+      return;
+    }
+
     this.isPublishing = true;
     const blogStatusInput = await this._blogsService.fetchBlogStatusInputFor({
       name: BlogStatusNameEnum.Published,

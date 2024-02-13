@@ -62,8 +62,8 @@ export class NotificationComponent implements OnInit, OnDestroy {
     this._timerSubscription.unsubscribe();
   }
 
-  get isPc(): boolean {
-    return this._screenService.isPc;
+  get isPhone(): boolean {
+    return this._screenService.isPhone;
   }
 
   close(): void {

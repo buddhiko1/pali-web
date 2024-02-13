@@ -1,10 +1,10 @@
 <div
   class="c-container fixed z-10"
-  [class.bottom-24]="isPc"
-  [class.right-6]="isPc"
-  [class.top-28]="!isPc"
-  [class.left-10]="!isPc"
-  [class.right-10]="!isPc"
+  [class.bottom-24]="!isPhone"
+  [class.right-6]="!isPhone"
+  [class.top-28]="isPhone"
+  [class.left-10]="isPhone"
+  [class.right-10]="isPhone"
 >
   <div class="c-boxes">
     @for (notification of notifications; track notification.timestamp) {

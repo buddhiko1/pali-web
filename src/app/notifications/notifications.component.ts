@@ -33,6 +33,10 @@ export class NotificationsComponent implements OnInit {
     return this._screenService.isPc;
   }
 
+  get isPhone(): boolean {
+    return this._screenService.isPhone;
+  }
+
   remove(notification: Notification): void {
     this.notifications = this.notifications.filter(
       (n) => n.timestamp !== notification.timestamp,

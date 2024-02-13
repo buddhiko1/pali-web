@@ -18,14 +18,14 @@
     </div>
     <div class="c-divider mt-2 tablet:mt-3 pc:mt-4 border-b gc-border"></div>
     <div
-      class="c-content mt-10 tablet:mt-12 pc:mt-14 gc-text text-base gc-inner-html"
-      [innerHTML]="blog.content"
+      class="c-content mt-10 tablet:mt-12 pc:mt-14 gc-text text-base gc-wysiwyg-content"
+      [innerHTML]="blog.content ?? '' | safeHtml"
     ></div>
 
     @if (showEditButton) {
       <div class="fixed bottom-32 right-20">
         <app-icon-button
-          [size]="'1.6rem'"
+          [size]="'2.3rem'"
           (click)="editBlog()"
           [isRounded]="true"
           [tip]="''"

@@ -8,7 +8,7 @@ export const BLOGS_ROUTES: Routes = [
       import('./blogs.component').then((m) => m.BlogsComponent),
   },
   {
-    path: 'editor',
+    path: 'creator',
     canActivate: [isLoggedGuardFn],
     loadComponent: () =>
       import('./blog-creator/blog-creator.component').then(

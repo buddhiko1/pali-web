@@ -47,4 +47,5 @@
 
 .c-content {
   grid-area: content;
+  word-break: break-word; /* the break-words of tailwindcss is useless */
 }

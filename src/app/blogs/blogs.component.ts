@@ -5,13 +5,13 @@ import { BlogStatusNameEnum } from '../shared/values/cms.values';
 import { ScreenService } from '../shared/services/screen.service';
 import { BlogsService } from './blogs.service';
 import { BlogListComponent } from './blog-list/blog-list.component';
-import { BlogAddButtonComponent } from './blog-add-button/blog-add-button.component';
+import { BlogCreatorButtonComponent } from './blog-creator-button/blog-creator-button.component';
 import { BlogFragment } from 'src/gql/graphql';
 
 @Component({
   selector: 'app-blogs',
   standalone: true,
-  imports: [RouterLink, BlogListComponent, BlogAddButtonComponent],
+  imports: [RouterLink, BlogListComponent, BlogCreatorButtonComponent],
   templateUrl: './blogs.component.html',
   styleUrl: './blogs.component.css',
 })
