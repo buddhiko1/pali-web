@@ -16,54 +16,144 @@
   @import "css/utilities.css";
 }
 
-/* The wysiwyg content is loaded from a server, so the css property must be set here to avoid tree shaking by tailwindcss. */
-.gc-wysiwyg-content ul {
-  margin: 0.8rem 0;
-  padding: 0 0 0 3rem;
-  list-style-type: disc;
-  list-style-position: outside;
+/* For wysiwyg content.
+ The wysiwyg content is loaded from a server, so the css property must be set here to avoid tree shaking by tailwindcss. */
+
+/* custom */
+.gc-wysiwyg-content {
+  & ul {
+    margin: 0.8rem 0;
+    padding: 0 0 0 3rem;
+    list-style-type: disc;
+    list-style-position: outside;
+  }
+
+  & ol {
+    margin: 0.8rem 0;
+    padding: 0 0 0 3rem;
+    list-style-type: decimal;
+    list-style-position: outside;
+  }
+
+  & blockquote {
+    margin: 1rem;
+    border-left: 0.25rem solid theme("colors.border");
+    padding-left: 1.4rem;
+  }
+
+  & figure {
+    margin: 1rem;
+  }
+
+  & figcaption {
+    text-align: center;
+    @apply italic text-sm;
+  }
+
+  & table {
+    border-color: theme("colors.border");
+    border-collapse: collapse;
+    border-width: 0.15rem;
+  }
+
+  & table td {
+    border-color: theme("colors.border");
+    border-width: 0.1rem;
+    padding: 0.5rem;
+  }
+
+  & hr {
+    margin: 1rem 0;
+  }
+
+  & h2 {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+
+  & h3 {
+    font-size: 1.17rem;
+    font-weight: bold;
+  }
+
+  & h4 {
+    font-size: 1rem;
+    font-weight: bold;
+  }
 }
 
-.gc-wysiwyg-content ol {
-  margin: 0.8rem 0;
-  padding: 0 0 0 3rem;
-  list-style-type: decimal;
-  list-style-position: outside;
-}
+/* ckeditor official style for image.
+https://ckeditor.com/docs/ckeditor5/latest/features/images/images-styles.html */
+.gc-wysiwyg-content {
+  --ck-image-style-spacing: 1.5em;
+  --ck-inline-image-style-spacing: calc(var(--ck-image-style-spacing) / 2);
 
-.gc-wysiwyg-content blockquote {
-  margin: 1rem;
-  border-left: 0.25rem solid theme("colors.border");
-  padding-left: 1.4rem;
-}
+  /* Provides a minimal side margin for the left and right aligned images, so that the user has a visual feedback
+	confirming successful application of the style if image width exceeds the editor's size.
+	See https://github.com/ckeditor/ckeditor5/issues/9342 */
+  & .image-style-block-align-left,
+  & .image-style-block-align-right {
+    max-width: calc(100% - var(--ck-image-style-spacing));
+  }
 
-.gc-wysiwyg-content table {
-  border-color: theme("colors.border");
-  border-collapse: collapse;
-  border-width: 0.15rem;
-}
+  /* Allows displaying multiple floating images in the same line.
+	See https://github.com/ckeditor/ckeditor5/issues/9183#issuecomment-804988132 */
+  & .image-style-align-left,
+  & .image-style-align-right {
+    clear: none;
+  }
 
-.gc-wysiwyg-content table td {
-  border-color: theme("colors.border");
-  border-width: 0.1rem;
-  padding: 0.5rem;
-}
+  & .image-style-side {
+    float: right;
+    margin-left: var(--ck-image-style-spacing);
+    max-width: 50%;
+  }
 
-.gc-wysiwyg-content hr {
-  margin: 1rem 0;
-}
+  & .image-style-align-left {
+    float: left;
+    margin-right: var(--ck-image-style-spacing);
+  }
 
-.gc-wysiwyg-content h2 {
-  font-size: 1.5rem;
-  font-weight: bold;
-}
+  & .image-style-align-center {
+    margin-left: auto;
+    margin-right: auto;
+  }
 
-.gc-wysiwyg-content h3 {
-  font-size: 1.17rem;
-  font-weight: bold;
-}
+  & .image-style-align-right {
+    float: right;
+    margin-left: var(--ck-image-style-spacing);
+  }
 
-.gc-wysiwyg-content h4 {
-  font-size: 1rem;
-  font-weight: bold;
+  & .image-style-block-align-right {
+    margin-right: 0;
+    margin-left: auto;
+  }
+
+  & .image-style-block-align-left {
+    margin-left: 0;
+    margin-right: auto;
+  }
+
+  /* Simulates margin collapsing with the preceding paragraph, which does not work for the floating elements. */
+  & p + .image-style-align-left,
+  & p + .image-style-align-right,
+  & p + .image-style-side {
+    margin-top: 0;
+  }
+
+  & .image-inline {
+    &.image-style-align-left,
+    &.image-style-align-right {
+      margin-top: var(--ck-inline-image-style-spacing);
+      margin-bottom: var(--ck-inline-image-style-spacing);
+    }
+
+    &.image-style-align-left {
+      margin-right: var(--ck-inline-image-style-spacing);
+    }
+
+    &.image-style-align-right {
+      margin-left: var(--ck-inline-image-style-spacing);
+    }
+  }
 }
