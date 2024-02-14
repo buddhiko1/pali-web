@@ -3,3 +3,8 @@
   height: var(--height);
   padding: 0 2rem;
 }
+
+/* editor background-color */
+:host ::ng-deep .ck-content {
+  background-color: theme("colors.primaryBg") !important;
+}

@@ -72,11 +72,11 @@ export class NavbarComponent implements OnInit {
     private _navbarService: NavbarService,
   ) {
     fromEvent(document, 'scroll')
-      .pipe(throttleTime(20))
+      .pipe(throttleTime(10))
       .subscribe(() => {
         const currentScrollPosition = window.scrollY;
         if (
-          Math.abs(currentScrollPosition - this._previousScrollPosition) > 10
+          Math.abs(currentScrollPosition - this._previousScrollPosition) > 5
         ) {
           currentScrollPosition < this._previousScrollPosition
             ? (this.isCollapsed = false)

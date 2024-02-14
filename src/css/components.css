@@ -1,5 +1,5 @@
 .gc-text {
-  @apply tracking-wide leading-relaxed text-text;
+  @apply tracking-wide leading-normal text-text;
 }
 
 .gc-title {
@@ -39,3 +39,8 @@
   @apply border-border;
 }
 
+@media screen and (min-width: theme("screens.pc")) {
+  .gc-text {
+    @apply tracking-wide leading-relaxed text-text;
+  }
+}
