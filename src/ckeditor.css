@@ -174,7 +174,6 @@ https://ckeditor.com/docs/ckeditor5/latest/features/images/images-styles.html */
   font-size: 1.8rem;
 }
 
-
 @media screen and (min-width: theme("screens.pc")) {
   /* custom */
   .gc-wysiwyg-content ul {
@@ -191,4 +190,3 @@ https://ckeditor.com/docs/ckeditor5/latest/features/images/images-styles.html */
     margin: 1rem;
   }
 }
-
