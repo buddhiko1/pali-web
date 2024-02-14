@@ -2,4 +2,5 @@
 export enum ThemeEnum {
   DEFAULT = '',
   NIGHT = 'night',
+  READING = 'reading',
 }

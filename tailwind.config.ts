@@ -38,7 +38,6 @@ export default {
         border: 'var(--colors-border)',
 
         // status
-        hover: 'var(--colors-hover)',
         hoverBg: 'var(--colors-hover-bg)',
         warning: 'var(--colors-warning)',
         focus: 'var(--colors-focus)',

@@ -7,6 +7,7 @@ import { FadeInDirective } from '../shared/directives/fade-in.directive';
 import { PlusSvgComponent } from '../svg/plus/plus.component';
 import { MoonSvgComponent } from '../svg/moon/moon.component';
 import { SunSvgComponent } from '../svg/sun/sun.component';
+import { ReadingSvgComponent } from '../svg/reading/reading.component';
 import { EmailSvgComponent } from '../svg/email/email.component';
 import { UserAvatarComponent } from '../users/user-avatar/user-avatar.component';
 import { StorageService } from '../shared/services/storage.service';
@@ -23,6 +24,7 @@ import { UserFragment } from 'src/gql/graphql';
     PlusSvgComponent,
     MoonSvgComponent,
     SunSvgComponent,
+    ReadingSvgComponent,
     EmailSvgComponent,
     UserAvatarComponent,
   ],
@@ -102,11 +104,14 @@ export class NavbarComponent implements OnInit {
 
   switchTheme(): void {
     switch (this._navbarService.theme) {
+      case ThemeEnum.NIGHT:
+        this._navbarService.theme = ThemeEnum.READING;
+        break;
+      case ThemeEnum.READING:
+        this._navbarService.theme = ThemeEnum.DEFAULT;
+        break;
       case ThemeEnum.DEFAULT:
         this._navbarService.theme = ThemeEnum.NIGHT;
-        break;
-      case ThemeEnum.NIGHT:
-        this._navbarService.theme = ThemeEnum.DEFAULT;
         break;
     }
   }

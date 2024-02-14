@@ -5,7 +5,7 @@ import { ThemeEnum } from './navbar.model';
   providedIn: 'root',
 })
 export class NavbarService {
-  private _theme: ThemeEnum = ThemeEnum.DEFAULT;
+  private _theme: ThemeEnum = ThemeEnum.READING;
 
   get theme(): ThemeEnum {
     return this._theme;

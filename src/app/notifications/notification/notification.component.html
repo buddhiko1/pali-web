@@ -1,5 +1,5 @@
 <div
-  class="c-container w-[18rem] p-3 border pc:border-hover shadow-sm rounded-3xl bg-footerBg"
+  class="c-container w-[18rem] p-3 border pc:border-border shadow-sm rounded-3xl bg-footerBg"
   [class.rounded-lg]="!isPhone || !isContentFolded"
   [class.c-slide-out]="shouldSlideOut"
   [class.c-slide-in]="!shouldSlideOut"
@@ -49,7 +49,7 @@
       'pb-5',
       'pc:px-4',
       'gc-text',
-      notification.content.length > 20 ? 'text-left' : 'text-center'
+      notification.content.length > 25 ? 'text-left' : 'text-center'
     ]"
     [class.hidden]="isContentFolded"
     [class.text-error]="isErrorNotification(notification)"
