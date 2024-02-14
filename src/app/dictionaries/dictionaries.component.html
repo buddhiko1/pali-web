@@ -1,7 +1,7 @@
 <div class="c-container">
   <div appSlideIn class="mt-10 pc:mt-24">
     <p
-      class="inline-block capitalize pc:text-xl gc-hl-title"
+      class="inline-block capitalize pc:text-xl gc-title"
       [innerHtml]="(introduction ? introduction.title : '') | safeHtml"
     ></p>
     <p
@@ -31,7 +31,7 @@
         </div>
       }
       <div>
-        <p class="capitalize pc:text-xl gc-hl-title">{{ dictionary.name }}</p>
+        <p class="capitalize pc:text-xl gc-title">{{ dictionary.name }}</p>
         <p
           class="mt-4 pc:mt-8 leading-relaxed gc-text"
           [innerHtml]="dictionary.description | safeHtml"

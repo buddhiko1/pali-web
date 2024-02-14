@@ -2,8 +2,8 @@
   @apply tracking-wide leading-relaxed text-text;
 }
 
-.gc-hl-title {
-  @apply tracking-wide text-lg text-hlTitle;
+.gc-title {
+  @apply tracking-wide text-lg text-title;
 }
 
 .gc-card {

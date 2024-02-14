@@ -4,18 +4,17 @@
   --colors-primary-bg: theme("colors.white");
   --colors-secondary-bg: theme("colors.gray.100");
   --colors-phrase-bg: theme("colors.rose.100");
+  --colors-footer-bg: theme("colors.gray.100");
+  --colors-title: theme("colors.red.400");
+  --colors-text: theme("colors.gray.500");
+  --colors-border: theme("colors.gray.300");
   --colors-overlay: theme("colors.gray.600");
   --colors-banner-title: theme("colors.gray.50");
   --colors-banner-subtitle: theme("colors.gray.200");
   --colors-input-bg: theme("colors.white");
-  --colors-footer-bg: theme("colors.gray.100");
   --colors-button-bg: theme("colors.blue.50");
   --colors-hl-button-text: theme("colors.gray.50");
   --colors-hl-button-bg: theme("colors.blue.400");
-  --colors-title: theme("colors.gray.700");
-  --colors-hl-title: theme("colors.red.400");
-  --colors-text: theme("colors.gray.500");
-  --colors-border: theme("colors.gray.300");
 
   /* status */
   --colors-hover-bg: theme("colors.gray.100");
@@ -32,18 +31,17 @@
   --colors-primary-bg: #f4f0e5;
   --colors-secondary-bg: #e1dbcc;
   --colors-phrase-bg: #c1dbc8;
+  --colors-footer-bg: #e1dbcc;
+  --colors-title: #98562e;
+  --colors-text: #504637;
+  --colors-border: theme("colors.gray.300");
   --colors-overlay: theme("colors.gray.600");
   --colors-banner-title: theme("colors.gray.50");
   --colors-banner-subtitle: theme("colors.gray.200");
   --colors-input-bg: #f4f0e5;
-  --colors-footer-bg: #e1dbcc;
   --colors-button-bg: #eee7d6;
   --colors-hl-button-text: white;
   --colors-hl-button-bg: #6a7461;
-  --colors-title: theme("colors.gray.700");
-  --colors-hl-title: #98562e;
-  --colors-text: #504637;
-  --colors-border: theme("colors.gray.300");
 
   /* status */
   --colors-hover-bg: #e1dbcc;
@@ -60,18 +58,17 @@
   --colors-primary-bg: theme("colors.gray.900");
   --colors-secondary-bg: theme("colors.gray.700");
   --colors-phrase-bg: theme("colors.gray.700");
+  --colors-footer-bg: theme("colors.gray.800");
+  --colors-title: theme("colors.red.400");
+  --colors-text: theme("colors.gray.200");
+  --colors-border: theme("colors.gray.600");
   --colors-overlay: theme("colors.gray.600");
   --colors-banner-title: theme("colors.gray.50");
   --colors-banner-subtitle: theme("colors.gray.200");
   --colors-input-bg: theme("colors.gray.800");
-  --colors-footer-bg: theme("colors.gray.800");
   --colors-button-bg: theme("colors.gray.700");
   --colors-hl-button-bg: theme("colors.blue.400");
   --colors-hl-button-text: theme("colors.gray.50");
-  --colors-title: theme("colors.gray.100");
-  --colors-hl-title: theme("colors.red.400");
-  --colors-text: theme("colors.gray.200");
-  --colors-border: theme("colors.gray.600");
 
   /* status */
   --colors-hover-bg: theme("colors.gray.800");

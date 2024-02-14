@@ -3,7 +3,7 @@
 }
 
 .gd-title {
-  @apply text-title text-xl font-medium tracking-wide;
+  @apply text-text text-xl font-medium tracking-wide;
 }
 
 .gd-text {
