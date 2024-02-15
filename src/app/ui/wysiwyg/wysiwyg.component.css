@@ -8,3 +8,13 @@
 :host ::ng-deep .ck-content {
   background-color: theme("colors.primaryBg") !important;
 }
+
+:host ::ng-deep blockquote {
+  border-left-width: var(--ck-blockquote-width);
+  border-color: theme("colors.border");
+}
+
+:host ::ng-deep hr {
+  height: 0.05rem;
+  color: theme("colors.border") !important;
+}

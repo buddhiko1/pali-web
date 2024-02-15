@@ -1,9 +1,20 @@
 /* For wysiwyg content.
  The wysiwyg content is loaded from a server, so the css property must be set here to avoid tree shaking by tailwindcss.
  Angular don't surport postcss, so can't use nested css selectors.
+ Following class is share by wysiwyg viewer and editor.
 */
 
-/* custom */
+:root {
+  /* overwrite style that shared with wysiwyg component. */
+  --ck-hr-border-width: 0.1rem;
+  --ck-blockquote-width: 0.2rem;
+
+  /* ckeditor official variable. */
+  --ck-image-style-spacing: 1.5em;
+  --ck-inline-image-style-spacing: calc(var(--ck-image-style-spacing) / 2);
+}
+
+/* overwrite */
 .gc-wysiwyg-content ul {
   margin: 0.4rem 0;
   padding: 0 0 0 1rem;
@@ -25,12 +36,6 @@
 .gc-wysiwyg-content ol :not(:first-child) {
   margin-top: 0.6rem;
 }
-
-/* .gc-wysiwyg-content blockquote { */
-/*   margin: 1rem; */
-/*   border-left: 0.25rem solid theme("colors.border"); */
-/*   padding-left: 1.4rem; */
-/* } */
 
 .gc-wysiwyg-content figure {
   margin: 0.5rem;
@@ -55,6 +60,7 @@
 
 .gc-wysiwyg-content hr {
   margin: 1rem 0;
+  border-color: theme("colors.border");
 }
 
 .gc-wysiwyg-content h2 {
@@ -72,13 +78,7 @@
   font-weight: bold;
 }
 
-/* ckeditor official style for image.
-https://ckeditor.com/docs/ckeditor5/latest/features/images/images-styles.html */
-:root {
-  --ck-image-style-spacing: 1.5em;
-  --ck-inline-image-style-spacing: calc(var(--ck-image-style-spacing) / 2);
-}
-/* image */
+/* official image style https://ckeditor.com/docs/ckeditor5/latest/features/images/images-styles.html */
 .gc-wysiwyg-content .image-style-block-align-left,
 .gc-wysiwyg-content .image-style-block-align-right {
   max-width: calc(100% - var(--ck-image-style-spacing));
@@ -140,7 +140,7 @@ https://ckeditor.com/docs/ckeditor5/latest/features/images/images-styles.html */
   margin-left: var(--ck-inline-image-style-spacing);
 }
 
-/* blockquote */
+/* official blockquote style */
 .gc-wysiwyg-content blockquote {
   overflow: hidden;
   padding-right: 1.5em;
@@ -149,15 +149,15 @@ https://ckeditor.com/docs/ckeditor5/latest/features/images/images-styles.html */
   margin-left: 0;
   margin-right: 0;
   font-style: italic;
-  border-left: solid 0.2rem theme("colors.border");
+  border-left: solid var(--ck-blockquote-width) theme("colors.border");
 }
 
 .gc-wysiwyg-content[dir="rtl"] blockquote {
   border-left: 0;
-  border-right: solid 0.2rem theme("colors.border");
+  border-right: solid var(--ck-blockquote-width) theme("colors.border");
 }
 
-/* font size */
+/* official font size */
 .gc-wysiwyg-content .text-tiny {
   font-size: 0.7rem;
 }
@@ -175,7 +175,7 @@ https://ckeditor.com/docs/ckeditor5/latest/features/images/images-styles.html */
 }
 
 @media screen and (min-width: theme("screens.pc")) {
-  /* custom */
+  /* overwrite */
   .gc-wysiwyg-content ul {
     margin: 0.8rem 0;
     padding: 0 0 0 3rem;

@@ -39,7 +39,7 @@
   @apply border-border;
 }
 
-@media screen and (min-width: theme("screens.pc")) {
+@media screen and (min-width: theme("screens.tablet")) {
   .gc-text {
     @apply tracking-wide leading-relaxed text-text;
   }

@@ -5,7 +5,7 @@ import { RouterLink } from '@angular/router';
 import { SlideInDirective } from '../shared/directives/slide-in.directive';
 import { RarrowSvgComponent } from '../svg/rarrow/rarrow.component';
 import { FadeInDirective } from '../shared/directives/fade-in.directive';
-import { PhraseComponent } from '../ui/phrase/phrase.component';
+import { PhraseComponent } from '../phrase/phrase.component';
 
 import { HomeService } from './home.service';
 import { Modules } from 'src/gql/graphql';
