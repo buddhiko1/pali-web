@@ -143,18 +143,9 @@
 /* official blockquote style */
 .gc-wysiwyg-content blockquote {
   overflow: hidden;
-  padding-right: 1.5em;
-  padding-left: 1.5em;
-
-  margin-left: 0;
-  margin-right: 0;
   font-style: italic;
+  padding-left: 1.5em;
   border-left: solid var(--ck-blockquote-width) theme("colors.border");
-}
-
-.gc-wysiwyg-content[dir="rtl"] blockquote {
-  border-left: 0;
-  border-right: solid var(--ck-blockquote-width) theme("colors.border");
 }
 
 /* official font size */
