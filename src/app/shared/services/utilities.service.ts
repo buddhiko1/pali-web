@@ -52,7 +52,6 @@ export class UtilitiesService {
     link.download = filename;
     link.setAttribute('download', filename);
     link.click();
-    document.body.removeChild(link);
   }
 
   openNewTab(url: string): void {
