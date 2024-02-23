@@ -19,3 +19,9 @@ export enum BlogStatusNameEnum {
   Draft = 'draft',
   Published = 'published',
 }
+
+export enum CommentStatusEnum {
+  Verified = 'verified',
+  Unverified = 'unverified',
+  Forbidden = 'forbidden',
+}
