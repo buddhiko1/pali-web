@@ -5,6 +5,8 @@ import {
   CommentFragment,
   BlogCommentsDocument,
   BlogCommentsQueryVariables,
+  QuantityOfBlogCommentsDocument,
+  QuantityOfBlogCommentsQueryVariables,
   UserCommentsDocument,
   UserCommentsQueryVariables,
   CreateCommentDocument,
@@ -21,7 +23,7 @@ import {
 @Injectable({
   providedIn: 'root',
 })
-export class BlogsService {
+export class CommentsService {
   constructor(private _dataUrqlService: DataUrqlService) {}
 
   async fetchCommentStatusInputFor(
@@ -42,6 +44,16 @@ export class BlogsService {
       args,
     );
     return result.data.comments;
+  }
+
+  async fetchQuantityOfBlogComments(
+    args: QuantityOfBlogCommentsQueryVariables,
+  ): Promise<number> {
+    const result = await this._dataUrqlService.query(
+      QuantityOfBlogCommentsDocument,
+      args,
+    );
+    return result.data.comments_aggregated[0].count.id;
   }
 
   async fetchUserComments(

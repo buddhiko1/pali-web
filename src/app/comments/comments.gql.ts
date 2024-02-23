@@ -54,6 +54,22 @@ graphql(`
     }
   }
 
+  query QuantityOfBlogComments(
+    $blogId: GraphQLStringOrFloat!
+    $statusName: String!
+  ) {
+    comments_aggregated(
+      filter: {
+        blog: { id: { _eq: $blogId } }
+        status: { name: { _eq: $statusName } }
+      }
+    ) {
+      count {
+        id
+      }
+    }
+  }
+
   query UserComments(
     $userId: String!
     $statusName: String!

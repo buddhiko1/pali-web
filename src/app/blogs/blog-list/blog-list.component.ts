@@ -3,11 +3,10 @@ import { RouterLink, Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
 import { UserAvatarComponent } from 'src/app/users/user-avatar/user-avatar.component';
-import { ChatSvgComponent } from 'src/app/svg/chat/chat.component';
-import { BadgeComponent } from 'src/app/ui/badge/badge.component';
 import { DeleteSvgComponent } from 'src/app/svg/delete/delete.component';
 import { EditSvgComponent } from 'src/app/svg/edit/edit.component';
 import { DraftSvgComponent } from 'src/app/svg/draft/draft.component';
+import { CommentMarkComponent } from 'src/app/comments/comment-mark/comment-mark.component';
 import { IconButtonComponent } from 'src/app/ui/icon-button/icon-button.component';
 import { ConfirmDialogComponent } from 'src/app/ui/confirm-dialog/confirm-dialog.component';
 import { ScreenService } from 'src/app/shared/services/screen.service';
@@ -24,9 +23,8 @@ import { BlogFragment } from 'src/gql/graphql';
     CommonModule,
     RouterLink,
     UserAvatarComponent,
-    ChatSvgComponent,
-    BadgeComponent,
     DeleteSvgComponent,
+    CommentMarkComponent,
     EditSvgComponent,
     IconButtonComponent,
     DraftSvgComponent,
