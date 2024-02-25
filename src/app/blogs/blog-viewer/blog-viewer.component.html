@@ -1,4 +1,6 @@
-<div class="c-container my-10 tablet:my-14 pc:my-16">
+<div
+  class="c-container mt-14 mb-24 tablet:mt-16 tablet:mb-40 pc:mt-20 pc:mb-40"
+>
   @if (blog) {
     <p class="c-title gc-title pc:text-2xl">{{ blog.title }}</p>
     <div class="c-author mt-4 tablet:mt-8 pc:mt-10">
@@ -21,7 +23,7 @@
       class="c-content mt-10 tablet:mt-12 pc:mt-14 gc-text gc-wysiwyg-content"
       [innerHTML]="blog.content ?? '' | safeHtml"
     ></div>
-
+    <app-postbar class="c-postbar mt-14 tablet:mt-20" />
     <app-scroll-button
       [size]="isPc ? '2.5rem' : '2.2rem'"
       class="fixed bottom-16 pc:bottom-32 right-14 pc:right-20"

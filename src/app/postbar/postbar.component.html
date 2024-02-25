@@ -1,0 +1,30 @@
+<div class="c-container">
+  <div class="c-comments">
+    <app-icon-button [isButtonStyle]="false" [size]="'1.6rem'" [tip]="''">
+      <app-chat-svg #svg class="inline-block gc-svg" />
+    </app-icon-button>
+    <p class="inline-block gc-text text-sm ml-1">{{ 99 }}</p>
+  </div>
+  <div class="c-favorites">
+    <app-icon-button [isButtonStyle]="false" [size]="'1.6rem'">
+      <app-heart-svg #svg class="inline-block gc-svg" />
+    </app-icon-button>
+    <p class="inline-block gc-text text-sm ml-1">{{ 19 }}</p>
+  </div>
+  <div class="c-reading-list">
+    @if (isBookmarked) {
+      <app-icon-button [isButtonStyle]="false" [size]="'1.6rem'">
+        <app-bookmark-filled-svg #svg class="inline-block gc-svg" />
+      </app-icon-button>
+    } @else {
+      <app-icon-button [isButtonStyle]="false" [size]="'1.6rem'">
+        <app-bookmark-svg #svg class="inline-block gc-svg" />
+      </app-icon-button>
+    }
+  </div>
+  <div class="c-share">
+    <app-icon-button [isButtonStyle]="false" [size]="'1.6rem'">
+      <app-share-svg #svg class="inline-block gc-svg" />
+    </app-icon-button>
+  </div>
+</div>

@@ -1,0 +1,25 @@
+.c-container {
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: auto auto 1fr auto auto;
+  grid-template-areas:
+    "comments favorites space reading-list share";
+  column-gap: theme(spacing.7);
+  place-items: center;
+}
+
+.c-comments {
+  grid-area: comments;
+}
+
+.c-favorites {
+  grid-area: favorites;
+}
+
+.c-reading-list {
+  grid-area: reading-list;
+}
+
+.c-share {
+  grid-area: share;
+}

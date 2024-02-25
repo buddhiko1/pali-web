@@ -12,6 +12,7 @@ import { CommentMarkComponent } from 'src/app/comments/comment-mark/comment-mark
 import { IconButtonComponent } from 'src/app/ui/icon-button/icon-button.component';
 import { ScrollButtonComponent } from 'src/app/ui/scroll-button/scroll-button.component';
 import { UserAvatarComponent } from 'src/app/users/user-avatar/user-avatar.component';
+import { PostbarComponent } from 'src/app/postbar/postbar.component';
 import { BlogFragment, UserProfileFragment } from 'src/gql/graphql';
 
 @Component({
@@ -24,6 +25,7 @@ import { BlogFragment, UserProfileFragment } from 'src/gql/graphql';
     ScrollButtonComponent,
     IconButtonComponent,
     CommentMarkComponent,
+    PostbarComponent,
     UserAvatarComponent,
   ],
   templateUrl: './blog-viewer.component.html',
