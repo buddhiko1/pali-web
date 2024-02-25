@@ -3,11 +3,10 @@ import {
   Input,
   Output,
   OnInit,
-  OnDestroy,
   EventEmitter,
   HostListener,
 } from '@angular/core';
-import { timer, Subscription } from 'rxjs';
+import { timer } from 'rxjs';
 
 import { ErrorSvgComponent } from 'src/app/svg/error/error.component';
 import { CheckSvgComponent } from 'src/app/svg/check/check.component';
@@ -35,14 +34,13 @@ import { NotificationsService } from '../notifications.service';
   templateUrl: './notification.component.html',
   styleUrl: './notification.component.css',
 })
-export class NotificationComponent implements OnInit, OnDestroy {
+export class NotificationComponent implements OnInit {
   @Input() notification!: Notification;
   @Input() duration = 10000;
   @Output() closed = new EventEmitter<void>();
   isContentFolded = true;
   shouldSlideOut = false;
   private _isMouseEntered = false;
-  private _timerSubscription!: Subscription;
 
   constructor(
     private _screenService: ScreenService,
@@ -50,16 +48,11 @@ export class NotificationComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit(): void {
-    const timerSubject = timer(this.duration);
-    this._timerSubscription = timerSubject.subscribe(() => {
+    timer(this.duration).subscribe(() => {
       if (!this._isMouseEntered && this.isContentFolded) {
         this.close();
       }
     });
-  }
-
-  ngOnDestroy(): void {
-    this._timerSubscription.unsubscribe();
   }
 
   get isPhone(): boolean {

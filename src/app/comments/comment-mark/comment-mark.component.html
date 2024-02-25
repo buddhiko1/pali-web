@@ -1,3 +1,6 @@
 <app-badge [number]="quantity <= 99 ? quantity : 99">
-  <app-chat-svg class="gc-svg inline-block size-5" />
+  <app-chat-svg
+    [size]="size"
+    [class]="['gc-svg', 'inline-block', isButtonStyle ? 'fill-focus' : '']"
+  />
 </app-badge>

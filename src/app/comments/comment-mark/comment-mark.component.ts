@@ -18,6 +18,12 @@ export class CommentMarkComponent implements OnInit {
   @Input({ required: true })
   blogId!: string;
 
+  @Input()
+  isButtonStyle = false;
+
+  @Input()
+  size: string = '1.2rem';
+
   constructor(private _commentsService: CommentsService) {}
 
   ngOnInit(): void {

@@ -8,7 +8,9 @@ import { StorageService } from 'src/app/shared/services/storage.service';
 import { ScreenService } from 'src/app/shared/services/screen.service';
 import { SafeHtmlPipe } from 'src/app/shared/pipes/safe-html.pipe';
 import { PenSvgComponent } from 'src/app/svg/pen/pen.component';
+import { CommentMarkComponent } from 'src/app/comments/comment-mark/comment-mark.component';
 import { IconButtonComponent } from 'src/app/ui/icon-button/icon-button.component';
+import { ScrollButtonComponent } from 'src/app/ui/scroll-button/scroll-button.component';
 import { UserAvatarComponent } from 'src/app/users/user-avatar/user-avatar.component';
 import { BlogFragment, UserProfileFragment } from 'src/gql/graphql';
 
@@ -19,7 +21,9 @@ import { BlogFragment, UserProfileFragment } from 'src/gql/graphql';
     CommonModule,
     SafeHtmlPipe,
     PenSvgComponent,
+    ScrollButtonComponent,
     IconButtonComponent,
+    CommentMarkComponent,
     UserAvatarComponent,
   ],
   templateUrl: './blog-viewer.component.html',
@@ -67,14 +71,18 @@ export class BlogViewerComponent {
     this._router.navigate(['/users/detail', userId]);
   }
 
-  get showEditButton(): boolean {
-    if (!this._screenService.isPhone) {
-      if (this._storageService.isLoggedIn) {
-        return this._storageService.account?.id === this.blog.user_created?.id;
-      }
-    }
-    return false;
+  get isPc(): boolean {
+    return this._screenService.isPc;
   }
+
+  // get showEditButton(): boolean {
+  //   if (!this._screenService.isPhone) {
+  //     if (this._storageService.isLoggedIn) {
+  //       return this._storageService.account?.id === this.blog.user_created?.id;
+  //     }
+  //   }
+  //   return false;
+  // }
 
   editBlog(): void {
     this._router.navigate(['/blogs/editor', this.blog.id]);

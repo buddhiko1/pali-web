@@ -1,0 +1,16 @@
+<div #button>
+  @if (isShow) {
+    <button
+      appFadeIn
+      [fadeInDuration]="500"
+      (click)="scroll()"
+      class="c-button rounded-md bg-secondaryBg opacity-50"
+    >
+      @if (isUpward) {
+        <app-up-svg [size]="size" [class]="'gc-button-svg'" />
+      } @else {
+        <app-down-svg [size]="size" [class]="'gc-button-svg'" />
+      }
+    </button>
+  }
+</div>

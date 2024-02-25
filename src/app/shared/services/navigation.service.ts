@@ -1,20 +1,25 @@
-import { Injectable } from '@angular/core';
+import { Injectable, OnDestroy } from '@angular/core';
 import { Location } from '@angular/common';
 import { Router, NavigationEnd } from '@angular/router';
 
+import { Subscription } from 'rxjs';
+
 @Injectable({ providedIn: 'root' })
-export class NavigationService {
+export class NavigationService implements OnDestroy {
   private history: string[] = [];
+  private readonly _subscription = new Subscription();
 
   constructor(
     private router: Router,
     private location: Location,
   ) {
-    this.router.events.subscribe((event) => {
-      if (event instanceof NavigationEnd) {
-        this.history.push(event.urlAfterRedirects);
-      }
-    });
+    this._subscription.add(
+      this.router.events.subscribe((event) => {
+        if (event instanceof NavigationEnd) {
+          this.history.push(event.urlAfterRedirects);
+        }
+      }),
+    );
   }
 
   goBack(): void {
@@ -28,5 +33,9 @@ export class NavigationService {
 
   historyGo(relativePosition?: number): void {
     this.location.historyGo(relativePosition);
+  }
+
+  ngOnDestroy(): void {
+    this._subscription.unsubscribe();
   }
 }

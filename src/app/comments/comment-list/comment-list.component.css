@@ -1,0 +1,57 @@
+.c-container {
+  display: grid;
+  grid-auto-flow: row;
+}
+
+.c-blog {
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: 12fr 2fr;
+  grid-template-areas: "title comments";
+  align-items: center;
+}
+
+.c-title {
+  grid-area: title;
+  justify-self: start;
+}
+
+.c-comments {
+  grid-area: comments;
+}
+
+@media screen and (min-width: theme("screens.tablet")) {
+  .c-blog {
+    grid-template-columns: 2fr 10fr 2fr 2fr 2fr 2fr 2fr;
+    grid-template-areas: "author title draft-icon edit-button delete-button comments active-time";
+  }
+
+  .c-author {
+    grid-area: author;
+    justify-self: start;
+  }
+
+  .c-draft-icon {
+    grid-area: draft-icon;
+  }
+
+  .c-edit-button {
+    grid-area: edit-button;
+  }
+
+  .c-delete-button {
+    grid-area: delete-button;
+  }
+
+  .c-active-time {
+    grid-area: active-time;
+    justify-self: end;
+    align-self: start;
+  }
+}
+
+@media screen and (min-width: theme("screens.pc")) {
+  .c-blog {
+    grid-template-columns: 1fr 10fr 1fr 1fr 1fr 1fr 1fr;
+  }
+}
