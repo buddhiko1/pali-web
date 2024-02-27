@@ -7,7 +7,7 @@ export default {
   theme: {
     screens: {
       tablet: '640px',
-      pc: '1024px',
+      pc: '1366px',
     },
     extend: {
       spacing: {
