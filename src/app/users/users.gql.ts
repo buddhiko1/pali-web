@@ -29,6 +29,9 @@ graphql(`
   fragment UserProfile on user_profile {
     id
     alais
+    user {
+      id
+    }
   }
 
   query UserProfile($userId: String!) {

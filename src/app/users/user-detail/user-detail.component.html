@@ -1,4 +1,4 @@
-@if (user && profile) {
+@if (user) {
   <div appFadeIn class="c-container mt-12 tablet:mt-16">
     <div class="c-user">
       @if (isMyself) {
@@ -12,14 +12,14 @@
           [avatarId]="user.avatar?.id"
           (click)="routeToSetting()"
         />
-        <p class="gc-text text-sm mt-1">{{ profile.alais }}</p>
+        <app-user-profile class="mt-1" [userId]="user.id" [isSmall]="true" />
       } @else {
         <app-user-avatar
           [isButtonStyle]="false"
           [size]="'4rem'"
           [avatarId]="user.avatar?.id"
         />
-        <p class="gc-text text-sm mt-1">{{ profile.alais }}</p>
+        <app-user-profile class="mt-1" [userId]="user.id" [isSmall]="true" />
       }
     </div>
     <app-blog-list

@@ -1,3 +1,16 @@
 @if (this.profile) {
-  <p class="gc-text">{{ this.profile.alais }}</p>
+  @if (this.isLink) {
+    <button
+      (click)="routeToDetail($event, this.profile.user!.id)"
+      class="gc-link-button"
+    >
+      {{ this.profile.alais }}
+    </button>
+  } @else {
+    <p
+      [class]="['gc-text', isSmall ? 'text-sm' : '', isItalic ? 'italic' : '']"
+    >
+      {{ this.profile.alais }}
+    </p>
+  }
 }

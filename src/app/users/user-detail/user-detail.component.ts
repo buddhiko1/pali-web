@@ -12,12 +12,9 @@ import { BlogListComponent } from 'src/app/blogs/blog-list/blog-list.component';
 import { BlogCreatorButtonComponent } from 'src/app/blogs/blog-creator-button/blog-creator-button.component';
 import { UsersService } from '../users.service';
 import { UserAvatarComponent } from '../user-avatar/user-avatar.component';
+import { UserProfileComponent } from '../user-profile/user-profile.component';
 import { UserSettingComponent } from '../user-setting/user-setting.component';
-import {
-  UserFragment,
-  UserProfileFragment,
-  BlogFragment,
-} from 'src/gql/graphql';
+import { UserFragment, BlogFragment } from 'src/gql/graphql';
 
 @Component({
   selector: 'app-user-detail',
@@ -32,11 +29,11 @@ import {
     BlogCreatorButtonComponent,
     UserSettingComponent,
     UserAvatarComponent,
+    UserProfileComponent,
   ],
 })
 export class UserDetailComponent implements OnInit {
   user!: UserFragment;
-  profile!: UserProfileFragment;
   userId: string = '';
   userBlogs: BlogFragment[] = [];
 
@@ -53,7 +50,6 @@ export class UserDetailComponent implements OnInit {
     this.userId = this._activatedRoute.snapshot.paramMap.get('id')!;
     if (this.isMyself) {
       this.user = this._storageService.account;
-      this.profile = this._storageService.profile;
     } else {
       this._usersService
         .fetchUserById({
@@ -61,11 +57,6 @@ export class UserDetailComponent implements OnInit {
         })
         .then((user) => {
           this.user = user;
-        });
-      this._usersService
-        .fetchUserProfile({ userId: this.userId })
-        .then((profile) => {
-          this.profile = profile;
         });
     }
     this._fetchUserBlogs();
