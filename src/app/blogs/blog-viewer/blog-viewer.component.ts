@@ -3,8 +3,6 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
 import { BlogsService } from '../blogs.service';
-import { UsersService } from 'src/app/users/users.service';
-import { StorageService } from 'src/app/shared/services/storage.service';
 import { ScreenService } from 'src/app/shared/services/screen.service';
 import { SafeHtmlPipe } from 'src/app/shared/pipes/safe-html.pipe';
 import { PenSvgComponent } from 'src/app/svg/pen/pen.component';
@@ -13,7 +11,8 @@ import { IconButtonComponent } from 'src/app/ui/icon-button/icon-button.componen
 import { ScrollButtonComponent } from 'src/app/ui/scroll-button/scroll-button.component';
 import { UserAvatarComponent } from 'src/app/users/user-avatar/user-avatar.component';
 import { PostbarComponent } from 'src/app/postbar/postbar.component';
-import { BlogFragment, UserProfileFragment } from 'src/gql/graphql';
+import { UserProfileComponent } from 'src/app/users/user-profile/user-profile.component';
+import { BlogFragment } from 'src/gql/graphql';
 
 @Component({
   selector: 'app-blog-viewer',
@@ -26,6 +25,7 @@ import { BlogFragment, UserProfileFragment } from 'src/gql/graphql';
     IconButtonComponent,
     CommentMarkComponent,
     PostbarComponent,
+    UserProfileComponent,
     UserAvatarComponent,
   ],
   templateUrl: './blog-viewer.component.html',
@@ -33,15 +33,12 @@ import { BlogFragment, UserProfileFragment } from 'src/gql/graphql';
 })
 export class BlogViewerComponent {
   blog!: BlogFragment;
-  authorProfile!: UserProfileFragment;
 
   constructor(
     private _router: Router,
     private _activatedRoute: ActivatedRoute,
     private _blogsService: BlogsService,
-    private _usersService: UsersService,
     private _screenService: ScreenService,
-    private _storageService: StorageService,
   ) {
     this.fetchData();
   }
@@ -61,10 +58,6 @@ export class BlogViewerComponent {
     this.blog = await this._blogsService.fetchBlogById({
       id: blogId,
       returnContent: true,
-    });
-    const authorId = this.blog.user_created!.id;
-    this.authorProfile = await this._usersService.fetchUserProfile({
-      userId: authorId,
     });
   }
 
