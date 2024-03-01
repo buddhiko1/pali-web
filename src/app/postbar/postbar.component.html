@@ -1,6 +1,11 @@
 <div class="c-container">
   <div class="c-comments">
-    <app-icon-button [isButtonStyle]="false" [size]="'1.6rem'" [tip]="''">
+    <app-icon-button
+      (click)="toggleComments()"
+      [isButtonStyle]="false"
+      [size]="'1.6rem'"
+      [tip]="''"
+    >
       <app-chat-svg #svg class="inline-block gc-svg" />
     </app-icon-button>
     <p class="inline-block gc-text text-sm ml-1">{{ 99 }}</p>
@@ -28,3 +33,6 @@
     </app-icon-button>
   </div>
 </div>
+@if (showComments) {
+  <app-comments-container />
+}

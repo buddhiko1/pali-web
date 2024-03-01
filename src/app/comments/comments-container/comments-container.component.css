@@ -1,0 +1,42 @@
+.c-container {
+  display: grid;
+  grid-template-rows: auto auto;
+  grid-template-columns: auto;
+  grid-template-areas:
+    "bar"
+    "comments";
+}
+
+.c-bar {
+  display: grid;
+  place-items: center;
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-out {
+  from {
+    transform: translateY(0%);
+  }
+  to {
+    transform: translateY(100%);
+  }
+}
+
+.show {
+  animation: slide-in 0.3s ease-in-out 0.3s both;
+}
+
+.hide {
+  animation: slide-out 0.3s ease-in-out 0.3s both;
+}
+
+@media screen and (min-width: theme("screens.tablet")) {
+}

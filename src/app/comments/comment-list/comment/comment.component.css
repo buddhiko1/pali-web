@@ -1,0 +1,25 @@
+.c-container {
+  display: grid;
+  grid-template-rows: auto auto auto;
+  grid-template-columns: auto 1fr;
+  grid-template-areas:
+    "avatar username"
+    "avatar date"
+    "content content";
+}
+
+.c-avatar {
+  grid-area: avatar;
+}
+
+.c-username {
+  grid-area: username;
+}
+
+.c-date {
+  grid-area: date;
+}
+
+.c-content {
+  grid-area: content;
+}

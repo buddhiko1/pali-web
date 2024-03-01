@@ -23,16 +23,19 @@ graphql(`
     date_created
     date_updated
     content
-    blog {
+    replay_to {
       id
-      title
     }
     sub_comments {
       id
     }
   }
 
-  union blogId = String | Int
+  query CommentById($id: ID!) {
+    comment: comments_by_id(id: $id) {
+      ...Comment
+    }
+  }
 
   query BlogComments(
     $blogId: GraphQLStringOrFloat!

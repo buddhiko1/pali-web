@@ -1,0 +1,31 @@
+@if (show) {
+  <div
+    class="c-overlay fixed inset-0 bg-overlay h-screen w-screen opacity-80 touch-none"
+  ></div>
+}
+<div
+  [class]="[
+    'c-container',
+    'fixed',
+    'bottom-0',
+    'left-0',
+    'w-full',
+    'overflow-y-hidden',
+    'rounded-t-2xl',
+    'border',
+    'border-border',
+    'bg-hoverBg',
+    show ? 'h-[90%]' : 'h-0',
+    show ? 'show' : 'hide'
+  ]"
+>
+  <div class="c-bar w-full">
+    <app-icon-button
+      (click)="toggle()"
+      [isButtonStyle]="false"
+      [size]="'2.3rem'"
+    >
+      <app-down-svg #svg class="gc-svg" />
+    </app-icon-button>
+  </div>
+</div>

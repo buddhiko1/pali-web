@@ -1,0 +1,30 @@
+@if (comment) {
+  <div class="c-container">
+    <app-user-avatar
+      [avatarId]="comment.user_created?.avatar?.id"
+      class="c-avatar"
+    />
+    <app-user-profile [userId]="comment.user_created!.id" class="c-username" />
+    <p class="c-date">
+      {{ comment.date_updated || comment.date_created | date: "MMM d" }}
+    </p>
+    <div class="c-content">
+      @if (comment.replay_to) {
+        <span
+          >&#64;<app-user-profile
+            class="inline-block"
+            [userId]="comment.replay_to!.id"
+            [isLink]="true"
+          />:
+        </span>
+        <p class="inline-block gc-text">{{ comment.content }}</p>
+      }
+    </div>
+
+    <!-- @if(comment.sub_comments) { -->
+    <!--  @for(commentId of comment.sub_comments; track commentId) { -->
+    <!--   <app-comment [commentId]="commentId" /> -->
+    <!--  } -->
+    <!-- } -->
+  </div>
+}

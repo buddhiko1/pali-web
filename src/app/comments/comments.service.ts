@@ -3,6 +3,8 @@ import { Injectable } from '@angular/core';
 import { DataUrqlService } from '../shared/services/urql.service';
 import {
   CommentFragment,
+  CommentByIdDocument,
+  CommentByIdQueryVariables,
   BlogCommentsDocument,
   BlogCommentsQueryVariables,
   QuantityOfBlogCommentsDocument,
@@ -34,6 +36,13 @@ export class CommentsService {
       args,
     );
     return result.data.status[0];
+  }
+
+  async fetchCommentById(
+    args: CommentByIdQueryVariables,
+  ): Promise<CommentFragment> {
+    const result = await this._dataUrqlService.query(CommentByIdDocument, args);
+    return result.data.comment;
   }
 
   async fetchBlogComments(
