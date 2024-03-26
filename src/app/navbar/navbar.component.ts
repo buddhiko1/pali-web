@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { TitleCasePipe } from '@angular/common';
 import { Router, NavigationEnd } from '@angular/router';
-import { fromEvent, throttleTime } from 'rxjs';
+import { fromEvent, throttleTime, Subscription } from 'rxjs';
 
 import { FadeInDirective } from '../shared/directives/fade-in.directive';
 import { PlusSvgComponent } from '../svg/plus/plus.component';
@@ -31,10 +31,11 @@ import { UserFragment } from 'src/gql/graphql';
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.css',
 })
-export class NavbarComponent implements OnInit {
+export class NavbarComponent implements OnInit, OnDestroy {
   activedUrl = '';
   private _previousScrollPosition = 0;
   private _isMenuHaveBeenToggled = false;
+  private readonly _subscription = new Subscription();
   ThemeEnum: typeof ThemeEnum = ThemeEnum;
   showOverlay = false;
   isCollapsed = false;
@@ -71,19 +72,21 @@ export class NavbarComponent implements OnInit {
     private _storageService: StorageService,
     private _navbarService: NavbarService,
   ) {
-    fromEvent(document, 'scroll')
-      .pipe(throttleTime(10))
-      .subscribe(() => {
-        const currentScrollPosition = window.scrollY;
-        if (
-          Math.abs(currentScrollPosition - this._previousScrollPosition) > 5
-        ) {
-          currentScrollPosition < this._previousScrollPosition
-            ? (this.isCollapsed = false)
-            : (this.isCollapsed = true);
-        }
-        this._previousScrollPosition = currentScrollPosition;
-      });
+    this._subscription.add(
+      fromEvent(document, 'scroll')
+        .pipe(throttleTime(10))
+        .subscribe(() => {
+          const currentScrollPosition = window.scrollY;
+          if (
+            Math.abs(currentScrollPosition - this._previousScrollPosition) > 5
+          ) {
+            currentScrollPosition < this._previousScrollPosition
+              ? (this.isCollapsed = false)
+              : (this.isCollapsed = true);
+          }
+          this._previousScrollPosition = currentScrollPosition;
+        }),
+    );
   }
 
   ngOnInit(): void {
@@ -146,5 +149,9 @@ export class NavbarComponent implements OnInit {
     } else {
       this._router.navigate([path]);
     }
+  }
+
+  ngOnDestroy(): void {
+    this._subscription.unsubscribe();
   }
 }
